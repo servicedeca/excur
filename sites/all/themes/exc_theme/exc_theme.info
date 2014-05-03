@@ -1,0 +1,5 @@
+name = Excur theme
+package = Excur
+core = 7.x
+
+scripts[] = js/exc_theme.js

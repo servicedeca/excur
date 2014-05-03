@@ -1,0 +1,19 @@
+diff --git a/core/includes/menu.inc b/core/includes/menu.inc
+index 668d689..3c16027 100644
+--- a/core/includes/menu.inc
++++ b/core/includes/menu.inc
+@@ -705,8 +705,12 @@ function _menu_translate(&$router_item, $map, $to_arg = FALSE) {
+     }
+   }
+   $router_item['href'] = implode('/', $link_map);
+-  $router_item['tab_root_href'] = implode('/', $tab_root_map);
+-  $router_item['tab_parent_href'] = implode('/', $tab_parent_map);
++  if (isset($tab_root_map)) {
++    $router_item['tab_root_href'] = implode('/', $tab_root_map);
++  }
++  if (isset($tab_parent_map)) {
++    $router_item['tab_parent_href'] = implode('/', $tab_parent_map);
++  }
+   $router_item['options'] = array();
+   if (!empty($router_item['route_name'])) {
+     // Route-provided menu items do not have menu loaders, so replace the map

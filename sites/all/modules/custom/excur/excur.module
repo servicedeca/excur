@@ -1,0 +1,40 @@
+<?php
+/**
+ * @file
+ */
+
+define('FRONT_THEME_PATH', drupal_get_path('theme', 'exc_theme'));
+
+/**
+ * Implements hook
+ */
+function excur_menu() {
+  $items['admin/config/excur'] = array(
+    'title' => 'Настройки сайта',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('excur_settings_form'),
+    'access arguments' => array('administer site configuration'),
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function excur_ctools_plugin_directory($owner, $plugin_type) {
+  if ($owner == 'panels') {
+    return "plugins/$plugin_type";
+  }
+
+  if ($owner == 'ctools' && $plugin_type == 'content_types') {
+    return "plugins/content_types";
+  }
+}
+
+/**
+ * Settings form for excur site.
+ */
+function excur_settings_form() {
+
+}
