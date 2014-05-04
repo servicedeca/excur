@@ -4,11 +4,15 @@
  */
 ?>
 <header>
-  <?php if ($logo): ?>
-    Логотип
+  <?php if (!empty($logo)): ?>
+    <?php print l($logo, '', array('html' => TRUE)); ?>
   <?php endif; ?>
 
-  <?php if ($main_menu): ?>
+  <?php if (!empty($search_form)): ?>
+    <?php print render($search_form); ?>
+  <?php endif; ?>
+
+  <?php if (!empty($main_menu)): ?>
     Главное меню
   <?php endif; ?>
 </header>
@@ -25,11 +29,6 @@
 
 <div id="content">
   <?php print render($title_prefix); ?>
-  <?php if ($title): ?>
-    <h1 class="title" id="page-title">
-      <?php print $title; ?>
-    </h1>
-  <?php endif; ?>
   <?php print render($title_suffix); ?>
   <?php if ($tabs): ?>
     <div class="tabs">

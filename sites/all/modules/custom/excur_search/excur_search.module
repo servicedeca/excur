@@ -1,0 +1,43 @@
+<?php
+/**
+ * @file
+ */
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function excur_search_ctools_plugin_directory($owner, $plugin_type) {
+  if ($owner == 'panels') {
+    return "plugins/$plugin_type";
+  }
+
+  if ($owner == 'ctools' && $plugin_type == 'content_types') {
+    return "plugins/content_types";
+  }
+}
+
+/**
+ * Settings form for excur site.
+ */
+function excur_search_search_form() {
+  $form['search'] = array(
+    '#type' => 'textfield',
+    '#attributes' => array(
+      'placeholder' => t('Search...'),
+    ),
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Search'),
+  );
+
+  return $form;
+}
+
+/**
+ * Validate function for 'excur_settings_form' form.
+ */
+function excur_search_search_form_submit(&$form, &$form_state) {
+
+}

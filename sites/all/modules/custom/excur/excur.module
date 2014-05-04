@@ -72,12 +72,40 @@ function excur_main_slider_images() {
     ->fields('n', array('nid'))
     ->condition('type', 'main_page_slider')
     ->orderBy('nid', 'DESC')
+    ->range(0, 1)
     ->execute()
     ->fetchField();
 
   if ($nid) {
     $node = node_load($nid);
     return $node->field_slider_images[LANGUAGE_NONE];
+  }
+
+  return array();
+}
+
+/**
+ * Get text blocks for main page.
+ *
+ * @return array.
+ */
+function excur_main_text_blocks() {
+  global $language;
+
+  $query = db_select('node', 'n');
+  $query->fields('n', array('nid'));
+  $query->join('entity_translation', 'et', 'et.entity_id = n.nid');
+  $query->condition('n.type ', 'text_block');
+  $query->condition('et.entity_type', 'node');
+  $query->condition('et.language', $language->language);
+  $nids = $query->execute()->fetchCol();
+
+  if ($nids) {
+    foreach ($nids as $nid) {
+      $nodes[] = node_load($nid);
+    }
+
+    return $nodes;
   }
 
   return array();

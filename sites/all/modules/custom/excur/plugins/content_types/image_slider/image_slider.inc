@@ -39,8 +39,6 @@ function excur_image_slider_content_type_theme(&$theme, $plugin) {
 
 /**
  * Process variables for excur-image-slider.tpl.php.
- *
- * @see excur-image-slider.tpl.php
  */
 function template_preprocess_excur_image_slider(&$vars) {
   $images = array();

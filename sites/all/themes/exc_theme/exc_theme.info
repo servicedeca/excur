@@ -2,4 +2,6 @@ name = Excur theme
 package = Excur
 core = 7.x
 
+stylesheets[all][] = css/exc_theme.css
+
 scripts[] = js/exc_theme.js
