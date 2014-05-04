@@ -33,8 +33,52 @@ function excur_ctools_plugin_directory($owner, $plugin_type) {
 }
 
 /**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function excur_form_main_page_slider_node_form_alter(&$form, &$form_id) {
+  if (empty($form['#node']->nid)) {
+    $form['title']['#default_value'] = 'Слайдер главной страницы (' . date('d:m:Y') . ')';
+  }
+}
+
+/**
  * Settings form for excur site.
  */
 function excur_settings_form() {
 
+}
+
+/**
+ * Validate function for 'excur_settings_form' form.
+ */
+function excur_settings_form_validate(&$form, &$form_state) {
+
+}
+
+/**
+ * Validate function for 'excur_settings_form' form.
+ */
+function excur_settings_form_submit(&$form, &$form_state) {
+
+}
+
+/**
+ * Get images of main page slider.
+ *
+ * @return array.
+ */
+function excur_main_slider_images() {
+  $nid = db_select('node', 'n')
+    ->fields('n', array('nid'))
+    ->condition('type', 'main_page_slider')
+    ->orderBy('nid', 'DESC')
+    ->execute()
+    ->fetchField();
+
+  if ($nid) {
+    $node = node_load($nid);
+    return $node->field_slider_images[LANGUAGE_NONE];
+  }
+
+  return array();
 }
