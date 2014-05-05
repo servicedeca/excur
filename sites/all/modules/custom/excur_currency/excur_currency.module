@@ -1,0 +1,17 @@
+<?php
+/**
+ * @file
+ */
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function excur_currency_ctools_plugin_directory($owner, $plugin_type) {
+  if ($owner == 'panels') {
+    return "plugins/$plugin_type";
+  }
+
+  if ($owner == 'ctools' && $plugin_type == 'content_types') {
+    return "plugins/content_types";
+  }
+}

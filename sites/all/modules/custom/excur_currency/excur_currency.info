@@ -1,0 +1,5 @@
+name = Excur currency
+package = Excur
+core = 7.x
+
+dependencies[] = excur

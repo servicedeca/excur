@@ -12,6 +12,10 @@
     <?php print render($search_form); ?>
   <?php endif; ?>
 
+  <?php if (!empty($language_switcher)): ?>
+    <?php print $language_switcher; ?>
+  <?php endif; ?>
+
   <?php if (!empty($main_menu)): ?>
     Главное меню
   <?php endif; ?>
