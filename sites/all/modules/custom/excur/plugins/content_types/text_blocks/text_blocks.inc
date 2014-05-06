@@ -46,9 +46,6 @@ function template_preprocess_excur_text_blocks(&$vars) {
     $wrapper = entity_metadata_wrapper('node', $node);
     $wrapper->language($language->language);
 
-    $block['title'] = $wrapper->title->value();
-    $block['text'] = $wrapper->body->value->value();
-
-    $vars['blocks'][] = $block;
+    $vars['blocks'][] = $wrapper->body->value->value();
   }
 }

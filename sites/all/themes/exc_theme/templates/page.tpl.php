@@ -48,5 +48,7 @@
 </div>
 
 <footer>
-  Футер
+  <div id="footer-menu">
+    <?php print render($footer_menu); ?>
+  </div>
 </footer>

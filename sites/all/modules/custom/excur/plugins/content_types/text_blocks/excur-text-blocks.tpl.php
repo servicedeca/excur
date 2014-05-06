@@ -5,12 +5,7 @@
     </h2>
     <?php foreach($blocks as $block): ?>
       <div class="text-block">
-        <div class="text-block-title">
-          <?php print $block['title']; ?>
-        </div>
-        <div class="text-block-text">
-          <?php print $block['text']; ?>
-        </div>
+        <?php print $block; ?>
       </div>
     <?php endforeach; ?>
   </div>
