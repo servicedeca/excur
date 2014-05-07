@@ -47,7 +47,7 @@ function template_preprocess_excur_image_slider(&$vars) {
     $images = excur_main_slider_images();
   }
   elseif ($term = menu_get_object('taxonomy_term', 2)) {
-    
+    $images = $term->field_slider_images[LANGUAGE_NONE];
   }
 
   foreach ($images as $image) {
