@@ -2,6 +2,10 @@ name = Excur theme
 package = Excur
 core = 7.x
 
+stylesheets[all][] = css/bootstrap.min.css
+stylesheets[all][] = css/bootstrap-responsive.min.css
+stylesheets[all][] = css/styles.css
 stylesheets[all][] = css/exc_theme.css
 
+scripts[] = js/bootstrap.min.js
 scripts[] = js/exc_theme.js
