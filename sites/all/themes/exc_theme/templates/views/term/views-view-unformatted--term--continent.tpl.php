@@ -8,6 +8,13 @@
  */
 ?>
 <div class="row">
+  <div class="span9">
+    <h2>
+      <?php print t('Continents'); ?>
+    </h2>
+  </div>
+</div>
+<div class="row">
   <?php foreach ($rows as $id => $row): ?>
     <div class="span4">
       <?php print $row; ?>

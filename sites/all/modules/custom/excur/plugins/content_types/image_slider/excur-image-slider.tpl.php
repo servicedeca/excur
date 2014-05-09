@@ -1,10 +1,21 @@
 <?php if (!empty($images)): ?>
-  <ul id="main-slider" class="slides">
-    <?php foreach($images as $image): ?>
+  <div class="slider1 flexslider">
+    <ul class="slides">
+      <?php foreach($images as $image): ?>
+        <li>
+          <?php print $image; ?>
+        </li>
+      <?php endforeach; ?>
+    </ul>
+
+    <ul class="flex-direction-nav">
       <li>
-        <?php print $image; ?>
+        <a class="flex-prev" href="#"><?php print t('Previous'); ?></a>
       </li>
-    <?php endforeach; ?>
-  </ul>
+      <li>
+        <a class="flex-next" href="#"><?php print t('Next'); ?></a>
+      </li>
+    </ul>
+  </div>
   <div class="space30"></div>
 <?php endif; ?>

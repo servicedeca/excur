@@ -30,3 +30,34 @@ function exc_theme_preprocess_page(&$vars, $hook) {
   }
   $vars['footer_menu'] = $footer_menu;
 }
+
+/**
+ * Main views view preprocess.
+ */
+function exc_theme_preprocess_views_view(&$vars) {
+  if (!empty($vars['theme_hook_suggestion'])) {
+    $function = 'exc_theme_preprocess_' . $vars['theme_hook_suggestion'];
+    if (function_exists($function)) {
+      $function($vars);
+    }
+  }
+}
+
+/**
+ * Main views view field preprocess.
+ */
+function exc_theme_preprocess_views_view_field(&$vars) {
+  if (!empty($vars['theme_hook_suggestion'])) {
+    $function = 'exc_theme_preprocess_' . $vars['theme_hook_suggestion'];
+    if (function_exists($function)) {
+      $function($vars);
+    }
+  }
+}
+
+/**
+ * Process variables for views-view-field--term--city--name-field.tpl.php.
+ */
+function exc_theme_preprocess_views_view_field__term__city__name_field(&$vars) {
+  $vars['output'] .= ' (' . excur_count_service_by_city($vars['row']->tid) . ')';
+}

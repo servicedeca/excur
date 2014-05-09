@@ -110,3 +110,19 @@ function excur_main_text_blocks() {
 
   return array();
 }
+
+/**
+ * Get count of service in city.
+ *
+ * @param int $tid.
+ * @return int.
+ */
+function excur_count_service_by_city($tid) {
+  $query = db_select('field_data_field_city', 'fdfc');
+  $query->fields('fdfc', array('entity_id'));
+  $query->condition('fdfc.field_city_target_id', $tid);
+  $query->condition('fdfc.bundle', 'service');
+  $count = $query->execute()->rowCount();
+
+  return $count ? $count : 0;
+}

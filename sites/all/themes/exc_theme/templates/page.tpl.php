@@ -23,8 +23,14 @@
             <?php endif; ?>
 
             <?php if (!empty($language_switcher)): ?>
-              <div class="span3">
+              <div class="span2">
                 <?php print $language_switcher; ?>
+              </div>
+            <?php endif; ?>
+
+            <?php if (!empty($currency_switcher)): ?>
+              <div class="span2">
+                <?php print $currency_switcher; ?>
               </div>
             <?php endif; ?>
           </div>

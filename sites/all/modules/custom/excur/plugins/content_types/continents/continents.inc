@@ -22,8 +22,7 @@ function excur_continents_ctools_content_types() {
  */
 function excur_continents_content_type_render($subtype, $conf, $panel_args, $context) {
   $block = new stdClass();
-  $block->content = '<h2>' . t('Continents') . '</h2>';
-  $block->content .= views_embed_view('term', 'continent');
+  $block->content = views_embed_view('term', 'continent');
 
   return $block;
 }
