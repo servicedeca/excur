@@ -72,10 +72,10 @@ h1 {
   margin-top: 160px;
 }
 
-#slider-search-form #excur-search-search-form .form-item-search,
-#slider-search-form #excur-search-search-form #edit-submit,
-#slider-search-form #excur-search-search-form #edit-search,
-#slider-search-form #excur-search-search-form {
+[id^="excur-search-search-form"] .form-item-search,
+[id^="excur-search-search-form"] [id^="edit-submit"],
+[id^="excur-search-search-form"] [id^="edit-search"],
+[id^="excur-search-search-form"] {
   display: inline-block;
   margin: 0;
 }

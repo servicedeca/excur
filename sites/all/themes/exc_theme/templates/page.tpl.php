@@ -8,36 +8,43 @@
   <div class="container site">
     <div class="row">
       <div class="span12">
-        <div class="row">
-          <div class="span12">
-            <header>
-              <?php if (!empty($logo)): ?>
+        <header>
+          <div class="row">
+            <?php if (!empty($logo)): ?>
+              <div class="span5">
                 <?php print l($logo, '', array('html' => TRUE)); ?>
-              <?php endif; ?>
+              </div>
+            <?php endif; ?>
 
-              <?php if (!empty($search_form)): ?>
+            <?php if (!empty($search_form)): ?>
+              <div class="span4">
                 <?php print render($search_form); ?>
-              <?php endif; ?>
+              </div>
+            <?php endif; ?>
 
-              <?php if (!empty($language_switcher)): ?>
+            <?php if (!empty($language_switcher)): ?>
+              <div class="span3">
                 <?php print $language_switcher; ?>
-              <?php endif; ?>
-
-              <?php if (!empty($main_menu)): ?>
-                Главное меню
-              <?php endif; ?>
-            </header>
+              </div>
+            <?php endif; ?>
           </div>
-        </div>
+          <?php if (!empty($main_menu)): ?>
+            <div class="row">
+              <div class="span12">
+                Главное меню
+              </div>
+            </div>
+          <?php endif; ?>
+        </header>
+        <div class="space10"></div>
 
         <?php if ($messages): ?>
           <?php print $messages; ?>
+          <div class="space10"></div>
         <?php endif; ?>
 
         <?php if ($breadcrumb): ?>
-          <div id="breadcrumb">
-            <?php print $breadcrumb; ?>
-          </div>
+          <?php print $breadcrumb; ?>
         <?php endif; ?>
 
         <div id="content">
