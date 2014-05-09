@@ -72,15 +72,15 @@ h1 {
   margin-top: 160px;
 }
 
-#excur-search-search-form .form-item-search,
-#excur-search-search-form #edit-submit,
-#excur-search-search-form #edit-search,
-#excur-search-search-form {
+#slider-search-form #excur-search-search-form .form-item-search,
+#slider-search-form #excur-search-search-form #edit-submit,
+#slider-search-form #excur-search-search-form #edit-search,
+#slider-search-form #excur-search-search-form {
   display: inline-block;
   margin: 0;
 }
 
-#excur-search-search-form {
+#slider-search-form #excur-search-search-form {
   padding: 10px;
   border-radius: 5px;
   background-color: rgba(0,0,0,0.7);

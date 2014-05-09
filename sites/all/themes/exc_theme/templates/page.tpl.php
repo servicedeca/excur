@@ -8,23 +8,27 @@
   <div class="container site">
     <div class="row">
       <div class="span12">
-        <header>
-          <?php if (!empty($logo)): ?>
-            <?php print l($logo, '', array('html' => TRUE)); ?>
-          <?php endif; ?>
+        <div class="row">
+          <div class="span12">
+            <header>
+              <?php if (!empty($logo)): ?>
+                <?php print l($logo, '', array('html' => TRUE)); ?>
+              <?php endif; ?>
 
-          <?php if (!empty($search_form)): ?>
-            <?php print render($search_form); ?>
-          <?php endif; ?>
+              <?php if (!empty($search_form)): ?>
+                <?php print render($search_form); ?>
+              <?php endif; ?>
 
-          <?php if (!empty($language_switcher)): ?>
-            <?php print $language_switcher; ?>
-          <?php endif; ?>
+              <?php if (!empty($language_switcher)): ?>
+                <?php print $language_switcher; ?>
+              <?php endif; ?>
 
-          <?php if (!empty($main_menu)): ?>
-            Главное меню
-          <?php endif; ?>
-        </header>
+              <?php if (!empty($main_menu)): ?>
+                Главное меню
+              <?php endif; ?>
+            </header>
+          </div>
+        </div>
 
         <?php if ($messages): ?>
           <?php print $messages; ?>
