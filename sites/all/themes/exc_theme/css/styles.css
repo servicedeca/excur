@@ -44,7 +44,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size:24px;
-  color: #00ce9b;
+  color: #08c;
   padding: 10px 0 45px 0;
 }
 
@@ -83,12 +83,12 @@ blockquote {
 }
 
 a {
-  color:#00ce9b;
+  color:#08c;
   text-decoration:none;
 }
 
 a:hover {
-  color:#00ce9b;
+  color:#08c;
   text-decoration:none;
 }
 
@@ -107,7 +107,7 @@ a:hover {
 }
 
 .site {
-  padding:60px 40px;
+  padding:40px 40px;
   background:#fff;
   border:1px solid #d9dddf;
 }
@@ -129,7 +129,7 @@ a:hover {
 }
 
 .green {
-  color:#00ce9b;
+  color:#08c;
 }
 
 .red {
@@ -319,13 +319,13 @@ a:hover {
 }
 
 .navbar .nav > li:hover > a {
-  color:#00ce9b !important;
-  border-bottom:2px solid #00ce9b !important;
+  color:#08c !important;
+  border-bottom:2px solid #08c !important;
 }
 
 .navbar .nav > li.active > a {
-  color:#00ce9b !important;
-  border-bottom:2px solid #00ce9b !important;
+  color:#08c !important;
+  border-bottom:2px solid #08c !important;
   -webkit-box-shadow:rgba(0, 0, 0, 0) 0 0 0 !important;
   box-shadow:rgba(0, 0, 0, 0) 0 0 0 !important;
 }
@@ -384,7 +384,7 @@ a:hover {
 }
 
 .navbar .nav li ul li:hover a {
-  color:#00ce9b;
+  color:#08c;
 }
 
 /* --------------------------------------------------------	*/
@@ -432,7 +432,7 @@ a:hover {
 }
 
 .square-1:hover {
-  border-bottom:2px solid #00ce9b;
+  border-bottom:2px solid #08c;
 }
 
 .img-container {
@@ -461,7 +461,7 @@ a:hover {
   text-align:center;
   font-size:13px;
   color:#fff;
-  background:#00ce9b;
+  background:#08c;
   border-bottom:2px solid #00a97f;
   float:left;
   margin-bottom:5px;
@@ -495,7 +495,7 @@ a:hover {
 }
 
 .list-b i {
-  color:#00ce9b;
+  color:#08c;
   padding-right:4px;
 }
 
@@ -515,7 +515,7 @@ a:hover {
 }
 
 .list-c a:hover {
-  color:#00ce9b;
+  color:#08c;
   text-decoration:none;
 }
 
@@ -566,7 +566,7 @@ a:hover {
 .bar {
   height:35px;
   line-height:35px;
-  background:#00ce9b !important;
+  background:#08c !important;
   border-bottom:1px solid #00ae83 !important;
   -webkit-box-shadow:rgba(0, 0, 0, 0) 0 0 0 inset;
   text-shadow: none !important;
@@ -593,7 +593,7 @@ a:hover {
 
 .btn:hover {
   color:#fff;
-  background:#00ce9b;
+  background:#08c;
   border-bottom:2px solid #00a97f;
 }
 
@@ -729,7 +729,7 @@ th {
 
 .paging:hover {
   color:#fff;
-  background:#00ce9b;
+  background:#08c;
   border-bottom:2px solid #00a97f;
   text-decoration:none;
 }
@@ -764,7 +764,7 @@ th {
   text-align:center;
   font-size:13px;
   color:#fff;
-  background:#00ce9b;
+  background:#08c;
   border-bottom:2px solid #00a97f;
   float:left;
   margin-bottom:5px;
@@ -864,12 +864,12 @@ th {
 }
 
 .pricing-tables .active {
-  color:#00ce9b;
+  color:#08c;
 }
 
 .pricing-tables .active th, .pricing-tables .active .table-footer {
   color:#fff;
-  background:#00ce9b;
+  background:#08c;
 }
 
 .pricing-tables .active .table-footer {
@@ -945,7 +945,7 @@ th {
 }
 
 .tag:hover {
-  background:#00ce9b;
+  background:#08c;
   border-bottom:2px solid #337cc1;
 }
 
@@ -1049,14 +1049,14 @@ th {
 #portfolio-filter li:hover a {
   color:#fff;
   border-bottom:2px solid #00a97f;
-  background: #00ce9b;
+  background: #08c;
   text-decoration:none;
 }
 
 #portfolio-filter li.active a {
   color:#fff;
   border-bottom:2px solid #00a97f;
-  background: #00ce9b;
+  background: #08c;
 }
 
 /* --------------------------------------------------------	*/
@@ -1157,19 +1157,19 @@ th {
 }
 
 #footer a:hover {
-  color:#00ce9b;
+  color:#08c;
   text-decoration:none;
 }
 
 #footer a.t-link {
-  color:#00ce9b;
+  color:#08c;
   text-decoration:none;
 }
 
 #footer a.t-link:hover {
-  color:#00ce9b;
+  color:#08c;
   text-decoration:none;
-  border-bottom:1px dotted #00ce9b;
+  border-bottom:1px dotted #08c;
 }
 
 .copyright {
@@ -1195,7 +1195,7 @@ th {
 }
 
 .newsletter-container i:hover {
-  color:#00ce9b;
+  color:#08c;
 }
 
 .newsletter-container form {
@@ -1251,7 +1251,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
   width:90%;
   padding:8px 5%;
   color:#fff;
-  background:#00ce9b;
+  background:#08c;
 }
 
 .error {
