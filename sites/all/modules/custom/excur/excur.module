@@ -126,3 +126,13 @@ function excur_count_service_by_city($tid) {
 
   return $count ? $count : 0;
 }
+
+/**
+ * Build the breadcrumb by current page.
+ *
+ * @return array.
+ */
+function excur_get_breadcrumb() {
+
+  return array();
+}

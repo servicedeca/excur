@@ -29,6 +29,12 @@ function exc_theme_preprocess_page(&$vars, $hook) {
     $first_item['#attributes']['class'][] = 'span3';
   }
   $vars['footer_menu'] = $footer_menu;
+
+  // Add currency change form
+  // @todo: add it.
+
+  // Render breadcrumb.
+  $vars['breadcrumb'] = theme('breadcrumb', array('breadcrumb' => excur_get_breadcrumb()));
 }
 
 /**

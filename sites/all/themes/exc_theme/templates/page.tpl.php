@@ -34,7 +34,7 @@
               </div>
             <?php endif; ?>
           </div>
-          <?php if (!empty($main_menu)): ?>
+          <?php if (empty($main_menu)): ?>
             <div class="row">
               <div class="span12">
                 Главное меню
@@ -44,12 +44,12 @@
         </header>
         <div class="space10"></div>
 
-        <?php if ($messages): ?>
+        <?php if (!empty($messages)): ?>
           <?php print $messages; ?>
           <div class="space10"></div>
         <?php endif; ?>
 
-        <?php if ($breadcrumb): ?>
+        <?php if (!empty($breadcrumb)): ?>
           <?php print $breadcrumb; ?>
         <?php endif; ?>
 
@@ -61,7 +61,7 @@
               <?php print render($tabs); ?>
             </div>
           <?php endif; ?>
-          <?php if ($action_links): ?>
+          <?php if (!empty($action_links)): ?>
             <ul class="action-links">
               <?php print render($action_links); ?>
             </ul>

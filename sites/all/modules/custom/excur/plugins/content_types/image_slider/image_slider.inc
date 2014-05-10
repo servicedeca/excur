@@ -53,7 +53,8 @@ function template_preprocess_excur_image_slider(&$vars) {
   }
 
   foreach ($images as $image) {
-    $vars['images'][] = theme('image', array(
+    $vars['images'][] = theme('image_style', array(
+      'style_name' => '1170x555',
       'path' => $image['uri'],
       'alt' => $image['alt'],
       'title' => $image['title'],

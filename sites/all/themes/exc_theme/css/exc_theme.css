@@ -64,11 +64,11 @@ h1 {
   display: inline-block;
   position: absolute;
   z-index: 1;
-  margin-top: 150px;
+  margin-top: 250px;
 }
 
 #slider-search-form {
-  margin-top: 160px;
+  margin-top: 250px;
 }
 
 [id^="excur-search-search-form"] .form-item-search,
