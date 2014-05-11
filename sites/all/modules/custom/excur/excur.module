@@ -10,7 +10,7 @@ define('FRONT_THEME_PATH', drupal_get_path('theme', 'exc_theme'));
  */
 function excur_menu() {
   $items['admin/config/excur'] = array(
-    'title' => 'Настройки сайта',
+    'title' => 'Site settings',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('excur_settings_form'),
     'access arguments' => array('administer site configuration'),
@@ -133,6 +133,46 @@ function excur_count_service_by_city($tid) {
  * @return array.
  */
 function excur_get_breadcrumb() {
+  if ($node = menu_get_object()) {
+    if ($node->type == 'service') {
+      $city = taxonomy_term_load($node->field_city[LANGUAGE_NONE][0]['target_id']);
+      $country = taxonomy_term_load($city->field_country[LANGUAGE_NONE][0]['target_id']);
+      $continent = taxonomy_term_load($country->field_continent[LANGUAGE_NONE][0]['target_id']);
+
+      $breadcrumb[] = l($continent->name, "taxonomy/term/$continent->tid");
+      $breadcrumb[] = l($country->name, "taxonomy/term/$country->tid");
+      $breadcrumb[] = l($city->name, "taxonomy/term/$city->tid");
+      $breadcrumb[] = $node->title;
+    }
+    else {
+      $breadcrumb[] = $node->title;
+    }
+  }
+  elseif ($term = menu_get_object('taxonomy_term', 2)) {
+    if ($term->vocabulary_machine_name == 'continent') {
+      $breadcrumb[] = $term->name;
+    }
+    elseif ($term->vocabulary_machine_name == 'country') {
+      $continent = taxonomy_term_load($term->field_continent[LANGUAGE_NONE][0]['target_id']);
+
+      $breadcrumb[] = l($continent->name, "taxonomy/term/$continent->tid");
+      $breadcrumb[] = $term->name;
+    }
+    elseif ($term->vocabulary_machine_name == 'city') {
+      $country = taxonomy_term_load($term->field_country[LANGUAGE_NONE][0]['target_id']);
+      $continent = taxonomy_term_load($country->field_continent[LANGUAGE_NONE][0]['target_id']);
+
+      $breadcrumb[] = l($continent->name, "taxonomy/term/$continent->tid");
+      $breadcrumb[] = l($country->name, "taxonomy/term/$country->tid");
+      $breadcrumb[] = $term->name;
+    }
+  }
+
+  if (isset($breadcrumb)) {
+    array_unshift($breadcrumb, l(t('Home'), '<front>'));
+
+    return $breadcrumb;
+  }
 
   return array();
 }
