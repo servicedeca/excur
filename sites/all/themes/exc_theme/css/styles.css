@@ -93,7 +93,7 @@ a:hover {
 /* --------------------------------------------------------	*/
 
 .main{
-  background:url(../img/pw_maze_white.png) #f3f3f3;
+  background:url(../images/pw_maze_white.png) #f3f3f3;
   overflow:hidden;
 }
 
@@ -242,7 +242,7 @@ a:hover {
   height:30px;
   border:1px solid #cbcfd1;
   color:#8c8e90;
-  background: url(../img/search-back.png) left bottom repeat-x #f5f7f8;
+  background: url(../images/search-back.png) left bottom repeat-x #f5f7f8;
   padding-left:5%;
   padding-right:15%;
 }
@@ -286,7 +286,7 @@ a:hover {
   border-bottom: 2px solid #cbcfd1;
   border-radius: 0px;
   color: #464646;
-  background:url(../img/select-box.png) right center no-repeat;
+  background:url(../images/select-box.png) right center no-repeat;
   -webkit-appearance: none;
   opacity: 0.6;
   -webkit-transition: all 0.8s ease;
@@ -303,7 +303,7 @@ a:hover {
   border-bottom:2px solid #fff;
   padding:15px 24px 16px 22px;
   background: transparent !important;
-  background:url(../img/menu-divider.png) right center no-repeat !important;
+  background:url(../images/menu-divider.png) right center no-repeat !important;
 }
 
 .navbar .nav > li:first-child > a {
@@ -357,7 +357,7 @@ a:hover {
   margin:0px;
   padding:0px;
   width:160px;
-  background:url(../img/divider.png) left bottom repeat-x #f5f7f8;
+  background:url(../images/divider.png) left bottom repeat-x #f5f7f8;
   -webkit-transition:all 0.3s;
   -moz-transition:all 0.3s;
   -o-transition:all 0.3s;
@@ -441,7 +441,7 @@ a:hover {
   left:0px;
   width:100%;
   height:100%;
-  background: url(../img/zoom-icon.png) center center no-repeat;
+  background: url(../images/zoom-icon.png) center center no-repeat;
   cursor:pointer;
   display:none;
 }
@@ -482,7 +482,7 @@ a:hover {
   list-style:none;
   padding-left:30px;
   margin-bottom:15px;
-  background: url(../img/arrow3.png) left center no-repeat;
+  background: url(../images/arrow3.png) left center no-repeat;
 }
 
 .list-b li {
@@ -532,7 +532,7 @@ a:hover {
   text-align:right;
   padding-top:15px;
   padding-right:30px;
-  background: url(../img/triangle.png) left top no-repeat;
+  background: url(../images/triangle.png) left top no-repeat;
   background-position: 40px 0;
   z-index:20;
   overflow:hidden;
@@ -554,7 +554,7 @@ a:hover {
 .progress {
   height:35px;
   border-radius:0px;
-  background:url(../img/progress-back.png) bottom left repeat-x #f5f7f8 !important;
+  background:url(../images/progress-back.png) bottom left repeat-x #f5f7f8 !important;
   -webkit-box-shadow:rgba(0, 0, 0, 0) 0 0 0 inset;
   margin-bottom:8px;
 }
@@ -796,7 +796,7 @@ th {
 .comment {
   margin-bottom:30px;
   padding-left:50px;
-  background:url(../img/comment-img.png) left 4px no-repeat;
+  background:url(../images/comment-img.png) left 4px no-repeat;
 }
 
 .comment-date {
@@ -968,20 +968,20 @@ th {
 }
 
 .a-left {
-  background: url(../img/arrow2.png) no-repeat;
+  background: url(../images/arrow2.png) no-repeat;
 }
 
 .a-right {
-  background: url(../img/arrow1.png) no-repeat;
+  background: url(../images/arrow1.png) no-repeat;
 }
 
 .a-left:hover {
-  background: url(../img/arrow2.png) no-repeat;
+  background: url(../images/arrow2.png) no-repeat;
   background-position: 0 -30px;
 }
 
 .a-right:hover {
-  background: url(../img/arrow1.png) no-repeat;
+  background: url(../images/arrow1.png) no-repeat;
   background-position: 0 -30px;
 }
 
@@ -1175,7 +1175,7 @@ th {
 .back-top {
   position:relative;
   float:right;
-  background:url(../img/back-to-the-top.png) no-repeat;
+  background:url(../images/back-to-the-top.png) no-repeat;
   width:40px;
   height:40px;
   display:block;

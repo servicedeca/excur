@@ -4,6 +4,7 @@ core = 7.x
 
 stylesheets[all][] = css/bootstrap.min.css
 stylesheets[all][] = css/bootstrap-responsive.min.css
+stylesheets[all][] = css/bootstrap-override.css
 stylesheets[all][] = css/styles.css
 stylesheets[all][] = css/exc_theme.css
 

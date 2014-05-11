@@ -34,10 +34,35 @@
               </div>
             <?php endif; ?>
           </div>
-          <?php if (empty($main_menu)): ?>
+          <?php if (!empty($main_menu)): ?>
             <div class="row">
               <div class="span12">
-                Главное меню
+                <nav class="navbar">
+                  <ul class="nav">
+                    <?php foreach($main_menu as $link): ?>
+                      <?php if (!empty($link['class'])): ?>
+                        <li class="<?php print implode(' ', $link['class']); ?>">
+                      <?php else: ?>
+                        <li>
+                      <?php endif; ?>
+                      <?php print l($link['title'], $link['url']); ?>
+                      </li>
+                    <?php endforeach; ?>
+                  </ul>
+                  <select class="nav-responsive">
+                    <?php foreach($main_menu as $link): ?>
+                      <?php if (!empty($link['class'])): ?>
+                        <?php print '<option selected="selected" value="' . $link['url'] . '">'; ?>
+                        <?php print $link['title']; ?>
+                        <?php print '</option>'; ?>
+                      <?php else: ?>
+                        <?php print '<option value="' . $link['url'] . '">'; ?>
+                        <?php print $link['title']; ?>
+                        <?php print '</option>'; ?>
+                      <?php endif; ?>
+                    <?php endforeach; ?>
+                  </select>
+                </nav>
               </div>
             </div>
           <?php endif; ?>

@@ -20,18 +20,33 @@ function exc_theme_preprocess_page(&$vars, $hook) {
   // Add language switcher block.
   $language_switcher = module_invoke('locale', 'block_view', 'language');
   $vars['language_switcher'] = $language_switcher['content'];
+
+  // Get footer menu.
   $footer_menu = i18n_menu_translated_tree('menu-footer-menu');
-  foreach ($footer_menu as &$first_item) {
-    if (empty($first_item['#href'])) {
+  foreach ($footer_menu as &$item) {
+    if (empty($item['#href'])) {
       continue;
     }
 
-    $first_item['#attributes']['class'][] = 'span3';
+    $item['#attributes']['class'][] = 'span3';
   }
   $vars['footer_menu'] = $footer_menu;
 
   // Add currency change form
   // @todo: add it.
+
+  // Get main menu.
+  foreach (i18n_menu_translated_tree('main-menu') as $item) {
+    if (!isset($item['#href'])) {
+      continue;
+    }
+
+    $vars['main_menu'][] = array(
+      'title' => $item['#title'],
+      'url' => url($item['#href'], array('absolute' => TRUE)),
+      'class' => current_path() == $item['#href'] ? array('active') : array(),
+    );
+  }
 
   // Render breadcrumb.
   $vars['breadcrumb'] = theme('breadcrumb', array('breadcrumb' => excur_get_breadcrumb()));

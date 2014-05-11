@@ -6,21 +6,27 @@
     }
   };
 
-  Drupal.behaviors.excurSetTitle = {
+  Drupal.behaviors.excurTextOnSlider = {
     attach: function(context, settings) {
+      // Titles
       var $title = $('.title-wrapper');
       var $clSpan = $title.closest('[class^="span"]');
-      var marginLeft = $title.width() * 100 / $clSpan.width() / 2;
-      $title.css('left', 50 - marginLeft + '%');
+      var left = $title.width() * 100 / $clSpan.width() / 2;
+      $title.css('left', 50 - left + '%');
+
+      // Search form.
+      var $form = $('#slider-search-form');
+      var $closestSpan = $form.closest('[class^="span"]');
+      left = $form.width() * 100 / $closestSpan.width() / 2;
+      $form.css('left', 50 - left + '%');
     }
   };
 
-  Drupal.behaviors.excurSetSearchForm = {
+  Drupal.behaviors.excurResponsiveMenu = {
     attach: function(context, settings) {
-      var $title = $('#slider-search-form');
-      var $clSpan = $title.closest('[class^="span"]');
-      var marginLeft = $title.width() * 100 / $clSpan.width() / 2;
-      $title.css('left', 50 - marginLeft + '%');
+      $('.nav-responsive').on('change', function () {
+        window.location = $(this).val();
+      });
     }
   };
 
