@@ -1,7 +1,7 @@
-diff --git a/core/includes/menu.inc b/core/includes/menu.inc
+diff --git a/includes/menu.inc b/includes/menu.inc
 index 668d689..3c16027 100644
---- a/core/includes/menu.inc
-+++ b/core/includes/menu.inc
+--- a/includes/menu.inc
++++ b/includes/menu.inc
 @@ -705,8 +705,12 @@ function _menu_translate(&$router_item, $map, $to_arg = FALSE) {
      }
    }
