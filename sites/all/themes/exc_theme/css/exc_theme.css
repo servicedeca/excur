@@ -64,11 +64,21 @@ h1 {
   display: inline-block;
   position: absolute;
   z-index: 1;
-  margin-top: 250px;
+  margin-top: 200px;
 }
 
-#slider-search-form {
-  margin-top: 250px;
+@media (min-width: 1200px) {
+  .title-wrapper,
+  #slider-search-form {
+    margin-top: 250px;
+  }
+}
+
+@media (max-width: 979px) and (min-width: 768px) {
+  .title-wrapper,
+  #slider-search-form {
+    margin-top: 150px;
+  }
 }
 
 [id^="excur-search-search-form"] .form-item-search,

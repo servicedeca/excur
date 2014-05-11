@@ -11,7 +11,7 @@
       var $title = $('.title-wrapper');
       var $clSpan = $title.closest('[class^="span"]');
       var marginLeft = $title.width() * 100 / $clSpan.width() / 2;
-      $title.css('margin-left', 50 - marginLeft + '%');
+      $title.css('left', 50 - marginLeft + '%');
     }
   };
 
@@ -20,7 +20,7 @@
       var $title = $('#slider-search-form');
       var $clSpan = $title.closest('[class^="span"]');
       var marginLeft = $title.width() * 100 / $clSpan.width() / 2;
-      $title.css('margin-left', 50 - marginLeft + '%');
+      $title.css('left', 50 - marginLeft + '%');
     }
   };
 
