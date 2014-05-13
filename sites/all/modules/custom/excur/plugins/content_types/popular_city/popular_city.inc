@@ -23,7 +23,10 @@ function excur_popular_city_ctools_content_types() {
 function excur_popular_city_content_type_render($subtype, $conf, $panel_args, $context) {
   $term = menu_get_object('taxonomy_term', 2);
   $block = new stdClass();
-  $block->content = '<div class="space30"></div><h2>' . t('Popular cities') . '</h2>';
+
+  if ($cities = excur_popular_cities($term->tid)) {
+    $block->content = '<div class="space30"></div><h2>' . t('Popular cities') . '</h2>';
+  }
 
   return $block;
 }

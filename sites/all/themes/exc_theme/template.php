@@ -32,8 +32,8 @@ function exc_theme_preprocess_page(&$vars, $hook) {
   }
   $vars['footer_menu'] = $footer_menu;
 
-  // Add currency change form
-  // @todo: add it.
+  // Add currency change form.
+   $vars['currency_switcher'] = drupal_get_form('excur_currency_choice_form');
 
   // Get main menu.
   foreach (i18n_menu_translated_tree('main-menu') as $item) {

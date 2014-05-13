@@ -29,8 +29,8 @@
             <?php endif; ?>
 
             <?php if (!empty($currency_switcher)): ?>
-              <div class="span2">
-                <?php print $currency_switcher; ?>
+              <div class="span1">
+                <?php print render($currency_switcher); ?>
               </div>
             <?php endif; ?>
           </div>

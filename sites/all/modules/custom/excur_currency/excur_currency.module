@@ -25,8 +25,24 @@ function excur_currency_choice_form() {
   $form['currency'] = array(
     '#type' => 'select',
     '#options' => array(
-      'none' => t(''),
+      'none' => t('Currency offers'),
+      'EUR' => t('Euro'),
+      'USD' => t('U.S. Dollar'),
+      'RUB' => t('Russian Rouble'),
+      'CAD' => t('Canadian Dollar'),
+      'CZK' => t('Czech Koruna'),
+      'JPY' => t('Japanese Yen'),
+      'NZD' => t('New Zealand Dollar'),
+      'GBP' => t('Pound sterling'),
+      'CHF' => t('Swiss Franc'),
     ),
     '#default_value' => !empty($_COOKIE['currency']) ? $_COOKIE['currency'] : 'none',
   );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Change currency'),
+  );
+
+  return $form;
 }

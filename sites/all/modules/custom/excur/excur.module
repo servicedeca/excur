@@ -178,3 +178,15 @@ function excur_get_breadcrumb() {
 
   return array();
 }
+
+/**
+ * Get most popular cities by country.
+ *
+ * @param int $tid.
+ * @return array.
+ */
+function excur_popular_cities($tid) {
+
+
+  return array();
+}
