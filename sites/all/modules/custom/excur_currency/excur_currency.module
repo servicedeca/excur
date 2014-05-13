@@ -3,6 +3,8 @@
  * @file
  */
 
+define('EXCUR_CURRENCY_DEFAULT', variable_get('excur_currency_default'));
+
 /**
  * Implements hook_ctools_plugin_directory().
  */
@@ -14,4 +16,17 @@ function excur_currency_ctools_plugin_directory($owner, $plugin_type) {
   if ($owner == 'ctools' && $plugin_type == 'content_types') {
     return "plugins/content_types";
   }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function excur_currency_choice_form() {
+  $form['currency'] = array(
+    '#type' => 'select',
+    '#options' => array(
+      'none' => t(''),
+    ),
+    '#default_value' => !empty($_COOKIE['currency']) ? $_COOKIE['currency'] : 'none',
+  );
 }

@@ -45,7 +45,9 @@ function excur_form_main_page_slider_node_form_alter(&$form, &$form_id) {
  * Settings form for excur site.
  */
 function excur_settings_form() {
+  $form = array();
 
+  return system_settings_form($form);
 }
 
 /**
