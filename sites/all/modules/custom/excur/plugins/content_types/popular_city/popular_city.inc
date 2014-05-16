@@ -21,12 +21,41 @@ function excur_popular_city_ctools_content_types() {
  * Implements hook_content_type_render().
  */
 function excur_popular_city_content_type_render($subtype, $conf, $panel_args, $context) {
-  $term = menu_get_object('taxonomy_term', 2);
   $block = new stdClass();
-
-  if ($cities = excur_popular_cities($term->tid)) {
-    $block->content = '<div class="space30"></div><h2>' . t('Popular cities') . '</h2>';
-  }
+  $block->content = theme('excur_popular_city');
 
   return $block;
+}
+
+/**
+ * Implements hook_content_type_theme().
+ */
+function excur_popular_city_content_type_theme(&$theme, $plugin) {
+  $theme['excur_popular_city'] = array(
+    'path' => $plugin['path'],
+    'template' => 'excur-popular-city',
+  );
+}
+
+/**
+ * Process variables for excur-popular-city.tpl.php.
+ */
+function template_preprocess_excur_popular_city(&$vars) {
+  $term = menu_get_object('taxonomy_term', 2);
+
+  if ($cities = excur_popular_cities($term->tid)) {
+    foreach (taxonomy_term_load_multiple($cities) as $term) {
+      $image = theme('image_style', array(
+        'style_name' => '100x100',
+        'path' => $term->field_image[LANGUAGE_NONE][0]['uri'],
+        'alt' => $term->name,
+      ));
+      $vars['cities'][] = array(
+        'title' => l($term->name, "taxonomy/term/$term->tid"),
+        'service' => excur_count_service_by_city($term->tid),
+        'guide' => excur_count_guide_by_city($term->tid),
+        'image' => l($image, "taxonomy/term/$term->tid", array('html' => TRUE)),
+      );
+    }
+  }
 }

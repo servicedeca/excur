@@ -104,3 +104,66 @@ h1 {
 .view-display-id-popular_guides .guid-name {
   font-size: 20px;
 }
+
+.popular-city {
+  -moz-box-shadow: inset #d9d9d9 0 -1px 0 0;
+  -webkit-box-shadow: inset #d9d9d9 0 -1px 0 0;
+  box-shadow: inset #d9d9d9 0 0 0 1px;
+}
+
+.popular-city ul {
+  padding: 0;
+  list-style: none;
+  margin: 0 0 4px 0;
+}
+
+.popular-city li span {
+  color: #fff;
+  display: inline-block;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  min-width: 20px;
+  padding: 0 5px;
+  text-align: center;
+}
+
+.popular-city li span.service {
+  background-color: #08e;
+}
+
+.popular-city img {
+  float: left;
+  margin-right: 20px;
+}
+
+.popular-city li span.guide {
+  background-color: #70bb2f;
+}
+
+.popular-city h3 {
+  font-size: 18px;
+  clear: none;
+}
+
+@media (min-width: 1200px) {
+  .popular-city h3 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 979px) and (min-width: 768px) {
+  .popular-city img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+
+  .popular-city h3 {
+    font-size: 15px;
+  }
+
+  .popular-city ul {
+    margin: 15px 0 5px 10px;
+    clear: both;
+  }
+}

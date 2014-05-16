@@ -14,12 +14,12 @@
 <?php endif; ?>
 
 <div class="row">
-  <div class="span3">
+  <div class="span4">
     <?php if (!empty($content['content_left'])) : ?>
       <?php print $content['content_left']; ?>
     <?php endif; ?>
   </div>
-  <div class="span9">
+  <div class="span8">
     <?php if (!empty($content['content_center'])) : ?>
         <?php print $content['content_center']; ?>
     <?php endif; ?>
