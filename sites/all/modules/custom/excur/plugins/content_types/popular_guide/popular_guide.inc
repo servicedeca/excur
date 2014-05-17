@@ -45,17 +45,20 @@ function template_preprocess_excur_popular_guide(&$vars) {
 
   if ($uids = excur_popular_giudes_in_country($term->tid)) {
     foreach (user_load_multiple($uids) as $account) {
-//      $image = theme('image_style', array(
-//        'style_name' => '100x100',
-//        'path' => $term->field_image[LANGUAGE_NONE][0]['uri'],
-//        'alt' => $term->name,
-//      ));
-//      $vars['cities'][] = array(
-//        'title' => l($term->name, "taxonomy/term/$term->tid"),
-//        'service' => excur_count_service_by_city($term->tid),
-//        'guide' => excur_count_guide_by_city($term->tid),
-//        'image' => l($image, "taxonomy/term/$term->tid", array('html' => TRUE)),
-//      );
+      $city = taxonomy_term_load($account->field_city[LANGUAGE_NONE][0]['target_id']);
+      $city = isset($city->name) ? l($city->name, "taxonomy/term/$city->tid") : NULL;
+
+      $image = theme('image_style', array(
+        'style_name' => '70x70',
+        'path' => $account->field_image[LANGUAGE_NONE][0]['uri'],
+        'alt' => $account->field_name[LANGUAGE_NONE][0]['safe_value'],
+        'title' => $account->field_name[LANGUAGE_NONE][0]['safe_value'],
+      ));
+      $vars['guides'][] = array(
+        'title' => l($account->field_name[LANGUAGE_NONE][0]['value'], "user/$account->uid"),
+        'city' => $city,
+        'image' => l($image, "user/$account->uid", array('html' => TRUE)),
+      );
     }
   }
 }

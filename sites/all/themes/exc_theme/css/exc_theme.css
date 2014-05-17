@@ -101,10 +101,6 @@ h1 {
   box-shadow: 1px 1px 3px rgba(0,0,0,0.25);
 }
 
-.view-display-id-popular_guides .guid-name {
-  font-size: 20px;
-}
-
 .popular-city {
   -moz-box-shadow: inset #d9d9d9 0 -1px 0 0;
   -webkit-box-shadow: inset #d9d9d9 0 -1px 0 0;
@@ -140,7 +136,8 @@ h1 {
   background-color: #70bb2f;
 }
 
-.popular-city h3 {
+.popular-city h3,
+.popular-guide h3 {
   font-size: 18px;
   clear: none;
 }
