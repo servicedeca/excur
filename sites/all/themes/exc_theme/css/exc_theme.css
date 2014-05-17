@@ -96,6 +96,7 @@ h1 {
 }
 
 .img-border img {
+  box-sizing: border-box;
   border: 5px solid #fff;
   -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.25);
   box-shadow: 1px 1px 3px rgba(0,0,0,0.25);
@@ -163,4 +164,9 @@ h1 {
     margin: 15px 0 5px 10px;
     clear: both;
   }
+}
+
+.view-display-id-city_service h3 {
+  font-size: 20px;
+  padding: 0 0 12px 0;
 }

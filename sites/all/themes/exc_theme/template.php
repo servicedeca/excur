@@ -104,5 +104,17 @@ function exc_theme_preprocess_node(&$vars, $hook) {
  * Process variables for node--service-teaser.tpl.php.
  */
 function exc_theme_preprocess_node__service_teaser(&$vars) {
-  $a = 1;
+  $node = $vars['node'];
+  $guide = user_load($node->field_guide[LANGUAGE_NONE][0]['target_id']);
+
+  $guide_image = theme('image_style', array(
+    'style_name' => '70x70',
+    'path' => $guide->field_image[LANGUAGE_NONE][0]['uri'],
+    'alt' => $guide->field_name[LANGUAGE_NONE][0]['safe_value'],
+    'title' => $guide->field_name[LANGUAGE_NONE][0]['safe_value'],
+  ));
+  $vars['guide'] = array(
+    'title' => l($guide->field_name[LANGUAGE_NONE][0]['value'], "user/$guide->uid"),
+    'image' => l($guide_image, "user/$guide->uid", array('html' => TRUE)),
+  );
 }
