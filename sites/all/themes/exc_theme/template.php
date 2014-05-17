@@ -82,3 +82,27 @@ function exc_theme_preprocess_views_view_field(&$vars) {
 function exc_theme_preprocess_views_view_field__term__city__name_field(&$vars) {
   $vars['output'] .= ' (' . excur_count_service_by_city($vars['row']->tid) . ')';
 }
+
+/**
+ * Preprocess variables for node.
+ */
+function exc_theme_preprocess_node(&$vars, $hook) {
+  $node = $vars['node'];
+  $view_mode = $vars['view_mode'];
+
+  $vars['theme_hook_suggestions'][] = 'node__' . $node->type . '_' . str_replace('-', '_', $view_mode);
+  $preprocesses[] = 'exc_theme_preprocess_node__' . $node->type . '_' . str_replace('-', '_', $view_mode);
+
+  foreach ($preprocesses as $preprocess) {
+    if (function_exists($preprocess)) {
+      $preprocess($vars, $hook);
+    }
+  }
+}
+
+/**
+ * Process variables for node--service-teaser.tpl.php.
+ */
+function exc_theme_preprocess_node__service_teaser(&$vars) {
+  $a = 1;
+}

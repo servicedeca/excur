@@ -246,6 +246,13 @@ function excur_popular_giudes_in_country($tid) {
  * @return array.
  */
 function excur_popular_giudes_in_city($tid) {
+  $query = db_select('users', 'u');
+  $query->fields('u', array('uid'));
+  $query->join('field_data_field_city', 'city', 'u.uid = city.entity_id');
+  $query->condition('u.status', 1);
+  $query->condition('city.bundle', 'user');
+  $query->condition('city.field_city_target_id', $tid);
+  $query->range(0, 6);
 
-  return array();
+  return $query->execute()->fetchCol();
 }

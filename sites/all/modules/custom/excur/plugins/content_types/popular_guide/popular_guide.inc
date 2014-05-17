@@ -42,8 +42,16 @@ function excur_popular_guide_content_type_theme(&$theme, $plugin) {
  */
 function template_preprocess_excur_popular_guide(&$vars) {
   $term = menu_get_object('taxonomy_term', 2);
+  $uids = array();
 
-  if ($uids = excur_popular_giudes_in_country($term->tid)) {
+  if ($term->vocabulary_machine_name == 'city') {
+    $uids = excur_popular_giudes_in_city($term->tid);
+  }
+  elseif ($term->vocabulary_machine_name == 'country') {
+    $uids = excur_popular_giudes_in_country($term->tid);
+  }
+
+  if ($uids) {
     foreach (user_load_multiple($uids) as $account) {
       $city = taxonomy_term_load($account->field_city[LANGUAGE_NONE][0]['target_id']);
       $city = isset($city->name) ? l($city->name, "taxonomy/term/$city->tid") : NULL;
