@@ -3,7 +3,15 @@
  * @file
  */
 
-define('EXCUR_CURRENCY_DEFAULT', variable_get('excur_currency_default'));
+define('EXCUR_CURRENCY_EURO', 'EUR');
+define('EXCUR_CURRENCY_US_DOLLAR', 'UDS');
+define('EXCUR_CURRENCY_RUS_ROUBLE', 'RUB');
+define('EXCUR_CURRENCY_CAN_DOLLAR', 'CAD');
+define('EXCUR_CURRENCY_CZECH_KORUNA', 'CZK');
+define('EXCUR_CURRENCY_JAPAN_YEN', 'JPY');
+define('EXCUR_CURRENCY_NZ_DOLLAR', 'NZD');
+define('EXCUR_CURRENCY_GB_POUND', 'GBP');
+define('EXCUR_CURRENCY_SWISS_FRANC', 'CHF');
 
 /**
  * Implements hook_ctools_plugin_directory().
@@ -26,17 +34,17 @@ function excur_currency_choice_form() {
     '#type' => 'select',
     '#options' => array(
       'none' => t('Currency offers'),
-      'EUR' => t('Euro'),
-      'USD' => t('U.S. Dollar'),
-      'RUB' => t('Russian Rouble'),
-      'CAD' => t('Canadian Dollar'),
-      'CZK' => t('Czech Koruna'),
-      'JPY' => t('Japanese Yen'),
-      'NZD' => t('New Zealand Dollar'),
-      'GBP' => t('Pound sterling'),
-      'CHF' => t('Swiss Franc'),
+      EXCUR_CURRENCY_EURO => t('Euro'),
+      EXCUR_CURRENCY_US_DOLLAR => t('U.S. Dollar'),
+      EXCUR_CURRENCY_RUS_ROUBLE => t('Russian Rouble'),
+      EXCUR_CURRENCY_CAN_DOLLAR => t('Canadian Dollar'),
+      EXCUR_CURRENCY_CZECH_KORUNA => t('Czech Koruna'),
+      EXCUR_CURRENCY_JAPAN_YEN => t('Japanese Yen'),
+      EXCUR_CURRENCY_NZ_DOLLAR => t('New Zealand Dollar'),
+      EXCUR_CURRENCY_GB_POUND => t('Pound sterling'),
+      EXCUR_CURRENCY_SWISS_FRANC => t('Swiss Franc'),
     ),
-    '#default_value' => !empty($_COOKIE['currency']) ? $_COOKIE['currency'] : 'none',
+    '#default_value' => !empty($_COOKIE['excur_currency']) ? $_COOKIE['excur_currency'] : 'none',
   );
 
   $form['submit'] = array(
@@ -45,4 +53,24 @@ function excur_currency_choice_form() {
   );
 
   return $form;
+}
+
+/**
+ * Submit callback for excur_currency_choice_form() form.
+ */
+function excur_currency_choice_form_submit(&$form, &$form_state) {
+  setcookie('excur_currency', $form_state['values']['currency'], REQUEST_TIME + 86400);
+}
+
+/**
+ * Convert money from one currency to another.
+ *
+ * @param int $money.
+ * @param string $from.
+ * @param string $to.
+ * @return float.
+ */
+function excur_currency_convert($money, $from, $to) {
+  $obj = new excurCurrency();
+  return $obj->converter($money, $from, $to);
 }

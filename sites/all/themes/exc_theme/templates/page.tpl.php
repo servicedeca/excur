@@ -11,7 +11,7 @@
         <header>
           <div class="row">
             <?php if (!empty($logo)): ?>
-              <div class="span5">
+              <div class="span4">
                 <?php print l($logo, '', array('html' => TRUE)); ?>
               </div>
             <?php endif; ?>
@@ -23,7 +23,7 @@
             <?php endif; ?>
 
             <?php if (!empty($language_switcher)): ?>
-              <div class="span1">
+              <div class="span2">
                 <?php print $language_switcher; ?>
               </div>
             <?php endif; ?>
