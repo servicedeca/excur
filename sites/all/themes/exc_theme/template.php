@@ -119,5 +119,16 @@ function exc_theme_preprocess_node__service_teaser(&$vars) {
   );
 
   $vars['read_more'] = l('<i class="fa fa-search"></i>' . t('Read more'), "node/$node->nid", array('html' => TRUE));
-  $vars['price'] = excur_currency_lowest_price($node);
+
+  $price = excur_currency_lowest_price($node);
+  if (!empty($_COOKIE['excur_currency']) && $_COOKIE['excur_currency'] != EXCUR_CURRENCY_DEFAULT) {
+    $currency = $_COOKIE['excur_currency'];
+    $price = excur_currency_convert($price, $node->field_currency[LANGUAGE_NONE][0]['value'], $currency);
+  }
+  else {
+    $currency = $node->field_currency[LANGUAGE_NONE][0]['value'];
+  }
+
+  $vars['price'] = $price;
+  $vars['currency'] = excur_currency_get_icon($currency);
 }

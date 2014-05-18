@@ -97,8 +97,8 @@
       <?php print $content['field_duration']['#items'][0]['safe_value']; ?>
     </div>
     <div class="tag">
-      <i class="fa fa-eur"></i>
-      <?php print $price; ?>
+      <?php print t('From') . ' ' . $price; ?>
+      <?php print $currency; ?>
     </div>
   </div>
   <div class="span1 guide">

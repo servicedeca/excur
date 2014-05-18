@@ -38,8 +38,7 @@ class excurCurrency {
       $nominal_exis = $this->get_nom($existing_currency);
       $nominal_pref = $this->get_nom($preferred_currency);
       if ($existing_currency == 'RUB' && $preferred_currency == 'RUB') {
-        $currency = $price;
-        return $currency;
+        return round($price, 2);
       }
       if ($existing_currency != 'RUB') {
         if ($preferred_currency != 'RUB') {
@@ -60,6 +59,6 @@ class excurCurrency {
       }
     }
 
-    return $currency;
+    return round($currency, 2);
   }
 }

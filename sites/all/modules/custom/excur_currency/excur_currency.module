@@ -3,8 +3,9 @@
  * @file
  */
 
+define('EXCUR_CURRENCY_DEFAULT', 'none');
 define('EXCUR_CURRENCY_EURO', 'EUR');
-define('EXCUR_CURRENCY_US_DOLLAR', 'UDS');
+define('EXCUR_CURRENCY_US_DOLLAR', 'USD');
 define('EXCUR_CURRENCY_RUS_ROUBLE', 'RUB');
 define('EXCUR_CURRENCY_CAN_DOLLAR', 'CAD');
 define('EXCUR_CURRENCY_CZECH_KORUNA', 'CZK');
@@ -28,6 +29,37 @@ function excur_currency_ctools_plugin_directory($owner, $plugin_type) {
 
 /**
  * Implements hook_form_FORM_ID_alter().
+ */
+function excur_currency_form_excur_settings_form_alter(&$form, &$form_state) {
+  $currencies = array(
+    EXCUR_CURRENCY_EURO => t('Euro'),
+    EXCUR_CURRENCY_US_DOLLAR => t('U.S. Dollar'),
+    EXCUR_CURRENCY_RUS_ROUBLE => t('Russian Rouble'),
+    EXCUR_CURRENCY_CAN_DOLLAR => t('Canadian Dollar'),
+    EXCUR_CURRENCY_CZECH_KORUNA => t('Czech Koruna'),
+    EXCUR_CURRENCY_JAPAN_YEN => t('Japanese Yen'),
+    EXCUR_CURRENCY_NZ_DOLLAR => t('New Zealand Dollar'),
+    EXCUR_CURRENCY_GB_POUND => t('Pound sterling'),
+    EXCUR_CURRENCY_SWISS_FRANC => t('Swiss Franc'),
+  );
+
+  $form['currencies'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Currencies'),
+    '#collapsible' => TRUE,
+  );
+
+  foreach ($currencies as $currency => $title) {
+    $form['currencies']["excur_currency_icon_$currency"] = array(
+      '#type' => 'textfield',
+      '#title' => t('Label of :currency currency', array(':currency' => $title      )),
+      '#default_value' => variable_get("excur_currency_icon_$currency", $currency),
+    );
+  }
+}
+
+/**
+ * Form builder.
  */
 function excur_currency_choice_form() {
   $form['currency'] = array(
@@ -82,7 +114,6 @@ function excur_currency_convert($money, $from, $to) {
  * @return float.
  */
 function excur_currency_lowest_price($service) {
-  global $language;
   $service_wrapper = entity_metadata_wrapper('node', $service);
 
   foreach ($service_wrapper->field_offer->value() as $offer) {
@@ -99,4 +130,14 @@ function excur_currency_lowest_price($service) {
   }
 
   return $min_price;
+}
+
+/**
+ * Get currency icon by currency.
+ *
+ * @param string $currency.
+ * @return string.
+ */
+function excur_currency_get_icon($currency) {
+  return variable_get("excur_currency_icon_$currency", $currency);
 }
