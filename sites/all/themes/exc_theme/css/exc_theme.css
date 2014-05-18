@@ -82,15 +82,18 @@ h1 {
 }
 
 [id^="excur-search-search-form"] .form-item-search,
-[id^="excur-search-search-form"] [id^="edit-submit"],
-[id^="excur-search-search-form"] [id^="edit-search"],
+[id^="excur-search-search-form"] input,
 [id^="excur-search-search-form"] {
-  display: inline-block;
   margin: 0;
+  height: 23px;
+}
+
+[id^="excur-search-search-form"] input {
+  width: 98%;
 }
 
 #slider-search-form #excur-search-search-form {
-  padding: 10px;
+  padding: 10px 20px 20px 10px;
   border-radius: 5px;
   background-color: rgba(0,0,0,0.7);
 }
@@ -169,4 +172,12 @@ h1 {
 .view-display-id-city_service h3 {
   font-size: 20px;
   padding: 0 0 12px 0;
+}
+
+.read-more {
+  margin-bottom: 5px;
+}
+
+.read-more i {
+  margin-right: 5px;
 }

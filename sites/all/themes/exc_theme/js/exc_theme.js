@@ -24,8 +24,18 @@
 
   Drupal.behaviors.excurResponsiveMenu = {
     attach: function(context, settings) {
-      $('.nav-responsive').on('change', function () {
+      $('.nav-responsive').on('change', function() {
         window.location = $(this).val();
+      });
+    }
+  };
+
+  Drupal.behaviors.excurSearchIcon = {
+    attach: function(context, settings) {
+      $('.search-box a.search-icon').click(function(e) {
+        e.preventDefault();
+
+        $(this).closest('form').find('input[type="submit"]').click();
       });
     }
   };

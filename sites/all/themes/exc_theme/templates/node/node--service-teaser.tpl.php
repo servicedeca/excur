@@ -89,6 +89,9 @@
   <div class="span6">
     <h3><?php print render($content['title_field']); ?></h3>
     <?php print render($content['body']); ?>
+    <div class="read-more">
+      <?php print $read_more; ?>
+    </div>
     <div class="tag">
       <i class="fa fa-clock-o"></i>
       <?php print $content['field_duration']['#items'][0]['safe_value']; ?>

@@ -117,4 +117,6 @@ function exc_theme_preprocess_node__service_teaser(&$vars) {
     'title' => l($guide->field_name[LANGUAGE_NONE][0]['value'], "user/$guide->uid"),
     'image' => l($guide_image, "user/$guide->uid", array('html' => TRUE)),
   );
+
+  $vars['read_more'] = l('<i class="fa fa-search"></i>' . t('Read more'), "node/$node->nid", array('html' => TRUE));
 }

@@ -17,19 +17,19 @@
             <?php endif; ?>
 
             <?php if (!empty($search_form)): ?>
-              <div class="span4">
+              <div class="span3">
                 <?php print render($search_form); ?>
               </div>
             <?php endif; ?>
 
             <?php if (!empty($language_switcher)): ?>
-              <div class="span2">
+              <div class="span1">
                 <?php print $language_switcher; ?>
               </div>
             <?php endif; ?>
 
             <?php if (!empty($currency_switcher)): ?>
-              <div class="span1">
+              <div class="span2">
                 <?php print render($currency_switcher); ?>
               </div>
             <?php endif; ?>

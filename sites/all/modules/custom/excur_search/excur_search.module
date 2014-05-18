@@ -16,6 +16,20 @@ function excur_search_ctools_plugin_directory($owner, $plugin_type) {
   }
 }
 
+function excur_search_theme($existing, $type, $theme, $path) {
+  $base = array(
+    'path' => $path . '/theme',
+    'file' => 'theme.inc',
+  );
+
+  $items['excur_search_search_form'] = array(
+    'render element' => 'form',
+    'template' => 'excur-search-search-form'
+  ) + $base;
+
+  return $items;
+}
+
 /**
  * Settings form for excur site.
  */
