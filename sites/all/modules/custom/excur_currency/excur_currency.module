@@ -74,3 +74,29 @@ function excur_currency_convert($money, $from, $to) {
   $obj = new excurCurrency();
   return $obj->converter($money, $from, $to);
 }
+
+/**
+ * Get lowest price of service.
+ *
+ * @param object $service.
+ * @return float.
+ */
+function excur_currency_lowest_price($service) {
+  global $language;
+  $service_wrapper = entity_metadata_wrapper('node', $service);
+
+  foreach ($service_wrapper->field_offer->value() as $offer) {
+    foreach ($offer->field_offer_ticket[LANGUAGE_NONE] as $ticket) {
+      $ticket = field_collection_item_load($ticket['value']);
+      if (!isset($min_price)) {
+        $min_price = $ticket->field_offer_ticket_price[LANGUAGE_NONE][0]['value'];
+      }
+
+      $min_price = $min_price > $ticket->field_offer_ticket_price[LANGUAGE_NONE][0]['value']
+        ? $ticket->field_offer_ticket_price[LANGUAGE_NONE][0]['value']
+        : $min_price;
+    }
+  }
+
+  return $min_price;
+}

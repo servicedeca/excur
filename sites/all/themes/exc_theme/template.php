@@ -119,4 +119,5 @@ function exc_theme_preprocess_node__service_teaser(&$vars) {
   );
 
   $vars['read_more'] = l('<i class="fa fa-search"></i>' . t('Read more'), "node/$node->nid", array('html' => TRUE));
+  $vars['price'] = excur_currency_lowest_price($node);
 }
