@@ -37,6 +37,7 @@ class excurCurrency {
     if ($this->load()) {
       $nominal_exis = $this->get_nom($existing_currency);
       $nominal_pref = $this->get_nom($preferred_currency);
+
       if($existing_currency == $preferred_currency) {
         return $price;
       }
