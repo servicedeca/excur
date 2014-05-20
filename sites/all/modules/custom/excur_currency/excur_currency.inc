@@ -37,25 +37,25 @@ class excurCurrency {
     if ($this->load()) {
       $nominal_exis = $this->get_nom($existing_currency);
       $nominal_pref = $this->get_nom($preferred_currency);
-      if ($existing_currency == 'RUB' && $preferred_currency == 'RUB') {
-        return round($price, 2);
+      if($existing_currency == $preferred_currency) {
+        return $price;
       }
+
       if ($existing_currency != 'RUB') {
         if ($preferred_currency != 'RUB') {
           $currency_exis = $this->get($existing_currency) / $nominal_exis;
           $currency_pref = $this->get($preferred_currency) / $nominal_pref;
-          $currency = ($currency_exis / $currency_pref) * $price;
+          $currency = ($currency_exis/$currency_pref) * $price;
           $currency = round($currency, 2);
         }
         else {
           $currency_exis = $this->get($existing_currency) / $nominal_exis;
-          $currency_pref = $this->get($preferred_currency) / $nominal_pref;
           $currency = $currency_exis * $price;
         }
       }
       else {
-        $currency_exis = $this->get($existing_currency);
-        $currency = $price * $currency_exis;
+        $currency_pref = $this->get($preferred_currency) / $nominal_pref;
+        $currency = $price / $currency_pref;
       }
     }
 
