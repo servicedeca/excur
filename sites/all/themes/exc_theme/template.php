@@ -132,3 +132,24 @@ function exc_theme_preprocess_node__service_teaser(&$vars) {
   $vars['price'] = $price;
   $vars['currency'] = excur_currency_get_icon($currency);
 }
+
+/**
+ * Process variables for node--service-full.tpl.php.
+ */
+function exc_theme_preprocess_node__service_full(&$vars) {
+  $node = $vars['node'];
+
+  if (!empty($node->field_slider_images[LANGUAGE_NONE])) {
+    foreach ($node->field_slider_images[LANGUAGE_NONE] as $image) {
+      $vars['images'][] = theme('image_style', array(
+        'style_name' => '870x653',
+        'path' => $image['uri'],
+        'alt' => t($image['alt']),
+        'title' => t($image['title']),
+      ));
+    }
+
+    drupal_add_js(EXCUR_FRONT_THEME_PATH . '/js/fotorama.min.js');
+    drupal_add_css(EXCUR_FRONT_THEME_PATH . '/css/fotorama.css');
+  }
+}

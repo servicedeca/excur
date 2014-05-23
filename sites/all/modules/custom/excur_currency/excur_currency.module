@@ -129,7 +129,7 @@ function excur_currency_lowest_price($service) {
     }
   }
 
-  return $min_price;
+  return isset($min_price) ? $min_price : 0;
 }
 
 /**

@@ -2,4 +2,5 @@ name = Excur main
 package = Excur
 core = 7.x
 
+dependencies[] = excur_currency
 configure = admin/config/excur

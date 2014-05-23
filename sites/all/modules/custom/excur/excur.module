@@ -3,7 +3,7 @@
  * @file
  */
 
-define('FRONT_THEME_PATH', drupal_get_path('theme', 'exc_theme'));
+define('EXCUR_FRONT_THEME_PATH', drupal_get_path('theme', 'exc_theme'));
 
 /**
  * Implements hook

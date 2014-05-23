@@ -20,8 +20,8 @@
     <?php endif; ?>
   </div>
   <div class="span3">
-    <?php if (!empty($content['content_left'])) : ?>
-      <?php print $content['content_left']; ?>
+    <?php if (!empty($content['content_right'])) : ?>
+      <?php print $content['content_right']; ?>
     <?php endif; ?>
   </div>
 </div>

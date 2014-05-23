@@ -2,7 +2,10 @@
 
   Drupal.behaviors.excurSlider = {
     attach: function(context, settings) {
-      $('.slider1').flexslider();
+      $slider = $('.slider1');
+      if ($slider[0] != undefined) {
+        $slider.flexslider();
+      }
     }
   };
 
@@ -39,5 +42,19 @@
       });
     }
   };
+
+  Drupal.behaviors.excurScrollTo = {
+    attach: function(context, settings) {
+      excurScrollTo('.do-offer button', '#reservation', 1000);
+    }
+  };
+
+  function excurScrollTo(from, to, time) {
+    $(from).click(function (){
+      $('html, body').animate({
+        scrollTop: $(to).offset().top
+      }, time);
+    });
+  }
 
 }(jQuery));

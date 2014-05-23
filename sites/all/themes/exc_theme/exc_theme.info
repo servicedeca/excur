@@ -7,6 +7,7 @@ stylesheets[all][] = css/bootstrap.min.css
 stylesheets[all][] = css/bootstrap-responsive.min.css
 stylesheets[all][] = css/bootstrap-override.css
 stylesheets[all][] = css/styles.css
+stylesheets[all][] = css/flag.css
 stylesheets[all][] = css/exc_theme.css
 
 scripts[] = js/bootstrap.min.js

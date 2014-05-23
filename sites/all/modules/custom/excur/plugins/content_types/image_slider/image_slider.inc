@@ -61,6 +61,6 @@ function template_preprocess_excur_image_slider(&$vars) {
     ));
   }
 
-  drupal_add_js(FRONT_THEME_PATH . '/js/jquery.flexslider.js');
-  drupal_add_css(FRONT_THEME_PATH . '/css/flexslider.css');
+  drupal_add_js(EXCUR_FRONT_THEME_PATH . '/js/jquery.flexslider.js');
+  drupal_add_css(EXCUR_FRONT_THEME_PATH . '/css/flexslider.css');
 }
