@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * @file.
+ */
+
+/**
+ * Form builder for offer form.
+ */
+function excur_offer_offer_form($form, &$form_state, $offer) {
+  $form_state['data'] = $offer;
+
+  foreach ($offer['tickets'] as $ticket) {
+    $options[$ticket['price']] = $ticket['title'] . ' (' . $ticket['price'] . ' ' . $offer['currency'] . ')';
+  }
+  $form['tickets'] = array(
+    '#type' => 'radios',
+    '#options' => $options,
+  );
+
+  $form['date'] = array(
+    '#type' => 'date_popup',
+    '#default_value' => date('Y-m-d'),
+    '#date_format' => 'Y-m-d',
+    '#date_year_range' => '-0:+1',
+    '#required' => TRUE,
+    '#date_label_position' => 'within',
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Reserve'),
+  );
+
+  return $form;
+}

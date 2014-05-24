@@ -91,7 +91,7 @@ function excur_currency_choice_form() {
  * Submit callback for excur_currency_choice_form() form.
  */
 function excur_currency_choice_form_submit(&$form, &$form_state) {
-  setcookie('excur_currency', $form_state['values']['currency'], REQUEST_TIME + 86400);
+  setcookie('excur_currency', $form_state['values']['currency'], REQUEST_TIME + 86400, '/');
 }
 
 /**

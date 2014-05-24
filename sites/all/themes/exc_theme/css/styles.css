@@ -1,15 +1,3 @@
-/* --------------------------------------------------------	*/
-/*	Twitter Bootstrap */
-/*	Responsive media queries */
-/* --------------------------------------------------------	*/
-
-@import url("bootstrap.min.css");
-@import url("bootstrap-responsive.min.css");
-
-/* --------------------------------------------------------	*/
-/*	Base */
-/* --------------------------------------------------------	*/
-
 ::-moz-selection { background: #999; color: #fff; text-shadow: none; }
 ::selection { background: #999; color: #fff; text-shadow: none; }
 :focus { outline-color: transparent!important; outline-style: none!important; }

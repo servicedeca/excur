@@ -1,0 +1,5 @@
+name = Excur offer
+package = Excur
+core = 7.x
+
+configure = admin/config/excur

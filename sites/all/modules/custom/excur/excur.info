@@ -3,4 +3,5 @@ package = Excur
 core = 7.x
 
 dependencies[] = excur_currency
+dependencies[] = excur_offer
 configure = admin/config/excur
