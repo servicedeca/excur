@@ -91,6 +91,7 @@ h1 {
 
 [id^="excur-search-search-form"] input {
   width: 98%;
+  background-image: none !important;
 }
 
 #slider-search-form #excur-search-search-form {

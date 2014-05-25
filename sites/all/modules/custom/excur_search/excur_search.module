@@ -4,6 +4,19 @@
  */
 
 /**
+ * Implements hook_menu().
+ */
+function excur_search_menu() {
+  $items['excur-autocomplete/search'] = array(
+    'page callback' => 'excur_search_autocomplete',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+/**
  * Implements hook_ctools_plugin_directory().
  */
 function excur_search_ctools_plugin_directory($owner, $plugin_type) {
@@ -16,6 +29,9 @@ function excur_search_ctools_plugin_directory($owner, $plugin_type) {
   }
 }
 
+/**
+ * Implements hook_theme().
+ */
 function excur_search_theme($existing, $type, $theme, $path) {
   $base = array(
     'path' => $path . '/theme',
@@ -36,6 +52,8 @@ function excur_search_theme($existing, $type, $theme, $path) {
 function excur_search_search_form() {
   $form['search'] = array(
     '#type' => 'textfield',
+    '#required' => TRUE,
+    '#autocomplete_path' => 'excur-autocomplete/search',
     '#attributes' => array(
       'placeholder' => t('Search...'),
     ),
@@ -45,13 +63,63 @@ function excur_search_search_form() {
     '#type' => 'submit',
     '#value' => t('Search'),
   );
+  $form['#submit'][] = 'excur_search_search_form_submit';
 
   return $form;
+}
+
+/**
+ * Autocomplete callback for excur-autocomplete/search path.
+ */
+function excur_search_autocomplete($text) {
+  $result = array();
+  $titles = array();
+
+  // Find service's title.
+  $query = db_select('field_data_title_field', 'tf')
+    ->fields('tf', array('title_field_value'))
+    ->condition('tf.bundle', 'service')
+    ->condition('tf.title_field_value', "%$text%", 'LIKE');
+  $titles += $query->execute()->fetchCol();
+
+  // Find term's names.
+  $query = db_select('field_data_name_field', 'nf')
+    ->fields('nf', array('name_field_value'))
+    ->condition('nf.bundle', 'languages', '!=')
+    ->condition('nf.name_field_value', "%$text%", 'LIKE');
+  $titles = array_merge($titles, $query->execute()->fetchCol());
+
+  foreach ($titles as $title) {
+    $result[$title] = $title;
+  }
+
+  drupal_json_output($result);
+  drupal_exit();
 }
 
 /**
  * Validate function for 'excur_settings_form' form.
  */
 function excur_search_search_form_submit(&$form, &$form_state) {
+  $search = $form_state['values']['search'];
 
+  $nid = db_select('field_data_title_field', 'tf')
+    ->fields('tf', array('entity_id'))
+    ->condition('tf.bundle', 'service')
+    ->condition('tf.title_field_value', $search, 'LIKE')
+    ->execute()
+    ->fetchField();
+  if ($nid) {
+    drupal_goto("node/$nid");
+  }
+
+  $tid = db_select('field_data_name_field', 'tf')
+    ->fields('tf', array('entity_id'))
+    ->condition('tf.bundle', 'languages', '!=')
+    ->condition('tf.name_field_value', $search, 'LIKE')
+    ->execute()
+    ->fetchField();
+  if ($tid) {
+    drupal_goto("taxonomy/term/$tid");
+  }
 }
