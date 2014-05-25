@@ -23,7 +23,7 @@
         <?php print $currency; ?>
        </strong>
     </div>
-    <button class="btn btn-success btn-lg">
+    <button class="btn">
       <strong>
         <?php print t('Join us on a tour'); ?>
       </strong>

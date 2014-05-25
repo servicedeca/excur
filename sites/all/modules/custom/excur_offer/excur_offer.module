@@ -5,10 +5,23 @@
  */
 
 /**
+ * Implement hook_theme().
+ */
+function excur_offer_theme() {
+  $items['excur_offer_offer_form'] = array(
+    'template' => 'theme/ob-offer-offer-form',
+    'render element' => 'form',
+  );
+
+  return $items;
+}
+
+/**
  * Form builder for offer form.
  */
 function excur_offer_offer_form($form, &$form_state, $offer) {
-  $form_state['data'] = $offer;
+  $form_state['#data'] = $offer;
+  $form['#data'] = $offer;
 
   foreach ($offer['tickets'] as $ticket) {
     $options[$ticket['price']] = $ticket['title'] . ' (' . $ticket['price'] . ' ' . $offer['currency'] . ')';
@@ -19,18 +32,45 @@ function excur_offer_offer_form($form, &$form_state, $offer) {
   );
 
   $form['date'] = array(
+    '#title' => t('Сhoose a date'),
     '#type' => 'date_popup',
     '#default_value' => date('Y-m-d'),
     '#date_format' => 'Y-m-d',
     '#date_year_range' => '-0:+1',
-    '#required' => TRUE,
     '#date_label_position' => 'within',
   );
 
   $form['submit'] = array(
     '#type' => 'submit',
     '#value' => t('Reserve'),
+    '#attributes' => array(
+      'class' => array('btn'),
+    ),
   );
+  $form['#submit'][] = 'excur_offer_offer_form_submit';
+  $form['#submit'][] = 'excur_offer_offer_form_validate';
 
   return $form;
+}
+
+/**
+ * Validate callback for excur_offer_offer_form form.
+ */
+function excur_offer_offer_form_validate(&$form, &$form_state) {
+  $values = $form_state['values'];
+  if (!$values['tickets']) {
+    form_error($form['tickets'], t('You should choose a price.'));
+  }
+  if (!$values['date']) {
+    form_error($form['date'], t('You should choose a date.'));
+  }
+}
+
+/**
+ * Submit callback for excur_offer_offer_form form.
+ */
+function excur_offer_offer_form_submit(&$form, &$form_state) {
+  $values = $form_state['values'];
+
+  drupal_set_message(t('Further instructions sent to your email.'));
 }
