@@ -52,7 +52,7 @@ function excur_currency_form_excur_settings_form_alter(&$form, &$form_state) {
   foreach ($currencies as $currency => $title) {
     $form['currencies']["excur_currency_icon_$currency"] = array(
       '#type' => 'textfield',
-      '#title' => t('Label of :currency currency', array(':currency' => $title      )),
+      '#title' => t('Label of :currency currency', array(':currency' => $title)),
       '#default_value' => variable_get("excur_currency_icon_$currency", $currency),
     );
   }
@@ -103,8 +103,16 @@ function excur_currency_choice_form_submit(&$form, &$form_state) {
  * @return float.
  */
 function excur_currency_convert($money, $from, $to) {
-  $obj = new excurCurrency();
-  return $obj->converter($money, $from, $to);
+  if (0) {
+    // @todo: Do not make request every time.
+    // @todo: Store exchange rate in database.
+  }
+  else {
+    $obj = new excurCurrency();
+    $value = $obj->converter($money, $from, $to);
+  }
+
+  return $value;
 }
 
 /**

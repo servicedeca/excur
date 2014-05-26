@@ -91,6 +91,7 @@ h1 {
 
 [id^="excur-search-search-form"] input {
   width: 98%;
+  background-image: none !important;
 }
 
 #slider-search-form #excur-search-search-form {
@@ -226,4 +227,57 @@ h2.node-description {
   border-top: 1px solid #d9d9d9;
   margin: 15px -15px 0 -15px;
   padding: 15px 15px 0 15px;
+}
+
+.excur-offer-offer-form .head {
+  background-color: #08e;
+  border-radius: 5px 5px 0 0;
+  color: #fff;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+
+.excur-offer-offer-form .details .info {
+  padding: 5px 0 0 10px;
+  margin-right: -10px;
+}
+
+.excur-offer-offer-form .details {
+  background-color: #eaf5fe;
+  border-radius: 0 0 5px 5px;
+}
+
+.excur-offer-offer-form .form-item-date-date .description {
+  display: none;
+}
+
+.excur-offer-offer-form .form-type-date-popup label {
+  padding-top: 5px;
+}
+
+.excur-offer-offer-form .date-padding {
+  padding: 0;
+  float: none;
+}
+
+.excur-offer-offer-form .form-item-date-date input {
+  margin-bottom: 0;
+}
+
+.excur-offer-offer-form .btn {
+  height: 40px;
+  line-height: 1em;
+}
+
+.offer-login {
+  font-size: 15px;
+}
+
+ul.primary li a {
+  padding: 4px;
+  border-radius: 5px 5px 0 0;
+}
+
+ul.primary {
+  height: 21px;
 }

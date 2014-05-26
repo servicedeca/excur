@@ -80,7 +80,7 @@
  * @ingroup themeable
  */
 ?>
-<div id="node-<?php print $node->nid; ?>" class="contextual-links-region row">
+<article id="node-<?php print $node->nid; ?>" class="contextual-links-region row">
   <?php print render($title_prefix); ?>
   <?php print render($title_suffix); ?>
   <div class="span2">
@@ -107,4 +107,4 @@
     </div>
     <?php print $guide['title']; ?>
   </div>
-</div>
+</article>
