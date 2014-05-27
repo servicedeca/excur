@@ -49,7 +49,12 @@ function exc_theme_preprocess_page(&$vars, $hook) {
   }
 
   // Render breadcrumb.
-  $vars['breadcrumb'] = theme('breadcrumb', array('breadcrumb' => excur_get_breadcrumb()));
+  if (menu_get_object('user')) {
+    $vars['breadcrumb'] = '';
+  }
+  else {
+    $vars['breadcrumb'] = theme('breadcrumb', array('breadcrumb' => excur_get_breadcrumb()));
+  }
 }
 
 /**

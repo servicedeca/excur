@@ -10,7 +10,7 @@
 function excur_guide_block_ctools_content_types() {
   return array(
     'single' => TRUE,
-    'title' => t('Guide information'),
+    'title' => t('Guide block'),
     'all contexts' => TRUE,
     'category' => t('Excur'),
     'hook theme' => 'excur_guide_block_content_type_theme',

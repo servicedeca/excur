@@ -225,8 +225,9 @@ h2.node-description {
 
 .guide-block .guide-rating {
   border-top: 1px solid #d9d9d9;
-  margin: 15px -15px 0 -15px;
-  padding: 15px 15px 0 15px;
+  border-bottom: 1px solid #d9d9d9;
+  margin: 15px -15px 15px -15px;
+  padding: 15px 15px 15px 15px;
 }
 
 .excur-offer-offer-form .head {

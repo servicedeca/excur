@@ -67,14 +67,15 @@
             </div>
           <?php endif; ?>
         </header>
-        <div class="space10"></div>
+
 
         <?php if (!empty($messages)): ?>
-          <?php print $messages; ?>
           <div class="space10"></div>
+          <?php print $messages; ?>
         <?php endif; ?>
 
         <?php if (!empty($breadcrumb)): ?>
+          <div class="space10"></div>
           <?php print $breadcrumb; ?>
         <?php endif; ?>
 
