@@ -10,9 +10,38 @@ define('EXCUR_CURRENCY_RUS_ROUBLE', 'RUB');
 define('EXCUR_CURRENCY_CAN_DOLLAR', 'CAD');
 define('EXCUR_CURRENCY_CZECH_KORUNA', 'CZK');
 define('EXCUR_CURRENCY_JAPAN_YEN', 'JPY');
-define('EXCUR_CURRENCY_NZ_DOLLAR', 'NZD');
 define('EXCUR_CURRENCY_GB_POUND', 'GBP');
 define('EXCUR_CURRENCY_SWISS_FRANC', 'CHF');
+
+/**
+ * Implements hook_cronapi().
+ */
+function excur_currency_cronapi($op, $job = NULL) {
+  $items['excur_currency_update_cron'] = array(
+    'description' => 'Update currencies rate',
+    'rule' => '0 */12 * * *',
+  );
+}
+
+/**
+ * Update currencies.
+ */
+function excur_currency_update_cron() {
+  $currencies = array(
+    EXCUR_CURRENCY_EURO,
+    EXCUR_CURRENCY_US_DOLLAR,
+    EXCUR_CURRENCY_RUS_ROUBLE,
+    EXCUR_CURRENCY_CAN_DOLLAR,
+    EXCUR_CURRENCY_CZECH_KORUNA,
+    EXCUR_CURRENCY_JAPAN_YEN,
+    EXCUR_CURRENCY_GB_POUND,
+    EXCUR_CURRENCY_SWISS_FRANC,
+  );
+
+  foreach ($currencies as $currency) {
+
+  }
+}
 
 /**
  * Implements hook_ctools_plugin_directory().
@@ -38,7 +67,6 @@ function excur_currency_form_excur_settings_form_alter(&$form, &$form_state) {
     EXCUR_CURRENCY_CAN_DOLLAR => t('Canadian Dollar'),
     EXCUR_CURRENCY_CZECH_KORUNA => t('Czech Koruna'),
     EXCUR_CURRENCY_JAPAN_YEN => t('Japanese Yen'),
-    EXCUR_CURRENCY_NZ_DOLLAR => t('New Zealand Dollar'),
     EXCUR_CURRENCY_GB_POUND => t('Pound sterling'),
     EXCUR_CURRENCY_SWISS_FRANC => t('Swiss Franc'),
   );
@@ -72,7 +100,6 @@ function excur_currency_choice_form() {
       EXCUR_CURRENCY_CAN_DOLLAR => t('Canadian Dollar'),
       EXCUR_CURRENCY_CZECH_KORUNA => t('Czech Koruna'),
       EXCUR_CURRENCY_JAPAN_YEN => t('Japanese Yen'),
-      EXCUR_CURRENCY_NZ_DOLLAR => t('New Zealand Dollar'),
       EXCUR_CURRENCY_GB_POUND => t('Pound sterling'),
       EXCUR_CURRENCY_SWISS_FRANC => t('Swiss Franc'),
     ),

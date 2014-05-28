@@ -230,6 +230,12 @@ h2.node-description {
   padding: 15px 15px 15px 15px;
 }
 
+.page-node .guide-block .guide-rating {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
 .excur-offer-offer-form .head {
   background-color: #08e;
   border-radius: 5px 5px 0 0;
