@@ -29,6 +29,7 @@ function excur_offer_theme() {
 
   $items['offer_mail'] = array(
     'file' => 'theme.inc',
+    'path' => drupal_get_path('module', 'excur_offer') . '/theme',
     'variables' => array(
       'service' => NULL,
       'account' => NULL,
