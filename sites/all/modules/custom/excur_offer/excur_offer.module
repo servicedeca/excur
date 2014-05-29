@@ -5,15 +5,54 @@
  */
 
 /**
+ * Implements hook_menu().
+ */
+function excur_offer_menu() {
+  $items['excur/offer/%'] = array(
+    'title' => 'E-ticket',
+    'page callback' => 'excur_offer_page',
+    'page arguments' => array(2),
+    'access arguments' => array('access content'),
+  );
+
+  return $items;
+}
+
+/**
  * Implement hook_theme().
  */
 function excur_offer_theme() {
   $items['excur_offer_offer_form'] = array(
-    'template' => 'theme/ob-offer-offer-form',
+    'template' => 'theme/excur-offer-offer-form',
     'render element' => 'form',
   );
 
+  $items['offer_mail'] = array(
+    'file' => 'theme.inc',
+    'variables' => array(
+      'service' => NULL,
+      'account' => NULL,
+      'ticket' => NULL,
+      'date' => NULL,
+      'oid' => NULL,
+    ),
+    'template' => 'excur-offer-offer-mail',
+  );
+
   return $items;
+}
+
+function excur_offer_page($oid) {
+  $offer = excur_offer_load($oid);
+
+  print theme('offer_mail', array(
+    'service' => node_load($offer->nid),
+    'account' => user_load($offer->uid),
+    'ticket' => $offer->ticket,
+    'date' => $offer->date,
+    'oid' => $oid,
+  ));
+  drupal_exit();
 }
 
 /**
@@ -70,7 +109,80 @@ function excur_offer_offer_form_validate(&$form, &$form_state) {
  * Submit callback for excur_offer_offer_form() form.
  */
 function excur_offer_offer_form_submit(&$form, &$form_state) {
+  global $user;
   $values = $form_state['values'];
 
-  drupal_set_message(t('Further instructions sent to your email.'));
+  $oid = '';
+  excur_offer_save($oid, $user->uid, $values['tickets'], $values['date']);
+
+  $message = theme('offer_mail', array(
+    'service' => node_load($form['#nid']),
+    'account' => user_load($user->uid),
+    'ticket' => $values['tickets'],
+    'date' => $values['date'],
+    'oid' => $oid,
+  ));
+
+  if (/*excur_offer_send_mail($user->mail, $message)*/0) {
+    drupal_set_message(t('Further instructions sent to your email.'));
+  }
+  else {
+    drupal_set_message(t('Error occurred while you reserved order, please, try again later.'), 'warning');
+  }
+}
+
+/**
+ * Send html mail.
+ */
+function excur_offer_send_mail($email, $message, $subject = NULL, $module_key = NULL) {
+  $subject = $subject
+    ? $subject
+    : t('Уведомление от сайта "!site"', array('!site' => variable_get('site_name')));
+
+  $module = 'excur_offer';
+  $module_key = $module_key ? $module_key : 'offer_mail';
+  $from = variable_get('site_mail');
+  $message = array(
+    'id' => $module . '_' . $module_key,
+    'to' => $email,
+    'subject' => $subject,
+    'body' => array($message),
+    'from' => $from,
+    'headers' => array(
+      'MIME-Version' => '1.0',
+      'Content-Type' => 'text/html; charset=UTF-8; format=flowed',
+      'Content-Transfer-Encoding' => '8Bit',
+      'X-Mailer' => 'Drupal',
+      'From' => $from,
+      'Sender' => $from,
+      'Return-Path' => $from,
+    ),
+  );
+  $system = drupal_mail_system($module, $module_key);
+  $message = $system->format($message);
+
+  return $system->mail($message);
+}
+
+/**
+ * Load offer.
+ *
+ * @param int $oid.
+ * @return object.
+ */
+function excur_offer_load($oid) {
+
+  return new Stdclass;
+}
+
+/**
+ * Save offer.
+ *
+ * @param int $oid.
+ * @param int $uid.
+ * @param int $ticket.
+ * @param string $date.
+ */
+function excur_offer_save($oid, $uid, $ticket, $date) {
+
 }

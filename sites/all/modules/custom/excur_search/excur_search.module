@@ -7,7 +7,7 @@
  * Implements hook_menu().
  */
 function excur_search_menu() {
-  $items['excur-autocomplete/search'] = array(
+  $items['excur/autocomplete/search'] = array(
     'page callback' => 'excur_search_autocomplete',
     'access arguments' => array('access content'),
     'type' => MENU_CALLBACK,
@@ -53,7 +53,7 @@ function excur_search_search_form() {
   $form['search'] = array(
     '#type' => 'textfield',
     '#required' => TRUE,
-    '#autocomplete_path' => 'excur-autocomplete/search',
+    '#autocomplete_path' => 'excur/autocomplete/search',
     '#attributes' => array(
       'placeholder' => t('Search...'),
     ),

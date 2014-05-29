@@ -1,0 +1,47 @@
+<?php
+
+/**
+ * @file
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function excur_offer_schema() {
+  $schema['excur_offer'] = array(
+    'description' => 'List of offers',
+    'fields' => array(
+      'oid' => array(
+        'description' => 'The primary identifier for a offer.',
+        'type' => 'varchar',
+        'length' => 14,
+        'not null' => TRUE,
+      ),
+      'uid' => array(
+        'description' => 'The primary identifier for a user.',
+        'type' => 'int',
+        'not null' => TRUE,
+      ),
+      'nid' => array(
+        'description' => 'The primary identifier for a service.',
+        'type' => 'int',
+        'not null' => TRUE,
+      ),
+      'date' => array(
+        'description' => 'Offer date.',
+        'type' => 'varchar',
+        'length' => 50,
+        'not null' => TRUE,
+      ),
+      'ticket' => array(
+        'description' => 'Offer price.',
+        'type' => 'varchar',
+        'length' => 50,
+        'not null' => TRUE,
+      ),
+    ),
+    'primary key' => array('oid'),
+  );
+
+  return $schema;
+}
