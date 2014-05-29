@@ -112,16 +112,16 @@ function excur_offer_offer_form_submit(&$form, &$form_state) {
   global $user;
   $values = $form_state['values'];
 
-  $oid = '';
-  excur_offer_save($oid, $user->uid, $values['tickets'], $values['date']);
-
-  $message = theme('offer_mail', array(
-    'service' => node_load($form['#nid']),
-    'account' => user_load($user->uid),
-    'ticket' => $values['tickets'],
-    'date' => $values['date'],
-    'oid' => $oid,
-  ));
+//  $oid = '';
+//  excur_offer_save($oid, $user->uid, $values['tickets'], $values['date']);
+//
+//  $message = theme('offer_mail', array(
+//    'service' => node_load($form['#nid']),
+//    'account' => user_load($user->uid),
+//    'ticket' => $values['tickets'],
+//    'date' => $values['date'],
+//    'oid' => $oid,
+//  ));
 
   if (/*excur_offer_send_mail($user->mail, $message)*/0) {
     drupal_set_message(t('Further instructions sent to your email.'));
