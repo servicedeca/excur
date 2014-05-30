@@ -1,0 +1,17 @@
+name = Feature - Image style
+description = excur_feature_image_style
+core = 7.x
+package = Excur features
+version = 7.x-1.0
+project = excur_feature_image_style
+dependencies[] = features
+dependencies[] = image
+features[features_api][] = api:2
+features[image][] = 100x100
+features[image][] = 1170x555
+features[image][] = 170x130
+features[image][] = 238x238
+features[image][] = 300x170
+features[image][] = 70x70
+features[image][] = 870x653
+features[user_permission][] = administer image styles

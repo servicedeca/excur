@@ -9,6 +9,14 @@
  */
 function excur_feature_taxonomy_taxonomy_default_vocabularies() {
   return array(
+    'category' => array(
+      'name' => 'Категории',
+      'machine_name' => 'category',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+    ),
     'city' => array(
       'name' => 'Города',
       'machine_name' => 'city',

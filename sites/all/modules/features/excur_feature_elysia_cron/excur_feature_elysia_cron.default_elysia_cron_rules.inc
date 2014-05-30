@@ -23,6 +23,16 @@ function excur_feature_elysia_cron_default_elysia_cron_rules() {
   $cron_rule = new stdClass;
   $cron_rule->disabled = FALSE; /* Edit this to true to make a default cron_rule disabled initially */
   $cron_rule->api_version = 1;
+  $cron_rule->name = 'backup_migrate_cron';
+  $cron_rule->disable = NULL;
+  $cron_rule->rule = '4 0 * * 0';
+  $cron_rule->weight = NULL;
+  $cron_rule->context = NULL;
+  $cron_rules['backup_migrate_cron'] = $cron_rule;
+
+  $cron_rule = new stdClass;
+  $cron_rule->disabled = FALSE; /* Edit this to true to make a default cron_rule disabled initially */
+  $cron_rule->api_version = 1;
   $cron_rule->name = 'ctools_cron';
   $cron_rule->disable = NULL;
   $cron_rule->rule = '4 0 * * 0';
