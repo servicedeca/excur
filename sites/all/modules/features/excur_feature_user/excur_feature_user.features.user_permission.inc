@@ -30,6 +30,15 @@ function excur_feature_user_user_default_permissions() {
     'module' => 'user',
   );
 
+  // Exported permission: 'administer privatemsg settings'.
+  $permissions['administer privatemsg settings'] = array(
+    'name' => 'administer privatemsg settings',
+    'roles' => array(
+      'Администратор' => 'Администратор',
+    ),
+    'module' => 'privatemsg',
+  );
+
   // Exported permission: 'administer users'.
   $permissions['administer users'] = array(
     'name' => 'administer users',
@@ -37,6 +46,15 @@ function excur_feature_user_user_default_permissions() {
       'Администратор' => 'Администратор',
     ),
     'module' => 'user',
+  );
+
+  // Exported permission: 'allow disabling privatemsg'.
+  $permissions['allow disabling privatemsg'] = array(
+    'name' => 'allow disabling privatemsg',
+    'roles' => array(
+      'Администратор' => 'Администратор',
+    ),
+    'module' => 'privatemsg',
   );
 
   // Exported permission: 'cancel account'.
@@ -59,6 +77,42 @@ function excur_feature_user_user_default_permissions() {
     'module' => 'user',
   );
 
+  // Exported permission: 'delete privatemsg'.
+  $permissions['delete privatemsg'] = array(
+    'name' => 'delete privatemsg',
+    'roles' => array(
+      'Администратор' => 'Администратор',
+    ),
+    'module' => 'privatemsg',
+  );
+
+  // Exported permission: 'read all private messages'.
+  $permissions['read all private messages'] = array(
+    'name' => 'read all private messages',
+    'roles' => array(
+      'Администратор' => 'Администратор',
+    ),
+    'module' => 'privatemsg',
+  );
+
+  // Exported permission: 'read privatemsg'.
+  $permissions['read privatemsg'] = array(
+    'name' => 'read privatemsg',
+    'roles' => array(
+      'Администратор' => 'Администратор',
+    ),
+    'module' => 'privatemsg',
+  );
+
+  // Exported permission: 'reply only privatemsg'.
+  $permissions['reply only privatemsg'] = array(
+    'name' => 'reply only privatemsg',
+    'roles' => array(
+      'Администратор' => 'Администратор',
+    ),
+    'module' => 'privatemsg',
+  );
+
   // Exported permission: 'select account cancellation method'.
   $permissions['select account cancellation method'] = array(
     'name' => 'select account cancellation method',
@@ -66,6 +120,33 @@ function excur_feature_user_user_default_permissions() {
       'Администратор' => 'Администратор',
     ),
     'module' => 'user',
+  );
+
+  // Exported permission: 'select text format for privatemsg'.
+  $permissions['select text format for privatemsg'] = array(
+    'name' => 'select text format for privatemsg',
+    'roles' => array(
+      'Администратор' => 'Администратор',
+    ),
+    'module' => 'privatemsg',
+  );
+
+  // Exported permission: 'use tokens in privatemsg'.
+  $permissions['use tokens in privatemsg'] = array(
+    'name' => 'use tokens in privatemsg',
+    'roles' => array(
+      'Администратор' => 'Администратор',
+    ),
+    'module' => 'privatemsg',
+  );
+
+  // Exported permission: 'write privatemsg'.
+  $permissions['write privatemsg'] = array(
+    'name' => 'write privatemsg',
+    'roles' => array(
+      'Администратор' => 'Администратор',
+    ),
+    'module' => 'privatemsg',
   );
 
   return $permissions;
