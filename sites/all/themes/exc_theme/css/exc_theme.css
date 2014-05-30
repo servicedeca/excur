@@ -288,3 +288,33 @@ ul.primary li a {
 ul.primary {
   height: 21px;
 }
+
+#excur-currency-choice-form button {
+  height: 33px;
+}
+
+#excur-currency-choice-form button span {
+  line-height: 35px;
+}
+
+#excur-currency-choice-form .form-item,
+#excur-currency-choice-form {
+  margin: 0;
+  height: 33px;
+}
+
+#excur-currency-choice-form input[type="submit"] {
+  display: none;
+}
+
+@media (max-width: 979px) and (min-width: 768px) {
+  #excur-currency-choice-form .bootstrap-select {
+    width: 166px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #excur-currency-choice-form .bootstrap-select {
+    width: 270px;
+  }
+}

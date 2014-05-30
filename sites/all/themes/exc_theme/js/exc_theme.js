@@ -49,6 +49,22 @@
     }
   };
 
+  Drupal.behaviors.excurSelect = {
+    attach: function(context, settings) {
+      var currency = $('#edit-currency');
+      if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+        currency.selectpicker('mobile');
+      }
+      else {
+        currency.selectpicker();
+      }
+
+      currency.change(function() {
+        $('#excur-currency-choice-form input[type="submit"]').click();
+      });
+    }
+  };
+
   function excurScrollTo(from, to, time) {
     $(from).click(function (){
       $('html, body').animate({

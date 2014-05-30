@@ -446,7 +446,7 @@ a:hover {
   font-size:13px;
   color:#fff;
   background:#08c;
-  border-bottom:2px solid #00a97f;
+  border-bottom:2px solid #0065A9;
   float:left;
   margin-bottom:5px;
 }
@@ -578,7 +578,7 @@ a:hover {
 .btn:hover {
   color:#fff;
   background:#08c;
-  border-bottom:2px solid #00a97f;
+  border-bottom:2px solid #0065A9;
 }
 
 .btn-gray2 {
@@ -714,7 +714,7 @@ th {
 .paging:hover {
   color:#fff;
   background:#08c;
-  border-bottom:2px solid #00a97f;
+  border-bottom:2px solid #0065A9;
   text-decoration:none;
 }
 
@@ -749,7 +749,7 @@ th {
   font-size:13px;
   color:#fff;
   background:#08c;
-  border-bottom:2px solid #00a97f;
+  border-bottom:2px solid #0065A9;
   float:left;
   margin-bottom:5px;
 }
@@ -1020,14 +1020,14 @@ th {
 
 #portfolio-filter li:hover a {
   color:#fff;
-  border-bottom:2px solid #00a97f;
+  border-bottom:2px solid #0065A9;
   background: #08c;
   text-decoration:none;
 }
 
 #portfolio-filter li.active a {
   color:#fff;
-  border-bottom:2px solid #00a97f;
+  border-bottom:2px solid #0065A9;
   background: #08c;
 }
 

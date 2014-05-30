@@ -29,7 +29,7 @@
             <?php endif; ?>
 
             <?php if (!empty($currency_switcher)): ?>
-              <div class="span2">
+              <div class="span3">
                 <?php print render($currency_switcher); ?>
               </div>
             <?php endif; ?>
