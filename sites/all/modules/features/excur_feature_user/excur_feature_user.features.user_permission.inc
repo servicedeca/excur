@@ -34,6 +34,7 @@ function excur_feature_user_user_default_permissions() {
   $permissions['administer privatemsg settings'] = array(
     'name' => 'administer privatemsg settings',
     'roles' => array(
+      'authenticated user' => 'authenticated user',
       'Администратор' => 'Администратор',
     ),
     'module' => 'privatemsg',
@@ -52,6 +53,7 @@ function excur_feature_user_user_default_permissions() {
   $permissions['allow disabling privatemsg'] = array(
     'name' => 'allow disabling privatemsg',
     'roles' => array(
+      'authenticated user' => 'authenticated user',
       'Администратор' => 'Администратор',
     ),
     'module' => 'privatemsg',
@@ -81,6 +83,7 @@ function excur_feature_user_user_default_permissions() {
   $permissions['delete privatemsg'] = array(
     'name' => 'delete privatemsg',
     'roles' => array(
+      'authenticated user' => 'authenticated user',
       'Администратор' => 'Администратор',
     ),
     'module' => 'privatemsg',
@@ -90,6 +93,7 @@ function excur_feature_user_user_default_permissions() {
   $permissions['read all private messages'] = array(
     'name' => 'read all private messages',
     'roles' => array(
+      'authenticated user' => 'authenticated user',
       'Администратор' => 'Администратор',
     ),
     'module' => 'privatemsg',
@@ -99,6 +103,7 @@ function excur_feature_user_user_default_permissions() {
   $permissions['read privatemsg'] = array(
     'name' => 'read privatemsg',
     'roles' => array(
+      'authenticated user' => 'authenticated user',
       'Администратор' => 'Администратор',
     ),
     'module' => 'privatemsg',
@@ -108,6 +113,7 @@ function excur_feature_user_user_default_permissions() {
   $permissions['reply only privatemsg'] = array(
     'name' => 'reply only privatemsg',
     'roles' => array(
+      'authenticated user' => 'authenticated user',
       'Администратор' => 'Администратор',
     ),
     'module' => 'privatemsg',
@@ -144,6 +150,7 @@ function excur_feature_user_user_default_permissions() {
   $permissions['write privatemsg'] = array(
     'name' => 'write privatemsg',
     'roles' => array(
+      'authenticated user' => 'authenticated user',
       'Администратор' => 'Администратор',
     ),
     'module' => 'privatemsg',
