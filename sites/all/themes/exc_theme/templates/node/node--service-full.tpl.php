@@ -24,14 +24,18 @@
   <?php hide($content['links']); ?>
   <?php print render($content); ?>
   <div class="row">
-    <div class="span4">
-      <h2 class="meeting"><?php print t('Venue') . ': '; ?></h2>
-      <?php print $venue; ?>
-    </div>
-    <div class="span4">
-      <h2 class="meeting"><?php print t('Time of meeting') . ': '; ?></h2>
-      <?php print $meeting_time; ?>
-    </div>
+    <?php if (!empty($venue)): ?>
+      <div class="span4">
+        <h2 class="meeting"><?php print t('Venue') . ': '; ?></h2>
+        <?php print $venue; ?>
+      </div>
+    <?php endif; ?>
+    <?php if (!empty($meeting_time)): ?>
+      <div class="span4">
+        <h2 class="meeting"><?php print t('Time of meeting') . ': '; ?></h2>
+        <?php print $meeting_time; ?>
+      </div>
+    <?php endif; ?>
   </div>
   <h2 id="reservation" class="node-description">
     <?php print t('Reservation'); ?>
