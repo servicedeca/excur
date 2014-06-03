@@ -141,7 +141,11 @@ function exc_theme_preprocess_node__service_teaser(&$vars) {
  * Process variables for node--service-full.tpl.php.
  */
 function exc_theme_preprocess_node__service_full(&$vars) {
+  global $language;
+
   $node = $vars['node'];
+  $wrapper = entity_metadata_wrapper('node', $node);
+  $wrapper->language($language->language);
 
   if (!empty($node->field_slider_images[LANGUAGE_NONE])) {
     foreach ($node->field_slider_images[LANGUAGE_NONE] as $image) {
@@ -156,4 +160,54 @@ function exc_theme_preprocess_node__service_full(&$vars) {
     drupal_add_js(EXCUR_FRONT_THEME_PATH . '/js/fotorama.min.js');
     drupal_add_css(EXCUR_FRONT_THEME_PATH . '/css/fotorama.css');
   }
+
+  $vars['venue'] = $wrapper->field_start_place->value();
+  $vars['meeting_time'] = $wrapper->field_start_time->value();
+}
+
+/**
+ * Returns HTML for a select form element.
+ */
+function exc_theme_select($variables) {
+  $element = $variables['element'];
+  element_set_attributes($element, array('id', 'name', 'size'));
+  _form_set_class($element, array('form-select'));
+
+  return '<select' . drupal_attributes($element['#attributes']) . '>' . exc_theme_form_select_options($element) . '</select>';
+}
+
+/**
+ * Converts a select form element's options array into HTML.
+ */
+function exc_theme_form_select_options($element, $choices = NULL) {
+  if (!isset($choices)) {
+    $choices = $element['#options'];
+  }
+
+  $value_valid = isset($element['#value']) || array_key_exists('#value', $element);
+  $value_is_array = $value_valid && is_array($element['#value']);
+  $options = '';
+  foreach ($choices as $key => $choice) {
+    if (is_array($choice)) {
+      $options .= '<optgroup label="' . $key . '">';
+      $options .= exc_theme_form_select_options($element, $choice);
+      $options .= '</optgroup>';
+    }
+    elseif (is_object($choice)) {
+      $options .= form_select_options($element, $choice->option);
+    }
+    else {
+      $key = (string) $key;
+      if ($value_valid && (!$value_is_array && (string) $element['#value'] === $key || ($value_is_array && in_array($key, $element['#value'])))) {
+        $selected = ' selected="selected"';
+      }
+      else {
+        $selected = '';
+      }
+
+      $data_content = isset($element['#data-content'][$key]) ? str_replace('"', '\'', $element['#data-content'][$key]) : check_plain($choice);
+      $options .= '<option value="' . check_plain($key) . '"' . $selected . ' data-content="' . $data_content . '">>' . check_plain($choice) . '</option>';
+    }
+  }
+  return $options;
 }

@@ -10,6 +10,7 @@ define('EXCUR_CURRENCY_RUS_ROUBLE', 'RUB');
 define('EXCUR_CURRENCY_CAN_DOLLAR', 'CAD');
 define('EXCUR_CURRENCY_CZECH_KORUNA', 'CZK');
 define('EXCUR_CURRENCY_JAPAN_YEN', 'JPY');
+define('EXCUR_CURRENCY_CHINESE_YUAN', 'CNY');
 define('EXCUR_CURRENCY_GB_POUND', 'GBP');
 define('EXCUR_CURRENCY_SWISS_FRANC', 'CHF');
 
@@ -34,6 +35,7 @@ function excur_currency_update_cron() {
     EXCUR_CURRENCY_CAN_DOLLAR,
     EXCUR_CURRENCY_CZECH_KORUNA,
     EXCUR_CURRENCY_JAPAN_YEN,
+    EXCUR_CURRENCY_CHINESE_YUAN,
     EXCUR_CURRENCY_GB_POUND,
     EXCUR_CURRENCY_SWISS_FRANC,
   );
@@ -67,6 +69,7 @@ function excur_currency_form_excur_settings_form_alter(&$form, &$form_state) {
     EXCUR_CURRENCY_CAN_DOLLAR => t('Canadian Dollar'),
     EXCUR_CURRENCY_CZECH_KORUNA => t('Czech Koruna'),
     EXCUR_CURRENCY_JAPAN_YEN => t('Japanese Yen'),
+    EXCUR_CURRENCY_CHINESE_YUAN => t('Chinese Yuan'),
     EXCUR_CURRENCY_GB_POUND => t('Pound sterling'),
     EXCUR_CURRENCY_SWISS_FRANC => t('Swiss Franc'),
   );
@@ -100,10 +103,22 @@ function excur_currency_choice_form() {
       EXCUR_CURRENCY_CAN_DOLLAR => t('Canadian Dollar'),
       EXCUR_CURRENCY_CZECH_KORUNA => t('Czech Koruna'),
       EXCUR_CURRENCY_JAPAN_YEN => t('Japanese Yen'),
+      EXCUR_CURRENCY_CHINESE_YUAN => t('Chinese Yuan'),
       EXCUR_CURRENCY_GB_POUND => t('Pound sterling'),
       EXCUR_CURRENCY_SWISS_FRANC => t('Swiss Franc'),
     ),
     '#default_value' => !empty($_COOKIE['excur_currency']) ? $_COOKIE['excur_currency'] : 'none',
+    '#data-content' => array(
+      EXCUR_CURRENCY_EURO => excur_currency_get_icon(EXCUR_CURRENCY_EURO) . ' ' . t('Euro'),
+      EXCUR_CURRENCY_US_DOLLAR => excur_currency_get_icon(EXCUR_CURRENCY_US_DOLLAR) . ' ' . t('U.S. Dollar'),
+      EXCUR_CURRENCY_RUS_ROUBLE => excur_currency_get_icon(EXCUR_CURRENCY_RUS_ROUBLE) . ' ' . t('Russian Rouble'),
+      EXCUR_CURRENCY_CAN_DOLLAR => excur_currency_get_icon(EXCUR_CURRENCY_CAN_DOLLAR) . ' ' . t('Canadian Dollar'),
+      EXCUR_CURRENCY_CZECH_KORUNA => excur_currency_get_icon(EXCUR_CURRENCY_CZECH_KORUNA) . ' ' . t('Czech Koruna'),
+      EXCUR_CURRENCY_JAPAN_YEN => excur_currency_get_icon(EXCUR_CURRENCY_JAPAN_YEN) . ' ' . t('Japanese Yen'),
+      EXCUR_CURRENCY_CHINESE_YUAN => excur_currency_get_icon(EXCUR_CURRENCY_CHINESE_YUAN) . ' ' . t('Chinese Yuan'),
+      EXCUR_CURRENCY_GB_POUND => excur_currency_get_icon(EXCUR_CURRENCY_GB_POUND) . ' ' . t('Pound sterling'),
+      EXCUR_CURRENCY_SWISS_FRANC => excur_currency_get_icon(EXCUR_CURRENCY_SWISS_FRANC) . ' ' . t('Swiss Franc'),
+    ),
   );
 
   $form['submit'] = array(

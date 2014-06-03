@@ -262,10 +262,13 @@ function excur_popular_giudes_in_city($tid) {
  */
 function excur_language_switcher() {
   $options = array();
+  $data_content = array();
 
   foreach (language_list() as $lang) {
     if ($lang->enabled) {
-      $options[url(current_path(), array('language' => $lang, 'absolute' => TRUE))] = $lang->native;
+      $url = url(current_path(), array('language' => $lang, 'absolute' => TRUE));
+      $options[$url] = $lang->native;
+      $data_content[$url] = '<i class=\'flag flag-' . $lang->prefix . '\'></i>' . $lang->native;
     }
   }
 
@@ -273,6 +276,7 @@ function excur_language_switcher() {
     '#type' => 'select',
     '#options' => $options,
     '#default_value' => url(current_path(), array('absolute' => TRUE)),
+    '#data-content' => $data_content,
   );
 
   return $form;

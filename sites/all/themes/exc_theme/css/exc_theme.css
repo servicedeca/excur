@@ -334,3 +334,7 @@ ul.primary {
     width: 170px;
   }
 }
+
+h2.meeting {
+  display: inline-block;
+}
