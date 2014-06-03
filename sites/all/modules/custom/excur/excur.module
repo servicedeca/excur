@@ -256,3 +256,24 @@ function excur_popular_giudes_in_city($tid) {
 
   return $query->execute()->fetchCol();
 }
+
+/**
+ * Language switcher form.
+ */
+function excur_language_switcher() {
+  $options = array();
+
+  foreach (language_list() as $lang) {
+    if ($lang->enabled) {
+      $options[url(current_path(), array('language' => $lang, 'absolute' => TRUE))] = $lang->native;
+    }
+  }
+
+  $form['languages'] = array(
+    '#type' => 'select',
+    '#options' => $options,
+    '#default_value' => url(current_path(), array('absolute' => TRUE)),
+  );
+
+  return $form;
+}

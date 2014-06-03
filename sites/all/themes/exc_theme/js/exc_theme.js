@@ -52,15 +52,22 @@
   Drupal.behaviors.excurSelect = {
     attach: function(context, settings) {
       var currency = $('#edit-currency');
-      if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+      var language = $('#edit-languages');
+
+      if(/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
         currency.selectpicker('mobile');
+        language.selectpicker('mobile');
       }
       else {
         currency.selectpicker();
+        language.selectpicker();
       }
 
       currency.change(function() {
         $('#excur-currency-choice-form input[type="submit"]').click();
+      });
+      language.change(function() {
+        location.href = $(this).val();
       });
     }
   };

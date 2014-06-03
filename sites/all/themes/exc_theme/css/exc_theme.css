@@ -289,18 +289,26 @@ ul.primary {
   height: 21px;
 }
 
-#excur-currency-choice-form button {
+#excur-currency-choice-form button,
+#excur-language-switcher button {
   height: 33px;
 }
 
-#excur-currency-choice-form button span {
+#excur-currency-choice-form button span,
+#excur-language-switcher button span {
   line-height: 35px;
 }
 
 #excur-currency-choice-form .form-item,
-#excur-currency-choice-form {
+#excur-currency-choice-form,
+#excur-language-switcher .form-item,
+#excur-language-switcher {
   margin: 0;
   height: 33px;
+}
+
+#excur-language-switcher .bootstrap-select {
+  width: 140px;
 }
 
 #excur-currency-choice-form input[type="submit"] {
@@ -311,10 +319,18 @@ ul.primary {
   #excur-currency-choice-form .bootstrap-select {
     width: 166px;
   }
+
+  #excur-language-switcher .bootstrap-select {
+    width: 104px;
+  }
 }
 
 @media (min-width: 1200px) {
   #excur-currency-choice-form .bootstrap-select {
     width: 270px;
+  }
+
+  #excur-language-switcher .bootstrap-select {
+    width: 170px;
   }
 }

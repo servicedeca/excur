@@ -24,7 +24,7 @@
 
             <?php if (!empty($language_switcher)): ?>
               <div class="span2">
-                <?php print $language_switcher; ?>
+                <?php print render($language_switcher); ?>
               </div>
             <?php endif; ?>
 
