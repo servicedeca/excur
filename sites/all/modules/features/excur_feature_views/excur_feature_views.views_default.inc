@@ -99,6 +99,7 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['relationships']['field_offer_ticket_value']['table'] = 'field_data_field_offer_ticket';
   $handler->display->display_options['relationships']['field_offer_ticket_value']['field'] = 'field_offer_ticket_value';
   $handler->display->display_options['relationships']['field_offer_ticket_value']['relationship'] = 'field_offer_value';
+  $handler->display->display_options['relationships']['field_offer_ticket_value']['label'] = 'Билет';
   $handler->display->display_options['relationships']['field_offer_ticket_value']['required'] = TRUE;
   $handler->display->display_options['relationships']['field_offer_ticket_value']['delta'] = '-1';
   $handler->display->display_options['defaults']['fields'] = FALSE;
@@ -109,13 +110,6 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Критерий сортировки: Содержимое: Дата обновления */
-  $handler->display->display_options['sorts']['changed']['id'] = 'changed';
-  $handler->display->display_options['sorts']['changed']['table'] = 'node';
-  $handler->display->display_options['sorts']['changed']['field'] = 'changed';
-  $handler->display->display_options['sorts']['changed']['order'] = 'DESC';
-  $handler->display->display_options['sorts']['changed']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['changed']['expose']['label'] = 'Дата обновления';
   /* Критерий сортировки: Элемент коллекции полей: Цена (field_offer_ticket_price) */
   $handler->display->display_options['sorts']['field_offer_ticket_price_value']['id'] = 'field_offer_ticket_price_value';
   $handler->display->display_options['sorts']['field_offer_ticket_price_value']['table'] = 'field_data_field_offer_ticket_price';
@@ -123,6 +117,13 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['sorts']['field_offer_ticket_price_value']['relationship'] = 'field_offer_ticket_value';
   $handler->display->display_options['sorts']['field_offer_ticket_price_value']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['field_offer_ticket_price_value']['expose']['label'] = 'Цена';
+  /* Критерий сортировки: Содержимое: Дата обновления */
+  $handler->display->display_options['sorts']['changed']['id'] = 'changed';
+  $handler->display->display_options['sorts']['changed']['table'] = 'node';
+  $handler->display->display_options['sorts']['changed']['field'] = 'changed';
+  $handler->display->display_options['sorts']['changed']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['changed']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['changed']['expose']['label'] = 'Дата обновления';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Контекстный фильтр: Поле: Город (field_city) */
   $handler->display->display_options['arguments']['field_city_target_id']['id'] = 'field_city_target_id';
@@ -262,13 +263,6 @@ function excur_feature_views_views_default_views() {
     'image_link' => 'content',
   );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Критерий сортировки: Содержимое: Дата обновления */
-  $handler->display->display_options['sorts']['changed']['id'] = 'changed';
-  $handler->display->display_options['sorts']['changed']['table'] = 'node';
-  $handler->display->display_options['sorts']['changed']['field'] = 'changed';
-  $handler->display->display_options['sorts']['changed']['order'] = 'DESC';
-  $handler->display->display_options['sorts']['changed']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['changed']['expose']['label'] = 'Дата обновления';
   /* Критерий сортировки: Элемент коллекции полей: Цена (field_offer_ticket_price) */
   $handler->display->display_options['sorts']['field_offer_ticket_price_value']['id'] = 'field_offer_ticket_price_value';
   $handler->display->display_options['sorts']['field_offer_ticket_price_value']['table'] = 'field_data_field_offer_ticket_price';
@@ -276,6 +270,13 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['sorts']['field_offer_ticket_price_value']['relationship'] = 'field_offer_ticket_value';
   $handler->display->display_options['sorts']['field_offer_ticket_price_value']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['field_offer_ticket_price_value']['expose']['label'] = 'Цена';
+  /* Критерий сортировки: Содержимое: Дата обновления */
+  $handler->display->display_options['sorts']['changed']['id'] = 'changed';
+  $handler->display->display_options['sorts']['changed']['table'] = 'node';
+  $handler->display->display_options['sorts']['changed']['field'] = 'changed';
+  $handler->display->display_options['sorts']['changed']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['changed']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['changed']['expose']['label'] = 'Дата обновления';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Контекстный фильтр: Содержимое: Гид (field_guide) */
   $handler->display->display_options['arguments']['field_guide_target_id']['id'] = 'field_guide_target_id';
@@ -342,13 +343,12 @@ function excur_feature_views_views_default_views() {
     t('Услуги города'),
     t('Переводы'),
     t('Предложение'),
-    t('field collection item from field_offer_ticket'),
-    t('Дата обновления'),
+    t('Билет'),
     t('Цена'),
+    t('Дата обновления'),
     t('Все'),
     t('View panes'),
     t('Услуги гида'),
-    t('Билет'),
   );
   $export['content'] = $view;
 
