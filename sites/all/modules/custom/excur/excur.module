@@ -281,3 +281,14 @@ function excur_language_switcher() {
 
   return $form;
 }
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function excur_form_views_exposed_form_alter(&$form, &$form_state) {
+  if ($form['#id'] == "views-exposed-form-content-city-service"
+    || $form['#id'] == "views-exposed-form-content-guide-service") {
+
+    $form['submit']['#attributes']['class'][] = 'btn';
+  }
+}

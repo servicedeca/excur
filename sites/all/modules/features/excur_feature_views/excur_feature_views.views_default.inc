@@ -130,6 +130,14 @@ function excur_feature_views_views_default_views() {
     'image_style' => '70x70',
     'image_link' => 'content',
   );
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Критерий сортировки: Содержимое: Дата обновления */
+  $handler->display->display_options['sorts']['changed']['id'] = 'changed';
+  $handler->display->display_options['sorts']['changed']['table'] = 'node';
+  $handler->display->display_options['sorts']['changed']['field'] = 'changed';
+  $handler->display->display_options['sorts']['changed']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['changed']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['changed']['expose']['label'] = 'Дата обновления';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Контекстный фильтр: Поле: Город (field_city) */
   $handler->display->display_options['arguments']['field_city_target_id']['id'] = 'field_city_target_id';
@@ -250,6 +258,14 @@ function excur_feature_views_views_default_views() {
     'image_style' => '70x70',
     'image_link' => 'content',
   );
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Критерий сортировки: Содержимое: Дата обновления */
+  $handler->display->display_options['sorts']['changed']['id'] = 'changed';
+  $handler->display->display_options['sorts']['changed']['table'] = 'node';
+  $handler->display->display_options['sorts']['changed']['field'] = 'changed';
+  $handler->display->display_options['sorts']['changed']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['changed']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['changed']['expose']['label'] = 'Дата обновления';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Контекстный фильтр: Содержимое: Гид (field_guide) */
   $handler->display->display_options['arguments']['field_guide_target_id']['id'] = 'field_guide_target_id';
@@ -315,6 +331,7 @@ function excur_feature_views_views_default_views() {
     t('Заголовок'),
     t('Услуги города'),
     t('Переводы'),
+    t('Дата обновления'),
     t('Все'),
     t('View panes'),
     t('Услуги гида'),

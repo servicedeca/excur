@@ -206,7 +206,7 @@ function exc_theme_form_select_options($element, $choices = NULL) {
       }
 
       $data_content = isset($element['#data-content'][$key]) ? str_replace('"', '\'', $element['#data-content'][$key]) : check_plain($choice);
-      $options .= '<option value="' . check_plain($key) . '"' . $selected . ' data-content="' . $data_content . '">>' . check_plain($choice) . '</option>';
+      $options .= '<option value="' . check_plain($key) . '"' . $selected . ' data-content="' . $data_content . '">' . check_plain($choice) . '</option>';
     }
   }
   return $options;

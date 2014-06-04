@@ -338,3 +338,14 @@ ul.primary {
 h2.meeting {
   display: inline-block;
 }
+
+.view-display-id-city_service h2,
+.view-display-id-guide_service h2 {
+  padding: 10px 0 0 0;
+}
+
+.view-display-id-city_service #edit-submit-content,
+.view-display-id-guide_service #edit-submit-content {
+  height: 35px;
+  line-height: 35px;
+}
