@@ -52,7 +52,7 @@ function template_preprocess_excur_service_offer(&$vars) {
       $currency = $_COOKIE['excur_currency'];
     }
     else {
-      $currency = $wrapper->field_currency->value();
+      $currency = EXCUR_CURRENCY_DEFAULT;
     }
 
     foreach ($wrapper->field_offer->value() as $offer) {
@@ -95,7 +95,7 @@ function template_preprocess_excur_service_offer(&$vars) {
 
         $offer_ticket_price = $offer_ticket->field_offer_ticket_price[LANGUAGE_NONE][0]['value'];
         if ($currency != EXCUR_CURRENCY_DEFAULT) {
-          $offer_ticket_price = excur_currency_convert($offer_ticket_price, $wrapper->field_currency->value(), $currency);
+          $offer_ticket_price = excur_currency_convert($offer_ticket_price, EXCUR_CURRENCY_DEFAULT, $currency);
         }
 
         $offer_tickets[] = array(

@@ -159,7 +159,7 @@ function excur_feature_node_service_field_default_field_instances() {
     'bundle' => 'field_offer_ticket',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Например: "2200"',
+    'description' => 'Укажите стоимость билета в <b>ЕВРО</b>. Например: "2200".',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -388,9 +388,13 @@ function excur_feature_node_service_field_default_field_instances() {
   // Exported field_instance: 'node-service-field_currency'
   $field_instances['node-service-field_currency'] = array(
     'bundle' => 'service',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => 'EUR',
+      ),
+    ),
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Укажите валюту, в которой отображать стомость услуги, если пользователем не выбрана иная',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -945,13 +949,14 @@ function excur_feature_node_service_field_default_field_instances() {
   t('Место встречи');
   t('Название');
   t('Например: "2.5 часа"');
-  t('Например: "2200"');
   t('Например: "Cтандартное предложение"');
   t('Например: "Взрослые билеты"');
   t('Например: "Каждый день с 09:00 до 18:00"');
   t('Описание');
   t('Предложение');
   t('Продолжительность');
+  t('Укажите валюту, в которой отображать стомость услуги, если пользователем не выбрана иная');
+  t('Укажите стоимость билета в <b>ЕВРО</b>. Например: "2200".');
   t('Цена');
   t('Часы работы');
 

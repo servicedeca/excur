@@ -127,10 +127,10 @@ function exc_theme_preprocess_node__service_teaser(&$vars) {
   $price = excur_currency_lowest_price($node);
   if (!empty($_COOKIE['excur_currency']) && $_COOKIE['excur_currency'] != EXCUR_CURRENCY_DEFAULT) {
     $currency = $_COOKIE['excur_currency'];
-    $price = excur_currency_convert($price, $node->field_currency[LANGUAGE_NONE][0]['value'], $currency);
+    $price = excur_currency_convert($price, EXCUR_CURRENCY_DEFAULT, $currency);
   }
   else {
-    $currency = $node->field_currency[LANGUAGE_NONE][0]['value'];
+    $currency = EXCUR_CURRENCY_DEFAULT;
   }
 
   $vars['price'] = $price;

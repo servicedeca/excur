@@ -60,6 +60,9 @@ function excur_feature_views_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Услуги города', 'city_service');
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'mini';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
@@ -84,52 +87,27 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['relationships']['entity_translations']['id'] = 'entity_translations';
   $handler->display->display_options['relationships']['entity_translations']['table'] = 'node';
   $handler->display->display_options['relationships']['entity_translations']['field'] = 'entity_translations';
+  /* Связь: Содержимое: Предложение (field_offer) */
+  $handler->display->display_options['relationships']['field_offer_value']['id'] = 'field_offer_value';
+  $handler->display->display_options['relationships']['field_offer_value']['table'] = 'field_data_field_offer';
+  $handler->display->display_options['relationships']['field_offer_value']['field'] = 'field_offer_value';
+  $handler->display->display_options['relationships']['field_offer_value']['label'] = 'Предложение';
+  $handler->display->display_options['relationships']['field_offer_value']['required'] = TRUE;
+  $handler->display->display_options['relationships']['field_offer_value']['delta'] = '-1';
+  /* Связь: Элемент коллекции полей: Билеты (field_offer_ticket) */
+  $handler->display->display_options['relationships']['field_offer_ticket_value']['id'] = 'field_offer_ticket_value';
+  $handler->display->display_options['relationships']['field_offer_ticket_value']['table'] = 'field_data_field_offer_ticket';
+  $handler->display->display_options['relationships']['field_offer_ticket_value']['field'] = 'field_offer_ticket_value';
+  $handler->display->display_options['relationships']['field_offer_ticket_value']['relationship'] = 'field_offer_value';
+  $handler->display->display_options['relationships']['field_offer_ticket_value']['required'] = TRUE;
+  $handler->display->display_options['relationships']['field_offer_ticket_value']['delta'] = '-1';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Поле: Содержимое: Заголовок */
-  $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
-  $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
-  $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
-  $handler->display->display_options['fields']['title_field']['label'] = '';
-  $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title_field']['settings'] = array(
-    'title_style' => '_none',
-    'title_link' => 'content',
-    'title_class' => '',
-  );
-  $handler->display->display_options['fields']['title_field']['link_to_entity'] = 1;
-  /* Поле: Содержимое: Текст */
-  $handler->display->display_options['fields']['body']['id'] = 'body';
-  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
-  $handler->display->display_options['fields']['body']['field'] = 'body';
-  $handler->display->display_options['fields']['body']['label'] = '';
-  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['body']['type'] = 'text_trimmed';
-  $handler->display->display_options['fields']['body']['settings'] = array(
-    'trim_length' => '300',
-  );
-  /* Поле: Поле: Главное изображение */
-  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
-  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['label'] = '';
-  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => '170x130',
-    'image_link' => 'content',
-  );
-  /* Поле: Поле: Главное изображение */
-  $handler->display->display_options['fields']['field_image_1']['id'] = 'field_image_1';
-  $handler->display->display_options['fields']['field_image_1']['table'] = 'field_data_field_image';
-  $handler->display->display_options['fields']['field_image_1']['field'] = 'field_image';
-  $handler->display->display_options['fields']['field_image_1']['relationship'] = 'field_guide_target_id';
-  $handler->display->display_options['fields']['field_image_1']['label'] = '';
-  $handler->display->display_options['fields']['field_image_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_image_1']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_image_1']['settings'] = array(
-    'image_style' => '70x70',
-    'image_link' => 'content',
-  );
+  /* Поле: Содержимое: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Критерий сортировки: Содержимое: Дата обновления */
   $handler->display->display_options['sorts']['changed']['id'] = 'changed';
@@ -138,6 +116,13 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['sorts']['changed']['order'] = 'DESC';
   $handler->display->display_options['sorts']['changed']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['changed']['expose']['label'] = 'Дата обновления';
+  /* Критерий сортировки: Элемент коллекции полей: Цена (field_offer_ticket_price) */
+  $handler->display->display_options['sorts']['field_offer_ticket_price_value']['id'] = 'field_offer_ticket_price_value';
+  $handler->display->display_options['sorts']['field_offer_ticket_price_value']['table'] = 'field_data_field_offer_ticket_price';
+  $handler->display->display_options['sorts']['field_offer_ticket_price_value']['field'] = 'field_offer_ticket_price_value';
+  $handler->display->display_options['sorts']['field_offer_ticket_price_value']['relationship'] = 'field_offer_ticket_value';
+  $handler->display->display_options['sorts']['field_offer_ticket_price_value']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['field_offer_ticket_price_value']['expose']['label'] = 'Цена';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Контекстный фильтр: Поле: Город (field_city) */
   $handler->display->display_options['arguments']['field_city_target_id']['id'] = 'field_city_target_id';
@@ -188,6 +173,9 @@ function excur_feature_views_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Услуги гида', 'guide_service');
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'mini';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
@@ -212,6 +200,21 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['relationships']['entity_translations']['id'] = 'entity_translations';
   $handler->display->display_options['relationships']['entity_translations']['table'] = 'node';
   $handler->display->display_options['relationships']['entity_translations']['field'] = 'entity_translations';
+  /* Связь: Содержимое: Предложение (field_offer) */
+  $handler->display->display_options['relationships']['field_offer_value']['id'] = 'field_offer_value';
+  $handler->display->display_options['relationships']['field_offer_value']['table'] = 'field_data_field_offer';
+  $handler->display->display_options['relationships']['field_offer_value']['field'] = 'field_offer_value';
+  $handler->display->display_options['relationships']['field_offer_value']['label'] = 'Предложение';
+  $handler->display->display_options['relationships']['field_offer_value']['required'] = TRUE;
+  $handler->display->display_options['relationships']['field_offer_value']['delta'] = '-1';
+  /* Связь: Элемент коллекции полей: Билеты (field_offer_ticket) */
+  $handler->display->display_options['relationships']['field_offer_ticket_value']['id'] = 'field_offer_ticket_value';
+  $handler->display->display_options['relationships']['field_offer_ticket_value']['table'] = 'field_data_field_offer_ticket';
+  $handler->display->display_options['relationships']['field_offer_ticket_value']['field'] = 'field_offer_ticket_value';
+  $handler->display->display_options['relationships']['field_offer_ticket_value']['relationship'] = 'field_offer_value';
+  $handler->display->display_options['relationships']['field_offer_ticket_value']['label'] = 'Билет';
+  $handler->display->display_options['relationships']['field_offer_ticket_value']['required'] = TRUE;
+  $handler->display->display_options['relationships']['field_offer_ticket_value']['delta'] = '-1';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Поле: Содержимое: Заголовок */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
@@ -266,6 +269,13 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['sorts']['changed']['order'] = 'DESC';
   $handler->display->display_options['sorts']['changed']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['changed']['expose']['label'] = 'Дата обновления';
+  /* Критерий сортировки: Элемент коллекции полей: Цена (field_offer_ticket_price) */
+  $handler->display->display_options['sorts']['field_offer_ticket_price_value']['id'] = 'field_offer_ticket_price_value';
+  $handler->display->display_options['sorts']['field_offer_ticket_price_value']['table'] = 'field_data_field_offer_ticket_price';
+  $handler->display->display_options['sorts']['field_offer_ticket_price_value']['field'] = 'field_offer_ticket_price_value';
+  $handler->display->display_options['sorts']['field_offer_ticket_price_value']['relationship'] = 'field_offer_ticket_value';
+  $handler->display->display_options['sorts']['field_offer_ticket_price_value']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['field_offer_ticket_price_value']['expose']['label'] = 'Цена';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Контекстный фильтр: Содержимое: Гид (field_guide) */
   $handler->display->display_options['arguments']['field_guide_target_id']['id'] = 'field_guide_target_id';
@@ -331,10 +341,14 @@ function excur_feature_views_views_default_views() {
     t('Заголовок'),
     t('Услуги города'),
     t('Переводы'),
+    t('Предложение'),
+    t('field collection item from field_offer_ticket'),
     t('Дата обновления'),
+    t('Цена'),
     t('Все'),
     t('View panes'),
     t('Услуги гида'),
+    t('Билет'),
   );
   $export['content'] = $view;
 

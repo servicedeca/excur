@@ -3,7 +3,7 @@
  * @file
  */
 
-define('EXCUR_CURRENCY_DEFAULT', 'none');
+define('EXCUR_CURRENCY_DEFAULT', 'EUR');
 define('EXCUR_CURRENCY_EURO', 'EUR');
 define('EXCUR_CURRENCY_US_DOLLAR', 'USD');
 define('EXCUR_CURRENCY_RUS_ROUBLE', 'RUB');
@@ -97,7 +97,6 @@ function excur_currency_choice_form() {
   $form['currency'] = array(
     '#type' => 'select',
     '#options' => array(
-      'none' => t('Currency offers'),
       EXCUR_CURRENCY_EURO => t('Euro'),
       EXCUR_CURRENCY_US_DOLLAR => t('U.S. Dollar'),
       EXCUR_CURRENCY_RUS_ROUBLE => t('Russian Rouble'),
@@ -108,7 +107,7 @@ function excur_currency_choice_form() {
       EXCUR_CURRENCY_GB_POUND => t('Pound sterling'),
       EXCUR_CURRENCY_SWISS_FRANC => t('Swiss Franc'),
     ),
-    '#default_value' => !empty($_COOKIE['excur_currency']) ? $_COOKIE['excur_currency'] : 'none',
+    '#default_value' => !empty($_COOKIE['excur_currency']) ? $_COOKIE['excur_currency'] : EXCUR_CURRENCY_EURO,
     '#data-content' => array(
       EXCUR_CURRENCY_EURO => excur_currency_get_icon(EXCUR_CURRENCY_EURO) . ' ' . t('Euro'),
       EXCUR_CURRENCY_US_DOLLAR => excur_currency_get_icon(EXCUR_CURRENCY_US_DOLLAR) . ' ' . t('U.S. Dollar'),
