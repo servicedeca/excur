@@ -41,7 +41,8 @@ function excur_currency_update_cron() {
   );
 
   foreach ($currencies as $currency) {
-
+    $value = excur_currency_convert(1 ,$currency, EXCUR_CURRENCY_RUS_ROUBLE);
+    variable_set("excur_currency_$currency", $value);
   }
 }
 
@@ -136,6 +137,23 @@ function excur_currency_choice_form_submit(&$form, &$form_state) {
   setcookie('excur_currency', $form_state['values']['currency'], REQUEST_TIME + 86400, '/');
 }
 
+function _excur_currency_convert($price, $existing_currency, $preferred_currency) {
+  if($existing_currency == $preferred_currency) {
+    return $price;
+  }
+
+  if ($existing_currency != 'RUB') {
+    $currency = $preferred_currency != 'RUB'
+      ? ($existing_currency / $preferred_currency) * $price
+      : $existing_currency * $price;
+  }
+  else {
+    $currency = ($price * $existing_currency) / $preferred_currency;
+  }
+
+  return round($currency, 2);
+}
+
 /**
  * Convert money from one currency to another.
  *
@@ -145,9 +163,8 @@ function excur_currency_choice_form_submit(&$form, &$form_state) {
  * @return float.
  */
 function excur_currency_convert($money, $from, $to) {
-  if (0) {
-    // @todo: Do not make request every time.
-    // @todo: Store exchange rate in database.
+  if ($fromm = variable_get("excur_currency_$from") && $too = variable_get("excur_currency_$to")) {
+    $value = _excur_currency_convert($money, $fromm, $too);
   }
   else {
     $obj = new excurCurrency();
