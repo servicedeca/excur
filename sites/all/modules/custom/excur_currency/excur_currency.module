@@ -137,6 +137,14 @@ function excur_currency_choice_form_submit(&$form, &$form_state) {
   setcookie('excur_currency', $form_state['values']['currency'], REQUEST_TIME + 86400, '/');
 }
 
+/**
+ * Internal convert function.
+ *
+ * @param int $price.
+ * @param string $existing_currency.
+ * @param string $preferred_currency.
+ * @return float.
+ */
 function _excur_currency_convert($price, $existing_currency, $preferred_currency) {
   if($existing_currency == $preferred_currency) {
     return $price;
