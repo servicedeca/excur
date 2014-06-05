@@ -60,6 +60,8 @@ function excur_feature_views_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Услуги города', 'city_service');
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
   $handler->display->display_options['defaults']['query'] = FALSE;
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['distinct'] = TRUE;
@@ -115,15 +117,9 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['sorts']['field_offer_ticket_price_value']['table'] = 'field_data_field_offer_ticket_price';
   $handler->display->display_options['sorts']['field_offer_ticket_price_value']['field'] = 'field_offer_ticket_price_value';
   $handler->display->display_options['sorts']['field_offer_ticket_price_value']['relationship'] = 'field_offer_ticket_value';
+  $handler->display->display_options['sorts']['field_offer_ticket_price_value']['group_type'] = 'min';
   $handler->display->display_options['sorts']['field_offer_ticket_price_value']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['field_offer_ticket_price_value']['expose']['label'] = 'Цена';
-  /* Критерий сортировки: Содержимое: Дата обновления */
-  $handler->display->display_options['sorts']['changed']['id'] = 'changed';
-  $handler->display->display_options['sorts']['changed']['table'] = 'node';
-  $handler->display->display_options['sorts']['changed']['field'] = 'changed';
-  $handler->display->display_options['sorts']['changed']['order'] = 'DESC';
-  $handler->display->display_options['sorts']['changed']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['changed']['expose']['label'] = 'Дата обновления';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Контекстный фильтр: Поле: Город (field_city) */
   $handler->display->display_options['arguments']['field_city_target_id']['id'] = 'field_city_target_id';
@@ -174,6 +170,8 @@ function excur_feature_views_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Услуги гида', 'guide_service');
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
   $handler->display->display_options['defaults']['query'] = FALSE;
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['distinct'] = TRUE;
@@ -268,15 +266,9 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['sorts']['field_offer_ticket_price_value']['table'] = 'field_data_field_offer_ticket_price';
   $handler->display->display_options['sorts']['field_offer_ticket_price_value']['field'] = 'field_offer_ticket_price_value';
   $handler->display->display_options['sorts']['field_offer_ticket_price_value']['relationship'] = 'field_offer_ticket_value';
+  $handler->display->display_options['sorts']['field_offer_ticket_price_value']['group_type'] = 'min';
   $handler->display->display_options['sorts']['field_offer_ticket_price_value']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['field_offer_ticket_price_value']['expose']['label'] = 'Цена';
-  /* Критерий сортировки: Содержимое: Дата обновления */
-  $handler->display->display_options['sorts']['changed']['id'] = 'changed';
-  $handler->display->display_options['sorts']['changed']['table'] = 'node';
-  $handler->display->display_options['sorts']['changed']['field'] = 'changed';
-  $handler->display->display_options['sorts']['changed']['order'] = 'DESC';
-  $handler->display->display_options['sorts']['changed']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['changed']['expose']['label'] = 'Дата обновления';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Контекстный фильтр: Содержимое: Гид (field_guide) */
   $handler->display->display_options['arguments']['field_guide_target_id']['id'] = 'field_guide_target_id';
@@ -345,7 +337,6 @@ function excur_feature_views_views_default_views() {
     t('Предложение'),
     t('Билет'),
     t('Цена'),
-    t('Дата обновления'),
     t('Все'),
     t('View panes'),
     t('Услуги гида'),
