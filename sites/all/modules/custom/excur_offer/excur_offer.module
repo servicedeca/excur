@@ -8,7 +8,7 @@
  * Implements hook_menu().
  */
 function excur_offer_menu() {
-  $items['excur/offer/%'] = array(
+  $items['excur/offer/%excur_offer'] = array(
     'title' => 'E-ticket',
     'page callback' => 'excur_offer_page',
     'page arguments' => array(2),
@@ -43,15 +43,26 @@ function excur_offer_theme() {
   return $items;
 }
 
-function excur_offer_page($oid) {
-  $offer = excur_offer_load($oid);
+/**
+ * Implements hook_views_api().
+ */
+function excur_offer_views_api() {
+  return array(
+    'api' => 3,
+  );
+}
+
+/**
+ * Page callback for excur/offer/%excur_offer path.
+ */
+function excur_offer_page($offer) {
 
   print theme('offer_mail', array(
     'service' => node_load($offer->nid),
     'account' => user_load($offer->uid),
     'ticket' => $offer->ticket,
     'date' => $offer->date,
-    'oid' => $oid,
+    'oid' => $offer->oid,
   ));
   drupal_exit();
 }
@@ -101,8 +112,8 @@ function excur_offer_offer_form_validate(&$form, &$form_state) {
   if (!$values['tickets']) {
     form_error($form['tickets'], t('You should choose a price.'));
   }
-  if (!$values['date']) {
-    form_error($form['date'], t('You should choose a date.'));
+  if (!$values['date'] || strtotime($values['date']) < REQUEST_TIME) {
+    form_error($form['date'], t('You should choose a valid date.'));
   }
 }
 
@@ -113,11 +124,11 @@ function excur_offer_offer_form_submit(&$form, &$form_state) {
   global $user;
   $values = $form_state['values'];
 
-//  $oid = '';
-//  excur_offer_save($oid, $user->uid, $values['tickets'], $values['date']);
-//
+  $oid = rand(1000, 9999) . REQUEST_TIME;
+  excur_offer_save($oid, $user->uid, $form['#data']['nid'], $values['tickets'], $values['date']);
+
 //  $message = theme('offer_mail', array(
-//    'service' => node_load($form['#nid']),
+//    'service' => node_load($form['#data']['nid']),
 //    'account' => user_load($user->uid),
 //    'ticket' => $values['tickets'],
 //    'date' => $values['date'],
@@ -179,11 +190,23 @@ function excur_offer_load($oid) {
 /**
  * Save offer.
  *
- * @param int $oid.
+ * @param string $oid.
  * @param int $uid.
- * @param int $ticket.
+ * @param int $nid.
+ * @param string $ticket.
  * @param string $date.
  */
-function excur_offer_save($oid, $uid, $ticket, $date) {
+function excur_offer_save($oid, $uid, $nid, $ticket, $date) {
+  $record = array(
+    'oid' => $oid,
+    'uid' => $uid,
+    'nid' => $nid,
+    'date' => $date,
+    'ticket' => $ticket,
+    'created' => REQUEST_TIME,
+  );
 
+  db_insert('excur_offer')
+    ->fields($record)
+    ->execute();
 }

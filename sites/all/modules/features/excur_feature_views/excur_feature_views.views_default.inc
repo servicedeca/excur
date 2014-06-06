@@ -112,6 +112,14 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Критерий сортировки: Excursionline: Node id */
+  $handler->display->display_options['sorts']['nid']['id'] = 'nid';
+  $handler->display->display_options['sorts']['nid']['table'] = 'excur_offer';
+  $handler->display->display_options['sorts']['nid']['field'] = 'nid';
+  $handler->display->display_options['sorts']['nid']['group_type'] = 'count';
+  $handler->display->display_options['sorts']['nid']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['nid']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['nid']['expose']['label'] = 'Популярности';
   /* Критерий сортировки: Элемент коллекции полей: Цена (field_offer_ticket_price) */
   $handler->display->display_options['sorts']['field_offer_ticket_price_value']['id'] = 'field_offer_ticket_price_value';
   $handler->display->display_options['sorts']['field_offer_ticket_price_value']['table'] = 'field_data_field_offer_ticket_price';
@@ -119,7 +127,7 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['sorts']['field_offer_ticket_price_value']['relationship'] = 'field_offer_ticket_value';
   $handler->display->display_options['sorts']['field_offer_ticket_price_value']['group_type'] = 'min';
   $handler->display->display_options['sorts']['field_offer_ticket_price_value']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['field_offer_ticket_price_value']['expose']['label'] = 'Цена';
+  $handler->display->display_options['sorts']['field_offer_ticket_price_value']['expose']['label'] = 'Цене';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Контекстный фильтр: Поле: Город (field_city) */
   $handler->display->display_options['arguments']['field_city_target_id']['id'] = 'field_city_target_id';
@@ -261,6 +269,14 @@ function excur_feature_views_views_default_views() {
     'image_link' => 'content',
   );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Критерий сортировки: Excursionline: Node id */
+  $handler->display->display_options['sorts']['nid']['id'] = 'nid';
+  $handler->display->display_options['sorts']['nid']['table'] = 'excur_offer';
+  $handler->display->display_options['sorts']['nid']['field'] = 'nid';
+  $handler->display->display_options['sorts']['nid']['group_type'] = 'count';
+  $handler->display->display_options['sorts']['nid']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['nid']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['nid']['expose']['label'] = 'Популярности';
   /* Критерий сортировки: Элемент коллекции полей: Цена (field_offer_ticket_price) */
   $handler->display->display_options['sorts']['field_offer_ticket_price_value']['id'] = 'field_offer_ticket_price_value';
   $handler->display->display_options['sorts']['field_offer_ticket_price_value']['table'] = 'field_data_field_offer_ticket_price';
@@ -268,7 +284,7 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['sorts']['field_offer_ticket_price_value']['relationship'] = 'field_offer_ticket_value';
   $handler->display->display_options['sorts']['field_offer_ticket_price_value']['group_type'] = 'min';
   $handler->display->display_options['sorts']['field_offer_ticket_price_value']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['field_offer_ticket_price_value']['expose']['label'] = 'Цена';
+  $handler->display->display_options['sorts']['field_offer_ticket_price_value']['expose']['label'] = 'Цене';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Контекстный фильтр: Содержимое: Гид (field_guide) */
   $handler->display->display_options['arguments']['field_guide_target_id']['id'] = 'field_guide_target_id';
@@ -336,7 +352,8 @@ function excur_feature_views_views_default_views() {
     t('Переводы'),
     t('Предложение'),
     t('Билет'),
-    t('Цена'),
+    t('Популярности'),
+    t('Цене'),
     t('Все'),
     t('View panes'),
     t('Услуги гида'),

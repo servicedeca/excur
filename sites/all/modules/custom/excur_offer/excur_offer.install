@@ -39,6 +39,11 @@ function excur_offer_schema() {
         'length' => 50,
         'not null' => TRUE,
       ),
+      'created' => array(
+        'description' => 'Created time of offer.',
+        'type' => 'int',
+        'not null' => TRUE,
+      ),
     ),
     'primary key' => array('oid'),
   );
