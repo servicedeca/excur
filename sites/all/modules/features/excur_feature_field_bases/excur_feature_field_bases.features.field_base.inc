@@ -132,13 +132,13 @@ function excur_feature_field_bases_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_categoty'
-  $field_bases['field_categoty'] = array(
+  // Exported field_base: 'field_category'
+  $field_bases['field_category'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_categoty',
+    'field_name' => 'field_category',
     'foreign keys' => array(
       'tid' => array(
         'columns' => array(

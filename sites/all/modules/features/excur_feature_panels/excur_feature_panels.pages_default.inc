@@ -649,6 +649,25 @@ function excur_feature_panels_default_page_manager_handlers() {
     $display->content['new-a17c2523-ae7e-40f0-9563-87c239075e7c'] = $pane;
     $display->panels['content_center'][1] = 'new-a17c2523-ae7e-40f0-9563-87c239075e7c';
     $pane = new stdClass();
+    $pane->pid = 'new-b1d2b1c9-f6c8-4b8f-b799-885b6466f7a1';
+    $pane->panel = 'content_left';
+    $pane->type = 'service_category';
+    $pane->subtype = 'service_category';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'b1d2b1c9-f6c8-4b8f-b799-885b6466f7a1';
+    $display->content['new-b1d2b1c9-f6c8-4b8f-b799-885b6466f7a1'] = $pane;
+    $display->panels['content_left'][0] = 'new-b1d2b1c9-f6c8-4b8f-b799-885b6466f7a1';
+    $pane = new stdClass();
     $pane->pid = 'new-ee90fe0e-824d-4aa6-b53b-8fbff695f54b';
     $pane->panel = 'content_left';
     $pane->type = 'popular_guide';
@@ -662,11 +681,11 @@ function excur_feature_panels_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = 'ee90fe0e-824d-4aa6-b53b-8fbff695f54b';
     $display->content['new-ee90fe0e-824d-4aa6-b53b-8fbff695f54b'] = $pane;
-    $display->panels['content_left'][0] = 'new-ee90fe0e-824d-4aa6-b53b-8fbff695f54b';
+    $display->panels['content_left'][1] = 'new-ee90fe0e-824d-4aa6-b53b-8fbff695f54b';
     $pane = new stdClass();
     $pane->pid = 'new-4c7fe817-2906-4713-90ca-4622c9ec825b';
     $pane->panel = 'top';

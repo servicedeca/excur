@@ -349,3 +349,21 @@ h2.meeting {
   height: 35px;
   line-height: 35px;
 }
+
+.list-a.categories li {
+  cursor: pointer;
+}
+
+.list-a.categories li.active,
+.list-a.categories li:hover {
+  background-color: #08c;
+  color: white;
+}
+
+.list-a.categories li:last-child {
+  margin-bottom: 0;
+}
+
+#edit-tid-wrapper {
+  display: none;
+}

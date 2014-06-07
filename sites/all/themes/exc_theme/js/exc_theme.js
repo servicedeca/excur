@@ -49,6 +49,22 @@
     }
   };
 
+  Drupal.behaviors.excurServiceCategories = {
+    attach: function(context, settings) {
+      $('ul.list-a.categories').once('categories', function() {
+        $('li', this).click(function() {
+          var $this = $(this)
+          var tid = $this.attr('id').split('-')[1];
+          tid = tid == 0 ? 'All' : tid;
+          $('ul.list-a.categories li.active').removeClass('active');
+          $this.addClass('active');
+          $('#views-exposed-form-content-city-service #edit-tid').val(tid);
+          $('#views-exposed-form-content-city-service #edit-submit-content').click();
+        })
+      });
+    }
+  };
+
   Drupal.behaviors.excurSelect = {
     attach: function(context, settings) {
       var currency = $('#edit-currency');

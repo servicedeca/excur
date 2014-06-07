@@ -283,8 +283,8 @@ function excur_feature_node_service_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-service-field_categoty'
-  $field_instances['node-service-field_categoty'] = array(
+  // Exported field_instance: 'node-service-field_category'
+  $field_instances['node-service-field_category'] = array(
     'bundle' => 'service',
     'default_value' => NULL,
     'deleted' => 0,
@@ -311,7 +311,7 @@ function excur_feature_node_service_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_categoty',
+    'field_name' => 'field_category',
     'label' => 'Категория',
     'required' => 0,
     'settings' => array(

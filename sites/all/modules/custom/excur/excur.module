@@ -292,3 +292,23 @@ function excur_form_views_exposed_form_alter(&$form, &$form_state) {
     $form['submit']['#attributes']['class'][] = 'btn';
   }
 }
+
+/**
+ * Get categories of all services in city.
+ *
+ * @param int $nid.
+ * @return array.
+ */
+function excur_categories_by_city($city) {
+  global $language;
+
+  $query = db_select('field_data_name_field', 'name');
+  $query->fields('name', array('entity_id', 'name_field_value'));
+  $query->join('field_data_field_category', 'category', 'name.entity_id = category.field_category_tid');
+  $query->join('field_data_field_city', 'city', 'city.entity_id = category.entity_id');
+  $query->condition('name.bundle', 'category');
+  $query->condition('name.language', $language->language);
+  $query->condition('city.field_city_target_id', $city);
+
+  return $query->execute()->fetchAll();
+}
