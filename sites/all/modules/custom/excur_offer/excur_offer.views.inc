@@ -42,6 +42,23 @@ function excur_offer_views_data() {
     ),
   );
 
+  $data['excur_offer']['currency'] = array(
+    'title' => t('Currency'),
+    'help' => t('Chosen offer currency.'),
+    'field' => array(
+      'handler' => 'views_handler_field',
+    ),
+    'sort' => array(
+      'handler' => 'views_handler_sort',
+    ),
+    'filter' => array(
+      'handler' => 'views_handler_filter_string',
+    ),
+    'argument' => array(
+      'handler' => 'views_handler_argument_string',
+    ),
+  );
+
   $data['excur_offer']['uid'] = array(
     'title' => t('User id'),
     'help' => t('User which make order.'),
@@ -110,6 +127,21 @@ function excur_offer_views_data() {
     ),
     'argument' => array(
       'handler' => 'views_handler_argument_string',
+    ),
+  );
+
+  $data['excur_offer']['created'] = array(
+    'title' => t('Created'),
+    'help' => t('Date of offer created.'),
+    'field' => array(
+      'handler' => 'views_handler_field_date',
+      'click sortable' => TRUE,
+    ),
+    'sort' => array(
+      'handler' => 'views_handler_sort_date',
+    ),
+    'filter' => array(
+      'handler' => 'views_handler_filter_date',
     ),
   );
 
