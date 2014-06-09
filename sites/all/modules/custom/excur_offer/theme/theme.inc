@@ -37,8 +37,9 @@ function excur_offer_preprocess_offer_mail(&$vars) {
   }
   $vars['country'] = $city->name . ', ' . $country->name;
   $vars['languages'] = '';
-  foreach ($wrapper->field_languages->value() as $lang) {
-    if ($lang == end($wrapper->field_languages->value())) {
+  $languages = $wrapper->field_languages->value();
+  foreach ($languages as $lang) {
+    if ($lang == end($languages)) {
       $vars['languages'] .= $lang->name;
     }
     else {
