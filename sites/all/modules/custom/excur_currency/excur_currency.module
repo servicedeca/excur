@@ -107,7 +107,7 @@ function excur_currency_choice_form() {
       EXCUR_CURRENCY_GB_POUND => t('Pound sterling'),
       EXCUR_CURRENCY_SWISS_FRANC => t('Swiss Franc'),
     ),
-    '#default_value' => !empty($_COOKIE['excur_currency']) ? $_COOKIE['excur_currency'] : EXCUR_CURRENCY_EURO,
+    '#default_value' => !empty($_COOKIE['excur_currency']) ? $_COOKIE['excur_currency'] : EXCUR_CURRENCY_DEFAULT,
     '#data-content' => array(
       EXCUR_CURRENCY_EURO => excur_currency_get_icon(EXCUR_CURRENCY_EURO) . ' ' . t('Euro'),
       EXCUR_CURRENCY_US_DOLLAR => excur_currency_get_icon(EXCUR_CURRENCY_US_DOLLAR) . ' ' . t('U.S. Dollar'),
@@ -214,4 +214,13 @@ function excur_currency_lowest_price($service) {
  */
 function excur_currency_get_icon($currency) {
   return variable_get("excur_currency_icon_$currency", $currency);
+}
+
+/**
+ * Get currency of current user.
+ *
+ * @return string.
+ */
+function excur_offer_user_currency() {
+  return !empty($_COOKIE['excur_currency']) ? $_COOKIE['excur_currency'] : EXCUR_CURRENCY_DEFAULT;
 }

@@ -39,6 +39,12 @@ function excur_offer_schema() {
         'length' => 50,
         'not null' => TRUE,
       ),
+      'currency' => array(
+        'description' => 'Offer price currency.',
+        'type' => 'varchar',
+        'length' => 3,
+        'not null' => TRUE,
+      ),
       'created' => array(
         'description' => 'Created time of offer.',
         'type' => 'int',

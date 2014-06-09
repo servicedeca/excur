@@ -98,7 +98,7 @@ function template_preprocess_excur_service_offer(&$vars) {
           $offer_ticket_price = excur_currency_convert($offer_ticket_price, EXCUR_CURRENCY_DEFAULT, $currency);
         }
 
-        $offer_tickets[] = array(
+        $offer_tickets[(string) $offer_ticket->field_offer_ticket_price[LANGUAGE_NONE][0]['value']] = array(
           'title' => $offer_ticket_title,
           'price' => $offer_ticket_price,
         );

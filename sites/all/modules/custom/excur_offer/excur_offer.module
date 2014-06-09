@@ -23,7 +23,7 @@ function excur_offer_menu() {
  */
 function excur_offer_theme() {
   $items['excur_offer_offer_form'] = array(
-    'template' => 'theme/excur-offer-offer-form',
+    'template' => 'theme/offer-form',
     'render element' => 'form',
   );
 
@@ -31,13 +31,9 @@ function excur_offer_theme() {
     'file' => 'theme.inc',
     'path' => drupal_get_path('module', 'excur_offer') . '/theme',
     'variables' => array(
-      'service' => NULL,
-      'account' => NULL,
-      'ticket' => NULL,
-      'date' => NULL,
-      'oid' => NULL,
+      'offer' => NULL,
     ),
-    'template' => 'excur-offer-offer-mail',
+    'template' => 'offer-mail',
   );
 
   return $items;
@@ -58,11 +54,7 @@ function excur_offer_views_api() {
 function excur_offer_page($offer) {
 
   print theme('offer_mail', array(
-    'service' => node_load($offer->nid),
-    'account' => user_load($offer->uid),
-    'ticket' => $offer->ticket,
-    'date' => $offer->date,
-    'oid' => $offer->oid,
+    'offer' => $offer,
   ));
   drupal_exit();
 }
@@ -74,8 +66,8 @@ function excur_offer_offer_form($form, &$form_state, $offer) {
   $form_state['#data'] = $offer;
   $form['#data'] = $offer;
 
-  foreach ($offer['tickets'] as $ticket) {
-    $options[$ticket['price']] = $ticket['title'] . ' (' . $ticket['price'] . ' ' . $offer['currency'] . ')';
+  foreach ($offer['tickets'] as $key => $ticket) {
+    $options[(string) $key] = $ticket['title'] . ' (' . $ticket['price'] . ' ' . $offer['currency'] . ')';
   }
   $form['tickets'] = array(
     '#type' => 'radios',
@@ -125,17 +117,14 @@ function excur_offer_offer_form_submit(&$form, &$form_state) {
   $values = $form_state['values'];
 
   $oid = rand(1000, 9999) . REQUEST_TIME;
-  excur_offer_save($oid, $user->uid, $form['#data']['nid'], $values['tickets'], $values['date']);
+  excur_offer_save($oid, $user->uid, $form['#data']['nid'], $values['tickets'], excur_offer_user_currency(), $values['date']);
+  $offer = excur_offer_load($oid);
 
-//  $message = theme('offer_mail', array(
-//    'service' => node_load($form['#data']['nid']),
-//    'account' => user_load($user->uid),
-//    'ticket' => $values['tickets'],
-//    'date' => $values['date'],
-//    'oid' => $oid,
-//  ));
+  $message = theme('offer_mail', array(
+    'offer' => $offer,
+  ));
 
-  if (/*excur_offer_send_mail($user->mail, $message)*/0) {
+  if (excur_offer_send_mail($user->mail, $message)) {
     drupal_set_message(t('Further instructions sent to your email.'));
   }
   else {
@@ -183,8 +172,11 @@ function excur_offer_send_mail($email, $message, $subject = NULL, $module_key = 
  * @return object.
  */
 function excur_offer_load($oid) {
-
-  return new Stdclass;
+  return db_select('excur_offer', 'eo')
+    ->fields('eo')
+    ->condition('oid', $oid)
+    ->execute()
+    ->fetchObject();
 }
 
 /**
@@ -194,19 +186,43 @@ function excur_offer_load($oid) {
  * @param int $uid.
  * @param int $nid.
  * @param string $ticket.
+ * @param string $currency.
  * @param string $date.
  */
-function excur_offer_save($oid, $uid, $nid, $ticket, $date) {
+function excur_offer_save($oid, $uid, $nid, $ticket, $currency, $date) {
   $record = array(
     'oid' => $oid,
     'uid' => $uid,
     'nid' => $nid,
     'date' => $date,
     'ticket' => $ticket,
+    'currency' => $currency,
     'created' => REQUEST_TIME,
   );
 
   db_insert('excur_offer')
     ->fields($record)
     ->execute();
+}
+
+/**
+ * Get service duration of offer by price.
+ *
+ * @param float $price.
+ * @param int $nid.
+ * @return string.
+ */
+function excur_offer_duration_by_price($price, $nid) {
+  global $language;
+
+  $query = db_select('field_data_field_offer_duration', 'duration');
+  $query->fields('duration', array('field_offer_duration_value'));
+  $query->join('field_data_field_offer', 'offer', 'offer.field_offer_value = duration.entity_id');
+  $query->join('field_data_field_offer_ticket', 'ticket', 'offer.field_offer_value = ticket.entity_id');
+  $query->join('field_data_field_offer_ticket_price', 'ticket_price', 'ticket.field_offer_ticket_value = ticket_price.entity_id');
+  $query->condition('offer.entity_id', $nid);
+  $query->condition('ticket_price.field_offer_ticket_price_value', $price);
+  $query->condition('duration.language', $language->language);
+
+  return $query->execute()->fetchField();
 }
