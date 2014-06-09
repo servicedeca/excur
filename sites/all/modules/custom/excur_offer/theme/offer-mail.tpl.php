@@ -11,7 +11,7 @@
 	border-left: 1px solid #e0e0e0;
 	background: #fafafa;'>
   <tr style='border-bottom:1px solid #e0e0e0;'>
-    <td bgcolor="#C3C1C1" align="center"><p><?php print t('Voucher #'); ?>:</p>
+    <td bgcolor="#C3C1C1" align="center"><p><?php print t('Voucher #'); ?></p>
     </td>
     <td><p><?php print $offer->oid; ?></p>
     </td>
