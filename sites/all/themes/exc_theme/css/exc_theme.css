@@ -367,3 +367,16 @@ h2.meeting {
 #edit-tid-wrapper {
   display: none;
 }
+
+.navbar .nav.nav-right {
+  float: right;
+  margin: 0;
+}
+
+.navbar .nav.nav-right li.first a {
+  padding: 15px 24px 16px 22px !important;
+}
+
+.navbar .nav.nav-right li.last a {
+  padding-right: 0 !important;
+}

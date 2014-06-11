@@ -49,6 +49,14 @@
     }
   };
 
+  Drupal.behaviors.excurUserLinks = {
+    attach: function(context, settings) {
+      $('.navbar .nav.nav-right').once('user-links', function() {
+        $('li a.active', this).parent().addClass('active');
+      });
+    }
+  };
+
   Drupal.behaviors.excurServiceCategories = {
     attach: function(context, settings) {
       $('ul.list-a.categories').once('categories', function() {

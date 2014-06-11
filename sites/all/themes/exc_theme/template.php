@@ -47,6 +47,26 @@ function exc_theme_preprocess_page(&$vars, $hook) {
     );
   }
 
+  // Get user links.
+  if (user_is_logged_in()) {
+    $items = array(
+      l(t('User profile'), "user/$user->uid"),
+      l(t('Logout'), 'user/logout'),
+    );
+  }
+  else {
+    $items = array(
+      l(t('Login'), 'user/login'),
+      l(t('Register'), 'user/register'),
+    );
+  }
+  $vars['user_links'] = excur_ul_item_list(array(
+    'items' => $items,
+    'attributes' => array(
+      'class' => array('nav', 'nav-right'),
+    ),
+  ));
+
   // Render breadcrumb.
   if (menu_get_object('user')) {
     $vars['breadcrumb'] = '';
@@ -210,4 +230,37 @@ function exc_theme_form_select_options($element, $choices = NULL) {
     }
   }
   return $options;
+}
+
+/**
+ * @param $vars
+ *
+ * @return string
+ */
+function excur_ul_item_list($vars) {
+  $items = $vars['items'];
+  $attributes = $vars['attributes'];
+  $output = '';
+
+  if (!empty($items)) {
+    $output .= "<ul" . drupal_attributes($attributes) . '>';
+    $num_items = count($items);
+    $i = 0;
+    foreach ($items as $item) {
+      $attributes = array();
+      $i++;
+      $data = $item;
+
+      if ($i == 1) {
+        $attributes['class'][] = 'first';
+      }
+      if ($i == $num_items) {
+        $attributes['class'][] = 'last';
+      }
+      $output .= '<li' . drupal_attributes($attributes) . '>' . $data . "</li>\n";
+    }
+    $output .= "</ul>";
+  }
+
+  return $output;
 }

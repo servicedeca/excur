@@ -49,16 +49,17 @@
                       </li>
                     <?php endforeach; ?>
                   </ul>
+                  <?php if (!empty($user_links)): ?>
+                    <?php print $user_links; ?>
+                  <?php endif; ?>
                   <select class="nav-responsive">
                     <?php foreach($main_menu as $link): ?>
                       <?php if (!empty($link['class'])): ?>
                         <?php print '<option selected="selected" value="' . $link['url'] . '">'; ?>
-                        <?php print $link['title']; ?>
-                        <?php print '</option>'; ?>
+                        <?php print $link['title'] . '</option>'; ?>
                       <?php else: ?>
                         <?php print '<option value="' . $link['url'] . '">'; ?>
-                        <?php print $link['title']; ?>
-                        <?php print '</option>'; ?>
+                        <?php print $link['title'] . '</option>'; ?>
                       <?php endif; ?>
                     <?php endforeach; ?>
                   </select>
