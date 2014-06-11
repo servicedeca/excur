@@ -380,3 +380,12 @@ h2.meeting {
 .navbar .nav.nav-right li.last a {
   padding-right: 0 !important;
 }
+
+#edit-field-language-und {
+  background-image: none;
+}
+
+#user-register-form label[for="edit-guide"] {
+  position: relative;
+  top: 3px;
+}

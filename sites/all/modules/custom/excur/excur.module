@@ -35,9 +35,47 @@ function excur_ctools_plugin_directory($owner, $plugin_type) {
 /**
  * Implements hook_form_FORM_ID_alter().
  */
-function excur_form_main_page_slider_node_form_alter(&$form, &$form_id) {
+function excur_form_main_page_slider_node_form_alter(&$form, &$form_state) {
   if (empty($form['#node']->nid)) {
     $form['title']['#default_value'] = 'Слайдер главной страницы (' . date('d:m:Y') . ')';
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function excur_form_user_register_form_alter(&$form, &$form_state) {
+  $form['guide'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Register as guide'),
+    '#default_value' => FALSE,
+  );
+
+  $form['actions']['submit']['#attributes']['class'][] = 'btn';
+  $form['#submit'][] = 'excur_user_register_form_submit';
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function excur_form_user_login_alter(&$form, &$form_state) {
+  $form['actions']['submit']['#attributes']['class'][] = 'btn';
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function excur_form_user_pass_alter(&$form, &$form_state) {
+  $form['actions']['submit']['#attributes']['class'][] = 'btn';
+}
+
+/**
+ * Custom submit for user_register_form() form.
+ */
+function excur_user_register_form_submit(&$form, &$form_state) {
+  if (!empty($form_state['values']['guide']) && $form_state['values']['guide']) {
+    $form['#user']->roles[4] = 'Гид';
+    user_save($form['#user']);
   }
 }
 

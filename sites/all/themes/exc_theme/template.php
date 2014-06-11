@@ -7,6 +7,8 @@
  * Process variables for page.tpl.php.
  */
 function exc_theme_preprocess_page(&$vars, $hook) {
+  global $user;
+
   // Get site logo.
   $vars['logo'] = theme('image', array(
     'path' => theme_get_setting('logo_path'),
