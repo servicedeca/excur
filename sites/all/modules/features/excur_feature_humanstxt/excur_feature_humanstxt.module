@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Feature - Humanstxt feature.
+ */
+
+include_once 'excur_feature_humanstxt.features.inc';
