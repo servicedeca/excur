@@ -485,6 +485,25 @@ function excur_feature_panels_default_page_manager_handlers() {
     $display->content['new-dc69c51d-5877-4c3c-98ac-e0f190cd3639'] = $pane;
     $display->panels['content_center'][2] = 'new-dc69c51d-5877-4c3c-98ac-e0f190cd3639';
     $pane = new stdClass();
+    $pane->pid = 'new-00984ca0-bc66-4b63-9db0-e089ab346eee';
+    $pane->panel = 'content_center';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'content-popular_service';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = '00984ca0-bc66-4b63-9db0-e089ab346eee';
+    $display->content['new-00984ca0-bc66-4b63-9db0-e089ab346eee'] = $pane;
+    $display->panels['content_center'][3] = 'new-00984ca0-bc66-4b63-9db0-e089ab346eee';
+    $pane = new stdClass();
     $pane->pid = 'new-e9b35a02-2cfd-45b9-a234-0a6520159d01';
     $pane->panel = 'content_left';
     $pane->type = 'popular_guide';

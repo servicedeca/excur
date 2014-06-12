@@ -130,7 +130,11 @@ function exc_theme_preprocess_node(&$vars, $hook) {
  * Process variables for node--service-teaser.tpl.php.
  */
 function exc_theme_preprocess_node__service_teaser(&$vars) {
+  global $language;
+
   $node = $vars['node'];
+  $wrapper = entity_metadata_wrapper('node', $node);
+  $wrapper->language($language->language);
   $guide = user_load($node->field_guide[LANGUAGE_NONE][0]['target_id']);
 
   $guide_image = theme('image_style', array(
@@ -157,6 +161,10 @@ function exc_theme_preprocess_node__service_teaser(&$vars) {
 
   $vars['price'] = $price;
   $vars['currency'] = excur_currency_get_icon($currency);
+
+  foreach ($wrapper->field_languages->value() as $lang) {
+    $vars['languages'][] = $lang->field_lang_code[LANGUAGE_NONE][0]['value'];
+  }
 }
 
 /**

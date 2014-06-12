@@ -16,7 +16,7 @@ function excur_feature_humanstxt_strongarm() {
   $strongarm->name = 'humanstxt';
   $strongarm->value = '/* TEAM */
 	Lead developer: Dmitry Kiselev
-	Contact: dmitry.kiselev.v [at] gmail.com
+	Contact: kiselev.kala4ek [at] gmail.com
 	From: Novosibirsk, Russia
 
 	Web developer: Vladimir Usolcev

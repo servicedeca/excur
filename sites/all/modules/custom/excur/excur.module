@@ -329,6 +329,7 @@ function excur_form_views_exposed_form_alter(&$form, &$form_state) {
     || $form['#id'] == "views-exposed-form-content-guide-service") {
 
     $form['submit']['#attributes']['class'][] = 'btn';
+    $form['field_languages_tid']['#attributes']['title'] = t('Use all languages');
   }
 }
 

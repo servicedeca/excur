@@ -6,6 +6,7 @@
 ?>
 <div class="<?php print $classes; ?>">
   <?php print render($title_prefix); ?>
+  <h2><?php print t('Popular services'); ?></h2>
   <?php print render($title_suffix); ?>
   <?php if ($header): ?>
     <div class="view-header">

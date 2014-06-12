@@ -77,14 +77,20 @@
     attach: function(context, settings) {
       var currency = $('#edit-currency');
       var language = $('#edit-languages');
+      var city = $('.view-display-id-city_service select');
+      var guide = $('.view-display-id-guide_service select');
 
       if(/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
         currency.selectpicker('mobile');
         language.selectpicker('mobile');
+        city.selectpicker('mobile');
+        guide.selectpicker('mobile');
       }
       else {
         currency.selectpicker();
         language.selectpicker();
+        city.selectpicker();
+        guide.selectpicker();
       }
 
       currency.change(function() {

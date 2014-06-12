@@ -393,3 +393,16 @@ h2.meeting {
   position: relative;
   top: 3px;
 }
+
+.view-display-id-city_service .views-exposed-widget label,
+.view-display-id-guide_service .views-exposed-widget label {
+  margin-bottom: 3px;
+}
+
+.view-display-id-city_service .views-exposed-widget button,
+.view-display-id-guide_service .views-exposed-widget button,
+.view-display-id-city_service .views-exposed-widget button > span,
+.view-display-id-guide_service .views-exposed-widget button > span {
+  height: 35px;
+  line-height: 35px;
+}

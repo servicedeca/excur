@@ -179,6 +179,24 @@ function excur_feature_views_views_default_views() {
   );
   $handler->display->display_options['filters']['tid']['type'] = 'select';
   $handler->display->display_options['filters']['tid']['vocabulary'] = 'category';
+  /* Критерий фильтра: Поле: Доступные языки (field_languages) */
+  $handler->display->display_options['filters']['field_languages_tid']['id'] = 'field_languages_tid';
+  $handler->display->display_options['filters']['field_languages_tid']['table'] = 'field_data_field_languages';
+  $handler->display->display_options['filters']['field_languages_tid']['field'] = 'field_languages_tid';
+  $handler->display->display_options['filters']['field_languages_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_languages_tid']['expose']['operator_id'] = 'field_languages_tid_op';
+  $handler->display->display_options['filters']['field_languages_tid']['expose']['label'] = 'Языки';
+  $handler->display->display_options['filters']['field_languages_tid']['expose']['operator'] = 'field_languages_tid_op';
+  $handler->display->display_options['filters']['field_languages_tid']['expose']['identifier'] = 'field_languages_tid';
+  $handler->display->display_options['filters']['field_languages_tid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_languages_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+  );
+  $handler->display->display_options['filters']['field_languages_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_languages_tid']['vocabulary'] = 'languages';
   $handler->display->display_options['argument_input'] = array(
     'field_city_target_id' => array(
       'type' => 'context',
@@ -252,7 +270,7 @@ function excur_feature_views_views_default_views() {
     'title_class' => '',
   );
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 1;
-  /* Поле: Содержимое: Текст */
+  /* Поле: Содержимое: Описание */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -338,6 +356,24 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'service' => 'service',
   );
+  /* Критерий фильтра: Поле: Доступные языки (field_languages) */
+  $handler->display->display_options['filters']['field_languages_tid']['id'] = 'field_languages_tid';
+  $handler->display->display_options['filters']['field_languages_tid']['table'] = 'field_data_field_languages';
+  $handler->display->display_options['filters']['field_languages_tid']['field'] = 'field_languages_tid';
+  $handler->display->display_options['filters']['field_languages_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_languages_tid']['expose']['operator_id'] = 'field_languages_tid_op';
+  $handler->display->display_options['filters']['field_languages_tid']['expose']['label'] = 'Языки';
+  $handler->display->display_options['filters']['field_languages_tid']['expose']['operator'] = 'field_languages_tid_op';
+  $handler->display->display_options['filters']['field_languages_tid']['expose']['identifier'] = 'field_languages_tid';
+  $handler->display->display_options['filters']['field_languages_tid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_languages_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+  );
+  $handler->display->display_options['filters']['field_languages_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_languages_tid']['vocabulary'] = 'languages';
   $handler->display->display_options['argument_input'] = array(
     'field_city_target_id' => array(
       'type' => 'context',
@@ -349,6 +385,76 @@ function excur_feature_views_views_default_views() {
     ),
   );
   $handler->display->display_options['inherit_panels_path'] = '1';
+
+  /* Display: Популярные услуги */
+  $handler = $view->new_display('panel_pane', 'Популярные услуги', 'popular_service');
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '6';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['links'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Связь: Содержимое: Entity translation: translations */
+  $handler->display->display_options['relationships']['entity_translations']['id'] = 'entity_translations';
+  $handler->display->display_options['relationships']['entity_translations']['table'] = 'node';
+  $handler->display->display_options['relationships']['entity_translations']['field'] = 'entity_translations';
+  /* Связь: Entity Reference: Связанная Сущность */
+  $handler->display->display_options['relationships']['field_city_target_id']['id'] = 'field_city_target_id';
+  $handler->display->display_options['relationships']['field_city_target_id']['table'] = 'field_data_field_city';
+  $handler->display->display_options['relationships']['field_city_target_id']['field'] = 'field_city_target_id';
+  $handler->display->display_options['relationships']['field_city_target_id']['label'] = 'Город';
+  $handler->display->display_options['relationships']['field_city_target_id']['required'] = TRUE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Критерий сортировки: Excursionline: Node id */
+  $handler->display->display_options['sorts']['nid']['id'] = 'nid';
+  $handler->display->display_options['sorts']['nid']['table'] = 'excur_offer';
+  $handler->display->display_options['sorts']['nid']['field'] = 'nid';
+  $handler->display->display_options['sorts']['nid']['group_type'] = 'count';
+  $handler->display->display_options['sorts']['nid']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Контекстный фильтр: Термин таксономии: Страна (field_country) */
+  $handler->display->display_options['arguments']['field_country_target_id']['id'] = 'field_country_target_id';
+  $handler->display->display_options['arguments']['field_country_target_id']['table'] = 'field_data_field_country';
+  $handler->display->display_options['arguments']['field_country_target_id']['field'] = 'field_country_target_id';
+  $handler->display->display_options['arguments']['field_country_target_id']['relationship'] = 'field_city_target_id';
+  $handler->display->display_options['arguments']['field_country_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_country_target_id']['exception']['title'] = 'Все';
+  $handler->display->display_options['arguments']['field_country_target_id']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['field_country_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_country_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_country_target_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Критерий фильтра: Содержимое: Опубликовано */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Критерий фильтра: Содержимое: Тип */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'service' => 'service',
+  );
+  /* Критерий фильтра: Перевод сущностей: Язык */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'entity_translation';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['relationship'] = 'entity_translations';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
   $translatables['content'] = array(
     t('Master'),
     t('ещё'),
@@ -373,8 +479,11 @@ function excur_feature_views_views_default_views() {
     t('Pricing'),
     t('Все'),
     t('Категория'),
+    t('Языки'),
     t('View panes'),
     t('Услуги гида'),
+    t('Популярные услуги'),
+    t('Город'),
   );
   $export['content'] = $view;
 

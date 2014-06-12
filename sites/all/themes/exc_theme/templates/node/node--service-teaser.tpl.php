@@ -24,6 +24,13 @@
       <?php print t('From') . ' ' . $price; ?>
       <?php print $currency; ?>
     </div>
+    <div class="tag">
+      <i class="fa fa-language"></i>
+      <?php print t('Languages') . ':'; ?>
+      <?php foreach($languages as $lang):  ?>
+        <i class="flag flag-<?php print $lang; ?>"></i>
+      <?php endforeach; ?>
+    </div>
   </div>
   <div class="span1 guide">
     <div class="img-border">
