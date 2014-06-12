@@ -1,12 +1,5 @@
 <?php if (!empty($blocks)): ?>
   <div class="row">
-    <div class="span12">
-      <h2>
-        <?php print t('Advantages');?>
-      </h2>
-    </div>
-  </div>
-  <div class="row">
     <?php foreach($blocks as $id => $block): ?>
       <div class="advantages-text-block span4 ">
         <?php print $block; ?>

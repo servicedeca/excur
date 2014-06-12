@@ -45,6 +45,7 @@ function template_preprocess_excur_image_slider(&$vars) {
 
   if (drupal_is_front_page()) {
     $images = excur_main_slider_images();
+    $vars['text'] = t('Welcome to Excursionline!');
   }
   elseif ($term = menu_get_object('taxonomy_term', 2)) {
     if (!empty($term->field_slider_images)) {

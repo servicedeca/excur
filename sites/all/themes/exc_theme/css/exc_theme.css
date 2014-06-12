@@ -406,3 +406,9 @@ h2.meeting {
   height: 35px;
   line-height: 35px;
 }
+
+h1#text-special {
+  font-size: 42px;
+  text-align: center;
+  padding-top: 0;
+}
