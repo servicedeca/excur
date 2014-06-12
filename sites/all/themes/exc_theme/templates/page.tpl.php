@@ -38,31 +38,9 @@
             <div class="row">
               <div class="span12">
                 <nav class="navbar">
-                  <ul class="nav">
-                    <?php foreach($main_menu as $link): ?>
-                      <?php if (!empty($link['class'])): ?>
-                        <li class="<?php print implode(' ', $link['class']); ?>">
-                      <?php else: ?>
-                        <li>
-                      <?php endif; ?>
-                      <?php print l($link['title'], $link['url']); ?>
-                      </li>
-                    <?php endforeach; ?>
-                  </ul>
                   <?php if (!empty($user_links)): ?>
                     <?php print $user_links; ?>
                   <?php endif; ?>
-                  <select class="nav-responsive">
-                    <?php foreach($main_menu as $link): ?>
-                      <?php if (!empty($link['class'])): ?>
-                        <?php print '<option selected="selected" value="' . $link['url'] . '">'; ?>
-                        <?php print $link['title'] . '</option>'; ?>
-                      <?php else: ?>
-                        <?php print '<option value="' . $link['url'] . '">'; ?>
-                        <?php print $link['title'] . '</option>'; ?>
-                      <?php endif; ?>
-                    <?php endforeach; ?>
-                  </select>
                 </nav>
               </div>
             </div>

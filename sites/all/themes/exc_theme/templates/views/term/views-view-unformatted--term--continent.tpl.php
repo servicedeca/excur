@@ -5,9 +5,9 @@
  */
 ?>
 <div class="row">
-  <div class="span9">
+  <div class="span12">
     <h2>
-      <?php print t('Continents'); ?>
+      <?php print t('Destinations'); ?>
     </h2>
   </div>
 </div>

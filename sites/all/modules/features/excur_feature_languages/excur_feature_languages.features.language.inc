@@ -36,5 +36,18 @@ function excur_feature_languages_locale_default_languages() {
     'prefix' => 'ru',
     'weight' => 0,
   );
+  // Exported language: zh-hans.
+  $languages['zh-hans'] = array(
+    'language' => 'zh-hans',
+    'name' => 'Chinese, Simplified',
+    'native' => '简体中文',
+    'direction' => 0,
+    'enabled' => 1,
+    'plurals' => 2,
+    'formula' => '($n!=1)',
+    'domain' => '',
+    'prefix' => 'zh-hans',
+    'weight' => 0,
+  );
   return $languages;
 }

@@ -25,7 +25,7 @@
     </div>
     <button class="btn">
       <strong>
-        <?php print t('Join us on a tour'); ?>
+        <?php print t('Reserve'); ?>
       </strong>
     </button>
   </div>

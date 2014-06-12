@@ -11,6 +11,10 @@
   position: relative;
 }
 
+.view-display-id-continent .span12 h2 {
+  text-align: center;
+}
+
 .view-display-id-continent .views-field-name-field .field-content {
   text-align: center;
   position: absolute;

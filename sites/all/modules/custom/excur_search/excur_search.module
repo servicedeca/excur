@@ -55,7 +55,7 @@ function excur_search_search_form() {
     '#required' => TRUE,
     '#autocomplete_path' => 'excur/autocomplete/search',
     '#attributes' => array(
-      'placeholder' => t('Search...'),
+      'placeholder' => t('Enter direction'),
     ),
   );
 

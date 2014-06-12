@@ -213,7 +213,7 @@ function excur_currency_lowest_price($service) {
  * @return string.
  */
 function excur_currency_get_icon($currency) {
-  return variable_get("excur_currency_icon_$currency", $currency);
+  return t(variable_get("excur_currency_icon_$currency", $currency));
 }
 
 /**

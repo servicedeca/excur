@@ -119,7 +119,7 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['sorts']['nid']['group_type'] = 'count';
   $handler->display->display_options['sorts']['nid']['order'] = 'DESC';
   $handler->display->display_options['sorts']['nid']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['nid']['expose']['label'] = 'Популярности';
+  $handler->display->display_options['sorts']['nid']['expose']['label'] = 'Rating';
   /* Критерий сортировки: Элемент коллекции полей: Цена (field_offer_ticket_price) */
   $handler->display->display_options['sorts']['field_offer_ticket_price_value']['id'] = 'field_offer_ticket_price_value';
   $handler->display->display_options['sorts']['field_offer_ticket_price_value']['table'] = 'field_data_field_offer_ticket_price';
@@ -127,7 +127,7 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['sorts']['field_offer_ticket_price_value']['relationship'] = 'field_offer_ticket_value';
   $handler->display->display_options['sorts']['field_offer_ticket_price_value']['group_type'] = 'min';
   $handler->display->display_options['sorts']['field_offer_ticket_price_value']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['field_offer_ticket_price_value']['expose']['label'] = 'Цене';
+  $handler->display->display_options['sorts']['field_offer_ticket_price_value']['expose']['label'] = 'Pricing';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Контекстный фильтр: Поле: Город (field_city) */
   $handler->display->display_options['arguments']['field_city_target_id']['id'] = 'field_city_target_id';
@@ -293,7 +293,7 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['sorts']['nid']['group_type'] = 'count';
   $handler->display->display_options['sorts']['nid']['order'] = 'DESC';
   $handler->display->display_options['sorts']['nid']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['nid']['expose']['label'] = 'Популярности';
+  $handler->display->display_options['sorts']['nid']['expose']['label'] = 'Rating';
   /* Критерий сортировки: Элемент коллекции полей: Цена (field_offer_ticket_price) */
   $handler->display->display_options['sorts']['field_offer_ticket_price_value']['id'] = 'field_offer_ticket_price_value';
   $handler->display->display_options['sorts']['field_offer_ticket_price_value']['table'] = 'field_data_field_offer_ticket_price';
@@ -301,7 +301,7 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['sorts']['field_offer_ticket_price_value']['relationship'] = 'field_offer_ticket_value';
   $handler->display->display_options['sorts']['field_offer_ticket_price_value']['group_type'] = 'min';
   $handler->display->display_options['sorts']['field_offer_ticket_price_value']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['field_offer_ticket_price_value']['expose']['label'] = 'Цене';
+  $handler->display->display_options['sorts']['field_offer_ticket_price_value']['expose']['label'] = 'Pricing';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Контекстный фильтр: Содержимое: Гид (field_guide) */
   $handler->display->display_options['arguments']['field_guide_target_id']['id'] = 'field_guide_target_id';
@@ -369,8 +369,8 @@ function excur_feature_views_views_default_views() {
     t('Переводы'),
     t('Предложение'),
     t('Билет'),
-    t('Популярности'),
-    t('Цене'),
+    t('Rating'),
+    t('Pricing'),
     t('Все'),
     t('Категория'),
     t('View panes'),

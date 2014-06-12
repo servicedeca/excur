@@ -306,7 +306,7 @@ function excur_language_switcher() {
     if ($lang->enabled) {
       $url = url(current_path(), array('language' => $lang, 'absolute' => TRUE));
       $options[$url] = $lang->native;
-      $data_content[$url] = '<i class=\'flag flag-' . $lang->prefix . '\'></i>' . $lang->native;
+      $data_content[$url] = '<i class=\'flag flag-' . reset(explode('-', $lang->prefix)) . '\'></i>' . $lang->native;
     }
   }
 
