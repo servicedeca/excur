@@ -16,6 +16,11 @@
     <div class="read-more">
       <?php print $read_more; ?>
     </div>
+    <?php if(!empty($edit_link)): ?>
+      <div class="tag">
+        <?php print $edit_link ?>
+      </div>
+    <?php endif; ?>
     <div class="tag">
       <i class="fa fa-clock-o"></i>
       <?php print $content['field_duration']['#items'][0]['safe_value']; ?>

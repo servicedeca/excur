@@ -39,10 +39,13 @@ function excur_ctools_plugin_directory($owner, $plugin_type) {
  */
 function excur_form_service_node_form_alter(&$form, &$form_state) {
   if (!empty($_GET['guide']) && is_numeric($_GET['guide']) && $guide = user_load($_GET['guide'])) {
-    $form['actions']['submit']['#attributes']['class'][] = 'btn';
     $form['field_guide'][LANGUAGE_NONE][0]['target_id']['#value'] = $guide->field_name[LANGUAGE_NONE][0]['safe_value'] . " ($guide->uid)";
     $form['field_guide']['#attributes']['class'][] = 'element-hidden';
   }
+
+  $form['actions']['submit']['#attributes']['class'][] = 'btn';
+  $form['actions']['delete']['#attributes']['class'][] = 'btn';
+  unset($form['actions']['preview_changes']);
 }
 
 /**

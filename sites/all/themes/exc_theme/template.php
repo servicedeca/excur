@@ -154,15 +154,24 @@ function exc_theme_preprocess_node(&$vars, $hook) {
  */
 function exc_theme_preprocess_node__service_teaser(&$vars) {
   global $language;
+  global $user;
 
   $node = $vars['node'];
   $wrapper = entity_metadata_wrapper('node', $node);
   $wrapper->language($language->language);
   $guide = user_load($node->field_guide[LANGUAGE_NONE][0]['target_id']);
 
-  $guide_image = theme('image_style', array(
+  if (!empty($guide->field_image[LANGUAGE_NONE])) {
+    $path = $guide->field_image[LANGUAGE_NONE][0]['uri'];
+    $theming = 'image_style';
+  }
+  else {
+    $path = EXCUR_FRONT_THEME_PATH . '/images/user-default.png';
+    $theming = 'remote_image_style';
+  }
+  $guide_image = theme($theming, array(
     'style_name' => '70x70',
-    'path' => $guide->field_image[LANGUAGE_NONE][0]['uri'],
+    'path' => $path,
     'alt' => $guide->field_name[LANGUAGE_NONE][0]['safe_value'],
     'title' => $guide->field_name[LANGUAGE_NONE][0]['safe_value'],
   ));
@@ -187,6 +196,14 @@ function exc_theme_preprocess_node__service_teaser(&$vars) {
 
   foreach ($wrapper->field_languages->value() as $lang) {
     $vars['languages'][] = $lang->field_lang_code[LANGUAGE_NONE][0]['value'];
+  }
+
+  if ($user->uid == $node->uid) {
+    $vars['edit_link'] = l(t('Edit'), "node/$node->nid/edit", array(
+      'query' => array(
+        'destination' => current_path(),
+      ),
+    ));
   }
 }
 

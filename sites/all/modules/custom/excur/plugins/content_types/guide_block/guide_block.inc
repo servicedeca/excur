@@ -48,9 +48,17 @@ function template_preprocess_excur_guide_block(&$vars) {
     $vars['certified'] = t('Certified guide');
   }
 
-  $image = theme('image_style', array(
+  if (!empty($guide->field_image[LANGUAGE_NONE])) {
+    $path = $guide->field_image[LANGUAGE_NONE][0]['uri'];
+    $theming = 'image_style';
+  }
+  else {
+    $path = EXCUR_FRONT_THEME_PATH . '/images/user-default.png';
+    $theming = 'remote_image_style';
+  }
+  $image = theme($theming, array(
     'style_name' => '238x238',
-    'path' => $guide->field_image[LANGUAGE_NONE][0]['uri'],
+    'path' => $path,
     'alt' => $guide->field_name[LANGUAGE_NONE][0]['safe_value'],
     'title' => $guide->field_name[LANGUAGE_NONE][0]['safe_value'],
   ));
