@@ -412,3 +412,8 @@ h1#text-special {
   text-align: center;
   padding-top: 0;
 }
+
+p.certified {
+  color: #FF3232;
+  font-weight: bold;
+}

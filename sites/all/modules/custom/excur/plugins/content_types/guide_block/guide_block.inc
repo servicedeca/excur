@@ -44,6 +44,10 @@ function template_preprocess_excur_guide_block(&$vars) {
   $node = menu_get_object();
   $guide = user_load($node->field_guide[LANGUAGE_NONE][0]['target_id']);
 
+  if (!empty($guide->field_certified[LANGUAGE_NONE]) && $guide->field_certified[LANGUAGE_NONE][0]['value']) {
+    $vars['certified'] = t('Certified guide');
+  }
+
   $image = theme('image_style', array(
     'style_name' => '238x238',
     'path' => $guide->field_image[LANGUAGE_NONE][0]['uri'],

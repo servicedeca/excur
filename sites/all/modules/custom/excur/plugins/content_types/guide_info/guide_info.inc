@@ -47,6 +47,10 @@ function template_preprocess_excur_guide_info(&$vars) {
     $vars['city'] = l($city->name, "taxonomy/term/$city->tid");
   }
 
+  if (!empty($account->field_certified[LANGUAGE_NONE]) && $account->field_certified[LANGUAGE_NONE][0]['value']) {
+    $vars['certified'] = t('Certified guide');
+  }
+
   if (!empty($account->field_image[LANGUAGE_NONE])) {
     $path = $account->field_image[LANGUAGE_NONE][0]['uri'];
     $theming = 'image_style';
