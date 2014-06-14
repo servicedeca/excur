@@ -6,10 +6,12 @@
   <div class="guide-rating">
     Рейтинг
   </div>
-  <p>
-    <i class="fa fa-map-marker"></i>
-    <?php print $city; ?>
-  </p>
+  <?php if (!empty($city)): ?>
+    <p>
+      <i class="fa fa-map-marker"></i>
+      <?php print $city; ?>
+    </p>
+  <?php endif; ?>
   <p>
     <i class="fa fa-language"></i>
     <?php print t('Native language') . ': '; ?>

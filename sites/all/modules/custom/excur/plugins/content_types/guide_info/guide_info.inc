@@ -38,24 +38,32 @@ function excur_guide_info_content_type_theme(&$theme, $plugin) {
 }
 
 /**
- * Process variables for excur-image-slider.tpl.php.
+ * Process variables for excur-guide-info.tpl.php.
  */
 function template_preprocess_excur_guide_info(&$vars) {
-//  $a =  drupal_get_title();
-
   $account = menu_get_object('user');
-  $city = $account->field_city[LANGUAGE_NONE][0]['entity'];
+  if (!empty($account->field_city[LANGUAGE_NONE])) {
+    $city = $account->field_city[LANGUAGE_NONE][0]['entity'];
+    $vars['city'] = l($city->name, "taxonomy/term/$city->tid");
+  }
 
-  $vars['guide_image'] = theme('image_style', array(
+  if (!empty($account->field_image[LANGUAGE_NONE])) {
+    $path = $account->field_image[LANGUAGE_NONE][0]['uri'];
+    $theming = 'image_style';
+  }
+  else {
+    $path = EXCUR_FRONT_THEME_PATH . '/images/user-default.png';
+    $theming = 'remote_image_style';
+  }
+  $vars['guide_image'] = theme($theming, array(
     'style_name' => '238x238',
-    'path' => $account->field_image[LANGUAGE_NONE][0]['uri'],
+    'path' => $path,
     'alt' => $account->field_name[LANGUAGE_NONE][0]['safe_value'],
     'title' => $account->field_name[LANGUAGE_NONE][0]['safe_value'],
   ));
   $vars['guide'] = $account->field_name[LANGUAGE_NONE][0]['safe_value'];
 
   $vars['language'] = $account->field_language[LANGUAGE_NONE][0]['taxonomy_term']->field_lang_code[LANGUAGE_NONE][0]['value'];
-  $vars['city'] = l($city->name, "taxonomy/term/$city->tid");
 
   if (!empty($account->field_languages[LANGUAGE_NONE])) {
     foreach ($account->field_languages[LANGUAGE_NONE] as $lang) {
