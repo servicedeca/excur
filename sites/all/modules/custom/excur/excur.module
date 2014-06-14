@@ -4,6 +4,8 @@
  */
 
 define('EXCUR_FRONT_THEME_PATH', drupal_get_path('theme', 'exc_theme'));
+define('EXCUR_USER_ROLE_GUIDE_ID', 4);
+define('EXCUR_USER_ROLE_GUIDE_NAME', 'Гид');
 
 /**
  * Implements hook
@@ -29,6 +31,17 @@ function excur_ctools_plugin_directory($owner, $plugin_type) {
 
   if ($owner == 'ctools' && $plugin_type == 'content_types') {
     return "plugins/content_types";
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function excur_form_service_node_form_alter(&$form, &$form_state) {
+  if (!empty($_GET['guide']) && is_numeric($_GET['guide']) && $guide = user_load($_GET['guide'])) {
+    $form['actions']['submit']['#attributes']['class'][] = 'btn';
+    $form['field_guide'][LANGUAGE_NONE][0]['target_id']['#value'] = $guide->field_name[LANGUAGE_NONE][0]['safe_value'] . " ($guide->uid)";
+    $form['field_guide']['#attributes']['class'][] = 'element-hidden';
   }
 }
 
@@ -74,7 +87,7 @@ function excur_form_user_pass_alter(&$form, &$form_state) {
  */
 function excur_user_register_form_submit(&$form, &$form_state) {
   if (!empty($form_state['values']['guide']) && $form_state['values']['guide']) {
-    $form['#user']->roles[4] = 'Гид';
+    $form['#user']->roles[EXCUR_USER_ROLE_GUIDE_ID] = EXCUR_USER_ROLE_GUIDE_NAME;
     user_save($form['#user']);
   }
 }

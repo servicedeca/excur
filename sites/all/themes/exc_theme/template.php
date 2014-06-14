@@ -71,6 +71,13 @@ function exc_theme_preprocess_page(&$vars, $hook) {
       l(t('User profile'), "user/$user->uid"),
       l(t('Logout'), 'user/logout'),
     );
+    if (!empty($user->roles[EXCUR_USER_ROLE_GUIDE_ID])) {
+      array_unshift($items, l(t('Add excursion'), 'node/add/service', array(
+        'query' => array(
+          'guide' => $user->uid,
+        ),
+      )));
+    }
   }
   else {
     $items = array(
