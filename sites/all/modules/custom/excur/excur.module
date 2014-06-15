@@ -74,6 +74,20 @@ function excur_form_user_register_form_alter(&$form, &$form_state) {
 /**
  * Implements hook_form_FORM_ID_alter().
  */
+function excur_form_user_profile_form_alter(&$form, &$form_state) {
+  global $user;
+
+  if (!$user->uid == 1 || empty($user->roles[3])) {
+    $form['field_certified']['#access'] = FALSE;
+  }
+
+  $form['actions']['submit']['#attributes']['class'][] = 'btn';
+  $form['actions']['cancel']['#attributes']['class'][] = 'btn';
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
 function excur_form_user_login_alter(&$form, &$form_state) {
   $form['actions']['submit']['#attributes']['class'][] = 'btn';
 }
