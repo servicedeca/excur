@@ -56,3 +56,31 @@ function excur_offer_schema() {
 
   return $schema;
 }
+
+/**
+ * Implements hook_enable().
+ */
+function excur_offer_enable() {
+  $current = variable_get('mail_system', array('default-system' => 'DefaultMailSystem'));
+  $addition = array('excur_offer' => 'ExcurOfferMailSystem');
+  variable_set('mail_system', array_merge($current, $addition));
+}
+
+/**
+ * Implements hook_disable().
+ */
+function excur_offer_disable() {
+  $mail_system = variable_get('mail_system', array('default-system' => 'DefaultMailSystem'));
+  unset($mail_system['excur_offer']);
+  variable_set('mail_system', $mail_system);
+}
+
+/**
+ * Implements hook_update_N().
+ * Enable ExcurOfferMailSystem mail system.
+ */
+function excur_offer_update_7001() {
+  $current = variable_get('mail_system', array('default-system' => 'DefaultMailSystem'));
+  $addition = array('excur_offer' => 'ExcurOfferMailSystem');
+  variable_set('mail_system', array_merge($current, $addition));
+}

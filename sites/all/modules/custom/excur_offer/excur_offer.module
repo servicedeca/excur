@@ -4,6 +4,9 @@
  * @file.
  */
 
+// Include additional files.
+require_once 'excur_offer.mail.inc';
+
 /**
  * Implements hook_menu().
  */
