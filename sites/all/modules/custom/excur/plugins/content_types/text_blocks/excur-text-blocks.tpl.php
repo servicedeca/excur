@@ -5,7 +5,7 @@
         <?php print $block; ?>
       </div>
       <?php if (($id + 1) % 3 == 0): ?>
-        <div class="space20"></div>
+        <div class="space10"></div>
       <?php endif; ?>
     <?php endforeach; ?>
   </div>

@@ -551,3 +551,15 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
  * Remove the leading hash signs to disable.
  */
 # $conf['allow_authorize_operations'] = FALSE;
+
+$conf['redis_client_interface'] = 'PhpRedis';
+$conf['cache_backends'][] = 'sites/all/modules/contrib/redis/redis.autoload.inc';
+$conf['cache_default_class'] = 'Redis_Cache';
+$conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
+$conf['lock_inc'] = 'sites/all/modules/contrib/redis/redis.lock.inc';
+$conf['redis_client_host'] = 'localhost';
+$conf['redis_client_port'] = '6379';
+$conf['redis_client_base'] = 1;
+$conf['redis_flush_mode'] = 1;
+$conf['redis_perm_ttl'] = '1 month';
+$conf['cache_prefix'] = 'excur_cache';
