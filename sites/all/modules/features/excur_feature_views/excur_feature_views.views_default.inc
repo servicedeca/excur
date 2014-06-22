@@ -179,7 +179,7 @@ function excur_feature_views_views_default_views() {
   );
   $handler->display->display_options['filters']['tid']['type'] = 'select';
   $handler->display->display_options['filters']['tid']['vocabulary'] = 'category';
-  /* Критерий фильтра: Поле: Языки (field_languages) */
+  /* Критерий фильтра: Поле: Доступные языки (field_languages) */
   $handler->display->display_options['filters']['field_languages_tid']['id'] = 'field_languages_tid';
   $handler->display->display_options['filters']['field_languages_tid']['table'] = 'field_data_field_languages';
   $handler->display->display_options['filters']['field_languages_tid']['field'] = 'field_languages_tid';
@@ -356,7 +356,7 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'service' => 'service',
   );
-  /* Критерий фильтра: Поле: Языки (field_languages) */
+  /* Критерий фильтра: Поле: Доступные языки (field_languages) */
   $handler->display->display_options['filters']['field_languages_tid']['id'] = 'field_languages_tid';
   $handler->display->display_options['filters']['field_languages_tid']['table'] = 'field_data_field_languages';
   $handler->display->display_options['filters']['field_languages_tid']['field'] = 'field_languages_tid';
@@ -695,7 +695,6 @@ function excur_feature_views_views_default_views() {
   /* Display: Заказы пользователя */
   $handler = $view->new_display('panel_pane', 'Заказы пользователя', 'user_offers');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Мои заказы';
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'php';
   $handler->display->display_options['access']['php_access'] = 'global $user;
@@ -818,9 +817,10 @@ return $user->uid == $account->uid;';
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
   $handler->display->display_options['arguments']['uid']['table'] = 'excur_offer';
   $handler->display->display_options['arguments']['uid']['field'] = 'uid';
-  $handler->display->display_options['arguments']['uid']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['uid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['uid']['exception']['title'] = 'Все';
-  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'user';
+  $handler->display->display_options['arguments']['uid']['default_argument_options']['user'] = FALSE;
   $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
@@ -828,7 +828,7 @@ return $user->uid == $account->uid;';
   $handler->display->display_options['defaults']['filters'] = FALSE;
   $handler->display->display_options['argument_input'] = array(
     'uid' => array(
-      'type' => 'context',
+      'type' => 'none',
       'context' => 'entity:user.uid',
       'context_optional' => 0,
       'panel' => '0',
@@ -865,7 +865,6 @@ return $user->uid == $account->uid;';
     t('Заказчик'),
     t('Город'),
     t('Заказы пользователя'),
-    t('Мои заказы'),
     t('Вы не совершали заказов.'),
     t('Экскурсия'),
     t('Время встречи'),

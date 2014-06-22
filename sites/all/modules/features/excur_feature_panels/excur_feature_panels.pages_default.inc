@@ -939,17 +939,36 @@ function excur_feature_panels_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-5beec0de-6320-4215-a72c-2f87fc6a4f4e';
+    $pane->pid = 'new-8d88bcb2-3602-4e03-89c7-45fc686fe1cf';
     $pane->panel = 'content_center';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'offers-user_offers';
+    $pane->type = 'user_offers';
+    $pane->subtype = 'user_offers';
     $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'context' => array(
-        0 => 'argument_entity_id:user_1',
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'compare_users',
+          'settings' => array(
+            'equality' => '1',
+          ),
+          'context' => array(
+            0 => 'logged-in-user',
+            1 => 'argument_entity_id:user_1',
+          ),
+          'not' => FALSE,
+        ),
+        1 => array(
+          'name' => 'perm',
+          'settings' => array(
+            'perm' => 'administer users',
+          ),
+          'context' => 'logged-in-user',
+          'not' => FALSE,
+        ),
       ),
+      'logic' => 'or',
     );
+    $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
@@ -958,9 +977,9 @@ function excur_feature_panels_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '5beec0de-6320-4215-a72c-2f87fc6a4f4e';
-    $display->content['new-5beec0de-6320-4215-a72c-2f87fc6a4f4e'] = $pane;
-    $display->panels['content_center'][0] = 'new-5beec0de-6320-4215-a72c-2f87fc6a4f4e';
+    $pane->uuid = '8d88bcb2-3602-4e03-89c7-45fc686fe1cf';
+    $display->content['new-8d88bcb2-3602-4e03-89c7-45fc686fe1cf'] = $pane;
+    $display->panels['content_center'][0] = 'new-8d88bcb2-3602-4e03-89c7-45fc686fe1cf';
     $pane = new stdClass();
     $pane->pid = 'new-a651c783-9b89-4f2d-9ba5-7654beb1be17';
     $pane->panel = 'content_left';
