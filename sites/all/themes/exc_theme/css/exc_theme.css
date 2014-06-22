@@ -203,6 +203,10 @@ h2.node-description {
   padding: 15px;
 }
 
+.node-type-service .side-block {
+  padding-bottom: 0;
+}
+
 .side-block .info {
   margin-bottom: 10px;
 }
@@ -212,6 +216,7 @@ h2.node-description {
   padding: 20px 0 15px;
   text-align: center;
   margin: 0 -15px 0 -15px;
+  border-radius: 0 0 5px 5px;
 }
 
 .do-offer .price {
@@ -240,7 +245,6 @@ h2.node-description {
 
 .page-node .guide-block .guide-rating {
   margin-bottom: 0;
-  padding-bottom: 0;
   border-bottom: none;
 }
 

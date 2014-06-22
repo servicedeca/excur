@@ -79,7 +79,10 @@ function excur_feature_metatag_metatag_export_default() {
         'value' => '[node:title] | [site:name]',
       ),
       'description' => array(
-        'value' => '[node:summary]',
+        'value' => '[node:body]',
+      ),
+      'image_src' => array(
+        'value' => '[node:field_image]',
       ),
     ),
   );
@@ -94,6 +97,9 @@ function excur_feature_metatag_metatag_export_default() {
       'description' => array(
         'value' => '[term:description]',
       ),
+      'image_src' => array(
+        'value' => '[term:field_image]',
+      ),
     ),
   );
 
@@ -102,7 +108,13 @@ function excur_feature_metatag_metatag_export_default() {
     'instance' => 'user',
     'config' => array(
       'title' => array(
-        'value' => '[user:name] | [site:name]',
+        'value' => '[user:field_name] | [site:name]',
+      ),
+      'description' => array(
+        'value' => '[user:field_description]',
+      ),
+      'image_src' => array(
+        'value' => '[user:field_image]',
       ),
     ),
   );

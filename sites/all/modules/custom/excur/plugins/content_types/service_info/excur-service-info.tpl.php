@@ -29,7 +29,4 @@
       </strong>
     </button>
   </div>
-  <div class="service-rating">
-    Оценка
-  </div>
 </div>

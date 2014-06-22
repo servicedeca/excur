@@ -71,6 +71,9 @@ function excur_offer_views_data() {
     'sort' => array(
       'handler' => 'views_handler_sort',
     ),
+    'argument' => array(
+      'handler' => 'views_handler_argument_numeric',
+    ),
     'relationship' => array(
       'base' => 'users',
       'field' => 'uid',

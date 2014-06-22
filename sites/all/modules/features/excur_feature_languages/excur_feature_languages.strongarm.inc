@@ -297,7 +297,7 @@ function excur_feature_languages_strongarm() {
     'domain' => '',
     'prefix' => 'ru',
     'weight' => '0',
-    'javascript' => '0NgNn58tkBeBg4Cp8DGEM4WDXUMO4_ApSnF9N-GDGbo',
+    'javascript' => 'GgV-2Zlm_XZBLxKBwBgTIoTS8TP3bLbdADTo5sWX2xg',
   );
   $export['language_default'] = $strongarm;
 

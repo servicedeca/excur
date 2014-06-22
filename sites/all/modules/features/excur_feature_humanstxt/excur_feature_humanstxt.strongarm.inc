@@ -16,7 +16,7 @@ function excur_feature_humanstxt_strongarm() {
   $strongarm->name = 'humanstxt';
   $strongarm->value = '/* TEAM */
 	Lead developer: Dmitry Kiselev
-	Contact: kiselev.kala4ek [at] gmail.com
+	Contact: dmitry.kiselev.v [at] gmail.com
 	From: Novosibirsk, Russia
 
 	Web developer: Vladimir Usolcev
@@ -29,7 +29,7 @@ function excur_feature_humanstxt_strongarm() {
 
 /* SITE */
 	Tools: Drupal 7, Git
-	IDE: PhpStorm, Photoshop';
+	IDE: PhpStorm';
   $export['humanstxt'] = $strongarm;
 
   $strongarm = new stdClass();
