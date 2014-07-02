@@ -179,7 +179,7 @@ function excur_feature_views_views_default_views() {
   );
   $handler->display->display_options['filters']['tid']['type'] = 'select';
   $handler->display->display_options['filters']['tid']['vocabulary'] = 'category';
-  /* Критерий фильтра: Поле: Языки (field_languages) */
+  /* Критерий фильтра: Поле: Доступные языки (field_languages) */
   $handler->display->display_options['filters']['field_languages_tid']['id'] = 'field_languages_tid';
   $handler->display->display_options['filters']['field_languages_tid']['table'] = 'field_data_field_languages';
   $handler->display->display_options['filters']['field_languages_tid']['field'] = 'field_languages_tid';
@@ -270,7 +270,7 @@ function excur_feature_views_views_default_views() {
     'title_class' => '',
   );
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 1;
-  /* Поле: Содержимое: Текст */
+  /* Поле: Содержимое: Описание */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -356,7 +356,7 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'service' => 'service',
   );
-  /* Критерий фильтра: Поле: Языки (field_languages) */
+  /* Критерий фильтра: Поле: Доступные языки (field_languages) */
   $handler->display->display_options['filters']['field_languages_tid']['id'] = 'field_languages_tid';
   $handler->display->display_options['filters']['field_languages_tid']['table'] = 'field_data_field_languages';
   $handler->display->display_options['filters']['field_languages_tid']['field'] = 'field_languages_tid';

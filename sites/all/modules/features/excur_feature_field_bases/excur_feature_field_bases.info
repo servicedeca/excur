@@ -17,7 +17,6 @@ dependencies[] = telephone
 dependencies[] = text
 features[features_api][] = api:2
 features[field_base][] = body
-features[field_base][] = comment_body
 features[field_base][] = description_field
 features[field_base][] = field_birthday
 features[field_base][] = field_category
