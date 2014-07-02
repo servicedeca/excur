@@ -425,3 +425,7 @@ p.certified {
   color: #FF3232;
   font-weight: bold;
 }
+
+.guide-block form {
+  margin: 0 0 10px;
+}

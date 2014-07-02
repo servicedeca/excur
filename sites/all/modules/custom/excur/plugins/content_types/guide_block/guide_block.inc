@@ -64,4 +64,15 @@ function template_preprocess_excur_guide_block(&$vars) {
   ));
   $vars['guide_image'] = l($image, "user/$guide->uid", array('html' => TRUE));
   $vars['guide'] = l($guide->field_name[LANGUAGE_NONE][0]['value'], "user/$guide->uid");
+
+  // Get guide rating.
+  $rating = fivestar_get_votes('user', $guide->uid);
+  if (empty($rating['average'])) {
+    $rating = t('Guide has no rating.');
+  }
+  else {
+    $rating = round($rating['average']['value'] / 10, 2);
+    $rating = t('Rating: !value/10', array('!value' => $rating));
+  }
+  $vars['rating'] = $rating;
 }

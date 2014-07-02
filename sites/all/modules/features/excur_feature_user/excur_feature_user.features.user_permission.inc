@@ -49,6 +49,15 @@ function excur_feature_user_user_default_permissions() {
     'module' => 'user',
   );
 
+  // Exported permission: 'administer voting api'.
+  $permissions['administer voting api'] = array(
+    'name' => 'administer voting api',
+    'roles' => array(
+      'Администратор' => 'Администратор',
+    ),
+    'module' => 'votingapi',
+  );
+
   // Exported permission: 'allow disabling privatemsg'.
   $permissions['allow disabling privatemsg'] = array(
     'name' => 'allow disabling privatemsg',
@@ -87,6 +96,16 @@ function excur_feature_user_user_default_permissions() {
       'Администратор' => 'Администратор',
     ),
     'module' => 'privatemsg',
+  );
+
+  // Exported permission: 'rate content'.
+  $permissions['rate content'] = array(
+    'name' => 'rate content',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+      'Администратор' => 'Администратор',
+    ),
+    'module' => 'fivestar',
   );
 
   // Exported permission: 'read all private messages'.

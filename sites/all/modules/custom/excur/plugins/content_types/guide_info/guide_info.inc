@@ -74,4 +74,21 @@ function template_preprocess_excur_guide_info(&$vars) {
       $vars['languages'][] = $lang['taxonomy_term']->field_lang_code[LANGUAGE_NONE][0]['value'];
     }
   }
+
+  // Get current rating.
+  $rating = fivestar_get_votes('user', $account->uid);
+  if (empty($rating['average'])) {
+    $rating = t('Guide has no rating.');
+  }
+  else {
+    $rating = round($rating['average']['value'] / 10, 2);
+    $rating = t('Rating: !value/10', array('!value' => $rating));
+  }
+  $vars['rating'] = $rating;
+
+  // Get rating widget.
+  if (excur_offer_is_user_ordered($account->uid)) {
+    $guide = user_view($account);
+    $vars['rating_widget'] = render($guide['field_rating']);
+  }
 }

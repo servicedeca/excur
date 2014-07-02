@@ -29,6 +29,19 @@ function excur_feature_user_field_default_field_instances() {
         'type' => 'date_default',
         'weight' => 2,
       ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 2,
+      ),
     ),
     'entity_type' => 'user',
     'field_name' => 'field_birthday',
@@ -76,6 +89,13 @@ function excur_feature_user_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 9,
       ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 9,
+      ),
     ),
     'entity_type' => 'user',
     'field_name' => 'field_certified',
@@ -104,6 +124,15 @@ function excur_feature_user_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 6,
+      ),
+      'full' => array(
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
@@ -148,6 +177,13 @@ function excur_feature_user_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 8,
       ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 8,
+      ),
     ),
     'entity_type' => 'user',
     'field_name' => 'field_description',
@@ -176,6 +212,16 @@ function excur_feature_user_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 5,
+      ),
+      'full' => array(
         'label' => 'above',
         'module' => 'image',
         'settings' => array(
@@ -247,6 +293,13 @@ function excur_feature_user_field_default_field_instances() {
         'type' => 'taxonomy_term_reference_link',
         'weight' => 3,
       ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 3,
+      ),
     ),
     'entity_type' => 'user',
     'field_name' => 'field_language',
@@ -276,6 +329,13 @@ function excur_feature_user_field_default_field_instances() {
     'description' => 'Перечислите языки, которыми вы владеете',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 7,
+      ),
+      'full' => array(
         'label' => 'above',
         'module' => 'taxonomy',
         'settings' => array(),
@@ -317,6 +377,13 @@ function excur_feature_user_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 0,
       ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'user',
     'field_name' => 'field_name',
@@ -352,6 +419,13 @@ function excur_feature_user_field_default_field_instances() {
         'type' => 'text_plain',
         'weight' => 4,
       ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_plain',
+        'weight' => 4,
+      ),
     ),
     'entity_type' => 'user',
     'field_name' => 'field_phone',
@@ -372,12 +446,71 @@ function excur_feature_user_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'user-user-field_rating'
+  $field_instances['user-user-field_rating'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'fivestar',
+        'settings' => array(
+          'expose' => 1,
+          'style' => 'average',
+          'text' => 'none',
+          'widget' => array(
+            'fivestar_widget' => 'sites/all/modules/contrib/fivestar/widgets/outline/outline.css',
+          ),
+        ),
+        'type' => 'fivestar_formatter_default',
+        'weight' => 10,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'fivestar',
+        'settings' => array(
+          'expose' => 1,
+          'style' => 'average',
+          'text' => 'none',
+          'widget' => array(
+            'fivestar_widget' => 'sites/all/modules/contrib/fivestar/widgets/outline/outline.css',
+          ),
+        ),
+        'type' => 'fivestar_formatter_default',
+        'weight' => 10,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_rating',
+    'label' => 'Рейтинг',
+    'required' => 0,
+    'settings' => array(
+      'allow_clear' => 1,
+      'allow_ownvote' => 0,
+      'allow_revote' => 0,
+      'entity_translation_sync' => FALSE,
+      'stars' => 5,
+      'target' => 'none',
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'fivestar',
+      'settings' => array(),
+      'type' => 'exposed',
+      'weight' => 12,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Город');
   t('Дата рождения');
   t('О себе');
   t('Перечислите языки, которыми вы владеете');
+  t('Рейтинг');
   t('Родной язык');
   t('Сертифицированный');
   t('Телефон');

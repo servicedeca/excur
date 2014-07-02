@@ -5,7 +5,7 @@
     <?php print $guide; ?>
   </div>
   <div class="guide-rating">
-    Рейтинг
+    <?php print $rating; ?>
   </div>
   <?php if (!empty($certified)): ?>
     <p class="certified">

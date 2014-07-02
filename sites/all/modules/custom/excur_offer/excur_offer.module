@@ -55,10 +55,7 @@ function excur_offer_views_api() {
  * Page callback for excur/offer/%excur_offer path.
  */
 function excur_offer_page($offer) {
-
-  print theme('offer_mail', array(
-    'offer' => $offer,
-  ));
+  print theme('offer_mail', array('offer' => $offer));
   drupal_exit();
 }
 
@@ -228,4 +225,21 @@ function excur_offer_duration_by_price($price, $nid) {
   $query->condition('duration.language', $language->language);
 
   return $query->execute()->fetchField();
+}
+
+/**
+ * Check if user ordered service of current guide.
+ */
+function excur_offer_is_user_ordered($guide_uid, $uid = NULL) {
+  global $user;
+  $uid = $uid ? $uid : $user->uid;
+
+  $query = db_select('excur_offer', 'eo');
+  $query->join('field_data_field_guide', 'fdfg', 'fdfg.entity_id = eo.nid');
+  $query->fields('eo', array('uid'));
+  $query->condition('eo.uid', $uid);
+  $query->condition('fdfg.field_guide_target_id', $guide_uid);
+  $query->range(0, 1);
+
+  return (bool) $query->execute()->fetchField();
 }
