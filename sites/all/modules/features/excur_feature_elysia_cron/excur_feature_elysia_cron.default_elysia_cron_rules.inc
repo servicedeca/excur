@@ -93,6 +93,16 @@ function excur_feature_elysia_cron_default_elysia_cron_rules() {
   $cron_rule = new stdClass;
   $cron_rule->disabled = FALSE; /* Edit this to true to make a default cron_rule disabled initially */
   $cron_rule->api_version = 1;
+  $cron_rule->name = 'privatemsg_cron';
+  $cron_rule->disable = NULL;
+  $cron_rule->rule = NULL;
+  $cron_rule->weight = NULL;
+  $cron_rule->context = NULL;
+  $cron_rules['privatemsg_cron'] = $cron_rule;
+
+  $cron_rule = new stdClass;
+  $cron_rule->disabled = FALSE; /* Edit this to true to make a default cron_rule disabled initially */
+  $cron_rule->api_version = 1;
   $cron_rule->name = 'spambot_cron';
   $cron_rule->disable = NULL;
   $cron_rule->rule = '0 */6 * * *';
@@ -119,6 +129,16 @@ function excur_feature_elysia_cron_default_elysia_cron_rules() {
   $cron_rule->weight = NULL;
   $cron_rule->context = NULL;
   $cron_rules['update_cron'] = $cron_rule;
+
+  $cron_rule = new stdClass;
+  $cron_rule->disabled = FALSE; /* Edit this to true to make a default cron_rule disabled initially */
+  $cron_rule->api_version = 1;
+  $cron_rule->name = 'votingapi_cron';
+  $cron_rule->disable = NULL;
+  $cron_rule->rule = NULL;
+  $cron_rule->weight = NULL;
+  $cron_rule->context = NULL;
+  $cron_rules['votingapi_cron'] = $cron_rule;
 
   return $cron_rules;
 
