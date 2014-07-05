@@ -107,6 +107,25 @@ function excur_feature_panels_default_page_manager_handlers() {
     $display->content['new-477bb8f4-5f55-411e-8fe7-e53436500f52'] = $pane;
     $display->panels['content_center'][1] = 'new-477bb8f4-5f55-411e-8fe7-e53436500f52';
     $pane = new stdClass();
+    $pane->pid = 'new-b7d50a74-9f91-48d6-9ded-39449f56d215';
+    $pane->panel = 'content_center';
+    $pane->type = 'message_guide';
+    $pane->subtype = 'message_guide';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = 'b7d50a74-9f91-48d6-9ded-39449f56d215';
+    $display->content['new-b7d50a74-9f91-48d6-9ded-39449f56d215'] = $pane;
+    $display->panels['content_center'][2] = 'new-b7d50a74-9f91-48d6-9ded-39449f56d215';
+    $pane = new stdClass();
     $pane->pid = 'new-432b6aa1-e3c6-4be4-9fb4-797a7144c1b7';
     $pane->panel = 'content_right';
     $pane->type = 'service_info';
