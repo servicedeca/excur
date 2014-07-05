@@ -75,4 +75,8 @@ function template_preprocess_excur_guide_block(&$vars) {
     $rating = t('Rating: !value/10', array('!value' => $rating));
   }
   $vars['rating'] = $rating;
+
+  if (user_is_logged_in()) {
+    $vars['ask_guide'] = '<button class="btn"><strong>' . t('Ask the guide') . '</strong></button>';
+  }
 }

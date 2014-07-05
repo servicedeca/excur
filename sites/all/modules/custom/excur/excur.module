@@ -298,10 +298,12 @@ function excur_popular_giudes_in_country($tid) {
   $query->fields('u', array('uid'));
   $query->join('field_data_field_city', 'city', 'u.uid = city.entity_id');
   $query->join('field_data_field_country', 'country', 'city.field_city_target_id = country.entity_id');
+  $query->join('votingapi_cache', 'vc', 'vc.entity_id = u.uid AND vc.entity_type = \'user\' AND vc.function = \'average\'');
   $query->condition('u.status', 1);
   $query->condition('city.bundle', 'user');
   $query->condition('country.bundle', 'city');
   $query->condition('country.field_country_target_id', $tid);
+  $query->orderBy('vc.value', 'DESC');
   $query->range(0, 6);
 
   return $query->execute()->fetchCol();
@@ -317,9 +319,11 @@ function excur_popular_giudes_in_city($tid) {
   $query = db_select('users', 'u');
   $query->fields('u', array('uid'));
   $query->join('field_data_field_city', 'city', 'u.uid = city.entity_id');
+  $query->join('votingapi_cache', 'vc', 'vc.entity_id = u.uid AND vc.entity_type = \'user\' AND vc.function = \'average\'');
   $query->condition('u.status', 1);
   $query->condition('city.bundle', 'user');
   $query->condition('city.field_city_target_id', $tid);
+  $query->orderBy('vc.value', 'DESC');
   $query->range(0, 6);
 
   return $query->execute()->fetchCol();

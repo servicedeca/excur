@@ -429,3 +429,8 @@ p.certified {
 .guide-block form {
   margin: 0 0 10px;
 }
+
+.guide-block .ask-guide {
+  margin-top: 15px;
+  text-align: center;
+}

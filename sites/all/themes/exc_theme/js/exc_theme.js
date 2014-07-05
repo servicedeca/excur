@@ -46,6 +46,7 @@
   Drupal.behaviors.excurScrollTo = {
     attach: function(context, settings) {
       excurScrollTo('.do-offer button', '#reservation', 1000);
+      excurScrollTo('.ask-guide button', '#message-guide', 1000);
     }
   };
 
