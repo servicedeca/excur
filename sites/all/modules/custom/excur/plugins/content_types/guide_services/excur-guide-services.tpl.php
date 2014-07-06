@@ -1,6 +1,6 @@
 <?php if($show_tabs): ?>
   <ul id="guide-services-orders" class="nav nav-tabs" role="tablist">
-    <li class="active"><a href="#guide-services"><?php print t('My Services'); ?></a></li>
+    <li class="active"><a href="#guide-services"><?php print t('My services'); ?></a></li>
     <li><a href="#guide-orders"><?php print t('My orders'); ?></a></li>
   </ul>
   <div id="guide-services-ordersContent" class="tab-content">
