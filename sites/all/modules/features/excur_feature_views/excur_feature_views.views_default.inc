@@ -882,7 +882,7 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = 'Вы не совершали заказов.';
+  $handler->display->display_options['empty']['area']['content'] = 'У вас не совершали заказов.';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Связь: Excursionline: Node id */
@@ -1051,6 +1051,7 @@ function excur_feature_views_views_default_views() {
     t('Все'),
     t('View panes'),
     t('Заказы гида'),
+    t('У вас не совершали заказов.'),
   );
   $export['offers'] = $view;
 
