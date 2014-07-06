@@ -198,7 +198,7 @@ function exc_theme_preprocess_node__service_teaser(&$vars) {
     $vars['languages'][] = $lang->field_lang_code[LANGUAGE_NONE][0]['value'];
   }
 
-  if ($user->uid == $node->uid) {
+  if ($user->uid == $guide->uid) {
     $vars['edit_link'] = l(t('Edit'), "node/$node->nid/edit", array(
       'query' => array(
         'destination' => current_path(),

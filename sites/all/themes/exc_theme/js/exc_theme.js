@@ -27,8 +27,11 @@
 
   Drupal.behaviors.excurResponsiveMenu = {
     attach: function(context, settings) {
-      $('.nav-responsive').on('change', function() {
-        window.location = $(this).val();
+      $('ul#guide-services-orders').once('guide-services-orders', function() {
+        $('a', this).click(function (e) {
+          e.preventDefault();
+          $(this).tab('show');
+        });
       });
     }
   };
