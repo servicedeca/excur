@@ -201,6 +201,7 @@ h2.node-description {
   border-radius: 5px;
   border: 1px solid #d9d9d9;
   padding: 15px;
+  margin-bottom: 33px;
 }
 
 .node-type-service .side-block {
@@ -492,4 +493,8 @@ h2.panel-title {
 .panel-body .form-actions
 .panel-body form {
   margin-bottom: 0;
+}
+
+.page-user-register fieldset.filter-wrapper {
+  display: none;
 }

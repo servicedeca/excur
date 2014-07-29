@@ -53,7 +53,7 @@ function excur_feature_user_field_default_field_instances() {
       'default_value_code' => '',
       'default_value_code2' => '',
       'entity_translation_sync' => FALSE,
-      'user_register_form' => 1,
+      'user_register_form' => 0,
     ),
     'widget' => array(
       'active' => 1,
@@ -67,7 +67,7 @@ function excur_feature_user_field_default_field_instances() {
         'year_range' => '-70:+0',
       ),
       'type' => 'date_popup',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -112,7 +112,7 @@ function excur_feature_user_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 2,
+      'weight' => 9,
     ),
   );
 
@@ -148,7 +148,7 @@ function excur_feature_user_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'user_register_form' => 1,
+      'user_register_form' => 0,
     ),
     'widget' => array(
       'active' => 1,
@@ -159,7 +159,7 @@ function excur_feature_user_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 4,
+      'weight' => 2,
     ),
   );
 
@@ -192,7 +192,7 @@ function excur_feature_user_field_default_field_instances() {
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'text_processing' => 1,
-      'user_register_form' => 1,
+      'user_register_form' => 0,
     ),
     'widget' => array(
       'active' => 1,
@@ -201,7 +201,7 @@ function excur_feature_user_field_default_field_instances() {
         'rows' => 8,
       ),
       'type' => 'text_textarea',
-      'weight' => 8,
+      'weight' => 7,
     ),
   );
 
@@ -265,7 +265,7 @@ function excur_feature_user_field_default_field_instances() {
       'max_resolution' => '',
       'min_resolution' => '',
       'title_field' => 0,
-      'user_register_form' => 1,
+      'user_register_form' => 0,
     ),
     'widget' => array(
       'active' => 1,
@@ -275,7 +275,7 @@ function excur_feature_user_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -317,7 +317,7 @@ function excur_feature_user_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 5,
+      'weight' => 3,
     ),
   );
 
@@ -349,7 +349,7 @@ function excur_feature_user_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'user_register_form' => 1,
+      'user_register_form' => 0,
     ),
     'widget' => array(
       'active' => 0,
@@ -359,7 +359,7 @@ function excur_feature_user_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 7,
+      'weight' => 6,
     ),
   );
 
@@ -433,7 +433,7 @@ function excur_feature_user_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'user_register_form' => 1,
+      'user_register_form' => 0,
     ),
     'widget' => array(
       'active' => 1,
@@ -442,7 +442,7 @@ function excur_feature_user_field_default_field_instances() {
         'placeholder' => '',
       ),
       'type' => 'telephone_default',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -500,7 +500,7 @@ function excur_feature_user_field_default_field_instances() {
       'module' => 'fivestar',
       'settings' => array(),
       'type' => 'exposed',
-      'weight' => 12,
+      'weight' => 14,
     ),
   );
 

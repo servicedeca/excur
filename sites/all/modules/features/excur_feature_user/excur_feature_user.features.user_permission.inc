@@ -17,6 +17,7 @@ function excur_feature_user_user_default_permissions() {
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
       'Администратор' => 'Администратор',
+      'Партнер' => 'Партнер',
     ),
     'module' => 'user',
   );
@@ -36,6 +37,7 @@ function excur_feature_user_user_default_permissions() {
     'roles' => array(
       'authenticated user' => 'authenticated user',
       'Администратор' => 'Администратор',
+      'Партнер' => 'Партнер',
     ),
     'module' => 'privatemsg',
   );
@@ -64,6 +66,7 @@ function excur_feature_user_user_default_permissions() {
     'roles' => array(
       'authenticated user' => 'authenticated user',
       'Администратор' => 'Администратор',
+      'Партнер' => 'Партнер',
     ),
     'module' => 'privatemsg',
   );
@@ -74,6 +77,7 @@ function excur_feature_user_user_default_permissions() {
     'roles' => array(
       'authenticated user' => 'authenticated user',
       'Администратор' => 'Администратор',
+      'Партнер' => 'Партнер',
     ),
     'module' => 'user',
   );
@@ -84,6 +88,7 @@ function excur_feature_user_user_default_permissions() {
     'roles' => array(
       'authenticated user' => 'authenticated user',
       'Администратор' => 'Администратор',
+      'Партнер' => 'Партнер',
     ),
     'module' => 'user',
   );
@@ -94,6 +99,7 @@ function excur_feature_user_user_default_permissions() {
     'roles' => array(
       'authenticated user' => 'authenticated user',
       'Администратор' => 'Администратор',
+      'Партнер' => 'Партнер',
     ),
     'module' => 'privatemsg',
   );
@@ -114,6 +120,7 @@ function excur_feature_user_user_default_permissions() {
     'roles' => array(
       'authenticated user' => 'authenticated user',
       'Администратор' => 'Администратор',
+      'Партнер' => 'Партнер',
     ),
     'module' => 'privatemsg',
   );
@@ -124,6 +131,7 @@ function excur_feature_user_user_default_permissions() {
     'roles' => array(
       'authenticated user' => 'authenticated user',
       'Администратор' => 'Администратор',
+      'Партнер' => 'Партнер',
     ),
     'module' => 'privatemsg',
   );
@@ -134,6 +142,7 @@ function excur_feature_user_user_default_permissions() {
     'roles' => array(
       'authenticated user' => 'authenticated user',
       'Администратор' => 'Администратор',
+      'Партнер' => 'Партнер',
     ),
     'module' => 'privatemsg',
   );
@@ -152,6 +161,7 @@ function excur_feature_user_user_default_permissions() {
     'name' => 'select text format for privatemsg',
     'roles' => array(
       'Администратор' => 'Администратор',
+      'Партнер' => 'Партнер',
     ),
     'module' => 'privatemsg',
   );
@@ -161,6 +171,7 @@ function excur_feature_user_user_default_permissions() {
     'name' => 'use tokens in privatemsg',
     'roles' => array(
       'Администратор' => 'Администратор',
+      'Партнер' => 'Партнер',
     ),
     'module' => 'privatemsg',
   );
@@ -171,6 +182,7 @@ function excur_feature_user_user_default_permissions() {
     'roles' => array(
       'authenticated user' => 'authenticated user',
       'Администратор' => 'Администратор',
+      'Партнер' => 'Партнер',
     ),
     'module' => 'privatemsg',
   );

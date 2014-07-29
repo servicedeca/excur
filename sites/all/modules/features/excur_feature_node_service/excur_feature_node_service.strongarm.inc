@@ -32,13 +32,16 @@ function excur_feature_node_service_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'language' => array(
-          'weight' => '13',
+          'weight' => '14',
         ),
         'metatags' => array(
-          'weight' => '15',
+          'weight' => '16',
         ),
         'path' => array(
-          'weight' => '14',
+          'weight' => '15',
+        ),
+        'rabbit_hole' => array(
+          'weight' => '1',
         ),
       ),
       'display' => array(),

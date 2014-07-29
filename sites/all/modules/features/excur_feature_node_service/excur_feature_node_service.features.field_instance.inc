@@ -279,7 +279,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 1,
+      'weight' => 3,
     ),
   );
 
@@ -326,7 +326,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 11,
+      'weight' => 13,
     ),
   );
 
@@ -381,7 +381,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 9,
+      'weight' => 2,
     ),
   );
 
@@ -429,7 +429,7 @@ function excur_feature_node_service_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 5,
+      'weight' => 8,
     ),
   );
 
@@ -477,7 +477,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 2,
+      'weight' => 5,
     ),
   );
 
@@ -527,7 +527,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 10,
+      'weight' => 12,
     ),
   );
 
@@ -607,7 +607,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 7,
+      'weight' => 10,
     ),
   );
 
@@ -655,7 +655,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 12,
+      'weight' => 4,
     ),
   );
 
@@ -706,7 +706,7 @@ function excur_feature_node_service_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 6,
+      'weight' => 9,
     ),
   );
 
@@ -782,7 +782,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 8,
+      'weight' => 11,
     ),
   );
 
@@ -829,7 +829,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 3,
+      'weight' => 6,
     ),
   );
 
@@ -876,7 +876,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 4,
+      'weight' => 7,
     ),
   );
 
@@ -913,18 +913,19 @@ function excur_feature_node_service_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'title_field',
-    'label' => 'Заголовок',
-    'required' => TRUE,
+    'label' => 'Название',
+    'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'hide_label' => array(
-        'entity' => FALSE,
-        'page' => FALSE,
+        'entity' => 0,
+        'page' => 0,
       ),
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'size' => 60,
@@ -943,7 +944,6 @@ function excur_feature_node_service_field_default_field_instances() {
   t('Главное изображение');
   t('Город');
   t('Доступные языки');
-  t('Заголовок');
   t('Изображения для слайдера');
   t('Категория');
   t('Место встречи');
