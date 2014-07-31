@@ -498,3 +498,6 @@ h2.panel-title {
 .page-user-register fieldset.filter-wrapper {
   display: none;
 }
+.filter-wrapper.form-wrapper{
+  display: none;
+}
