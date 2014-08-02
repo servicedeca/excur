@@ -22,7 +22,7 @@
   </h2>
   <?php hide($content['comments']); ?>
   <?php hide($content['links']); ?>
-  <?php print render($content); ?>
+  <?php print render($content['body']); ?>
   <div class="row">
     <?php if (!empty($venue)): ?>
       <div class="span4">
@@ -34,6 +34,18 @@
       <div class="span4">
         <h2 class="meeting"><?php print t('Time of meeting') . ': '; ?></h2>
         <?php print $meeting_time; ?>
+      </div>
+    <?php endif; ?>
+    <?php if (!empty($content['field_included'])): ?>
+      <div class="span4">
+        <h2 class="included"><?php print t('Входит в стоимость') . ': '; ?></h2>
+        <?php print render($content['field_included']); ?>
+       </div>
+    <?php endif; ?>
+    <?php if (!empty($content['field_excluded'])): ?>
+      <div class="span4">
+        <h2 class="excluded"><?php print t('Не входит в стоимость') . ': '; ?></h2>
+        <?php print render($content['field_excluded']); ?>
       </div>
     <?php endif; ?>
   </div>

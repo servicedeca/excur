@@ -233,6 +233,7 @@ function exc_theme_preprocess_node__service_full(&$vars) {
 
   $vars['venue'] = $wrapper->field_start_place->value();
   $vars['meeting_time'] = $wrapper->field_start_time->value();
+
 }
 
 /**
