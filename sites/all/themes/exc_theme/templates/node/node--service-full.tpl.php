@@ -45,7 +45,20 @@
     <?php if (!empty($content['field_excluded'])): ?>
       <div class="span4">
         <h2 class="excluded"><?php print t('Не входит в стоимость') . ': '; ?></h2>
-        <?php print render($content['field_excluded']); ?>
+        <?php print render($content['field_excluded']).'<br>' ?>
+      </div>
+    <?php endif; ?>
+    <?php if (!empty($content['field_reservation_rules'])): ?>
+      <div class="span4">
+        <h2 class="meeting"><?php print t('Правила бронирования') . ': '; ?></h2>
+        <p class="meeting"><?php print t('Билет на экскурсию можно забронировать:');?><p>
+        <?php print render($content['field_reservation_rules'][0]['entity']['field_collection_item']).'<br>'; ?>
+      </div>
+    <?php endif; ?>
+    <?php if (!empty($content['field_cancellation'])): ?>
+      <div class="span4">
+        <h2 class="meeting"><?php print t('Правила отмены бронирования') . ': '; ?></h2>
+          <?php print render($content['field_cancellation']).'<br>'; ?>
       </div>
     <?php endif; ?>
   </div>
