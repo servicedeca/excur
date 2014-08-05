@@ -38,29 +38,53 @@
     <?php endif; ?>
     <?php if (!empty($content['field_included'])): ?>
       <div class="span4">
-        <h2 class="included"><?php print t('Входит в стоимость') . ': '; ?></h2>
-        <?php print render($content['field_included']); ?>
-       </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="included"><?php print t('Входит в стоимость') . ': '; ?></h2>
+          </div>
+          <div class="panel-body">
+            <?php print render($content['field_included']); ?>
+          </div>
+        </div>
+      </div>
     <?php endif; ?>
     <?php if (!empty($content['field_excluded'])): ?>
       <div class="span4">
-        <h2 class="excluded"><?php print t('Не входит в стоимость') . ': '; ?></h2>
-        <?php print render($content['field_excluded']).'<br>' ?>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="excluded"><?php print t('Не входит в стоимость') . ':'; ?></h2>
+          </div>
+          <div class="panel-body">
+            <?php print render($content['field_excluded']); ?>
+          </div>
+        </div>
       </div>
     <?php endif; ?>
     <?php if (!empty($content['field_reservation_rules'])): ?>
       <div class="span4">
-        <h2 class="meeting"><?php print t('Правила бронирования') . ': '; ?></h2>
-        <p class="meeting"><?php print t('Билет на экскурсию можно забронировать:');?><p>
-        <?php print render($content['field_reservation_rules'][0]['entity']['field_collection_item']).'<br>'; ?>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="meeting"><?php print t('Правила бронирования') . ': '; ?></h2>
+          </div>
+          <div class="panel-body">
+            <p class="meeting"><?php print t('Билет на экскурсию можно забронировать:');?><p>
+            <?php print render($content['field_reservation_rules'][0]['entity']['field_collection_item']).'<br>'; ?>
+          </div>
+        </div>
       </div>
     <?php endif; ?>
-    <?php if (!empty($content['field_cancellation'])): ?>
+    <?php //if (!empty($content['field_cancellation'])): ?>
       <div class="span4">
-        <h2 class="meeting"><?php print t('Правила отмены бронирования') . ': '; ?></h2>
-          <?php print render($content['field_cancellation']).'<br>'; ?>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="meeting"><?php print t('Правила отмены бронирования') . ': '; ?></h2>
+          </div>
+          <div class="panel-body">
+            <?php print render($content['field_cancellation']).'<br>'; ?>
+          </div>
+        </div>
       </div>
-    <?php endif; ?>
+    <?php //endif; ?>
   </div>
   <h2 id="reservation" class="node-description">
     <?php print t('Reservation'); ?>

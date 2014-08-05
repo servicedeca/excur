@@ -50,6 +50,12 @@ function excur_offer_schema() {
         'type' => 'int',
         'not null' => TRUE,
       ),
+      'status' => array(
+        'description' => 'status.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
     ),
     'primary key' => array('oid'),
   );
