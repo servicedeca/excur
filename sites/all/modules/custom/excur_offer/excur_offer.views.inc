@@ -148,5 +148,23 @@ function excur_offer_views_data() {
     ),
   );
 
+  $data['excur_offer']['status'] = array(
+    'title' => t('status'),
+    'help' => t('status of offer.'),
+    'field' => array(
+      'handler' => 'views_handler_field',
+    ),
+    'sort' => array(
+      'handler' => 'views_handler_sort',
+    ),
+    'filter' => array(
+      'handler' => 'views_handler_filter_string',
+    ),
+    'argument' => array(
+      'handler' => 'views_handler_argument_string',
+    ),
+  );
+
+
   return $data;
 }

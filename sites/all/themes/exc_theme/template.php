@@ -342,3 +342,11 @@ function exc_theme_remote_image_style($variables) {
   $variables['path'] = file_create_url($image_style_dest_path);
   return theme('image', $variables);
 }
+
+/**
+ * Process variables for views-view-table--offers--guide-offers.tpl.php
+ */
+function exc_theme_preprocess_views_view_table__offers__guide_offers(&$vars){
+ $vars['status'] = 'status';
+
+}
