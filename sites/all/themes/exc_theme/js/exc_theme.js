@@ -114,4 +114,17 @@
     });
   }
 
+  $('a.confirm-order').click(function() {
+    var id = $(this).data('id');
+    $.ajax({
+      type: "POST",
+      url: 'excur/offer/%excur_offer_confirmed',
+      async: false,
+      data: {id:id},
+      success: function(data) {
+        alert(data);
+      }
+    });
+  });
+
 }(jQuery));

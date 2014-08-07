@@ -150,7 +150,7 @@ function excur_offer_views_data() {
 
   $data['excur_offer']['status'] = array(
     'title' => t('status'),
-    'help' => t('status of offer.'),
+    'help' => t('status of of offer.'),
     'field' => array(
       'handler' => 'views_handler_field',
     ),

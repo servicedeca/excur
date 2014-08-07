@@ -126,6 +126,18 @@ function exc_theme_preprocess_views_view_field(&$vars) {
 }
 
 /**
+ * Main views view table preprocess.
+ */
+function exc_theme_preprocess_views_view_table(&$vars) {
+  if (!empty($vars['theme_hook_suggestion'])) {
+    $function = 'exc_theme_preprocess_' . $vars['theme_hook_suggestion'];
+    if (function_exists($function)) {
+      $function($vars);
+    }
+  }
+}
+
+/**
  * Process variables for views-view-field--term--city--name-field.tpl.php.
  */
 function exc_theme_preprocess_views_view_field__term__city__name_field(&$vars) {
@@ -347,6 +359,13 @@ function exc_theme_remote_image_style($variables) {
  * Process variables for views-view-table--offers--guide-offers.tpl.php
  */
 function exc_theme_preprocess_views_view_table__offers__guide_offers(&$vars){
- $vars['status'] = 'status';
-
+  foreach($vars['rows'] as $key => $value){
+    if($vars['rows'][$key]['status'] == 'not_confirmed'){
+      $oid  = $vars['rows'][$key]['oid'];
+      $vars['rows'][$key]['status'] = "<p>Ожидает подтверждения<a href=# data-id=".$oid." class='confirm-order'> Подтвердить </a></p>";
+    }
+    if($vars['rows'][$key]['status'] == 'confirmed'){
+      $vars['rows'][$key]['status'] = t('<p>Подтвержден</p>');
+    }
+  }
 }

@@ -17,6 +17,12 @@ function excur_offer_menu() {
     'page arguments' => array(2),
     'access arguments' => array('access content'),
   );
+    $items['excur/offer/%excur_offer_confirmed'] = array(
+    'title' => 'confirmed',
+    'page callback' => 'excur_offer_confirmed',
+    'page arguments' => array(1),
+    'access arguments' => array('access content'),
+  );
 
   return $items;
 }
@@ -49,6 +55,17 @@ function excur_offer_views_api() {
   return array(
     'api' => 3,
   );
+}
+
+/**
+ * Page callback for excur/offer/%excur_offer path.
+ */
+function excur_offer_confirmed(){
+  //$status = '';
+  $oid = $_POST['id'];
+  print $oid;
+  //excur_offer_update($status, $oid);
+
 }
 
 /**
@@ -200,6 +217,8 @@ function excur_offer_load($oid) {
  * @param string $ticket.
  * @param string $currency.
  * @param string $date.
+ * @param string $status.
+ *
  */
 function excur_offer_save($oid, $uid, $nid, $ticket, $currency, $date, $status) {
   $record = array(
@@ -215,6 +234,19 @@ function excur_offer_save($oid, $uid, $nid, $ticket, $currency, $date, $status) 
 
   db_insert('excur_offer')
     ->fields($record)
+    ->execute();
+}
+
+/**
+ * update offer.
+ *
+ * @param string $status.
+ */
+function excur_offer_update($status, $oid) {
+
+  db_update('excur_offer')
+    ->fields(array('status' => $status))
+    ->condition('oid', $oid)
     ->execute();
 }
 
