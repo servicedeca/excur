@@ -62,6 +62,13 @@ function excur_offer_views_api() {
 function excur_offer_confirmed($offer){
   $oid = $offer->oid;
   excur_offer_update($oid, 'status', 'confirmed');
+  $account = user_load($offer->uid);
+  $message = theme('offer_mail', array(
+    'offer' => $offer,
+  ));
+  excur_offer_send_mail($account->mail, $message);
+  print 'Подтвержден';
+  drupal_exit();
 }
 
 /**

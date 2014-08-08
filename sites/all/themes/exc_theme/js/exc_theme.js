@@ -115,8 +115,8 @@
   }
 
   $('a.confirm-order').click(function() {
-    $.get('/excur/offer/confirm/' + $(this).data('id'), function( data ) {
-
+    $.get('/excur/offer/confirm/' + $(this).data('id'), function( html ) {
+      $("#content_confirm").html(html);
     });
   });
 }(jQuery));
