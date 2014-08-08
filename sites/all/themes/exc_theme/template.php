@@ -361,8 +361,8 @@ function exc_theme_remote_image_style($variables) {
 function exc_theme_preprocess_views_view_table__offers__guide_offers(&$vars){
   foreach($vars['rows'] as $key => $value){
     if($vars['rows'][$key]['status'] == 'not_confirmed'){
-      $oid  = $vars['rows'][$key]['oid'];
-      $vars['rows'][$key]['status'] = "<p>Ожидает подтверждения<a href=# data-id=".$oid." class='confirm-order'> Подтвердить </a></p>";
+      $oid  = $vars['view']->result[$key]->oid;
+      $vars['rows'][$key]['status'] = "<p id=>Ожидает подтверждения<a href=# data-id=".$oid." class='confirm-order'> Подтвердить </a></p>";
     }
     if($vars['rows'][$key]['status'] == 'confirmed'){
       $vars['rows'][$key]['status'] = t('<p>Подтвержден</p>');
