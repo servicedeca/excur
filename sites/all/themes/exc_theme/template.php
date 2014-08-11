@@ -361,14 +361,14 @@ function exc_theme_remote_image_style($variables) {
 function exc_theme_preprocess_views_view_table__offers__guide_offers(&$vars){
   foreach($vars['rows'] as $key => $value){
     $oid  = $vars['view']->result[$key]->oid;
-    if($vars['rows'][$key]['status'] == 'not_confirmed'){
+    if($vars['rows'][$key]['status'] == EXCUR_OFFER_NOT_CONFIRMED){
       $vars['rows'][$key]['status'] = "<div id=content_confirm".$oid." >Ожидает подтверждения<a href=# data-id=".$oid." class='confirm-order'> Подтвердить </a><br>
                                        <a href=# data-id=".$oid." class='confirm-reject'> Отклонить </a></div>";
     }
-    elseif($vars['rows'][$key]['status'] == 'confirmed'){
+    elseif($vars['rows'][$key]['status'] == EXCUR_OFFER_CONFIRMED){
       $vars['rows'][$key]['status'] = t('<div id=content_confirm'.$oid.'>Подтвержден</div>');
     }
-    elseif($vars['rows'][$key]['status'] == 'rejected'){
+    elseif($vars['rows'][$key]['status'] == EXCUR_OFFER_REJECTED){
       $vars['rows'][$key]['status'] = t('<div id=content_confirm'.$oid.'>Откланен</div>');
     }
   }
@@ -380,13 +380,13 @@ function exc_theme_preprocess_views_view_table__offers__guide_offers(&$vars){
 function exc_theme_preprocess_views_view_table__offers__user_offers(&$vars){
   foreach($vars['rows'] as $key => $value){
     $oid  = $vars['view']->result[$key]->oid;
-    if($vars['rows'][$key]['status'] == 'not_confirmed'){
+    if($vars['rows'][$key]['status'] == EXCUR_OFFER_NOT_CONFIRMED){
       $vars['rows'][$key]['status'] = "<div id=content_confirm".$oid." >Ожидает подтверждения</div>";
     }
-    elseif($vars['rows'][$key]['status'] == 'confirmed'){
+    elseif($vars['rows'][$key]['status'] == EXCUR_OFFER_CONFIRMED){
       $vars['rows'][$key]['status'] = t('<div id=content_confirm'.$oid.'>Подтвержден<a href="#" > Оплатить </a></div>');
     }
-    elseif($vars['rows'][$key]['status'] == 'rejected'){
+    elseif($vars['rows'][$key]['status'] == EXCUR_OFFER_REJECTED){
       $vars['rows'][$key]['status'] = t('<div id=content_confirm'.$oid.'>Откланен</div>');
     }
   }
