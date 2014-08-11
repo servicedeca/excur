@@ -4,6 +4,10 @@
  * @file.
  */
 
+define("NOT_CONFIRMED", "not_confirmed");
+define("CONFIRMED", "confirmed");
+define("REJECTED", "rejected");
+
 // Include additional files.
 require_once 'excur_offer.mail.inc';
 
@@ -20,6 +24,12 @@ function excur_offer_menu() {
   $items['excur/offer/confirm/%excur_offer'] = array(
     'title' => 'confirmed',
     'page callback' => 'excur_offer_confirmed',
+    'page arguments' => array(3),
+    'access arguments' => array('access content'),
+  );
+  $items['excur/offer/reject/%excur_offer'] = array(
+    'title' => 'reject',
+    'page callback' => 'excur_offer_rejected',
     'page arguments' => array(3),
     'access arguments' => array('access content'),
   );
@@ -61,13 +71,26 @@ function excur_offer_views_api() {
  */
 function excur_offer_confirmed($offer){
   $oid = $offer->oid;
-  excur_offer_update($oid, 'status', 'confirmed');
+  excur_offer_update($oid, 'status', CONFIRMED);
   $account = user_load($offer->uid);
   $message = theme('offer_mail', array(
     'offer' => $offer,
   ));
   excur_offer_send_mail($account->mail, $message);
   print 'Подтвержден';
+  drupal_exit();
+}
+
+/**
+ * Page callback for excur/offer/reject/%excur_offer
+ */
+function excur_offer_rejected($offer){
+  $oid = $offer->oid;
+  excur_offer_update($oid, 'status', REJECTED);
+  $account = user_load($offer->uid);
+  $message = t('Гид отклонил вашу заявку');
+  excur_offer_send_mail($account->mail, $message);
+  print 'Откланена';
   drupal_exit();
 }
 
@@ -144,7 +167,7 @@ function excur_offer_offer_form_submit(&$form, &$form_state) {
   $reservation = $reservation->field_reservation->value();
   $oid = rand(1000, 9999) . REQUEST_TIME;
   if($reservation == false){
-    excur_offer_save($oid, $user->uid, $form['#data']['nid'], $values['tickets'], excur_offer_user_currency(), $values['date'], 'confirmed');
+    excur_offer_save($oid, $user->uid, $form['#data']['nid'], $values['tickets'], excur_offer_user_currency(), $values['date'], 'CONFIRMED');
     $offer = excur_offer_load($oid);
 
     $message = theme('offer_mail', array(
@@ -159,7 +182,7 @@ function excur_offer_offer_form_submit(&$form, &$form_state) {
     }
   }
   else{
-    excur_offer_save($oid, $user->uid, $form['#data']['nid'], $values['tickets'], excur_offer_user_currency(), $values['date'], 'not_confirmed');
+    excur_offer_save($oid, $user->uid, $form['#data']['nid'], $values['tickets'], excur_offer_user_currency(), $values['date'], 'NOT_CONFIRMED');
     drupal_set_message(t('Заявка на бронирование успешно отправлена, ожидаете подтверждение гида.'));
   }
 }

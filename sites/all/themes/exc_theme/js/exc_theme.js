@@ -115,8 +115,18 @@
   }
 
   $('a.confirm-order').click(function() {
-    $.get('/excur/offer/confirm/' + $(this).data('id'), function( html ) {
-      $("#content_confirm").html(html);
+    oid = $(this).data('id')
+    $.get('/excur/offer/confirm/'+$(this).data('id'), function( html ) {
+      $("#content_confirm"+oid).html(html);
     });
   });
+  
+  $('a.confirm-reject').click(function() {
+    oid = $(this).data('id')
+    $.get('/excur/offer/reject/'+$(this).data('id'), function( html ) {
+        $("#content_confirm"+oid).html(html);
+        
+    });
+  });
+  
 }(jQuery));

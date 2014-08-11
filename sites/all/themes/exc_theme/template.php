@@ -360,12 +360,34 @@ function exc_theme_remote_image_style($variables) {
  */
 function exc_theme_preprocess_views_view_table__offers__guide_offers(&$vars){
   foreach($vars['rows'] as $key => $value){
+    $oid  = $vars['view']->result[$key]->oid;
     if($vars['rows'][$key]['status'] == 'not_confirmed'){
-      $oid  = $vars['view']->result[$key]->oid;
-      $vars['rows'][$key]['status'] = "<div id=content_confirm >Ожидает подтверждения<a href=# data-id=".$oid." class='confirm-order'> Подтвердить </a></div>";
+      $vars['rows'][$key]['status'] = "<div id=content_confirm".$oid." >Ожидает подтверждения<a href=# data-id=".$oid." class='confirm-order'> Подтвердить </a><br>
+                                       <a href=# data-id=".$oid." class='confirm-reject'> Отклонить </a></div>";
     }
-    if($vars['rows'][$key]['status'] == 'confirmed'){
-      $vars['rows'][$key]['status'] = t('<div id=content_confirm >Подтвержден</div>');
+    elseif($vars['rows'][$key]['status'] == 'confirmed'){
+      $vars['rows'][$key]['status'] = t('<div id=content_confirm'.$oid.'>Подтвержден</div>');
+    }
+    elseif($vars['rows'][$key]['status'] == 'rejected'){
+      $vars['rows'][$key]['status'] = t('<div id=content_confirm'.$oid.'>Откланен</div>');
+    }
+  }
+}
+
+/**
+ * Process variables for views-view-table--offers--user-offers.tpl.php
+ */
+function exc_theme_preprocess_views_view_table__offers__user_offers(&$vars){
+  foreach($vars['rows'] as $key => $value){
+    $oid  = $vars['view']->result[$key]->oid;
+    if($vars['rows'][$key]['status'] == 'not_confirmed'){
+      $vars['rows'][$key]['status'] = "<div id=content_confirm".$oid." >Ожидает подтверждения</div>";
+    }
+    elseif($vars['rows'][$key]['status'] == 'confirmed'){
+      $vars['rows'][$key]['status'] = t('<div id=content_confirm'.$oid.'>Подтвержден<a href="#" > Оплатить </a></div>');
+    }
+    elseif($vars['rows'][$key]['status'] == 'rejected'){
+      $vars['rows'][$key]['status'] = t('<div id=content_confirm'.$oid.'>Откланен</div>');
     }
   }
 }
