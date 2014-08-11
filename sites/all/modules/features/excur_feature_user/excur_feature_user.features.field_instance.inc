@@ -10,6 +10,44 @@
 function excur_feature_user_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'user-user-field_agreement'
+  $field_instances['user-user-field_agreement'] = array(
+    'bundle' => 'user',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Прочитайте условия соглашения <a href=http://excur.loc/ru/content/usloviya-soglasheniya-41 target="_blank">тут</a>',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 11,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_agreement',
+    'label' => 'Принимаю',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 15,
+    ),
+  );
+
   // Exported field_instance: 'user-user-field_birthday'
   $field_instances['user-user-field_birthday'] = array(
     'bundle' => 'user',
@@ -401,7 +439,7 @@ function excur_feature_user_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 1,
+      'weight' => 0,
     ),
   );
 
@@ -510,6 +548,8 @@ function excur_feature_user_field_default_field_instances() {
   t('Дата рождения');
   t('О себе');
   t('Перечислите языки, которыми вы владеете');
+  t('Принимаю');
+  t('Прочитайте условия соглашения <a href=http://excur.loc/ru/content/usloviya-soglasheniya-41 target="_blank">тут</a>');
   t('Рейтинг');
   t('Родной язык');
   t('Сертифицированный');

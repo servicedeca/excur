@@ -10,12 +10,191 @@
 function excur_feature_node_service_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'field_collection_item-field__xx-field_days'
+  $field_instances['field_collection_item-field__xx-field_days'] = array(
+    'bundle' => 'field__xx',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_days',
+    'label' => 'Дни',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field__xx-field_percentage'
+  $field_instances['field_collection_item-field__xx-field_percentage'] = array(
+    'bundle' => 'field__xx',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_percentage',
+    'label' => 'Проценты',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_cancellation-field__0'
+  $field_instances['field_collection_item-field_cancellation-field__0'] = array(
+    'bundle' => 'field_cancellation',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field__0',
+    'label' => 'Возврат 0% от стоимости за  день(дней) до начала тура.',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 20,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_cancellation-field__100'
+  $field_instances['field_collection_item-field_cancellation-field__100'] = array(
+    'bundle' => 'field_cancellation',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Укажите за сколько дней производится 100%-й возврат денежных средств в случае отказа Клиента от уже оплаченного тура.',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field__100',
+    'label' => 'Возврат 100% от стоимости за  дней до начала тура',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 10,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_cancellation-field__xx'
+  $field_instances['field_collection_item-field_cancellation-field__xx'] = array(
+    'bundle' => 'field_cancellation',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Добавить',
+          'delete' => 'Удалить',
+          'description' => 1,
+          'edit' => 'Правка',
+          'translate' => 'Перевести',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field__xx',
+    'label' => 'Возврат % от стоимости за дней до начала тура',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_embed',
+      'weight' => 4,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_offer-field_offer_duration'
   $field_instances['field_collection_item-field_offer-field_offer_duration'] = array(
     'bundle' => 'field_offer',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Например: "2.5 часа"',
+    'description' => 'Укажите продолжительность, например: «2ч 30 мин».',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -50,7 +229,7 @@ function excur_feature_node_service_field_default_field_instances() {
     'bundle' => 'field_offer',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Вы можете создать несколько типов билетов.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -84,47 +263,12 @@ function excur_feature_node_service_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_offer-field_offer_time'
-  $field_instances['field_collection_item-field_offer-field_offer_time'] = array(
-    'bundle' => 'field_offer',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Например: "Каждый день с 09:00 до 18:00"',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 1,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_offer_time',
-    'label' => 'Часы работы',
-    'required' => 1,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 2,
-    ),
-  );
-
   // Exported field_instance: 'field_collection_item-field_offer-field_offer_title'
   $field_instances['field_collection_item-field_offer-field_offer_title'] = array(
     'bundle' => 'field_offer',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Например: "Cтандартное предложение"',
+    'description' => 'Введите название предложения, например «Стандартное».',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -159,7 +303,7 @@ function excur_feature_node_service_field_default_field_instances() {
     'bundle' => 'field_offer_ticket',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Укажите стоимость билета в <b>ЕВРО</b>. Например: "2200".',
+    'description' => 'Укажите стоимость билета в ранее выбранной валюте.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -200,7 +344,7 @@ function excur_feature_node_service_field_default_field_instances() {
     'bundle' => 'field_offer_ticket',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Например: "Взрослые билеты"',
+    'description' => 'Введите название, например «Детский*» или «Взрослый».',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -230,12 +374,82 @@ function excur_feature_node_service_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'field_collection_item-field_reservation_rules-field_max'
+  $field_instances['field_collection_item-field_reservation_rules-field_max'] = array(
+    'bundle' => 'field_reservation_rules',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_max',
+    'label' => 'Максимум за',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_reservation_rules-field_min'
+  $field_instances['field_collection_item-field_reservation_rules-field_min'] = array(
+    'bundle' => 'field_reservation_rules',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_min',
+    'label' => 'Минимум за',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 3,
+    ),
+  );
+
   // Exported field_instance: 'node-service-body'
   $field_instances['node-service-body'] = array(
     'bundle' => 'service',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Не указывайте в описании предложения цену, продолжительность и язык проведения.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -263,7 +477,7 @@ function excur_feature_node_service_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'body',
-    'label' => 'Описание',
+    'label' => 'Описание предложения',
     'required' => 1,
     'settings' => array(
       'display_summary' => 0,
@@ -279,7 +493,56 @@ function excur_feature_node_service_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 3,
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'node-service-field_cancellation'
+  $field_instances['node-service-field_cancellation'] = array(
+    'bundle' => 'service',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Добавить',
+          'delete' => 'Удалить',
+          'description' => TRUE,
+          'edit' => 'Правка',
+          'translate' => 'Перевести',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 17,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_cancellation',
+    'label' => 'Правила отмены',
+    'required' => FALSE,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_embed',
+      'weight' => 17,
     ),
   );
 
@@ -288,7 +551,7 @@ function excur_feature_node_service_field_default_field_instances() {
     'bundle' => 'service',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Выберите из предложенного списка категорий',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -319,14 +582,11 @@ function excur_feature_node_service_field_default_field_instances() {
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 13,
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 4,
     ),
   );
 
@@ -335,7 +595,7 @@ function excur_feature_node_service_field_default_field_instances() {
     'bundle' => 'service',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Введите название города в котором проводится или начинается экскурсия.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -381,7 +641,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 2,
+      'weight' => 1,
     ),
   );
 
@@ -429,7 +689,7 @@ function excur_feature_node_service_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 8,
+      'weight' => 20,
     ),
   );
 
@@ -477,7 +737,55 @@ function excur_feature_node_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 5,
+      'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance: 'node-service-field_excluded'
+  $field_instances['node-service-field_excluded'] = array(
+    'bundle' => 'service',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Укажите через запятую, что не входит в стоимость тура.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 19,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_excluded',
+    'label' => 'Не входит в стоимость:',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 3,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 18,
     ),
   );
 
@@ -527,7 +835,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 12,
+      'weight' => 11,
     ),
   );
 
@@ -535,7 +843,7 @@ function excur_feature_node_service_field_default_field_instances() {
   $field_instances['node-service-field_image'] = array(
     'bundle' => 'service',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Рекомендуем использовать фотографии размером более 800*600 точек.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -578,14 +886,14 @@ function excur_feature_node_service_field_default_field_instances() {
         'active_updating' => 0,
         'file_name' => array(
           'options' => array(
-            'pathauto' => FALSE,
+            'pathauto' => 0,
             'transliterate' => 1,
           ),
           'value' => '[file:ffp-name-only-original].[file:ffp-extension-original]',
         ),
         'file_path' => array(
           'options' => array(
-            'pathauto' => FALSE,
+            'pathauto' => 0,
             'transliterate' => 1,
           ),
           'value' => '[node:content-type:machine-name]/[current-date:custom:Y]/[current-date:custom:m]',
@@ -607,7 +915,55 @@ function excur_feature_node_service_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 10,
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance: 'node-service-field_included'
+  $field_instances['node-service-field_included'] = array(
+    'bundle' => 'service',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Укажите через запятую, что входит в стоимость тура.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_plain',
+        'weight' => 20,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_included',
+    'label' => 'Входит в стоимость:',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 3,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 19,
     ),
   );
 
@@ -616,7 +972,7 @@ function excur_feature_node_service_field_default_field_instances() {
     'bundle' => 'service',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Укажите через запятую языки проведения тура, например: "Русский, Английский".',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -641,7 +997,7 @@ function excur_feature_node_service_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_languages',
-    'label' => 'Доступные языки',
+    'label' => 'Языки проведения',
     'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -655,7 +1011,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 4,
+      'weight' => 3,
     ),
   );
 
@@ -664,7 +1020,7 @@ function excur_feature_node_service_field_default_field_instances() {
     'bundle' => 'service',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Вы можете создать несколько предложений, отличающихся по цене, продолжительности и содержанию.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -706,7 +1062,111 @@ function excur_feature_node_service_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 9,
+      'weight' => 21,
+    ),
+  );
+
+  // Exported field_instance: 'node-service-field_reservation'
+  $field_instances['node-service-field_reservation'] = array(
+    'bundle' => 'service',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'А)Личное подтверждение бронирования- вы получите уведомление о заказе и должны будете подтвердить или отменить заказ, до этого момента бронирование не будет считаться подтвержденным.<br>
+Б)Автоматическое подтверждение заказа - клиент получит подтверждение о заказе сразу после оплаты на Excursiopedia.com. Будьте внимательны! Если Вам требуется подтверждать экскурсии самостоятельно для проверки возможности проведения экскурсии в заказанные даты, выберите другой пункт.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 15,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_reservation',
+    'label' => 'Условия бронирования',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 15,
+    ),
+  );
+
+  // Exported field_instance: 'node-service-field_reservation_rules'
+  $field_instances['node-service-field_reservation_rules'] = array(
+    'bundle' => 'service',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Укажите период за который минимально можно забронировать это предложение (Например: минимум за 1 день) и максимальное время вперед когда вы готовы принимать бронирования (Например: максимом на 180 дней вперед).',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Добавить',
+          'delete' => 'Удалить',
+          'description' => TRUE,
+          'edit' => 'Правка',
+          'translate' => 'Перевести',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 16,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Добавить',
+          'delete' => 'Удалить',
+          'description' => 1,
+          'edit' => 'Правка',
+          'translate' => 'Перевести',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_reservation_rules',
+    'label' => 'Правила бронирования',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_embed',
+      'weight' => 16,
     ),
   );
 
@@ -782,7 +1242,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 11,
+      'weight' => 9,
     ),
   );
 
@@ -791,7 +1251,7 @@ function excur_feature_node_service_field_default_field_instances() {
     'bundle' => 'service',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Укажите точный адрес или выберите забор Клиента из отеля',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -829,7 +1289,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 6,
+      'weight' => 5,
     ),
   );
 
@@ -838,7 +1298,7 @@ function excur_feature_node_service_field_default_field_instances() {
     'bundle' => 'service',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Укажите время встречи или время забора клиента из отеля',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -876,7 +1336,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => 6,
     ),
   );
 
@@ -913,7 +1373,7 @@ function excur_feature_node_service_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'title_field',
-    'label' => 'Название',
+    'label' => 'Название предложения',
     'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -937,28 +1397,54 @@ function excur_feature_node_service_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('А)Личное подтверждение бронирования- вы получите уведомление о заказе и должны будете подтвердить или отменить заказ, до этого момента бронирование не будет считаться подтвержденным.<br>
+Б)Автоматическое подтверждение заказа - клиент получит подтверждение о заказе сразу после оплаты на Excursiopedia.com. Будьте внимательны! Если Вам требуется подтверждать экскурсии самостоятельно для проверки возможности проведения экскурсии в заказанные даты, выберите другой пункт.');
   t('Билеты');
   t('Валюта');
+  t('Введите название города в котором проводится или начинается экскурсия.');
+  t('Введите название предложения, например «Стандартное».');
+  t('Введите название, например «Детский*» или «Взрослый».');
+  t('Возврат % от стоимости за дней до начала тура');
+  t('Возврат 0% от стоимости за  день(дней) до начала тура.');
+  t('Возврат 100% от стоимости за  дней до начала тура');
   t('Время встречи');
+  t('Входит в стоимость:');
+  t('Вы можете создать несколько предложений, отличающихся по цене, продолжительности и содержанию.');
+  t('Вы можете создать несколько типов билетов.');
+  t('Выберите из предложенного списка категорий');
   t('Гид');
   t('Главное изображение');
   t('Город');
-  t('Доступные языки');
+  t('Дни');
   t('Изображения для слайдера');
   t('Категория');
+  t('Максимум за');
   t('Место встречи');
+  t('Минимум за');
   t('Название');
-  t('Например: "2.5 часа"');
-  t('Например: "Cтандартное предложение"');
-  t('Например: "Взрослые билеты"');
-  t('Например: "Каждый день с 09:00 до 18:00"');
-  t('Описание');
+  t('Название предложения');
+  t('Не входит в стоимость:');
+  t('Не указывайте в описании предложения цену, продолжительность и язык проведения.');
+  t('Описание предложения');
+  t('Правила бронирования');
+  t('Правила отмены');
   t('Предложение');
   t('Продолжительность');
+  t('Проценты');
+  t('Рекомендуем использовать фотографии размером более 800*600 точек.');
   t('Укажите валюту, в которой отображать стомость услуги, если пользователем не выбрана иная');
-  t('Укажите стоимость билета в <b>ЕВРО</b>. Например: "2200".');
+  t('Укажите время встречи или время забора клиента из отеля');
+  t('Укажите за сколько дней производится 100%-й возврат денежных средств в случае отказа Клиента от уже оплаченного тура.');
+  t('Укажите период за который минимально можно забронировать это предложение (Например: минимум за 1 день) и максимальное время вперед когда вы готовы принимать бронирования (Например: максимом на 180 дней вперед).');
+  t('Укажите продолжительность, например: «2ч 30 мин».');
+  t('Укажите стоимость билета в ранее выбранной валюте.');
+  t('Укажите точный адрес или выберите забор Клиента из отеля');
+  t('Укажите через запятую языки проведения тура, например: "Русский, Английский".');
+  t('Укажите через запятую, что входит в стоимость тура.');
+  t('Укажите через запятую, что не входит в стоимость тура.');
+  t('Условия бронирования');
   t('Цена');
-  t('Часы работы');
+  t('Языки проведения');
 
   return $field_instances;
 }

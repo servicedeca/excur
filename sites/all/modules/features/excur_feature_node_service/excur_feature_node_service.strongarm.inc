@@ -28,20 +28,23 @@ function excur_feature_node_service_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'language' => array(
-          'weight' => '14',
+          'weight' => '12',
         ),
         'metatags' => array(
-          'weight' => '16',
+          'weight' => '14',
         ),
         'path' => array(
-          'weight' => '15',
+          'weight' => '13',
         ),
         'rabbit_hole' => array(
-          'weight' => '1',
+          'weight' => '2',
         ),
       ),
       'display' => array(),

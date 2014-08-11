@@ -25,6 +25,7 @@ dependencies[] = user
 dependencies[] = votingapi
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
+features[field_instance][] = user-user-field_agreement
 features[field_instance][] = user-user-field_birthday
 features[field_instance][] = user-user-field_certified
 features[field_instance][] = user-user-field_city
