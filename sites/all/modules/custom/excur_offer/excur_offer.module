@@ -69,28 +69,26 @@ function excur_offer_views_api() {
 /**
  * Page callback for excur/offer/%excur_offer path.
  */
-function excur_offer_confirmed($offer){
-  $oid = $offer->oid;
-  excur_offer_update($oid, 'status', EXCUR_OFFER_CONFIRMED);
+function excur_offer_confirmed($offer) {
+  excur_offer_update($offer->oid, 'status', EXCUR_OFFER_CONFIRMED);
   $account = user_load($offer->uid);
   $message = theme('offer_mail', array(
     'offer' => $offer,
   ));
   excur_offer_send_mail($account->mail, $message);
-  print 'Подтвержден';
+  print t('Confirmed');
   drupal_exit();
 }
 
 /**
  * Page callback for excur/offer/reject/%excur_offer
  */
-function excur_offer_rejected($offer){
-  $oid = $offer->oid;
-  excur_offer_update($oid, 'status', EXCUR_OFFER_REJECTED);
+function excur_offer_rejected($offer) {
+  excur_offer_update($offer->oid, 'status', EXCUR_OFFER_REJECTED);
   $account = user_load($offer->uid);
-  $message = t('Гид отклонил вашу заявку');
+  $message = t('Guide has rejected your order.');
   excur_offer_send_mail($account->mail, $message);
-  print 'Откланена';
+  print t('Rejected');
   drupal_exit();
 }
 
@@ -264,9 +262,11 @@ function excur_offer_save($oid, $uid, $nid, $ticket, $currency, $date, $status) 
 }
 
 /**
- * update offer.
+ * Update offer by oid.
  *
- * @param string $status.
+ * @param int $oid.
+ * @param string $label.
+ * @param mixed $value.
  */
 function excur_offer_update($oid, $label, $value) {
   db_update('excur_offer')
