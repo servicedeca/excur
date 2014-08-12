@@ -179,7 +179,7 @@ function excur_feature_views_views_default_views() {
   );
   $handler->display->display_options['filters']['tid']['type'] = 'select';
   $handler->display->display_options['filters']['tid']['vocabulary'] = 'category';
-  /* Критерий фильтра: Поле: Доступные языки (field_languages) */
+  /* Критерий фильтра: Поле: Языки проведения (field_languages) */
   $handler->display->display_options['filters']['field_languages_tid']['id'] = 'field_languages_tid';
   $handler->display->display_options['filters']['field_languages_tid']['table'] = 'field_data_field_languages';
   $handler->display->display_options['filters']['field_languages_tid']['field'] = 'field_languages_tid';
@@ -356,7 +356,7 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'service' => 'service',
   );
-  /* Критерий фильтра: Поле: Доступные языки (field_languages) */
+  /* Критерий фильтра: Поле: Языки проведения (field_languages) */
   $handler->display->display_options['filters']['field_languages_tid']['id'] = 'field_languages_tid';
   $handler->display->display_options['filters']['field_languages_tid']['table'] = 'field_data_field_languages';
   $handler->display->display_options['filters']['field_languages_tid']['field'] = 'field_languages_tid';
@@ -824,6 +824,12 @@ function excur_feature_views_views_default_views() {
     'title_link' => 'content',
     'title_class' => '',
   );
+  /* Поле: Excursionline: состояние */
+  $handler->display->display_options['fields']['status']['id'] = 'status';
+  $handler->display->display_options['fields']['status']['table'] = 'excur_offer';
+  $handler->display->display_options['fields']['status']['field'] = 'status';
+  $handler->display->display_options['fields']['status']['label'] = 'Состояние';
+  $handler->display->display_options['fields']['status']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Критерий сортировки: Excursionline: Создано */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
@@ -982,6 +988,17 @@ function excur_feature_views_views_default_views() {
     'title_link' => 'content',
     'title_class' => '',
   );
+  /* Поле: Excursionline: состояние */
+  $handler->display->display_options['fields']['status']['id'] = 'status';
+  $handler->display->display_options['fields']['status']['table'] = 'excur_offer';
+  $handler->display->display_options['fields']['status']['field'] = 'status';
+  $handler->display->display_options['fields']['status']['element_label_colon'] = FALSE;
+  /* Поле: Excursionline: Offer id */
+  $handler->display->display_options['fields']['oid']['id'] = 'oid';
+  $handler->display->display_options['fields']['oid']['table'] = 'excur_offer';
+  $handler->display->display_options['fields']['oid']['field'] = 'oid';
+  $handler->display->display_options['fields']['oid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['oid']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Критерий сортировки: Excursionline: Создано */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
@@ -1048,10 +1065,13 @@ function excur_feature_views_views_default_views() {
     t('Дата встречи'),
     t('Время встречи'),
     t('Место встречи'),
+    t('Состояние'),
     t('Все'),
     t('View panes'),
     t('Заказы гида'),
     t('У вас не совершали заказов.'),
+    t('состояние'),
+    t('Offer id'),
   );
   $export['offers'] = $view;
 
