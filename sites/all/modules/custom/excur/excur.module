@@ -386,3 +386,11 @@ function excur_categories_by_city($city) {
 
   return $query->execute()->fetchAll();
 }
+
+/**
+ * Implements hook_menu_alter().
+ */
+function excur_menu_alter(&$items) {
+  $items['user/%user/edit']['title'] = 'Профиль';
+  $items['user/%user/view']['title'] = 'Мои заказы';
+}

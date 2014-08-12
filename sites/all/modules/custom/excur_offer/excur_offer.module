@@ -90,7 +90,7 @@ function excur_offer_rejected($offer){
   $account = user_load($offer->uid);
   $message = t('Гид отклонил вашу заявку');
   excur_offer_send_mail($account->mail, $message);
-  print 'Откланена';
+  print 'Откланён';
   drupal_exit();
 }
 
