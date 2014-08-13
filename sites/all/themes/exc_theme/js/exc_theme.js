@@ -108,16 +108,24 @@
 
   Drupal.behaviors.excurServiceOps = {
     attach: function(context, settings) {
-      $('a.confirm-order').click(function() {
-        var oid = $(this).data('id')
-        $.get('/excur/offer/confirm/' + $(this).data('id'), function( html ) {
+      $('a.confirm-order').click(function(e) {
+        e.preventDefault();
+
+        var $this = $(this);
+        var oid = $this.data('id');
+
+        $.get('/excur/offer/confirm/' + $this.data('id'), function(html) {
           $("#content_confirm" + oid).html(html);
         });
       });
 
-      $('a.confirm-reject').click(function() {
-        var oid = $(this).data('id')
-        $.get('/excur/offer/reject/' + $(this).data('id'), function( html ) {
+      $('a.confirm-reject').click(function(e) {
+        e.preventDefault();
+
+        var $this = $(this);
+        var oid = $this.data('id');
+
+        $.get('/excur/offer/reject/' + $this.data('id'), function(html) {
             $("#content_confirm" + oid).html(html);
         });
       });

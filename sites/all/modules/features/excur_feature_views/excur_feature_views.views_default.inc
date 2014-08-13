@@ -179,7 +179,7 @@ function excur_feature_views_views_default_views() {
   );
   $handler->display->display_options['filters']['tid']['type'] = 'select';
   $handler->display->display_options['filters']['tid']['vocabulary'] = 'category';
-  /* Критерий фильтра: Поле: Языки проведения (field_languages) */
+  /* Критерий фильтра: Поле: Языки (field_languages) */
   $handler->display->display_options['filters']['field_languages_tid']['id'] = 'field_languages_tid';
   $handler->display->display_options['filters']['field_languages_tid']['table'] = 'field_data_field_languages';
   $handler->display->display_options['filters']['field_languages_tid']['field'] = 'field_languages_tid';
@@ -356,7 +356,7 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'service' => 'service',
   );
-  /* Критерий фильтра: Поле: Языки проведения (field_languages) */
+  /* Критерий фильтра: Поле: Языки (field_languages) */
   $handler->display->display_options['filters']['field_languages_tid']['id'] = 'field_languages_tid';
   $handler->display->display_options['filters']['field_languages_tid']['table'] = 'field_data_field_languages';
   $handler->display->display_options['filters']['field_languages_tid']['field'] = 'field_languages_tid';
@@ -992,6 +992,7 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['status']['id'] = 'status';
   $handler->display->display_options['fields']['status']['table'] = 'excur_offer';
   $handler->display->display_options['fields']['status']['field'] = 'status';
+  $handler->display->display_options['fields']['status']['label'] = 'Состояние';
   $handler->display->display_options['fields']['status']['element_label_colon'] = FALSE;
   /* Поле: Excursionline: Offer id */
   $handler->display->display_options['fields']['oid']['id'] = 'oid';
@@ -1006,18 +1007,18 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Контекстный фильтр: Excursionline: User id */
-  $handler->display->display_options['arguments']['uid']['id'] = 'uid';
-  $handler->display->display_options['arguments']['uid']['table'] = 'excur_offer';
-  $handler->display->display_options['arguments']['uid']['field'] = 'uid';
-  $handler->display->display_options['arguments']['uid']['relationship'] = 'field_guide_target_id';
-  $handler->display->display_options['arguments']['uid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['uid']['exception']['title'] = 'Все';
-  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'user';
-  $handler->display->display_options['arguments']['uid']['default_argument_options']['user'] = FALSE;
-  $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
+  /* Контекстный фильтр: Содержимое: Гид (field_guide) */
+  $handler->display->display_options['arguments']['field_guide_target_id']['id'] = 'field_guide_target_id';
+  $handler->display->display_options['arguments']['field_guide_target_id']['table'] = 'field_data_field_guide';
+  $handler->display->display_options['arguments']['field_guide_target_id']['field'] = 'field_guide_target_id';
+  $handler->display->display_options['arguments']['field_guide_target_id']['relationship'] = 'nid';
+  $handler->display->display_options['arguments']['field_guide_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_guide_target_id']['exception']['title'] = 'Все';
+  $handler->display->display_options['arguments']['field_guide_target_id']['default_argument_type'] = 'user';
+  $handler->display->display_options['arguments']['field_guide_target_id']['default_argument_options']['user'] = FALSE;
+  $handler->display->display_options['arguments']['field_guide_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_guide_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_guide_target_id']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   $handler->display->display_options['argument_input'] = array(
@@ -1070,7 +1071,6 @@ function excur_feature_views_views_default_views() {
     t('View panes'),
     t('Заказы гида'),
     t('У вас не совершали заказов.'),
-    t('состояние'),
     t('Offer id'),
   );
   $export['offers'] = $view;
