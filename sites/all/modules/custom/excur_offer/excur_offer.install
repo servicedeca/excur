@@ -90,3 +90,21 @@ function excur_offer_update_7001() {
   $addition = array('excur_offer' => 'ExcurOfferMailSystem');
   variable_set('mail_system', array_merge($current, $addition));
 }
+
+/**
+ * Implements hook_update_N().
+ * Add new status field.
+ */
+function excur_offer_update_7002() {
+  $field = array(
+    'description' => 'status.',
+    'type' => 'varchar',
+    'length' => 255,
+    'not null' => TRUE,
+  );
+
+  db_add_field('excur_offer', 'status', $field);
+  db_update('excur_offer')
+    ->fields(array('status' => EXCUR_OFFER_CONFIRMED))
+    ->execute();
+}

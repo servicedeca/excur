@@ -4,9 +4,9 @@
  * @file.
  */
 
-define("NOT_CONFIRMED", "not_confirmed");
-define("CONFIRMED", "confirmed");
-define("REJECTED", "rejected");
+define('EXCUR_OFFER_NOT_CONFIRMED', 'not_confirmed');
+define('EXCUR_OFFER_CONFIRMED', 'confirmed');
+define('EXCUR_OFFER_REJECTED', 'rejected');
 
 // Include additional files.
 require_once 'excur_offer.mail.inc';
@@ -27,12 +27,13 @@ function excur_offer_menu() {
     'page arguments' => array(3),
     'access arguments' => array('access content'),
   );
-  $items['excur/offer/reject/%excur_offer'] = array(
-    'title' => 'reject',
-    'page callback' => 'excur_offer_rejected',
+    $items['excur/offer/order/%node'] = array(
+    'title' => 'order',
+    'page callback' => 'excur_offer_order',
     'page arguments' => array(3),
     'access arguments' => array('access content'),
   );
+    
   return $items;
 }
 
@@ -54,6 +55,16 @@ function excur_offer_theme() {
     'template' => 'offer-mail',
   );
 
+    $items['order_template'] = array(
+        'order_template' => array(
+            'variables' => array(
+            'body' => NULL,
+            'title' => NULL,
+        ),
+            'template' => 'order-template.tpl.php',
+        ),
+    );
+    
   return $items;
 }
 
@@ -69,28 +80,26 @@ function excur_offer_views_api() {
 /**
  * Page callback for excur/offer/%excur_offer path.
  */
-function excur_offer_confirmed($offer){
-  $oid = $offer->oid;
-  excur_offer_update($oid, 'status', CONFIRMED);
+function excur_offer_confirmed($offer) {
+  excur_offer_update($offer->oid, 'status', EXCUR_OFFER_CONFIRMED);
   $account = user_load($offer->uid);
   $message = theme('offer_mail', array(
     'offer' => $offer,
   ));
   excur_offer_send_mail($account->mail, $message);
-  print 'Подтвержден';
+  print t('Confirmed');
   drupal_exit();
 }
 
 /**
  * Page callback for excur/offer/reject/%excur_offer
  */
-function excur_offer_rejected($offer){
-  $oid = $offer->oid;
-  excur_offer_update($oid, 'status', REJECTED);
+function excur_offer_rejected($offer) {
+  excur_offer_update($offer->oid, 'status', EXCUR_OFFER_REJECTED);
   $account = user_load($offer->uid);
-  $message = t('Гид отклонил вашу заявку');
+  $message = t('Guide has rejected your order.');
   excur_offer_send_mail($account->mail, $message);
-  print 'Откланён';
+  print t('Rejected');
   drupal_exit();
 }
 
@@ -100,6 +109,13 @@ function excur_offer_rejected($offer){
 function excur_offer_page($offer) {
   print theme('offer_mail', array('offer' => $offer));
   drupal_exit();
+}
+
+/**
+ * Page callback for excur/offer/%order.
+ */
+function excur_offer_order($order){
+    return theme('order_template', array('order' => $order));    
 }
 
 /**
@@ -167,7 +183,7 @@ function excur_offer_offer_form_submit(&$form, &$form_state) {
   $reservation = $reservation->field_reservation->value();
   $oid = rand(1000, 9999) . REQUEST_TIME;
   if($reservation == false){
-    excur_offer_save($oid, $user->uid, $form['#data']['nid'], $values['tickets'], excur_offer_user_currency(), $values['date'], 'CONFIRMED');
+    excur_offer_save($oid, $user->uid, $form['#data']['nid'], $values['tickets'], excur_offer_user_currency(), $values['date'], EXCUR_OFFER_CONFIRMED);
     $offer = excur_offer_load($oid);
 
     $message = theme('offer_mail', array(
@@ -182,7 +198,7 @@ function excur_offer_offer_form_submit(&$form, &$form_state) {
     }
   }
   else{
-    excur_offer_save($oid, $user->uid, $form['#data']['nid'], $values['tickets'], excur_offer_user_currency(), $values['date'], 'NOT_CONFIRMED');
+    excur_offer_save($oid, $user->uid, $form['#data']['nid'], $values['tickets'], excur_offer_user_currency(), $values['date'], EXCUR_OFFER_NOT_CONFIRMED);
     drupal_set_message(t('Заявка на бронирование успешно отправлена, ожидаете подтверждение гида.'));
   }
 }
@@ -264,9 +280,11 @@ function excur_offer_save($oid, $uid, $nid, $ticket, $currency, $date, $status) 
 }
 
 /**
- * update offer.
+ * Update offer by oid.
  *
- * @param string $status.
+ * @param int $oid.
+ * @param string $label.
+ * @param mixed $value.
  */
 function excur_offer_update($oid, $label, $value) {
   db_update('excur_offer')

@@ -359,17 +359,39 @@ function exc_theme_remote_image_style($variables) {
  * Process variables for views-view-table--offers--guide-offers.tpl.php
  */
 function exc_theme_preprocess_views_view_table__offers__guide_offers(&$vars){
-  foreach($vars['rows'] as $key => $value){
-    $oid  = $vars['view']->result[$key]->oid;
-    if($vars['rows'][$key]['status'] == 'not_confirmed'){
-      $vars['rows'][$key]['status'] = "<div id=content_confirm".$oid." >Ожидает подтверждения<a href=# data-id=".$oid." class='confirm-order'> Подтвердить </a><br>
-                                       <a href=# data-id=".$oid." class='confirm-reject'> Отклонить </a></div>";
-    }
-    elseif($vars['rows'][$key]['status'] == 'confirmed'){
-      $vars['rows'][$key]['status'] = t('<div id=content_confirm'.$oid.'>Подтвержден</div>');
-    }
-    elseif($vars['rows'][$key]['status'] == 'rejected'){
-      $vars['rows'][$key]['status'] = t('<div id=content_confirm'.$oid.'>Откланен</div>');
+  foreach ($vars['rows'] as $key => &$value) {
+    $oid = $vars['view']->result[$key]->oid;
+
+    switch ($value['status']) {
+      case EXCUR_OFFER_NOT_CONFIRMED:
+        $value['status'] = '<div id="content_confirm' . $oid . '">';
+        $value['status'] .= t('Awaiting confirmation');
+        $value['status'] .= '<br/>';
+        $value['status'] .= l(t('Confirm'), '#', array(
+          'external' => TRUE,
+          'attributes' => array(
+            'class' => array('confirm-order'),
+            'data-id' => $oid,
+          )
+        ));
+        $value['status'] .= '<br/>';
+        $value['status'] .= l(t('Reject'), '#', array(
+          'external' => TRUE,
+          'attributes' => array(
+            'class' => array('confirm-reject'),
+            'data-id' => $oid,
+          )
+        ));
+        $value['status'] .= '</div>';
+        break;
+
+      case EXCUR_OFFER_CONFIRMED:
+        $value['status'] = '<div id="content_confirm"' . $oid . '">' . t('Confirmed') . '</div>';
+        break;
+
+      case EXCUR_OFFER_REJECTED:
+        $value['status'] = '<div id="content_confirm"' . $oid . '">' . t('Rejected') . '</div>';
+        break;
     }
   }
 }
@@ -378,16 +400,39 @@ function exc_theme_preprocess_views_view_table__offers__guide_offers(&$vars){
  * Process variables for views-view-table--offers--user-offers.tpl.php
  */
 function exc_theme_preprocess_views_view_table__offers__user_offers(&$vars){
-  foreach($vars['rows'] as $key => $value){
-    $oid  = $vars['view']->result[$key]->oid;
-    if($vars['rows'][$key]['status'] == 'not_confirmed'){
-      $vars['rows'][$key]['status'] = "<div id=content_confirm".$oid." >Ожидает подтверждения</div>";
-    }
-    elseif($vars['rows'][$key]['status'] == 'confirmed'){
-      $vars['rows'][$key]['status'] = t('<div id=content_confirm'.$oid.'>Подтвержден<a href="#" > Оплатить </a></div>');
-    }
-    elseif($vars['rows'][$key]['status'] == 'rejected'){
-      $vars['rows'][$key]['status'] = t('<div id=content_confirm'.$oid.'>Откланен</div>');
+  foreach ($vars['rows'] as $key => &$value) {
+    $oid = $vars['view']->result[$key]->oid;
+
+    switch ($value['status']) {
+      case EXCUR_OFFER_NOT_CONFIRMED:
+        $value['status'] = '<div id="content_confirm' . $oid . '">' . t('Awaiting confirmation') . '</div>';
+        break;
+
+      case EXCUR_OFFER_CONFIRMED:
+        $value['status'] = '<div id="content_confirm' . $oid . '">' . t('Confirmed');
+        $value['status'] .= '<br/>';
+        $value['status'] .= l(t('Pay'), '#', array(
+          'external' => TRUE,
+          'attributes' => array(
+            'class' => array('pay-order'),
+            'data-id' => $oid,
+          )
+        ));
+        $value['status'] .= '</div>';
+        break;
+
+      case EXCUR_OFFER_REJECTED:
+        $value['status'] = '<div id="content_confirm' . $oid . '">' . t('Rejected') . '</div>';
+        break;
     }
   }
+}
+
+/**
+ * Process variables for order-template.tpl.php
+ */
+function exc_theme_preprocess_order_template(&$vars){
+    $vars['node'] = node_load($vars['order']->nid);
+    $vars['title'] = $vars['order']->title;
+    $vars['offer'] = $vars['order']->field_offer['und'][0];
 }

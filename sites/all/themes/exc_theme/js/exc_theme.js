@@ -106,6 +106,32 @@
     }
   };
 
+  Drupal.behaviors.excurServiceOps = {
+    attach: function(context, settings) {
+      $('a.confirm-order').click(function(e) {
+        e.preventDefault();
+
+        var $this = $(this);
+        var oid = $this.data('id');
+
+        $.get('/excur/offer/confirm/' + $this.data('id'), function(html) {
+          $("#content_confirm" + oid).html(html);
+        });
+      });
+
+      $('a.confirm-reject').click(function(e) {
+        e.preventDefault();
+
+        var $this = $(this);
+        var oid = $this.data('id');
+
+        $.get('/excur/offer/reject/' + $this.data('id'), function(html) {
+            $("#content_confirm" + oid).html(html);
+        });
+      });
+    }
+  };
+
   function excurScrollTo(from, to, time) {
     $(from).click(function (){
       $('html, body').animate({
@@ -114,19 +140,4 @@
     });
   }
 
-  $('a.confirm-order').click(function() {
-    oid = $(this).data('id')
-    $.get('/excur/offer/confirm/'+$(this).data('id'), function( html ) {
-      $("#content_confirm"+oid).html(html);
-    });
-  });
-  
-  $('a.confirm-reject').click(function() {
-    oid = $(this).data('id')
-    $.get('/excur/offer/reject/'+$(this).data('id'), function( html ) {
-        $("#content_confirm"+oid).html(html);
-        
-    });
-  });
-  
 }(jQuery));
