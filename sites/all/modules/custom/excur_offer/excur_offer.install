@@ -11,8 +11,14 @@ function excur_offer_schema() {
   $schema['excur_offer'] = array(
     'description' => 'List of offers',
     'fields' => array(
-      'oid' => array(
+      'id' => array(
         'description' => 'The primary identifier for a offer.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'oid' => array(
+        'description' => 'The identifier for a offer.',
         'type' => 'varchar',
         'length' => 14,
         'not null' => TRUE,
@@ -57,7 +63,7 @@ function excur_offer_schema() {
         'not null' => TRUE,
       ),
     ),
-    'primary key' => array('oid'),
+    'primary key' => array('id', 'oid'),
   );
 
   return $schema;
@@ -107,4 +113,22 @@ function excur_offer_update_7002() {
   db_update('excur_offer')
     ->fields(array('status' => EXCUR_OFFER_CONFIRMED))
     ->execute();
+}
+
+
+/**
+ * Implements hook_update_N().
+ * Add new id field.
+ */
+function excur_offer_update_7003() {
+  $field = array(
+    'description' => 'The primary identifier for a offer.',
+    'type' => 'serial',
+    'unsigned' => TRUE,
+    'not null' => TRUE,
+  );
+
+  db_drop_primary_key('excur_offer');
+  db_add_field('excur_offer', 'id', $field);
+  db_add_primary_key('excur_offer', array('id', 'oid'));
 }

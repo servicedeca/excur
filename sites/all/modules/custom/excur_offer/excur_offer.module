@@ -177,30 +177,9 @@ function excur_offer_offer_form_submit(&$form, &$form_state) {
 
   $values = $form_state['values'];
   $nid = $form['#data']['nid'];
-  $node = node_load($nid);
-  $reservation = entity_metadata_wrapper('node', $node);
-  $reservation->language($language->language);
-  $reservation = $reservation->field_reservation->value();
   $oid = rand(1000, 9999) . REQUEST_TIME;
-  if($reservation == false){
-    excur_offer_save($oid, $user->uid, $form['#data']['nid'], $values['tickets'], excur_offer_user_currency(), $values['date'], EXCUR_OFFER_CONFIRMED);
-    $offer = excur_offer_load($oid);
-
-    $message = theme('offer_mail', array(
-      'offer' => $offer,
-    ));
-
-    if (excur_offer_send_mail($user->mail, $message)) {
-      drupal_set_message(t('Further instructions sent to your email.'));
-    }
-    else {
-      drupal_set_message(t('Error occurred while you reserved order, please, try again later.'), 'warning');
-    }
-  }
-  else{
-    excur_offer_save($oid, $user->uid, $form['#data']['nid'], $values['tickets'], excur_offer_user_currency(), $values['date'], EXCUR_OFFER_NOT_CONFIRMED);
-    drupal_set_message(t('Заявка на бронирование успешно отправлена, ожидаете подтверждение гида.'));
-  }
+  excur_offer_save($oid, $user->uid, $form['#data']['nid'], $values['tickets'], excur_offer_user_currency(), $values['date'], 0);
+  drupal_goto('excur/offer/order/' . $nid, array('query' => array('id' => $oid)));
 }
 
 /**
