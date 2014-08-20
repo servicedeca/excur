@@ -360,18 +360,18 @@ function exc_theme_remote_image_style($variables) {
  */
 function exc_theme_preprocess_views_view_table__offers__guide_offers(&$vars){
   foreach ($vars['rows'] as $key => &$value) {
-    $oid = $vars['view']->result[$key]->oid;
+    $id = $vars['view']->result[$key]->excur_offer_id;
 
     switch ($value['status']) {
       case EXCUR_OFFER_NOT_CONFIRMED:
-        $value['status'] = '<div id="content_confirm' . $oid . '">';
+        $value['status'] = '<div id="content_confirm' . $id . '">';
         $value['status'] .= t('Awaiting confirmation');
         $value['status'] .= '<br/>';
         $value['status'] .= l(t('Confirm'), '#', array(
           'external' => TRUE,
           'attributes' => array(
             'class' => array('confirm-order'),
-            'data-id' => $oid,
+            'data-id' => $id,
           )
         ));
         $value['status'] .= '<br/>';
@@ -379,18 +379,18 @@ function exc_theme_preprocess_views_view_table__offers__guide_offers(&$vars){
           'external' => TRUE,
           'attributes' => array(
             'class' => array('confirm-reject'),
-            'data-id' => $oid,
+            'data-id' => $id,
           )
         ));
         $value['status'] .= '</div>';
         break;
 
       case EXCUR_OFFER_CONFIRMED:
-        $value['status'] = '<div id="content_confirm"' . $oid . '">' . t('Confirmed') . '</div>';
+        $value['status'] = '<div id="content_confirm"' . $id . '">' . t('Confirmed') . '</div>';
         break;
 
       case EXCUR_OFFER_REJECTED:
-        $value['status'] = '<div id="content_confirm"' . $oid . '">' . t('Rejected') . '</div>';
+        $value['status'] = '<div id="content_confirm"' . $id . '">' . t('Rejected') . '</div>';
         break;
     }
   }
@@ -401,28 +401,28 @@ function exc_theme_preprocess_views_view_table__offers__guide_offers(&$vars){
  */
 function exc_theme_preprocess_views_view_table__offers__user_offers(&$vars){
   foreach ($vars['rows'] as $key => &$value) {
-    $oid = $vars['view']->result[$key]->oid;
+    $id = $vars['view']->result[$key]->excur_offer_id;
 
     switch ($value['status']) {
       case EXCUR_OFFER_NOT_CONFIRMED:
-        $value['status'] = '<div id="content_confirm' . $oid . '">' . t('Awaiting confirmation') . '</div>';
+        $value['status'] = '<div id="content_confirm' . $id . '">' . t('Awaiting confirmation') . '</div>';
         break;
 
       case EXCUR_OFFER_CONFIRMED:
-        $value['status'] = '<div id="content_confirm' . $oid . '">' . t('Confirmed');
+        $value['status'] = '<div id="content_confirm' . $id . '">' . t('Confirmed');
         $value['status'] .= '<br/>';
         $value['status'] .= l(t('Pay'), '#', array(
           'external' => TRUE,
           'attributes' => array(
             'class' => array('pay-order'),
-            'data-id' => $oid,
+            'data-id' => $id,
           )
         ));
         $value['status'] .= '</div>';
         break;
 
       case EXCUR_OFFER_REJECTED:
-        $value['status'] = '<div id="content_confirm' . $oid . '">' . t('Rejected') . '</div>';
+        $value['status'] = '<div id="content_confirm' . $id . '">' . t('Rejected') . '</div>';
         break;
     }
   }
@@ -432,7 +432,32 @@ function exc_theme_preprocess_views_view_table__offers__user_offers(&$vars){
  * Process variables for order-template.tpl.php
  */
 function exc_theme_preprocess_order_template(&$vars){
-    $vars['node'] = node_load($vars['order']->nid);
+    $vars['node'] = excur_offer_load($_GET['id']);
+    $city = taxonomy_term_load($vars['order']->field_city['und'][0]['target_id']);
+    $country = taxonomy_term_load($city->field_country['und']['0']['target_id']);
+    $guide = user_load($vars['node']->uid);
+    $vars['guide_image_path'] = $guide->field_image['und'][0]['uri'];
+    $vars['guide_name'] = l($guide->name, "guide/$guide->uid");
+    $vars['country_name'] = l($country->name, "taxonomy/term/$country->tid");
+    $vars['city_name'] = l($city->name, "taxonomy/term/$city->tid");
+    $vars['id'] = $vars['node']->id;
+    $vars['offer'] = $vars['node']->offer;
+    $vars['date'] = $vars['node']->date ;
     $vars['title'] = $vars['order']->title;
-    $vars['offer'] = $vars['order']->field_offer['und'][0];
+    $vars['duration'] = $vars['node']->duration;
+    $vars['path'] = $vars['order']->field_image['und'][0]['uri'];
+    $vars['image'] = theme('image', array(
+      'path' => $vars['path'],
+      'alt' => '',
+      'title' => '',
+      'width' => '300px',
+      'height' => '300px',
+    ));
+    $vars['guide_image'] = theme('image', array(
+      'path' => $vars['guide_image_path'],
+      'alt' => '',
+      'title' => '',
+      'width' => '100px',
+      'height' => '100px',
+    ));
 }

@@ -62,6 +62,30 @@ function excur_offer_schema() {
         'length' => 255,
         'not null' => TRUE,
       ),
+      'language' => array(
+        'description' => 'language of offer.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'offer' => array(
+        'description' => 'offer.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'ticket_type' => array(
+        'description' => 'ticket.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'duration' => array(
+        'description' => 'duration.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
     ),
     'primary key' => array('id', 'oid'),
   );

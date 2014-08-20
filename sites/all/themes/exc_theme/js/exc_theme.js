@@ -112,10 +112,11 @@
         e.preventDefault();
 
         var $this = $(this);
-        var oid = $this.data('id');
-
+        var id = $this.data('id');
+        //alert($this.data('id'));
         $.get('/excur/offer/confirm/' + $this.data('id'), function(html) {
-          $("#content_confirm" + oid).html(html);
+          alert($this.data('id'));
+          $("#content_confirm" + id).html(html);
         });
       });
 
@@ -123,10 +124,10 @@
         e.preventDefault();
 
         var $this = $(this);
-        var oid = $this.data('id');
+        var id = $this.data('id');
 
         $.get('/excur/offer/reject/' + $this.data('id'), function(html) {
-            $("#content_confirm" + oid).html(html);
+            $("#content_confirm" + id).html(html);
         });
       });
     }

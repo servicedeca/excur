@@ -81,7 +81,7 @@ function excur_offer_views_api() {
  * Page callback for excur/offer/%excur_offer path.
  */
 function excur_offer_confirmed($offer) {
-  excur_offer_update($offer->oid, 'status', EXCUR_OFFER_CONFIRMED);
+  excur_offer_update($offer->id, 'status', EXCUR_OFFER_CONFIRMED);
   $account = user_load($offer->uid);
   $message = theme('offer_mail', array(
     'offer' => $offer,
@@ -95,7 +95,7 @@ function excur_offer_confirmed($offer) {
  * Page callback for excur/offer/reject/%excur_offer
  */
 function excur_offer_rejected($offer) {
-  excur_offer_update($offer->oid, 'status', EXCUR_OFFER_REJECTED);
+  excur_offer_update($offer->id, 'status', EXCUR_OFFER_REJECTED);
   $account = user_load($offer->uid);
   $message = t('Guide has rejected your order.');
   excur_offer_send_mail($account->mail, $message);
@@ -176,9 +176,12 @@ function excur_offer_offer_form_submit(&$form, &$form_state) {
 
   $values = $form_state['values'];
   $nid = $form['#data']['nid'];
+  $duration = $form['#data']['duration'];
+  $type_offer = $form['#data']['title'];
+  $language = 0;
   $oid = rand(1000, 9999) . REQUEST_TIME;
-  excur_offer_save($oid, $user->uid, $form['#data']['nid'], $values['tickets'], excur_offer_user_currency(), $values['date'], 0);
-  drupal_goto('excur/offer/order/' . $nid, array('query' => array('id' => $oid)));
+  $id = excur_offer_save($oid, $user->uid, $form['#data']['nid'], $values['tickets'], excur_offer_user_currency(), $values['date'], 0, $language, $type_offer, 0, $duration);
+  drupal_goto('excur/offer/order/' . $nid, array('query' => array('id' => $id)));
 }
 
 /**
@@ -220,10 +223,10 @@ function excur_offer_send_mail($email, $message, $subject = NULL, $module_key = 
  * @param int $oid.
  * @return object.
  */
-function excur_offer_load($oid) {
+function excur_offer_load($id) {
   return db_select('excur_offer', 'eo')
     ->fields('eo')
-    ->condition('oid', $oid)
+    ->condition('id', $id)
     ->execute()
     ->fetchObject();
 }
@@ -240,7 +243,7 @@ function excur_offer_load($oid) {
  * @param string $status.
  *
  */
-function excur_offer_save($oid, $uid, $nid, $ticket, $currency, $date, $status) {
+function excur_offer_save($oid, $uid, $nid, $ticket, $currency, $date, $status, $language, $offer, $ticket_type, $duration) {
   $record = array(
     'oid' => $oid,
     'uid' => $uid,
@@ -250,11 +253,16 @@ function excur_offer_save($oid, $uid, $nid, $ticket, $currency, $date, $status) 
     'currency' => $currency,
     'created' => REQUEST_TIME,
     'status' => $status,
+    'language' => $language,
+    'offer' => $offer,
+    'ticket_type' => $ticket_type,
+    'duration' => $duration,
   );
 
-  db_insert('excur_offer')
+  $id = db_insert('excur_offer')
     ->fields($record)
     ->execute();
+  return $id;
 }
 
 /**
@@ -264,10 +272,10 @@ function excur_offer_save($oid, $uid, $nid, $ticket, $currency, $date, $status) 
  * @param string $label.
  * @param mixed $value.
  */
-function excur_offer_update($oid, $label, $value) {
+function excur_offer_update($id, $label, $value) {
   db_update('excur_offer')
     ->fields(array($label => $value))
-    ->condition('oid', $oid)
+    ->condition('id', $id)
     ->execute();
 }
 

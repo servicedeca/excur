@@ -117,6 +117,23 @@ function excur_offer_views_data() {
   );
 
   $data['excur_offer']['oid'] = array(
+    'title' => t('Offer oid'),
+    'help' => t('Unique offer oid'),
+    'field' => array(
+      'handler' => 'views_handler_field',
+    ),
+    'sort' => array(
+      'handler' => 'views_handler_sort',
+    ),
+    'filter' => array(
+      'handler' => 'views_handler_filter_string',
+    ),
+    'argument' => array(
+      'handler' => 'views_handler_argument_string',
+    ),
+  );
+
+  $data['excur_offer']['id'] = array(
     'title' => t('Offer id'),
     'help' => t('Unique offer id'),
     'field' => array(
@@ -132,6 +149,7 @@ function excur_offer_views_data() {
       'handler' => 'views_handler_argument_string',
     ),
   );
+
 
   $data['excur_offer']['created'] = array(
     'title' => t('Created'),
