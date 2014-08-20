@@ -432,32 +432,40 @@ function exc_theme_preprocess_views_view_table__offers__user_offers(&$vars){
  * Process variables for order-template.tpl.php
  */
 function exc_theme_preprocess_order_template(&$vars){
-    $vars['node'] = excur_offer_load($_GET['id']);
+    $node = excur_offer_load($_GET['id']);
     $city = taxonomy_term_load($vars['order']->field_city['und'][0]['target_id']);
+    $title_offer = $vars['order']->title;
     $country = taxonomy_term_load($city->field_country['und']['0']['target_id']);
-    $guide = user_load($vars['node']->uid);
-    $vars['guide_image_path'] = $guide->field_image['und'][0]['uri'];
-    $vars['guide_name'] = l($guide->name, "guide/$guide->uid");
-    $vars['country_name'] = l($country->name, "taxonomy/term/$country->tid");
-    $vars['city_name'] = l($city->name, "taxonomy/term/$city->tid");
-    $vars['id'] = $vars['node']->id;
-    $vars['offer'] = $vars['node']->offer;
-    $vars['date'] = $vars['node']->date ;
-    $vars['title'] = $vars['order']->title;
-    $vars['duration'] = $vars['node']->duration;
-    $vars['path'] = $vars['order']->field_image['und'][0]['uri'];
+    $guide = user_load($node->uid);
+    $guide_image_path = $guide->field_image['und'][0]['uri'];
+    $path_image = $vars['order']->field_image['und'][0]['uri'];
+    $vars['offer'] = array(
+      'title'        => $title_offer,
+      'guide_name'   => l($guide->name, "user/$guide->uid"),
+      'country_name' => l($country->name, "taxonomy/term/$country->tid"),
+      'city_name'    => l($city->name, "taxonomy/term/$city->tid"),
+      'id'           => $node->id,
+      'ticket_type'  => $node->ticket_type ,
+      'price'        => $node->ticket,
+      'currency'     => excur_currency_get_icon($node->currency),
+      'offer'        => $node->offer,
+      'date'         => $node->date,
+      'duration'     => $node->duration,
+      'date'         => $node->date
+    );
     $vars['image'] = theme('image', array(
-      'path' => $vars['path'],
+      'path' => $path_image,
       'alt' => '',
       'title' => '',
       'width' => '300px',
       'height' => '300px',
     ));
     $vars['guide_image'] = theme('image', array(
-      'path' => $vars['guide_image_path'],
+      'path' => $guide_image_path,
       'alt' => '',
       'title' => '',
       'width' => '100px',
       'height' => '100px',
     ));
+    $vars['form'] = drupal_get_form('excur_offer_order_form', $vars['order']);
 }

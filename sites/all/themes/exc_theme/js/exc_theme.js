@@ -113,9 +113,7 @@
 
         var $this = $(this);
         var id = $this.data('id');
-        //alert($this.data('id'));
         $.get('/excur/offer/confirm/' + $this.data('id'), function(html) {
-          alert($this.data('id'));
           $("#content_confirm" + id).html(html);
         });
       });
