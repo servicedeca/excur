@@ -70,7 +70,11 @@ function excur_offer_theme() {
             'template' => 'order-template.tpl.php',
         ),
     );
-    
+  
+      $items['excur_offer_order_form'] = array(
+            'render element' => 'form',
+            'template' => 'order-template.tpl.php',
+    );
   return $items;
 }
 
@@ -230,6 +234,7 @@ function excur_offer_order_form($form, $offer, $order) {
   );
   $form['#submit'][] = 'excur_offer_order_form_submit';
   $form['#validate'][] = 'excur_offer_order_form_validate';
+  $form['#theme'] = 'excur_offer_order_form_validate';
 
   return $form;
 }
