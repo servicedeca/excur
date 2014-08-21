@@ -67,25 +67,18 @@ function excur_offer_theme() {
   );
 
   $items['order_template'] = array(
-      'order_template' => array(
-          'variables' => array(
-      ),
-          'template' => 'order-template.tpl.php',
-      ),
+    'template' => 'order-template',
   );
 
-  $items['excur_offer_order_form'] = array(
-        'render element' => 'form',
-        'template' => 'offer-order-template.tpl.php',
+  $items['order_form'] = array(
+    'render element' => 'form',
+    'template' => 'order-form',
   );
 
   $items['pay_template'] = array(
-    'pay_template' => array(
-      'variables' => array(
-      ),
-      'template' => 'pay-template.tpl.php',
-    ),
+    'template' => 'pay-template',
   );
+
   return $items;
 }
 
@@ -135,14 +128,20 @@ function excur_offer_page($offer) {
 /**
  * Page callback for excur/offer/%order.
  */
-function excur_offer_order($order){
-  return theme('order_template', array('order' => $order));
+function excur_offer_order($order) {
+  if (!empty($_GET['id']) && is_numeric($_GET['id'])) {
+    return theme('order_template', array('order' => $order));
+  }
+  else {
+    drupal_not_found();
+    drupal_exit();
+  }
 }
 
 /**
  * Page callback for excur/offer/%pay.
  */
-function excur_offer_pay($pay){
+function excur_offer_pay($pay) {
   return theme('pay_template', array('pay' => $pay));
 }
 
@@ -255,7 +254,7 @@ function excur_offer_order_form($form, $form_state, $order) {
     ),
   );
 
-  $form['#theme'][] = 'excur_offer_order_form';
+  $form['#theme'][] = 'order_form';
   $form['#submit'][] = 'excur_offer_order_form_submit';
   $form['#validate'][] = 'excur_offer_order_form_validate';
 
@@ -265,39 +264,21 @@ function excur_offer_order_form($form, $form_state, $order) {
 /**
  * Validate callback for excur_offer_order_form() form.
  */
-function excur_offer_order_form_validate(&$form) {
+function excur_offer_order_form_validate(&$form, &$form_state) {
   if (!$form['venue']['#value']) {
     form_error($form['venue'], t('Specify the location of the meeting'));
-  }
-  if (!$form['name']['#value']) {
-    form_error($form['name'], t('Enter your name'));
-  }
-  if (!$form['email']['#value']) {
-    form_error($form['email'], t('Enter your email'));
-  }
-  if (!$form['phone']['#value']) {
-    form_error($form['phone'], t('Enter your phone'));
-  }
-  if (!$form['tourist_name']['#value']) {
-    form_error($form['tourist_name'], t('Specify the name of the tourist'));
-  }
-  if (!$form['tourist_email']['#value']) {
-    form_error($form['tourist_email'], t('Fill in the email tourist'));
-  }
-  if (!$form['tourist_phone']['#value']) {
-    form_error($form['tourist_phone'], t('Specify the phone tourist'));
   }
 }
 
 /**
  * Submit callback for excur_offer_order_form() form.
  */
-function excur_offer_order_form_submit(&$form, $offer, &$form_state) {
+function excur_offer_order_form_submit(&$form, &$form_state) {
   $id = (int) $_GET['id'];
   $nid = excur_offer_load($id)->nid;
 
-  foreach ($form['language']['#options'] as $key=>$value) {
-    if($form['language']['#values'] == $key){
+  foreach ($form['language']['#options'] as $key => $value) {
+    if ($form['language']['#values'] == $key) {
       $language = $form['language']['#options'][$key];
     }
   }
