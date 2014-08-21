@@ -433,40 +433,39 @@ function exc_theme_preprocess_views_view_table__offers__user_offers(&$vars){
  */
 function exc_theme_preprocess_order_template(&$vars){
     $node = excur_offer_load($_GET['id']);
-    $city = taxonomy_term_load($vars['order']->field_city['und'][0]['target_id']);
+    $city = taxonomy_term_load($vars['order']->field_city[LANGUAGE_NONE][0]['target_id']);
     $title_offer = $vars['order']->title;
-    $country = taxonomy_term_load($city->field_country['und']['0']['target_id']);
+    $country = taxonomy_term_load($city->field_country[LANGUAGE_NONE][0]['target_id']);
     $guide = user_load($vars['order']->uid);
-    $guide_image_path = $guide->field_image['und'][0]['uri'];
-    $path_image = $vars['order']->field_image['und'][0]['uri'];
+    $guide_image_path = $guide->field_image[LANGUAGE_NONE][0]['uri'];
+    $path_image = $vars['order']->field_image[LANGUAGE_NONE][0]['uri'];
+
     $vars['offer'] = array(
-      'title'        => $title_offer,
-      'guide_name'   => l($guide->name, "user/$guide->uid"),
+      'title' => $title_offer,
+      'guide_name' => l($guide->name, "user/$guide->uid"),
       'country_name' => l($country->name, "taxonomy/term/$country->tid"),
-      'city_name'    => l($city->name, "taxonomy/term/$city->tid"),
-      'id'           => $node->id,
-      'ticket_type'  => $node->ticket_type ,
-      'price'        => $node->ticket,
-      'currency'     => excur_currency_get_icon($node->currency),
-      'offer'        => $node->offer,
-      'date'         => $node->date,
-      'duration'     => $node->duration,
-      'date'         => $node->date
+      'city_name' => l($city->name, "taxonomy/term/$city->tid"),
+      'id' => $node->id,
+      'ticket_type' => $node->ticket_type ,
+      'price' => $node->ticket,
+      'currency' => excur_currency_get_icon($node->currency),
+      'offer' => $node->offer,
+      'date' => $node->date,
+      'duration' => $node->duration,
     );
+
     $vars['image'] = theme('image', array(
       'path' => $path_image,
-      'alt' => '',
-      'title' => '',
       'width' => '300px',
       'height' => '300px',
     ));
+
     $vars['guide_image'] = theme('image', array(
       'path' => $guide_image_path,
-      'alt' => '',
-      'title' => '',
       'width' => '100px',
       'height' => '100px',
     ));
+
     $vars['form'] = drupal_get_form('excur_offer_order_form', $vars['order']);
 }
 
@@ -474,39 +473,38 @@ function exc_theme_preprocess_order_template(&$vars){
  * Process variables for order-template.tpl.php
  */
 function exc_theme_preprocess_pay_template(&$vars){
-  $node = excur_offer_load($_GET['id']);
-  $offer = node_load($node->nid);
-  $guide = user_load($offer->uid);
-  $guide_image_path = $guide->field_image['und'][0]['uri'];
-  $path_image = $guide->field_image['und'][0]['uri'];
+  $offer = excur_offer_load($_GET['id']);
+  $node = node_load($offer->nid);
+  $guide = user_load($node->uid);
+  $guide_image_path = $guide->field_image[LANGUAGE_NONE][0]['uri'];
+  $path_image = $guide->field_image[LANGUAGE_NONE][0]['uri'];
+
   $vars['offer'] = array(
-    'title' => $offer->title,
-    'date' => $node->date,
-    'ticket' => $node->ticket,
-    'currency' => $node->currency,
-    'id' => $node->id,
-    'language' => $node->language,
-    'offer' => $node->offer,
-    'ticket_type' => $node->ticket_type,
-    'duration' => $node->duration,
-    'name' => $node->name,
-    'email' => $node->email,
-    'phone' => $node->phone,
-    'tourist_name' => $node->tourist_name,
-    'tourist_email' => $node->tourist_email,
-    'tourist_phone' => $node->tourist_phone,
+    'title' => $node->title,
+    'date' => $offer->date,
+    'ticket' => $offer->ticket,
+    'currency' => $offer->currency,
+    'id' => $offer->id,
+    'language' => $offer->language,
+    'offer' => $offer->offer,
+    'ticket_type' => $offer->ticket_type,
+    'duration' => $offer->duration,
+    'name' => $offer->name,
+    'email' => $offer->email,
+    'phone' => $offer->phone,
+    'tourist_name' => $offer->tourist_name,
+    'tourist_email' => $offer->tourist_email,
+    'tourist_phone' => $offer->tourist_phone,
   );
+
   $vars['image'] = theme('image', array(
     'path' => $path_image,
-    'alt' => '',
-    'title' => '',
     'width' => '300px',
     'height' => '300px',
   ));
+
   $vars['guide_image'] = theme('image', array(
     'path' => $guide_image_path,
-    'alt' => '',
-    'title' => '',
     'width' => '100px',
     'height' => '100px',
   ));
