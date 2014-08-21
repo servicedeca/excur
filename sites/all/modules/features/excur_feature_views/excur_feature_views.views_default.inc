@@ -179,7 +179,7 @@ function excur_feature_views_views_default_views() {
   );
   $handler->display->display_options['filters']['tid']['type'] = 'select';
   $handler->display->display_options['filters']['tid']['vocabulary'] = 'category';
-  /* Критерий фильтра: Поле: Языки (field_languages) */
+  /* Критерий фильтра: Поле: Языки проведения (field_languages) */
   $handler->display->display_options['filters']['field_languages_tid']['id'] = 'field_languages_tid';
   $handler->display->display_options['filters']['field_languages_tid']['table'] = 'field_data_field_languages';
   $handler->display->display_options['filters']['field_languages_tid']['field'] = 'field_languages_tid';
@@ -356,7 +356,7 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'service' => 'service',
   );
-  /* Критерий фильтра: Поле: Языки (field_languages) */
+  /* Критерий фильтра: Поле: Языки проведения (field_languages) */
   $handler->display->display_options['filters']['field_languages_tid']['id'] = 'field_languages_tid';
   $handler->display->display_options['filters']['field_languages_tid']['table'] = 'field_data_field_languages';
   $handler->display->display_options['filters']['field_languages_tid']['field'] = 'field_languages_tid';
@@ -542,6 +542,12 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['date']['id'] = 'date';
   $handler->display->display_options['fields']['date']['table'] = 'excur_offer';
   $handler->display->display_options['fields']['date']['field'] = 'date';
+  /* Критерий фильтра: Excursionline: состояние */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'excur_offer';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['operator'] = '!=';
+  $handler->display->display_options['filters']['status']['value'] = '0';
 
   /* Display: Заказы */
   $handler = $view->new_display('page', 'Заказы', 'offers');
@@ -584,7 +590,7 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['relationships']['field_guide_target_id']['label'] = 'Гид';
   $handler->display->display_options['relationships']['field_guide_target_id']['required'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Поле: Excursionline: Offer id */
+  /* Поле: Excursionline: Offer oid */
   $handler->display->display_options['fields']['oid']['id'] = 'oid';
   $handler->display->display_options['fields']['oid']['table'] = 'excur_offer';
   $handler->display->display_options['fields']['oid']['field'] = 'oid';
@@ -677,6 +683,10 @@ function excur_feature_views_views_default_views() {
     'title_link' => 'content',
     'title_class' => '',
   );
+  /* Поле: Excursionline: Offer id */
+  $handler->display->display_options['fields']['id']['id'] = 'id';
+  $handler->display->display_options['fields']['id']['table'] = 'excur_offer';
+  $handler->display->display_options['fields']['id']['field'] = 'id';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Критерий сортировки: Excursionline: Создано */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
@@ -740,7 +750,7 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['relationships']['field_guide_target_id']['label'] = 'Guide';
   $handler->display->display_options['relationships']['field_guide_target_id']['required'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Поле: Excursionline: Offer id */
+  /* Поле: Excursionline: Offer oid */
   $handler->display->display_options['fields']['oid']['id'] = 'oid';
   $handler->display->display_options['fields']['oid']['table'] = 'excur_offer';
   $handler->display->display_options['fields']['oid']['field'] = 'oid';
@@ -830,6 +840,10 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['status']['field'] = 'status';
   $handler->display->display_options['fields']['status']['label'] = 'Состояние';
   $handler->display->display_options['fields']['status']['element_label_colon'] = FALSE;
+  /* Поле: Excursionline: Offer id */
+  $handler->display->display_options['fields']['id']['id'] = 'id';
+  $handler->display->display_options['fields']['id']['table'] = 'excur_offer';
+  $handler->display->display_options['fields']['id']['field'] = 'id';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Критерий сортировки: Excursionline: Создано */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
@@ -850,6 +864,12 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Критерий фильтра: Excursionline: состояние */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'excur_offer';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['operator'] = '!=';
+  $handler->display->display_options['filters']['status']['value'] = '0';
   $handler->display->display_options['argument_input'] = array(
     'uid' => array(
       'type' => 'none',
@@ -994,12 +1014,16 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['status']['field'] = 'status';
   $handler->display->display_options['fields']['status']['label'] = 'Состояние';
   $handler->display->display_options['fields']['status']['element_label_colon'] = FALSE;
-  /* Поле: Excursionline: Offer id */
+  /* Поле: Excursionline: Offer oid */
   $handler->display->display_options['fields']['oid']['id'] = 'oid';
   $handler->display->display_options['fields']['oid']['table'] = 'excur_offer';
   $handler->display->display_options['fields']['oid']['field'] = 'oid';
   $handler->display->display_options['fields']['oid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['oid']['element_label_colon'] = FALSE;
+  /* Поле: Excursionline: Offer id */
+  $handler->display->display_options['fields']['id']['id'] = 'id';
+  $handler->display->display_options['fields']['id']['table'] = 'excur_offer';
+  $handler->display->display_options['fields']['id']['field'] = 'id';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Критерий сортировки: Excursionline: Создано */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
@@ -1021,6 +1045,12 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['arguments']['field_guide_target_id']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Критерий фильтра: Excursionline: состояние */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'excur_offer';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['operator'] = '!=';
+  $handler->display->display_options['filters']['status']['value'] = '0';
   $handler->display->display_options['argument_input'] = array(
     'uid' => array(
       'type' => 'none',
@@ -1059,6 +1089,7 @@ function excur_feature_views_views_default_views() {
     t('Стоимость'),
     t('Заказчик'),
     t('Город'),
+    t('Offer id'),
     t('Заказы пользователя'),
     t('Вы не совершали заказов.'),
     t('Guide'),
@@ -1071,7 +1102,7 @@ function excur_feature_views_views_default_views() {
     t('View panes'),
     t('Заказы гида'),
     t('У вас не совершали заказов.'),
-    t('Offer id'),
+    t('Offer oid'),
   );
   $export['offers'] = $view;
 
