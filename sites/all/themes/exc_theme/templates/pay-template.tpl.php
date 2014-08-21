@@ -1,6 +1,3 @@
-<?php
-/*var_dump($order);
-var_dump($node);*/?>
 <h1><?php print $offer['title'];?></h1>
 <h2><?php print $offer['id'];?></h2>
 <h2><?php print $offer['offer'];?></h2>
@@ -15,12 +12,3 @@ var_dump($node);*/?>
 <h3><?php print $offer['currency'] ?></h3>
 <?php print render($image);?>
 <?php print render($guide_image);?>
-
-
-
-
-
-
-<h1> <?php print t('Parameters of your order'); ?></h1>
-<?php print render($form);?>
-<h1> <?php print t('The contact details of the tourist'); ?></h1>

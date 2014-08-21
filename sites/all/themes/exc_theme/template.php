@@ -436,7 +436,7 @@ function exc_theme_preprocess_order_template(&$vars){
     $city = taxonomy_term_load($vars['order']->field_city['und'][0]['target_id']);
     $title_offer = $vars['order']->title;
     $country = taxonomy_term_load($city->field_country['und']['0']['target_id']);
-    $guide = user_load($node->uid);
+    $guide = user_load($vars['order']->uid);
     $guide_image_path = $guide->field_image['und'][0]['uri'];
     $path_image = $vars['order']->field_image['und'][0]['uri'];
     $vars['offer'] = array(
@@ -468,4 +468,46 @@ function exc_theme_preprocess_order_template(&$vars){
       'height' => '100px',
     ));
     $vars['form'] = drupal_get_form('excur_offer_order_form', $vars['order']);
+}
+
+/**
+ * Process variables for order-template.tpl.php
+ */
+function exc_theme_preprocess_pay_template(&$vars){
+  $node = excur_offer_load($_GET['id']);
+  $offer = node_load($node->nid);
+  $guide = user_load($offer->uid);
+  $guide_image_path = $guide->field_image['und'][0]['uri'];
+  $path_image = $guide->field_image['und'][0]['uri'];
+  $vars['offer'] = array(
+    'title' => $offer->title,
+    'date' => $node->date,
+    'ticket' => $node->ticket,
+    'currency' => $node->currency,
+    'id' => $node->id,
+    'language' => $node->language,
+    'offer' => $node->offer,
+    'ticket_type' => $node->ticket_type,
+    'duration' => $node->duration,
+    'name' => $node->name,
+    'email' => $node->email,
+    'phone' => $node->phone,
+    'tourist_name' => $node->tourist_name,
+    'tourist_email' => $node->tourist_email,
+    'tourist_phone' => $node->tourist_phone,
+  );
+  $vars['image'] = theme('image', array(
+    'path' => $path_image,
+    'alt' => '',
+    'title' => '',
+    'width' => '300px',
+    'height' => '300px',
+  ));
+  $vars['guide_image'] = theme('image', array(
+    'path' => $guide_image_path,
+    'alt' => '',
+    'title' => '',
+    'width' => '100px',
+    'height' => '100px',
+  ));
 }

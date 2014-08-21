@@ -86,6 +86,43 @@ function excur_offer_schema() {
         'length' => 255,
         'not null' => TRUE,
       ),
+      'name' => array(
+        'description' => 'name.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'email' => array(
+        'description' => 'email.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'phone' => array(
+        'description' => 'phone.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'tourist_name' => array(
+        'description' => 'tourist phone.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'tourist_email' => array(
+        'description' => 'tourist email.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'tourist_phone' => array(
+        'description' => 'tourist phone.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+
     ),
     'primary key' => array('id', 'oid'),
   );

@@ -1,2 +1,3 @@
-<p>Имя имя<p>
-<?php print render($excur_offer_order_form['venue']); ?>
+<h1> <?php print t('Your contact details'); ?></h1>
+<?php print render($form['name']); ?>
+<?php print drupal_render_children($form); ?>
