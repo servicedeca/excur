@@ -501,3 +501,8 @@ h2.panel-title {
 .filter-wrapper.form-wrapper{
   display: none;
 }
+
+#guide_image{
+  width: 70px;
+  margin-top: 50px;
+}
