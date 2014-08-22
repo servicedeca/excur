@@ -160,6 +160,10 @@ function excur_offer_offer_form($form, &$form_state, $offer) {
     '#options' => $options,
   );
 
+  $form['number_of'] = array(
+    '#type' => 'number',
+  );
+
   $form['date'] = array(
     '#title' => t('Сhoose a date'),
     '#type' => 'date_popup',

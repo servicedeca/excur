@@ -514,6 +514,7 @@ function exc_theme_preprocess_pay_template(&$vars){
     'path' => $guide_image_path,
     'width' => '100px',
     'height' => '100px',
+    'attributes' => array('class' => array('img-circle')),
   ));
   $vars['form'] = drupal_get_form('excur_offer_pay_form', $vars['order']);
 }
