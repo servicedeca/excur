@@ -475,9 +475,11 @@ function exc_theme_preprocess_order_template(&$vars){
 function exc_theme_preprocess_pay_template(&$vars){
   $offer = excur_offer_load($_GET['id']);
   $node = node_load($offer->nid);
+  $city = taxonomy_term_load($node->field_city[LANGUAGE_NONE][0]['target_id']);
+  $country = taxonomy_term_load($city->field_country[LANGUAGE_NONE][0]['target_id']);
   $guide = user_load($node->uid);
+  $path_image = $node->field_image[LANGUAGE_NONE][0]['uri'];
   $guide_image_path = $guide->field_image[LANGUAGE_NONE][0]['uri'];
-  $path_image = $guide->field_image[LANGUAGE_NONE][0]['uri'];
 
   $vars['offer'] = array(
     'title' => $node->title,
@@ -487,7 +489,11 @@ function exc_theme_preprocess_pay_template(&$vars){
     'id' => $offer->id,
     'language' => $offer->language,
     'offer' => $offer->offer,
+    'city_name' => l($city->name, "taxonomy/term/$city->tid"),
+    'country_name' => l($country->name, "taxonomy/term/$country->tid"),
+    'guide_name' => l($guide->name, "user/$guide->uid"),
     'ticket_type' => $offer->ticket_type,
+    'price' => $offer->ticket,
     'duration' => $offer->duration,
     'name' => $offer->name,
     'email' => $offer->email,
@@ -495,6 +501,7 @@ function exc_theme_preprocess_pay_template(&$vars){
     'tourist_name' => $offer->tourist_name,
     'tourist_email' => $offer->tourist_email,
     'tourist_phone' => $offer->tourist_phone,
+    'venue' => $offer->venue,
   );
 
   $vars['image'] = theme('image', array(
@@ -508,4 +515,5 @@ function exc_theme_preprocess_pay_template(&$vars){
     'width' => '100px',
     'height' => '100px',
   ));
+  $vars['form'] = drupal_get_form('excur_offer_pay_form', $vars['order']);
 }

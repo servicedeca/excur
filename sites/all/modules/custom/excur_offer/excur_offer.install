@@ -122,6 +122,12 @@ function excur_offer_schema() {
         'length' => 255,
         'not null' => TRUE,
       ),
+      'venue' => array(
+        'description' => 'venue.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
 
     ),
     'primary key' => array('id', 'oid'),

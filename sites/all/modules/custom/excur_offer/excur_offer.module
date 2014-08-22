@@ -183,12 +183,32 @@ function excur_offer_offer_form($form, &$form_state, $offer) {
 }
 
 /**
+ * Form builder for offer form.
+ */
+function excur_offer_pay_form($form, &$form_state, $offer) {
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Pay'),
+    '#attributes' => array(
+      'class' => array('btn'),
+    ),
+  );
+ // $form['#submit'][] = 'excur_offer_offer_form_submit';
+ // $form['#validate'][] = 'excur_offer_offer_form_validate';
+
+  return $form;
+}
+
+/**
  * Form builder for order form.
  */
 function excur_offer_order_form($form, $form_state, $order) {
   global $user;
 
   $options_languages = array();
+  $node = node_load($order->nid);
+  $start_place = $node->field_start_place[LANGUAGE_NONE][0]['value'];
   $private_place = $order->field_private_place[LANGUAGE_NONE][0]['value'];
   $language_list = $order->field_languages[LANGUAGE_NONE];
   $data_content = array();
@@ -201,10 +221,20 @@ function excur_offer_order_form($form, $form_state, $order) {
   if ($private_place == 1) {
     $form['venue'] = array(
       '#type'	=> 'textfield',
+      '#default_value' => $start_place,
       '#title' => t('Meeting point'),
     );
   }
-
+  else{
+    $form['venue'] = array(
+      '#type'	=> 'textfield',
+      '#title' => t('Meeting point'),
+      '#default_value' => $start_place,
+      '#attributes' => array(
+        'disabled' => 'disabled',
+        )
+      );
+  }
   $form['language'] = array(
     '#type' => 'select',
     '#title' => t('Language'),
@@ -289,6 +319,7 @@ function excur_offer_order_form_submit(&$form, &$form_state) {
   $tourist_name = $form['tourist_name']['#value'];
   $tourist_email = $form['tourist_email']['#value'];
   $tourist_phone = $form['tourist_phone']['#value'];
+  $venue = $form['venue']['#value'];
   $node = node_load($nid);
   $reservation = entity_metadata_wrapper('node', $node);
   $reservation->language($language->language);
@@ -303,6 +334,7 @@ function excur_offer_order_form_submit(&$form, &$form_state) {
     'tourist_name' => $tourist_name,
     'tourist_email' => $tourist_email,
     'tourist_phone' => $tourist_phone,
+    'venue' => $venue,
   );
 
   if ($reservation == 1) {
@@ -343,6 +375,8 @@ function excur_offer_offer_form_submit(&$form, &$form_state) {
 
   $values = $form_state['values'];
   $nid = $form['#data']['nid'];
+  $node = node_load($nid);
+  $start_place = $node->field_start_place['ru'][0]['value'];
   $duration = $form['#data']['duration'];
   $type_offer = $form['#data']['title'];
   foreach($form['#data']['tickets'] as $key=>$value){
@@ -353,7 +387,7 @@ function excur_offer_offer_form_submit(&$form, &$form_state) {
 
   $language = 0;
   $oid = rand(1000, 9999) . REQUEST_TIME;
-  $id = excur_offer_save($oid, $user->uid, $form['#data']['nid'], $values['tickets'], excur_offer_user_currency(), $values['date'], 0, $language, $type_offer, $ticket_type, $duration, 0, 0, 0, 0, 0, 0);
+  $id = excur_offer_save($oid, $user->uid, $form['#data']['nid'], $values['tickets'], excur_offer_user_currency(), $values['date'], 0, $language, $type_offer, $ticket_type, $duration, 0, 0, 0, 0, 0, 0, $start_place);
   drupal_goto('excur/offer/order/' . $nid, array('query' => array('id' => $id)));
 }
 
@@ -416,7 +450,7 @@ function excur_offer_load($id) {
  * @param string $status.
  *
  */
-function excur_offer_save($oid, $uid, $nid, $ticket, $currency, $date, $status, $language, $offer, $ticket_type, $duration, $name, $email, $phone, $tourist_name, $tourist_email, $tourist_phone) {
+function excur_offer_save($oid, $uid, $nid, $ticket, $currency, $date, $status, $language, $offer, $ticket_type, $duration, $name, $email, $phone, $tourist_name, $tourist_email, $tourist_phone,$venue) {
   $record = array(
     'oid' => $oid,
     'uid' => $uid,
@@ -435,7 +469,8 @@ function excur_offer_save($oid, $uid, $nid, $ticket, $currency, $date, $status, 
     'phone'    =>  $phone,
     'tourist_name' => $tourist_name,
     'tourist_email'    =>  $tourist_email,
-    'tourist_phone' => $tourist_phone
+    'tourist_phone' => $tourist_phone,
+    'venue' => $venue,
   );
 
   $id = db_insert('excur_offer')
