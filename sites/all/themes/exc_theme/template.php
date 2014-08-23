@@ -438,6 +438,9 @@ function exc_theme_preprocess_order_template(&$vars){
     $country = taxonomy_term_load($city->field_country[LANGUAGE_NONE][0]['target_id']);
     $guide = user_load($vars['order']->field_guide[LANGUAGE_NONE][0]['target_id']);
     $guide_image_path = $guide->field_image[LANGUAGE_NONE][0]['uri'];
+    if(empty($guide_image_path)){
+      $guide_image_path ='public/sites/all/themes/exc_theme/images/user-default.png';
+    }
     $path_image = $vars['order']->field_image[LANGUAGE_NONE][0]['uri'];
 
     $vars['offer'] = array(
