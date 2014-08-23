@@ -436,7 +436,7 @@ function exc_theme_preprocess_order_template(&$vars){
     $city = taxonomy_term_load($vars['order']->field_city[LANGUAGE_NONE][0]['target_id']);
     $title_offer = $vars['order']->title;
     $country = taxonomy_term_load($city->field_country[LANGUAGE_NONE][0]['target_id']);
-    $guide = user_load($vars['order']->uid);
+    $guide = user_load($vars['order']->field_guide[LANGUAGE_NONE][0]['target_id']);
     $guide_image_path = $guide->field_image[LANGUAGE_NONE][0]['uri'];
     $path_image = $vars['order']->field_image[LANGUAGE_NONE][0]['uri'];
 

@@ -73,7 +73,7 @@
         </div>
       </div>
     <?php endif; ?>
-    <?php //if (!empty($content['field_cancellation'])): ?>
+    <?php if (!empty($content['field_cancellation']['und'][0]['value'])): ?>
       <div class="span4">
         <div class="panel panel-default">
           <div class="panel-heading">
@@ -84,7 +84,7 @@
           </div>
         </div>
       </div>
-    <?php //endif; ?>
+    <?php endif; ?>
   </div>
   <h2 id="reservation" class="node-description">
     <?php print t('Reservation'); ?>

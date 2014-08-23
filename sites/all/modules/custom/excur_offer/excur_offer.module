@@ -78,6 +78,9 @@ function excur_offer_theme() {
   $items['pay_template'] = array(
     'template' => 'pay-template',
   );
+  $items['time'] = array(
+    'arguments' => array('element' => null)
+  );
 
   return $items;
 }
@@ -138,6 +141,7 @@ function excur_offer_order($order) {
   }
 }
 
+
 /**
  * Page callback for excur/offer/%pay.
  */
@@ -158,10 +162,6 @@ function excur_offer_offer_form($form, &$form_state, $offer) {
   $form['tickets'] = array(
     '#type' => 'radios',
     '#options' => $options,
-  );
-
-  $form['number_of'] = array(
-    '#type' => 'number',
   );
 
   $form['date'] = array(
