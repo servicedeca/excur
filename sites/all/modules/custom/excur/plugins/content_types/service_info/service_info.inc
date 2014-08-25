@@ -59,13 +59,13 @@ function template_preprocess_excur_service_info(&$vars) {
   }
 
   $price = excur_currency_lowest_price($node);
-  if (!empty($_COOKIE['excur_currency']) && $_COOKIE['excur_currency'] != EXCUR_CURRENCY_DEFAULT) {
-    $currency = $_COOKIE['excur_currency'];
-    $price = excur_currency_convert($price, EXCUR_CURRENCY_DEFAULT, $currency);
-  }
-  else {
-    $currency = EXCUR_CURRENCY_DEFAULT;
-  }
+  $currency = $wrapper->field_currency->value();
+  $current_currency = !empty($_COOKIE['excur_currency']) && $_COOKIE['excur_currency'] != $currency
+    ? $_COOKIE['excur_currency']
+    : $currency;
+
+  $price = excur_currency_convert($price, $currency, $current_currency);
+
   $vars['price'] = $price;
   $vars['currency'] = excur_currency_get_icon($currency);
 }
