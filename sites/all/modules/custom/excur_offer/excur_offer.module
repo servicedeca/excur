@@ -206,11 +206,14 @@ function excur_offer_pay_form($form, &$form_state, $offer) {
  */
 function excur_offer_order_form($form, $form_state, $order) {
   global $user;
+  global $language;
 
   $options_languages = array();
   $node = node_load($order->nid);
-  $start_place = $node->field_start_place['ru'][0]['value'];
-  $private_place = $order->field_private_place[LANGUAGE_NONE][0]['value'];
+  $wrapper = entity_metadata_wrapper('node', $node);
+  $wrapper->language($language->language);
+  $start_place = $wrapper->field_start_place->value();
+  $private_place = $wrapper->field_private_place->value();
   $language_list = $order->field_languages[LANGUAGE_NONE];
   $data_content = array();
 
@@ -224,17 +227,19 @@ function excur_offer_order_form($form, $form_state, $order) {
       '#type'	=> 'textfield',
       '#default_value' => $start_place,
       '#title' => t('Meeting point'),
+      '#required' => TRUE,
     );
   }
   elseif($private_place == 0){
     $form['venue'] = array(
       '#type'	=> 'textfield',
       '#title' => t('Meeting point'),
-      '#default_value' => $start_place,
+      '#value' => $start_place,
       '#attributes' => array(
         'disabled' => 'disabled',
-        )
-      );
+      ),
+      '#required' => TRUE,
+    );
   }
   $form['language'] = array(
     '#type' => 'select',
@@ -287,18 +292,8 @@ function excur_offer_order_form($form, $form_state, $order) {
 
   $form['#theme'][] = 'order_form';
   $form['#submit'][] = 'excur_offer_order_form_submit';
-  $form['#validate'][] = 'excur_offer_order_form_validate';
 
   return $form;
-}
-
-/**
- * Validate callback for excur_offer_order_form() form.
- */
-function excur_offer_order_form_validate(&$form, &$form_state) {
-  if (!$form['venue']['#value']) {
-    form_error($form['venue'], t('Specify the location of the meeting'));
-  }
 }
 
 /**

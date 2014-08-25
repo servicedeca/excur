@@ -103,7 +103,7 @@ function template_preprocess_excur_service_offer(&$vars) {
       }
 
       $offer_info = array(
-        'currency' => excur_currency_get_icon($currency),
+        'currency' => excur_currency_get_icon($current_currency),
         'nid' => $node->nid,
         'title' => $offer_title,
         'time' => $offer_time,
