@@ -204,91 +204,115 @@ function excur_offer_update_7003() {
  * Add new fields to excur_offer table.
  */
 function excur_offer_update_7004() {
-  $field = array(
-    'description' => 'Language of offer.',
-    'type' => 'varchar',
-    'length' => 255,
-    'not null' => TRUE,
-  );
-  db_add_field('excur_offer', 'language', $field);
+  if (!db_field_exists('excur_offer', 'language')) {
+    $field = array(
+      'description' => 'Language of offer.',
+      'type' => 'varchar',
+      'length' => 255,
+      'not null' => TRUE,
+    );
+    db_add_field('excur_offer', 'language', $field);
+  }
 
-  $field = array(
-    'description' => 'Offer.',
-    'type' => 'varchar',
-    'length' => 255,
-    'not null' => TRUE,
-  );
-  db_add_field('excur_offer', 'offer', $field);
+  if (!db_field_exists('excur_offer', 'offer')) {
+    $field = array(
+      'description' => 'Offer.',
+      'type' => 'varchar',
+      'length' => 255,
+      'not null' => TRUE,
+    );
+    db_add_field('excur_offer', 'offer', $field);
+  }
 
-  $field = array(
-    'description' => 'Ticket.',
-    'type' => 'varchar',
-    'length' => 255,
-    'not null' => TRUE,
-  );
-  db_add_field('excur_offer', 'ticket_type', $field);
+  if (!db_field_exists('excur_offer', 'ticket_type')) {
+    $field = array(
+      'description' => 'Ticket.',
+      'type' => 'varchar',
+      'length' => 255,
+      'not null' => TRUE,
+    );
+    db_add_field('excur_offer', 'ticket_type', $field);
+  }
 
-  $field = array(
-    'description' => 'Duration.',
-    'type' => 'varchar',
-    'length' => 255,
-    'not null' => TRUE,
-  );
-  db_add_field('excur_offer', 'duration', $field);
+  if (!db_field_exists('excur_offer', 'duration')) {
+    $field = array(
+      'description' => 'Duration.',
+      'type' => 'varchar',
+      'length' => 255,
+      'not null' => TRUE,
+    );
+    db_add_field('excur_offer', 'duration', $field);
+  }
 
-  $field = array(
-    'description' => 'Name.',
-    'type' => 'varchar',
-    'length' => 255,
-    'not null' => TRUE,
-  );
-  db_add_field('excur_offer', 'name', $field);
+  if (!db_field_exists('excur_offer', 'name')) {
+    $field = array(
+      'description' => 'Name.',
+      'type' => 'varchar',
+      'length' => 255,
+      'not null' => TRUE,
+    );
+    db_add_field('excur_offer', 'name', $field);
+  }
 
-  $field = array(
-    'description' => 'Email.',
-    'type' => 'varchar',
-    'length' => 255,
-    'not null' => TRUE,
-  );
-  db_add_field('excur_offer', 'email', $field);
+  if (!db_field_exists('excur_offer', 'email')) {
+    $field = array(
+      'description' => 'Email.',
+      'type' => 'varchar',
+      'length' => 255,
+      'not null' => TRUE,
+    );
+    db_add_field('excur_offer', 'email', $field);
+  }
 
-  $field = array(
-    'description' => 'Phone.',
-    'type' => 'varchar',
-    'length' => 255,
-    'not null' => TRUE,
-  );
-  db_add_field('excur_offer', 'phone', $field);
+  if (!db_field_exists('excur_offer', 'phone')) {
+    $field = array(
+      'description' => 'Phone.',
+      'type' => 'varchar',
+      'length' => 255,
+      'not null' => TRUE,
+    );
+    db_add_field('excur_offer', 'phone', $field);
+  }
 
-  $field = array(
-    'description' => 'tourist name.',
-    'type' => 'varchar',
-    'length' => 255,
-    'not null' => TRUE,
-  );
-  db_add_field('excur_offer', 'tourist_name', $field);
+  if (!db_field_exists('excur_offer', 'tourist_name')) {
+    $field = array(
+      'description' => 'tourist name.',
+      'type' => 'varchar',
+      'length' => 255,
+      'not null' => TRUE,
+    );
+    db_add_field('excur_offer', 'tourist_name', $field);
+  }
 
-  $field = array(
-    'description' => 'Tourist email.',
-    'type' => 'varchar',
-    'length' => 255,
-    'not null' => TRUE,
-  );
-  db_add_field('excur_offer', 'tourist_email', $field);
+  if (!db_field_exists('excur_offer', 'tourist_email')) {
+    $field = array(
+      'description' => 'Tourist email.',
+      'type' => 'varchar',
+      'length' => 255,
+      'not null' => TRUE,
+    );
+    db_add_field('excur_offer', 'tourist_email', $field);
+  }
 
-  $field = array(
-    'description' => 'Tourist phone.',
-    'type' => 'varchar',
-    'length' => 255,
-    'not null' => TRUE,
-  );
-  db_add_field('excur_offer', 'tourist_phone', $field);
+  if (!db_field_exists('excur_offer', 'tourist_phone')) {
+    $field = array(
+      'description' => 'Tourist phone.',
+      'type' => 'varchar',
+      'length' => 255,
+      'not null' => TRUE,
+    );
+    db_add_field('excur_offer', 'tourist_phone', $field);
+  }
 
-  $field = array(
-    'description' => 'Venue.',
-    'type' => 'varchar',
-    'length' => 255,
-    'not null' => TRUE,
-  );
-  db_add_field('excur_offer', 'venue', $field);
+  if (!db_field_exists('excur_offer', 'venue')) {
+    $field = array(
+      'description' => 'Venue.',
+      'type' => 'varchar',
+      'length' => 255,
+      'not null' => TRUE,
+    );
+    db_add_field('excur_offer', 'venue', $field);
+  }
+
+
 }
