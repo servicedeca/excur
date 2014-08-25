@@ -141,7 +141,6 @@ function excur_offer_order($order) {
   }
 }
 
-
 /**
  * Page callback for excur/offer/%pay.
  */
@@ -198,8 +197,6 @@ function excur_offer_pay_form($form, &$form_state, $offer) {
       'class' => array('btn'),
     ),
   );
- // $form['#submit'][] = 'excur_offer_offer_form_submit';
- // $form['#validate'][] = 'excur_offer_offer_form_validate';
 
   return $form;
 }
@@ -383,15 +380,37 @@ function excur_offer_offer_form_submit(&$form, &$form_state) {
   $start_place = $node->field_start_place['ru'][0]['value'];
   $duration = $form['#data']['duration'];
   $type_offer = $form['#data']['title'];
-  foreach($form['#data']['tickets'] as $key=>$value){
-    if($values['tickets']== $key){
+  foreach ($form['#data']['tickets'] as $key=>$value) {
+    if ($values['tickets']== $key) {
       $ticket_type = $value['title'];
+      break;
     }
   }
 
   $language = 0;
   $oid = rand(1000, 9999) . REQUEST_TIME;
-  $id = excur_offer_save($oid, $user->uid, $form['#data']['nid'], $values['tickets'], excur_offer_user_currency(), $values['date'], 0, $language, $type_offer, $ticket_type, $duration, 0, 0, 0, 0, 0, 0, $start_place);
+  $record = array(
+    'oid' => $oid,
+    'uid' => $user->uid,
+    'nid' => $nid,
+    'date' => $values['date'],
+    'ticket' => $values['tickets'],
+    'currency' => excur_offer_user_currency(),
+    'created' => REQUEST_TIME,
+    'status' => 0,
+    'language' => $language,
+    'offer' => $type_offer,
+    'ticket_type' => $ticket_type,
+    'duration' => $duration,
+    'name' => 0,
+    'email' =>  0,
+    'phone' =>  0,
+    'tourist_name' => 0,
+    'tourist_email' =>  0,
+    'tourist_phone' => 0,
+    'venue' => $start_place,
+  );
+  $id = excur_offer_save($record);
   drupal_goto('excur/offer/order/' . $nid, array('query' => array('id' => $id)));
 }
 
@@ -431,7 +450,7 @@ function excur_offer_send_mail($email, $message, $subject = NULL, $module_key = 
 /**
  * Load offer.
  *
- * @param int $oid.
+ * @param int $id.
  * @return object.
  */
 function excur_offer_load($id) {
@@ -445,38 +464,10 @@ function excur_offer_load($id) {
 /**
  * Save offer.
  *
- * @param string $oid.
- * @param int $uid.
- * @param int $nid.
- * @param string $ticket.
- * @param string $currency.
- * @param string $date.
- * @param string $status.
+ * @param array $record.
  *
  */
-function excur_offer_save($oid, $uid, $nid, $ticket, $currency, $date, $status, $language, $offer, $ticket_type, $duration, $name, $email, $phone, $tourist_name, $tourist_email, $tourist_phone,$venue) {
-  $record = array(
-    'oid' => $oid,
-    'uid' => $uid,
-    'nid' => $nid,
-    'date' => $date,
-    'ticket' => $ticket,
-    'currency' => $currency,
-    'created' => REQUEST_TIME,
-    'status' => $status,
-    'language' => $language,
-    'offer' => $offer,
-    'ticket_type' => $ticket_type,
-    'duration' => $duration,
-    'name' => $name,
-    'email'    =>  $email,
-    'phone'    =>  $phone,
-    'tourist_name' => $tourist_name,
-    'tourist_email'    =>  $tourist_email,
-    'tourist_phone' => $tourist_phone,
-    'venue' => $venue,
-  );
-
+function excur_offer_save(array $record) {
   $id = db_insert('excur_offer')
     ->fields($record)
     ->execute();

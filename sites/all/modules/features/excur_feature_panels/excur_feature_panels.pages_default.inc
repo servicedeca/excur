@@ -785,7 +785,7 @@ function excur_feature_panels_default_page_manager_handlers() {
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Гид',
+    'title' => 'Текущий гид',
     'no_blocks' => 1,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
@@ -804,6 +804,17 @@ function excur_feature_panels_default_page_manager_handlers() {
             ),
           ),
           'context' => 'argument_entity_id:user_1',
+          'not' => FALSE,
+        ),
+        1 => array(
+          'name' => 'compare_users',
+          'settings' => array(
+            'equality' => '1',
+          ),
+          'context' => array(
+            0 => 'argument_entity_id:user_1',
+            1 => 'logged-in-user',
+          ),
           'not' => FALSE,
         ),
       ),
@@ -916,7 +927,7 @@ function excur_feature_panels_default_page_manager_handlers() {
   $handler->handler = 'panel_context';
   $handler->weight = 1;
   $handler->conf = array(
-    'title' => 'Пользователь',
+    'title' => 'Текущий пользователь',
     'no_blocks' => 1,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
@@ -936,6 +947,17 @@ function excur_feature_panels_default_page_manager_handlers() {
           ),
           'context' => 'argument_entity_id:user_1',
           'not' => TRUE,
+        ),
+        1 => array(
+          'name' => 'compare_users',
+          'settings' => array(
+            'equality' => '1',
+          ),
+          'context' => array(
+            0 => 'argument_entity_id:user_1',
+            1 => 'logged-in-user',
+          ),
+          'not' => FALSE,
         ),
       ),
       'logic' => 'and',
@@ -958,35 +980,12 @@ function excur_feature_panels_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-8d88bcb2-3602-4e03-89c7-45fc686fe1cf';
+    $pane->pid = 'new-2df89648-93d8-4697-8acb-eec4f18e3e49';
     $pane->panel = 'content_center';
-    $pane->type = 'user_offers';
-    $pane->subtype = 'user_offers';
+    $pane->type = 'user_news';
+    $pane->subtype = 'user_news';
     $pane->shown = TRUE;
-    $pane->access = array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'compare_users',
-          'settings' => array(
-            'equality' => '1',
-          ),
-          'context' => array(
-            0 => 'logged-in-user',
-            1 => 'argument_entity_id:user_1',
-          ),
-          'not' => FALSE,
-        ),
-        1 => array(
-          'name' => 'perm',
-          'settings' => array(
-            'perm' => 'administer users',
-          ),
-          'context' => 'logged-in-user',
-          'not' => FALSE,
-        ),
-      ),
-      'logic' => 'or',
-    );
+    $pane->access = array();
     $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
@@ -996,21 +995,18 @@ function excur_feature_panels_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '8d88bcb2-3602-4e03-89c7-45fc686fe1cf';
-    $display->content['new-8d88bcb2-3602-4e03-89c7-45fc686fe1cf'] = $pane;
-    $display->panels['content_center'][0] = 'new-8d88bcb2-3602-4e03-89c7-45fc686fe1cf';
+    $pane->uuid = '2df89648-93d8-4697-8acb-eec4f18e3e49';
+    $display->content['new-2df89648-93d8-4697-8acb-eec4f18e3e49'] = $pane;
+    $display->panels['content_center'][0] = 'new-2df89648-93d8-4697-8acb-eec4f18e3e49';
     $pane = new stdClass();
-    $pane->pid = 'new-a651c783-9b89-4f2d-9ba5-7654beb1be17';
+    $pane->pid = 'new-1e4c8537-d57d-47ed-9e81-6b89a302a89b';
     $pane->panel = 'content_left';
-    $pane->type = 'user_info';
-    $pane->subtype = 'user_info';
+    $pane->type = 'user_menu';
+    $pane->subtype = 'user_menu';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
-    $pane->cache = array(
-      'method' => '0',
-      'settings' => array(),
-    );
+    $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
@@ -1018,9 +1014,9 @@ function excur_feature_panels_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'a651c783-9b89-4f2d-9ba5-7654beb1be17';
-    $display->content['new-a651c783-9b89-4f2d-9ba5-7654beb1be17'] = $pane;
-    $display->panels['content_left'][0] = 'new-a651c783-9b89-4f2d-9ba5-7654beb1be17';
+    $pane->uuid = '1e4c8537-d57d-47ed-9e81-6b89a302a89b';
+    $display->content['new-1e4c8537-d57d-47ed-9e81-6b89a302a89b'] = $pane;
+    $display->panels['content_left'][0] = 'new-1e4c8537-d57d-47ed-9e81-6b89a302a89b';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -1041,7 +1037,10 @@ function excur_feature_panels_default_page_manager_pages() {
   $page->admin_title = 'Главная страница';
   $page->admin_description = '';
   $page->path = '<front>';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(

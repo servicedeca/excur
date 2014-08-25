@@ -43,6 +43,10 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['last'] = 'последняя »';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Связь: Содержимое: Entity translation: translations */
+  $handler->display->display_options['relationships']['entity_translations']['id'] = 'entity_translations';
+  $handler->display->display_options['relationships']['entity_translations']['table'] = 'node';
+  $handler->display->display_options['relationships']['entity_translations']['field'] = 'entity_translations';
   /* Поле: Содержимое: Заголовок */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -52,9 +56,24 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Критерий фильтра: Содержимое: Тип */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'news' => 'news',
+  );
+  /* Критерий фильтра: Перевод сущностей: Язык */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'entity_translation';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['relationship'] = 'entity_translations';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
 
   /* Display: Услуги города */
   $handler = $view->new_display('panel_pane', 'Услуги города', 'city_service');
@@ -270,7 +289,7 @@ function excur_feature_views_views_default_views() {
     'title_class' => '',
   );
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 1;
-  /* Поле: Содержимое: Текст */
+  /* Поле: Содержимое: Новость */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -455,6 +474,34 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
+
+  /* Display: Новости */
+  $handler = $view->new_display('panel_pane', 'Новости', 'news');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'mini';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Элементов на страницу';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Все -';
+  $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Пропустить';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« первая';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ предыдущая';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'следующая ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'последняя »';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['links'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Критерий сортировки: Содержимое: Дата публикации */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   $translatables['content'] = array(
     t('Master'),
     t('ещё'),
@@ -470,9 +517,9 @@ function excur_feature_views_views_default_views() {
     t('‹ предыдущая'),
     t('следующая ›'),
     t('последняя »'),
+    t('Переводы'),
     t('Заголовок'),
     t('Услуги города'),
-    t('Переводы'),
     t('Предложение'),
     t('Билет'),
     t('Рейтингу'),
@@ -484,6 +531,7 @@ function excur_feature_views_views_default_views() {
     t('Услуги гида'),
     t('Популярные услуги'),
     t('Город'),
+    t('Новости'),
   );
   $export['content'] = $view;
 
