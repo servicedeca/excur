@@ -504,15 +504,212 @@ h2.panel-title {
 
 #guide_image{
   width: 70px;
-  margin-top: 60px;
-  margin-left: -491px;
+  margin-top: 50px;
+  border: 1px solid black;
 }
 
-#guide_name{
-  margin-top: 108px;
-  margin-left: -413px;
+.order-template-content-background{
+  padding-bottom: 35px;
 }
-.number_of{
-  width: 30px;
-  size:2;
+
+.order-template-content-top{
+  height:300px;
+}
+
+.order-template-title{
+   height:50px;
+
+}
+
+
+.order-template-info{
+  height:250px;
+
+}
+
+
+.order-template-gid{
+  height:250px;
+
+}
+
+
+.imgrn {
+  width: 450px;
+}
+
+.imggd{
+  width: 200px;
+}
+
+
+.order-template-content-ticket{
+  height:500px;
+
+}
+
+
+.order-template-gid-name{
+  text-align: center;
+  margin-top: 5px;
+
+}
+
+.order-template-info h2{
+  padding-bottom: 15px;
+  font-size: 20px;
+}
+
+.order-template-info h3{
+  padding-bottom: 5px;
+  margin-left: 10px;
+  padding: 2px;
+  font-size: 15px;
+}
+
+.order-template-content-bottom{
+  height:620px;
+}
+
+@media(max-width: 768px){
+  .order-template-content-bottom{
+    height:1100px;
+  }
+}
+
+.order-template-content-form1{
+  height:350px;
+  width: 300px;
+}
+
+
+.order-template-content-form2{
+  height:350px;
+  width: 300px;
+}
+
+
+.order-template-content-form3{
+  height:300px;
+  width: 300px;
+  margin-top: 20px;
+}
+
+@media(max-width: 980px){
+    .pay-h1 h1{
+      font-size: 20px;
+    }
+}
+
+
+.order-template-content-ticket{
+  height: 200px;
+  width: 100px;
+  margin-top: -270px;
+}
+
+
+@media(max-width: 768px){
+  .order-template-content-ticket{
+    margin-top: -100px;
+  }
+}
+
+.order-template-content-ticket h2{
+  font-size: 25px;
+  padding-bottom: 0px;
+}
+
+.order-template-content-ticket h3{
+  font-size: 18px;
+}
+
+.order-template-btn{
+margin-top: 200px;
+}
+
+.btnpay{
+  margin-top: -15px;
+}
+
+.pay-template-content-form1{
+  height:250px;
+  width: 300px;
+  padding-bottom: 15px;
+  font-size: 20px;
+}
+
+.pay-template-content-form1 h3{
+  padding-left: 20px;
+  font-size: 16px;
+}
+
+.pay-template-content-form2{
+  height:250px;
+  width: 300px;
+}
+
+.pay-template-content-form2 h3{
+  padding-left: 20px;
+  font-size: 16px;
+}
+
+.pay-template-content-form3{
+  height:300px;
+  width: 300px;
+}
+
+.pay-template-content-form3 h3{
+  padding-left: 20px;
+  font-size: 16px;
+}
+
+
+.pay-template-content-ticket{
+  height: 200px;
+  width: 100px;
+  margin-top: -160px;
+}
+
+
+@media(max-width: 768px){
+  .pay-template-content-ticket{
+    margin-top: -100px;
+  }
+}
+
+.pay-template-content-ticket h2{
+  font-size: 25px;
+  padding-bottom: 0px;
+}
+
+.pay-template-content-ticket h3{
+  font-size: 25px;
+}
+
+.pay-template-content-bottom{
+  height:500px;
+}
+
+@media(max-width: 768px){
+  .pay-template-content-bottom{
+    height:1050px;
+  }
+}
+
+.do-offer-pay{
+  margin: -15px -15px -15px -15px;
+}
+
+.order-template-content-forms h2{
+  font-size: 25px;
+  padding-bottom: 0px;
+}
+
+.order-template-content-forms h3{
+  font-size: 18px;
+}
+
+.pay-template-paddingbot{
+  padding-top: 15px;
 }

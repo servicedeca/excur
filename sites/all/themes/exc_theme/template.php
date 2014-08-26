@@ -195,15 +195,16 @@ function exc_theme_preprocess_node__service_teaser(&$vars) {
   $vars['read_more'] = l('<i class="fa fa-search"></i>' . t('Read more'), "node/$node->nid", array('html' => TRUE));
 
   $price = excur_currency_lowest_price($node);
-  $currency = $wrapper->field_currency->value();
-  $current_currency = !empty($_COOKIE['excur_currency']) && $_COOKIE['excur_currency'] != $currency
-    ? $_COOKIE['excur_currency']
-    : $currency;
-
-  $price = excur_currency_convert($price, $currency, $current_currency);
+  if (!empty($_COOKIE['excur_currency']) && $_COOKIE['excur_currency'] != EXCUR_CURRENCY_DEFAULT) {
+    $currency = $_COOKIE['excur_currency'];
+    $price = excur_currency_convert($price, EXCUR_CURRENCY_DEFAULT, $currency);
+  }
+  else {
+    $currency = EXCUR_CURRENCY_DEFAULT;
+  }
 
   $vars['price'] = $price;
-  $vars['currency'] = excur_currency_get_icon($current_currency);
+  $vars['currency'] = excur_currency_get_icon($currency);
 
   foreach ($wrapper->field_languages->value() as $lang) {
     $vars['languages'][] = $lang->field_lang_code[LANGUAGE_NONE][0]['value'];
@@ -458,14 +459,16 @@ function exc_theme_preprocess_order_template(&$vars){
 
     $vars['image'] = theme('image', array(
       'path' => $path_image,
-      'width' => '300px',
-      'height' => '300px',
+      'width' => '95%',
+      'height' => '95%',
+      'attributes' => array('class' => array('imgrn')),
     ));
 
     $vars['guide_image'] = theme('image', array(
       'path' => $guide_image_path,
-      'width' => '100px',
-      'height' => '100px',
+      'width' => '95%',
+      'height' => '95%',
+      'attributes' => array('class' => array('imggd')),
     ));
 
     $vars['form'] = drupal_get_form('excur_offer_order_form', $vars['order']);
@@ -508,15 +511,16 @@ function exc_theme_preprocess_pay_template(&$vars){
 
   $vars['image'] = theme('image', array(
     'path' => $path_image,
-    'width' => '300px',
-    'height' => '300px',
+    'width' => '95%',
+    'height' => '95%',
+    'attributes' => array('class' => array('imgrn')),
   ));
 
   $vars['guide_image'] = theme('image', array(
     'path' => $guide_image_path,
-    'width' => '100px',
-    'height' => '100px',
-    'attributes' => array('class' => array('img-circle')),
+    'width' => '95%',
+    'height' => '95%',
+    'attributes' => array('class' => array('imggd')),
   ));
   $vars['form'] = drupal_get_form('excur_offer_pay_form', $vars['order']);
 }

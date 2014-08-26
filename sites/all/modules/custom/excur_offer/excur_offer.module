@@ -141,6 +141,7 @@ function excur_offer_order($order) {
   }
 }
 
+
 /**
  * Page callback for excur/offer/%pay.
  */
@@ -194,9 +195,11 @@ function excur_offer_pay_form($form, &$form_state, $offer) {
     '#type' => 'submit',
     '#value' => t('Pay'),
     '#attributes' => array(
-      'class' => array('btn'),
+      'class' => array('btn', 'btnpay'),
     ),
   );
+ // $form['#submit'][] = 'excur_offer_offer_form_submit';
+ // $form['#validate'][] = 'excur_offer_offer_form_validate';
 
   return $form;
 }
@@ -206,14 +209,11 @@ function excur_offer_pay_form($form, &$form_state, $offer) {
  */
 function excur_offer_order_form($form, $form_state, $order) {
   global $user;
-  global $language;
 
   $options_languages = array();
   $node = node_load($order->nid);
-  $wrapper = entity_metadata_wrapper('node', $node);
-  $wrapper->language($language->language);
-  $start_place = $wrapper->field_start_place->value();
-  $private_place = $wrapper->field_private_place->value();
+  $start_place = $node->field_start_place['ru'][0]['value'];
+  $private_place = $order->field_private_place[LANGUAGE_NONE][0]['value'];
   $language_list = $order->field_languages[LANGUAGE_NONE];
   $data_content = array();
 
@@ -227,19 +227,17 @@ function excur_offer_order_form($form, $form_state, $order) {
       '#type'	=> 'textfield',
       '#default_value' => $start_place,
       '#title' => t('Meeting point'),
-      '#required' => TRUE,
     );
   }
   elseif($private_place == 0){
     $form['venue'] = array(
       '#type'	=> 'textfield',
       '#title' => t('Meeting point'),
-      '#value' => $start_place,
+      '#default_value' => $start_place,
       '#attributes' => array(
         'disabled' => 'disabled',
-      ),
-      '#required' => TRUE,
-    );
+        )
+      );
   }
   $form['language'] = array(
     '#type' => 'select',
@@ -286,14 +284,24 @@ function excur_offer_order_form($form, $form_state, $order) {
     '#type' => 'submit',
     '#value' => t('Reserve'),
     '#attributes' => array(
-      'class' => array('btn'),
+      'class' => array('btn','order-template-btn'),
     ),
   );
 
   $form['#theme'][] = 'order_form';
   $form['#submit'][] = 'excur_offer_order_form_submit';
+  $form['#validate'][] = 'excur_offer_order_form_validate';
 
   return $form;
+}
+
+/**
+ * Validate callback for excur_offer_order_form() form.
+ */
+function excur_offer_order_form_validate(&$form, &$form_state) {
+  if (!$form['venue']['#value']) {
+    form_error($form['venue'], t('Specify the location of the meeting'));
+  }
 }
 
 /**
@@ -304,7 +312,7 @@ function excur_offer_order_form_submit(&$form, &$form_state) {
   $nid = excur_offer_load($id)->nid;
 
   foreach ($form['language']['#options'] as $key => $value) {
-    if ($form['language']['#values'] == $key) {
+    if ($form['language']['#options'] == $key) {
       $language = $form['language']['#options'][$key];
     }
   }
@@ -318,7 +326,7 @@ function excur_offer_order_form_submit(&$form, &$form_state) {
   $venue = $form['venue']['#value'];
   $node = node_load($nid);
   $reservation = entity_metadata_wrapper('node', $node);
-  $reservation->language($language->language);
+  $reservation = language($language->language);
   $reservation = $reservation->field_reservation->value();
 
   $value_update = array(
@@ -375,37 +383,15 @@ function excur_offer_offer_form_submit(&$form, &$form_state) {
   $start_place = $node->field_start_place['ru'][0]['value'];
   $duration = $form['#data']['duration'];
   $type_offer = $form['#data']['title'];
-  foreach ($form['#data']['tickets'] as $key=>$value) {
-    if ($values['tickets']== $key) {
+  foreach($form['#data']['tickets'] as $key=>$value){
+    if($values['tickets']== $key){
       $ticket_type = $value['title'];
-      break;
     }
   }
 
   $language = 0;
   $oid = rand(1000, 9999) . REQUEST_TIME;
-  $record = array(
-    'oid' => $oid,
-    'uid' => $user->uid,
-    'nid' => $nid,
-    'date' => $values['date'],
-    'ticket' => $values['tickets'],
-    'currency' => excur_offer_user_currency(),
-    'created' => REQUEST_TIME,
-    'status' => 0,
-    'language' => $language,
-    'offer' => $type_offer,
-    'ticket_type' => $ticket_type,
-    'duration' => $duration,
-    'name' => 0,
-    'email' =>  0,
-    'phone' =>  0,
-    'tourist_name' => 0,
-    'tourist_email' =>  0,
-    'tourist_phone' => 0,
-    'venue' => $start_place,
-  );
-  $id = excur_offer_save($record);
+  $id = excur_offer_save($oid, $user->uid, $form['#data']['nid'], $values['tickets'], excur_offer_user_currency(), $values['date'], 0, $language, $type_offer, $ticket_type, $duration, 0, 0, 0, 0, 0, 0, $start_place);
   drupal_goto('excur/offer/order/' . $nid, array('query' => array('id' => $id)));
 }
 
@@ -445,7 +431,7 @@ function excur_offer_send_mail($email, $message, $subject = NULL, $module_key = 
 /**
  * Load offer.
  *
- * @param int $id.
+ * @param int $oid.
  * @return object.
  */
 function excur_offer_load($id) {
@@ -459,10 +445,38 @@ function excur_offer_load($id) {
 /**
  * Save offer.
  *
- * @param array $record.
+ * @param string $oid.
+ * @param int $uid.
+ * @param int $nid.
+ * @param string $ticket.
+ * @param string $currency.
+ * @param string $date.
+ * @param string $status.
  *
  */
-function excur_offer_save(array $record) {
+function excur_offer_save($oid, $uid, $nid, $ticket, $currency, $date, $status, $language, $offer, $ticket_type, $duration, $name, $email, $phone, $tourist_name, $tourist_email, $tourist_phone,$venue) {
+  $record = array(
+    'oid' => $oid,
+    'uid' => $uid,
+    'nid' => $nid,
+    'date' => $date,
+    'ticket' => $ticket,
+    'currency' => $currency,
+    'created' => REQUEST_TIME,
+    'status' => $status,
+    'language' => $language,
+    'offer' => $offer,
+    'ticket_type' => $ticket_type,
+    'duration' => $duration,
+    'name' => $name,
+    'email'    =>  $email,
+    'phone'    =>  $phone,
+    'tourist_name' => $tourist_name,
+    'tourist_email'    =>  $tourist_email,
+    'tourist_phone' => $tourist_phone,
+    'venue' => $venue,
+  );
+
   $id = db_insert('excur_offer')
     ->fields($record)
     ->execute();
