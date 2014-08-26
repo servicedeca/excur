@@ -218,8 +218,8 @@ function excur_offer_order_form($form, $form_state, $order) {
   $data_content = array();
 
   foreach ($language_list as $key => $tid) {
-    $language = taxonomy_term_load($tid['tid']);
-    $options_languages[$key] = $language->name;
+    $lang = taxonomy_term_load($tid['tid']);
+    $options_languages[$key] = $lang->name;
   }
 
   if ($private_place == 1) {
@@ -313,7 +313,7 @@ function excur_offer_order_form_submit(&$form, &$form_state) {
 
   foreach ($form['language']['#options'] as $key => $value) {
     if ($form['language']['#options'] == $key) {
-      $language = $form['language']['#options'][$key];
+      $lang = $form['language']['#options'][$key];
     }
   }
 
@@ -326,11 +326,11 @@ function excur_offer_order_form_submit(&$form, &$form_state) {
   $venue = $form['venue']['#value'];
   $node = node_load($nid);
   $reservation = entity_metadata_wrapper('node', $node);
-  $reservation = language($language->language);
+  $reservation = language($lang->language);
   $reservation = $reservation->field_reservation->value();
 
   $value_update = array(
-    'language' => $language,
+    'language' => $lang,
     'status' => EXCUR_OFFER_NOT_CONFIRMED,
     'name' => $name,
     'email' => $email,
@@ -389,9 +389,9 @@ function excur_offer_offer_form_submit(&$form, &$form_state) {
     }
   }
 
-  $language = 0;
+  $lang = 0;
   $oid = rand(1000, 9999) . REQUEST_TIME;
-  $id = excur_offer_save($oid, $user->uid, $form['#data']['nid'], $values['tickets'], excur_offer_user_currency(), $values['date'], 0, $language, $type_offer, $ticket_type, $duration, 0, 0, 0, 0, 0, 0, $start_place);
+  $id = excur_offer_save($oid, $user->uid, $form['#data']['nid'], $values['tickets'], excur_offer_user_currency(), $values['date'], 0, $lang, $type_offer, $ticket_type, $duration, 0, 0, 0, 0, 0, 0, $start_place);
   drupal_goto('excur/offer/order/' . $nid, array('query' => array('id' => $id)));
 }
 
