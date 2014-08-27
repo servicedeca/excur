@@ -524,3 +524,16 @@ function exc_theme_preprocess_pay_template(&$vars){
   ));
   $vars['form'] = drupal_get_form('excur_offer_pay_form', $vars['order']);
 }
+
+/**
+ * Process variables for excur-user-info.tpl.php.
+ */
+function template_preprocess_excur_user_menu(&$vars) {
+  global $user;
+
+  $uid = $user->uid;
+  $vars['menu']['news'] = l(t('news and notices'),'user/'.$uid);
+  $vars['menu']['messages'] = l(t('Messages'), 'user/'.$uid.'/messages');
+  $vars['menu']['profile'] = l(t('Profile'), 'user/'.$uid.'/edit');
+  $vars['menu']['bookings'] = l(t('My bookings'), '');
+}

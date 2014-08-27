@@ -38,11 +38,12 @@ function excur_ctools_plugin_directory($owner, $plugin_type) {
  * Implements hook_form_FORM_ID_alter().
  */
 function excur_form_service_node_form_alter(&$form, &$form_state) {
-  if (!empty($_GET['guide']) && is_numeric($_GET['guide']) && $guide = user_load($_GET['guide'])) {
+    if (!empty($_GET['guide']) && is_numeric($_GET['guide']) && $guide = user_load($_GET['guide'])) {
     $form['field_guide'][LANGUAGE_NONE][0]['target_id']['#value'] = $guide->field_name[LANGUAGE_NONE][0]['safe_value'] . " ($guide->uid)";
     $form['field_guide']['#attributes']['class'][] = 'element-hidden';
   }
 
+  $form_state['buttons'][0]['#attributes']['class'][] = 'btn';
   $form['actions']['submit']['#attributes']['class'][] = 'btn';
   $form['actions']['delete']['#attributes']['class'][] = 'btn';
   unset($form['actions']['preview_changes']);
@@ -393,4 +394,22 @@ function excur_categories_by_city($city) {
 function excur_menu_alter(&$items) {
   $items['user/%user/edit']['title'] = 'Профиль';
   $items['user/%user/view']['title'] = 'Мои заказы';
+}
+
+/**
+ * Implement hook_theme().
+ */
+function excur_theme(&$theme, $plugin) {
+  $theme['excur_user_menu'] = array(
+    'path' => $plugin['path'],
+    'template' => 'excur-user-menu',
+  );
+  return $theme;
+}
+
+/**
+ * Page callback for excur/user.
+ */
+function excur_user_menu() {
+  return theme('user_menu', array());
 }

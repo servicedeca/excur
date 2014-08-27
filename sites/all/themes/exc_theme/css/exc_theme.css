@@ -713,3 +713,8 @@ margin-top: 200px;
 .pay-template-paddingbot{
   padding-top: 15px;
 }
+
+.tabs{
+  dispaly:block;
+  display: none;
+}
