@@ -562,7 +562,8 @@ a:hover {
 /*  Buttons  */
 /* --------------------------------------------------------	*/
 
-.btn {
+.btn,
+#edit-actions input[type=submit] {
   color:#fff;
   background:#a5a8aa;
   height:48px;
@@ -575,7 +576,8 @@ a:hover {
   margin-bottom:2px;
 }
 
-.btn:hover {
+.btn:hover,
+#edit-actions input[type=submit]:hover {
   color:#fff;
   background:#08c;
   border-bottom:2px solid #0065A9;

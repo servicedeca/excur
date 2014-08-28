@@ -1022,6 +1022,194 @@ function excur_feature_panels_default_page_manager_handlers() {
   $handler->conf['display'] = $display;
   $export['user_view_panel_context_2'] = $handler;
 
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'user_view_panel_context_3';
+  $handler->task = 'user_view';
+  $handler->subtask = '';
+  $handler->handler = 'panel_context';
+  $handler->weight = 2;
+  $handler->conf = array(
+    'title' => 'Гид',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 4,
+            ),
+          ),
+          'context' => 'argument_entity_id:user_1',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'sidebar_left';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'top' => NULL,
+      'content_left' => NULL,
+      'content_center' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = 'dac7eb90-5d89-4733-9e76-4a8b8311afd5';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-80820e9a-8e23-45b0-8733-be704916844e';
+    $pane->panel = 'content_center';
+    $pane->type = 'guide_services';
+    $pane->subtype = 'guide_services';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '80820e9a-8e23-45b0-8733-be704916844e';
+    $display->content['new-80820e9a-8e23-45b0-8733-be704916844e'] = $pane;
+    $display->panels['content_center'][0] = 'new-80820e9a-8e23-45b0-8733-be704916844e';
+    $pane = new stdClass();
+    $pane->pid = 'new-44034fe0-1aab-4c25-8d38-7719c7f6f2ac';
+    $pane->panel = 'content_left';
+    $pane->type = 'guide_info';
+    $pane->subtype = 'guide_info';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '44034fe0-1aab-4c25-8d38-7719c7f6f2ac';
+    $display->content['new-44034fe0-1aab-4c25-8d38-7719c7f6f2ac'] = $pane;
+    $display->panels['content_left'][0] = 'new-44034fe0-1aab-4c25-8d38-7719c7f6f2ac';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = 'new-44034fe0-1aab-4c25-8d38-7719c7f6f2ac';
+  $handler->conf['display'] = $display;
+  $export['user_view_panel_context_3'] = $handler;
+
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'user_view_panel_context_4';
+  $handler->task = 'user_view';
+  $handler->subtask = '';
+  $handler->handler = 'panel_context';
+  $handler->weight = 3;
+  $handler->conf = array(
+    'title' => 'Пользователь',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'logic' => 'and',
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'sidebar_left';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'top' => NULL,
+      'content_left' => NULL,
+      'content_center' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = '27d81e79-4592-4efe-994d-f43c0cb118bb';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-e5d902fa-f8c0-40e8-b44c-4cbb79e083c1';
+    $pane->panel = 'content_center';
+    $pane->type = 'user_offers';
+    $pane->subtype = 'user_offers';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'compare_users',
+          'settings' => array(
+            'equality' => '1',
+          ),
+          'context' => array(
+            0 => 'argument_entity_id:user_1',
+            1 => 'logged-in-user',
+          ),
+          'not' => FALSE,
+        ),
+      ),
+    );
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'e5d902fa-f8c0-40e8-b44c-4cbb79e083c1';
+    $display->content['new-e5d902fa-f8c0-40e8-b44c-4cbb79e083c1'] = $pane;
+    $display->panels['content_center'][0] = 'new-e5d902fa-f8c0-40e8-b44c-4cbb79e083c1';
+    $pane = new stdClass();
+    $pane->pid = 'new-e09d6cac-ea91-468e-926c-4b2899e511ea';
+    $pane->panel = 'content_left';
+    $pane->type = 'user_info';
+    $pane->subtype = 'user_info';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'e09d6cac-ea91-468e-926c-4b2899e511ea';
+    $display->content['new-e09d6cac-ea91-468e-926c-4b2899e511ea'] = $pane;
+    $display->panels['content_left'][0] = 'new-e09d6cac-ea91-468e-926c-4b2899e511ea';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = 'new-e09d6cac-ea91-468e-926c-4b2899e511ea';
+  $handler->conf['display'] = $display;
+  $export['user_view_panel_context_4'] = $handler;
+
   return $export;
 }
 

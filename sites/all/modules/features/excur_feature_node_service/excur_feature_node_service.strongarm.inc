@@ -46,6 +46,9 @@ function excur_feature_node_service_strongarm() {
         'rabbit_hole' => array(
           'weight' => '2',
         ),
+        'additional_settings' => array(
+          'weight' => '100',
+        ),
       ),
       'display' => array(),
     ),

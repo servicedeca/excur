@@ -21,12 +21,73 @@ function excur_menu() {
   return $items;
 }
 
+/**
+ * Implements hook_menu_alter().
+ */
+function excur_menu_alter(&$items) {
+  $items['user/%user/edit']['title'] = 'Профиль';
+  $items['user/%user/view']['title'] = 'Мои заказы';
+
+  $items['user/%user/messages'] = array(
+    'title' => 'messages',
+    'page callback' => 'excur_user_messages',
+    'page arguments' => array(1),
+    'access callback' => 'excur_user_messages_access',
+    'access arguments' => array(1),
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_init().
+ */
+function excur_init() {
+  // Include necessary files for private messages.
+  if (preg_match('/user\/[0-9]*\/messages/', current_path()) || (isset($_POST['form_id']) && $_POST['form_id'] == 'privatemsg_list')) {
+    module_load_include('inc', 'privatemsg', 'privatemsg.pages');
+  }
+}
+
+/**
+ * Implement hook_theme().
+ */
+function excur_theme() {
+  $theme['excur_user_messages'] = array(
+    'template' => 'excur-user-messages',
+    'variables' => array(
+      'account' => NULL,
+    ),
+  );
+
+  $theme['excur_user_menu'] = array(
+    'template' => 'excur-user-menu',
+    'variables' => array(
+      'account' => NULL,
+    ),
+  );
+
+  return $theme;
+}
+
+/**
+ * Access callback for user/%user/massages.
+ */
+function excur_user_messages_access($account) {
+  global $user;
+
+  if ($user->uid == 1 || $account->uid == $user->uid) {
+    return TRUE;
+  }
+
+  return FALSE;
+}
 
 /**
  * Page callback for user/%user/massages.
  */
-function excur_user_messages(){
-  return theme('excur_user_messages');
+function excur_user_messages($account) {
+  return theme('excur_user_messages', array('account' => $account));
 }
 
 /**
@@ -46,7 +107,7 @@ function excur_ctools_plugin_directory($owner, $plugin_type) {
  * Implements hook_form_FORM_ID_alter().
  */
 function excur_form_service_node_form_alter(&$form, &$form_state) {
-    if (!empty($_GET['guide']) && is_numeric($_GET['guide']) && $guide = user_load($_GET['guide'])) {
+  if (!empty($_GET['guide']) && is_numeric($_GET['guide']) && $guide = user_load($_GET['guide'])) {
     $form['field_guide'][LANGUAGE_NONE][0]['target_id']['#value'] = $guide->field_name[LANGUAGE_NONE][0]['safe_value'] . " ($guide->uid)";
     $form['field_guide']['#attributes']['class'][] = 'element-hidden';
   }
@@ -397,38 +458,8 @@ function excur_categories_by_city($city) {
 }
 
 /**
- * Implements hook_menu_alter().
+ * Draw user menu.
  */
-function excur_menu_alter(&$items) {
-  $items['user/%user/edit']['title'] = 'Профиль';
-    $items['user/%user/view']['title'] = 'Мои заказы';
-
-  $items['user/%user/messages'] = array(
-    'title' => 'messages',
-    'page callback' => 'excur_user_messages',
-    'access arguments' => array(1),
-    'access callback' => TRUE,
-  );
-  return $items;
-}
-
-/**
- * Implement hook_theme().
- */
-function excur_theme() {
-  $theme['excur_user_messages'] = array(
-    'template' => 'excur-user-messages',
-  );
-
-  $theme['excur_user_menu'] = array(
-    'template' => 'excur-user-menu',
-  );
-  return $theme;
-}
-
-/**
- * Page callback for excur/user.
- */
-function excur_user_menu() {
-  return theme('excur_user_menu', array());
+function excur_user_menu($account) {
+  return theme('excur_user_menu', array('account' => $account));
 }
