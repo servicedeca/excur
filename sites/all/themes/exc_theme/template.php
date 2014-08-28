@@ -482,7 +482,7 @@ function exc_theme_preprocess_pay_template(&$vars){
   $node = node_load($offer->nid);
   $city = taxonomy_term_load($node->field_city[LANGUAGE_NONE][0]['target_id']);
   $country = taxonomy_term_load($city->field_country[LANGUAGE_NONE][0]['target_id']);
-  $guide = user_load($node->uid);
+  $guide = user_load($node->field_guide[LANGUAGE_NONE][0]['target_id']);
   $path_image = $node->field_image[LANGUAGE_NONE][0]['uri'];
   $guide_image_path = $guide->field_image[LANGUAGE_NONE][0]['uri'];
 
@@ -526,7 +526,7 @@ function exc_theme_preprocess_pay_template(&$vars){
 }
 
 /**
- * Process variables for excur-user-info.tpl.php.
+ * Process variables for excur-user-menu.tpl.php.
  */
 function template_preprocess_excur_user_menu(&$vars) {
   global $user;
@@ -536,4 +536,14 @@ function template_preprocess_excur_user_menu(&$vars) {
   $vars['menu']['messages'] = l(t('Messages'), 'user/'.$uid.'/messages');
   $vars['menu']['profile'] = l(t('Profile'), 'user/'.$uid.'/edit');
   $vars['menu']['bookings'] = l(t('My bookings'), '');
+}
+
+/**
+ * Process variables for excur-user-massages.tpl.php.
+ */
+function template_preprocess_excur_user_messages(&$vars) {
+  global $user;
+  $vars['user_menu'] = excur_user_menu();
+  $uid = $user->uid;
+  $vars['messages'] = privatemsg_list_page('list', $uid);
 }

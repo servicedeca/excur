@@ -312,7 +312,7 @@ function excur_offer_order_form_submit(&$form, &$form_state) {
   $nid = excur_offer_load($id)->nid;
 
   foreach ($form['language']['#options'] as $key => $value) {
-    if ($form['language']['#options'] == $key) {
+    if ($form['language']['#value'] == $key) {
       $lang = $form['language']['#options'][$key];
     }
   }
@@ -326,7 +326,7 @@ function excur_offer_order_form_submit(&$form, &$form_state) {
   $venue = $form['venue']['#value'];
   $node = node_load($nid);
   $reservation = entity_metadata_wrapper('node', $node);
-  $reservation = language($lang->language);
+  $reservation -> language($lang->language);
   $reservation = $reservation->field_reservation->value();
 
   $value_update = array(
