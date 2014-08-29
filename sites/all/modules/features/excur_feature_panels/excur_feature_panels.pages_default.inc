@@ -838,45 +838,10 @@ function excur_feature_panels_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-0bf105cd-faa9-4edf-b6f6-c713f730c850';
+    $pane->pid = 'new-ff79543e-a97d-46e2-99fd-c218d0b224eb';
     $pane->panel = 'content_center';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'user:field_description';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'label' => 'hidden',
-      'formatter' => 'text_default',
-      'delta_limit' => 0,
-      'delta_offset' => '0',
-      'delta_reversed' => FALSE,
-      'formatter_settings' => array(),
-      'context' => 'argument_entity_id:user_1',
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array(
-      'method' => '0',
-      'settings' => array(),
-    );
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'well',
-    );
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '0bf105cd-faa9-4edf-b6f6-c713f730c850';
-    $display->content['new-0bf105cd-faa9-4edf-b6f6-c713f730c850'] = $pane;
-    $display->panels['content_center'][0] = 'new-0bf105cd-faa9-4edf-b6f6-c713f730c850';
-    $pane = new stdClass();
-    $pane->pid = 'new-492af9ac-211c-4783-bd29-e9b34867c16e';
-    $pane->panel = 'content_center';
-    $pane->type = 'guide_services';
-    $pane->subtype = 'guide_services';
+    $pane->type = 'user_news';
+    $pane->subtype = 'user_news';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -886,23 +851,20 @@ function excur_feature_panels_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '492af9ac-211c-4783-bd29-e9b34867c16e';
-    $display->content['new-492af9ac-211c-4783-bd29-e9b34867c16e'] = $pane;
-    $display->panels['content_center'][1] = 'new-492af9ac-211c-4783-bd29-e9b34867c16e';
+    $pane->uuid = 'ff79543e-a97d-46e2-99fd-c218d0b224eb';
+    $display->content['new-ff79543e-a97d-46e2-99fd-c218d0b224eb'] = $pane;
+    $display->panels['content_center'][0] = 'new-ff79543e-a97d-46e2-99fd-c218d0b224eb';
     $pane = new stdClass();
-    $pane->pid = 'new-420e49dd-afda-442e-ab8e-47d3f9b17772';
+    $pane->pid = 'new-dbc34679-5d79-4fbc-b192-6ca7c96c026c';
     $pane->panel = 'content_left';
-    $pane->type = 'guide_info';
-    $pane->subtype = 'guide_info';
+    $pane->type = 'user_menu';
+    $pane->subtype = 'user_menu';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
-    $pane->cache = array(
-      'method' => '0',
-      'settings' => array(),
-    );
+    $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
@@ -910,9 +872,9 @@ function excur_feature_panels_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '420e49dd-afda-442e-ab8e-47d3f9b17772';
-    $display->content['new-420e49dd-afda-442e-ab8e-47d3f9b17772'] = $pane;
-    $display->panels['content_left'][0] = 'new-420e49dd-afda-442e-ab8e-47d3f9b17772';
+    $pane->uuid = 'dbc34679-5d79-4fbc-b192-6ca7c96c026c';
+    $display->content['new-dbc34679-5d79-4fbc-b192-6ca7c96c026c'] = $pane;
+    $display->panels['content_left'][0] = 'new-dbc34679-5d79-4fbc-b192-6ca7c96c026c';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

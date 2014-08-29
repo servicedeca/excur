@@ -2,5 +2,7 @@
   <div class="span3">
     <?php print $user_menu; ?>
   </div>
-  <?php print render($form); ?>
+  <div class="span9">
+    <?php print render($form); ?>
+  </div>
 </div>

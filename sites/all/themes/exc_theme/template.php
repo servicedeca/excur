@@ -555,5 +555,5 @@ function template_preprocess_excur_user_edit(&$vars) {
   $account = $vars['account'];
 
   $vars['user_menu'] = excur_user_menu($account);
-  $vars['form'] = drupal_get_form('user_profile_form', 1);
+  $vars['form'] = drupal_get_form('user_profile_form', $account);
 }

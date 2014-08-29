@@ -30,21 +30,19 @@ function excur_menu_alter(&$items) {
   $items['user/%user/view']['title'] = 'Мои заказы';
 
   $items['user/%user/messages'] = array(
-    'title' => 'messages',
+    'title' => 'Private messages',
     'page callback' => 'excur_user_messages',
     'page arguments' => array(1),
     'access callback' => 'excur_user_page_access',
     'access arguments' => array(1),
   );
   $items['user/%user/edit'] = array(
-    'title' => 'edit',
+    'title' => 'Edit profile',
     'page callback' => 'excur_user_edit',
     'page arguments' => array(1),
     'access callback' => 'excur_user_page_access',
     'access arguments' => array(1),
   );
-
-  return $items;
 }
 
 /**
@@ -54,6 +52,9 @@ function excur_init() {
   // Include necessary files for private messages.
   if (preg_match('/user\/[0-9]*\/messages/', current_path()) || (isset($_POST['form_id']) && $_POST['form_id'] == 'privatemsg_list')) {
     module_load_include('inc', 'privatemsg', 'privatemsg.pages');
+  }
+  elseif (preg_match('/user\/[0-9]*\/edit/', current_path())) {
+    module_load_include('inc', 'user', 'user.pages');
   }
 }
 
@@ -107,7 +108,14 @@ function excur_user_messages($account) {
  * Page callback for user/%user/edit.
  */
 function excur_user_edit($account) {
-  return theme('excur_user_edit', array('account' => $account));
+  global $user;
+
+  if ($user->uid == 1) {
+    return drupal_get_form('user_profile_form', $account);
+  }
+  else {
+    return theme('excur_user_edit', array('account' => $account));
+  }
 }
 
 /**

@@ -40,7 +40,7 @@
       <div class="span4">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h2 class="included"><?php print t('Входит в стоимость') . ': '; ?></h2>
+            <h2 class="included"><?php print t('Included in the price'); ?></h2>
           </div>
           <div class="panel-body">
             <?php print render($content['field_included']); ?>
@@ -52,7 +52,7 @@
       <div class="span4">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h2 class="excluded"><?php print t('Не входит в стоимость') . ':'; ?></h2>
+            <h2 class="excluded"><?php print t('Not included'); ?></h2>
           </div>
           <div class="panel-body">
             <?php print render($content['field_excluded']); ?>
@@ -64,23 +64,23 @@
       <div class="span4">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h2 class="meeting"><?php print t('Правила бронирования') . ': '; ?></h2>
+            <h2 class="meeting"><?php print t('Terms of reservation'); ?></h2>
           </div>
           <div class="panel-body">
             <p class="meeting"><?php print t('Билет на экскурсию можно забронировать:');?><p>
-            <?php print render($content['field_reservation_rules'][0]['entity']['field_collection_item']).'<br>'; ?>
+            <?php print render($content['field_reservation_rules'][0]['entity']['field_collection_item']); ?>
           </div>
         </div>
       </div>
     <?php endif; ?>
-    <?php if (!empty($content['field_cancellation']['und'][0]['value'])): ?>
+    <?php if (!empty($content['field_cancellation'])): ?>
       <div class="span4">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h2 class="meeting"><?php print t('Правила отмены бронирования') . ': '; ?></h2>
+            <h2 class="meeting"><?php print t('Cancellation') . ': '; ?></h2>
           </div>
           <div class="panel-body">
-            <?php print render($content['field_cancellation']).'<br>'; ?>
+            <?php print render($content['field_cancellation'][0]['entity']['field_collection_item']); ?>
           </div>
         </div>
       </div>
