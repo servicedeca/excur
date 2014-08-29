@@ -25,6 +25,7 @@ function excur_menu() {
  * Implements hook_menu_alter().
  */
 function excur_menu_alter(&$items) {
+
   $items['user/%user/edit']['title'] = 'Профиль';
   $items['user/%user/view']['title'] = 'Мои заказы';
 
@@ -32,7 +33,14 @@ function excur_menu_alter(&$items) {
     'title' => 'messages',
     'page callback' => 'excur_user_messages',
     'page arguments' => array(1),
-    'access callback' => 'excur_user_messages_access',
+    'access callback' => 'excur_user_page_access',
+    'access arguments' => array(1),
+  );
+  $items['user/%user/edit'] = array(
+    'title' => 'edit',
+    'page callback' => 'excur_user_edit',
+    'page arguments' => array(1),
+    'access callback' => 'excur_user_page_access',
     'access arguments' => array(1),
   );
 
@@ -59,7 +67,12 @@ function excur_theme() {
       'account' => NULL,
     ),
   );
-
+  $theme['excur_user_edit'] = array(
+    'template' => 'excur-user-edit',
+    'variables' => array(
+      'account' => NULL,
+    ),
+  );
   $theme['excur_user_menu'] = array(
     'template' => 'excur-user-menu',
     'variables' => array(
@@ -73,7 +86,7 @@ function excur_theme() {
 /**
  * Access callback for user/%user/massages.
  */
-function excur_user_messages_access($account) {
+function excur_user_page_access($account) {
   global $user;
 
   if ($user->uid == 1 || $account->uid == $user->uid) {
@@ -88,6 +101,13 @@ function excur_user_messages_access($account) {
  */
 function excur_user_messages($account) {
   return theme('excur_user_messages', array('account' => $account));
+}
+
+/**
+ * Page callback for user/%user/edit.
+ */
+function excur_user_edit($account) {
+  return theme('excur_user_edit', array('account' => $account));
 }
 
 /**

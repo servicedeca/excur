@@ -547,3 +547,13 @@ function template_preprocess_excur_user_messages(&$vars) {
   $vars['user_menu'] = excur_user_menu($account);
   $vars['messages'] = privatemsg_list_page('list', $account->uid);
 }
+
+/**
+ * Process variables for excur-user-edit.tpl.php.
+ */
+function template_preprocess_excur_user_edit(&$vars) {
+  $account = $vars['account'];
+
+  $vars['user_menu'] = excur_user_menu($account);
+  $vars['form'] = drupal_get_form('user_profile_form', 1);
+}
