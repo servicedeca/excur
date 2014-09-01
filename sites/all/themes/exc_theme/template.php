@@ -528,20 +528,24 @@ function exc_theme_preprocess_pay_template(&$vars){
 /**
  * Process variables for excur-user-menu.tpl.php.
  */
-function template_preprocess_excur_user_menu(&$vars) {
+function exc_theme_preprocess_excur_user_menu(&$vars) {
   $account = $vars['account'];
   $uid = $account->uid;
 
   $vars['menu']['news'] = l(t('News and notices'), "user/$uid");
   $vars['menu']['messages'] = l(t('Messages'), 'user/' . $uid . '/messages');
   $vars['menu']['profile'] = l(t('Profile'), 'user/' . $uid . '/edit');
-  $vars['menu']['bookings'] = l(t('My orders'), '');
+  $vars['menu']['bookings'] = l(t('My bookings'), '');
+  if($account->roles[4] == 'Гид'){
+    $vars['menu']['offers'] = l(t('My offers'), '');
+    $vars['menu']['orders'] = l(t('My orders '), '');
+  }
 }
 
 /**
  * Process variables for excur-user-massages.tpl.php.
  */
-function template_preprocess_excur_user_messages(&$vars) {
+function exc_theme_preprocess_excur_user_messages(&$vars) {
   $account = $vars['account'];
 
   $vars['user_menu'] = excur_user_menu($account);
@@ -551,9 +555,16 @@ function template_preprocess_excur_user_messages(&$vars) {
 /**
  * Process variables for excur-user-edit.tpl.php.
  */
-function template_preprocess_excur_user_edit(&$vars) {
+function exc_theme_preprocess_excur_user_edit(&$vars) {
   $account = $vars['account'];
 
   $vars['user_menu'] = excur_user_menu($account);
   $vars['form'] = drupal_get_form('user_profile_form', $account);
+}
+
+/**
+ * Process variables for excur-user-profile-form.tpl.php
+ */
+function exc_theme_preprocess_excur_user_profile_form(&$vars){
+
 }
