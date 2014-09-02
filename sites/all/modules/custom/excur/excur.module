@@ -81,7 +81,9 @@ function excur_theme() {
     ),
   );
   $theme['excur_profile_form'] = array(
-    'template' => 'excur-user-profile-form',
+    'file' => 'theme.inc',
+    'path' => drupal_get_path('module', 'excur') . '/theme',
+    'template' => 'excur-profile-form',
     'render element' => 'form',
   );
 
