@@ -536,7 +536,7 @@ function exc_theme_preprocess_excur_user_menu(&$vars) {
   $vars['menu']['messages'] = l(t('Messages'), 'user/' . $uid . '/messages');
   $vars['menu']['profile'] = l(t('Profile'), 'user/' . $uid . '/edit');
   $vars['menu']['bookings'] = l(t('My bookings'), '');
-  if($account->roles[4] == 'Гид'){
+  if (!empty($account->roles[EXCUR_USER_ROLE_GUIDE_ID])) {
     $vars['menu']['offers'] = l(t('My offers'), '');
     $vars['menu']['orders'] = l(t('My orders '), '');
   }
@@ -546,7 +546,7 @@ function exc_theme_preprocess_excur_user_menu(&$vars) {
  * Process variables for excur-user-massages.tpl.php.
  */
 function exc_theme_preprocess_excur_user_messages(&$vars) {
-  $account = $vars['account'];
+  $account = $vars['user'];
 
   $vars['user_menu'] = excur_user_menu($account);
   $vars['messages'] = privatemsg_list_page('list', $account->uid);

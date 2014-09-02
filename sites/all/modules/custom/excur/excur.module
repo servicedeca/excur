@@ -26,13 +26,13 @@ function excur_menu() {
  */
 function excur_menu_alter(&$items) {
 
-  $items['user/%user/edit']['title'] = 'Профиль';
-  $items['user/%user/view']['title'] = 'Мои заказы';
+  $items['user/%user/edit']['title'] = 'Profile';
+  $items['user/%user/view']['title'] = 'My offers';
 
   $items['user/%user/messages'] = array(
     'title' => 'Private messages',
     'page callback' => 'theme',
-    'page arguments' => array('excur_user_messages', array('account' => 1)),
+    'page arguments' => array('excur_user_messages'),
     'access callback' => 'excur_user_page_access',
     'access arguments' => array(1),
   );
@@ -80,8 +80,9 @@ function excur_theme() {
       'account' => NULL,
     ),
   );
-  $theme['profile_form'] = array(
+  $theme['excur_profile_form'] = array(
     'template' => 'excur-user-profile-form',
+    'render element' => 'form',
   );
 
   return $theme;
@@ -177,7 +178,7 @@ function excur_form_user_profile_form_alter(&$form, &$form_state) {
   $form['actions']['submit']['#attributes']['class'][] = 'btn';
   $form['actions']['cancel']['#attributes']['class'][] = 'btn';
   $form['#submit'][] = 'excur_form_user_profile_form_submit';
-  $form['#theme'][] = 'profile_form';
+  $form['#theme'][] = 'excur_profile_form';
 }
 
 /**
