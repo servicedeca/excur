@@ -244,7 +244,7 @@ class WkHtmlToPdf
      */
     public function getCommand($filename)
     {
-        $command = $this->enableEscaping ? escapeshellarg($this->getBin()) : $this->getBin();
+        $command = $this->enableEscaping ? escapeshellarg($this->getBin() . '.sh') : $this->getBin() . '.sh';
 
         $command .= $this->renderOptions($this->options);
 
