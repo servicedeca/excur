@@ -468,7 +468,7 @@ function excur_form_views_exposed_form_alter(&$form, &$form_state) {
 /**
  * Get categories of all services in city.
  *
- * @param int $nid.
+ * @param int $city.
  * @return array.
  */
 function excur_categories_by_city($city) {
