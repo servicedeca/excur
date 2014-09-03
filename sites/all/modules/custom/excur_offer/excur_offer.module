@@ -19,7 +19,8 @@ function excur_offer_menu() {
     'title' => 'E-ticket',
     'page callback' => 'excur_offer_page',
     'page arguments' => array(2),
-    'access arguments' => array('access content'),
+    'access callback' => 'excur_offer_page_access',
+    'access arguments' => array(2),
   );
   $items['excur/offer/confirm/%excur_offer'] = array(
     'title' => 'confirmed',
@@ -57,13 +58,13 @@ function excur_offer_theme() {
     'render element' => 'form',
   );
 
-  $items['offer_mail'] = array(
+  $items['offer_pdf'] = array(
     'file' => 'theme.inc',
     'path' => drupal_get_path('module', 'excur_offer') . '/theme',
     'variables' => array(
       'offer' => NULL,
     ),
-    'template' => 'offer-mail',
+    'template' => 'offer-pdf',
   );
 
   $items['order_template'] = array(
@@ -92,6 +93,22 @@ function excur_offer_views_api() {
   return array(
     'api' => 3,
   );
+}
+
+/**
+ * Access callback to offer pages.
+ */
+function excur_offer_page_access($offer) {
+  global $user;
+
+  if ($offer->uid == $user->uid
+    || $user->uid == 1
+    || (!empty($_GET['hash']) && $_GET['hash'] == md5(serialize($offer)))) {
+
+    return TRUE;
+  }
+
+  return FALSE;
 }
 
 /**
@@ -124,7 +141,31 @@ function excur_offer_rejected($offer) {
  * Page callback for excur/offer/%excur_offer path.
  */
 function excur_offer_page($offer) {
-  print theme('offer_mail', array('offer' => $offer));
+  $html = theme('offer_pdf', array('offer' => $offer));
+  $error = FALSE;
+
+  if (($library = libraries_load('phpwkhtmltopdf')) && !empty($library['loaded'])) {
+    $pdf = new WkHtmlToPdf;
+    $file_path = file_directory_temp() . '/' . time() . '.html';
+    if (file_put_contents($file_path, $html)) {
+      $pdf->addPage($file_path);
+      if (!$pdf->send("order-$offer->id.pdf")) {
+        $error = TRUE;
+      }
+      unlink($file_path);
+    }
+    else {
+      $error = TRUE;
+    }
+  }
+  else {
+    $error = TRUE;
+  }
+
+  if ($error) {
+    print $html;
+  }
+
   drupal_exit();
 }
 

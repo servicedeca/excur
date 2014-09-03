@@ -7,9 +7,12 @@
   </ul>
   <div class="tab-content">
     <div id="pane1" class="tab-pane active">
+      <?php hide($form['account']['pass']); ?>
+      <?php hide($form['account']['current_pass'])?>
       <?php print drupal_render_children($form); ?>
     </div>
     <div id="pane2" class="tab-pane">
+      <?php print render($form['account']['current_pass'])?>
       <?php print render($form['account']['pass'])?>
       <?php print render($form['actions']['submit'])?>
     </div>

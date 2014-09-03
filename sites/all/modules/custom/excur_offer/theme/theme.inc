@@ -5,10 +5,9 @@
  */
 
 /**
- * Preprocess for contact-site-form.tpl.php.
- * @see contact-site-form.tpl.php
+ * Preprocess for offer-pdf.tpl.php.
  */
-function excur_offer_preprocess_offer_mail(&$vars) {
+function excur_offer_preprocess_offer_pdf(&$vars) {
   global $language;
 
   $offer = $vars['offer'];
