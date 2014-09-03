@@ -576,3 +576,20 @@ function excur_offer_is_user_ordered($guide_uid, $uid = NULL) {
 
   return (bool) $query->execute()->fetchField();
 }
+
+/**
+ * Generate link to pdf version of offer.
+ *
+ * @param string $title
+ * @param object $offer
+ * @return string
+ */
+function excur_offer_pdf_link($title, $offer) {
+  $hash = md5(serialize($offer));
+
+  return l(t($title), "excur/offer/$offer->id", array(
+    'query' => array(
+      'hash' => $hash,
+    ),
+  ));
+}
