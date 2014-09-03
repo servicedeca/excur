@@ -202,6 +202,7 @@ h2.node-description {
   border: 1px solid #d9d9d9;
   padding: 15px;
   margin-bottom: 33px;
+  text-align: center;
 }
 
 .node-type-service .side-block {
@@ -518,19 +519,16 @@ h2.panel-title {
 
 .order-template-title{
    height:50px;
-
 }
 
 
 .order-template-info{
   height:250px;
-
 }
 
 
 .order-template-gid{
   height:250px;
-
 }
 
 
@@ -542,17 +540,14 @@ h2.panel-title {
   width: 200px;
 }
 
-
 .order-template-content-ticket{
   height:500px;
-
 }
-
 
 .order-template-gid-name{
   text-align: center;
-  margin-top: 5px;
-
+  margin-top: 25px;
+  padding-bottom: 0px;
 }
 
 .order-template-info h2{
@@ -568,12 +563,12 @@ h2.panel-title {
 }
 
 .order-template-content-bottom{
-  height:620px;
+  height:650px;
 }
 
 @media(max-width: 768px){
   .order-template-content-bottom{
-    height:1100px;
+    height:1300px;
   }
 }
 
@@ -601,7 +596,6 @@ h2.panel-title {
     }
 }
 
-
 .order-template-content-ticket{
   height: 200px;
   width: 100px;
@@ -625,7 +619,13 @@ h2.panel-title {
 }
 
 .order-template-btn{
-margin-top: 200px;
+margin-top: 240px;
+}
+
+@media(max-width: 768px){
+  .order-template-btn{
+    margin-top: 200px;
+  }
 }
 
 .btnpay{
@@ -721,4 +721,42 @@ margin-top: 200px;
 .pass{
   dispaly:block;
   display: none;
+}
+
+.order-template-ticket{
+  border:1px solid black;
+  position: absolute;
+  width: 470px;
+  margin-top: -300px;
+  margin-left: 500px;
+}
+
+@media(max-width: 1200px){
+  .order-template-ticket{
+    margin-left: 400px;
+    width: 380px;
+  }
+}
+
+@media(max-width: 979px){
+  .order-template-ticket{
+    margin-left: 310px;
+    width: 290px;
+  }
+}
+
+@media(max-width: 768px){
+  .order-template-ticket{
+    width: 97%;
+    margin-left:0px;
+  }
+}
+
+.order-template-ticket h2{
+  font-size: 25px;
+  padding-bottom: 0px;
+}
+
+.order-template-ticket h3{
+  font-size: 25px;
 }

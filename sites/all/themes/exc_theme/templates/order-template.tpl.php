@@ -24,12 +24,7 @@
   </div>
 </div>
 <?php print render($form);?>
-<div class="row-fluid">
-  <div class="span10">
-    <div class="row-fluid">
-      <div class="span6">
-      </div>
-      <div class="span6 order-template-content-ticket">
+	<div class="order-template-ticket">
         <div class="side-block">
           <div class="do-offer do-offer-pay">
             <div class="price">
@@ -41,6 +36,4 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
+      </div>  
