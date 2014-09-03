@@ -718,7 +718,19 @@ margin-top: 200px;
   dispaly:block;
   display: none;
 }
-.pass{
+
+#pane3 legend{
   dispaly:block;
+  display: none;
+}
+
+.form-item-name .description{
+  display: none;
+}
+
+.form-item-mail .description{
+  display: none;
+}
+.field-widget-date-popup legend{
   display: none;
 }
