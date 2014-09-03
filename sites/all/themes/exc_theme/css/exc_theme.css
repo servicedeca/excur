@@ -11,7 +11,7 @@
   margin-bottom: 0;
 }
 
-.view-display-id-continent .views-field-name-field  {
+.view-display-id-continent .views-field-name-field {
   position: relative;
 }
 
@@ -65,7 +65,7 @@ h1 {
   color: #fff;
   padding: 10px;
   border-radius: 5px;
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .title-wrapper,
@@ -105,14 +105,14 @@ h1 {
 #slider-search-form #excur-search-search-form {
   padding: 10px 20px 20px 10px;
   border-radius: 5px;
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .img-border img {
   box-sizing: border-box;
   border: 5px solid #fff;
-  -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.25);
-  box-shadow: 1px 1px 3px rgba(0,0,0,0.25);
+  -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
 }
 
 .popular-city {
@@ -438,22 +438,22 @@ p.certified {
 
 .panel-group .panel {
   margin-bottom: 0;
- border-radius: 5px;
+  border-radius: 5px;
 }
 
 .panel {
   background-color: #fff;
   border: 1px solid transparent;
   border-radius: 5px;
-  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
-  box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
 }
 
 .panel-default {
   border-color: #ddd;
 }
 
-.panel-default>.panel-heading {
+.panel-default > .panel-heading {
   color: #333;
   background-color: #f5f5f5;
   border-color: #ddd;
@@ -478,11 +478,11 @@ h2.panel-title {
   color: inherit;
 }
 
-.panel-default>.panel-heading+.panel-collapse>.panel-body {
+.panel-default > .panel-heading + .panel-collapse > .panel-body {
   border-top-color: #ddd;
 }
 
-.panel-group .panel-heading+.panel-collapse>.panel-body {
+.panel-group .panel-heading + .panel-collapse > .panel-body {
   border-top: 1px solid #ddd;
 }
 
@@ -498,227 +498,217 @@ h2.panel-title {
 .page-user-register fieldset.filter-wrapper {
   display: none;
 }
-.filter-wrapper.form-wrapper{
+
+.filter-wrapper.form-wrapper {
   display: none;
 }
 
-#guide_image{
+#guide_image {
   width: 70px;
   margin-top: 50px;
   border: 1px solid black;
 }
 
-.order-template-content-background{
+.order-template-content-background {
   padding-bottom: 35px;
 }
 
-.order-template-content-top{
-  height:300px;
+.order-template-content-top {
+  height: 300px;
 }
 
-.order-template-title{
-   height:50px;
-
-}
-
-
-.order-template-info{
-  height:250px;
+.order-template-title {
+  height: 50px;
 
 }
 
-
-.order-template-gid{
-  height:250px;
+.order-template-info {
+  height: 250px;
 
 }
 
+.order-template-gid {
+  height: 250px;
+
+}
 
 .imgrn {
   width: 450px;
 }
 
-.imggd{
+.imggd {
   width: 200px;
 }
 
-
-.order-template-content-ticket{
-  height:500px;
+.order-template-content-ticket {
+  height: 500px;
 
 }
 
-
-.order-template-gid-name{
+.order-template-gid-name {
   text-align: center;
   margin-top: 5px;
 
 }
 
-.order-template-info h2{
+.order-template-info h2 {
   padding-bottom: 15px;
   font-size: 20px;
 }
 
-.order-template-info h3{
+.order-template-info h3 {
   padding-bottom: 5px;
   margin-left: 10px;
   padding: 2px;
   font-size: 15px;
 }
 
-.order-template-content-bottom{
-  height:620px;
+.order-template-content-bottom {
+  height: 620px;
 }
 
-@media(max-width: 768px){
-  .order-template-content-bottom{
-    height:1100px;
+@media (max-width: 768px) {
+  .order-template-content-bottom {
+    height: 1100px;
   }
 }
 
-.order-template-content-form1{
-  height:350px;
+.order-template-content-form1 {
+  height: 350px;
   width: 300px;
 }
 
-
-.order-template-content-form2{
-  height:350px;
+.order-template-content-form2 {
+  height: 350px;
   width: 300px;
 }
 
-
-.order-template-content-form3{
-  height:300px;
+.order-template-content-form3 {
+  height: 300px;
   width: 300px;
   margin-top: 20px;
 }
 
-@media(max-width: 980px){
-    .pay-h1 h1{
-      font-size: 20px;
-    }
+@media (max-width: 980px) {
+  .pay-h1 h1 {
+    font-size: 20px;
+  }
 }
 
-
-.order-template-content-ticket{
+.order-template-content-ticket {
   height: 200px;
   width: 100px;
   margin-top: -270px;
 }
 
-
-@media(max-width: 768px){
-  .order-template-content-ticket{
+@media (max-width: 768px) {
+  .order-template-content-ticket {
     margin-top: -100px;
   }
 }
 
-.order-template-content-ticket h2{
+.order-template-content-ticket h2 {
   font-size: 25px;
   padding-bottom: 0px;
 }
 
-.order-template-content-ticket h3{
+.order-template-content-ticket h3 {
   font-size: 18px;
 }
 
-.order-template-btn{
-margin-top: 200px;
+.order-template-btn {
+  margin-top: 200px;
 }
 
-.btnpay{
+.btnpay {
   margin-top: -15px;
 }
 
-.pay-template-content-form1{
-  height:250px;
+.pay-template-content-form1 {
+  height: 250px;
   width: 300px;
   padding-bottom: 15px;
   font-size: 20px;
 }
 
-.pay-template-content-form1 h3{
+.pay-template-content-form1 h3 {
   padding-left: 20px;
   font-size: 16px;
 }
 
-.pay-template-content-form2{
-  height:250px;
+.pay-template-content-form2 {
+  height: 250px;
   width: 300px;
 }
 
-.pay-template-content-form2 h3{
+.pay-template-content-form2 h3 {
   padding-left: 20px;
   font-size: 16px;
 }
 
-.pay-template-content-form3{
-  height:300px;
+.pay-template-content-form3 {
+  height: 300px;
   width: 300px;
 }
 
-.pay-template-content-form3 h3{
+.pay-template-content-form3 h3 {
   padding-left: 20px;
   font-size: 16px;
 }
 
-
-.pay-template-content-ticket{
+.pay-template-content-ticket {
   height: 200px;
   width: 100px;
   margin-top: -160px;
 }
 
-
-@media(max-width: 768px){
-  .pay-template-content-ticket{
+@media (max-width: 768px) {
+  .pay-template-content-ticket {
     margin-top: -100px;
   }
 }
 
-.pay-template-content-ticket h2{
+.pay-template-content-ticket h2 {
   font-size: 25px;
   padding-bottom: 0px;
 }
 
-.pay-template-content-ticket h3{
+.pay-template-content-ticket h3 {
   font-size: 25px;
 }
 
-.pay-template-content-bottom{
-  height:500px;
+.pay-template-content-bottom {
+  height: 500px;
 }
 
-@media(max-width: 768px){
-  .pay-template-content-bottom{
-    height:1050px;
+@media (max-width: 768px) {
+  .pay-template-content-bottom {
+    height: 1050px;
   }
 }
 
-.do-offer-pay{
+.do-offer-pay {
   margin: -15px -15px -15px -15px;
 }
 
-.order-template-content-forms h2{
+.order-template-content-forms h2 {
   font-size: 25px;
   padding-bottom: 0px;
 }
 
-.order-template-content-forms h3{
+.order-template-content-forms h3 {
   font-size: 18px;
 }
 
-.pay-template-paddingbot{
+.pay-template-paddingbot {
   padding-top: 15px;
 }
 
-.tabs{
-  dispaly:block;
+.tabs, .pass {
+  dispaly: block;
   display: none;
 }
-.pass{
-  dispaly:block;
-  display: none;
+
+.categories li.subcategory {
+  margin-left: 10px;
 }

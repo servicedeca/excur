@@ -5,7 +5,7 @@
         <?php print t('Show all services'); ?>
       </li>
       <?php foreach ($categories as $category): ?>
-        <li id="category-<?php print $category->entity_id; ?>">
+        <li id="category-<?php print $category->entity_id; ?>" class="<?php print ($category->parent ? 'subcategory' : ''); ?>">
           <?php print $category->name_field_value; ?>
         </li>
       <?php endforeach; ?>
