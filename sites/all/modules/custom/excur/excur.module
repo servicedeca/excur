@@ -468,7 +468,7 @@ function excur_form_views_exposed_form_alter(&$form, &$form_state) {
 /**
  * Get categories of all services in city.
  *
- * @param int $nid.
+ * @param int $city.
  * @return array.
  */
 function excur_categories_by_city($city) {
@@ -476,8 +476,10 @@ function excur_categories_by_city($city) {
 
   $query = db_select('field_data_name_field', 'name');
   $query->fields('name', array('entity_id', 'name_field_value'));
+  $query->fields('tth', array('parent'));
   $query->join('field_data_field_category', 'category', 'name.entity_id = category.field_category_tid');
   $query->join('field_data_field_city', 'city', 'city.entity_id = category.entity_id');
+  $query->join('taxonomy_term_hierarchy', 'tth', 'tth.tid = category.field_category_tid');
   $query->condition('name.bundle', 'category');
   $query->condition('name.language', $language->language);
   $query->condition('city.field_city_target_id', $city);

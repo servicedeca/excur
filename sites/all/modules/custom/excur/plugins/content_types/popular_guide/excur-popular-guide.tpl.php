@@ -16,9 +16,6 @@
         <div class="city">
           <?php print $guide['city']; ?>
         </div>
-        <div class="rating">
-          рейтинг
-        </div>
       </div>
     </div>
     <div class="space20"></div>
