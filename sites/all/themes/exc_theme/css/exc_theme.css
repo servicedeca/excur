@@ -518,7 +518,6 @@ h2.panel-title {
   height: 300px;
 }
 
-<<<<<<< HEAD
 .order-template-title{
    height:50px;
 }
@@ -531,7 +530,7 @@ h2.panel-title {
 
 .order-template-gid{
   height:250px;
-=======
+}
 .order-template-title {
   height: 50px;
 
@@ -544,8 +543,6 @@ h2.panel-title {
 
 .order-template-gid {
   height: 250px;
-
->>>>>>> 8f6a046b8eb9955924fa540b32a41de1473ec29f
 }
 
 .imgrn {
@@ -556,20 +553,16 @@ h2.panel-title {
   width: 200px;
 }
 
-<<<<<<< HEAD
 .order-template-content-ticket{
   height:500px;
 }
 
-.order-template-gid-name{
-=======
-.order-template-content-ticket {
-  height: 500px;
-
-}
+.order-template-gid-name
+  .order-template-content-ticket {
+    height: 500px;
+  }
 
 .order-template-gid-name {
->>>>>>> 8f6a046b8eb9955924fa540b32a41de1473ec29f
   text-align: center;
   margin-top: 25px;
   padding-bottom: 0px;
@@ -587,7 +580,6 @@ h2.panel-title {
   font-size: 15px;
 }
 
-<<<<<<< HEAD
 .order-template-content-bottom{
   height:650px;
 }
@@ -595,7 +587,8 @@ h2.panel-title {
 @media(max-width: 768px){
   .order-template-content-bottom{
     height:1300px;
-=======
+  }
+}
 .order-template-content-bottom {
   height: 620px;
 }
@@ -603,7 +596,6 @@ h2.panel-title {
 @media (max-width: 768px) {
   .order-template-content-bottom {
     height: 1100px;
->>>>>>> 8f6a046b8eb9955924fa540b32a41de1473ec29f
   }
 }
 
@@ -629,11 +621,8 @@ h2.panel-title {
   }
 }
 
-<<<<<<< HEAD
-.order-template-content-ticket{
-=======
+.order-template-content-ticket
 .order-template-content-ticket {
->>>>>>> 8f6a046b8eb9955924fa540b32a41de1473ec29f
   height: 200px;
   width: 100px;
   margin-top: -270px;
@@ -654,7 +643,6 @@ h2.panel-title {
   font-size: 18px;
 }
 
-<<<<<<< HEAD
 .order-template-btn{
 margin-top: 240px;
 }
@@ -663,10 +651,9 @@ margin-top: 240px;
   .order-template-btn{
     margin-top: 200px;
   }
-=======
+}
 .order-template-btn {
   margin-top: 200px;
->>>>>>> 8f6a046b8eb9955924fa540b32a41de1473ec29f
 }
 
 .btnpay {
@@ -757,18 +744,16 @@ margin-top: 240px;
   dispaly: block;
   display: none;
 }
-<<<<<<< HEAD
 
 #pane3 legend{
-=======
-<<<<<<< HEAD
+
+}
+
 .pass{
->>>>>>> 8f71ee2a2227f455c48f289560c12d94d1310976
   dispaly:block;
   display: none;
 }
 
-<<<<<<< HEAD
 .form-item-name .description{
   display: none;
 }
@@ -778,7 +763,7 @@ margin-top: 240px;
 }
 .field-widget-date-popup legend{
   display: none;
-=======
+}
 .order-template-ticket{
   border:1px solid black;
   position: absolute;
@@ -815,10 +800,8 @@ margin-top: 240px;
 
 .order-template-ticket h3{
   font-size: 25px;
-=======
+}
 
 .categories li.subcategory {
   margin-left: 10px;
->>>>>>> 8f6a046b8eb9955924fa540b32a41de1473ec29f
->>>>>>> 8f71ee2a2227f455c48f289560c12d94d1310976
 }

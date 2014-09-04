@@ -358,7 +358,7 @@ function exc_theme_remote_image_style($variables) {
 /**
  * Process variables for views-view-table--offers--guide-offers.tpl.php
  */
-function exc_theme_preprocess_views_view_table__offers__guide_offers(&$vars){
+function exc_theme_preprocess_views_view_fields__guide_offers(&$vars){
   foreach ($vars['rows'] as $key => &$value) {
     $id = $vars['view']->result[$key]->excur_offer_id;
 
@@ -399,7 +399,7 @@ function exc_theme_preprocess_views_view_table__offers__guide_offers(&$vars){
 /**
  * Process variables for views-view-table--offers--user-offers.tpl.php
  */
-function exc_theme_preprocess_views_view_table__offers__user_offers(&$vars){
+function exc_theme_preprocess_views_view_fields__user_offers(&$vars){
   foreach ($vars['rows'] as $key => &$value) {
     $id = $vars['view']->result[$key]->excur_offer_id;
 
@@ -535,10 +535,10 @@ function exc_theme_preprocess_excur_user_menu(&$vars) {
   $vars['menu']['news'] = l(t('News and notices'), "user/$uid");
   $vars['menu']['messages'] = l(t('Messages'), 'user/' . $uid . '/messages');
   $vars['menu']['profile'] = l(t('Profile'), 'user/' . $uid . '/edit');
-  $vars['menu']['bookings'] = l(t('My bookings'), '');
+  $vars['menu']['bookings'] = l(t('My bookings'), 'user/' .$uid. '/bookings');
   if (!empty($account->roles[EXCUR_USER_ROLE_GUIDE_ID])) {
     $vars['menu']['offers'] = l(t('My offers'), '');
-    $vars['menu']['orders'] = l(t('My orders '), '');
+    $vars['menu']['orders'] = l(t('My orders '),'user/' .$uid. '/order');
   }
 }
 
@@ -567,4 +567,22 @@ function exc_theme_preprocess_excur_user_edit(&$vars) {
  */
 function exc_theme_preprocess_excur_user_profile_form(&$vars){
 
+}
+
+/**
+ * Process variables for excur-user-bookings.tpl.php
+ */
+function exc_theme_preprocess_excur_user_bookings(&$vars){
+  $account = $vars['user'];
+  $vars['user_menu'] = excur_user_menu($account);
+  $vars['bookings'] = views_embed_view('offers', 'user_offers');
+}
+
+/**
+ * Process variables for excur-user-order.tpl.php
+ */
+function exc_theme_preprocess_excur_user_order(&$vars){
+  $account = $vars['user'];
+  $vars['user_menu'] = excur_user_menu($account);
+  $vars['order'] = views_embed_view('offers', 'guide_offers');
 }

@@ -18,6 +18,22 @@ function excur_menu() {
     'access arguments' => array('administer site configuration'),
   );
 
+  $items['user/%user/bookings'] = array(
+    'title' => 'Bookings',
+    'page callback' => 'excur_user_bookings',
+    'page arguments' => array(1),
+    'access callback' => 'excur_user_page_access',
+    'access arguments' => array(1),
+  );
+
+  $items['user/%user/order'] = array(
+    'title' => 'Orders',
+    'page callback' => 'excur_user_order',
+    'page arguments' => array(1),
+    'access callback' => 'excur_user_page_access',
+    'access arguments' => array(1),
+  );
+
   return $items;
 }
 
@@ -86,8 +102,28 @@ function excur_theme() {
     'template' => 'excur-profile-form',
     'render element' => 'form',
   );
+  $theme['excur_user_bookings'] = array(
+    'template' => 'excur-user-bookings',
+  );
+  $theme['excur_user_order'] = array(
+    'template' => 'excur-user-order',
+  );
 
   return $theme;
+}
+
+/**
+ * Page callback user/%user/bookings
+ */
+function excur_user_bookings($account){
+  return theme('excur_user_bookings',array($account));
+}
+
+/**
+ * Page callback user/%user/order
+ */
+function excur_user_order($account){
+  return theme('excur_user_order',array($account));
 }
 
 /**
