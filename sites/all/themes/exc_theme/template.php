@@ -359,7 +359,7 @@ function exc_theme_remote_image_style($variables) {
  * Process variables for views-view-table--offers--guide-offers.tpl.php
  */
 function exc_theme_preprocess_views_view_fields__guide_offers(&$vars){
-  foreach ($vars['rows'] as $key => &$value) {
+ foreach ($vars['rows'] as $key => &$value) {
     $id = $vars['view']->result[$key]->excur_offer_id;
 
     switch ($value['status']) {
