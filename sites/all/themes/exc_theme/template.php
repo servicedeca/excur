@@ -573,7 +573,8 @@ function exc_theme_preprocess_excur_user_profile_form(&$vars){
  * Process variables for excur-user-bookings.tpl.php
  */
 function exc_theme_preprocess_excur_user_bookings(&$vars){
-  $account = $vars['user'];
+  $account = $vars['account'];
+
   $vars['user_menu'] = excur_user_menu($account);
   $vars['bookings'] = views_embed_view('offers', 'user_offers');
 }
@@ -582,7 +583,8 @@ function exc_theme_preprocess_excur_user_bookings(&$vars){
  * Process variables for excur-user-order.tpl.php
  */
 function exc_theme_preprocess_excur_user_order(&$vars){
-  $account = $vars['user'];
+  $account = $vars['account'];
+
   $vars['user_menu'] = excur_user_menu($account);
-  $vars['order'] = views_embed_view('offers', 'guide_offers');
+  $vars['order'] = views_embed_view('offers', 'guide_offers', $account->uid);
 }

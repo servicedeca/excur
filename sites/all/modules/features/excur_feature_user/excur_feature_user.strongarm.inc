@@ -191,7 +191,7 @@ function excur_feature_user_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'user_email_verification';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['user_email_verification'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -320,22 +320,16 @@ function excur_feature_user_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'user_mail_status_activated_body';
-  $strongarm->value = '[user:name], 
+  $strongarm->value = '[user:name],
 
-Ваша учётная запись на сайте «[site:name]» активирована.
+Your account at [site:name] has been activated.
 
-Теперь Вы можете войти на сайт, щёлкнув по следующей ссылке, или скопировав её в адресную строку браузера:
+You will be able to log in to [site:login-url] in the future using:
 
-[user:one-time-login-url] 
+username: [user:name]
+password: your password.
 
-Эта одноразовая ссылка для входа на сайт ведёт на страницу задания своего пароля.
-
-После установки пароля войти на сайт можно на странице [site:login-url], введя:
-
-пользователь: [user:name]
-пароль: ваш пароль 
-
--- Команда сайта «[site:name]»';
+-- [site:name] team';
   $export['user_mail_status_activated_body'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -349,7 +343,7 @@ function excur_feature_user_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'user_mail_status_activated_subject';
-  $strongarm->value = 'Детали учётной записи [user:name] на сайте «[site:name]» (одобрено)';
+  $strongarm->value = 'Детали учётной записи [user:name] на сайте «[site:name]»';
   $export['user_mail_status_activated_subject'] = $strongarm;
 
   $strongarm = new stdClass();

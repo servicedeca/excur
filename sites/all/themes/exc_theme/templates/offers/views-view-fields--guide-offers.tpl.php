@@ -1,7 +1,6 @@
-<?php print $fields['field_image']->handler->original_value; ?>
-<?php print $fields['title']->handler->original_value; ?>
-<?php print $fields['field_name_1']->handler->original_value; ?>
-<?php print $fields['id']->handler->original_value; ?>
-<?php print $fields['status']->handler->original_value; ?>
-<?php print $fields['data']->handler->original_value; ?>
-<?php print $row->field_field_guide[0]['raw']->entity->field_image;?>
+<?php print $fields['field_image']->content; ?>
+<?php print $fields['title']->content; ?>
+<?php print $fields['field_name_1']->content; ?>
+<?php print $fields['id']->content; ?>
+<?php print $fields['status']->content; ?>
+<?php print $fields['data']->content; ?>
