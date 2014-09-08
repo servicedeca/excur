@@ -40,6 +40,7 @@
           </div>
           <div class="panel-body">
             <?php print render($form['venue']); ?>
+            <?php print render($form['time']); ?>
             <?php print render($form['language']); ?>
           </div>
         </div>

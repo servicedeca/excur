@@ -359,7 +359,7 @@ function exc_theme_remote_image_style($variables) {
  * Process variables for views-view-table--offers--guide-offers.tpl.php
  */
 function exc_theme_preprocess_views_view_fields__guide_offers(&$vars){
- foreach ($vars['rows'] as $key => &$value) {
+  foreach ($vars['rows'] as $key => &$value) {
     $id = $vars['view']->result[$key]->excur_offer_id;
 
     switch ($value['status']) {
@@ -507,6 +507,7 @@ function exc_theme_preprocess_pay_template(&$vars){
     'tourist_email' => $offer->tourist_email,
     'tourist_phone' => $offer->tourist_phone,
     'venue' => $offer->venue,
+    'time' => $offer->start_time,
   );
 
   $vars['image'] = theme('image', array(
@@ -537,7 +538,7 @@ function exc_theme_preprocess_excur_user_menu(&$vars) {
   $vars['menu']['profile'] = l(t('Profile'), 'user/' . $uid . '/edit');
   $vars['menu']['bookings'] = l(t('My bookings'), 'user/' .$uid. '/bookings');
   if (!empty($account->roles[EXCUR_USER_ROLE_GUIDE_ID])) {
-    $vars['menu']['offers'] = l(t('My offers'), '');
+    $vars['menu']['offers'] = l(t('My offers'), 'user/' .$uid. '/offer');
     $vars['menu']['orders'] = l(t('My orders '),'user/' .$uid. '/order');
   }
 }
@@ -588,3 +589,15 @@ function exc_theme_preprocess_excur_user_order(&$vars){
   $vars['user_menu'] = excur_user_menu($account);
   $vars['order'] = views_embed_view('offers', 'guide_offers', $account->uid);
 }
+
+/**
+ * Process variables for excur-user-order.tpl.php
+ */
+function exc_theme_preprocess_excur_user_offers(&$vars){
+  $account = $vars['account'];
+
+  $vars['user_menu'] = excur_user_menu($account);
+  $vars['offer'] = views_embed_view('content', 'guide_service', $account->uid);
+}
+
+

@@ -34,6 +34,14 @@ function excur_menu() {
     'access arguments' => array(1),
   );
 
+  $items['user/%user/offer'] = array(
+    'title' => 'Offers',
+    'page callback' => 'excur_user_offers',
+    'page arguments' => array(1),
+    'access callback' => 'excur_user_page_access',
+    'access arguments' => array(1),
+  );
+
   return $items;
 }
 
@@ -108,6 +116,9 @@ function excur_theme() {
   $theme['excur_user_order'] = array(
     'template' => 'excur-user-order',
   );
+  $theme['excur_user_offers'] = array(
+    'template' => 'excur-user-offers',
+  );
 
   return $theme;
 }
@@ -124,6 +135,20 @@ function excur_user_bookings($account) {
     cache_set("excur_user_bookings_$account->uid", $data);
   }
 
+  return $data;
+}
+
+/**
+ * Page callback user/%user/offer
+ */
+function excur_user_offers($account) {
+  if ($cache = cache_get("excur_user_offers_$account->uid")) {
+    $data = $cache->data;
+  }
+  else {
+    $data = theme('excur_user_offers', array('account' => $account));
+    cache_set("excur_user_offers_$account->uid", $data);
+  }
   return $data;
 }
 

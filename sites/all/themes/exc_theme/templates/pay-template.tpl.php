@@ -65,6 +65,7 @@
           </div>
           <div class="panel-body">
             <h3><i class="fa fa-map-marker"></i>&nbsp&nbsp&nbsp<b><?php print t('Venue');?>:</b>&nbsp<?php print $offer['venue'] ?></h3>
+            <h3><i class="fa fa-clock-o"></i>&nbsp&nbsp&nbsp<b><?php print t('Start time  ');?>:</b>&nbsp<?php print $offer['time'] ?></h3>
             <h3><i class="fa fa-language"></i>&nbsp&nbsp<b><?php print t('Language');?>:</b>&nbsp<?php print $offer['language'] ?></h3>
           </div>
         </div>
