@@ -138,6 +138,18 @@ function exc_theme_preprocess_views_view_table(&$vars) {
 }
 
 /**
+ * Process variables for views-view-fields.tpl.php.
+ */
+function exc_theme_preprocess_views_view_fields(&$vars) {
+  if (isset($vars['theme_hook_suggestion'])) {
+    $function = 'exc_theme_preprocess_' . $vars['theme_hook_suggestion'];
+    if (function_exists($function)) {
+      $function($vars);
+    }
+  }
+}
+
+/**
  * Process variables for views-view-field--term--city--name-field.tpl.php.
  */
 function exc_theme_preprocess_views_view_field__term__city__name_field(&$vars) {
@@ -561,13 +573,6 @@ function exc_theme_preprocess_excur_user_edit(&$vars) {
 
   $vars['user_menu'] = excur_user_menu($account);
   $vars['form'] = drupal_get_form('user_profile_form', $account);
-}
-
-/**
- * Process variables for excur-user-profile-form.tpl.php
- */
-function exc_theme_preprocess_excur_user_profile_form(&$vars){
-
 }
 
 /**
