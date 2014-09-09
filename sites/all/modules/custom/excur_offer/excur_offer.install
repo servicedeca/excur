@@ -321,7 +321,6 @@ function excur_offer_update_7004() {
   }
 }
 
-
 /**
  * Implements hook_update_N().
  * Add new start_time field.
