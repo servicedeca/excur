@@ -51,6 +51,7 @@ features[field_instance][] = node-service-field_included
 features[field_instance][] = node-service-field_languages
 features[field_instance][] = node-service-field_offer
 features[field_instance][] = node-service-field_private_place
+features[field_instance][] = node-service-field_private_time
 features[field_instance][] = node-service-field_reservation
 features[field_instance][] = node-service-field_reservation_rules
 features[field_instance][] = node-service-field_slider_images

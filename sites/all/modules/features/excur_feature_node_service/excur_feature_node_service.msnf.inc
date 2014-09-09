@@ -136,6 +136,7 @@ function excur_feature_node_service_msnf_step_info() {
       0 => 'field_currency',
       1 => 'field_offer',
       2 => 'field_start_time',
+      3 => 'field_private_time',
     ),
     'format_type' => 'default',
     'format_settings' => array(

@@ -53,6 +53,7 @@ features[field_base][] = field_offer_title
 features[field_base][] = field_percentage
 features[field_base][] = field_phone
 features[field_base][] = field_private_place
+features[field_base][] = field_private_time
 features[field_base][] = field_rating
 features[field_base][] = field_reservation
 features[field_base][] = field_reservation_rules
