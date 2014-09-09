@@ -328,14 +328,11 @@ function excur_offer_update_7004() {
  */
 function excur_offer_update_7005() {
   $field = array(
-    'description' => 'start time.',
+    'description' => 'Start time.',
     'type' => 'varchar',
     'length' => 255,
     'not null' => TRUE,
   );
 
   db_add_field('excur_offer', 'start_time', $field);
-  db_update('excur_offer')
-    ->fields(array('status' => EXCUR_OFFER_CONFIRMED))
-    ->execute();
 }
