@@ -368,9 +368,9 @@ function exc_theme_remote_image_style($variables) {
 }
 
 /**
- * Process variables for views-view-table--offers--guide-offers.tpl.php
+ * Process variables for views-view-fields--offers--guide-offers.tpl.php
  */
-function exc_theme_preprocess_views_view_fields__guide_offers(&$vars){
+function exc_theme_preprocess_views_view_fields__offers__guide_offers(&$vars){
   foreach ($vars['rows'] as $key => &$value) {
     $id = $vars['view']->result[$key]->excur_offer_id;
 
@@ -409,9 +409,9 @@ function exc_theme_preprocess_views_view_fields__guide_offers(&$vars){
 }
 
 /**
- * Process variables for views-view-table--offers--user-offers.tpl.php
+ * Process variables for views-view-fields--offers--guide-offers.tpl.php
  */
-function exc_theme_preprocess_views_view_fields__user_offers(&$vars){
+function exc_theme_preprocess_views_view_fields__offers__user_offers(&$vars){
   foreach ($vars['rows'] as $key => &$value) {
     $id = $vars['view']->result[$key]->excur_offer_id;
 
