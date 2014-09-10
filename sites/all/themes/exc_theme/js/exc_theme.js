@@ -114,7 +114,7 @@
         var $this = $(this);
         var id = $this.data('id');
         $.get('/excur/offer/confirm/' + $this.data('id'), function(html) {
-          $("#content_confirm" + id).html(html);
+          $(".content_confirm" + id).html(html);
         });
       });
 
@@ -125,7 +125,7 @@
         var id = $this.data('id');
 
         $.get('/excur/offer/reject/' + $this.data('id'), function(html) {
-            $("#content_confirm" + id).html(html);
+            $(".content_confirm" + id).html(html);
         });
       });
     }

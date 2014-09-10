@@ -142,13 +142,13 @@ function excur_user_bookings($account) {
  * Page callback user/%user/offer
  */
 function excur_user_offers($account) {
-  if ($cache = cache_get("excur_user_offers_$account->uid")) {
+ /* if ($cache = cache_get("excur_user_offers_$account->uid")) {
     $data = $cache->data;
-  }
-  else {
+  }*/
+ // else {
     $data = theme('excur_user_offers', array('account' => $account));
-    cache_set("excur_user_offers_$account->uid", $data);
-  }
+ /*   cache_set("excur_user_offers_$account->uid", $data);
+  }*/
   return $data;
 }
 
@@ -156,14 +156,12 @@ function excur_user_offers($account) {
  * Page callback user/%user/order
  */
 function excur_user_order($account) {
-  if ($cache = cache_get("excur_user_order_$account->uid")) {
-    $data = $cache->data;
-  }
-  else {
-    $data = theme('excur_user_order', array('account' => $account));
-    cache_set("excur_user_order_$account->uid", $data);
-  }
-
+ // if ($cache = cache_get("excur_user_order_$account->uid")) {
+  //  $data = $cache->data;
+  //}
+  //else {
+     $data = theme('excur_user_order', array('account' => $account));
+  //  cache_set("excur_user_order_$account->uid", $data);
   return $data;
 }
 

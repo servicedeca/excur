@@ -73,18 +73,6 @@
         </div>
       </div>
     <?php endif; ?>
-    <?php if (!empty($content['field_cancellation'])): ?>
-      <div class="span4">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h2 class="meeting"><?php print t('Cancellation') . ': '; ?></h2>
-          </div>
-          <div class="panel-body">
-            <?php print render($content['field_cancellation'][0]['entity']['field_collection_item']); ?>
-          </div>
-        </div>
-      </div>
-    <?php endif; ?>
   </div>
   <h2 id="reservation" class="node-description">
     <?php print t('Reservation'); ?>

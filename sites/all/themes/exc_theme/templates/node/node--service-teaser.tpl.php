@@ -36,6 +36,9 @@
         <i class="flag flag-<?php print $lang; ?>"></i>
       <?php endforeach; ?>
     </div>
+    <div class="tag">
+      <?php print $book; ?>
+    </div>
   </div>
   <div class="span1 guide">
     <div class="img-border">

@@ -205,6 +205,7 @@ function exc_theme_preprocess_node__service_teaser(&$vars) {
   );
 
   $vars['read_more'] = l('<i class="fa fa-search"></i>' . t('Read more'), "node/$node->nid", array('html' => TRUE));
+  $vars['book'] = l(t('book'), "node/$node->nid", array('html' => TRUE));
 
   $price = excur_currency_lowest_price($node);
   if (!empty($_COOKIE['excur_currency']) && $_COOKIE['excur_currency'] != EXCUR_CURRENCY_DEFAULT) {
@@ -371,96 +372,72 @@ function exc_theme_remote_image_style($variables) {
  * Process variables for views-view-fields--offers--guide-offers.tpl.php
  */
 function exc_theme_preprocess_views_view_fields__offers__guide_offers(&$vars){
+  $path_image = $vars['row']->field_field_image[0]['raw']['uri'];
+  $vars['image'] = theme('image', array(
+    'path' => $path_image,
+    'width' => '150px',
+    'height' => '150px',
+  ));
+
+  $vars['title'] = $vars['fields']['title']->content;
+  $vars['guide'] = $vars['fields']['field_name_1']->content;
+  $vars['id'] = $vars['fields']['id']->content;
+  $vars['data'] = $vars['fields']['data']->content;
+  $nid = $vars['row']->node_excur_offer_nid;
   $id = $vars['row']->excur_offer_id;
+  $vars['details'] = l(t('details'),'excur/offer/pay/'. $nid, array('query' => array('id' => $id)));
+
   $value = $vars['row']->excur_offer_status;
-  
-  if($value == EXCUR_OFFER_NOT_CONFIRMED ){
-    $vars['fields']['status']->content = '<div class="content_confirm' . $id . '">';
-    $vars['fields']['status']->content .= t('Awaiting confirmation');
-    $vars['fields']['status']->content .= '<br/>';
-    $vars['fields']['status']->content .= l(t('Confirm'), '#', array(
-      'external' => TRUE,
-      'attributes' => array(
-        'class' => array('confirm-order'),
-        'data-id' => $id,
-      )
-    ));
-    $vars['fields']['status']->content .= '<br/>';
-    $vars['fields']['status']->content .= l(t('Reject'), '#', array(
-      'external' => TRUE,
-      'attributes' => array(
-        'class' => array('confirm-reject'),
-        'data-id' => $id,
-      )
-    ));
-    $vars['fields']['status']->content .= '</div>';
-  }
-  else{
-    die('else');
-  }
-  /*switch ($value) {
+  switch ($value){
     case EXCUR_OFFER_NOT_CONFIRMED:
-      $value['status'] = '<div class="content_confirm' . $id . '">';
-      $value['status'] .= t('Awaiting confirmation');
-      $value['status'] .= '<br/>';
-      $value['status'] .= l(t('Confirm'), '#', array(
+      $vars['fields']['status']->content = '<div class="content_confirm' . $id . '">';
+      $vars['fields']['status']->content .= t('Awaiting confirmation');
+      $vars['fields']['status']->content .= '<br/>';
+      $vars['fields']['status']->content .= l(t('Confirm'), '#', array(
         'external' => TRUE,
         'attributes' => array(
           'class' => array('confirm-order'),
           'data-id' => $id,
         )
       ));
-      $value['status'] .= '<br/>';
-      $value['status'] .= l(t('Reject'), '#', array(
+      $vars['fields']['status']->content .= '<br/>';
+      $vars['fields']['status']->content .= l(t('Reject'), '#', array(
         'external' => TRUE,
         'attributes' => array(
           'class' => array('confirm-reject'),
           'data-id' => $id,
         )
       ));
-      $value['status'] .= '</div>';
+      $vars['fields']['status']->content .= '</div>';
       break;
-
     case EXCUR_OFFER_CONFIRMED:
-      $value['status'] = '<div id="content_confirm"' . $id . '">' . t('Confirmed') . '</div>';
+      $value['status'] = '<div class="content_confirm"' . $id . '">' . t('Confirmed') . '</div>';
       break;
-
     case EXCUR_OFFER_REJECTED:
       $value['status'] = '<div id="content_confirm"' . $id . '">' . t('Rejected') . '</div>';
       break;
-  }*/
+  }
 }
 
 /**
  * Process variables for views-view-fields--offers--guide-offers.tpl.php
  */
 function exc_theme_preprocess_views_view_fields__offers__user_offers(&$vars){
- /* foreach ($vars['rows'] as $key => &$value) {
-    $id = $vars['view']->result[$key]->excur_offer_id;
-
-    switch ($value['status']) {
-      case EXCUR_OFFER_NOT_CONFIRMED:
-        $value['status'] = '<div id="content_confirm' . $id . '">' . t('Awaiting confirmation') . '</div>';
-        break;
-
-      case EXCUR_OFFER_CONFIRMED:
-        $value['status'] = '<div id="content_confirm' . $id . '">' . t('Confirmed');
-        $value['status'] .= '<br/>';
-        $value['status'] .= l(t('Pay'), '#', array(
-          'external' => TRUE,
-          'attributes' => array(
-            'class' => array('pay-order'),
-            'data-id' => $id,
-          )
-        ));
-        $value['status'] .= '</div>';
-        break;
-
-      case EXCUR_OFFER_REJECTED:
-        $value['status'] = '<div id="content_confirm' . $id . '">' . t('Rejected') . '</div>';
-        break;
-    }
-  }*/
+  $path_image = $vars['row']->field_field_image[0]['raw']['uri'];
+  $vars['image'] = theme('image', array(
+    'path' => $path_image,
+    'width' => '150px',
+    'height' => '150px',
+  ));
+  $vars['title'] = $vars['fields']['title']->content;
+  $vars['guide'] = $vars['fields']['field_name']->content;
+  $vars['id'] = $vars['fields']['id']->content;
+  $vars['data'] = $vars['fields']['date']->content;
+  $vars['status'] = $vars['fields']['status']->content;
+  $nid = $vars['row']->node_excur_offer_nid;
+  $id = $vars['row']->excur_offer_id;
+  $vars['guide_image'] = $vars['fields']['field_image_1']->content;
+  $vars['details'] = l(t('details'),'excur/offer/pay/'. $nid, array('query' => array('id' => $id)));
 }
 
 /**
