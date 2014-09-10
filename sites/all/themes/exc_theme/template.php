@@ -371,8 +371,8 @@ function exc_theme_remote_image_style($variables) {
  * Process variables for views-view-fields--offers--guide-offers.tpl.php
  */
 function exc_theme_preprocess_views_view_fields__offers__guide_offers(&$vars){
-  $id = $vars['fields']['id']->handler->original_value;
-  $value = $vars['fields']['status']->handler->original_value;
+  $id = $vars['row']->excur_offer_id;
+  $value = $vars['row']->excur_offer_status;
   
   if($value == EXCUR_OFFER_NOT_CONFIRMED ){
     $vars['fields']['status']->content = '<div class="content_confirm' . $id . '">';
