@@ -371,48 +371,71 @@ function exc_theme_remote_image_style($variables) {
  * Process variables for views-view-fields--offers--guide-offers.tpl.php
  */
 function exc_theme_preprocess_views_view_fields__offers__guide_offers(&$vars){
-  foreach ($vars['rows'] as $key => &$value) {
-    $id = $vars['view']->result[$key]->excur_offer_id;
-
-    switch ($value['status']) {
-      case EXCUR_OFFER_NOT_CONFIRMED:
-        $value['status'] = '<div id="content_confirm' . $id . '">';
-        $value['status'] .= t('Awaiting confirmation');
-        $value['status'] .= '<br/>';
-        $value['status'] .= l(t('Confirm'), '#', array(
-          'external' => TRUE,
-          'attributes' => array(
-            'class' => array('confirm-order'),
-            'data-id' => $id,
-          )
-        ));
-        $value['status'] .= '<br/>';
-        $value['status'] .= l(t('Reject'), '#', array(
-          'external' => TRUE,
-          'attributes' => array(
-            'class' => array('confirm-reject'),
-            'data-id' => $id,
-          )
-        ));
-        $value['status'] .= '</div>';
-        break;
-
-      case EXCUR_OFFER_CONFIRMED:
-        $value['status'] = '<div id="content_confirm"' . $id . '">' . t('Confirmed') . '</div>';
-        break;
-
-      case EXCUR_OFFER_REJECTED:
-        $value['status'] = '<div id="content_confirm"' . $id . '">' . t('Rejected') . '</div>';
-        break;
-    }
+  $id = $vars['fields']['id']->handler->original_value;
+  $value = $vars['fields']['status']->handler->original_value;
+  
+  if($value == EXCUR_OFFER_NOT_CONFIRMED ){
+    $vars['fields']['status']->content = '<div class="content_confirm' . $id . '">';
+    $vars['fields']['status']->content .= t('Awaiting confirmation');
+    $vars['fields']['status']->content .= '<br/>';
+    $vars['fields']['status']->content .= l(t('Confirm'), '#', array(
+      'external' => TRUE,
+      'attributes' => array(
+        'class' => array('confirm-order'),
+        'data-id' => $id,
+      )
+    ));
+    $vars['fields']['status']->content .= '<br/>';
+    $vars['fields']['status']->content .= l(t('Reject'), '#', array(
+      'external' => TRUE,
+      'attributes' => array(
+        'class' => array('confirm-reject'),
+        'data-id' => $id,
+      )
+    ));
+    $vars['fields']['status']->content .= '</div>';
   }
+  else{
+    die('else');
+  }
+  /*switch ($value) {
+    case EXCUR_OFFER_NOT_CONFIRMED:
+      $value['status'] = '<div class="content_confirm' . $id . '">';
+      $value['status'] .= t('Awaiting confirmation');
+      $value['status'] .= '<br/>';
+      $value['status'] .= l(t('Confirm'), '#', array(
+        'external' => TRUE,
+        'attributes' => array(
+          'class' => array('confirm-order'),
+          'data-id' => $id,
+        )
+      ));
+      $value['status'] .= '<br/>';
+      $value['status'] .= l(t('Reject'), '#', array(
+        'external' => TRUE,
+        'attributes' => array(
+          'class' => array('confirm-reject'),
+          'data-id' => $id,
+        )
+      ));
+      $value['status'] .= '</div>';
+      break;
+
+    case EXCUR_OFFER_CONFIRMED:
+      $value['status'] = '<div id="content_confirm"' . $id . '">' . t('Confirmed') . '</div>';
+      break;
+
+    case EXCUR_OFFER_REJECTED:
+      $value['status'] = '<div id="content_confirm"' . $id . '">' . t('Rejected') . '</div>';
+      break;
+  }*/
 }
 
 /**
  * Process variables for views-view-fields--offers--guide-offers.tpl.php
  */
 function exc_theme_preprocess_views_view_fields__offers__user_offers(&$vars){
-  foreach ($vars['rows'] as $key => &$value) {
+ /* foreach ($vars['rows'] as $key => &$value) {
     $id = $vars['view']->result[$key]->excur_offer_id;
 
     switch ($value['status']) {
@@ -437,7 +460,7 @@ function exc_theme_preprocess_views_view_fields__offers__user_offers(&$vars){
         $value['status'] = '<div id="content_confirm' . $id . '">' . t('Rejected') . '</div>';
         break;
     }
-  }
+  }*/
 }
 
 /**
