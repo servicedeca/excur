@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Feature - Sitemap feature.
+ */
+
+include_once 'excur_feature_sitemap.features.inc';
