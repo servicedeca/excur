@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Feature - CT Special offer feature.
+ */
+
+include_once 'excur_feature_node_special_offer.features.inc';
