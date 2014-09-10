@@ -133,6 +133,10 @@ DirectoryIndex index.php index.html index.htm
     RewriteRule \.css\.gz$ - [T=text/css,E=no-gzip:1]
     RewriteRule \.js\.gz$ - [T=text/javascript,E=no-gzip:1]
 
+    <FilesMatch "\.(woff|ttf|svg)*$">
+      Header set Access-Control-Allow-Origin: "*"
+    </FilesMatch>
+
     <FilesMatch "(\.js\.gz|\.css\.gz)$">
       # Serve correct encoding type.
       Header set Content-Encoding gzip

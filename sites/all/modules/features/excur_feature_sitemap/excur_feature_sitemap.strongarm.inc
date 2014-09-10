@@ -14,7 +14,7 @@ function excur_feature_sitemap_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'xmlsitemap_base_url';
-  $strongarm->value = 'http://excur.loc';
+  $strongarm->value = 'http://excursionline.ru';
   $export['xmlsitemap_base_url'] = $strongarm;
 
   $strongarm = new stdClass();
