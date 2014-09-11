@@ -749,8 +749,16 @@ margin-top: 240px;
 
 }
 
+#edit-skip{
+  display: none;
+}
+
 .pass{
   dispaly:block;
+  display: none;
+}
+
+.password-suggestions .description{
   display: none;
 }
 
@@ -759,7 +767,7 @@ margin-top: 240px;
 }
 
 .form-item-mail .description{
-  display: none;
+  display: none;  
 }
 .field-widget-date-popup legend{
   display: none;
