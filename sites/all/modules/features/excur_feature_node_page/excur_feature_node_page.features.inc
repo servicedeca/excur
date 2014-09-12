@@ -21,11 +21,12 @@ function excur_feature_node_page_node_info() {
     'page' => array(
       'name' => t('Страница'),
       'base' => 'node_content',
-      'description' => t('Use <em>basic pages</em> for your static content, such as an \'About us\' page.'),
+      'description' => t('Страница — это документ, который используется для страниц с редко изменяемой информацией. Например, таких страниц как «О сайте» или «Наш адрес». По умолчанию, документы этого типа не выводятся на первую страницу сайта и их комментирование отключено.'),
       'has_title' => '1',
       'title_label' => t('Заголовок'),
       'help' => '',
     ),
   );
+  drupal_alter('node_info', $items);
   return $items;
 }

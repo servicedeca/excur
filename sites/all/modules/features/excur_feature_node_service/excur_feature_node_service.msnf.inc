@@ -61,12 +61,11 @@ function excur_feature_node_service_msnf_step_info() {
     'weight' => '100',
     'children' => array(
       0 => 'field_start_place',
-      1 => 'field_cancellation',
-      2 => 'field_excluded',
-      3 => 'field_included',
-      4 => 'field_reservation',
-      5 => 'field_reservation_rules',
-      6 => 'field_private_place',
+      1 => 'field_excluded',
+      2 => 'field_included',
+      3 => 'field_reservation',
+      4 => 'field_reservation_rules',
+      5 => 'field_private_place',
     ),
     'format_type' => 'default',
     'format_settings' => array(

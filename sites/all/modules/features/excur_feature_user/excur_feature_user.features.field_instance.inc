@@ -19,7 +19,7 @@ function excur_feature_user_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => 'Прочитайте условия соглашения <a href=http://excur.loc/ru/content/usloviya-soglasheniya-41 target="_blank">тут</a>',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -31,7 +31,7 @@ function excur_feature_user_field_default_field_instances() {
     ),
     'entity_type' => 'user',
     'field_name' => 'field_agreement',
-    'label' => 'Принимаю',
+    'label' => 'Я принимаю условия <a href=http://excur.loc/ru/content/usloviya-soglasheniya target="_blank">пользовательского соглашения</a>',
     'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -364,7 +364,7 @@ function excur_feature_user_field_default_field_instances() {
     'bundle' => 'user',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Перечислите языки, которыми вы владеете',
+    'description' => 'Перечислите через запятую языки, которыми вы владеете например "Русский, Английский"',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -406,7 +406,7 @@ function excur_feature_user_field_default_field_instances() {
     'bundle' => 'user',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Введите ФИО на родном языке',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -544,18 +544,18 @@ function excur_feature_user_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Введите ФИО на родном языке');
   t('Город');
   t('Дата рождения');
   t('О себе');
-  t('Перечислите языки, которыми вы владеете');
-  t('Принимаю');
-  t('Прочитайте условия соглашения <a href=http://excur.loc/ru/content/usloviya-soglasheniya-41 target="_blank">тут</a>');
+  t('Перечислите через запятую языки, которыми вы владеете например "Русский, Английский"');
   t('Рейтинг');
   t('Родной язык');
   t('Сертифицированный');
   t('Телефон');
   t('ФИО');
   t('Фото');
+  t('Я принимаю условия <a href=http://excur.loc/ru/content/usloviya-soglasheniya target="_blank">пользовательского соглашения</a>');
   t('Языки');
 
   return $field_instances;

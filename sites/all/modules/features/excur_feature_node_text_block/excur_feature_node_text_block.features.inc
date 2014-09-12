@@ -27,5 +27,6 @@ function excur_feature_node_text_block_node_info() {
       'help' => '',
     ),
   );
+  drupal_alter('node_info', $items);
   return $items;
 }

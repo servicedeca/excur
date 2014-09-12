@@ -27,5 +27,6 @@ function excur_feature_node_slider_node_info() {
       'help' => '',
     ),
   );
+  drupal_alter('node_info', $items);
   return $items;
 }

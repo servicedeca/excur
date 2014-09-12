@@ -48,13 +48,6 @@ function excur_feature_rabbit_hole_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'rh_node_action_page';
-  $strongarm->value = '0';
-  $export['rh_node_action_page'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'rh_node_action_service';
   $strongarm->value = '0';
   $export['rh_node_action_service'] = $strongarm;
@@ -104,23 +97,9 @@ function excur_feature_rabbit_hole_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'rh_node_redirect_page';
-  $strongarm->value = '';
-  $export['rh_node_redirect_page'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'rh_node_redirect_response_main_page_slider';
   $strongarm->value = '301';
   $export['rh_node_redirect_response_main_page_slider'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'rh_node_redirect_response_page';
-  $strongarm->value = '301';
-  $export['rh_node_redirect_response_page'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

@@ -563,7 +563,8 @@ a:hover {
 /* --------------------------------------------------------	*/
 
 .btn,
-#edit-actions input[type=submit] {
+#edit-actions input[type=submit],
+#edit-actions a {
   color:#fff;
   background:#a5a8aa;
   height:48px;
@@ -577,7 +578,8 @@ a:hover {
 }
 
 .btn:hover,
-#edit-actions input[type=submit]:hover {
+#edit-actions input[type=submit]:hover,
+#edit-actions a:hover {
   color:#fff;
   background:#08c;
   border-bottom:2px solid #0065A9;
