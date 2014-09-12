@@ -813,3 +813,7 @@ margin-top: 240px;
 .categories li.subcategory {
   margin-left: 10px;
 }
+
+.form-item-field-start-date-und-0-value-date label {
+  display: none;
+}

@@ -231,14 +231,64 @@ function excur_offer_offer_form($form, &$form_state, $offer) {
  * Implements hook_form_FORM_ID_alter().
  */
 function excur_offer_form_privatemsg_new_alter(&$form, &$form_state) {
+  global $user;
 
+  if (isset($user->roles[EXCUR_USER_ROLE_GUIDE_ID])) {
+    $form['actions']['special_offer']['#markup'] = l(t('Special offer'), 'node/add/special-offer', array(
+      'query' => array(
+        'user' => 1,
+        'thread' => $form['thread_id']['#value'],
+      )
+    ));
+    $form['actions']['special_offer']['#weight'] = 50;
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function excur_offer_form_special_offer_node_form_alter(&$form, &$form_state) {
+  $text = t('Meeting date');
+  $required = ' <span class="form-required" title="' . t('This field is required.') . '">*</span>';
+  $form['field_start_date']['#prefix'] = '<label for="edit-field-start-date-und-0-value-datepicker-popup-0">' . $text . $required . '</label>';
+
+  if (!empty($_GET['user']) && is_numeric($_GET['user'])) {
+    $form['field_user'][LANGUAGE_NONE]['#value'] = $_GET['user'];
+    $form['field_user']['#prefix'] = '<div class="element-hidden">';
+    $form['field_user']['#suffix'] = '</div>';
+  }
+
+  $form['#submit'][] = 'excur_offer_form_special_offer_node_form_submit';
+}
+
+/**
+ * Custom submit for special_offer_node_form form.
+ */
+function excur_offer_form_special_offer_node_form_submit(&$form, &$form_state) {
+  global $user;
+
+  $thread = privatemsg_thread_load($_GET['thread']);
+  $message = new StdClass();
+  $message->body = t('Special offer to you. You can pay for it at !this_page.', array(
+    '!this_page' => l(t('this page'), 'excur/offer/pay/12'),
+  ));
+  $message->subject = $thread['subject'];
+  $recipient = new StdClass();
+  $recipient->type = 'user';
+  $recipient->recipient = $_GET['user'];
+  $message->recipients = array($recipient);
+  $message->author = $user;
+  $message->timestamp = REQUEST_TIME;
+  $message->format = 'filtered_html';
+  $message->has_token = FALSE;
+  $message->thread_id = $thread['thread_id'];
+  _privatemsg_send($message);
 }
 
 /**
  * Form builder for offer form.
  */
 function excur_offer_pay_form($form, &$form_state, $offer) {
-
   $form['submit'] = array(
     '#type' => 'submit',
     '#value' => t('Pay'),
@@ -246,8 +296,6 @@ function excur_offer_pay_form($form, &$form_state, $offer) {
       'class' => array('btn', 'btnpay'),
     ),
   );
- // $form['#submit'][] = 'excur_offer_offer_form_submit';
- // $form['#validate'][] = 'excur_offer_offer_form_validate';
 
   return $form;
 }
