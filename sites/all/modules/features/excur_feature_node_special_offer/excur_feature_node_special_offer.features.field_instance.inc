@@ -90,7 +90,7 @@ function excur_feature_node_special_offer_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 6,
+      'weight' => 8,
     ),
   );
 
@@ -131,7 +131,7 @@ function excur_feature_node_special_offer_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -168,7 +168,7 @@ function excur_feature_node_special_offer_field_default_field_instances() {
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'max' => '',
-      'min' => 0,
+      'min' => 1,
       'prefix' => '',
       'suffix' => '',
       'user_register_form' => FALSE,
@@ -178,7 +178,7 @@ function excur_feature_node_special_offer_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 8,
+      'weight' => 6,
     ),
   );
 
@@ -199,7 +199,7 @@ function excur_feature_node_special_offer_field_default_field_instances() {
           'thousand_separator' => ' ',
         ),
         'type' => 'number_integer',
-        'weight' => 6,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -246,7 +246,7 @@ function excur_feature_node_special_offer_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 4,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -279,7 +279,7 @@ function excur_feature_node_special_offer_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 5,
+      'weight' => 2,
     ),
   );
 
@@ -320,7 +320,7 @@ function excur_feature_node_special_offer_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -361,7 +361,7 @@ function excur_feature_node_special_offer_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -379,7 +379,7 @@ function excur_feature_node_special_offer_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 8,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
