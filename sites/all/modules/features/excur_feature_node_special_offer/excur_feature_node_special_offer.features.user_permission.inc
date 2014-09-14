@@ -13,7 +13,9 @@ function excur_feature_node_special_offer_user_default_permissions() {
   // Exported permission: 'create special_offer content'.
   $permissions['create special_offer content'] = array(
     'name' => 'create special_offer content',
-    'roles' => array(),
+    'roles' => array(
+      'Гид' => 'Гид',
+    ),
     'module' => 'node',
   );
 
@@ -27,7 +29,9 @@ function excur_feature_node_special_offer_user_default_permissions() {
   // Exported permission: 'delete own special_offer content'.
   $permissions['delete own special_offer content'] = array(
     'name' => 'delete own special_offer content',
-    'roles' => array(),
+    'roles' => array(
+      'Гид' => 'Гид',
+    ),
     'module' => 'node',
   );
 
@@ -41,7 +45,9 @@ function excur_feature_node_special_offer_user_default_permissions() {
   // Exported permission: 'edit own special_offer content'.
   $permissions['edit own special_offer content'] = array(
     'name' => 'edit own special_offer content',
-    'roles' => array(),
+    'roles' => array(
+      'Гид' => 'Гид',
+    ),
     'module' => 'node',
   );
 
