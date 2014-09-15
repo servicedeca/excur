@@ -16,6 +16,7 @@ features[image][] = 1170x555
 features[image][] = 170x130
 features[image][] = 238x238
 features[image][] = 300x170
+features[image][] = 470x470
 features[image][] = 70x70
 features[image][] = 870x653
 features[user_permission][] = administer image styles

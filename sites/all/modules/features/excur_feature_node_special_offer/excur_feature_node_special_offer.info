@@ -23,6 +23,7 @@ features[field_instance][] = node-special_offer-field_city
 features[field_instance][] = node-special_offer-field_country
 features[field_instance][] = node-special_offer-field_currency
 features[field_instance][] = node-special_offer-field_duration
+features[field_instance][] = node-special_offer-field_guide
 features[field_instance][] = node-special_offer-field_languages
 features[field_instance][] = node-special_offer-field_people_count
 features[field_instance][] = node-special_offer-field_price

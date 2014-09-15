@@ -261,14 +261,19 @@ function excur_offer_form_privatemsg_new_alter(&$form, &$form_state) {
  * Implements hook_form_FORM_ID_alter().
  */
 function excur_offer_form_special_offer_node_form_alter(&$form, &$form_state) {
+  global $user;
+
   $text = t('Meeting date');
   $required = ' <span class="form-required" title="' . t('This field is required.') . '">*</span>';
   $form['field_start_date']['#prefix'] = '<label for="edit-field-start-date-und-0-value-datepicker-popup-0">' . $text . $required . '</label>';
 
   if (!empty($_GET['user']) && is_numeric($_GET['user'])) {
     $form['field_user'][LANGUAGE_NONE]['#value'] = $_GET['user'];
+    $form['field_guide'][LANGUAGE_NONE]['#value'] = $user->uid;
     $form['field_user']['#prefix'] = '<div class="element-hidden">';
     $form['field_user']['#suffix'] = '</div>';
+    $form['field_guide']['#prefix'] = '<div class="element-hidden">';
+    $form['field_guide']['#suffix'] = '</div>';
   }
 }
 
@@ -299,7 +304,7 @@ function excur_offer_node_insert($node) {
 /**
  * Form builder for offer form.
  */
-function excur_offer_pay_form($form, &$form_state, $offer) {
+function excur_offer_pay_form() {
   $form['submit'] = array(
     '#type' => 'submit',
     '#value' => t('Pay'),
@@ -444,7 +449,6 @@ function excur_offer_order_form_submit(&$form, &$form_state) {
   global $language;
   $id = (int) $_GET['id'];
   $nid = excur_offer_load($id)->nid;
-  $lang = 'Русский';
 
   foreach ($form['language']['#options'] as $key => $value) {
     if ($form['language']['#value'] == $key) {

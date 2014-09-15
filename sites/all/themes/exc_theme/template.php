@@ -464,11 +464,9 @@ function exc_theme_preprocess_order_template(&$vars){
   }
 
   if (!empty($node->field_image)) {
-    $vars['image'] = theme('image', array(
+    $vars['image'] = theme('image_style', array(
+      'style_name' => '470x470',
       'path' => $node->field_image[LANGUAGE_NONE][0]['uri'],
-      'width' => '95%',
-      'height' => '95%',
-      'attributes' => array('class' => array('imgrn')),
     ));
   }
 
@@ -497,16 +495,23 @@ function exc_theme_preprocess_order_template(&$vars){
 }
 
 /**
- * Process variables for order-template.tpl.php
+ * Process variables for pay-template.tpl.php
  */
 function exc_theme_preprocess_pay_template(&$vars){
   $offer = excur_offer_load($_GET['id']);
   $node = node_load($offer->nid);
   $city = taxonomy_term_load($node->field_city[LANGUAGE_NONE][0]['target_id']);
   $country = taxonomy_term_load($city->field_country[LANGUAGE_NONE][0]['target_id']);
-  $guide = user_load($node->field_guide[LANGUAGE_NONE][0]['target_id']);
-  $path_image = $node->field_image[LANGUAGE_NONE][0]['uri'];
-  $guide_image_path = $guide->field_image[LANGUAGE_NONE][0]['uri'];
+  $guide = !empty($node->field_guide)
+    ? user_load($node->field_guide[LANGUAGE_NONE][0]['target_id'])
+    : user_load($node->uid);
+
+  if (!empty($node->field_image)) {
+    $vars['image'] = theme('image_style', array(
+      'style_name' => '470x470',
+      'path' => $node->field_image[LANGUAGE_NONE][0]['uri'],
+    ));
+  }
 
   $vars['offer'] = array(
     'title' => $node->title,
@@ -532,20 +537,8 @@ function exc_theme_preprocess_pay_template(&$vars){
     'time' => $offer->start_time,
   );
 
-  $vars['image'] = theme('image', array(
-    'path' => $path_image,
-    'width' => '95%',
-    'height' => '95%',
-    'attributes' => array('class' => array('imgrn')),
-  ));
-
-  $vars['guide_image'] = theme('image', array(
-    'path' => $guide_image_path,
-    'width' => '95%',
-    'height' => '95%',
-    'attributes' => array('class' => array('imggd')),
-  ));
-  $vars['form'] = drupal_get_form('excur_offer_pay_form', $vars['order']);
+  $vars['guide_image'] = excur_guide_logo($guide, '238x238', array('class' => array('imggd')));
+  $vars['form'] = drupal_get_form('excur_offer_pay_form');
 }
 
 /**

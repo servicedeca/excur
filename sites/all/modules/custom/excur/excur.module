@@ -110,7 +110,7 @@ function excur_theme() {
     'template' => 'excur-profile-form',
     'render element' => 'form',
   );
-  $theme['excur_user_login'] = array(
+  $theme['excur_user_login_form'] = array(
     'file' => 'theme.inc',
     'path' => drupal_get_path('module', 'excur') . '/theme',
     'template' => 'excur-user-login-form',
@@ -152,27 +152,14 @@ function excur_user_bookings($account) {
  * Page callback user/%user/offer
  */
 function excur_user_offers($account) {
- /* if ($cache = cache_get("excur_user_offers_$account->uid")) {
-    $data = $cache->data;
-  }*/
- // else {
-    $data = theme('excur_user_offers', array('account' => $account));
- /*   cache_set("excur_user_offers_$account->uid", $data);
-  }*/
-  return $data;
+  return theme('excur_user_offers', array('account' => $account));;
 }
 
 /**
  * Page callback user/%user/order
  */
 function excur_user_order($account) {
- // if ($cache = cache_get("excur_user_order_$account->uid")) {
-  //  $data = $cache->data;
-  //}
-  //else {
-     $data = theme('excur_user_order', array('account' => $account));
-  //  cache_set("excur_user_order_$account->uid", $data);
-  return $data;
+  return theme('excur_user_order', array('account' => $account));
 }
 
 /**
@@ -278,7 +265,7 @@ function excur_form_user_profile_form_alter(&$form, &$form_state) {
  */
 function excur_form_user_login_alter(&$form, &$form_state) {
   $form['actions']['submit']['#attributes']['class'][] = 'btn';
-  $form['#theme'][] = 'excur_user_login';
+  $form['#theme'][] = 'excur_user_login_form';
 }
 
 /**
@@ -583,4 +570,26 @@ function excur_categories_by_city($city) {
  */
 function excur_user_menu($account) {
   return theme('excur_user_menu', array('account' => $account));
+}
+
+/**
+ *
+ */
+function excur_guide_logo($account, $style, $attributes = array()) {
+  if (!empty($account->field_image[LANGUAGE_NONE])) {
+    $path = $account->field_image[LANGUAGE_NONE][0]['uri'];
+    $theming = 'image_style';
+  }
+  else {
+    $path = EXCUR_FRONT_THEME_PATH . '/images/user-default.png';
+    $theming = 'remote_image_style';
+  }
+
+  return theme($theming, array(
+    'style_name' => $style,
+    'path' => $path,
+    'alt' => $account->field_name[LANGUAGE_NONE][0]['safe_value'],
+    'title' => $account->field_name[LANGUAGE_NONE][0]['safe_value'],
+    'attributes' => $attributes,
+  ));
 }
