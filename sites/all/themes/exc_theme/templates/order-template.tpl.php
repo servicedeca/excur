@@ -3,16 +3,27 @@
     <h1><?php print $offer['title'];?></h1>
   </div>
   <div class="row-fluid">
-    <div class="span5 order-template-image">
-      <?php print render($image);?>
-    </div>
-    <div class="span4 order-template-info">
-      <h2><?php print $offer['offer'];?></h2>
-      <h3><i class="fa fa-th-list"></i>&nbsp<b><?php print t('Order number');?>:</b>&nbsp<?php print $offer['id'];?></h3>
-      <h3><i class="fa fa-calendar"></i>&nbsp<b><?php print t('Date');?>:</b>&nbsp<?php print $offer['date'];?></h3>
-      <h3><i class="fa fa-clock-o"></i>&nbsp<b><?php print t('Duration');?>:</b>&nbsp<?php print $offer['duration'];?></h3>
-      <h3><i class="fa fa-map-marker">&nbsp&nbsp</i><b><?php print $offer['city_name'];?> <?php print $offer['country_name'];?></h3>
-    </div>
+    <?php if (!empty($image)): ?>
+      <div class="span5 order-template-image">
+        <?php print render($image);?>
+      </div>
+      <div class="span4 order-template-info">
+        <h2><?php print $offer['offer'];?></h2>
+        <h3><i class="fa fa-th-list"></i>&nbsp<b><?php print t('Order number');?>:</b>&nbsp<?php print $offer['id'];?></h3>
+        <h3><i class="fa fa-calendar"></i>&nbsp<b><?php print t('Date');?>:</b>&nbsp<?php print $offer['date'];?></h3>
+        <h3><i class="fa fa-clock-o"></i>&nbsp<b><?php print t('Duration');?>:</b>&nbsp<?php print $offer['duration'];?></h3>
+        <h3><i class="fa fa-map-marker">&nbsp&nbsp</i><b><?php print $offer['city_name'];?> <?php print $offer['country_name'];?></h3>
+      </div>
+    <?php else: ?>
+      <div class="span4 order-template-info">
+        <h2><?php print $offer['offer'];?></h2>
+        <h3><i class="fa fa-th-list"></i>&nbsp<b><?php print t('Order number');?>:</b>&nbsp<?php print $offer['id'];?></h3>
+        <h3><i class="fa fa-calendar"></i>&nbsp<b><?php print t('Date');?>:</b>&nbsp<?php print $offer['date'];?></h3>
+        <h3><i class="fa fa-clock-o"></i>&nbsp<b><?php print t('Duration');?>:</b>&nbsp<?php print $offer['duration'];?></h3>
+        <h3><i class="fa fa-map-marker">&nbsp&nbsp</i><b><?php print $offer['city_name'];?> <?php print $offer['country_name'];?></h3>
+      </div>
+      <div class="span5 order-template-image"></div>
+    <?php endif; ?>
     <div class="span3 order-template-gid">
       <div class="pane-content">
         <div class="side-block guide-block">

@@ -321,8 +321,12 @@ function excur_offer_order_form($form, $form_state, $order) {
   $node = node_load($order->nid);
   $start_place = $node->field_start_place['ru'][0]['value'];
   $start_time = $node->field_start_time['ru'][0]['value'];
-  $private_place = $order->field_private_place[LANGUAGE_NONE][0]['value'];
-  $private_time = $order->field_private_time[LANGUAGE_NONE][0]['value'];
+  $private_place = !empty($order->field_private_place)
+    ? $order->field_private_place[LANGUAGE_NONE][0]['value']
+    : 0;
+  $private_time = !empty($order->field_private_time)
+    ? $order->field_private_time[LANGUAGE_NONE][0]['value']
+    : 0;
   $language_list = $order->field_languages[LANGUAGE_NONE];
   $data_content = array();
 
@@ -357,17 +361,17 @@ function excur_offer_order_form($form, $form_state, $order) {
       '#title' => t('Meeting point'),
     );
   }
-
-  elseif($private_place == 0){
+  elseif ($private_place == 0) {
     $form['venue'] = array(
       '#type'	=> 'textfield',
       '#title' => t('Meeting point'),
       '#default_value' => $start_place,
       '#attributes' => array(
         'disabled' => 'disabled',
-        )
-      );
+      ),
+    );
   }
+
   $form['language'] = array(
     '#type' => 'select',
     '#title' => t('Language'),
