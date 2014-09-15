@@ -1,0 +1,611 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>Main Page</title>
+     <link href="css/bootstrap.css" rel="stylesheet">
+     
+     <link href="css/dropdowns-enhancement.min.css" rel="stylesheet">
+     <link href="css/animate.css" rel="stylesheet">
+     <link href="css/flags.css" rel="stylesheet">
+    <link href="css/owl.carousel.css" rel="stylesheet">
+    <link href="css/owl.theme.css" rel="stylesheet">
+    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet">
+     <script src="http://code.jquery.com/jquery-latest.js"></script>
+     <script src="js/bootstrap.js"></script>
+     <script src="js/dropdowns-enhancement.js"></script>
+     <script src="js/init.js"></script>
+     <script src="js/touch.js"></script>
+    <script src="js/owl.carousel.js"></script>
+
+     
+     
+     <script>
+          $(document).ready(function(){
+       $(".bread-crumbs-mainland"), $(".bread-crumbs-mainland").hover(function(){
+           $(this).css("background","#26686D");
+          $(".bread-crumbsleft").css("background","#26686D");
+          $(".bread-crumbsleft").css("transition","all 0.44s ease");
+            });
+          });
+         
+             $(document).ready(function(){
+       $(".bread-crumbs-mainland"), $(".bread-crumbs-mainland").mouseout(function(){
+          $(this).css("background","#2A707A");
+          $(".bread-crumbsleft").css("background","#2A707A");
+          $(".bread-crumbsleft").css("transition","all 0.44s ease");
+            });
+        });
+     </script>
+         
+         
+  </head>
+  <body>
+        <div id="wrapper">
+
+                            <div class="navbar navbar-default navbar-fixed-top mediamin" >
+		    <div class="container menu">		    
+			    <div class="navbar-header page-scroll">
+                    <!-- Button for smallest screens -->
+                    <button type="button" class="navbar-toggle mediatoogle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span> 
+                        <span class="icon-bar"></span>
+                     </button>
+                    <a class="navbar-brand" href="index.html"><img src="image/minilogo.png" class="minilogo"></a>     
+			    </div>
+			<div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" >
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+                       <form class="navbar-form navbar-left topsearch" role="search">
+                        <div class="form-group">
+                          <input type="text" class="form-control search headsearch" placeholder="Поиск">
+                        </div>
+                      </form>
+                  </li>
+                  	<li>
+				        <button type="button" class="padd phone" data-toggle="popover" data-placement="bottom" title="Телефон горячей линии" data-content="8 913 004 4549"><i class="fa fa-phone fa-2x"></i></button>
+				</li>
+                  <li>
+                    <div class="curent1">
+                        <button class="padd" data-label-placement="" data-toggle="dropdown" class="btn btn-default dropdown-toggle mybutt"><i class="data-label"><img src="image/RU.png"></i>
+                        </button>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <input type="radio" id="ex7_1" name="ex7" value="1" checked="">
+                        <label for="ex7_1"><i class="data-label"><img src="image/RU.png"></i>Русский</label>
+                      </li>
+                      <li>
+                        <input type="radio" id="ex7_2" name="ex7" value="2">
+                        <label for="ex7_2"><i class="data-label"><img src="image/GB.png"></i>English</label>
+                      </li>
+                      <li>
+                        <input type="radio" id="ex7_3" name="ex7" value="3">
+                        <label for="ex7_3"><i class="data-label"><img src="image/CN.png"></i>China</label>
+                      </li>
+                    </ul>
+                  </div>
+					</li>	
+                    <li>
+                      <div class="curent">
+                        <button class="padd" data-label-placement="" data-toggle="dropdown" class="btn btn-default dropdown-toggle"><i class="data-label"><img src="image/dol.png"></i></button>
+                        <ul class="dropdown-menu">
+                          <li>
+                            <input type="radio" id="ex8_1" name="ex8" value="1" checked="">
+                            <label for="ex_1"><i class="data-label"><img src="image/dol.png"></i>Доллар</label>
+                          </li>
+                          <li>
+                            <input type="radio" id="ex8_2" name="ex8" value="2">
+                            <label for="ex8_2"><i class="data-label"><img src="image/EUR.png"></i>EUR</label>
+                          </li>
+                          <li>
+                            <input type="radio" id="ex8_3" name="ex8" value="3">
+                            <label for="ex8_3"><i class="data-label"><img src="image/yan.png"></i>Yaun</label>
+                          </li>
+                        </ul>
+                        </div>
+				    </li>
+					<li><a class="btn bursize" data-toggle="modal" data-target=".bs-example-modal-md"><div class="enter">Войти или <br>Создать аккаунт</div></a></li>
+				</ul>
+			 </div><!--/.nav-collapse -->
+		   </div>
+	   </div>
+          
+            <!-- MODAL -->
+                   
+                    <div class="modal fade bs-example-modal-md" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-md">
+                            <div class="modal-content">
+                                <ul  id="menureg" style="margin-bottom: 15px;">
+                                      <a href="#homes" data-toggle="tab"  ><li   class="active leftreg">Регистрация</li></a>
+                                      <a href="#profile" data-toggle="tab"  ><li class="leftright">Вход</li></a>
+                                </ul>
+                                <ul class="modal-social list-unstyled clearfix">
+                                    <li><a href="#" class="btn btn-primary btn-fb yy">Facebook</a></li>
+                                    <li><a href="#" class="btn btn-primary btn-goo yy">Google +</a></li>
+                                </ul>
+                            <div id="myTabContent" class="tab-content">
+                              <div class="tab-pane fade active in" id="homes">
+                                  <div class="row formreg">
+                                        <div class="col-sm-12 p">
+                                                <input type="text" class="form-control for" placeholder="E-mail">
+                                        </div>
+                                        <div class="col-sm-12 p">
+                                                <input type="text" class="form-control for" placeholder="Ф.И.О.">
+                                        </div>
+                                         <div class="col-sm-12 p">
+                                                <input type="text" class="form-control for " placeholder="Родной язык">
+                                          </div>
+                                          <div class="col-sm-12 p">
+                                                <div class="checkbox for">
+                                                      <label>
+                                                            <input type="checkbox" value="">
+                                                            Я принимаю условия соглашения.
+                                                      </label>
+                                                  </div>
+                                            </div>
+                                           <div class="col-sm-12 p">
+                                                <button type="button" class="btn btn-primary btn-lg btn-block forbut">Зарегистрировать</button>
+                                            </div>
+                                    </div>
+                              </div>
+                              <div class="tab-pane fade" id="profile">
+                                     <div class="row formenter">
+                                         <div class="col-sm-12 p">
+                                            <input type="text" class="form-control for" placeholder="Логин">
+                                         </div>
+                                        <div class="col-sm-12 p">
+                                            <input type="text" class="form-control for" placeholder="Пароль">
+                                        </div>
+                                        <div class="col-sm-12 p1">
+                                            <button type="button" class="btn btn-primary btn-lg btn-block forbut">Войти
+                                           </button>
+                                            </div>
+                                      </div>
+                                  </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- END MODAL -->
+   
+            <section class="bread-crumbsleft">
+            </section>
+            <section class="bread-crumbsright">
+            </section>
+            <section class="bread-crumbs-content">
+                <a href="Europe.html">
+                     <div class="col-xs-3 bread-crumbs-mainland">
+                        <p class="bread-crumbs-index">Континент</p>
+                        <p class="bread-crumbs-name">Европа</p>
+                        <img class="crumbs-mainland-icon" src="image/crumbEUR.png">
+                    </div>
+                </a>    
+                    <div class="col-xs-6 bread-crumbs-country">
+                        <p class="bread-crumbs-index">Страна</p>
+                        <p class="bread-crumbs-name-main">Чехия</p>
+                    </div>
+                    <div class="col-xs-3 bread-crumbs-city">
+                        <p class="bread-crumbs-index">Город</p>
+                            <div id="dd" class="wrapper-dropdown-5 ddcity" tabindex="1">Выберите город
+                                <ul class="dropdown">
+                                    <option><li><a href="#">Прага (1022)</a></li></option>
+                                    <li><a href="#">Карловы Вары (62)</a></li>
+                                    <li><a href="#">Брно (19)</a></li>
+                                    <li><a href="#">Кутна-Гора (13)</a></li>
+                                    <li><a href="#">Чешский-Крумлов (13)</a></li>
+                                    <li><a href="#">Карлштейн (10)</a></li>
+                                    <li><a href="#">Марианске-Лазне (6)</a></li>
+                                    <li><a href="#">Детенице (4)</a></li>
+                                    <li><a href="#">Мельник (3)</a></li>
+                                    <li><a href="#">Сихров (3)</a></li>
+                                    <li><a href="#">Конописте (3)</a></li>
+                                    <li><a href="#">Глубока-над-Влтавой (2)</a></li>         
+                                    <li><a href="#">Чешски-Штернберк (2)</a></li>
+                                 </ul>
+                            </div>  
+                    </div>
+            </section>
+             <section class="country-useful-info">
+                 <div class="country-usefull-info-content">
+                    <div class="col-xs-3">
+                        <img class="flag-czech">
+                    </div>
+                    <div class="col-xs-9 country-useful-info-text">
+                    <p class="country-useful-info-title">Полезная информация</p>
+     Чешская Республика отличается высокой туристической привлекательностью. Города одной из старейших стран Европейского континента поражают обилием достопримечательностей. Особенно красива чешская столица - замечательные дворцы, храмы, замки Праги вызывают восхищение у туристов. Увлекательные экскурсии  в Чехии позволят побывать вам в Чешском Крумлове и Хебе, славящимися своими замками. Кутна-Гора привлекает привлекает путешественников 
+красивыми средневековыми соборами.
+                   <a class="country-usefull-about" href="#"><img class="iconq">&nbspПодробней</a>
+                    </div>
+                 </div>
+            </section>
+
+  
+   
+        <section class="pop-excur">
+           <h1 class="pop-gid-title">Самые посещяемые экскурсии</h1>
+            <section class="pop-excur-image-line">
+            </section>
+            <section class="pop-excur-info-line">
+            </section>
+            <div class="pop-excur-content">
+                    <div id="owl-demo" class="owl-carousel owl-theme">
+                      <div class="item">
+                            <a href="#">
+                                <img src="image/popexcur1.png" class="pop-excur-image">
+                                <div class="pop-excur-name">Обзорная экскурсия в Праге по старинным места</div>
+                            </a>    
+                            <div class="pop-excur-row">
+                                <div class="col-xs-5 pop-excur-left">Длительность</div>
+                                <div class="col-xs-2 pop-excur-center"><img  src="image/time.png" class="icont"></div>
+                                <div class="col-xs-5 pop-excur-right">10</div>
+                            </div>
+                            <div class="pop-excur-row">   
+                                <div class="col-xs-5 pop-excur-left">Стоимость</div>
+                                <div class="col-xs-2 pop-excur-center"><img  src="image/rub.png"  class="iconv"></div>
+                                <div class="col-xs-5 pop-excur-right">от 165</div>
+                            </div>
+                            <a href="">
+                                <div class="pop-excur-row">
+                                    <div class="col-xs-4 pop-excur-left">Гид</div>
+                                    <div class="col-xs-4 pop-excur-center"><img src="image/minigid.png"  class="img-circle pop-gid-mini-photo"></div>
+                                    <div class="col-xs-4 pop-excur-right-gid">Смитт</div>  
+                                </div>
+                            </a>                         
+                            <div class="pop-excur-row">   
+                                <div class="col-xs-5 pop-excur-left">Язык</div>
+                                <div class="col-xs-7 pop-excur-right"><img  src="image/lang.png" class="iconl"></div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a href="#">
+                                <img src="image/popexcur2.png" class="pop-excur-image">
+                                <div class="pop-excur-name">Обзорная экскурсия в Праге по старинным места</div>
+                            </a>    
+                            <div class="pop-excur-row">
+                                <div class="col-xs-5 pop-excur-left">Длительность</div>
+                                <div class="col-xs-2 pop-excur-center"><img  src="image/time.png" class="icont"></div>
+                                <div class="col-xs-5 pop-excur-right">10</div>
+                            </div>
+                            <div class="pop-excur-row">   
+                                <div class="col-xs-5 pop-excur-left">Стоимость</div>
+                                <div class="col-xs-2 pop-excur-center"><img  src="image/rub.png"  class="iconv"></div>
+                                <div class="col-xs-5 pop-excur-right">от 165</div>
+                            </div>
+                            <a href="">
+                                <div class="pop-excur-row">
+                                    <div class="col-xs-4 pop-excur-left">Гид</div>
+                                    <div class="col-xs-4 pop-excur-center"><img src="image/minigid.png"  class="img-circle pop-gid-mini-photo"></div>
+                                    <div class="col-xs-4 pop-excur-right-gid">Смитт</div>  
+                                </div>
+                            </a>                         
+                            <div class="pop-excur-row">   
+                                <div class="col-xs-5 pop-excur-left">Язык</div>
+                                <div class="col-xs-7 pop-excur-right"><img  src="image/lang.png" class="iconl"></div>
+                            </div>
+                        </div>     
+                        <div class="item">
+                            <a href="#">
+                                <img src="image/popexcur3.png" class="pop-excur-image">
+                                <div class="pop-excur-name">Обзорная экскурсия в Праге по старинным места</div>
+                            </a>    
+                            <div class="pop-excur-row">
+                                <div class="col-xs-5 pop-excur-left">Длительность</div>
+                                <div class="col-xs-2 pop-excur-center"><img  src="image/time.png" class="icont"></div>
+                                <div class="col-xs-5 pop-excur-right">10</div>
+                            </div>
+                            <div class="pop-excur-row">   
+                                <div class="col-xs-5 pop-excur-left">Стоимость</div>
+                                <div class="col-xs-2 pop-excur-center"><img  src="image/rub.png"  class="iconv"></div>
+                                <div class="col-xs-5 pop-excur-right">от 165</div>
+                            </div>
+                            <a href="">
+                                <div class="pop-excur-row">
+                                    <div class="col-xs-4 pop-excur-left">Гид</div>
+                                    <div class="col-xs-4 pop-excur-center"><img src="image/minigid.png"  class="img-circle pop-gid-mini-photo"></div>
+                                    <div class="col-xs-4 pop-excur-right-gid">Смитт</div>  
+                                </div>
+                            </a>                         
+                            <div class="pop-excur-row">   
+                                <div class="col-xs-5 pop-excur-left">Язык</div>
+                                <div class="col-xs-7 pop-excur-right"><img  src="image/lang.png" class="iconl"></div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a href="#">
+                                <img src="image/popexcur1.png" class="pop-excur-image">
+                                <div class="pop-excur-name">Обзорная экскурсия в Праге по старинным места</div>
+                            </a>    
+                            <div class="pop-excur-row">
+                                <div class="col-xs-5 pop-excur-left">Длительность</div>
+                                <div class="col-xs-2 pop-excur-center"><img  src="image/time.png" class="icont"></div>
+                                <div class="col-xs-5 pop-excur-right">10</div>
+                            </div>
+                            <div class="pop-excur-row">   
+                                <div class="col-xs-5 pop-excur-left">Стоимость</div>
+                                <div class="col-xs-2 pop-excur-center"><img  src="image/rub.png"  class="iconv"></div>
+                                <div class="col-xs-5 pop-excur-right">от 165</div>
+                            </div>
+                            <a href="">
+                                <div class="pop-excur-row">
+                                    <div class="col-xs-4 pop-excur-left">Гид</div>
+                                    <div class="col-xs-4 pop-excur-center"><img src="image/minigid.png"  class="img-circle pop-gid-mini-photo"></div>
+                                    <div class="col-xs-4 pop-excur-right-gid">Смитт</div>  
+                                </div>
+                            </a>                         
+                            <div class="pop-excur-row">   
+                                <div class="col-xs-5 pop-excur-left">Язык</div>
+                                <div class="col-xs-7 pop-excur-right"><img  src="image/lang.png" class="iconl"></div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a href="#">
+                                <img src="image/popexcur2.png" class="pop-excur-image">
+                                <div class="pop-excur-name">Обзорная экскурсия в Праге по старинным места</div>
+                            </a>    
+                            <div class="pop-excur-row">
+                                <div class="col-xs-5 pop-excur-left">Длительность</div>
+                                <div class="col-xs-2 pop-excur-center"><img  src="image/time.png" class="icont"></div>
+                                <div class="col-xs-5 pop-excur-right">10</div>
+                            </div>
+                            <div class="pop-excur-row">   
+                                <div class="col-xs-5 pop-excur-left">Стоимость</div>
+                                <div class="col-xs-2 pop-excur-center"><img  src="image/rub.png"  class="iconv"></div>
+                                <div class="col-xs-5 pop-excur-right">от 165</div>
+                            </div>
+                            <a href="">
+                                <div class="pop-excur-row">
+                                    <div class="col-xs-4 pop-excur-left">Гид</div>
+                                    <div class="col-xs-4 pop-excur-center"><img src="image/minigid.png"  class="img-circle pop-gid-mini-photo"></div>
+                                    <div class="col-xs-4 pop-excur-right-gid">Смитт</div>  
+                                </div>
+                            </a>                         
+                            <div class="pop-excur-row">   
+                                <div class="col-xs-5 pop-excur-left">Язык</div>
+                                <div class="col-xs-7 pop-excur-right"><img  src="image/lang.png" class="iconl"></div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a href="#">
+                                <img src="image/popexcur3.png" class="pop-excur-image">
+                                <div class="pop-excur-name">Обзорная экскурсия в Праге по старинным места</div>
+                            </a>    
+                            <div class="pop-excur-row">
+                                <div class="col-xs-5 pop-excur-left">Длительность</div>
+                                <div class="col-xs-2 pop-excur-center"><img  src="image/time.png" class="icont"></div>
+                                <div class="col-xs-5 pop-excur-right">10</div>
+                            </div>
+                            <div class="pop-excur-row">   
+                                <div class="col-xs-5 pop-excur-left">Стоимость</div>
+                                <div class="col-xs-2 pop-excur-center"><img  src="image/rub.png"  class="iconv"></div>
+                                <div class="col-xs-5 pop-excur-right">от 165</div>
+                            </div>
+                            <a href="">
+                                <div class="pop-excur-row">
+                                    <div class="col-xs-4 pop-excur-left">Гид</div>
+                                    <div class="col-xs-4 pop-excur-center"><img src="image/minigid.png"  class="img-circle pop-gid-mini-photo"></div>
+                                    <div class="col-xs-4 pop-excur-right-gid">Смитт</div>  
+                                </div>
+                            </a>                         
+                            <div class="pop-excur-row">   
+                                <div class="col-xs-5 pop-excur-left">Язык</div>
+                                <div class="col-xs-7 pop-excur-right"><img  src="image/lang.png" class="iconl"></div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a href="#">
+                                <img src="image/popexcur1.png" class="pop-excur-image">
+                                <div class="pop-excur-name">Обзорная экскурсия в Праге по старинным места</div>
+                            </a>    
+                            <div class="pop-excur-row">
+                                <div class="col-xs-5 pop-excur-left">Длительность</div>
+                                <div class="col-xs-2 pop-excur-center"><img  src="image/time.png" class="icont"></div>
+                                <div class="col-xs-5 pop-excur-right">10</div>
+                            </div>
+                            <div class="pop-excur-row">   
+                                <div class="col-xs-5 pop-excur-left">Стоимость</div>
+                                <div class="col-xs-2 pop-excur-center"><img  src="image/rub.png"  class="iconv"></div>
+                                <div class="col-xs-5 pop-excur-right">от 165</div>
+                            </div>
+                            <a href="">
+                                <div class="pop-excur-row">
+                                    <div class="col-xs-4 pop-excur-left">Гид</div>
+                                    <div class="col-xs-4 pop-excur-center"><img src="image/minigid.png"  class="img-circle pop-gid-mini-photo"></div>
+                                    <div class="col-xs-4 pop-excur-right-gid">Смитт</div>  
+                                </div>
+                            </a>                         
+                            <div class="pop-excur-row">   
+                                <div class="col-xs-5 pop-excur-left">Язык</div>
+                                <div class="col-xs-7 pop-excur-right"><img  src="image/lang.png" class="iconl"></div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a href="#">
+                                <img src="image/popexcur2.png" class="pop-excur-image">
+                                <div class="pop-excur-name">Обзорная экскурсия в Праге по старинным места</div>
+                            </a>    
+                            <div class="pop-excur-row">
+                                <div class="col-xs-5 pop-excur-left">Длительность</div>
+                                <div class="col-xs-2 pop-excur-center"><img  src="image/time.png" class="icont"></div>
+                                <div class="col-xs-5 pop-excur-right">10</div>
+                            </div>
+                            <div class="pop-excur-row">   
+                                <div class="col-xs-5 pop-excur-left">Стоимость</div>
+                                <div class="col-xs-2 pop-excur-center"><img  src="image/rub.png"  class="iconv"></div>
+                                <div class="col-xs-5 pop-excur-right">от 165</div>
+                            </div>
+                            <a href="">
+                                <div class="pop-excur-row">
+                                    <div class="col-xs-4 pop-excur-left">Гид</div>
+                                    <div class="col-xs-4 pop-excur-center"><img src="image/minigid.png"  class="img-circle pop-gid-mini-photo"></div>
+                                    <div class="col-xs-4 pop-excur-right-gid">Смитт</div>  
+                                </div>
+                            </a>                         
+                            <div class="pop-excur-row">   
+                                <div class="col-xs-5 pop-excur-left">Язык</div>
+                                <div class="col-xs-7 pop-excur-right"><img  src="image/lang.png" class="iconl"></div>
+                            </div>
+                        </div>
+                    </div>
+               
+             </div>
+        </section>
+            
+            <br>
+            <br>
+            <br>
+             <br>
+        
+            
+           <section class="pop-gid">
+              <h3 class="pop-gid-title">Популярные гиды</h3>
+               <div class="pop-gid-content">
+                    <div class="pop-gid-item">
+                        <img src="image/gid1.png"  class="img-circle pop-gid-photo">
+                         <p class="pop-gid-name">Елена</p>
+                    </div>
+                    <div class="pop-gid-item">
+                        <img src="image/gid2.png"  class="img-circle pop-gid-photo">
+                         <p class="pop-gid-name">Вилл</p>
+                    </div>
+                    <div class="pop-gid-item">
+                        <img src="image/gid1.png"  class="img-circle pop-gid-photo">
+                         <p class="pop-gid-name">Александра</p>
+                    </div>
+                    <div class="pop-gid-item">
+                        <img src="image/gid2.png"  class="img-circle pop-gid-photo">
+                         <p class="pop-gid-name">Смитт</p>
+                    </div>
+                    <div class="pop-gid-item">
+                        <img src="image/gid1.png"  class="img-circle pop-gid-photo">
+                         <p class="pop-gid-name">Анна</p>
+                    </div>
+               </div>
+           </section>
+           <section class="pop-gid-line">
+              <a href="">
+                   <h3 class="pop-gid-title-line">Показать всех гидов</h3>
+               </a>
+           </section>
+           
+           
+           
+           
+<br>
+             <br>
+             <br>
+             <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            
+            
+              
+              
+               
+                
+                 <!-- Footer -->
+               
+            <footer class="text-center z-index">
+                <div class="part">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <p class="text_part">ПАРТНЁР</p>
+                            </div>
+                            <div class="col-lg-3">
+                                <p class="text_part">ПАРТНЁР</p>
+                            </div>
+                            <div class="col-lg-3">
+                                <p class="text_part">ПАРТНЁР</p>
+                            </div>
+                            <div class="col-lg-3">
+                                <p class="text_part">ПАРТНЁР</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-above z-index">
+                    <div class="container">
+                        <div class="row">
+                            <div class="footer-col col-md-4">
+                                <h3>Компания</h3>
+                                <p>О проекте<br>О компании<br> Договор<br> Пресса</p>
+                            </div>
+                            <div class="footer-col col-md-4">
+                                <h3>Присоеденяйтесь к нам</h3>
+                                <ul class="list-inline">
+                                    <li>
+                                        <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-vk"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="footer-col col-md-4">
+                                <h3>Помощь</h3>
+                                <p>FAQ<br>Как забронировать<br>С чего начать<br>Служба поддержки<br>Направления</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-below">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                Copyright &copy; Excursionline 2014
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+    </div>    
+    <script>
+    $(document).ready(function() {
+
+      //Sort random function
+      function random(owlSelector){
+        owlSelector.children().sort(function(){
+            return Math.round(Math.random()) - 0.5;
+        }).each(function(){
+          $(this).appendTo(owlSelector);
+        });
+      }
+
+      $("#owl-demo").owlCarousel({
+        navigation: true,
+        navigationText: [
+        "",
+        ""
+        ],
+        //Call beforeInit callback, elem parameter point to $("#owl-demo")
+        beforeInit : function(elem){
+          random(elem);
+        }
+
+      });
+
+    });
+    </script>
+
+
+
+
+
+	 <script src="js/application.js"></script>
+  </body>
+</html>
