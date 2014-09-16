@@ -268,12 +268,13 @@ function excur_form_user_profile_form_alter(&$form, &$form_state) {
   if (!$user->uid == 1 || empty($user->roles[3])) {
     $form['field_certified']['#access'] = FALSE;
   }
-
-  $form['guide'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('Become a guide'),
-    '#default_value' => isset($user->roles[EXCUR_USER_ROLE_GUIDE_ID]) ? TRUE : FALSE,
-  );
+  if(!isset($user->roles[4])){
+    $form['guide'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Become a guide'),
+      '#default_value' => isset($user->roles[EXCUR_USER_ROLE_GUIDE_ID]) ? TRUE : FALSE,
+    );
+  }
 
   $form['actions']['submit']['#attributes']['class'][] = 'btn';
   $form['actions']['cancel']['#attributes']['class'][] = 'btn';
