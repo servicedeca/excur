@@ -814,6 +814,11 @@ margin-top: 240px;
   margin-left: 10px;
 }
 
+.password-suggestions{
+  display: block;
+  display: none;
+}
+
 .form-item-field-start-date-und-0-value-date label {
   display: none;
 }

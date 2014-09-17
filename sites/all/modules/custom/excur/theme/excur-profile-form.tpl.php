@@ -18,15 +18,21 @@
       </div>
       <div class="span5">
         <?php hide($form['guide']);?>
-
+        <?php hide($form['field_image']);?>
         <?php print render($form['account']['name']);?>
-
+        <?php print render($form['account']['mail']);?>
+        <?php print render($form['field_name']);?>
+        <?php print render($form['field_city']);?>
+        <?php print render($form['field_language']);?>
+        <?php print render($form['field_languages']);?>
+        <?php print render($form['field_description']);?>
+        <?php print render($form['field_birthday']);?>
+        <?php print render($form['field_phone']);?>
         <?php print drupal_render_children($form);?>
       </div>
       <div class="span8">
         <?php print render($form['guide']);?>
       </div>
-
     </div>
     <div id="pane2" class="tab-pane">
       <?php print render($form['account']['current_pass'])?>
