@@ -274,7 +274,6 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['relationships']['field_offer_ticket_value']['field'] = 'field_offer_ticket_value';
   $handler->display->display_options['relationships']['field_offer_ticket_value']['relationship'] = 'field_offer_value';
   $handler->display->display_options['relationships']['field_offer_ticket_value']['label'] = 'Билет';
-  $handler->display->display_options['relationships']['field_offer_ticket_value']['required'] = TRUE;
   $handler->display->display_options['relationships']['field_offer_ticket_value']['delta'] = '-1';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Поле: Содержимое: Заголовок */
@@ -289,7 +288,7 @@ function excur_feature_views_views_default_views() {
     'title_class' => '',
   );
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 1;
-  /* Поле: Содержимое: Описание */
+  /* Поле: Содержимое: Текст */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';

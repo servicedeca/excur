@@ -349,7 +349,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 7,
+      'weight' => 16,
     ),
   );
 
@@ -393,7 +393,7 @@ function excur_feature_node_service_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 4,
+      'weight' => 15,
     ),
   );
 
@@ -448,7 +448,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 1,
+      'weight' => 13,
     ),
   );
 
@@ -544,7 +544,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 10,
+      'weight' => 17,
     ),
   );
 
@@ -818,7 +818,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 3,
+      'weight' => 14,
     ),
   );
 
@@ -1293,7 +1293,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 0,
+      'weight' => 12,
     ),
   );
 
