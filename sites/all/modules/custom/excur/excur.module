@@ -77,7 +77,7 @@ function excur_init() {
   if (preg_match('/user\/[0-9]*\/messages/', current_path()) || (isset($_POST['form_id']) && $_POST['form_id'] == 'privatemsg_list')) {
     module_load_include('inc', 'privatemsg', 'privatemsg.pages');
   }
-  elseif (preg_match('/user\/[0-9]*\/edit/', current_path())) {
+  elseif (preg_match('/user\/[0-9]*\/edit/', current_path()) || (isset($_POST['form_id']) && $_POST['form_id'] == 'user_profile_form')) {
     module_load_include('inc', 'user', 'user.pages');
   }
 }
