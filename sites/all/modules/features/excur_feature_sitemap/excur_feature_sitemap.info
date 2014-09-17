@@ -32,7 +32,6 @@ features[variable][] = xmlsitemap_multilingual_x_default
 features[variable][] = xmlsitemap_path
 features[variable][] = xmlsitemap_prefetch_aliases
 features[variable][] = xmlsitemap_rebuild_needed
-features[variable][] = xmlsitemap_regenerate_needed
 features[variable][] = xmlsitemap_settings__active_tab
 features[variable][] = xmlsitemap_settings_node_page
 features[variable][] = xmlsitemap_settings_node_service

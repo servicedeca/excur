@@ -592,7 +592,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'rows' => 3,
       ),
       'type' => 'text_textarea',
-      'weight' => 18,
+      'weight' => 10,
     ),
   );
 
@@ -770,7 +770,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'rows' => 3,
       ),
       'type' => 'text_textarea',
-      'weight' => 19,
+      'weight' => 11,
     ),
   );
 
@@ -882,7 +882,7 @@ function excur_feature_node_service_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Укажите точный адрес места встречи или выберите вариант с забором Клиента из отеля.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -906,8 +906,8 @@ function excur_feature_node_service_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_private_place',
-    'label' => 'Место встречи по требованию',
-    'required' => 0,
+    'label' => 'Место встречи',
+    'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
@@ -915,11 +915,9 @@ function excur_feature_node_service_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(
-        'display_label' => 0,
-      ),
-      'type' => 'options_onoff',
-      'weight' => 5,
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 6,
     ),
   );
 
@@ -932,7 +930,7 @@ function excur_feature_node_service_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Укажите время встречи или выберите вариант когда клиент сам укажет время встречи',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -956,8 +954,8 @@ function excur_feature_node_service_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_private_time',
-    'label' => 'Время встречи по выбору',
-    'required' => 0,
+    'label' => 'Время встречи',
+    'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
@@ -965,11 +963,9 @@ function excur_feature_node_service_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(
-        'display_label' => 0,
-      ),
-      'type' => 'options_onoff',
-      'weight' => 7,
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 6,
     ),
   );
 
@@ -1014,7 +1010,7 @@ function excur_feature_node_service_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 15,
+      'weight' => 8,
     ),
   );
 
@@ -1072,7 +1068,7 @@ function excur_feature_node_service_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 16,
+      'weight' => 9,
     ),
   );
 
@@ -1181,7 +1177,7 @@ function excur_feature_node_service_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_start_place',
-    'label' => 'Место встречи',
+    'label' => 'Адрес',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -1195,7 +1191,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 5,
+      'weight' => 7,
     ),
   );
 
@@ -1204,7 +1200,7 @@ function excur_feature_node_service_field_default_field_instances() {
     'bundle' => 'service',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Укажите время встречи или время забора клиента из отеля',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1228,7 +1224,7 @@ function excur_feature_node_service_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_start_time',
-    'label' => 'Время встречи',
+    'label' => 'Время',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -1242,7 +1238,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -1305,13 +1301,14 @@ function excur_feature_node_service_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('А)Личное подтверждение бронирования- вы получите уведомление о заказе и должны будете подтвердить или отменить заказ, до этого момента бронирование не будет считаться подтвержденным.<br>
 Б)Автоматическое подтверждение заказа - клиент получит подтверждение о заказе сразу после оплаты на Excursiopedia.com. Будьте внимательны! Если Вам требуется подтверждать экскурсии самостоятельно для проверки возможности проведения экскурсии в заказанные даты, выберите другой пункт.');
+  t('Адрес');
   t('Билеты');
   t('Валюта');
   t('Введите название города в котором проводится или начинается экскурсия.');
   t('Введите название предложения, например «Стандартное».');
   t('Введите название, например «Детский*» или «Взрослый».');
+  t('Время');
   t('Время встречи');
-  t('Время встречи по выбору');
   t('Входит в стоимость:');
   t('Вы можете создать несколько предложений, отличающихся по цене, продолжительности и содержанию.');
   t('Вы можете создать несколько типов билетов.');
@@ -1323,7 +1320,6 @@ function excur_feature_node_service_field_default_field_instances() {
   t('Категория');
   t('Максимум за');
   t('Место встречи');
-  t('Место встречи по требованию');
   t('Минимум за');
   t('Название');
   t('Название предложения');
@@ -1336,12 +1332,13 @@ function excur_feature_node_service_field_default_field_instances() {
   t('Продолжительность');
   t('Рекомендуем использовать фотографии размером более 800*600 точек.');
   t('Укажите валюту, в которой отображать стомость услуги, если пользователем не выбрана иная');
-  t('Укажите время встречи или время забора клиента из отеля');
+  t('Укажите время встречи или выберите вариант когда клиент сам укажет время встречи');
   t('Укажите период за который минимально можно забронировать это предложение (Например: минимум за 1 день) и максимальное время вперед когда вы готовы принимать бронирования (Например: максимом на 180 дней вперед).');
   t('Укажите продолжительность в часах, например "2 часа 30 минут"');
   t('Укажите продолжительность, например: «2ч 30 мин».');
   t('Укажите стоимость билета в ранее выбранной валюте.');
   t('Укажите точный адрес или выберите забор Клиента из отеля');
+  t('Укажите точный адрес места встречи или выберите вариант с забором Клиента из отеля.');
   t('Укажите через запятую языки проведения тура, например: "Русский, Английский".');
   t('Укажите через запятую, что входит в стоимость тура.');
   t('Укажите через запятую, что не входит в стоимость тура.');

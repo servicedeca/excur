@@ -49,6 +49,9 @@ function excur_feature_node_service_strongarm() {
         'additional_settings' => array(
           'weight' => '100',
         ),
+        'xmlsitemap' => array(
+          'weight' => '30',
+        ),
       ),
       'display' => array(),
     ),

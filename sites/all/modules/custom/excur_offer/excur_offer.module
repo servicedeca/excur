@@ -283,22 +283,24 @@ function excur_offer_form_special_offer_node_form_alter(&$form, &$form_state) {
 function excur_offer_node_insert($node) {
   global $user;
 
-  $thread = privatemsg_thread_load($_GET['thread']);
-  $message = new StdClass();
-  $message->body = t('Special offer to you. You can pay for it at !this_page.', array(
-    '!this_page' => l(t('this page'), 'excur/special-offer/' . $node->nid),
-  ));
-  $message->subject = $thread['subject'];
-  $recipient = new StdClass();
-  $recipient->type = 'user';
-  $recipient->recipient = $_GET['user'];
-  $message->recipients = array($recipient);
-  $message->author = $user;
-  $message->timestamp = REQUEST_TIME;
-  $message->format = 'filtered_html';
-  $message->has_token = FALSE;
-  $message->thread_id = $thread['thread_id'];
-  _privatemsg_send($message);
+  if ($node->type == 'special_offer') {
+    $thread = privatemsg_thread_load($_GET['thread']);
+    $message = new StdClass();
+    $message->body = t('Special offer to you. You can pay for it at !this_page.', array(
+      '!this_page' => l(t('this page'), 'excur/special-offer/' . $node->nid),
+    ));
+    $message->subject = $thread['subject'];
+    $recipient = new StdClass();
+    $recipient->type = 'user';
+    $recipient->recipient = $_GET['user'];
+    $message->recipients = array($recipient);
+    $message->author = $user;
+    $message->timestamp = REQUEST_TIME;
+    $message->format = 'filtered_html';
+    $message->has_token = FALSE;
+    $message->thread_id = $thread['thread_id'];
+    _privatemsg_send($message);
+  }
 }
 
 /**
