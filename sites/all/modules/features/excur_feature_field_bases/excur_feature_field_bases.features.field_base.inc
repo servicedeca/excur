@@ -1219,7 +1219,7 @@ function excur_feature_field_bases_field_default_field_bases() {
       'tz_handling' => 'none',
     ),
     'translatable' => 0,
-    'type' => 'datestamp',
+    'type' => 'datetime',
   );
 
   // Exported field_base: 'field_start_place'

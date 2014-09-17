@@ -429,7 +429,7 @@ function excur_feature_node_special_offer_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 9,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -459,10 +459,10 @@ function excur_feature_node_special_offer_field_default_field_instances() {
         'input_format_custom' => '',
         'label_position' => 'above',
         'text_parts' => array(),
-        'year_range' => '-0:+0',
+        'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -503,7 +503,7 @@ function excur_feature_node_special_offer_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 5,
+      'weight' => 4,
     ),
   );
 
