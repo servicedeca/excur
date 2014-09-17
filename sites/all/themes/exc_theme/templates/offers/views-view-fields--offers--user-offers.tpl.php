@@ -1,4 +1,6 @@
-<?php print $image;?>
+<?php if (!empty($image)): ?>
+  <?php print $image; ?>
+<?php endif; ?>
 <?php print $title;?>
 <?php print $id;?>
 <?php print $guide; ?>

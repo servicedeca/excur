@@ -35,7 +35,7 @@ function excur_feature_node_service_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'language' => array(
-          'weight' => '12',
+          'weight' => '18',
         ),
         'metatags' => array(
           'weight' => '14',
@@ -48,6 +48,9 @@ function excur_feature_node_service_strongarm() {
         ),
         'additional_settings' => array(
           'weight' => '100',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '30',
         ),
       ),
       'display' => array(),

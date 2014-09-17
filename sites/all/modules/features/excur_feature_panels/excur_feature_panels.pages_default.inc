@@ -150,7 +150,9 @@ function excur_feature_panels_default_page_manager_handlers() {
     $pane->type = 'guide_block';
     $pane->subtype = 'guide_block';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'logic' => 'and',
+    );
     $pane->configuration = array();
     $pane->cache = array(
       'method' => '0',
@@ -162,10 +164,34 @@ function excur_feature_panels_default_page_manager_handlers() {
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 1;
-    $pane->locks = array();
+    $pane->locks = array(
+      'type' => 'none',
+      'regions' => array(
+        'content_right' => 'content_right',
+      ),
+    );
     $pane->uuid = '4ec7b092-ce47-4751-b822-83c3b0498919';
     $display->content['new-4ec7b092-ce47-4751-b822-83c3b0498919'] = $pane;
     $display->panels['content_right'][1] = 'new-4ec7b092-ce47-4751-b822-83c3b0498919';
+    $pane = new stdClass();
+    $pane->pid = 'new-cd777ec3-f99c-4dec-8c03-0755084d6ff4';
+    $pane->panel = 'content_right';
+    $pane->type = 'other_offer_guide';
+    $pane->subtype = 'other_offer_guide';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = 'cd777ec3-f99c-4dec-8c03-0755084d6ff4';
+    $display->content['new-cd777ec3-f99c-4dec-8c03-0755084d6ff4'] = $pane;
+    $display->panels['content_right'][2] = 'new-cd777ec3-f99c-4dec-8c03-0755084d6ff4';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-d618ec66-a8bc-42c1-a7f8-5aaab645a48c';
   $handler->conf['display'] = $display;

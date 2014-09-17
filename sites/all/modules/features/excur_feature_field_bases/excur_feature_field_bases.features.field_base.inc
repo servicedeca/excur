@@ -1051,8 +1051,8 @@ function excur_feature_field_bases_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        0 => '',
-        1 => 'Поставьте галочку если забираете клиента из отеля',
+        0 => 'Клиент самостоятельно укажет название и адрес отеля',
+        1 => 'Указать место встречи',
       ),
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,
@@ -1078,8 +1078,8 @@ function excur_feature_field_bases_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        0 => '',
-        1 => 'Поставьте галочку если клиент сам укажет время встречи',
+        0 => 'Клиент сам укажет время встречи',
+        1 => 'Указать время встречи',
       ),
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,

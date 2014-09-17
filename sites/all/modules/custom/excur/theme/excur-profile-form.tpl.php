@@ -7,18 +7,10 @@
   </ul>
   <div class="tab-content">
     <div id="pane1" class="tab-pane active">
-      <?php hide($form['account']['pass']); ?>
-      <?php hide($form['account']['current_pass'])?>
-      <?php hide($form['locale']); ?>
-      <?php hide($form['timezone']); ?>
-      <?php hide($form['privatemsg']);?>
-      <?php hide($form['actions']);?>
       <div class="span3">
         <?php print render($form['field_image']);?>
       </div>
       <div class="span5">
-        <?php hide($form['guide']);?>
-        <?php hide($form['field_image']);?>
         <?php print render($form['account']['name']);?>
         <?php print render($form['account']['mail']);?>
         <?php print render($form['field_name']);?>
@@ -28,7 +20,6 @@
         <?php print render($form['field_description']);?>
         <?php print render($form['field_birthday']);?>
         <?php print render($form['field_phone']);?>
-        <?php print drupal_render_children($form);?>
       </div>
       <div class="span8">
         <?php print render($form['guide']);?>
@@ -49,4 +40,7 @@
       <?php print render($form['actions']['cancel']);?>
      </div>
   </div>
+</div>
+<div class="element-hidden">
+  <?php print drupal_render_children($form);?>
 </div>

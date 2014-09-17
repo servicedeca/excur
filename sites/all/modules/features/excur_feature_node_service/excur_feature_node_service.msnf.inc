@@ -26,8 +26,9 @@ function excur_feature_node_service_msnf_step_info() {
       2 => 'field_city',
       3 => 'field_duration',
       4 => 'field_languages',
-      5 => 'field_category',
-      6 => 'language',
+      5 => 'field_guide',
+      6 => 'field_category',
+      7 => 'language',
     ),
     'format_type' => 'default',
     'format_settings' => array(
