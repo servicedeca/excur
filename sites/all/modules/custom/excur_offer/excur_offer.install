@@ -134,6 +134,12 @@ function excur_offer_schema() {
         'length' => 255,
         'not null' => TRUE,
       ),
+      'companion' => array(
+        'description' => 'companion.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
     ),
     'primary key' => array('id', 'oid'),
   );

@@ -821,3 +821,6 @@ margin-top: 240px;
 .form-item-field-start-date-und-0-value-date label {
   display: none;
 }
+#guide_other {
+  margin: 0 auto;
+}
