@@ -20,10 +20,11 @@ function excur_guide_other_ctools_content_types() {
 function excur_guide_other_content_type_render($subtype, $conf, $panel_args, $context) {
   $block = new stdClass();
   $node = menu_get_object();
-  $uid = $node->field_guide[LANGUAGE_NONE][0]['target_id'];
+
   $block->content = '<h1>' . t('Other offers guide') . '</h1>';
-  $block->content .= views_embed_view('content', 'guide_other', $uid);
+  $block->content .= views_embed_view('content', 'guide_other', $node->field_guide[LANGUAGE_NONE][0]['target_id']);
   $block->content .= theme('excur_guide_other');
+
   return $block;
 }
 
