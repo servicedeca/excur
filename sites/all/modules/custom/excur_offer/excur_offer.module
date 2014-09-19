@@ -127,7 +127,7 @@ function excur_offer_confirmed($offer) {
     'offer' => $offer,
   ));
   excur_offer_send_mail($account->mail, $message);
-  print t('Confirmed');
+  print "<div class='order-card-status-inner-confirm'>". t('Confirmed')."</div>";
   drupal_exit();
 }
 
@@ -139,7 +139,7 @@ function excur_offer_rejected($offer) {
   $account = user_load($offer->uid);
   $message = t('Guide has rejected your order.');
   excur_offer_send_mail($account->mail, $message);
-  print t('Rejected');
+  print "<div class='order-card-status-inner-confirm'>".t('Rejected')."</div>";
   drupal_exit();
 }
 

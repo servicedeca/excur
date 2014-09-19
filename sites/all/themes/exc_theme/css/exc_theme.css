@@ -580,22 +580,13 @@ h2.panel-title {
   font-size: 15px;
 }
 
-.order-template-content-bottom{
-  height:650px;
-}
-
-@media(max-width: 768px){
-  .order-template-content-bottom{
-    height:1300px;
-  }
-}
 .order-template-content-bottom {
-  height: 620px;
+  height: 700px;
 }
 
 @media (max-width: 768px) {
   .order-template-content-bottom {
-    height: 1100px;
+    height: 1300px;
   }
 }
 
@@ -714,7 +705,7 @@ margin-top: 240px;
 }
 
 .pay-template-content-bottom {
-  height: 500px;
+  height: 580px;
 }
 
 @media (max-width: 768px) {
@@ -773,10 +764,9 @@ margin-top: 240px;
   display: none;
 }
 .order-template-ticket{
-  border:1px solid black;
   position: absolute;
   width: 470px;
-  margin-top: -300px;
+  margin-top: -350px;
   margin-left: 500px;
 }
 
@@ -798,6 +788,7 @@ margin-top: 240px;
   .order-template-ticket{
     width: 97%;
     margin-left:0px;
+    margin-top: -230px;
   }
 }
 
@@ -820,4 +811,172 @@ margin-top: 240px;
 
 .form-item-field-start-date-und-0-value-date label {
   display: none;
+}
+
+.booking-card{
+  border: 2px solid #cbcfd1;
+  height: 135px;
+  border-radius: 15px;
+  margin-left: 15px;
+}
+
+@media (max-width:1209px){
+  .booking-card{
+    height:155px;
+  }
+}
+
+@media (max-width:768px){
+  .booking-card{
+    height:380px;
+  }
+}
+
+.booking-card-body h2{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  max-height: 10px;
+  overflow: hidden;
+}
+
+.booking-card-body h3{
+  padding-top: 0px;
+  padding-bottom:0px; 
+}
+
+@media (max-width:768px){
+  .booking-card-body{
+    padding-left: 10px;
+  }
+}
+
+.b-c-image{
+  padding: 10px;
+}
+
+.booking-card-guide img{
+  padding: 5px;
+  width: 40px;
+  border-radius: 500px;
+  margin-left: -5px;
+
+}
+
+.booking-card-guide-name{
+  margin-top: 12px;
+  margin-left: 55px;
+  position: absolute;
+}
+
+.booking-card-status{
+  margin-left: 5px;
+  height: 135px;
+  text-align: right;
+}
+
+@media (max-width:768px){
+  .booking-card-status{
+    text-align: left;   
+  }
+}
+
+.booking-card-status-inner{
+  font-weight: bold;
+  color:#333;
+  padding-top: 10px;
+  font-size: 20px;
+}
+
+.order-card-status-inner{
+  font-weight: bold;
+  color:#333;
+  padding-top: 10px;
+  font-size: 20px;
+  text-align: right;
+  padding-bottom: 25px;
+}
+
+@media (max-width:768px){
+  .order-card-status-inner{
+    text-align: left;
+  }
+}
+
+
+.order-card-status-inner-confirm{
+  font-weight: bold;
+  color:#333;
+  padding-top: 10px;
+  font-size: 20px;
+  text-align: right;
+  padding-bottom: 66px;
+}
+
+@media (max-width:768px){
+  .order-card-status-inner-confirm{
+    text-align: left;
+  }
+}
+
+.booking-card-button{
+  margin-top: 55px; 
+  float:right;
+  margin-right: 0px;
+  background: #49afcd;
+}
+
+
+@media (max-width:768px){
+  .booking-card-button{
+    float:left;
+    margin-top: 0px;   
+  }
+}
+
+.confirm-order{
+  background: #51a351;
+  height: 20px;
+  color: #fff;
+  padding: 2px 7px 2px 7px;
+  margin-left: -108px;
+  margin-top: -40px;
+  float: right;
+}
+
+@media (max-width:768px){
+  .confirm-order{
+    float:left;
+    margin-left: 0px;
+  margin-top: -40px;   
+  }
+}
+
+.confirm-reject{  
+  background: #bd362f;
+  height: 20px;
+  color: #fff;
+  padding: 2px 7px 2px 7px;
+  margin-left: -108px;
+  margin-top: -30px;
+  float:right;
+}
+
+@media (max-width:768px){
+  .confirm-reject{
+    float:left;
+    margin-left: 0px;
+    margin-top: -30px;   
+  }
+}
+
+.order-card-button{
+  float:right;
+  margin-right: 0px;
+  background: #49afcd;
+}
+
+@media (max-width:768px){
+  .order-card-button{
+    float:left;   
+  }
 }

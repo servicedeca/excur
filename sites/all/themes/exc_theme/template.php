@@ -369,8 +369,9 @@ function exc_theme_preprocess_views_view_fields__offers__guide_offers(&$vars){
     $path_image = $vars['row']->field_field_image[0]['raw']['uri'];
     $vars['image'] = theme('image', array(
       'path' => $path_image,
-      'width' => '150px',
-      'height' => '150px',
+      'width' => '170px',
+      'height' => '130px',
+      'attributes' => array('class' => array('b-c-image')),
     ));
   }
 
@@ -386,7 +387,9 @@ function exc_theme_preprocess_views_view_fields__offers__guide_offers(&$vars){
   switch ($value) {
     case EXCUR_OFFER_NOT_CONFIRMED:
       $vars['fields']['status']->content = '<div class="content_confirm' . $id . '">';
+      $vars['fields']['status']->content .= '<div class = "order-card-status-inner">';
       $vars['fields']['status']->content .= t('Awaiting confirmation');
+      $vars['fields']['status']->content .= '</div>';
       $vars['fields']['status']->content .= '<br/>';
       $vars['fields']['status']->content .= l(t('Confirm'), '#', array(
         'external' => TRUE,
@@ -406,10 +409,10 @@ function exc_theme_preprocess_views_view_fields__offers__guide_offers(&$vars){
       $vars['fields']['status']->content .= '</div>';
       break;
     case EXCUR_OFFER_CONFIRMED:
-      $vars['fields']['status']->content = '<div class="content_confirm"' . $id . '">' . t('Confirmed') . '</div>';
+      $vars['fields']['status']->content = '<div class="content_confirm"' . $id . '"><div class="order-card-status-inner-confirm">' . t('Confirmed') . '</div></div>';
       break;
     case EXCUR_OFFER_REJECTED:
-      $vars['fields']['status']->content = '<div id="content_confirm"' . $id . '">' . t('Rejected') . '</div>';
+      $vars['fields']['status']->content = '<div id="content_confirm"' . $id . '"><div class="order-card-status-inner-confirm">' . t('Rejected') . '</div></div>';
       break;
   }
 }
@@ -422,8 +425,9 @@ function exc_theme_preprocess_views_view_fields__offers__user_offers(&$vars) {
     $path_image = $vars['row']->field_field_image[0]['raw']['uri'];
     $vars['image'] = theme('image', array(
       'path' => $path_image,
-      'width' => '150px',
-      'height' => '150px',
+      'width' => '170px',
+      'height' => '130px',
+      'attributes' => array('class' => array('b-c-image')),
     ));
   }
 
