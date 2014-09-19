@@ -41,6 +41,13 @@ function excur_menu() {
     'access callback' => 'excur_user_page_access',
     'access arguments' => array(1),
   );
+  $items['user/%user/add_service'] = array(
+    'title' => 'Add_service',
+    'page callback' => 'excur_add_service',
+    'page arguments' => array(1),
+    'access callback' => 'excur_user_page_access',
+    'access arguments' => array(1),
+  );
 
   return $items;
 }
@@ -153,6 +160,20 @@ function excur_user_bookings($account) {
  */
 function excur_user_offers($account) {
   return theme('excur_user_offers', array('account' => $account));;
+}
+
+/**
+ * Page callback add_service
+ */
+function excur_add_service($account) {
+  $user = user_load($account->uid);
+  if(empty($user->field_phone)) {
+    form_set_error('',t('To add excursions to fill your phone'));
+    drupal_goto('user/'.$account->uid.'/edit', array());
+  }
+  else{
+   drupal_goto('node/add/service', array('query' => array('guide' => $account->uid,)));
+  }
 }
 
 /**

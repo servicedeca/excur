@@ -234,7 +234,8 @@ function exc_theme_preprocess_node__service_full(&$vars) {
   $node = $vars['node'];
   $wrapper = entity_metadata_wrapper('node', $node);
   $wrapper->language($language->language);
-
+  $leng = count($node->field_slider_images[LANGUAGE_NONE]);
+  $node->field_slider_images[LANGUAGE_NONE][$leng] = $node->field_image[LANGUAGE_NONE][0];
   if (!empty($node->field_slider_images[LANGUAGE_NONE])) {
     foreach ($node->field_slider_images[LANGUAGE_NONE] as $image) {
       $vars['images'][] = theme('image_style', array(
@@ -606,7 +607,7 @@ function exc_theme_preprocess_excur_user_offers(&$vars){
   $vars['offer'] = views_embed_view('content', 'guide_service', $account->uid);
 
   if (!empty($account->roles[EXCUR_USER_ROLE_GUIDE_ID])) {
-    $vars['add_service'] = l(t('Add excursion'), 'node/add/service', array(
+    $vars['add_service'] = l(t('Add excursion'), 'user/'.$account->uid.'/add_service', array(
       'query' => array(
         'guide' => $account->uid,
       )

@@ -41,4 +41,5 @@ function excur_guide_other_content_type_theme(&$theme, $plugin) {
  * Process variables for guide_other.tpl.php.
  */
 function template_preprocess_excur_guide_other(&$vars) {
+
 }
