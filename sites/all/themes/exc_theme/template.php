@@ -617,3 +617,19 @@ function exc_theme_preprocess_excur_user_offers(&$vars){
     ));
   }
 }
+
+/**
+ * Process variables for views-view-unformatted--guide-other.tpl.php
+ */
+function exc_theme_preprocess_views_view_fields__guide_other(&$vars){
+  $nid = $vars['row']->nid;
+  $title = $vars['row']->field_title_field[0]['raw']['value'];
+  $vars['title'] = l($title,'node/'.$nid);
+  $path_image = $vars['row']->field_field_image[0]['raw']['uri'];
+  $vars['image'] = theme('image', array(
+    'path' => $path_image,
+    'width' => '150px',
+    'height' => '150px',
+    'attributes' => array('class' => array('')),
+  ));
+}

@@ -420,6 +420,12 @@ function excur_offer_order_form($form, $form_state, $order) {
     '#title' => t('Phone'),
     '#required' => TRUE,
   );
+  $form['companion'] = array(
+    '#type'	=> 'checkbox',
+    '#title' => t('seeking a companion'),
+    '#description' => t('seeking a companion'),
+    '#required' => FALSE,
+  );
   $form['submit'] = array(
     '#type' => 'submit',
     '#value' => t('Reserve'),
@@ -468,6 +474,7 @@ function excur_offer_order_form_submit(&$form, &$form_state) {
   $node = node_load($nid);
   $reservation = entity_metadata_wrapper('node', $node);
   $reservation -> language($language->language);
+  $companion = $form['companion']['#value'];
   if ($node->type == 'service') {
     $reservation = $reservation->field_reservation->value();
   }
@@ -485,6 +492,7 @@ function excur_offer_order_form_submit(&$form, &$form_state) {
     'tourist_email' => $tourist_email,
     'tourist_phone' => $tourist_phone,
     'venue' => $venue,
+    'companion' => $companion,
   );
 
   if ($reservation == 1) {
@@ -539,7 +547,7 @@ function excur_offer_offer_form_submit(&$form, &$form_state) {
 
   $lang = 0;
   $oid = rand(1000, 9999) . REQUEST_TIME;
-  $id = excur_offer_save($oid, $user->uid, $form['#data']['nid'], $values['tickets'], excur_offer_user_currency(), $values['date'], 0, $lang, $type_offer, $ticket_type, $duration, 0, 0, 0, 0, 0, 0, $start_place, $start_time);
+  $id = excur_offer_save($oid, $user->uid, $form['#data']['nid'], $values['tickets'], excur_offer_user_currency(), $values['date'], 0, $lang, $type_offer, $ticket_type, $duration, 0, 0, 0, 0, 0, 0, $start_place, $start_time, 0);
   drupal_goto('excur/offer/order/' . $nid, array('query' => array('id' => $id)));
 }
 
@@ -593,7 +601,7 @@ function excur_offer_load($id) {
 /**
  * Save offer.
  */
-function excur_offer_save($oid, $uid, $nid, $ticket, $currency, $date, $status, $language, $offer, $ticket_type, $duration, $name, $email, $phone, $tourist_name, $tourist_email, $tourist_phone,$venue, $start_time) {
+function excur_offer_save($oid, $uid, $nid, $ticket, $currency, $date, $status, $language, $offer, $ticket_type, $duration, $name, $email, $phone, $tourist_name, $tourist_email, $tourist_phone,$venue, $start_time, $companion) {
   $record = array(
     'oid' => $oid,
     'uid' => $uid,
@@ -615,6 +623,7 @@ function excur_offer_save($oid, $uid, $nid, $ticket, $currency, $date, $status, 
     'tourist_phone' => $tourist_phone,
     'venue' => $venue,
     'start_time' => $start_time,
+    'companion' => $companion,
   );
 
   $id = db_insert('excur_offer')

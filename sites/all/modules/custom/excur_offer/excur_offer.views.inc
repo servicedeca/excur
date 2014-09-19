@@ -182,6 +182,22 @@ function excur_offer_views_data() {
       'handler' => 'views_handler_argument_string',
     ),
   );
+  $data['excur_offer']['companion'] = array(
+    'title' => t('companion'),
+    'help' => t('seeking a companion.'),
+    'field' => array(
+      'handler' => 'views_handler_field',
+    ),
+    'sort' => array(
+      'handler' => 'views_handler_sort',
+    ),
+    'filter' => array(
+      'handler' => 'views_handler_filter_string',
+    ),
+    'argument' => array(
+      'handler' => 'views_handler_argument_string',
+    ),
+  );
 
 
   return $data;

@@ -812,6 +812,7 @@ margin-top: 240px;
 .form-item-field-start-date-und-0-value-date label {
   display: none;
 }
+<<<<<<< HEAD
 
 .booking-card{
   border: 2px solid #cbcfd1;
@@ -979,4 +980,8 @@ margin-top: 240px;
   .order-card-button{
     float:left;   
   }
+=======
+#guide_other {
+  margin: 0 auto;
+>>>>>>> 3844fa7102413e175aabf021eba44d23b45f85b2
 }
