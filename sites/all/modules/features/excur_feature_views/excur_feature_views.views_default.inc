@@ -266,7 +266,6 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['relationships']['field_offer_value']['table'] = 'field_data_field_offer';
   $handler->display->display_options['relationships']['field_offer_value']['field'] = 'field_offer_value';
   $handler->display->display_options['relationships']['field_offer_value']['label'] = 'Предложение';
-  $handler->display->display_options['relationships']['field_offer_value']['required'] = TRUE;
   $handler->display->display_options['relationships']['field_offer_value']['delta'] = '-1';
   /* Связь: Элемент коллекции полей: Билеты (field_offer_ticket) */
   $handler->display->display_options['relationships']['field_offer_ticket_value']['id'] = 'field_offer_ticket_value';
@@ -288,7 +287,7 @@ function excur_feature_views_views_default_views() {
     'title_class' => '',
   );
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 1;
-  /* Поле: Содержимое: Описание */
+  /* Поле: Содержимое: Описание предложения */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -928,13 +927,13 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['date']['table'] = 'excur_offer';
   $handler->display->display_options['fields']['date']['field'] = 'date';
   $handler->display->display_options['fields']['date']['label'] = 'Дата встречи';
-  /* Поле: Содержимое: Время встречи */
+  /* Поле: Содержимое: Время */
   $handler->display->display_options['fields']['field_start_time']['id'] = 'field_start_time';
   $handler->display->display_options['fields']['field_start_time']['table'] = 'field_data_field_start_time';
   $handler->display->display_options['fields']['field_start_time']['field'] = 'field_start_time';
   $handler->display->display_options['fields']['field_start_time']['relationship'] = 'nid';
   $handler->display->display_options['fields']['field_start_time']['element_label_colon'] = FALSE;
-  /* Поле: Содержимое: Место встречи */
+  /* Поле: Содержимое: Адрес */
   $handler->display->display_options['fields']['field_start_place']['id'] = 'field_start_place';
   $handler->display->display_options['fields']['field_start_place']['table'] = 'field_data_field_start_place';
   $handler->display->display_options['fields']['field_start_place']['field'] = 'field_start_place';
@@ -1130,13 +1129,13 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['date']['table'] = 'excur_offer';
   $handler->display->display_options['fields']['date']['field'] = 'date';
   $handler->display->display_options['fields']['date']['label'] = 'Дата встречи';
-  /* Поле: Содержимое: Время встречи */
+  /* Поле: Содержимое: Время */
   $handler->display->display_options['fields']['field_start_time']['id'] = 'field_start_time';
   $handler->display->display_options['fields']['field_start_time']['table'] = 'field_data_field_start_time';
   $handler->display->display_options['fields']['field_start_time']['field'] = 'field_start_time';
   $handler->display->display_options['fields']['field_start_time']['relationship'] = 'nid';
   $handler->display->display_options['fields']['field_start_time']['element_label_colon'] = FALSE;
-  /* Поле: Содержимое: Место встречи */
+  /* Поле: Содержимое: Адрес */
   $handler->display->display_options['fields']['field_start_place']['id'] = 'field_start_place';
   $handler->display->display_options['fields']['field_start_place']['table'] = 'field_data_field_start_place';
   $handler->display->display_options['fields']['field_start_place']['field'] = 'field_start_place';
@@ -1274,8 +1273,8 @@ function excur_feature_views_views_default_views() {
     t('Guide'),
     t('Экскурсия'),
     t('Дата встречи'),
-    t('Время встречи'),
-    t('Место встречи'),
+    t('Время'),
+    t('Адрес'),
     t('Состояние'),
     t('Все'),
     t('View panes'),
@@ -1556,44 +1555,21 @@ function excur_feature_views_views_default_views() {
     4 => '4',
   );
 
-  /* Display: попутчики в городе */
-  $handler = $view->new_display('entityreference', 'попутчики в городе', 'companions_city');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'none';
+  /* Display: Попутчики в городе */
+  $handler = $view->new_display('panel_pane', 'Попутчики в городе', 'panel_pane_1');
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'entityreference_style';
-  $handler->display->display_options['style_options']['search_fields'] = array(
-    'field_name' => 'field_name',
-  );
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'entityreference_fields';
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Поле: Пользователь: ФИО */
-  $handler->display->display_options['fields']['field_name']['id'] = 'field_name';
-  $handler->display->display_options['fields']['field_name']['table'] = 'field_data_field_name';
-  $handler->display->display_options['fields']['field_name']['field'] = 'field_name';
-  $handler->display->display_options['fields']['field_name']['label'] = '';
-  $handler->display->display_options['fields']['field_name']['element_label_colon'] = FALSE;
-  /* Поле: Excursionline: User id */
-  $handler->display->display_options['fields']['uid']['id'] = 'uid';
-  $handler->display->display_options['fields']['uid']['table'] = 'excur_offer';
-  $handler->display->display_options['fields']['uid']['field'] = 'uid';
-  $handler->display->display_options['fields']['uid']['label'] = '';
-  $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
-  /* Поле: Поле: Главное изображение */
-  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
-  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['label'] = '';
-  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => '',
-    'image_link' => '',
-  );
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Связь: Excursionline: User id */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'excur_offer';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['required'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Критерий фильтра: Пользователь: Активно */
@@ -1607,6 +1583,7 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['filters']['companion']['id'] = 'companion';
   $handler->display->display_options['filters']['companion']['table'] = 'excur_offer';
   $handler->display->display_options['filters']['companion']['field'] = 'companion';
+  $handler->display->display_options['filters']['companion']['relationship'] = 'uid';
   $handler->display->display_options['filters']['companion']['value'] = '1';
   $translatables['user'] = array(
     t('Master'),
@@ -1624,9 +1601,9 @@ function excur_feature_views_views_default_views() {
     t('следующая ›'),
     t('последняя »'),
     t('Гид услуги'),
-    t('попутчики в городе'),
-    t('.'),
-    t(','),
+    t('Попутчики в городе'),
+    t('Пользователь'),
+    t('View panes'),
   );
   $export['user'] = $view;
 

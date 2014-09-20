@@ -715,7 +715,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => 'content',
-          'image_style' => '100x100',
+          'image_style' => '70x70',
         ),
         'type' => 'image',
         'weight' => 0,

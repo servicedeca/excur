@@ -341,3 +341,20 @@ function excur_offer_update_7005() {
 
   db_add_field('excur_offer', 'start_time', $field);
 }
+
+
+
+/**
+ * Implements hook_update_N().
+ * Add new companion field.
+ */
+function excur_offer_update_7006() {
+  $field = array(
+    'description' => 'Companion.',
+    'type' => 'varchar',
+    'length' => 255,
+    'not null' => TRUE,
+  );
+
+  db_add_field('excur_offer', 'companion', $field);
+}
