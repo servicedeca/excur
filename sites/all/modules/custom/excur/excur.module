@@ -90,6 +90,16 @@ function excur_init() {
 }
 
 /**
+ * Implements hook_entity_info_alter().
+ */
+function excur_entity_info_alter(&$entity_info) {
+  $entity_info['node']['view modes']['other'] = array(
+    'label' => t('Other'),
+    'custom settings' => FALSE,
+  );
+}
+
+/**
  * Implement hook_theme().
  */
 function excur_theme() {
