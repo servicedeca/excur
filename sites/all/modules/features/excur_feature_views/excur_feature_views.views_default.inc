@@ -287,7 +287,7 @@ function excur_feature_views_views_default_views() {
     'title_class' => '',
   );
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 1;
-  /* Поле: Содержимое: Описание предложения */
+  /* Поле: Содержимое: Новость */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -927,13 +927,13 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['date']['table'] = 'excur_offer';
   $handler->display->display_options['fields']['date']['field'] = 'date';
   $handler->display->display_options['fields']['date']['label'] = 'Дата встречи';
-  /* Поле: Содержимое: Время */
+  /* Поле: Содержимое: Время встречи */
   $handler->display->display_options['fields']['field_start_time']['id'] = 'field_start_time';
   $handler->display->display_options['fields']['field_start_time']['table'] = 'field_data_field_start_time';
   $handler->display->display_options['fields']['field_start_time']['field'] = 'field_start_time';
   $handler->display->display_options['fields']['field_start_time']['relationship'] = 'nid';
   $handler->display->display_options['fields']['field_start_time']['element_label_colon'] = FALSE;
-  /* Поле: Содержимое: Адрес */
+  /* Поле: Содержимое: Место встречи */
   $handler->display->display_options['fields']['field_start_place']['id'] = 'field_start_place';
   $handler->display->display_options['fields']['field_start_place']['table'] = 'field_data_field_start_place';
   $handler->display->display_options['fields']['field_start_place']['field'] = 'field_start_place';
@@ -1129,13 +1129,13 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['date']['table'] = 'excur_offer';
   $handler->display->display_options['fields']['date']['field'] = 'date';
   $handler->display->display_options['fields']['date']['label'] = 'Дата встречи';
-  /* Поле: Содержимое: Время */
+  /* Поле: Содержимое: Время встречи */
   $handler->display->display_options['fields']['field_start_time']['id'] = 'field_start_time';
   $handler->display->display_options['fields']['field_start_time']['table'] = 'field_data_field_start_time';
   $handler->display->display_options['fields']['field_start_time']['field'] = 'field_start_time';
   $handler->display->display_options['fields']['field_start_time']['relationship'] = 'nid';
   $handler->display->display_options['fields']['field_start_time']['element_label_colon'] = FALSE;
-  /* Поле: Содержимое: Адрес */
+  /* Поле: Содержимое: Место встречи */
   $handler->display->display_options['fields']['field_start_place']['id'] = 'field_start_place';
   $handler->display->display_options['fields']['field_start_place']['table'] = 'field_data_field_start_place';
   $handler->display->display_options['fields']['field_start_place']['field'] = 'field_start_place';
@@ -1273,8 +1273,8 @@ function excur_feature_views_views_default_views() {
     t('Guide'),
     t('Экскурсия'),
     t('Дата встречи'),
-    t('Время'),
-    t('Адрес'),
+    t('Время встречи'),
+    t('Место встречи'),
     t('Состояние'),
     t('Все'),
     t('View panes'),
@@ -1556,7 +1556,7 @@ function excur_feature_views_views_default_views() {
   );
 
   /* Display: Попутчики в городе */
-  $handler = $view->new_display('panel_pane', 'Попутчики в городе', 'panel_pane_1');
+  $handler = $view->new_display('panel_pane', 'Попутчики в городе', 'companion_city');
   $handler->display->display_options['defaults']['query'] = FALSE;
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['distinct'] = TRUE;
@@ -1565,11 +1565,69 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Связь: Excursionline: User id */
-  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
-  $handler->display->display_options['relationships']['uid']['table'] = 'excur_offer';
-  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  $handler->display->display_options['relationships']['uid']['required'] = TRUE;
+  /* Связь: Excursionline: Node id */
+  $handler->display->display_options['relationships']['nid']['id'] = 'nid';
+  $handler->display->display_options['relationships']['nid']['table'] = 'excur_offer';
+  $handler->display->display_options['relationships']['nid']['field'] = 'nid';
+  $handler->display->display_options['relationships']['nid']['required'] = TRUE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Контекстный фильтр: Поле: Город (field_city) */
+  $handler->display->display_options['arguments']['field_city_target_id']['id'] = 'field_city_target_id';
+  $handler->display->display_options['arguments']['field_city_target_id']['table'] = 'field_data_field_city';
+  $handler->display->display_options['arguments']['field_city_target_id']['field'] = 'field_city_target_id';
+  $handler->display->display_options['arguments']['field_city_target_id']['relationship'] = 'nid';
+  $handler->display->display_options['arguments']['field_city_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_city_target_id']['exception']['title'] = 'Все';
+  $handler->display->display_options['arguments']['field_city_target_id']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['field_city_target_id']['default_argument_options']['vocabularies'] = array(
+    'city' => 'city',
+  );
+  $handler->display->display_options['arguments']['field_city_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_city_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_city_target_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Критерий фильтра: Пользователь: Активно */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Критерий фильтра: Excursionline: companion */
+  $handler->display->display_options['filters']['companion']['id'] = 'companion';
+  $handler->display->display_options['filters']['companion']['table'] = 'excur_offer';
+  $handler->display->display_options['filters']['companion']['field'] = 'companion';
+  $handler->display->display_options['filters']['companion']['relationship'] = 'uid';
+  $handler->display->display_options['filters']['companion']['value'] = '1';
+
+  /* Display: Попутчики в предложении */
+  $handler = $view->new_display('panel_pane', 'Попутчики в предложении', 'companion_service');
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Связь: Excursionline: Node id */
+  $handler->display->display_options['relationships']['nid']['id'] = 'nid';
+  $handler->display->display_options['relationships']['nid']['table'] = 'excur_offer';
+  $handler->display->display_options['relationships']['nid']['field'] = 'nid';
+  $handler->display->display_options['relationships']['nid']['required'] = TRUE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Контекстный фильтр: Содержимое: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['exception']['title'] = 'Все';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Критерий фильтра: Пользователь: Активно */
@@ -1602,8 +1660,10 @@ function excur_feature_views_views_default_views() {
     t('последняя »'),
     t('Гид услуги'),
     t('Попутчики в городе'),
-    t('Пользователь'),
+    t('Service'),
+    t('Все'),
     t('View panes'),
+    t('Попутчики в предложении'),
   );
   $export['user'] = $view;
 

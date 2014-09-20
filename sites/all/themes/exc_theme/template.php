@@ -167,6 +167,37 @@ function exc_theme_preprocess_node(&$vars, $hook) {
 }
 
 /**
+ * Process variables for node--service-other.tpl.php.
+ */
+function exc_theme_preprocess_node__service_other(&$vars) {
+  global $language;
+  global $user;
+
+  $node = $vars['node'];
+  $wrapper = entity_metadata_wrapper('node', $node);
+  $wrapper->language($language->language);
+  $price = excur_currency_lowest_price($node);
+  if (!empty($_COOKIE['excur_currency']) && $_COOKIE['excur_currency'] != EXCUR_CURRENCY_DEFAULT) {
+    $currency = $_COOKIE['excur_currency'];
+    $price = excur_currency_convert($price, EXCUR_CURRENCY_DEFAULT, $currency);
+  }
+  else {
+    $currency = EXCUR_CURRENCY_DEFAULT;
+  }
+
+  $vars['price'] = $price;
+  $image_path = $node->field_image[LANGUAGE_NONE][0]['uri'];
+  $vars['image'] = theme('image_style', array(
+    'style_name' => '70x70',
+    'path' => $image_path,
+    'alt' => $node->title,
+    'title' => $node->title,
+  ));
+  $vars['currency'] = excur_currency_get_icon($currency);
+  $vars['title'] = l(t($node->title), 'node/'.$node->nid);
+}
+
+/**
  * Process variables for node--service-teaser.tpl.php.
  */
 function exc_theme_preprocess_node__service_teaser(&$vars) {
@@ -620,7 +651,7 @@ function exc_theme_preprocess_excur_user_offers(&$vars){
 }
 
 /**
- * Process variables for views-view-unformatted--guide-other.tpl.php
+ * Process variables for views-view-fields--guide-other.tpl.php
  */
 function exc_theme_preprocess_views_view_fields__guide_other(&$vars){
   $nid = $vars['row']->nid;
@@ -634,3 +665,27 @@ function exc_theme_preprocess_views_view_fields__guide_other(&$vars){
     'attributes' => array('class' => array('')),
   ));
 }
+
+/**
+ * Process variables for views-view-fields--companion_city.tpl.php
+ */
+function exc_theme_preprocess_views_view_fields__companion_service(&$vars){
+$a=1;
+
+}
+
+/**
+ * Process variables for views-view-fields--companion-city.tpl.php
+ */
+function exc_theme_preprocess_views_view_fields__companion_city(&$vars){
+  $user = user_load($vars['row']->uid);
+  $image_path = $user->field_image[LANGUAGE_NONE][0]['uri'];
+  $vars['image'] = theme('image', array(
+    'path' => $image_path,
+    'width' => '150px',
+    'height' => '150px',
+    'attributes' => array('class' => array('')),
+  ));
+  $vars['name'] = $vars['fields']['name']->content;
+}
+
