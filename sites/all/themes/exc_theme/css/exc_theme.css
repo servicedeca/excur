@@ -198,7 +198,7 @@ h2.node-description {
 }
 
 .side-block {
-  border-radius: 5px;
+  border-radius: 4px;
   border: 1px solid #d9d9d9;
   padding: 15px;
   margin-bottom: 33px;
@@ -815,10 +815,8 @@ margin-top: 240px;
 
 
 .booking-card{
-  border: 2px solid #cbcfd1;
-  height: 135px;
-  border-radius: 15px;
-  margin-left: 15px;
+  border: 1px solid #cbcfd1;
+  border-radius: 4px;
 }
 
 @media (max-width:1209px){
@@ -980,8 +978,4 @@ margin-top: 240px;
   .order-card-button{
     float:left;   
   }
-=======
-#guide_other {
-  margin: 0 auto;
->>>>>>> 3844fa7102413e175aabf021eba44d23b45f85b2
 }

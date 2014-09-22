@@ -6,15 +6,11 @@
 ?>
 <article id="node-<?php print $node->nid; ?>">
   <div class="side-block">
-    <div class="row">
-      <?php print $title ?>
-    </div>
-    <div class="row">
-      <?php print render($image); ?>
-    </div>
-    <div class="row">
-      <?php print t('price')?>
-      <?php print $price ?>
-    </div>
+    <?php print $title ?>
+    <div class="space10"></div>
+    <?php print render($image); ?>
+    <div class="space10"></div>
+    <?php print t('Price')?>
+    <?php print $price ?>
   </div>
 </article>

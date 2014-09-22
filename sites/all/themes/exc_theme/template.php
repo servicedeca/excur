@@ -265,8 +265,10 @@ function exc_theme_preprocess_node__service_full(&$vars) {
   $node = $vars['node'];
   $wrapper = entity_metadata_wrapper('node', $node);
   $wrapper->language($language->language);
-  $leng = count($node->field_slider_images[LANGUAGE_NONE]);
-  $node->field_slider_images[LANGUAGE_NONE][$leng] = $node->field_image[LANGUAGE_NONE][0];
+
+  if (empty($node->field_slider_images)) {
+    $node->field_slider_images[LANGUAGE_NONE][0] = $node->field_image[LANGUAGE_NONE][0];
+  }
   if (!empty($node->field_slider_images[LANGUAGE_NONE])) {
     foreach ($node->field_slider_images[LANGUAGE_NONE] as $image) {
       $vars['images'][] = theme('image_style', array(
@@ -283,7 +285,6 @@ function exc_theme_preprocess_node__service_full(&$vars) {
 
   $vars['venue'] = $wrapper->field_start_place->value();
   $vars['meeting_time'] = $wrapper->field_start_time->value();
-
 }
 
 /**
@@ -399,10 +400,9 @@ function exc_theme_remote_image_style($variables) {
 function exc_theme_preprocess_views_view_fields__offers__guide_offers(&$vars){
   if (!empty($vars['row']->field_field_image)) {
     $path_image = $vars['row']->field_field_image[0]['raw']['uri'];
-    $vars['image'] = theme('image', array(
+    $vars['image'] = theme('image_style', array(
+      'style_name' => '170x170',
       'path' => $path_image,
-      'width' => '170px',
-      'height' => '130px',
       'attributes' => array('class' => array('b-c-image')),
     ));
   }
@@ -455,10 +455,9 @@ function exc_theme_preprocess_views_view_fields__offers__guide_offers(&$vars){
 function exc_theme_preprocess_views_view_fields__offers__user_offers(&$vars) {
   if (!empty($vars['row']->field_field_image)) {
     $path_image = $vars['row']->field_field_image[0]['raw']['uri'];
-    $vars['image'] = theme('image', array(
+    $vars['image'] = theme('image_style', array(
+      'style_name' => '170x170',
       'path' => $path_image,
-      'width' => '170px',
-      'height' => '130px',
       'attributes' => array('class' => array('b-c-image')),
     ));
   }
@@ -688,29 +687,13 @@ function exc_theme_preprocess_views_view_fields__guide_other(&$vars){
 }
 
 /**
- * Process variables for views-view-fields--companion_city.tpl.php
+ * Process variables for views-view-fields--companion-service.tpl.php
  */
 function exc_theme_preprocess_views_view_fields__companion_service(&$vars){
-  $user = user_load($vars['row']->uid);
-  $guide = user_load($user->field_guide[LANGUAGE_NONE][0]['target_id']);
+  $guide = user_load($vars['row']->uid);
 
-  if (!empty($guide->field_image[LANGUAGE_NONE])) {
-    $path = $guide->field_image[LANGUAGE_NONE][0]['uri'];
-    $theming = 'image_style';
-  }
-  else {
-    $path = EXCUR_FRONT_THEME_PATH . '/images/user-default.png';
-    $theming = 'remote_image_style';
-  }
-  $vars['image'] = theme($theming, array(
-    'style_name' => '70x70',
-    'path' => $path,
-    'alt' => $guide->field_name[LANGUAGE_NONE][0]['safe_value'],
-    'title' => $guide->field_name[LANGUAGE_NONE][0]['safe_value'],
-  ));
+  $vars['image'] = excur_guide_logo($guide, '70x70');
   $vars['name'] = $vars['fields']['name']->content;
-
-
 }
 
 /**
@@ -750,9 +733,11 @@ function exc_theme_preprocess_views_view_fields__companion_city(&$vars){
     'height' => '150px',
     'attributes' => array('class' => array('')),
   ));
+
   foreach ($wrapper->field_languages->value() as $lang) {
     $vars['languages'][] = $lang->field_lang_code[LANGUAGE_NONE][0]['value'];
   }
+
   $price = excur_currency_lowest_price($node);
   if (!empty($_COOKIE['excur_currency']) && $_COOKIE['excur_currency'] != EXCUR_CURRENCY_DEFAULT) {
     $currency = $_COOKIE['excur_currency'];
@@ -761,7 +746,7 @@ function exc_theme_preprocess_views_view_fields__companion_city(&$vars){
   else {
     $currency = EXCUR_CURRENCY_DEFAULT;
   }
+
   $vars['price'] = $price;
   $vars['currency'] = excur_currency_get_icon($currency);
 }
-

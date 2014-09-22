@@ -20,7 +20,7 @@ function excur_companions_service_content_type_render($subtype, $conf, $panel_ar
   $block = new stdClass();
 
   $block->content = '<h1>' . t('Looking for travel companions') . '</h1>';
-  $block->content .= views_embed_view('user', 'companion_service');
+  $block->content .= '<div class="row">' . views_embed_view('user', 'companion_service') . '</div>';
 
   return $block;
 }

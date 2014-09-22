@@ -1,4 +1,4 @@
-.flag {
+.flag:not(.flag-link-toggle) {
   background: url("../images/languages.png") transparent no-repeat -32px -32px;
   display: inline-block;
   height: 11px;
