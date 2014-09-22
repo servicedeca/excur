@@ -5,7 +5,9 @@
 
 define('EXCUR_FRONT_THEME_PATH', drupal_get_path('theme', 'exc_theme'));
 define('EXCUR_USER_ROLE_GUIDE_ID', 4);
+define('EXCUR_USER_ROLE_PARTNER_ID', 5);
 define('EXCUR_USER_ROLE_GUIDE_NAME', 'Гид');
+define('EXCUR_USER_ROLE_PARTNER_NAME', 'Партнер');
 
 /**
  * Implements hook
@@ -299,6 +301,13 @@ function excur_form_user_profile_form_alter(&$form, &$form_state) {
       '#default_value' => isset($user->roles[EXCUR_USER_ROLE_GUIDE_ID]) ? TRUE : FALSE,
     );
   }
+  if (!isset($user->roles[EXCUR_USER_ROLE_PARTNER_ID])) {
+    $form['partner'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Become a partner'),
+      '#default_value' => isset($user->roles[EXCUR_USER_ROLE_PARTNER_ID]) ? TRUE : FALSE,
+    );
+  }
 
   $form['actions']['submit']['#attributes']['class'][] = 'btn';
   $form['actions']['cancel']['#attributes']['class'][] = 'btn';
@@ -327,6 +336,10 @@ function excur_form_user_pass_alter(&$form, &$form_state) {
 function excur_form_user_profile_form_submit(&$form, &$form_state) {
   if (!empty($form_state['values']['guide']) && $form_state['values']['guide']) {
     $form['#user']->roles[EXCUR_USER_ROLE_GUIDE_ID] = EXCUR_USER_ROLE_GUIDE_NAME;
+    user_save($form['#user']);
+  }
+  if (!empty($form_state['values']['partner']) && $form_state['values']['partner']) {
+    $form['#user']->roles[EXCUR_USER_ROLE_PARTNER_ID] = EXCUR_USER_ROLE_PARTNER_NAME;
     user_save($form['#user']);
   }
 }

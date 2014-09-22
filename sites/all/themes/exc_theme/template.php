@@ -590,6 +590,20 @@ function exc_theme_preprocess_excur_user_menu(&$vars) {
     $vars['menu']['offers'] = l(t('My offers'), 'user/' .$uid. '/offer');
     $vars['menu']['orders'] = l(t('My orders '),'user/' .$uid. '/order');
   }
+  if(empty($account->roles[EXCUR_USER_ROLE_GUIDE_ID])){
+    $vars['guide'] = l(t('Become a guide'),'user/'.$uid.'/edit',array('query' => array('guide' =>'guide',),
+    'attributes' => array(
+      'class' => array('btn btn-primary'),
+    ))
+    );
+  }
+  if(empty($account->roles[EXCUR_USER_ROLE_PARTNER_ID])){
+    $vars['partner'] = l(t('Become a partner'),'user/'.$uid.'/edit',array('query' => array('partner' =>'partner',),
+        'attributes' => array(
+          'class' => array('btn btn-primary'),
+        ))
+    );
+  }
 }
 
 /**
@@ -610,6 +624,12 @@ function exc_theme_preprocess_excur_user_edit(&$vars) {
 
   $vars['user_menu'] = excur_user_menu($account);
   $vars['form'] = drupal_get_form('user_profile_form', $account);
+  if(isset($_GET['guide']) && $_GET['guide'] == 'guide'){
+    $vars['form']['guide']['#checked'] = TRUE;
+  }
+  if(isset($_GET['partner']) && $_GET['partner'] == 'partner'){
+    $vars['form']['partner']['#checked'] = TRUE;
+  }
 }
 
 /**
@@ -648,6 +668,7 @@ function exc_theme_preprocess_excur_user_offers(&$vars){
       )
     ));
   }
+
 }
 
 /**
@@ -670,7 +691,25 @@ function exc_theme_preprocess_views_view_fields__guide_other(&$vars){
  * Process variables for views-view-fields--companion_city.tpl.php
  */
 function exc_theme_preprocess_views_view_fields__companion_service(&$vars){
-$a=1;
+  $user = user_load($vars['row']->uid);
+  $guide = user_load($user->field_guide[LANGUAGE_NONE][0]['target_id']);
+
+  if (!empty($guide->field_image[LANGUAGE_NONE])) {
+    $path = $guide->field_image[LANGUAGE_NONE][0]['uri'];
+    $theming = 'image_style';
+  }
+  else {
+    $path = EXCUR_FRONT_THEME_PATH . '/images/user-default.png';
+    $theming = 'remote_image_style';
+  }
+  $vars['image'] = theme($theming, array(
+    'style_name' => '70x70',
+    'path' => $path,
+    'alt' => $guide->field_name[LANGUAGE_NONE][0]['safe_value'],
+    'title' => $guide->field_name[LANGUAGE_NONE][0]['safe_value'],
+  ));
+  $vars['name'] = $vars['fields']['name']->content;
+
 
 }
 
@@ -678,14 +717,51 @@ $a=1;
  * Process variables for views-view-fields--companion-city.tpl.php
  */
 function exc_theme_preprocess_views_view_fields__companion_city(&$vars){
+  global $language;
+
+  $node = node_load($vars['fields']['nid']->raw);
+  $wrapper = entity_metadata_wrapper('node', $node);
+  $wrapper->language($language->language);
   $user = user_load($vars['row']->uid);
-  $image_path = $user->field_image[LANGUAGE_NONE][0]['uri'];
+  $guide = user_load($user->field_guide[LANGUAGE_NONE][0]['target_id']);
+
+  if (!empty($guide->field_image[LANGUAGE_NONE])) {
+    $path = $guide->field_image[LANGUAGE_NONE][0]['uri'];
+    $theming = 'image_style';
+  }
+  else {
+    $path = EXCUR_FRONT_THEME_PATH . '/images/user-default.png';
+    $theming = 'remote_image_style';
+  }
+  $vars['guide_image'] = theme($theming, array(
+    'style_name' => '70x70',
+    'path' => $path,
+    'alt' => $guide->field_name[LANGUAGE_NONE][0]['safe_value'],
+    'title' => $guide->field_name[LANGUAGE_NONE][0]['safe_value'],
+  ));
+
+  $vars['name'] = $vars['fields']['name']->content;
+  $title = $node->title;
+  $vars['title'] = l(t($title),'node/'.$node->vid);
+  $image_path = $node->field_image[LANGUAGE_NONE][0]['uri'];
   $vars['image'] = theme('image', array(
     'path' => $image_path,
     'width' => '150px',
     'height' => '150px',
     'attributes' => array('class' => array('')),
   ));
-  $vars['name'] = $vars['fields']['name']->content;
+  foreach ($wrapper->field_languages->value() as $lang) {
+    $vars['languages'][] = $lang->field_lang_code[LANGUAGE_NONE][0]['value'];
+  }
+  $price = excur_currency_lowest_price($node);
+  if (!empty($_COOKIE['excur_currency']) && $_COOKIE['excur_currency'] != EXCUR_CURRENCY_DEFAULT) {
+    $currency = $_COOKIE['excur_currency'];
+    $price = excur_currency_convert($price, EXCUR_CURRENCY_DEFAULT, $currency);
+  }
+  else {
+    $currency = EXCUR_CURRENCY_DEFAULT;
+  }
+  $vars['price'] = $price;
+  $vars['currency'] = excur_currency_get_icon($currency);
 }
 

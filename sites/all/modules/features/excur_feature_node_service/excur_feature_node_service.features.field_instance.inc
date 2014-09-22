@@ -235,7 +235,7 @@ function excur_feature_node_service_field_default_field_instances() {
     'bundle' => 'field_reservation_rules',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Дней',
     'display' => array(
       'default' => array(
         'label' => 'inline',
@@ -270,7 +270,7 @@ function excur_feature_node_service_field_default_field_instances() {
     'bundle' => 'field_reservation_rules',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Дней',
     'display' => array(
       'default' => array(
         'label' => 'inline',
@@ -1432,6 +1432,7 @@ function excur_feature_node_service_field_default_field_instances() {
   t('Гид');
   t('Главное изображение');
   t('Город');
+  t('Дней');
   t('Изображения для слайдера');
   t('Категория');
   t('Максимум за');
