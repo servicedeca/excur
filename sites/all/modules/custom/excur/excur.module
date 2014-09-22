@@ -100,6 +100,20 @@ function excur_entity_info_alter(&$entity_info) {
 }
 
 /**
+ * Implements hook_node_insert().
+ */
+function excur_node_insert($node) {
+  global $language;
+
+  if ($node->type == 'service') {
+    if (empty($node->title)) {
+      $node->title_field[$language->language][0]['value'] = $node->title_field[LANGUAGE_NONE][0]['value'];
+      $node->title = $node->title_field[$language->language][0]['value'];
+    }
+  }
+}
+
+/**
  * Implement hook_theme().
  */
 function excur_theme() {
