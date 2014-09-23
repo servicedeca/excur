@@ -547,7 +547,7 @@ function excur_offer_offer_form_submit(&$form, &$form_state) {
 
   $lang = 0;
   $oid = rand(1000, 9999) . REQUEST_TIME;
-  $id = excur_offer_save($oid, $user->uid, $form['#data']['nid'], $values['tickets'], excur_offer_user_currency(), $values['date'], 0, $lang, $type_offer, $ticket_type, $duration, 0, 0, 0, 0, 0, 0, $start_place, $start_time, 0);
+  $id = excur_offer_save($oid, $user->uid, $form['#data']['nid'], $values['tickets'], excur_offer_user_currency(), strtotime($values['date']), 0, $lang, $type_offer, $ticket_type, $duration, 0, 0, 0, 0, 0, 0, $start_place, $start_time, 0);
   drupal_goto('excur/offer/order/' . $nid, array('query' => array('id' => $id)));
 }
 
@@ -715,7 +715,7 @@ function excur_offer_special_offer($node) {
   $start_time = $wrapper->field_start_time->value();
   $duration = $wrapper->field_duration->value();
   $price = $wrapper->field_price->value();
-  $date = $wrapper->field_start_date->value();
+  $date = strtotime($wrapper->field_start_date->value());
   $type_offer = t('Special offer');
 
   $oid = rand(1000, 9999) . REQUEST_TIME;

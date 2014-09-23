@@ -342,8 +342,6 @@ function excur_offer_update_7005() {
   db_add_field('excur_offer', 'start_time', $field);
 }
 
-
-
 /**
  * Implements hook_update_N().
  * Add new companion field.
@@ -357,4 +355,23 @@ function excur_offer_update_7006() {
   );
 
   db_add_field('excur_offer', 'companion', $field);
+}
+
+/**
+ * Implements hook_update_N().
+ *
+ * Change dates.
+ */
+function excur_offer_update_7007() {
+  $results = db_select('excur_offer', 'eo')
+    ->fields('eo', array('id', 'date'))
+    ->execute()
+    ->fetchAll();
+
+  foreach ($results as $result) {
+    db_update('excur_offer')
+      ->fields(array('date' => strtotime($result->date)))
+      ->condition('id', $result->id)
+      ->execute();
+  }
 }
