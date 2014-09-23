@@ -18,9 +18,10 @@ function excur_companions_city_ctools_content_types() {
  */
 function excur_companions_city_content_type_render($subtype, $conf, $panel_args, $context) {
   $block = new stdClass();
+  $term = menu_get_object('taxonomy_term', 2);
 
   $block->content = '<h1>' . t('Looking for travel companions') . '</h1>';
-  $block->content .= views_embed_view('user', 'companion_city');
+  $block->content .= '<div class="row">' . views_embed_view('content', 'companion_city', $term->tid) . '</div>';
 
   return $block;
 }

@@ -397,7 +397,7 @@ function exc_theme_remote_image_style($variables) {
 /**
  * Process variables for views-view-fields--offers--guide-offers.tpl.php
  */
-function exc_theme_preprocess_views_view_fields__offers__guide_offers(&$vars){
+function exc_theme_preprocess_views_view_fields__offers__guide_offers(&$vars) {
   if (!empty($vars['row']->field_field_image)) {
     $path_image = $vars['row']->field_field_image[0]['raw']['uri'];
     $vars['image'] = theme('image_style', array(
@@ -476,7 +476,7 @@ function exc_theme_preprocess_views_view_fields__offers__user_offers(&$vars) {
 /**
  * Process variables for order-template.tpl.php
  */
-function exc_theme_preprocess_order_template(&$vars){
+function exc_theme_preprocess_order_template(&$vars) {
   $offer = excur_offer_load($_GET['id']);
   $node = $vars['order'];
 
@@ -530,7 +530,7 @@ function exc_theme_preprocess_order_template(&$vars){
 /**
  * Process variables for pay-template.tpl.php
  */
-function exc_theme_preprocess_pay_template(&$vars){
+function exc_theme_preprocess_pay_template(&$vars) {
   $offer = excur_offer_load($_GET['id']);
   $node = node_load($offer->nid);
   $city = taxonomy_term_load($node->field_city[LANGUAGE_NONE][0]['target_id']);
@@ -640,7 +640,7 @@ function exc_theme_preprocess_excur_user_edit(&$vars) {
 /**
  * Process variables for excur-user-bookings.tpl.php
  */
-function exc_theme_preprocess_excur_user_bookings(&$vars){
+function exc_theme_preprocess_excur_user_bookings(&$vars) {
   $account = $vars['account'];
 
   $vars['user_menu'] = excur_user_menu($account);
@@ -650,7 +650,7 @@ function exc_theme_preprocess_excur_user_bookings(&$vars){
 /**
  * Process variables for excur-user-order.tpl.php
  */
-function exc_theme_preprocess_excur_user_order(&$vars){
+function exc_theme_preprocess_excur_user_order(&$vars) {
   $account = $vars['account'];
 
   $vars['user_menu'] = excur_user_menu($account);
@@ -660,7 +660,7 @@ function exc_theme_preprocess_excur_user_order(&$vars){
 /**
  * Process variables for excur-user-offers.tpl.php
  */
-function exc_theme_preprocess_excur_user_offers(&$vars){
+function exc_theme_preprocess_excur_user_offers(&$vars) {
   $account = $vars['account'];
 
   $vars['user_menu'] = excur_user_menu($account);
@@ -679,7 +679,7 @@ function exc_theme_preprocess_excur_user_offers(&$vars){
 /**
  * Process variables for views-view-fields--guide-other.tpl.php
  */
-function exc_theme_preprocess_views_view_fields__guide_other(&$vars){
+function exc_theme_preprocess_views_view_fields__guide_other(&$vars) {
   $nid = $vars['row']->nid;
   $title = $vars['row']->field_title_field[0]['raw']['value'];
   $vars['title'] = l($title,'node/'.$nid);
@@ -695,7 +695,7 @@ function exc_theme_preprocess_views_view_fields__guide_other(&$vars){
 /**
  * Process variables for views-view-fields--companion-service.tpl.php
  */
-function exc_theme_preprocess_views_view_fields__companion_service(&$vars){
+function exc_theme_preprocess_views_view_fields__companion_service(&$vars) {
   $guide = user_load($vars['row']->uid);
 
   $vars['image'] = excur_guide_logo($guide, '70x70');
@@ -705,39 +705,18 @@ function exc_theme_preprocess_views_view_fields__companion_service(&$vars){
 /**
  * Process variables for views-view-fields--companion-city.tpl.php
  */
-function exc_theme_preprocess_views_view_fields__companion_city(&$vars){
+function exc_theme_preprocess_views_view_fields__companion_city(&$vars) {
   global $language;
 
   $node = node_load($vars['fields']['nid']->raw);
   $wrapper = entity_metadata_wrapper('node', $node);
   $wrapper->language($language->language);
-  $user = user_load($vars['row']->uid);
-  $guide = user_load($user->field_guide[LANGUAGE_NONE][0]['target_id']);
 
-  if (!empty($guide->field_image[LANGUAGE_NONE])) {
-    $path = $guide->field_image[LANGUAGE_NONE][0]['uri'];
-    $theming = 'image_style';
-  }
-  else {
-    $path = EXCUR_FRONT_THEME_PATH . '/images/user-default.png';
-    $theming = 'remote_image_style';
-  }
-  $vars['guide_image'] = theme($theming, array(
-    'style_name' => '70x70',
-    'path' => $path,
-    'alt' => $guide->field_name[LANGUAGE_NONE][0]['safe_value'],
-    'title' => $guide->field_name[LANGUAGE_NONE][0]['safe_value'],
-  ));
-
-  $vars['name'] = $vars['fields']['name']->content;
-  $title = $node->title;
-  $vars['title'] = l(t($title),'node/'.$node->vid);
+  $vars['title'] = l($node->title, "node/$node->nid");
   $image_path = $node->field_image[LANGUAGE_NONE][0]['uri'];
-  $vars['image'] = theme('image', array(
+  $vars['image'] = theme('image_style', array(
+    'style_name' => '170x170',
     'path' => $image_path,
-    'width' => '150px',
-    'height' => '150px',
-    'attributes' => array('class' => array('')),
   ));
 
   foreach ($wrapper->field_languages->value() as $lang) {
