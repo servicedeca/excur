@@ -203,9 +203,13 @@ function excur_user_offers($account) {
  */
 function excur_add_service($account) {
   $user = user_load($account->uid);
-  if(empty($user->field_phone)) {
-    form_set_error('',t('To add excursions to fill your phone'));
-    drupal_goto('user/'.$account->uid.'/edit', array());
+  if (empty($user->field_phone)) {
+    drupal_set_message(t('To add excursions you must fill your phone number.'), 'error');
+    drupal_goto("user/$account->uid/edit", array(
+      'query' => array(
+        'error' => 'phone',
+      )
+    ));
   }
   else{
    drupal_goto('node/add/service', array('query' => array('guide' => $account->uid,)));
@@ -317,6 +321,12 @@ function excur_form_user_profile_form_alter(&$form, &$form_state) {
       '#title' => t('Become a partner'),
       '#default_value' => isset($user->roles[EXCUR_USER_ROLE_PARTNER_ID]) ? TRUE : FALSE,
     );
+  }
+
+  if (!empty($_GET['error'])) {
+    if ($_GET['error'] == 'phone') {
+      $form['field_phone'][LANGUAGE_NONE][0]['value']['#attributes']['class'][] = 'error';
+    }
   }
 
   $form['actions']['submit']['#attributes']['class'][] = 'btn';
