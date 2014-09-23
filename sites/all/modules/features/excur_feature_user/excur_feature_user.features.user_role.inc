@@ -22,5 +22,11 @@ function excur_feature_user_user_default_roles() {
     'weight' => 3,
   );
 
+  // Exported role: Партнер.
+  $roles['Партнер'] = array(
+    'name' => 'Партнер',
+    'weight' => 4,
+  );
+
   return $roles;
 }

@@ -202,7 +202,7 @@ h2.node-description {
   border: 1px solid #d9d9d9;
   padding: 15px;
   margin-bottom: 33px;
-  text-align: center;
+  text-align: left;
 }
 
 .node-type-service .side-block {

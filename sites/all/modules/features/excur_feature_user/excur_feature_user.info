@@ -55,6 +55,7 @@ features[user_permission][] = use tokens in privatemsg
 features[user_permission][] = write privatemsg
 features[user_role][] = Администратор
 features[user_role][] = Гид
+features[user_role][] = Партнер
 features[variable][] = date_format_privatemsg_current_day
 features[variable][] = date_format_privatemsg_current_year
 features[variable][] = date_format_privatemsg_years
