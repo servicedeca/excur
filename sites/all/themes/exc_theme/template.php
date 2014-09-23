@@ -582,27 +582,33 @@ function exc_theme_preprocess_excur_user_menu(&$vars) {
   $uid = $account->uid;
 
   $vars['menu']['news'] = l(t('News and notices'), "user/$uid");
-  $vars['menu']['messages'] = l(t('Messages'), 'user/' . $uid . '/messages');
-  $vars['menu']['profile'] = l(t('Profile'), 'user/' . $uid . '/edit');
-  $vars['menu']['bookings'] = l(t('My bookings'), 'user/' .$uid. '/bookings');
+  $vars['menu']['messages'] = l(t('Messages'), "user/$uid/messages");
+  $vars['menu']['profile'] = l(t('Profile'), "user/$uid/edit");
+  $vars['menu']['bookings'] = l(t('My bookings'), "user/$uid/bookings");
+
   if (!empty($account->roles[EXCUR_USER_ROLE_GUIDE_ID])) {
-    $vars['menu']['offers'] = l(t('My offers'), 'user/' .$uid. '/offer');
-    $vars['menu']['orders'] = l(t('My orders '),'user/' .$uid. '/order');
+    $vars['menu']['offers'] = l(t('My offers'), "user/$uid/offer");
+    $vars['menu']['orders'] = l(t('My orders'), "user/$uid/order");
   }
-  if(empty($account->roles[EXCUR_USER_ROLE_GUIDE_ID])){
-    $vars['guide'] = l(t('Become a guide'),'user/'.$uid.'/edit',array('query' => array('guide' =>'guide',),
-    'attributes' => array(
-      'class' => array('btn btn-primary'),
-    ))
-    );
+  else {
+    $vars['guide'] = l(t('Become a guide'), "user/$uid/edit", array(
+      'query' => array('guide' =>'guide'),
+      'attributes' => array(
+        'class' => array('btn btn-primary'),
+      ),
+    ));
   }
-  if(empty($account->roles[EXCUR_USER_ROLE_PARTNER_ID])){
-    $vars['partner'] = l(t('Become a partner'),'user/'.$uid.'/edit',array('query' => array('partner' =>'partner',),
-        'attributes' => array(
-          'class' => array('btn btn-primary'),
-        ))
-    );
+
+  if (empty($account->roles[EXCUR_USER_ROLE_PARTNER_ID])) {
+    $vars['partner'] = l(t('Become a partner'), "user/$uid/edit", array(
+      'query' => array('partner' =>'partner'),
+      'attributes' => array(
+        'class' => array('btn btn-primary'),
+      ),
+    ));
   }
+
+  $vars['menu']['orders'] = l(t('Travel planner'), "user/$uid/travel-planner");
 }
 
 /**

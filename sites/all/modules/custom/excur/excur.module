@@ -43,8 +43,17 @@ function excur_menu() {
     'access callback' => 'excur_user_page_access',
     'access arguments' => array(1),
   );
+
+  $items['user/%user/travel-planner'] = array(
+    'title' => 'Travel planner',
+    'page callback' => 'theme',
+    'page arguments' => array('excur_travel_planner'),
+    'access callback' => 'excur_user_page_access',
+    'access arguments' => array(1),
+  );
+
   $items['user/%user/add_service'] = array(
-    'title' => 'Add_service',
+    'title' => 'Add service',
     'page callback' => 'excur_add_service',
     'page arguments' => array(1),
     'access callback' => 'excur_user_page_access',
@@ -119,59 +128,60 @@ function excur_node_insert($node) {
  * Implement hook_theme().
  */
 function excur_theme() {
-  $theme['excur_user_messages'] = array(
+  $base = array(
+    'file' => 'theme.inc',
+    'path' => drupal_get_path('module', 'excur') . '/theme',
+  );
+
+  $items['excur_user_messages'] = array(
     'template' => 'excur-user-messages',
     'variables' => array(
       'account' => NULL,
     ),
   );
-  $theme['excur_user_edit'] = array(
+  $items['excur_user_edit'] = array(
     'template' => 'excur-user-edit',
     'variables' => array(
       'account' => NULL,
     ),
   );
-  $theme['excur_user_menu'] = array(
+  $items['excur_user_menu'] = array(
     'template' => 'excur-user-menu',
     'variables' => array(
       'account' => NULL,
     ),
   );
-  $theme['excur_profile_form'] = array(
-    'file' => 'theme.inc',
-    'path' => drupal_get_path('module', 'excur') . '/theme',
+  $items['excur_profile_form'] = $base + array(
     'template' => 'excur-profile-form',
     'render element' => 'form',
   );
-  $theme['excur_user_login_form'] = array(
-    'file' => 'theme.inc',
-    'path' => drupal_get_path('module', 'excur') . '/theme',
+  $items['excur_user_login_form'] = $base + array(
     'template' => 'excur-user-login-form',
     'render element' => 'form',
   );
-  $theme['excur_user_register'] = array(
-    'file' => 'theme.inc',
-    'path' => drupal_get_path('module', 'excur') . '/theme',
+  $items['excur_user_register'] = $base +array(
     'template' => 'excur-user-register-form',
     'render element' => 'form',
   );
-  $theme['excur_service_node'] = array(
-    'file' => 'theme.inc',
-    'path' => drupal_get_path('module', 'excur') . '/theme',
+  $items['excur_service_node'] = $base + array(
     'template' => 'excur-service-node-form',
     'render element' => 'form',
   );
-  $theme['excur_user_bookings'] = array(
+  $items['excur_user_bookings'] = array(
     'template' => 'excur-user-bookings',
   );
-  $theme['excur_user_order'] = array(
+  $items['excur_user_order'] = array(
     'template' => 'excur-user-order',
   );
-  $theme['excur_user_offers'] = array(
+  $items['excur_user_offers'] = array(
     'template' => 'excur-user-offers',
   );
 
-  return $theme;
+  $items['excur_travel_planner'] = $base + array(
+    'template' => 'excur-travel-planner',
+  );
+
+  return $items;
 }
 
 /**
