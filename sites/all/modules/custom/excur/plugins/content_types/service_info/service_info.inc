@@ -68,4 +68,5 @@ function template_preprocess_excur_service_info(&$vars) {
 
   $vars['price'] = $price;
   $vars['currency'] = excur_currency_get_icon($current_currency);
+  $vars['flag'] = flag_create_link('travel_planner', $node->nid);
 }

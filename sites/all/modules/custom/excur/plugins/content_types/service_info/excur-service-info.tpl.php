@@ -15,6 +15,9 @@
         <i class="flag flag-<?php print $lang; ?>"></i>
       <?php endforeach; ?>
     </p>
+    <p>
+      <?php print $flag; ?>
+    </p>
   </div>
   <div class="do-offer">
     <div class="price">

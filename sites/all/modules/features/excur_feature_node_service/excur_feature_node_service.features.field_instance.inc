@@ -235,7 +235,7 @@ function excur_feature_node_service_field_default_field_instances() {
     'bundle' => 'field_reservation_rules',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Дней',
     'display' => array(
       'default' => array(
         'label' => 'inline',
@@ -270,7 +270,7 @@ function excur_feature_node_service_field_default_field_instances() {
     'bundle' => 'field_reservation_rules',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Дней',
     'display' => array(
       'default' => array(
         'label' => 'inline',
@@ -320,6 +320,12 @@ function excur_feature_node_service_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 3,
+      ),
+      'other' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -373,6 +379,12 @@ function excur_feature_node_service_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 8,
       ),
+      'other' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -418,6 +430,12 @@ function excur_feature_node_service_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 16,
+      ),
+      'other' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -476,6 +494,12 @@ function excur_feature_node_service_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 14,
       ),
+      'other' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -519,6 +543,12 @@ function excur_feature_node_service_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 11,
+      ),
+      'other' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -569,6 +599,12 @@ function excur_feature_node_service_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 2,
       ),
+      'other' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 14,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -617,6 +653,12 @@ function excur_feature_node_service_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 12,
+      ),
+      'other' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -667,6 +709,16 @@ function excur_feature_node_service_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 18,
+      ),
+      'other' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => 'content',
+          'image_style' => '70x70',
+        ),
+        'type' => 'image',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -747,6 +799,12 @@ function excur_feature_node_service_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 1,
       ),
+      'other' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -794,6 +852,12 @@ function excur_feature_node_service_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 15,
       ),
+      'other' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'taxonomy',
@@ -837,7 +901,6 @@ function excur_feature_node_service_field_default_field_instances() {
           'delete' => 'Удалить',
           'description' => TRUE,
           'edit' => 'Правка',
-          'translate' => 'Перевести',
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_view',
@@ -848,6 +911,12 @@ function excur_feature_node_service_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 13,
+      ),
+      'other' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -897,6 +966,12 @@ function excur_feature_node_service_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 9,
       ),
+      'other' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 16,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -945,6 +1020,12 @@ function excur_feature_node_service_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'other' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 17,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -990,6 +1071,12 @@ function excur_feature_node_service_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 7,
       ),
+      'other' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1029,7 +1116,6 @@ function excur_feature_node_service_field_default_field_instances() {
           'delete' => 'Удалить',
           'description' => TRUE,
           'edit' => 'Правка',
-          'translate' => 'Перевести',
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_view',
@@ -1047,6 +1133,12 @@ function excur_feature_node_service_field_default_field_instances() {
         ),
         'type' => 'field_collection_view',
         'weight' => 0,
+      ),
+      'other' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1093,6 +1185,12 @@ function excur_feature_node_service_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 10,
+      ),
+      'other' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1168,6 +1266,12 @@ function excur_feature_node_service_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 5,
       ),
+      'other' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1215,6 +1319,12 @@ function excur_feature_node_service_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 6,
       ),
+      'other' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1260,6 +1370,12 @@ function excur_feature_node_service_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 17,
+      ),
+      'other' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 18,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -1316,6 +1432,7 @@ function excur_feature_node_service_field_default_field_instances() {
   t('Гид');
   t('Главное изображение');
   t('Город');
+  t('Дней');
   t('Изображения для слайдера');
   t('Категория');
   t('Максимум за');

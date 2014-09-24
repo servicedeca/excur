@@ -53,7 +53,7 @@
       <tr>
         <td><p><?php print $offer->nid; ?></p>
         </td>
-        <td><p><?php print $offer->date; ?></p>
+        <td><p><?php print date('Y-m-d', $offer->date); ?></p>
         </td>
         <td><p><?php print $price . ' ' . $offer->currency; ?></p>
         </td>

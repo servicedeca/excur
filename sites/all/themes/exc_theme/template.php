@@ -167,6 +167,37 @@ function exc_theme_preprocess_node(&$vars, $hook) {
 }
 
 /**
+ * Process variables for node--service-other.tpl.php.
+ */
+function exc_theme_preprocess_node__service_other(&$vars) {
+  global $language;
+  global $user;
+
+  $node = $vars['node'];
+  $wrapper = entity_metadata_wrapper('node', $node);
+  $wrapper->language($language->language);
+  $price = excur_currency_lowest_price($node);
+  if (!empty($_COOKIE['excur_currency']) && $_COOKIE['excur_currency'] != EXCUR_CURRENCY_DEFAULT) {
+    $currency = $_COOKIE['excur_currency'];
+    $price = excur_currency_convert($price, EXCUR_CURRENCY_DEFAULT, $currency);
+  }
+  else {
+    $currency = EXCUR_CURRENCY_DEFAULT;
+  }
+
+  $vars['price'] = $price;
+  $image_path = $node->field_image[LANGUAGE_NONE][0]['uri'];
+  $vars['image'] = theme('image_style', array(
+    'style_name' => '70x70',
+    'path' => $image_path,
+    'alt' => $node->title,
+    'title' => $node->title,
+  ));
+  $vars['currency'] = excur_currency_get_icon($currency);
+  $vars['title'] = l(t($node->title), 'node/'.$node->nid);
+}
+
+/**
  * Process variables for node--service-teaser.tpl.php.
  */
 function exc_theme_preprocess_node__service_teaser(&$vars) {
@@ -235,6 +266,9 @@ function exc_theme_preprocess_node__service_full(&$vars) {
   $wrapper = entity_metadata_wrapper('node', $node);
   $wrapper->language($language->language);
 
+  if (empty($node->field_slider_images)) {
+    $node->field_slider_images[LANGUAGE_NONE][0] = $node->field_image[LANGUAGE_NONE][0];
+  }
   if (!empty($node->field_slider_images[LANGUAGE_NONE])) {
     foreach ($node->field_slider_images[LANGUAGE_NONE] as $image) {
       $vars['images'][] = theme('image_style', array(
@@ -251,7 +285,6 @@ function exc_theme_preprocess_node__service_full(&$vars) {
 
   $vars['venue'] = $wrapper->field_start_place->value();
   $vars['meeting_time'] = $wrapper->field_start_time->value();
-
 }
 
 /**
@@ -364,13 +397,13 @@ function exc_theme_remote_image_style($variables) {
 /**
  * Process variables for views-view-fields--offers--guide-offers.tpl.php
  */
-function exc_theme_preprocess_views_view_fields__offers__guide_offers(&$vars){
+function exc_theme_preprocess_views_view_fields__offers__guide_offers(&$vars) {
   if (!empty($vars['row']->field_field_image)) {
     $path_image = $vars['row']->field_field_image[0]['raw']['uri'];
-    $vars['image'] = theme('image', array(
+    $vars['image'] = theme('image_style', array(
+      'style_name' => '170x170',
       'path' => $path_image,
-      'width' => '150px',
-      'height' => '150px',
+      'attributes' => array('class' => array('b-c-image')),
     ));
   }
 
@@ -386,7 +419,9 @@ function exc_theme_preprocess_views_view_fields__offers__guide_offers(&$vars){
   switch ($value) {
     case EXCUR_OFFER_NOT_CONFIRMED:
       $vars['fields']['status']->content = '<div class="content_confirm' . $id . '">';
+      $vars['fields']['status']->content .= '<div class = "order-card-status-inner">';
       $vars['fields']['status']->content .= t('Awaiting confirmation');
+      $vars['fields']['status']->content .= '</div>';
       $vars['fields']['status']->content .= '<br/>';
       $vars['fields']['status']->content .= l(t('Confirm'), '#', array(
         'external' => TRUE,
@@ -406,12 +441,146 @@ function exc_theme_preprocess_views_view_fields__offers__guide_offers(&$vars){
       $vars['fields']['status']->content .= '</div>';
       break;
     case EXCUR_OFFER_CONFIRMED:
-      $vars['fields']['status']->content = '<div class="content_confirm"' . $id . '">' . t('Confirmed') . '</div>';
+      $vars['fields']['status']->content = '<div class="content_confirm"' . $id . '"><div class="order-card-status-inner-confirm">' . t('Confirmed') . '</div></div>';
       break;
     case EXCUR_OFFER_REJECTED:
-      $vars['fields']['status']->content = '<div id="content_confirm"' . $id . '">' . t('Rejected') . '</div>';
+      $vars['fields']['status']->content = '<div id="content_confirm"' . $id . '"><div class="order-card-status-inner-confirm">' . t('Rejected') . '</div></div>';
       break;
   }
+}
+
+/**
+ * Process variables for views-view-fields--offers--confirmed-guide-offers.tpl.php
+ */
+function exc_theme_preprocess_views_view_fields__offers__confirmed_guide_offers(&$vars) {
+  if (!empty($vars['row']->field_field_image)) {
+    $path_image = $vars['row']->field_field_image[0]['raw']['uri'];
+    $vars['image'] = theme('image_style', array(
+      'style_name' => '170x170',
+      'path' => $path_image,
+      'attributes' => array('class' => array('b-c-image')),
+    ));
+  }
+
+  $vars['title'] = $vars['fields']['title']->content;
+  $vars['guide'] = $vars['fields']['field_name_1']->content;
+  $vars['id'] = $vars['fields']['id']->content;
+  $vars['date'] = $vars['fields']['date']->content;
+  $nid = $vars['row']->node_excur_offer_nid;
+  $id = $vars['row']->excur_offer_id;
+  $vars['details'] = l(t('details'),'excur/offer/pay/'. $nid, array('query' => array('id' => $id)));
+
+  $value = $vars['row']->excur_offer_status;
+  switch ($value) {
+    case EXCUR_OFFER_NOT_CONFIRMED:
+      $vars['fields']['status']->content = '<div class="content_confirm' . $id . '">';
+      $vars['fields']['status']->content .= '<div class = "order-card-status-inner">';
+      $vars['fields']['status']->content .= t('Awaiting confirmation');
+      $vars['fields']['status']->content .= '</div>';
+      $vars['fields']['status']->content .= '<br/>';
+      $vars['fields']['status']->content .= l(t('Confirm'), '#', array(
+        'external' => TRUE,
+        'attributes' => array(
+          'class' => array('confirm-order'),
+          'data-id' => $id,
+        )
+      ));
+      $vars['fields']['status']->content .= '<br/>';
+      $vars['fields']['status']->content .= l(t('Reject'), '#', array(
+        'external' => TRUE,
+        'attributes' => array(
+          'class' => array('confirm-reject'),
+          'data-id' => $id,
+        )
+      ));
+      $vars['fields']['status']->content .= '</div>';
+      break;
+    case EXCUR_OFFER_CONFIRMED:
+      $vars['fields']['status']->content = '<div class="content_confirm"' . $id . '"><div class="order-card-status-inner-confirm">' . t('Confirmed') . '</div></div>';
+      break;
+    case EXCUR_OFFER_REJECTED:
+      $vars['fields']['status']->content = '<div id="content_confirm"' . $id . '"><div class="order-card-status-inner-confirm">' . t('Rejected') . '</div></div>';
+      break;
+  }
+}
+
+/**
+ * Process variables for views-view-fields--offers--rejected-guide-offers.tpl.php
+ */
+function exc_theme_preprocess_views_view_fields__offers__rejected_guide_offers(&$vars) {
+  if (!empty($vars['row']->field_field_image)) {
+    $path_image = $vars['row']->field_field_image[0]['raw']['uri'];
+    $vars['image'] = theme('image_style', array(
+      'style_name' => '170x170',
+      'path' => $path_image,
+      'attributes' => array('class' => array('b-c-image')),
+    ));
+  }
+
+  $vars['title'] = $vars['fields']['title']->content;
+  $vars['guide'] = $vars['fields']['field_name_1']->content;
+  $vars['id'] = $vars['fields']['id']->content;
+  $vars['date'] = $vars['fields']['date']->content;
+  $nid = $vars['row']->node_excur_offer_nid;
+  $id = $vars['row']->excur_offer_id;
+  $vars['details'] = l(t('details'),'excur/offer/pay/'. $nid, array('query' => array('id' => $id)));
+
+  $value = $vars['row']->excur_offer_status;
+  switch ($value) {
+    case EXCUR_OFFER_NOT_CONFIRMED:
+      $vars['fields']['status']->content = '<div class="content_confirm' . $id . '">';
+      $vars['fields']['status']->content .= '<div class = "order-card-status-inner">';
+      $vars['fields']['status']->content .= t('Awaiting confirmation');
+      $vars['fields']['status']->content .= '</div>';
+      $vars['fields']['status']->content .= '<br/>';
+      $vars['fields']['status']->content .= l(t('Confirm'), '#', array(
+        'external' => TRUE,
+        'attributes' => array(
+          'class' => array('confirm-order'),
+          'data-id' => $id,
+        )
+      ));
+      $vars['fields']['status']->content .= '<br/>';
+      $vars['fields']['status']->content .= l(t('Reject'), '#', array(
+        'external' => TRUE,
+        'attributes' => array(
+          'class' => array('confirm-reject'),
+          'data-id' => $id,
+        )
+      ));
+      $vars['fields']['status']->content .= '</div>';
+      break;
+    case EXCUR_OFFER_CONFIRMED:
+      $vars['fields']['status']->content = '<div class="content_confirm"' . $id . '"><div class="order-card-status-inner-confirm">' . t('Confirmed') . '</div></div>';
+      break;
+    case EXCUR_OFFER_REJECTED:
+      $vars['fields']['status']->content = '<div id="content_confirm"' . $id . '"><div class="order-card-status-inner-confirm">' . t('Rejected') . '</div></div>';
+      break;
+  }
+}
+
+/**
+ * Process variables for views-view-fields--offers--confirmed-user-offers.tpl.php
+ */
+function exc_theme_preprocess_views_view_fields__offers__confirmed_user_offers(&$vars) {
+  if (!empty($vars['row']->field_field_image)) {
+    $path_image = $vars['row']->field_field_image[0]['raw']['uri'];
+    $vars['image'] = theme('image_style', array(
+      'style_name' => '170x170',
+      'path' => $path_image,
+      'attributes' => array('class' => array('b-c-image')),
+    ));
+  }
+
+  $vars['title'] = $vars['fields']['title']->content;
+  $vars['guide'] = $vars['fields']['field_name']->content;
+  $vars['id'] = $vars['fields']['id']->content;
+  $vars['data'] = $vars['fields']['date']->content;
+  $vars['status'] = $vars['fields']['status']->content;
+  $nid = $vars['row']->node_excur_offer_nid;
+  $id = $vars['row']->excur_offer_id;
+  $vars['guide_image'] = $vars['fields']['field_image_1']->content;
+  $vars['details'] = l(t('details'),'excur/offer/pay/'. $nid, array('query' => array('id' => $id)));
 }
 
 /**
@@ -420,10 +589,34 @@ function exc_theme_preprocess_views_view_fields__offers__guide_offers(&$vars){
 function exc_theme_preprocess_views_view_fields__offers__user_offers(&$vars) {
   if (!empty($vars['row']->field_field_image)) {
     $path_image = $vars['row']->field_field_image[0]['raw']['uri'];
-    $vars['image'] = theme('image', array(
+    $vars['image'] = theme('image_style', array(
+      'style_name' => '170x170',
       'path' => $path_image,
-      'width' => '150px',
-      'height' => '150px',
+      'attributes' => array('class' => array('b-c-image')),
+    ));
+  }
+
+  $vars['title'] = $vars['fields']['title']->content;
+  $vars['guide'] = $vars['fields']['field_name']->content;
+  $vars['id'] = $vars['fields']['id']->content;
+  $vars['data'] = $vars['fields']['date']->content;
+  $vars['status'] = $vars['fields']['status']->content;
+  $nid = $vars['row']->node_excur_offer_nid;
+  $id = $vars['row']->excur_offer_id;
+  $vars['guide_image'] = $vars['fields']['field_image_1']->content;
+  $vars['details'] = l(t('details'),'excur/offer/pay/'. $nid, array('query' => array('id' => $id)));
+}
+
+/**
+ * Process variables for views-view-fields--offers--rejected-user-offers.tpl.php
+ */
+function exc_theme_preprocess_views_view_fields__offers__rejected_user_offers(&$vars) {
+  if (!empty($vars['row']->field_field_image)) {
+    $path_image = $vars['row']->field_field_image[0]['raw']['uri'];
+    $vars['image'] = theme('image_style', array(
+      'style_name' => '170x170',
+      'path' => $path_image,
+      'attributes' => array('class' => array('b-c-image')),
     ));
   }
 
@@ -441,7 +634,7 @@ function exc_theme_preprocess_views_view_fields__offers__user_offers(&$vars) {
 /**
  * Process variables for order-template.tpl.php
  */
-function exc_theme_preprocess_order_template(&$vars){
+function exc_theme_preprocess_order_template(&$vars) {
   $offer = excur_offer_load($_GET['id']);
   $node = $vars['order'];
 
@@ -495,7 +688,7 @@ function exc_theme_preprocess_order_template(&$vars){
 /**
  * Process variables for pay-template.tpl.php
  */
-function exc_theme_preprocess_pay_template(&$vars){
+function exc_theme_preprocess_pay_template(&$vars) {
   $offer = excur_offer_load($_GET['id']);
   $node = node_load($offer->nid);
   $city = taxonomy_term_load($node->field_city[LANGUAGE_NONE][0]['target_id']);
@@ -547,13 +740,33 @@ function exc_theme_preprocess_excur_user_menu(&$vars) {
   $uid = $account->uid;
 
   $vars['menu']['news'] = l(t('News and notices'), "user/$uid");
-  $vars['menu']['messages'] = l(t('Messages'), 'user/' . $uid . '/messages');
-  $vars['menu']['profile'] = l(t('Profile'), 'user/' . $uid . '/edit');
-  $vars['menu']['bookings'] = l(t('My bookings'), 'user/' .$uid. '/bookings');
+  $vars['menu']['messages'] = l(t('Messages'), "user/$uid/messages");
+  $vars['menu']['profile'] = l(t('Profile'), "user/$uid/edit");
+  $vars['menu']['bookings'] = l(t('My bookings'), "user/$uid/bookings");
+
   if (!empty($account->roles[EXCUR_USER_ROLE_GUIDE_ID])) {
-    $vars['menu']['offers'] = l(t('My offers'), 'user/' .$uid. '/offer');
-    $vars['menu']['orders'] = l(t('My orders '),'user/' .$uid. '/order');
+    $vars['menu']['offers'] = l(t('My offers'), "user/$uid/offer");
+    $vars['menu']['orders'] = l(t('My orders'), "user/$uid/order");
   }
+  else {
+    $vars['guide'] = l(t('Become a guide'), "user/$uid/edit", array(
+      'query' => array('guide' =>'guide'),
+      'attributes' => array(
+        'class' => array('btn btn-primary'),
+      ),
+    ));
+  }
+
+  if (empty($account->roles[EXCUR_USER_ROLE_PARTNER_ID])) {
+    $vars['partner'] = l(t('Become a partner'), "user/$uid/edit", array(
+      'query' => array('partner' =>'partner'),
+      'attributes' => array(
+        'class' => array('btn btn-primary'),
+      ),
+    ));
+  }
+
+  $vars['menu']['planner'] = l(t('Travel planner'), "user/$uid/travel-planner");
 }
 
 /**
@@ -574,42 +787,113 @@ function exc_theme_preprocess_excur_user_edit(&$vars) {
 
   $vars['user_menu'] = excur_user_menu($account);
   $vars['form'] = drupal_get_form('user_profile_form', $account);
+  if(isset($_GET['guide']) && $_GET['guide'] == 'guide'){
+    $vars['form']['guide']['#checked'] = TRUE;
+  }
+  if(isset($_GET['partner']) && $_GET['partner'] == 'partner'){
+    $vars['form']['partner']['#checked'] = TRUE;
+  }
 }
 
 /**
  * Process variables for excur-user-bookings.tpl.php
  */
-function exc_theme_preprocess_excur_user_bookings(&$vars){
+function exc_theme_preprocess_excur_user_bookings(&$vars) {
   $account = $vars['account'];
 
   $vars['user_menu'] = excur_user_menu($account);
-  $vars['bookings'] = views_embed_view('offers', 'user_offers');
+  $vars['confirmed'] = views_embed_view('offers', 'confirmed_user_offers');
+  $vars['rejected'] = views_embed_view('offers', 'rejected_user_offers');
+  $vars['not_confirmed'] = views_embed_view('offers', 'user_offers');
 }
 
 /**
  * Process variables for excur-user-order.tpl.php
  */
-function exc_theme_preprocess_excur_user_order(&$vars){
+function exc_theme_preprocess_excur_user_order(&$vars) {
   $account = $vars['account'];
 
   $vars['user_menu'] = excur_user_menu($account);
-  $vars['order'] = views_embed_view('offers', 'guide_offers', $account->uid);
+  $vars['not_confirmed'] = views_embed_view('offers', 'guide_offers', $account->uid);
+  $vars['confirmed'] = views_embed_view('offers', 'confirmed_guide_offers', $account->uid);
+  $vars['rejected'] = views_embed_view('offers', 'rejected_guide_offers', $account->uid);
 }
 
 /**
  * Process variables for excur-user-offers.tpl.php
  */
-function exc_theme_preprocess_excur_user_offers(&$vars){
+function exc_theme_preprocess_excur_user_offers(&$vars) {
   $account = $vars['account'];
 
   $vars['user_menu'] = excur_user_menu($account);
   $vars['offer'] = views_embed_view('content', 'guide_service', $account->uid);
 
   if (!empty($account->roles[EXCUR_USER_ROLE_GUIDE_ID])) {
-    $vars['add_service'] = l(t('Add excursion'), 'node/add/service', array(
+    $vars['add_service'] = l(t('Add excursion'), 'user/'.$account->uid.'/add_service', array(
       'query' => array(
         'guide' => $account->uid,
       )
     ));
   }
+
+}
+
+/**
+ * Process variables for views-view-fields--guide-other.tpl.php
+ */
+function exc_theme_preprocess_views_view_fields__guide_other(&$vars) {
+  $nid = $vars['row']->nid;
+  $title = $vars['row']->field_title_field[0]['raw']['value'];
+  $vars['title'] = l($title,'node/'.$nid);
+  $path_image = $vars['row']->field_field_image[0]['raw']['uri'];
+  $vars['image'] = theme('image', array(
+    'path' => $path_image,
+    'width' => '150px',
+    'height' => '150px',
+    'attributes' => array('class' => array('')),
+  ));
+}
+
+/**
+ * Process variables for views-view-fields--companion-service.tpl.php
+ */
+function exc_theme_preprocess_views_view_fields__companion_service(&$vars) {
+  $guide = user_load($vars['row']->uid);
+
+  $vars['image'] = excur_guide_logo($guide, '70x70');
+  $vars['name'] = $vars['fields']['name']->content;
+}
+
+/**
+ * Process variables for views-view-fields--companion-city.tpl.php
+ */
+function exc_theme_preprocess_views_view_fields__companion_city(&$vars) {
+  global $language;
+
+  $node = node_load($vars['fields']['nid']->raw);
+  $wrapper = entity_metadata_wrapper('node', $node);
+  $wrapper->language($language->language);
+
+  $vars['title'] = l($node->title, "node/$node->nid");
+  $image_path = $node->field_image[LANGUAGE_NONE][0]['uri'];
+  $vars['image'] = theme('image_style', array(
+    'style_name' => '170x170',
+    'path' => $image_path,
+  ));
+
+  foreach ($wrapper->field_languages->value() as $lang) {
+    $vars['languages'][] = $lang->field_lang_code[LANGUAGE_NONE][0]['value'];
+  }
+
+  $price = excur_currency_lowest_price($node);
+  if (!empty($_COOKIE['excur_currency']) && $_COOKIE['excur_currency'] != EXCUR_CURRENCY_DEFAULT) {
+    $currency = $_COOKIE['excur_currency'];
+    $price = excur_currency_convert($price, EXCUR_CURRENCY_DEFAULT, $currency);
+  }
+  else {
+    $currency = EXCUR_CURRENCY_DEFAULT;
+  }
+
+  $vars['price'] = $price;
+  $vars['currency'] = excur_currency_get_icon($currency);
 }

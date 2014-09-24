@@ -29,16 +29,16 @@ function excur_offer_views_data() {
     'title' => t('Date'),
     'help' => t('Chosen offer date.'),
     'field' => array(
-      'handler' => 'views_handler_field',
+      'handler' => 'views_handler_field_date',
     ),
     'sort' => array(
-      'handler' => 'views_handler_sort',
+      'handler' => 'views_handler_sort_date',
     ),
     'filter' => array(
-      'handler' => 'views_handler_filter_string',
+      'handler' => 'views_handler_filter_date',
     ),
     'argument' => array(
-      'handler' => 'views_handler_argument_string',
+      'handler' => 'views_handler_argument_date',
     ),
   );
 
@@ -169,6 +169,22 @@ function excur_offer_views_data() {
   $data['excur_offer']['status'] = array(
     'title' => t('status'),
     'help' => t('status of of offer.'),
+    'field' => array(
+      'handler' => 'views_handler_field',
+    ),
+    'sort' => array(
+      'handler' => 'views_handler_sort',
+    ),
+    'filter' => array(
+      'handler' => 'views_handler_filter_string',
+    ),
+    'argument' => array(
+      'handler' => 'views_handler_argument_string',
+    ),
+  );
+  $data['excur_offer']['companion'] = array(
+    'title' => t('companion'),
+    'help' => t('seeking a companion.'),
     'field' => array(
       'handler' => 'views_handler_field',
     ),

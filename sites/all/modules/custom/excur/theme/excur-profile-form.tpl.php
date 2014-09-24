@@ -7,7 +7,7 @@
   </ul>
   <div class="tab-content">
     <div id="pane1" class="tab-pane active">
-      <div class="span3">
+      <div class="span3 side-block">
         <?php print render($form['field_image']);?>
       </div>
       <div class="span5">
@@ -23,6 +23,7 @@
       </div>
       <div class="span8">
         <?php print render($form['guide']);?>
+        <?php print render($form['partner']);?>
       </div>
     </div>
     <div id="pane2" class="tab-pane">

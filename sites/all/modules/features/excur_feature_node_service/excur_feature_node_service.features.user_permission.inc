@@ -10,6 +10,15 @@
 function excur_feature_node_service_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: 'administer flags'.
+  $permissions['administer flags'] = array(
+    'name' => 'administer flags',
+    'roles' => array(
+      'Администратор' => 'Администратор',
+    ),
+    'module' => 'flag',
+  );
+
   // Exported permission: 'create service content'.
   $permissions['create service content'] = array(
     'name' => 'create service content',
@@ -56,6 +65,33 @@ function excur_feature_node_service_user_default_permissions() {
       'Гид' => 'Гид',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'flag travel_planner'.
+  $permissions['flag travel_planner'] = array(
+    'name' => 'flag travel_planner',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'flag',
+  );
+
+  // Exported permission: 'unflag travel_planner'.
+  $permissions['unflag travel_planner'] = array(
+    'name' => 'unflag travel_planner',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'flag',
+  );
+
+  // Exported permission: 'use flag import'.
+  $permissions['use flag import'] = array(
+    'name' => 'use flag import',
+    'roles' => array(
+      'Администратор' => 'Администратор',
+    ),
+    'module' => 'flag',
   );
 
   return $permissions;

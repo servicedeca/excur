@@ -7,10 +7,13 @@ stylesheets[all][] = css/bootstrap.min.css
 stylesheets[all][] = css/bootstrap-responsive.min.css
 stylesheets[all][] = css/bootstrap-override.css
 stylesheets[all][] = css/bootstrap-select.min.css
+stylesheets[all][] = css/fullcalendar.min.css
 stylesheets[all][] = css/styles.css
 stylesheets[all][] = css/flag.css
 stylesheets[all][] = css/exc_theme.css
 
 scripts[] = js/bootstrap.min.js
 scripts[] = js/bootstrap-select.min.js
+scripts[] = js/moment.min.js
+scripts[] = js/fullcalendar.min.js
 scripts[] = js/exc_theme.js
