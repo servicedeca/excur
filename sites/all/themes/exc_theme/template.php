@@ -401,7 +401,7 @@ function exc_theme_preprocess_views_view_fields__offers__guide_offers(&$vars) {
   if (!empty($vars['row']->field_field_image)) {
     $path_image = $vars['row']->field_field_image[0]['raw']['uri'];
     $vars['image'] = theme('image_style', array(
-      'style_name' => '170x170',
+      'style_name' => '170x130',
       'path' => $path_image,
       'attributes' => array('class' => array('b-c-image')),
     ));
@@ -456,7 +456,7 @@ function exc_theme_preprocess_views_view_fields__offers__confirmed_guide_offers(
   if (!empty($vars['row']->field_field_image)) {
     $path_image = $vars['row']->field_field_image[0]['raw']['uri'];
     $vars['image'] = theme('image_style', array(
-      'style_name' => '170x170',
+      'style_name' => '170x130',
       'path' => $path_image,
       'attributes' => array('class' => array('b-c-image')),
     ));
@@ -511,7 +511,7 @@ function exc_theme_preprocess_views_view_fields__offers__rejected_guide_offers(&
   if (!empty($vars['row']->field_field_image)) {
     $path_image = $vars['row']->field_field_image[0]['raw']['uri'];
     $vars['image'] = theme('image_style', array(
-      'style_name' => '170x170',
+      'style_name' => '170x130',
       'path' => $path_image,
       'attributes' => array('class' => array('b-c-image')),
     ));
@@ -566,7 +566,7 @@ function exc_theme_preprocess_views_view_fields__offers__confirmed_user_offers(&
   if (!empty($vars['row']->field_field_image)) {
     $path_image = $vars['row']->field_field_image[0]['raw']['uri'];
     $vars['image'] = theme('image_style', array(
-      'style_name' => '170x170',
+      'style_name' => '170x130',
       'path' => $path_image,
       'attributes' => array('class' => array('b-c-image')),
     ));
@@ -590,7 +590,7 @@ function exc_theme_preprocess_views_view_fields__offers__user_offers(&$vars) {
   if (!empty($vars['row']->field_field_image)) {
     $path_image = $vars['row']->field_field_image[0]['raw']['uri'];
     $vars['image'] = theme('image_style', array(
-      'style_name' => '170x170',
+      'style_name' => '170x130',
       'path' => $path_image,
       'attributes' => array('class' => array('b-c-image')),
     ));
@@ -614,7 +614,7 @@ function exc_theme_preprocess_views_view_fields__offers__rejected_user_offers(&$
   if (!empty($vars['row']->field_field_image)) {
     $path_image = $vars['row']->field_field_image[0]['raw']['uri'];
     $vars['image'] = theme('image_style', array(
-      'style_name' => '170x170',
+      'style_name' => '170x130',
       'path' => $path_image,
       'attributes' => array('class' => array('b-c-image')),
     ));
@@ -877,7 +877,7 @@ function exc_theme_preprocess_views_view_fields__companion_city(&$vars) {
   $vars['title'] = l($node->title, "node/$node->nid");
   $image_path = $node->field_image[LANGUAGE_NONE][0]['uri'];
   $vars['image'] = theme('image_style', array(
-    'style_name' => '170x170',
+    'style_name' => '170x130',
     'path' => $image_path,
   ));
 
