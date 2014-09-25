@@ -1,193 +1,173 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>Main Page</title>
-     <link href="css/bootstrap.css" rel="stylesheet">
-     <link href="css/style.css" rel="stylesheet">
-     <link href="css/dropdowns-enhancement.min.css" rel="stylesheet">
-     <link href="css/animate.css" rel="stylesheet">
-     <link href="css/flags.css" rel="stylesheet">
-     <script src="http://code.jquery.com/jquery-latest.js"></script>
-     <script src="js/bootstrap.js"></script>
-     <script src="js/dropdowns-enhancement.js"></script>
-     <script src="js/init.js"></script>
-     <script src="js/modernizr.js"></script>
-     <script src="js/touch.js"></script>
-     <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-     
-     <script>
-         
-        $(function(){
-            $("[data-toggle='tooltip']").tooltip();
-            
-       $("[data-toggle=popover]")
-            .popover({
-                offset: 10,
-                trigger: 'manual',
-                animate: false,
-                html: true,
-                placement: 'bottom',
-                template: '<div class="popover" onmouseover="$(this).mouseleave(function() {$(this).hide(); });"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
-            }).click(function(e) {
-                e.preventDefault() ;
-            }).mouseenter(function(e) {
-                $(this).popover('show');
-            });
-              
-         });
-              
-         
-     </script>
-
-     
-  </head>
-  <body>
-            <div id="wrapper">
-         <div class="navbar navbar-default navbar-fixed-top mediamin" >
-		    <div class="container menu">		    
-			    <div class="navbar-header page-scroll">
+    <head>
+        <title>Main Page</title>
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/card.css" rel="stylesheet">
+        <link href="css/flags.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <link href="css/dropdowns-enhancement.min.css" rel="stylesheet">
+        <link href="css/animate.css" rel="stylesheet">
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/dropdowns-enhancement.js"></script>
+        <script src="js/init.js"></script>
+        <script src="js/touch.js"></script>
+        <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> 
+    </head>
+    <body id="ASIA">
+    <div id="wrapper">
+        <div class="navbar navbar-default navbar-fixed-top mediamin" >
+            <div class="container menu">
+                <div class="navbar-header page-scroll">
                     <!-- Button for smallest screens -->
                     <button type="button" class="navbar-toggle mediatoogle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span> 
                         <span class="icon-bar"></span>
-                     </button>
+                    </button>
                     <a class="navbar-brand" href="index.html"><img src="image/minilogo.png" class="minilogo"></a>     
 			    </div>
-			<div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" >
-				<ul class="nav navbar-nav navbar-right">
-					<li>
-                       <form class="navbar-form navbar-left topsearch" role="search">
-                        <div class="form-group">
-                          <input type="text" class="form-control search headsearch" placeholder="Поиск">
-                        </div>
-                      </form>
-                  </li>
-                  	<li>
-				        <button type="button" class="padd phone" data-toggle="popover" data-placement="bottom" title="Телефон горячей линии" data-content="8 913 004 4549"><i class="fa fa-phone fa-2x"></i></button>
-				</li>
-                  <li>
-                    <div class="curent1">
-                        <button class="padd" data-label-placement="" data-toggle="dropdown" class="btn btn-default dropdown-toggle mybutt"><i class="data-label"><img src="image/RU.png"></i>
-                        </button>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <input type="radio" id="ex7_1" name="ex7" value="1" checked="">
-                        <label for="ex7_1"><i class="data-label"><img src="image/RU.png"></i>Русский</label>
-                      </li>
-                      <li>
-                        <input type="radio" id="ex7_2" name="ex7" value="2">
-                        <label for="ex7_2"><i class="data-label"><img src="image/GB.png"></i>English</label>
-                      </li>
-                      <li>
-                        <input type="radio" id="ex7_3" name="ex7" value="3">
-                        <label for="ex7_3"><i class="data-label"><img src="image/CN.png"></i>China</label>
-                      </li>
+			    <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" >
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <form class="navbar-form navbar-left topsearch" role="search">
+                                <div class="form-group">
+                                    <input type="text" class="form-control search headsearch" placeholder="Поиск">
+                                </div>
+                            </form>
+                        </li>
+                        <li>
+                            <div class="box-crew padd phone">
+                                <i class="fa fa-phone fa-2x"></i>
+                                <span>8 913 004 45 49</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="curent1">
+                                <button class="padd" data-label-placement="" data-toggle="dropdown" class="btn btn-default dropdown-toggle mybutt"><i class="data-label"><img src="image/RU.png"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <input type="radio" id="ex7_1" name="ex7" value="1" checked="">
+                                        <label for="ex7_1"><i class="data-label"><img src="image/RU.png"></i>Русский</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="ex7_2" name="ex7" value="2">
+                                        <label for="ex7_2"><i class="data-label"><img src="image/GB.png"></i>English</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="ex7_3" name="ex7" value="3">
+                                        <label for="ex7_3"><i class="data-label"><img src="image/CN.png"></i>China</label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>	
+                        <li>
+                            <div class="curent">
+                                <button class="padd" data-label-placement="" data-toggle="dropdown" class="btn btn-default dropdown-toggle"><i class="data-label"><img src="image/dol.png"></i></button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <input type="radio" id="ex8_1" name="ex8" value="1" checked="">
+                                        <label for="ex_1"><i class="data-label"><img src="image/dol.png"></i>Доллар</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="ex8_2" name="ex8" value="2">
+                                        <label for="ex8_2"><i class="data-label"><img src="image/EUR.png"></i>EUR</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="ex8_3" name="ex8" value="3">
+                                        <label for="ex8_3"><i class="data-label"><img src="image/yan.png"></i>Yaun</label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="btn bursize" data-toggle="modal" data-target=".bs-example-modal-md"><div class="enter">Войти или <br>Создать аккаунт</div>
+                            </a>
+                        </li>
                     </ul>
-                  </div>
-					</li>	
-                    <li>
-                      <div class="curent">
-                        <button class="padd" data-label-placement="" data-toggle="dropdown" class="btn btn-default dropdown-toggle"><i class="data-label"><img src="image/dol.png"></i></button>
-                        <ul class="dropdown-menu">
-                          <li>
-                            <input type="radio" id="ex8_1" name="ex8" value="1" checked="">
-                            <label for="ex_1"><i class="data-label"><img src="image/dol.png"></i>Доллар</label>
-                          </li>
-                          <li>
-                            <input type="radio" id="ex8_2" name="ex8" value="2">
-                            <label for="ex8_2"><i class="data-label"><img src="image/EUR.png"></i>EUR</label>
-                          </li>
-                          <li>
-                            <input type="radio" id="ex8_3" name="ex8" value="3">
-                            <label for="ex8_3"><i class="data-label"><img src="image/yan.png"></i>Yaun</label>
-                          </li>
-                        </ul>
-                        </div>
-				    </li>
-					<li><a class="btn bursize" data-toggle="modal" data-target=".bs-example-modal-md"><div class="enter">Войти или <br>Создать аккаунт</div></a></li>
-				</ul>
-			 </div><!--/.nav-collapse -->
-		   </div>
-	   </div>
-          
-            <!-- MODAL -->
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+           
+        <!-- MODAL -->
                    
-                    <div class="modal fade bs-example-modal-md" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-md">
-                            <div class="modal-content">
-                                <ul  id="menureg" style="margin-bottom: 15px;">
-                                      <a href="#homes" data-toggle="tab"  ><li   class="active leftreg">Регистрация</li></a>
-                                      <a href="#profile" data-toggle="tab"  ><li class="leftright">Вход</li></a>
-                                </ul>
-                                <ul class="modal-social list-unstyled clearfix">
-                                    <li><a href="#" class="btn btn-primary btn-fb yy">Facebook</a></li>
-                                    <li><a href="#" class="btn btn-primary btn-goo yy">Google +</a></li>
-                                </ul>
-                            <div id="myTabContent" class="tab-content">
-                              <div class="tab-pane fade active in" id="homes">
-                                  <div class="row formreg">
-                                        <div class="col-sm-12 p">
-                                                <input type="text" class="form-control for" placeholder="E-mail">
-                                        </div>
-                                        <div class="col-sm-12 p">
-                                                <input type="text" class="form-control for" placeholder="Ф.И.О.">
-                                        </div>
-                                         <div class="col-sm-12 p">
-                                                <input type="text" class="form-control for " placeholder="Родной язык">
-                                          </div>
-                                          <div class="col-sm-12 p">
-                                                <div class="checkbox for">
-                                                      <label>
-                                                            <input type="checkbox" value="">
-                                                            Я принимаю условия соглашения.
-                                                      </label>
-                                                  </div>
-                                            </div>
-                                           <div class="col-sm-12 p">
-                                                <button type="button" class="btn btn-primary btn-lg btn-block forbut">Зарегистрировать</button>
-                                            </div>
-                                    </div>
-                              </div>
-                              <div class="tab-pane fade" id="profile">
-                                     <div class="row formenter">
-                                         <div class="col-sm-12 p">
-                                            <input type="text" class="form-control for" placeholder="Логин">
-                                         </div>
-                                        <div class="col-sm-12 p">
-                                            <input type="text" class="form-control for" placeholder="Пароль">
-                                        </div>
-                                        <div class="col-sm-12 p1">
-                                            <button type="button" class="btn btn-primary btn-lg btn-block forbut">Войти
-                                           </button>
-                                            </div>
+        <div class="modal fade bs-example-modal-md" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content">
+                    <ul  id="menureg" style="margin-bottom: 15px;">
+                        <a href="#homes" data-toggle="tab"  ><li   class="active leftreg">Регистрация</li></a>
+                        <a href="#profile" data-toggle="tab"  ><li class="leftright">Вход</li></a>
+                    </ul>
+                    <ul class="modal-social list-unstyled clearfix">
+                        <li><a href="#" class="btn btn-primary btn-fb yy">Facebook</a></li>
+                        <li><a href="#" class="btn btn-primary btn-goo yy">Google +</a></li>
+                    </ul>
+                    <div id="myTabContent" class="tab-content">
+                        <div class="tab-pane fade active in" id="homes">
+                            <div class="row formreg">
+                                <div class="col-sm-12 p">
+                                        <input type="text" class="form-control for" placeholder="E-mail">
+                                </div>
+                                <div class="col-sm-12 p">
+                                    <input type="text" class="form-control for" placeholder="Ф.И.О.">
+                                </div>
+                                <div class="col-sm-12 p">
+                                    <input type="text" class="form-control for " placeholder="Родной язык">
+                                </div>
+                                <div class="col-sm-12 p">
+                                    <div class="checkbox for">
+                                          <label>
+                                                <input type="checkbox" value="">
+                                                Я принимаю условия соглашения.
+                                          </label>
                                       </div>
-                                  </div>
-                             </div>
+                                </div>
+                                <div class="col-sm-12 p">
+                                    <button type="button" class="btn btn-primary btn-lg btn-block forbut">Зарегистрировать</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="profile">
+                            <div class="row formenter">
+                                <div class="col-sm-12 p">
+                                    <input type="text" class="form-control for" placeholder="Логин">
+                                </div>
+                                <div class="col-sm-12 p">
+                                    <input type="text" class="form-control for" placeholder="Пароль">
+                                </div>
+                                <div class="col-sm-12 p1">
+                                    <button type="button" class="btn btn-primary btn-lg btn-block forbut">Войти
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
-                <!-- END MODAL -->
+            </div>
+        </div>
                                   
-        <section id="contASIA">
-            <div class="container content bgASIA "> 
-               <div class="cont_icon"><img src="image/ASIAicon.png"></div>
-                <h1 class="cont_title">АЗИЯ</h1>
-                <p class="cont_text">
-                    Если вы еще не решили, на экскурсию в какой стране вы хотите отправиться, то эта страница именно для вас. Здесь представлены все страны континента. В скобках указано количество экскурсий в каждой стране.                             Страны указаны в алфавитном порядке.  Кроме того, для поиска подходящего тура, вы всегда можете воспользоваться поиском вверху страницы.
+        <!-- END MODAL -->
+                 
+        <section id="continent">
+            <div class="container content continent-bg"> 
+                <div class="cont_icon">
+                </div>
+                <h1 class="cont_title">ЕВРОПА</h1>
+                <p class="cont_text">Если вы еще не решили, на экскурсию в какой стране вы хотите отправиться, то эта страница именно для вас. Здесь представлены все страны континента. В скобках указано количество экскурсий в каждой стране. Страны указаны в алфавитном порядке.  Кроме того, для поиска подходящего тура, вы всегда можете воспользоваться поиском вверху страницы.
                 </p>
                 <div class=" listcountry">
-                  <ul>
-                     <a href="#"><li><img src="blank.gif" class="flag flag-ae"/>&nbspОАЭ</li></a>
-                     <a href="#"><li><img src="blank.gif" class="flag flag-ae"/>&nbspОАЭ</li></a>
-                     <a href="#"><li><img src="blank.gif" class="flag flag-ae"/>&nbspОАЭ</li></a>
-                     <a href="#"><li><img src="blank.gif" class="flag flag-ae"/>&nbspОАЭ</li></a>
-                     <a href="#"><li><img src="blank.gif" class="flag flag-ae"/>&nbspОАЭ</li></a>
-                     <a href="#"><li><img src="blank.gif" class="flag flag-ae"/>&nbspОАЭ</li></a>
-                     <a href="#"><li><img src="blank.gif" class="flag flag-ae"/>&nbspОАЭ</li></a>
-                     <a href="#"><li><img src="blank.gif" class="flag flag-ae"/>&nbspОАЭ</li></a>
-                  </ul>
+                    <ul>
+                         <a href="#"><li><img src="blank.gif" class="flag flag-ae"/>&nbspОАЭ</li></a>
+                         <a href="#"><li><img src="blank.gif" class="flag flag-ae"/>&nbspОАЭ</li></a>
+                         <a href="#"><li><img src="blank.gif" class="flag flag-ae"/>&nbspОАЭ</li></a>
+                         <a href="#"><li><img src="blank.gif" class="flag flag-ae"/>&nbspОАЭ</li></a>
+                         <a href="#"><li><img src="blank.gif" class="flag flag-ae"/>&nbspОАЭ</li></a>
+                         <a href="#"><li><img src="blank.gif" class="flag flag-ae"/>&nbspОАЭ</li></a>
+                         <a href="#"><li><img src="blank.gif" class="flag flag-ae"/>&nbspОАЭ</li></a>
+                         <a href="#"><li><img src="blank.gif" class="flag flag-ae"/>&nbspОАЭ</li></a>
+                      </ul>
                 </div>
                 <div class="listcountry">
                     <ul>
@@ -214,21 +194,21 @@
                       </ul>
                 </div> 
                 <div class="listcountry">
-                   <ul>
-                          <a href="#"><li><img src="blank.gif" class="flag flag-tr"/>&nbspТурция</li></a>
-                          <a href="#"><li><img src="blank.gif" class="flag flag-tr"/>&nbspТурция</li></a>
-                          <a href="#"><li><img src="blank.gif" class="flag flag-tr"/>&nbspТурция</li></a>
-                          <a href="#"><li><img src="blank.gif" class="flag flag-tr"/>&nbspТурция</li></a>
-                          <a href="#"><li><img src="blank.gif" class="flag flag-tr"/>&nbspТурция</li></a>
-                          <a href="#"><li><img src="blank.gif" class="flag flag-tr"/>&nbspТурция</li></a>
-                          <a href="#"><li><img src="blank.gif" class="flag flag-tr"/>&nbspТурция</li></a>
-                          <a href="#"><li><img src="blank.gif" class="flag flag-tr"/>&nbspТурция</li></a>
+                    <ul>
+                        <a href="#"><li><img src="blank.gif" class="flag flag-tr"/>&nbspТурция</li></a>
+                        <a href="#"><li><img src="blank.gif" class="flag flag-tr"/>&nbspТурция</li></a>
+                        <a href="#"><li><img src="blank.gif" class="flag flag-tr"/>&nbspТурция</li></a>
+                        <a href="#"><li><img src="blank.gif" class="flag flag-tr"/>&nbspТурция</li></a>
+                        <a href="#"><li><img src="blank.gif" class="flag flag-tr"/>&nbspТурция</li></a>
+                        <a href="#"><li><img src="blank.gif" class="flag flag-tr"/>&nbspТурция</li></a>
+                        <a href="#"><li><img src="blank.gif" class="flag flag-tr"/>&nbspТурция</li></a>
+                        <a href="#"><li><img src="blank.gif" class="flag flag-tr"/>&nbspТурция</li></a>
                     </ul>
                 </div> 
             </div>
         </section>
                 
-                 <!-- Footer -->
+        <!-- Footer -->
                
     <footer class="text-center z-index">
         <div class="part">

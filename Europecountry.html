@@ -1,6 +1,7 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
+	  <meta name="viewport" content="980px">
     <title>Main Page</title>
      <link href="css/bootstrap.css" rel="stylesheet">
      
@@ -40,135 +41,140 @@
          
          
   </head>
-  <body>
+  <body id="EUR">
         <div id="wrapper">
-
-                            <div class="navbar navbar-default navbar-fixed-top mediamin" >
-		    <div class="container menu">		    
-			    <div class="navbar-header page-scroll">
+        <div class="navbar navbar-default navbar-fixed-top mediamin" >
+            <div class="container menu">
+                <div class="navbar-header page-scroll">
                     <!-- Button for smallest screens -->
                     <button type="button" class="navbar-toggle mediatoogle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span> 
                         <span class="icon-bar"></span>
-                     </button>
+                    </button>
                     <a class="navbar-brand" href="index.html"><img src="image/minilogo.png" class="minilogo"></a>     
 			    </div>
-			<div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" >
-				<ul class="nav navbar-nav navbar-right">
-					<li>
-                       <form class="navbar-form navbar-left topsearch" role="search">
-                        <div class="form-group">
-                          <input type="text" class="form-control search headsearch" placeholder="Поиск">
-                        </div>
-                      </form>
-                  </li>
-                  	<li>
-				        <button type="button" class="padd phone" data-toggle="popover" data-placement="bottom" title="Телефон горячей линии" data-content="8 913 004 4549"><i class="fa fa-phone fa-2x"></i></button>
-				</li>
-                  <li>
-                    <div class="curent1">
-                        <button class="padd" data-label-placement="" data-toggle="dropdown" class="btn btn-default dropdown-toggle mybutt"><i class="data-label"><img src="image/RU.png"></i>
-                        </button>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <input type="radio" id="ex7_1" name="ex7" value="1" checked="">
-                        <label for="ex7_1"><i class="data-label"><img src="image/RU.png"></i>Русский</label>
-                      </li>
-                      <li>
-                        <input type="radio" id="ex7_2" name="ex7" value="2">
-                        <label for="ex7_2"><i class="data-label"><img src="image/GB.png"></i>English</label>
-                      </li>
-                      <li>
-                        <input type="radio" id="ex7_3" name="ex7" value="3">
-                        <label for="ex7_3"><i class="data-label"><img src="image/CN.png"></i>China</label>
-                      </li>
+			    <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" >
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <form class="navbar-form navbar-left topsearch" role="search">
+                                <div class="form-group">
+                                    <input type="text" class="form-control search headsearch" placeholder="Поиск">
+                                </div>
+                            </form>
+                        </li>
+                        <li>
+                            <div class="box-crew padd phone">
+                                <i class="fa fa-phone fa-2x"></i>
+                                <span>8 913 004 45 49</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="curent1">
+                                <button class="padd" data-label-placement="" data-toggle="dropdown" class="btn btn-default dropdown-toggle mybutt"><i class="data-label"><img src="image/RU.png"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <input type="radio" id="ex7_1" name="ex7" value="1" checked="">
+                                        <label for="ex7_1"><i class="data-label"><img src="image/RU.png"></i>Русский</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="ex7_2" name="ex7" value="2">
+                                        <label for="ex7_2"><i class="data-label"><img src="image/GB.png"></i>English</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="ex7_3" name="ex7" value="3">
+                                        <label for="ex7_3"><i class="data-label"><img src="image/CN.png"></i>China</label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>	
+                        <li>
+                            <div class="curent">
+                                <button class="padd" data-label-placement="" data-toggle="dropdown" class="btn btn-default dropdown-toggle"><i class="data-label"><img src="image/dol.png"></i></button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <input type="radio" id="ex8_1" name="ex8" value="1" checked="">
+                                        <label for="ex_1"><i class="data-label"><img src="image/dol.png"></i>Доллар</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="ex8_2" name="ex8" value="2">
+                                        <label for="ex8_2"><i class="data-label"><img src="image/EUR.png"></i>EUR</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="ex8_3" name="ex8" value="3">
+                                        <label for="ex8_3"><i class="data-label"><img src="image/yan.png"></i>Yaun</label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="btn bursize" data-toggle="modal" data-target=".bs-example-modal-md"><div class="enter">Войти или <br>Создать аккаунт</div>
+                            </a>
+                        </li>
                     </ul>
-                  </div>
-					</li>	
-                    <li>
-                      <div class="curent">
-                        <button class="padd" data-label-placement="" data-toggle="dropdown" class="btn btn-default dropdown-toggle"><i class="data-label"><img src="image/dol.png"></i></button>
-                        <ul class="dropdown-menu">
-                          <li>
-                            <input type="radio" id="ex8_1" name="ex8" value="1" checked="">
-                            <label for="ex_1"><i class="data-label"><img src="image/dol.png"></i>Доллар</label>
-                          </li>
-                          <li>
-                            <input type="radio" id="ex8_2" name="ex8" value="2">
-                            <label for="ex8_2"><i class="data-label"><img src="image/EUR.png"></i>EUR</label>
-                          </li>
-                          <li>
-                            <input type="radio" id="ex8_3" name="ex8" value="3">
-                            <label for="ex8_3"><i class="data-label"><img src="image/yan.png"></i>Yaun</label>
-                          </li>
-                        </ul>
-                        </div>
-				    </li>
-					<li><a class="btn bursize" data-toggle="modal" data-target=".bs-example-modal-md"><div class="enter">Войти или <br>Создать аккаунт</div></a></li>
-				</ul>
-			 </div><!--/.nav-collapse -->
-		   </div>
-	   </div>
-          
-            <!-- MODAL -->
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+           
+        <!-- MODAL -->
                    
-                    <div class="modal fade bs-example-modal-md" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-md">
-                            <div class="modal-content">
-                                <ul  id="menureg" style="margin-bottom: 15px;">
-                                      <a href="#homes" data-toggle="tab"  ><li   class="active leftreg">Регистрация</li></a>
-                                      <a href="#profile" data-toggle="tab"  ><li class="leftright">Вход</li></a>
-                                </ul>
-                                <ul class="modal-social list-unstyled clearfix">
-                                    <li><a href="#" class="btn btn-primary btn-fb yy">Facebook</a></li>
-                                    <li><a href="#" class="btn btn-primary btn-goo yy">Google +</a></li>
-                                </ul>
-                            <div id="myTabContent" class="tab-content">
-                              <div class="tab-pane fade active in" id="homes">
-                                  <div class="row formreg">
-                                        <div class="col-sm-12 p">
-                                                <input type="text" class="form-control for" placeholder="E-mail">
-                                        </div>
-                                        <div class="col-sm-12 p">
-                                                <input type="text" class="form-control for" placeholder="Ф.И.О.">
-                                        </div>
-                                         <div class="col-sm-12 p">
-                                                <input type="text" class="form-control for " placeholder="Родной язык">
-                                          </div>
-                                          <div class="col-sm-12 p">
-                                                <div class="checkbox for">
-                                                      <label>
-                                                            <input type="checkbox" value="">
-                                                            Я принимаю условия соглашения.
-                                                      </label>
-                                                  </div>
-                                            </div>
-                                           <div class="col-sm-12 p">
-                                                <button type="button" class="btn btn-primary btn-lg btn-block forbut">Зарегистрировать</button>
-                                            </div>
-                                    </div>
-                              </div>
-                              <div class="tab-pane fade" id="profile">
-                                     <div class="row formenter">
-                                         <div class="col-sm-12 p">
-                                            <input type="text" class="form-control for" placeholder="Логин">
-                                         </div>
-                                        <div class="col-sm-12 p">
-                                            <input type="text" class="form-control for" placeholder="Пароль">
-                                        </div>
-                                        <div class="col-sm-12 p1">
-                                            <button type="button" class="btn btn-primary btn-lg btn-block forbut">Войти
-                                           </button>
-                                            </div>
+        <div class="modal fade bs-example-modal-md" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content">
+                    <ul  id="menureg" style="margin-bottom: 15px;">
+                        <a href="#homes" data-toggle="tab"  ><li   class="active leftreg">Регистрация</li></a>
+                        <a href="#profile" data-toggle="tab"  ><li class="leftright">Вход</li></a>
+                    </ul>
+                    <ul class="modal-social list-unstyled clearfix">
+                        <li><a href="#" class="btn btn-primary btn-fb yy">Facebook</a></li>
+                        <li><a href="#" class="btn btn-primary btn-goo yy">Google +</a></li>
+                    </ul>
+                    <div id="myTabContent" class="tab-content">
+                        <div class="tab-pane fade active in" id="homes">
+                            <div class="row formreg">
+                                <div class="col-sm-12 p">
+                                        <input type="text" class="form-control for" placeholder="E-mail">
+                                </div>
+                                <div class="col-sm-12 p">
+                                    <input type="text" class="form-control for" placeholder="Ф.И.О.">
+                                </div>
+                                <div class="col-sm-12 p">
+                                    <input type="text" class="form-control for " placeholder="Родной язык">
+                                </div>
+                                <div class="col-sm-12 p">
+                                    <div class="checkbox for">
+                                          <label>
+                                                <input type="checkbox" value="">
+                                                Я принимаю условия соглашения.
+                                          </label>
                                       </div>
-                                  </div>
-                             </div>
+                                </div>
+                                <div class="col-sm-12 p">
+                                    <button type="button" class="btn btn-primary btn-lg btn-block forbut">Зарегистрировать</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="profile">
+                            <div class="row formenter">
+                                <div class="col-sm-12 p">
+                                    <input type="text" class="form-control for" placeholder="Логин">
+                                </div>
+                                <div class="col-sm-12 p">
+                                    <input type="text" class="form-control for" placeholder="Пароль">
+                                </div>
+                                <div class="col-sm-12 p1">
+                                    <button type="button" class="btn btn-primary btn-lg btn-block forbut">Войти
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
                 
-                <!-- END MODAL -->
+        <!-- END MODAL -->
    
             <section class="bread-crumbsleft">
             </section>
@@ -176,10 +182,11 @@
             </section>
             <section class="bread-crumbs-content">
                 <a href="Europe.html">
-                     <div class="col-xs-3 bread-crumbs-mainland">
+                    <div class="col-xs-3 bread-crumbs-mainland">
                         <p class="bread-crumbs-index">Континент</p>
                         <p class="bread-crumbs-name">Европа</p>
-                        <img class="crumbs-mainland-icon" src="image/crumbEUR.png">
+                        <div class="crumbs-mainland-icon">
+                        </div>
                     </div>
                 </a>    
                     <div class="col-xs-6 bread-crumbs-country">
@@ -210,19 +217,20 @@
              <section class="country-useful-info">
                  <div class="country-usefull-info-content">
                     <div class="col-xs-3">
-                        <img class="flag-czech">
+                        <img class="country-usefull-flag">
                     </div>
                     <div class="col-xs-9 country-useful-info-text">
-                    <p class="country-useful-info-title">Полезная информация</p>
-     Чешская Республика отличается высокой туристической привлекательностью. Города одной из старейших стран Европейского континента поражают обилием достопримечательностей. Особенно красива чешская столица - замечательные дворцы, храмы, замки Праги вызывают восхищение у туристов. Увлекательные экскурсии  в Чехии позволят побывать вам в Чешском Крумлове и Хебе, славящимися своими замками. Кутна-Гора привлекает привлекает путешественников 
-красивыми средневековыми соборами.
-                   <a class="country-usefull-about" href="#"><img class="iconq">&nbspПодробней</a>
+                        <p class="country-useful-info-title">Полезная информация</p>
+                        <p class="county-usefull-info-text">Чешская республика отличается высокой туристической привлекательностью. Города одной из старейших стран Европейского континента поражают обилием достопримечательностей. Особенно красива чешская столица - замечательные дворцы, храмы, замки Праги вызывают восхищение у туристов. Увлекательные экскурсии  в Чехии позволят побывать вам в Чешском Крумлове и Хебе, славящимися своими замками. Кутна-Гора привлекает привлекает путешественников 
+    красивыми средневековыми соборами.
+                        </p>
+                            <a href="#">
+                            <div class="country-usefull-about" ><img class="iconq">&nbspПодробней
+                            </div>
+                        </a>
                     </div>
                  </div>
             </section>
-
-  
-   
         <section class="pop-excur">
            <h1 class="pop-gid-title">Самые посещяемые экскурсии</h1>
             <section class="pop-excur-image-line">
