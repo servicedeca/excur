@@ -957,7 +957,7 @@ function exc_theme_preprocess_views_view_fields__companion_service(&$vars) {
   $node = menu_get_object();
   $vars['image'] = excur_guide_logo($guide, '70x70');
   $vars['name'] = $vars['fields']['name']->content;
-  $vars['message'] = l(t('Write a message'),'excur/companion/message/'.$node->nid, array());
+  $vars['message'] = l(t('Write a message'),'excur/companion/message/'.$node->nid.'/'.$guide->uid, array());
 }
 
 /**

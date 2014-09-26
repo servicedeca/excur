@@ -52,12 +52,6 @@ function excur_offer_menu() {
     'page arguments' => array(2),
     'access arguments' => array('access content'),
   );
-  $items['excur/companion/message/%node'] = array(
-    'title' => 'Companion message',
-    'page callback' => 'excur_offer_companion_message',
-    'page arguments' => array(3),
-    'access arguments' => array('access content'),
-  );
   return $items;
 }
 
@@ -727,26 +721,4 @@ function excur_offer_special_offer($node) {
   $oid = rand(1000, 9999) . REQUEST_TIME;
   $id = excur_offer_save($oid, $user->uid, $node->nid, $price, excur_offer_user_currency(), $date, 0, 0, $type_offer, $type_offer, $duration, 0, 0, 0, 0, 0, 0, $start_place, $start_time);
   drupal_goto('excur/offer/order/' . $node->nid, array('query' => array('id' => $id)));
-}
-
-/**
- * Page callback for 'excur/companion/message/%node' path.
- */
-function excur_offer_companion_message($node) {
-  global $user;
-
-  $thread = privatemsg_thread_load($_GET['thread']);
-  $message = new StdClass();
-  $message->body = t('Special offer to you. You can pay for it at !this_page.');
-  $message->subject = $thread['subject'];
-  $recipient = new StdClass();
-  $recipient->type = 'user';
-  $recipient->recipient = $_GET['user'];
-  $message->recipients = array($recipient);
-  $message->author = $user;
-  $message->timestamp = REQUEST_TIME;
-  $message->format = 'filtered_html';
-  $message->has_token = FALSE;
-  $message->thread_id = $thread['thread_id'];
-  _privatemsg_send($message);
 }
