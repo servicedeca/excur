@@ -276,6 +276,8 @@ header .intro-text .intro-heading {
     margin-right: 10px;
 }
 
+
+
 .headsearch {
     margin-top: 1px;
     width: 250px;
@@ -390,7 +392,7 @@ section h3.section-subheading {
    
 .border {
     border: 1px solid black;
-    height: 400px;
+    height: 3004px;
 }
 
 .border_name {
@@ -1069,32 +1071,42 @@ div.box-crew:hover span{
     background: #2A707A;
 }
 
-
-
-
 .bread-crumbs-country {
     height: 120px;
     text-align: center;
     background: #32878E;
 }
 
-.bread-crumbs-country::after {
+
+.arrow-country::after {
     content: ''; 
     position: absolute; /* Абсолютное позиционирование */
-    left: 210px; bottom: -43px; /* Положение треугольника */
-    border: 30px solid transparent; /* Прозрачные границы */
-    border-top: 15px solid #32878E; /* Добавляем треугольник */
+    left: 200px; bottom: -14px; /* Положение треугольника */
+    border-left: 40px solid transparent; /* Прозрачные границы */
+    border-right: 80px solid transparent; /* Прозрачные границы */
    }
 
+#EUR .arrow-country::after{
+    border-top: 14px solid #32878E; /* Добавляем треугольник */
+}
 
+.arrow-city::after {
+    content: ''; 
+    position: absolute; /* Абсолютное позиционирование */
+    left: 0px; bottom: -14px; /* Положение треугольника */
+    border-left: 40px solid transparent; /* Прозрачные границы */
+    border-right: 80px solid transparent; /* Прозрачные границы */
+   }
+
+#EUR .arrow-city::after{
+    border-top: 14px solid #379C9E; /* Добавляем треугольник */
+}
 
 .bread-crumbs-city {
     height:120px;
     text-align: left;
     background: #379C9E;
 }
-
-
 
 .bread-crumb-index {
     padding-top: 10px;
@@ -1103,24 +1115,28 @@ div.box-crew:hover span{
 .bread-crumbs-index {
     margin-top: 17px;
     color:#b1aeae;
-    font-family: 'Clear Sans';
+    font-family: 'Arial';
     font-weight: 300;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .bread-crumbs-name {
-    margin-top: 32px;
+    margin-top: 25px;
     font-size: 22px;
     color:#B2B2B2;
-    font-family: 'Clear Sans';
+    font-family: 'Arial';
     font-weight: 300;
 }
 
 .crumbs-mainland-icon {
-    width: 75px;
+    width: 120px;
+    height: 60px;
     position: relative;
-    top: -92px;
-    left: -120px;
+    background: url(/image/crumbEUR.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: -75px;
+    margin-left: -10px;
 }
 
 .wrapper-dropdown-5 {
@@ -1141,12 +1157,12 @@ div.box-crew:hover span{
     -o-transition: all 0.3s ease-out;
     transition: all 0.44s ease-out;
     padding-left: 15px;
-    padding-top: 72px;
+    padding-top: 70px;
     bottom: 50px;
     height:122px;
     margin-top: 0px;
     color: #fff;
-    font-family: 'Clear Sans';
+    font-family: 'Arial';
     font-weight: 300;
 
 }
@@ -1189,6 +1205,7 @@ div.box-crew:hover span{
     max-height: 0;
     overflow: hidden;
     font-weight: 300;
+    margin-top: -5px;
 }
 
 .wrapper-dropdown-5 .dropdown li {
@@ -1248,10 +1265,9 @@ div.box-crew:hover span{
 }
 
 .bread-crumbs-name-main {
-    margin-top: 7px;
-    font-size: 45px;
+    font-size: 35px;
     color:#fff;
-    font-family: 'Clear Sans';
+    font-family: 'Arial';
     font-weight: 300;
 }
 
@@ -1277,13 +1293,14 @@ div.box-crew:hover span{
 }
 
 .pop-gid-title {
-    font-size: 40px;
-    font-family: 'Clear Sans';
+    font-size: 35px;
+    font-family: 'Arial';
     font-weight: 300;
     margin-top: -5px;
     text-align: center;
     background: #fff;
     padding-bottom: 15px;
+    color:#4A4A4C;
 }
 
 .pop-gid-item {
@@ -1318,7 +1335,7 @@ div.box-crew:hover span{
     padding-top: 0px;
     width: 100%;
     margin-top: 0px;
-    border-bottom:5px solid #C32026;
+    border-bottom:4px solid #801918;
 }
 
 .country-usefull-info-content {
@@ -1332,7 +1349,7 @@ div.box-crew:hover span{
 }
 
 .country-useful-info-text {
-    font-family: 'Clear Sans';
+    font-family: 'Arial';
     font-weight: 350;
     font-size: 16px;  
     color: #3F3F3F;
@@ -1377,7 +1394,7 @@ div.box-crew:hover span{
 }
 
 .pop-excur-image {
-    width: 231px;
+    width: 232px;
     height: 153px;
     margin-top: 0px;
 }
@@ -1386,7 +1403,6 @@ div.box-crew:hover span{
     width:960px;
 	margin: 0 auto;
 	height:500px;
-    margin-top: -416px;
 }
 
 .pop-excur-image-line {
@@ -1399,15 +1415,16 @@ div.box-crew:hover span{
 }
 
 .pop-excur {
-    margin-top: 40px;
+    margin-top:30px;
 }
 
 .pop-excur-info-line {
         background: #BBCDCC;
     padding-top: 0px;
     width: 100%;
-    height: 260px;
-    border-bottom:3px solid #C32026;
+    height: 300px;
+    margin-top: 135px;
+    position: absolute;
 }
 
 #demo{
@@ -1419,14 +1436,12 @@ div.box-crew:hover span{
       display: block;
       background: #E9E9E9;
       text-align: center;
-        width:236px;
-        height:416px;
+        width:234px;
+        height:460px;
 }
 
 .item{
-    border-top:3px solid #C32026;
-    border-right:3px solid #C32026;
-    border-left:3px solid #C32026;
+    border:1px solid #801918;
 }
 
 .owl-theme .owl-controls .owl-buttons div {
@@ -1492,54 +1507,54 @@ div.box-crew:hover span{
 
 .pop-excur-name {
     padding-top:7px;
-    font-family: 'Clear Sans';
+    font-family: 'Arial';
     font-weight: 500;
-    font-size: 18px;
+    font-size: 16px;
     line-height:17px;
     width: 225px;
-    height: 45px;
+    height: 55px;
     margin: 0 auto;
     overflow: hidden;
    text-overflow: ellipsis;
    -webkit-box-orient: vertical;
    display: -webkit-box;
    -webkit-line-clamp: 2;
+    color:#393939;
 }
 
 .pop-excur-left {
     text-align: right;
     padding-left: 5px;
     padding-right: 5px;
-    height:55px;
     overflow: hidden; /* всё, что выходит за рамки блока обрезается */
     white-space: nowrap; /* блок может содержать не более одной строки */
-    height: 55px;  /* не в % */
-    line-height: 55px; 
+    height: 50px;  /* не в % */
+    line-height: 50px; 
     font-size: 12px;
     color:#939292;
-    font-family: 'Clear Sans';
+    font-family: 'Arial';
     font-weight: 300;
 }
 
 .pop-excur-right {
     text-align: left;
-    padding-left: 5px;
-    padding-right: 5;
+    padding-left: 10px;
     height:55px;
+    right:5px;
     overflow: hidden; /* всё, что выходит за рамки блока обрезается */
     white-space: nowrap; /* блок может содержать не более одной строки */
-    height: 55px;  /* не в % */
-    line-height: 55px; 
-    font-size: 25px;
-    color:#939292;
-    font-family: 'Clear Sans';
+    height: 50px;  /* не в % */
+    line-height: 50px; 
+    font-size: 20px;
+    font-family: 'Arial';
     font-weight: 400;
     color: #393939;
+    letter-spacing:-1px;
 }
 
 .pop-excur-row {
-    height:55px;
-    width:220px;    
+    height:50px;
+    width:100%;    
 }
 
 .icont {
@@ -1556,7 +1571,6 @@ div.box-crew:hover span{
 .iconv {
       width: 30px;
 	height: 30px;
-	background:url(../image/rub.png) no-repeat;
 }
 
 .pop-gid-mini-photo {
@@ -1571,25 +1585,23 @@ div.box-crew:hover span{
     height:55px;
    overflow: hidden; /* всё, что выходит за рамки блока обрезается */
    white-space: nowrap; /* блок может содержать не более одной строки */
-   height: 55px;  /* не в % */
-   line-height: 55px;
+   height: 50px;  /* не в % */
+   line-height: 50px;
 }
 
 .pop-excur-right-gid {
     text-align: left;
     padding-left: 0px;
-    padding-right: 5px;
-    height:55px;
+    right:5px;
     overflow: hidden; /* всё, что выходит за рамки блока обрезается */
     white-space: nowrap; /* блок может содержать не более одной строки */
-    height: 55px;  /* не в % */
-    line-height: 55px; 
+    height: 50px;  /* не в % */
+    line-height: 50px;
     font-size: 15px;
-    color:#939292;
-    font-family: 'Clear Sans';
-    font-weight: 400;
-    color: #393939;
-    word-wrap: break-word
+    font-family: 'Arial';
+    font-weight: 500;
+    color: #000;
+    letter-spacing:-1px;
 }
 
 .pop-gid-title-line {
@@ -1614,6 +1626,22 @@ div.box-crew:hover span{
     padding-top: 0px;
     width: 100%;
     margin-top: -10px;
+    background: url(../image/line.png);
+    background-attachment: scroll;
+    background-position: center center;
+    background-repeat: none;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;  
+    z-index: 0;
+}
+
+.left-line-info {
+    height: 50px;
+    padding-top: 0px;
+    width: 100%;
+    margin-top: -30px;
     background: url(../image/line.png);
     background-attachment: scroll;
     background-position: center center;
@@ -1677,4 +1705,180 @@ div.box-crew:hover span{
     padding-top: 0px;
     margin-top: 70px;
     color:#665E5E;
+}
+
+.pop-excur-button {
+    width:100%;
+    height:40px;
+    color: #fff;
+    background: #801918;
+    font-family: 'Arial';
+    font-weight: 300;
+    font-size:16px;
+    letter-spacing:2px;
+    padding-top: 10px;
+    margin-top: 6px;
+}
+
+.pop-excur-center-language {
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top:7px;
+    overflow: hidden; /* всё, что выходит за рамки блока обрезается */
+    white-space: nowrap; /* блок может содержать не более одной строки */
+    height: 55px;  /* не в % */
+    line-height: 20px; 
+    font-size: 12px;
+    color:#939292;
+    font-family: 'Arial';
+    font-weight: 300;
+}
+
+.pop-excur-row-language {
+    height:55px;
+    width:100%;
+}
+
+.country-usefull-coat {
+    width:240px;
+    height:150px;
+    margin-top: 30px;
+    background: url(/image/coat-prague.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-right: 40px;
+}
+
+.content-city {
+    width:960px;
+    margin: 0 auto;
+}
+
+.excur-card-image {
+  width: 170px;
+    padding: 0px;
+}
+
+.excur-card-rating {
+    width: 100%;
+    height:34px;
+    text-align: center;
+}
+
+.excur-card-name {
+    width: 100%;
+    height:80px;
+    padding-top:5px;
+    font-family: 'Arial';
+    font-weight: 500;
+    font-size: 14px;
+    line-height:17px;
+    overflow: hidden;
+   display: -webkit-box;
+   -webkit-line-clamp: 4;
+    color:#393939;
+}
+
+.excur-card-gid-photo {
+    width: 100%;
+    height:80px;
+    border:1px solid black;
+}
+
+.excur-gid-photo {
+    width: 80px;
+}
+
+.excur-card-gid-image {
+    text-align: center;
+}
+
+.iconstar {
+    width: 15px;;
+    margin-top: -3px;
+}
+
+.excur-gid-rating {
+
+}
+
+.excur-rating {
+    font-size: 20px;
+    height: 34px;
+    line-height: 34px; 
+    font-family: 'Arial';
+}
+
+.excur-card-language {
+    display: table-cell;
+    vertical-align: middle;
+
+}
+
+.excur-card-language img{
+    vertical-align: middle;
+}
+
+.middle {
+    vertical-align: middle;
+}
+
+.excur-card {
+    height:114px;
+    overflow: hidden;
+    display: table;
+    text-align: center;
+}
+
+.excur-card-duration {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.excur-card-price {
+    text-align: center;
+    display: table;
+}
+
+.full {
+}
+
+.excur-number {
+    font-size: 20px;
+    font-family: 'Arial';
+    font-weight: 400;
+    padding-top: 5px;
+}
+
+.excur-card-button {
+    width:170px;
+    height:30px;
+    color: #fff;
+    background: #801918;
+    font-family: 'Arial';
+    font-weight: 300;
+    font-size:15px;
+    letter-spacing:1px;
+    padding-top: 4px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.excur-card-gid-name {
+    width:100%;
+    height:30px;
+    color: #393939;
+    font-family: 'Arial';
+    font-weight: 500;
+    font-size:18px;
+    letter-spacing:1px;
+    padding-top: 3px;
+    margin-top: 5px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.tickets {
+    padding-top: 15px;
 }
