@@ -4,32 +4,25 @@
  * @file.
  */
 
-
 /**
  * Preprocess for excur-profile-form.tpl.php.
  */
 function excur_preprocess_excur_profile_form(&$vars) {
   $vars['form']['account']['name']['#title'] = t('Login');
-
 }
 
 /**
- * Preprocess for excur-user-login-form.tpl.php.
+ * Preprocess for excur-travel-planner.tpl.php.
  */
-function excur_preprocess_excur_user_login_form(&$vars) {
+function excur_preprocess_excur_travel_planner(&$vars) {
+  $account = user_load($vars['user']->uid);
+  drupal_add_library('system', 'ui.draggable');
 
-}
+  $flags = reset(flag_get_user_flags('node', NULL, $account->uid));
+  foreach ($flags as $flag) {
+    $service = reset(entity_load($flag->entity_type, array($flag->entity_id)));
+    $vars['services'][] = check_plain($service->title);
+  }
 
-/**
- * Preprocess for excur-user-register-form.tpl.php.
- */
-function excur_preprocess_excur_user_register_form(&$vars) {
-
-}
-
-/**
- * Preprocess for excur-service_node-form.tpl.php.
- */
-function excur_preprocess_excur_service_node_form(&$vars) {
-
+  $vars['user_menu'] = excur_user_menu($account);
 }

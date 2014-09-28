@@ -59,7 +59,12 @@ function excur_menu() {
     'access callback' => 'excur_user_page_access',
     'access arguments' => array(1),
   );
-
+  $items['excur/companion/message/%node/%user'] = array(
+    'title' => 'Companion message',
+    'page callback' => 'excur_offer_companion_message',
+    'page arguments' => array(3, 4),
+    'access arguments' => array('access content'),
+  );
   return $items;
 }
 
@@ -652,7 +657,12 @@ function excur_user_menu($account) {
 }
 
 /**
+ * Render guide photo.
  *
+ * @param object $account
+ * @param object $style
+ * @param array $attributes
+ * @return string.
  */
 function excur_guide_logo($account, $style, $attributes = array()) {
   if (!empty($account->field_image[LANGUAGE_NONE])) {
@@ -671,4 +681,44 @@ function excur_guide_logo($account, $style, $attributes = array()) {
     'title' => $account->field_name[LANGUAGE_NONE][0]['safe_value'],
     'attributes' => $attributes,
   ));
+}
+
+/**
+ * Page callback for 'excur/companion/message/%node/%user' path.
+ */
+function excur_offer_companion_message($node, $account) {
+  global $user;
+
+  $results = db_select('pm_index', 'pm')
+    ->fields('pm', array('thread_id'))
+    ->condition('pm.recipient', $user->uid)
+    ->execute()
+    ->fetchCol();
+  foreach ($results as $result) {
+    $thread_id = db_select('pm_index', 'pm')
+      ->fields('pm', array('thread_id'))
+      ->condition('pm.recipient', $account->uid)
+      ->condition('pm.thread_id', $result)
+      ->execute()
+      ->fetchField();
+
+    if ($thread_id) {
+      drupal_goto('messages/view/' . $thread_id);
+    }
+  }
+
+  $message = new StdClass();
+  $message->body = t('Special offer to you. You can pay for it at !this_page.', array('!this_page' => 'dfdf'));
+  $message->subject = t('Special offer to you. You can pay for it at !this_page.');
+  $recipient = new StdClass();
+  $recipient->type = 'user';
+  $recipient->recipient = $account->uid;
+  $message->recipients = array($recipient);
+  $message->author = $user;
+  $message->timestamp = REQUEST_TIME;
+  $message->format = 'filtered_html';
+  $message->has_tokens = FALSE;
+  _privatemsg_send($message);
+
+  drupal_goto('messages/view/' . $message->thread_id );
 }

@@ -25,17 +25,6 @@
     }
   };
 
-  Drupal.behaviors.excurResponsiveMenu = {
-    attach: function(context, settings) {
-      $('ul#guide-services-orders').once('guide-services-orders', function() {
-        $('a', this).click(function (e) {
-          e.preventDefault();
-          $(this).tab('show');
-        });
-      });
-    }
-  };
-
   Drupal.behaviors.excurSearchIcon = {
     attach: function(context, settings) {
       $('.search-box a.search-icon').click(function(e) {
@@ -125,8 +114,44 @@
         var id = $this.data('id');
 
         $.get('/excur/offer/reject/' + $this.data('id'), function(html) {
-            $(".content_confirm" + id).html(html);
+            $('.content_confirm' + id).html(html);
         });
+      });
+    }
+  };
+
+  Drupal.behaviors.excurTravelPlanner = {
+    attach: function(context, settings) {
+      $('#external-events .fc-event').each(function() {
+        var eventObject = {
+          title: $.trim($(this).text())
+        };
+
+        $(this).data('eventObject', eventObject);
+        $(this).draggable({
+          zIndex: 999,
+          revert: true,      // will cause the event to go back to its
+          revertDuration: 0  //  original position after the drag
+        });
+      });
+
+      $('#calendar').fullCalendar({
+        header: {
+          left: 'prev,next today',
+          center: 'title',
+          right: ''
+        },
+        editable: true,
+        droppable: true,
+        drop: function(date) {
+          var originalEventObject = $(this).data('eventObject');
+          var copiedEventObject = $.extend({}, originalEventObject);
+          copiedEventObject.start = date;
+          $('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
+          if ($('#drop-remove').is(':checked')) {
+            $(this).remove();
+          }
+        }
       });
     }
   };

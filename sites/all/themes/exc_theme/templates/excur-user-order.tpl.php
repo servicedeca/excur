@@ -21,7 +21,7 @@
           <?php print render($rejected); ?>
         </div>
         <div id="pane4" class="tab-pane">
-
+          <?php print render($archive); ?>
         </div>
       </div>
     </div>
