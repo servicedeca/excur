@@ -321,20 +321,32 @@ function excur_offer_pay_form() {
 /**
  * Form builder for order form.
  */
-function excur_offer_order_form($form, $form_state, $order) {
+function excur_offer_order_form($form, $form_state, $offer) {
   global $user;
+  global $language;
 
   $options_languages = array();
-  $node = node_load($order->nid);
-  $start_place = $node->field_start_place['ru'][0]['value'];
-  $start_time = $node->field_start_time['ru'][0]['value'];
-  $private_place = !empty($order->field_private_place)
-    ? $order->field_private_place[LANGUAGE_NONE][0]['value']
+  $node = node_load($offer->nid);
+  $wrapper = entity_metadata_wrapper('node', $node);
+  $wrapper->language($language->language);
+  $order = excur_offer_load($_GET['id']);
+  $order_offer = $order->offer;
+  $offer_type = $wrapper->field_offer->value();
+  foreach($offer_type as $off){
+    if($off->field_offer_title[$language->language][0]['value'] == $order_offer){
+      $type_offer = $off->field_type_offer[LANGUAGE_NONE][0]['value'];
+    }
+  }
+  $start_place = $wrapper->field_start_place->value();
+  $start_time = $wrapper->field_start_time->value();
+
+  $private_place = !empty($offer->field_private_place)
+    ? $offer->field_private_place[LANGUAGE_NONE][0]['value']
     : 0;
-  $private_time = !empty($order->field_private_time)
-    ? $order->field_private_time[LANGUAGE_NONE][0]['value']
+  $private_time = !empty($offer->field_private_time)
+    ? $offer->field_private_time[LANGUAGE_NONE][0]['value']
     : 0;
-  $language_list = $order->field_languages[LANGUAGE_NONE];
+  $language_list = $offer->field_languages[LANGUAGE_NONE];
   $data_content = array();
 
   foreach ($language_list as $key => $tid) {
@@ -420,12 +432,14 @@ function excur_offer_order_form($form, $form_state, $order) {
     '#title' => t('Phone'),
     '#required' => TRUE,
   );
-  $form['companion'] = array(
-    '#type'	=> 'checkbox',
-    '#title' => t('seeking a companion'),
-    '#description' => t('seeking a companion'),
-    '#required' => FALSE,
-  );
+  if($type_offer == 1) {
+    $form['companion'] = array(
+      '#type'	=> 'checkbox',
+      '#title' => t('seeking a companion'),
+      '#description' => t('seeking a companion'),
+      '#required' => FALSE,
+    );
+  }
   $form['submit'] = array(
     '#type' => 'submit',
     '#value' => t('Reserve'),
@@ -531,12 +545,17 @@ function excur_offer_offer_form_validate(&$form, &$form_state) {
  */
 function excur_offer_offer_form_submit(&$form, &$form_state) {
   global $user;
+  global $language;
 
   $values = $form_state['values'];
   $nid = $form['#data']['nid'];
   $node = node_load($nid);
-  $start_place = $node->field_start_place['ru'][0]['value'];
-  $start_time = $node->field_start_time['ru'][0]['value'];
+
+  $wrapper = entity_metadata_wrapper('node', $node);
+  $wrapper->language($language->language);
+  $start_place = $wrapper->field_start_place->value();
+  $start_time = $wrapper->field_start_time->value();
+  $field_collection = $wrapper->field_offer->value();
   $duration = $form['#data']['duration'];
   $type_offer = $form['#data']['title'];
   foreach($form['#data']['tickets'] as $key=>$value){
@@ -680,6 +699,22 @@ function excur_offer_is_user_ordered($guide_uid, $uid = NULL) {
   $query->fields('eo', array('uid'));
   $query->condition('eo.uid', $uid);
   $query->condition('fdfg.field_guide_target_id', $guide_uid);
+  $query->range(0, 1);
+
+  return (bool) $query->execute()->fetchField();
+}
+
+/**
+ * Check if user ordered service of current offer.
+ */
+function excur_offer_is_user_ordered_offer($nid, $uid = NULL) {
+  global $user;
+  $uid = $uid ? $uid : $user->uid;
+
+  $query = db_select('excur_offer', 'eo');
+  $query->fields('eo', array('oid'));
+  $query->condition('eo.uid', $uid);
+  $query->condition('eo.nid', $nid);
   $query->range(0, 1);
 
   return (bool) $query->execute()->fetchField();
