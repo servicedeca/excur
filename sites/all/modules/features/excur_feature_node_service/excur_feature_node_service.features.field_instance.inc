@@ -387,7 +387,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 16,
+      'weight' => 17,
     ),
   );
 
@@ -606,7 +606,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 17,
+      'weight' => 18,
     ),
   );
 
@@ -806,7 +806,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 8,
+      'weight' => 102,
     ),
   );
 
@@ -984,20 +984,43 @@ function excur_feature_node_service_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'fivestar',
-        'settings' => array(),
-        'type' => 'fivestar_formatter_rating',
+        'settings' => array(
+          'expose' => TRUE,
+          'style' => 'average',
+          'text' => 'average',
+          'widget' => array(
+            'fivestar_widget' => NULL,
+          ),
+        ),
+        'type' => 'fivestar_formatter_default',
         'weight' => 23,
       ),
       'full' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'fivestar',
+        'settings' => array(
+          'expose' => TRUE,
+          'style' => 'average',
+          'text' => 'average',
+          'widget' => array(
+            'fivestar_widget' => NULL,
+          ),
+        ),
+        'type' => 'fivestar_formatter_default',
         'weight' => 0,
       ),
       'other' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'fivestar',
+        'settings' => array(
+          'expose' => TRUE,
+          'style' => 'average',
+          'text' => 'average',
+          'widget' => array(
+            'fivestar_widget' => NULL,
+          ),
+        ),
+        'type' => 'fivestar_formatter_default',
         'weight' => 0,
       ),
       'teaser' => array(
@@ -1033,7 +1056,7 @@ function excur_feature_node_service_field_default_field_instances() {
       'module' => 'fivestar',
       'settings' => array(),
       'type' => 'exposed',
-      'weight' => 101,
+      'weight' => 2,
     ),
   );
 
@@ -1337,7 +1360,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 9,
+      'weight' => 103,
     ),
   );
 

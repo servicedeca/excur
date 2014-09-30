@@ -19,7 +19,7 @@ function excur_feature_node_service_msnf_step_info() {
   $msnf->bundle = 'service';
   $msnf->data = array(
     'label' => 'Description',
-    'weight' => '24',
+    'weight' => '4',
     'children' => array(
       0 => 'body',
       1 => 'title_field',
@@ -59,7 +59,7 @@ function excur_feature_node_service_msnf_step_info() {
   $msnf->bundle = 'service';
   $msnf->data = array(
     'label' => 'Conditions',
-    'weight' => '100',
+    'weight' => '8',
     'children' => array(
       0 => 'field_start_place',
       1 => 'field_start_time',
@@ -99,7 +99,7 @@ function excur_feature_node_service_msnf_step_info() {
   $msnf->bundle = 'service';
   $msnf->data = array(
     'label' => 'Photos',
-    'weight' => '99',
+    'weight' => '6',
     'children' => array(
       0 => 'field_image',
       1 => 'field_slider_images',
@@ -133,7 +133,7 @@ function excur_feature_node_service_msnf_step_info() {
   $msnf->bundle = 'service';
   $msnf->data = array(
     'label' => 'Prices',
-    'weight' => '103',
+    'weight' => '9',
     'children' => array(
       0 => 'field_currency',
       1 => 'field_offer',
