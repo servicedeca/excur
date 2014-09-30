@@ -59,12 +59,14 @@ function excur_menu() {
     'access callback' => 'excur_user_page_access',
     'access arguments' => array(1),
   );
+
   $items['excur/companion/message/%node/%user'] = array(
     'title' => 'Companion message',
     'page callback' => 'excur_offer_companion_message',
     'page arguments' => array(3, 4),
     'access arguments' => array('access content'),
   );
+
   return $items;
 }
 
@@ -119,12 +121,18 @@ function excur_entity_info_alter(&$entity_info) {
  * Implements hook_node_insert().
  */
 function excur_node_insert($node) {
-  global $language;
+  $lang = $node->translations->original;
 
   if ($node->type == 'service') {
     if (empty($node->title)) {
-      $node->title_field[$language->language][0]['value'] = $node->title_field[LANGUAGE_NONE][0]['value'];
-      $node->title = $node->title_field[$language->language][0]['value'];
+      $node->title_field[$lang] = $node->title_field[LANGUAGE_NONE];
+      $node->title = $node->title_field[$lang][0]['value'];
+    }
+    if (empty($node->field_duration[$lang])) {
+      $node->field_duration[$lang] = $node->field_duration[LANGUAGE_NONE];
+    }
+    if (empty($node->body[$lang])) {
+      $node->body[$lang] = $node->body[LANGUAGE_NONE];
     }
   }
 }
@@ -720,5 +728,5 @@ function excur_offer_companion_message($node, $account) {
   $message->has_tokens = FALSE;
   _privatemsg_send($message);
 
-  drupal_goto('messages/view/' . $message->thread_id );
+  drupal_goto('messages/view/' . $message->thread_id);
 }

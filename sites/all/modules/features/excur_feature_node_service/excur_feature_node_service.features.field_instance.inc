@@ -154,6 +154,38 @@ function excur_feature_node_service_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'field_collection_item-field_offer-field_type_offer'
+  $field_instances['field_collection_item-field_offer-field_type_offer'] = array(
+    'bundle' => 'field_offer',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_type_offer',
+    'label' => 'Тип предложения',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 0,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_offer_ticket-field_offer_ticket_price'
   $field_instances['field_collection_item-field_offer_ticket-field_offer_ticket_price'] = array(
     'bundle' => 'field_offer_ticket',
@@ -355,7 +387,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 16,
+      'weight' => 17,
     ),
   );
 
@@ -389,7 +421,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 12,
       ),
     ),
     'entity_type' => 'node',
@@ -441,7 +473,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 18,
       ),
     ),
     'entity_type' => 'node',
@@ -504,7 +536,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 17,
       ),
     ),
     'entity_type' => 'node',
@@ -574,7 +606,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 17,
+      'weight' => 18,
     ),
   );
 
@@ -609,7 +641,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 11,
       ),
     ),
     'entity_type' => 'node',
@@ -628,7 +660,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'rows' => 3,
       ),
       'type' => 'text_textarea',
-      'weight' => 10,
+      'weight' => 12,
     ),
   );
 
@@ -664,7 +696,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 16,
       ),
     ),
     'entity_type' => 'node',
@@ -774,7 +806,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 8,
+      'weight' => 102,
     ),
   );
 
@@ -809,7 +841,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 7,
       ),
     ),
     'entity_type' => 'node',
@@ -828,7 +860,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'rows' => 3,
       ),
       'type' => 'text_textarea',
-      'weight' => 11,
+      'weight' => 13,
     ),
   );
 
@@ -922,7 +954,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 14,
       ),
     ),
     'entity_type' => 'node',
@@ -939,6 +971,92 @@ function excur_feature_node_service_field_default_field_instances() {
       'settings' => array(),
       'type' => 'field_collection_embed',
       'weight' => 21,
+    ),
+  );
+
+  // Exported field_instance: 'node-service-field_offer_rating'
+  $field_instances['node-service-field_offer_rating'] = array(
+    'bundle' => 'service',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'fivestar',
+        'settings' => array(
+          'expose' => TRUE,
+          'style' => 'average',
+          'text' => 'average',
+          'widget' => array(
+            'fivestar_widget' => NULL,
+          ),
+        ),
+        'type' => 'fivestar_formatter_default',
+        'weight' => 23,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'fivestar',
+        'settings' => array(
+          'expose' => TRUE,
+          'style' => 'average',
+          'text' => 'average',
+          'widget' => array(
+            'fivestar_widget' => NULL,
+          ),
+        ),
+        'type' => 'fivestar_formatter_default',
+        'weight' => 0,
+      ),
+      'other' => array(
+        'label' => 'above',
+        'module' => 'fivestar',
+        'settings' => array(
+          'expose' => TRUE,
+          'style' => 'average',
+          'text' => 'average',
+          'widget' => array(
+            'fivestar_widget' => NULL,
+          ),
+        ),
+        'type' => 'fivestar_formatter_default',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'module' => 'fivestar',
+        'settings' => array(
+          'expose' => TRUE,
+          'style' => 'average',
+          'text' => 'average',
+          'widget' => array(
+            'fivestar_widget' => NULL,
+          ),
+        ),
+        'type' => 'fivestar_formatter_default',
+        'weight' => 5,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_offer_rating',
+    'label' => 'Рейтинг',
+    'required' => 0,
+    'settings' => array(
+      'allow_clear' => 1,
+      'allow_ownvote' => 0,
+      'allow_revote' => 0,
+      'entity_translation_sync' => FALSE,
+      'stars' => 10,
+      'target' => 'none',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'fivestar',
+      'settings' => array(),
+      'type' => 'exposed',
+      'weight' => 2,
     ),
   );
 
@@ -976,7 +1094,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 9,
       ),
     ),
     'entity_type' => 'node',
@@ -1030,7 +1148,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 10,
       ),
     ),
     'entity_type' => 'node',
@@ -1046,7 +1164,7 @@ function excur_feature_node_service_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 6,
+      'weight' => 8,
     ),
   );
 
@@ -1081,7 +1199,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 6,
       ),
     ),
     'entity_type' => 'node',
@@ -1097,7 +1215,7 @@ function excur_feature_node_service_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 8,
+      'weight' => 10,
     ),
   );
 
@@ -1144,7 +1262,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 8,
       ),
     ),
     'entity_type' => 'node',
@@ -1160,7 +1278,7 @@ function excur_feature_node_service_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 9,
+      'weight' => 11,
     ),
   );
 
@@ -1196,7 +1314,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 19,
       ),
     ),
     'entity_type' => 'node',
@@ -1242,7 +1360,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 9,
+      'weight' => 103,
     ),
   );
 
@@ -1276,7 +1394,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 13,
       ),
     ),
     'entity_type' => 'node',
@@ -1329,7 +1447,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 15,
       ),
     ),
     'entity_type' => 'node',
@@ -1348,7 +1466,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => 9,
     ),
   );
 
@@ -1447,7 +1565,9 @@ function excur_feature_node_service_field_default_field_instances() {
   t('Правила бронирования');
   t('Предложение');
   t('Продолжительность');
+  t('Рейтинг');
   t('Рекомендуем использовать фотографии размером более 800*600 точек.');
+  t('Тип предложения');
   t('Укажите валюту, в которой отображать стомость услуги, если пользователем не выбрана иная');
   t('Укажите время встречи или выберите вариант когда клиент сам укажет время встречи');
   t('Укажите период за который минимально можно забронировать это предложение (Например: минимум за 1 день) и максимальное время вперед когда вы готовы принимать бронирования (Например: максимом на 180 дней вперед).');

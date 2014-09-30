@@ -18,6 +18,12 @@
     <p>
       <?php print $flag; ?>
     </p>
+    <div>
+      <?php if (!empty($rating_widget)): ?>
+        <?php print $rating_widget; ?>
+      <?php endif; ?>
+      <?php print $rating; ?>
+    </div>
   </div>
   <div class="do-offer">
     <div class="price">

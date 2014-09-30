@@ -73,8 +73,10 @@
         </div>
       </div>
     <?php endif; ?>
+    <?php print render($content['comments']); ?>cd
   </div>
   <h2 id="reservation" class="node-description">
     <?php print t('Reservation'); ?>
   </h2>
+
 </article>

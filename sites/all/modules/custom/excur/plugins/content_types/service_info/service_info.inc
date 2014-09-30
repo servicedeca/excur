@@ -69,4 +69,21 @@ function template_preprocess_excur_service_info(&$vars) {
   $vars['price'] = $price;
   $vars['currency'] = excur_currency_get_icon($current_currency);
   $vars['flag'] = flag_create_link('travel_planner', $node->nid);
+
+  // Get current rating.
+  $rating = fivestar_get_votes('node', $node->nid);
+  if (empty($rating['average'])) {
+    $rating = t(' Offer is unrated.');
+  }
+  else {
+    $rating = round($rating['average']['value'] / 10, 2);
+    $rating = t('Rating: !value/10', array('!value' => $rating));
+  }
+  $vars['rating'] = $rating;
+
+  // Get rating widget.
+  if (excur_offer_is_user_ordered_offer($node->nid)) {
+    $node_view = node_view($node);
+   $vars['rating_widget'] = render($node_view['field_offer_rating']);
+  }
 }
