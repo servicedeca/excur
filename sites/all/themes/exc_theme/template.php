@@ -270,7 +270,7 @@ function exc_theme_preprocess_node__service_teaser(&$vars) {
   }
 
   // Get current rating.
-  $rating = fivestar_get_votes('node', $node->nid);
+ /* $rating = fivestar_get_votes('node', $node->nid);
   if (empty($rating['average'])) {
     $rating = t(' Offer is unrated.');
   }
@@ -284,7 +284,7 @@ function exc_theme_preprocess_node__service_teaser(&$vars) {
   $i = excur_offer_is_user_ordered_offer($node->nid);
   if (excur_offer_is_user_ordered_offer($node->nid)) {
     $vars['rating_widget'] = render($node['field_offer_rating']);
-  }
+  }*/
 }
 
 /**
