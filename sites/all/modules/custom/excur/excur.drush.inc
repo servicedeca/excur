@@ -3,36 +3,40 @@
 /**
 * Implements hook_drush_command().
 */
-function excur_drush_command() {
+function excur_drush_command(){
   $items['add-term'] = array(
     'description' => 'Add term',
     'aliases' => array('at'),
     'arguments' => array(
-      'file' => 'file',
-      'id' => 'id',
-      'dictionary' => 'dictionary',
+      'file_name' => 'file_name',
+      'tid' => 'tid',
+      'vid' => 'vid',
     ),
     'callback' => 'excur_drush_add_term',
   );
 
   return $items;
 }
-function excur_drush_add_term($file, $id, $dictionary) {
-  $vocabulary = taxonomy_vocabulary_machine_name_load($dictionary);
-  if($file){
-    $new_term = fopen($file, 'r');
-    while (!feof ($new_term)) {
-      $terms[] = fgets($new_term, 4096);
-    }
-    fclose ($new_term);
 
-    foreach($terms as $new_term){
-      $term = array(
-        'vid' => $vocabulary->vid,
-        'name' => $new_term,
-      );
-      $term = (object) $term;
-      $term->field_continent['und'][0]['target_id'] = $id;
+/**
+ * Callback for 'add-term'drush command.
+ */
+function excur_drush_add_term($file_name, $tid, $vid) {
+  if (file_exists($file_name)) {
+    $names = array();
+
+    $file = fopen($file_name, 'r');
+    while (!feof($file)) {
+      $names[] = fgets($file, 4096);
+    }
+    fclose($file);
+
+    foreach ($names as $name) {
+      $term = entity_create('taxonomy_term', array(
+        'vid' => $vid,
+        'name' => $name,
+      ));
+      $term->field_continent[LANGUAGE_NONE][0]['target_id'] = $tid;
       taxonomy_term_save($term);
     }
   }

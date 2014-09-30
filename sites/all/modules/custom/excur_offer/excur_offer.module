@@ -555,9 +555,9 @@ function excur_offer_offer_form_submit(&$form, &$form_state) {
   $wrapper->language($language->language);
   $start_place = $wrapper->field_start_place->value();
   $start_time = $wrapper->field_start_time->value();
-  $field_collection = $wrapper->field_offer->value();
   $duration = $form['#data']['duration'];
   $type_offer = $form['#data']['title'];
+
   foreach($form['#data']['tickets'] as $key=>$value){
     if($values['tickets']== $key){
       $ticket_type = $value['title'];

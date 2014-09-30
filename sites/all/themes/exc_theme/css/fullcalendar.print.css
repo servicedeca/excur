@@ -199,3 +199,11 @@ tbody,
 .fc button {
 	display: none; /* don't display any button-related controls */
 }
+
+#user-side-menu,
+#external-events,
+.side-block,
+header,
+#footer {
+  display: none;
+}

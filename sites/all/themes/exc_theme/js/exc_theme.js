@@ -122,6 +122,10 @@
 
   Drupal.behaviors.excurTravelPlanner = {
     attach: function(context, settings) {
+      $('#external-events .print-calendar').click(function() {
+        window.print();
+      });
+
       $('#external-events .fc-event').each(function() {
         var eventObject = {
           title: $.trim($(this).text())

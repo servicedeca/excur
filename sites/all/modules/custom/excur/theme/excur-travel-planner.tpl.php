@@ -21,6 +21,9 @@
             <?php print t('remove after drop'); ?>
           </label>
         </p>
+        <p class="print-calendar">
+          <?php print t('Print calendar.'); ?>
+        </p>
       </div>
       <div id='calendar'></div>
       <div style='clear:both'></div>
