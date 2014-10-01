@@ -313,6 +313,9 @@ function exc_theme_preprocess_node__service_full(&$vars) {
     drupal_add_js(EXCUR_FRONT_THEME_PATH . '/js/fotorama.min.js');
     drupal_add_css(EXCUR_FRONT_THEME_PATH . '/css/fotorama.css');
   }
+  $comment = new stdClass;
+  $comment->nid = $node->nid;
+  $vars['excur_comment_form'] = drupal_get_form('comment_form', $comment);
 
   $vars['venue'] = $wrapper->field_start_place->value();
   $vars['meeting_time'] = $wrapper->field_start_time->value();
