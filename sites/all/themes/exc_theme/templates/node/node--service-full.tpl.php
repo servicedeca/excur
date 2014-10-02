@@ -20,7 +20,7 @@
   <h2 class="node-description">
     <?php print t('Description'); ?>
   </h2>
-  <?php hide($content['comments']); ?>
+<!--  --><?php //hide($content['comments']); ?>
   <?php hide($content['links']); ?>
   <?php print render($content['body']); ?>
   <div class="row">
@@ -78,5 +78,4 @@
     <?php print t('Reservation'); ?>
   </h2>
 </article>
-<?php print render($excur_comment_form); ?>
-<?php print render($content['comments']); ?>
+<?php print render($content['comments'])?>

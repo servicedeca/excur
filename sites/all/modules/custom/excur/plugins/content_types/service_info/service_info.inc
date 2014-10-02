@@ -84,6 +84,6 @@ function template_preprocess_excur_service_info(&$vars) {
   // Get rating widget.
   if (excur_offer_is_user_ordered_offer($node->nid)) {
     $node_view = node_view($node);
-   $vars['rating_widget'] = render($node_view['field_offer_rating']);
+    $vars['rating_widget'] = render($node_view['field_offer_rating']);
   }
 }

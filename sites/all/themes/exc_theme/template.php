@@ -313,9 +313,6 @@ function exc_theme_preprocess_node__service_full(&$vars) {
     drupal_add_js(EXCUR_FRONT_THEME_PATH . '/js/fotorama.min.js');
     drupal_add_css(EXCUR_FRONT_THEME_PATH . '/css/fotorama.css');
   }
-  $comment = new stdClass;
-  $comment->nid = $node->nid;
-  $vars['excur_comment_form'] = drupal_get_form('comment_form', $comment);
 
   $vars['venue'] = $wrapper->field_start_place->value();
   $vars['meeting_time'] = $wrapper->field_start_time->value();
@@ -1010,4 +1007,54 @@ function exc_theme_preprocess_views_view_fields__companion_city(&$vars) {
 
   $vars['price'] = $price;
   $vars['currency'] = excur_currency_get_icon($currency);
+}
+
+/**
+ * Process variables for comment.tpl.php
+ */
+function exc_theme_preprocess_comment(&$vars) {
+  $vars['comments'] = $vars['comment']->field_comment[LANGUAGE_NONE][0]['value'];
+  $user = user_load($vars['comment']->uid);
+  $vars['name'] = $user->field_name[LANGUAGE_NONE][0]['value'];
+
+  if (!empty($user->field_image[LANGUAGE_NONE])) {
+    $path = $user->field_image[LANGUAGE_NONE][0]['uri'];
+    $theming = 'image_style';
+  }
+  else {
+    $path = EXCUR_FRONT_THEME_PATH . '/images/user-default.png';
+    $theming = 'remote_image_style';
+  }
+  $vars['user_image'] = theme($theming, array(
+    'style_name' => '70x70',
+    'path' => $path,
+    'alt' => $user->field_name[LANGUAGE_NONE][0]['safe_value'],
+    'title' => $user->field_name[LANGUAGE_NONE][0]['safe_value'],
+  ));
+
+}
+
+/**
+ * Process variables for comment_wrapper.tpl.php
+ */
+function exc_theme_preprocess_comment_wrapper(&$vars) {
+  global $user;
+
+  $node = $vars['node'];
+  $guide = user_load($node->uid);
+  $guide = user_view($guide);
+  $node_view = node_view($node);
+  if($user->uid != 0) {
+    $vars['rating_widget'] = render($node_view['field_offer_rating']);
+    $vars['rating_widget_guide'] = render($guide['field_rating']);
+  }
+}
+
+/**
+ * Process variables for comment-form.tpl.php
+ */
+function exc_theme_preprocess_comment_form(&$vars) {
+  $vars['comment_form'] = $vars['form']['field_comment'];
+  $vars['submit'] = $vars['form']['actions']['submit'];
+  $vars['submit']['#attributes'] = array( 'class' => array('btn'));
 }

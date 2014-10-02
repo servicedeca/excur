@@ -194,6 +194,15 @@ function excur_theme() {
     'template' => 'excur-travel-planner',
   );
 
+  $items['excur_comments'] = array(
+      'template' => 'comment-wrapper',
+  );
+
+  $items['comment_form'] = array(
+    'render element' => 'form',
+    'template' => 'comment-form',
+  );
+
   return $items;
 }
 
@@ -662,6 +671,13 @@ function excur_categories_by_city($city) {
  */
 function excur_user_menu($account) {
   return theme('excur_user_menu', array('account' => $account));
+}
+
+/**
+ * Draw comments.
+ */
+function excur_comments() {
+  return theme('excur_comments', array());
 }
 
 /**

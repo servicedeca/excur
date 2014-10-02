@@ -1044,10 +1044,10 @@ function excur_feature_node_service_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'allow_clear' => 1,
-      'allow_ownvote' => 1,
+      'allow_ownvote' => 0,
       'allow_revote' => 0,
       'entity_translation_sync' => FALSE,
-      'stars' => 10,
+      'stars' => 5,
       'target' => 'none',
       'user_register_form' => FALSE,
     ),
