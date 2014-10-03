@@ -194,9 +194,9 @@ function excur_theme() {
     'template' => 'excur-travel-planner',
   );
 
-  $items['excur_comments'] = array(
-      'template' => 'comment-wrapper',
-  );
+    $items['excur_comments'] = array(
+        'template' => 'comment-wrapper',
+    );
 
   $items['comment_form'] = array(
     'render element' => 'form',
@@ -676,8 +676,8 @@ function excur_user_menu($account) {
 /**
  * Draw comments.
  */
-function excur_comments() {
-  return theme('excur_comments', array());
+function excur_comments($node) {
+ // return theme('comment_wrapper__node_service');
 }
 
 /**
@@ -745,4 +745,39 @@ function excur_offer_companion_message($node, $account) {
   _privatemsg_send($message);
 
   drupal_goto('messages/view/' . $message->thread_id);
+}
+
+/**
+ * Form builder for comment and rating form.
+ */
+function excur_comment_rating_form() {
+
+  $form['time'] = array(
+    '#type'	=> 'textfield',
+    '#title' => t('ticket number'),
+  );
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('confirmed'),
+    '#attributes' => array(
+      'class' => array('btn',),
+      ),
+  );
+
+  $form['#submit'][] = 'excur_comment_rating_form_submit';
+  $form['#validate'][] = 'excur_comment_rating_form_validate';
+}
+
+/**
+ * Submit callback for excur_comment_rating_form().
+ */
+function excur_comment_rating_form_submit() {
+
+}
+
+/**
+ * Validate callback for excur_comment_rating_form().
+ */
+function excur_comment_rating_form_validate() {
+
 }

@@ -78,4 +78,7 @@
     <?php print t('Reservation'); ?>
   </h2>
 </article>
-<?php print render($content['comments'])?>
+<div id="comment_rating">
+
+</div>
+<?php//  print render($content['comments']) ?>

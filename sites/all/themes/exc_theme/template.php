@@ -536,9 +536,9 @@ function exc_theme_preprocess_views_view_fields__offers__confirmed_guide_offers(
 }
 
 /**
- * Process variables for views-view-fields--offers--arhive-guide-offers.tpl.php
+ * Process variables for views-view-fields--offers--archive-guide-offers.tpl.php
  */
-function exc_theme_preprocess_views_view_fields__offers__arhive_guide_offers(&$vars) {
+function exc_theme_preprocess_views_view_fields__offers__archive_guide_offers(&$vars) {
   if (!empty($vars['row']->field_field_image)) {
     $path_image = $vars['row']->field_field_image[0]['raw']['uri'];
     $vars['image'] = theme('image_style', array(
