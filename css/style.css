@@ -4,7 +4,7 @@
 @import "http://webfonts.ru/import/djsans.css";
 @import "http://webfonts.ru/import/roboto.css";
 
-body * {
+#EUR {
     max-height: 1000000em;
 }
 
@@ -121,12 +121,6 @@ header .intro-text .intro-lead-in {
 }
 
 header .intro-text .intro-heading {
-    margin-bottom: 25px;
-    text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 50px;
-    font-weight: 700;
-    line-height: 50px;
 }
 
 @media(min-width:1px) {
@@ -173,12 +167,8 @@ header .intro-text .intro-lead-in {
     }
 
 header .intro-text .intro-heading {
-    margin-bottom: 50px;
-    text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 75px;
-    font-weight: 700;
-    line-height: 75px;
+    margin: 0 auto;    
+    height:100px;
 }
 
 .hearsearch {
@@ -393,8 +383,7 @@ section h3.section-subheading {
    
 .border {
     border: 1px solid black;
-    height: 304px;
-    width:300px;
+    height: 100px;
 }
 
 .border_name {
@@ -1042,7 +1031,7 @@ div.box-crew:hover span{
 
 .bread-crumbsleft {
     height: 80px;
-    background: #2A707A;
+    background: #26686D;
     padding-top: 0px;
     width: 50%;
     margin-top: 50px;
@@ -1050,7 +1039,7 @@ div.box-crew:hover span{
 
 .bread-crumbsright {
     height: 80px;
-    background: #379C9E;
+    background: #40B6B6;
     padding-top: 0px;
     width: 50%;
     margin-left: 50%;
@@ -1068,13 +1057,13 @@ div.box-crew:hover span{
     height: 80px;
      text-align: right;
      transition: all 0.44s ease;
-    background: #2A707A;
+    background: #26686D;
 }
 
 .bread-crumbs-country {
     height: 80px;
     text-align: center;
-    background: #32878E;
+    background: #3AA0A3;
 }
 
 
@@ -1106,7 +1095,7 @@ div.box-crew:hover span{
 .bread-crumbs-city {
     height:80px;
     text-align: left;
-    background: #379C9E;
+    background: #40B6B6;
 }
 
 .bread-crumb-index {
@@ -1889,7 +1878,6 @@ div.box-crew:hover span{
 
 .pop-city-item {
     padding-left: 0px;
-    border: 1px solid #3AA0A3;
     margin-left: 44px;
     margin-top: 20px;
     height:110px;
@@ -2066,7 +2054,7 @@ div.box-crew:hover span{
     height:75px;
 }
 
-.button{
+.button-go{
      text-decoration:none;
      text-align:center; 
      padding: 6px 25px; 
@@ -2087,7 +2075,7 @@ div.box-crew:hover span{
      background-image: linear-gradient(top, #bb4648 0% ,#801919 100%);   
    }
 
-.button:hover{
+.button-go:hover{
      text-decoration:none;
      text-align:center; 
      padding: 6px 25px; 
@@ -2108,7 +2096,7 @@ div.box-crew:hover span{
      background-image: linear-gradient(top, #801919 0% ,#bb4648 100%);   
 }
 
-.button:active{
+.button-go:active{
      padding:6px 25px; 
      border:none; 
      -webkit-border-radius:3px;
@@ -2224,9 +2212,184 @@ div.box-crew:hover span{
     transition-duration:0.66s;
 }
 
+.pop-city-item:hover{
+    background: #CDE0DD;
+    -webkit-transition-duration:0.66s;
+    -moz-transition-duration:0.66s;
+	-o-transition-duration:0.66s;
+    -ms-transition-duration:0.66s;	
+    transition-duration:0.66s;
+}
+
+
 .travel-city-about {
     color: #85918F;
     font-size: 18px;
     margin-top: 10px;
     font-family: 'Roboto';
+}
+
+.excur-list-category {
+    margin:0 auto;
+    width: 960px;
+    height:220px;
+    margin-bottom: 40px;
+}
+
+.category-item {
+    height:100px;
+}
+
+.category-item-icon {
+    height:30px;
+    text-align: center;
+}
+
+.category-item-name {
+    height:70px;
+    text-align: center;
+    padding: 0px;
+    
+}
+
+.category-item-border {
+    border-top:5px solid #3AA0A3;
+    font-size:12px;
+    color: #6D6E70;
+    font-family: 'Roboto';
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+}
+
+#EUR .category-item-border{
+    border-top:5px solid #40B6B6;
+}
+
+#EUR .category-item-border:active{
+    border-top:5px solid #26686D;
+}
+
+.categoty-icon {
+    width:30px;
+}
+
+.categiry-item-all {
+    color: #85918F;
+    font-size: 16px;
+    font-family: 'Roboto';
+    margin-top: -15px;
+    text-align: center;
+}
+
+.gid-header {
+    height: 50px;
+    background: #3AA0A3;
+    margin-top: 30px;
+}
+
+.gid-info {
+    margin: 0 auto;
+    width: 960px;
+    height:420px;
+    margin-top: 25px;
+}
+
+.gid-image {
+    height:280px;
+    text-align: left;
+    padding-left: 0px;
+}
+
+.gid-name {
+    height:280px;
+    display: table;
+    font-family: 'Roboto';
+    font-weight: 300;
+}
+
+.gid-contacts {
+    height:280px;
+    text-align: left;
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-size: 14px;
+    color: #687270;
+    line-height: 5px;
+}
+
+.gid-photo {
+    width: 280px;
+}
+
+.gid-name-inner {
+    display: table-cell;
+    vertical-align: middle;
+    line-height: 40px;
+}
+
+.gid-name-first {
+    font-size: 50px;
+    color:#58585B; 
+}
+
+.gid-name-second {
+    font-size: 35px;
+    color:#58585B; 
+    padding-top: 0px;
+    
+}
+
+.gid-name-index {
+    font-size: 20px;
+    color:#687270; 
+}
+
+.gid-place {
+    height:40px;
+    padding-top: 10px;
+    color:#58585B; 
+}
+
+.gid-star {
+    border:1px solid black;
+    height:50px;
+}
+
+.gid-main-language {
+    height:70px;
+    padding-top: 10px;
+    overflow: hidden;
+}
+
+.gid-other-language {
+    height:130px;
+    padding-top: 10px;
+    overflow: hidden;
+}
+
+.god-star {
+    height:40px;
+    padding-top: 10px;
+    color:#58585B; 
+}
+
+.language-title {
+    color:#58585B; 
+}
+
+.gid-place a{
+    color:#58585B; 
+}
+.gid-about {
+    height:110px;
+    margin-top: 20px;
+    padding-right: 40px;
+    padding-left: 40px;
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-size: 14px;
+    color: #687270;
+    line-height: 20px;
+    overflow: hidden;
 }

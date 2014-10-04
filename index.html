@@ -9,6 +9,7 @@
         <link href="css/style.css" rel="stylesheet">
         <link href="css/dropdowns-enhancement.min.css" rel="stylesheet">
         <link href="css/animate.css" rel="stylesheet">
+        <link href="css/stylesearch.css" rel="stylesheet">
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="js/bootstrap.js"></script>
         <script src="js/dropdowns-enhancement.js"></script>
@@ -158,11 +159,19 @@
                         <div class="intro-lead-in hidden-xs" >
                             <image src="image/logo.png" class="logo"></image>
                         </div>
-                        <div class="intro-heading" >    
-                            <div class="form-group ">
-                                <input type="text" class="form-control search hearsearch" placeholder="Куда вы поедете?" >
-                                <input id="search-button"  type="submit" value=""/>
-                            </div>     
+                        <div class="intro-heading" >
+                            <div class="form">
+                                <form id="header-signup-form" class="email-form visage-form visage-form-email">
+                                    <div class="option-group">
+                                        <div class="input focused">
+                                            <input placeholder="Куда вы хотите поехать?" type="text" >
+                                        </div>
+                                        <div class="buttons">
+                                            <input class="button" type="submit" value="Поиск">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>          
                         </div>
                     </div>
                 </div>
