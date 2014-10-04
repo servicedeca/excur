@@ -194,10 +194,6 @@ function excur_theme() {
     'template' => 'excur-travel-planner',
   );
 
-    $items['excur_comments'] = array(
-        'template' => 'comment-wrapper',
-    );
-
   $items['comment_form'] = array(
     'render element' => 'form',
     'template' => 'comment-form',
