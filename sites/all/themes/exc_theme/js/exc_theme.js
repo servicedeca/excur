@@ -168,4 +168,19 @@
     });
   }
 
+  Drupal.behaviors.excurComment = { attach: function (context) {
+      $("#excur-comment-rating-form").ajaxForm(successCallback);
+
+      $("#excur-comment-rating-form").submit(function () {
+
+        return false;
+      });
+    }
+  };
+
+
+  function successCallback(responseText,statusText) {
+    alert('ok');
+  }
+
 }(jQuery));

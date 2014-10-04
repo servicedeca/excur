@@ -28,7 +28,7 @@ function excur_comments_content_type_render($subtype, $conf, $panel_args, $conte
 }
 
 /**
-* Implements hook_content_type_theme().
+ * Implements hook_content_type_theme().
  */
 function excur_comments_content_type_theme(&$theme, $plugin) {
   $theme['excur_comments'] = array(
@@ -41,7 +41,16 @@ function excur_comments_content_type_theme(&$theme, $plugin) {
  * Process variables for excur-comments.tpl.php.
  */
 function template_preprocess_excur_comments(&$vars) {
+  global $user;
+
   $node  = menu_get_object();
   $node_view = node_view($node);
-  $vars['comments'] = render($node_view['comments']);
+  if($user->uid != 0) {
+    if(excur_offer_is_user_ordered_offer($node->nid)) {
+      $vars['comments'] = render($node_view['comments']);
+    }
+    else {
+      $vars['form'] = render(drupal_get_form('excur_comment_rating_form'));
+    }
+  }
 }

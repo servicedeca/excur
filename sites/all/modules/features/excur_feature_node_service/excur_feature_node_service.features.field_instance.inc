@@ -996,14 +996,14 @@ function excur_feature_node_service_field_default_field_instances() {
         'weight' => 23,
       ),
       'full' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'fivestar',
         'settings' => array(
-          'expose' => TRUE,
+          'expose' => 1,
           'style' => 'average',
           'text' => 'average',
           'widget' => array(
-            'fivestar_widget' => NULL,
+            'fivestar_widget' => 'sites/all/modules/contrib/fivestar/widgets/outline/outline.css',
           ),
         ),
         'type' => 'fivestar_formatter_default',
@@ -1044,8 +1044,8 @@ function excur_feature_node_service_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'allow_clear' => 1,
-      'allow_ownvote' => 0,
-      'allow_revote' => 0,
+      'allow_ownvote' => 1,
+      'allow_revote' => 1,
       'entity_translation_sync' => FALSE,
       'stars' => 5,
       'target' => 'none',

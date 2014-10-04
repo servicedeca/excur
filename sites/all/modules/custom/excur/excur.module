@@ -213,7 +213,7 @@ function excur_user_bookings($account) {
  * Page callback user/%user/offer
  */
 function excur_user_offers($account) {
-  return theme('excur_user_offers', array('account' => $account));;
+  return theme('excur_user_offers', array('account' => $account));
 }
 
 /**
@@ -670,13 +670,6 @@ function excur_user_menu($account) {
 }
 
 /**
- * Draw comments.
- */
-function excur_comments($node) {
- // return theme('comment_wrapper__node_service');
-}
-
-/**
  * Render guide photo.
  *
  * @param object $account
@@ -746,9 +739,9 @@ function excur_offer_companion_message($node, $account) {
 /**
  * Form builder for comment and rating form.
  */
-function excur_comment_rating_form() {
+function excur_comment_rating_form($form, $form_state) {
 
-  $form['time'] = array(
+  $form['number'] = array(
     '#type'	=> 'textfield',
     '#title' => t('ticket number'),
   );
@@ -762,6 +755,8 @@ function excur_comment_rating_form() {
 
   $form['#submit'][] = 'excur_comment_rating_form_submit';
   $form['#validate'][] = 'excur_comment_rating_form_validate';
+
+  return $form;
 }
 
 /**
