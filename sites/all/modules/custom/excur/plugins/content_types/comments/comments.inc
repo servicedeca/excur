@@ -45,8 +45,8 @@ function template_preprocess_excur_comments(&$vars) {
 
   $node  = menu_get_object();
   $node_view = node_view($node);
-  if($user->uid != 0) {
-    if(excur_offer_is_user_ordered_offer($node->nid)) {
+  if (user_is_logged_in()) {
+    if (excur_offer_is_user_ordered_offer($node->nid)) {
       $vars['comments'] = render($node_view['comments']);
     }
     else {

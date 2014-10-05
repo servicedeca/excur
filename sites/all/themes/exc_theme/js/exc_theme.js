@@ -160,27 +160,23 @@
     }
   };
 
+  Drupal.behaviors.excurComment = {
+    attach: function(context, settings) {
+      $("#excur-comment-rating-form").ajaxForm(function() {
+        alert('ok');
+      });
+      $("#excur-comment-rating-form").submit(function () {
+        return false;
+      });
+    }
+  };
+
   function excurScrollTo(from, to, time) {
     $(from).click(function (){
       $('html, body').animate({
         scrollTop: $(to).offset().top
       }, time);
     });
-  }
-
-  Drupal.behaviors.excurComment = { attach: function (context) {
-      $("#excur-comment-rating-form").ajaxForm(successCallback);
-
-      $("#excur-comment-rating-form").submit(function () {
-
-        return false;
-      });
-    }
-  };
-
-
-  function successCallback(responseText,statusText) {
-    alert('ok');
   }
 
 }(jQuery));
