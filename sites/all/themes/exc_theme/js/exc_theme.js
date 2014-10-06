@@ -162,13 +162,21 @@
 
   Drupal.behaviors.excurComment = {
     attach: function(context, settings) {
-      $("#excur-comment-rating-form").ajaxForm(function() {
-        alert('ok');
-      });
-      $("#excur-comment-rating-form").submit(function () {
-        return false;
-      });
-    }
+      $('#excur-comment-rating-form').submit(function(e){
+        e.preventDefault();
+        $.ajax({
+          url: "/excur/comment_rating",
+          type: "POST",
+          data: { number : $('#number').val(), node : $('#node').val() },
+          success: function(response) {
+            $('#comment_rating').html(response);
+          },
+          error: function(response) {
+            alert('false');
+          }
+         });
+        });
+      }
   };
 
   function excurScrollTo(from, to, time) {

@@ -46,11 +46,12 @@ function template_preprocess_excur_comments(&$vars) {
   $node  = menu_get_object();
   $node_view = node_view($node);
   if (user_is_logged_in()) {
-    if (excur_offer_is_user_ordered_offer($node->nid)) {
+    if (excur_offer_is_user_ordered_offer($node->nid) != 0) {
       $vars['comments'] = render($node_view['comments']);
     }
     else {
       $vars['form'] = render(drupal_get_form('excur_comment_rating_form'));
+      $vars['comments'] = render($node_view['comments']['comments']);
     }
   }
 }

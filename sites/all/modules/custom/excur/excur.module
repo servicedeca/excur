@@ -67,6 +67,12 @@ function excur_menu() {
     'access arguments' => array('access content'),
   );
 
+  $items['excur/comment_rating'] = array(
+    'title' => 'Comment and rating',
+    'page callback' => 'excur_comment_rating',
+    'access callback' => TRUE,
+  );
+
   return $items;
 }
 
@@ -214,6 +220,36 @@ function excur_user_bookings($account) {
  */
 function excur_user_offers($account) {
   return theme('excur_user_offers', array('account' => $account));
+}
+
+/**
+ * Check if the order number coincided
+ */
+function excur_number_ordered($oid, $nid) {
+  return db_select('excur_offer', 'eo')
+    ->fields('eo', array('id'))
+    ->condition('eo.oid', $oid)
+    ->condition('eo.nid', $nid)
+    ->range(0, 1)
+    ->execute()
+    ->fetchField();
+}
+
+/*
+ * Page callback comment_rating
+ */
+
+function excur_comment_rating() {
+  $number = $_POST['number'];
+  $nid = $_POST['node'];
+  $node = node_load($nid);
+  $node_view = node_view($node);
+  if(excur_number_ordered($number, $nid)) {
+    print render($node_view);
+  }
+  else {
+    print "Wrong number!";
+  }
 }
 
 /**
@@ -740,10 +776,24 @@ function excur_offer_companion_message($node, $account) {
  * Form builder for comment and rating form.
  */
 function excur_comment_rating_form($form, $form_state) {
+  $nid = menu_get_object()->nid;
 
   $form['number'] = array(
     '#type'	=> 'textfield',
     '#title' => t('ticket number'),
+    '#attributes' => array(
+      'id' => array('number',),
+      'name' => array('number',),
+    ),
+  );
+  $form['node'] = array(
+    '#type'	=> 'hidden',
+    '#title' => t('node'),
+    '#value' => $nid,
+    '#attributes' => array(
+      'id' => array('node'),
+      'name' => array('node',),
+    ),
   );
   $form['submit'] = array(
     '#type' => 'submit',
