@@ -257,6 +257,21 @@ function excur_comment_rating() {
 }
 
 /**
+ * Check if companion in service.
+ */
+function excur_companion_in_service($nid) {
+  return db_select('excur_offer', 'eo')
+    ->fields('eo', array('id'))
+    ->condition('eo.nid', $nid)
+    ->condition('eo.companion', 1)
+    ->condition('eo.status', 'confirmed')
+    ->condition('eo.date', REQUEST_TIME)
+    ->range(0, 1)
+    ->execute()
+    ->fetchField();
+}
+
+/**
  * Page callback add_service
  */
 function excur_add_service($account) {

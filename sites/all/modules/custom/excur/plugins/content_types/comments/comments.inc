@@ -53,4 +53,21 @@ function template_preprocess_excur_comments(&$vars) {
       $vars['comments'] = render($node_view['comments']['comments']);
     }
   }
+  else {
+    $vars['comments'] = render($node_view['comments']);
+    $login = l(t('sign in'), 'user/login', array(
+      'query' => array(
+        'destination' => "node/$node->nid",
+      ),
+    ));
+    $register = l(t('sign up'), 'user/register', array(
+      'query' => array(
+        'destination' => "node/$node->nid",
+      ),
+    ));
+    $vars['login'] = t('You should !login or !register to make add comment.', array(
+      '!login' => $login,
+      '!register' => $register,
+    ));
+  }
 }
