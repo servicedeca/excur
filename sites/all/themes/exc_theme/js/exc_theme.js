@@ -163,7 +163,6 @@
   Drupal.behaviors.excurComment = {
     attach: function(context, settings) {
       $('#excur-comment-rating-form').submit(function(e) {
-        alert(1);
         e.preventDefault();
         $.ajax({
           url: '/excur/comment_rating',
@@ -173,7 +172,12 @@
             node: $('#number-node').val()
           },
           success: function(response) {
-            $('#comment_rating').html(response);
+            if (response == false) {
+              alert('Wrong number!');
+            }
+            else {
+              $('#comment_rating').html(response);
+            }
           },
           error: function(response) {
             alert('false');

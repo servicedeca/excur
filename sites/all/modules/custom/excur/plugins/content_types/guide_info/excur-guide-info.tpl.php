@@ -4,9 +4,6 @@
     <?php print $guide; ?>
   </div>
   <div class="guide-rating">
-    <?php if (!empty($rating_widget)): ?>
-      <?php print $rating_widget; ?>
-    <?php endif; ?>
     <?php print $rating; ?>
   </div>
   <?php if (!empty($city)): ?>

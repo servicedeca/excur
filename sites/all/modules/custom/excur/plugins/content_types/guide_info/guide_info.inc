@@ -85,10 +85,4 @@ function template_preprocess_excur_guide_info(&$vars) {
     $rating = t('Rating: !value/10', array('!value' => $rating));
   }
   $vars['rating'] = $rating;
-
-  // Get rating widget.
-  if (excur_offer_is_user_ordered($account->uid)) {
-    $guide = user_view($account);
-    $vars['rating_widget'] = render($guide['field_rating']);
-  }
 }

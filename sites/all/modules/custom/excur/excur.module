@@ -244,13 +244,17 @@ function excur_comment_rating() {
   $number = (int) $_POST['number'];
   $nid = (int) $_POST['node'];
   $node = node_load($nid);
+  $node_view = node_view($node);
 
   if (excur_number_ordered($number, $nid)) {
     $comments = comment_node_page_additions($node);
     print render($comments);
   }
   else {
-    print "Wrong number!";
+    print FALSE;
+    /*print "Wrong number!";
+    print render($node_view['comments']['comments']);
+    print render(drupal_get_form('excur_comment_rating_form'));*/
   }
 
   drupal_exit();

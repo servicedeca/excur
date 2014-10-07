@@ -1016,6 +1016,7 @@ function exc_theme_preprocess_comment(&$vars) {
   $vars['comments'] = $vars['comment']->field_comment[LANGUAGE_NONE][0]['value'];
   $user = user_load($vars['comment']->uid);
   $vars['name'] = $user->field_name[LANGUAGE_NONE][0]['value'];
+  $vars['date'] = gmdate("m-d-Y", $vars['comment']->created);
 
   if (!empty($user->field_image[LANGUAGE_NONE])) {
     $path = $user->field_image[LANGUAGE_NONE][0]['uri'];
