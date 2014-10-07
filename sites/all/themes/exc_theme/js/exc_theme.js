@@ -114,7 +114,7 @@
         var id = $this.data('id');
 
         $.get('/excur/offer/reject/' + $this.data('id'), function(html) {
-            $('.content_confirm' + id).html(html);
+          $('.content_confirm' + id).html(html);
         });
       });
     }
@@ -162,21 +162,25 @@
 
   Drupal.behaviors.excurComment = {
     attach: function(context, settings) {
-      $('#excur-comment-rating-form').submit(function(e){
+      $('#excur-comment-rating-form').submit(function(e) {
+        alert(1);
         e.preventDefault();
         $.ajax({
-          url: "/excur/comment_rating",
-          type: "POST",
-          data: { number : $('#number').val(), node : $('#node').val() },
+          url: '/excur/comment_rating',
+          type: 'POST',
+          data: {
+            number: $('#edit-number').val(),
+            node: $('#number-node').val()
+          },
           success: function(response) {
             $('#comment_rating').html(response);
           },
           error: function(response) {
             alert('false');
           }
-         });
         });
-      }
+      });
+    }
   };
 
   function excurScrollTo(from, to, time) {

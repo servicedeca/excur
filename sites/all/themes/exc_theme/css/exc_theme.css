@@ -1026,3 +1026,7 @@ h2.panel-title {
   cursor: pointer;
   text-align: center;
 }
+
+.comment-form div[id^='edit-author'] {
+  display: none;
+}

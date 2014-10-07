@@ -240,16 +240,20 @@ function excur_number_ordered($oid, $nid) {
  */
 
 function excur_comment_rating() {
-  $number = $_POST['number'];
-  $nid = $_POST['node'];
+  // 57661409913144
+  $number = (int) $_POST['number'];
+  $nid = (int) $_POST['node'];
   $node = node_load($nid);
-  $node_view = node_view($node);
-  if(excur_number_ordered($number, $nid)) {
-    print render($node_view);
+
+  if (excur_number_ordered($number, $nid)) {
+    $comments = comment_node_page_additions($node);
+    print render($comments);
   }
   else {
     print "Wrong number!";
   }
+
+  drupal_exit();
 }
 
 /**
@@ -780,10 +784,9 @@ function excur_comment_rating_form($form, $form_state) {
 
   $form['number'] = array(
     '#type'	=> 'textfield',
-    '#title' => t('ticket number'),
+    '#title' => t('Ticket number'),
     '#attributes' => array(
-      'id' => array('number',),
-      'name' => array('number',),
+      'name' => array('number'),
     ),
   );
   $form['node'] = array(
@@ -791,34 +794,17 @@ function excur_comment_rating_form($form, $form_state) {
     '#title' => t('node'),
     '#value' => $nid,
     '#attributes' => array(
-      'id' => array('node'),
-      'name' => array('node',),
+      'id' => array('number-node'),
+      'name' => array('node'),
     ),
   );
   $form['submit'] = array(
     '#type' => 'submit',
-    '#value' => t('confirmed'),
+    '#value' => t('Confirm'),
     '#attributes' => array(
-      'class' => array('btn',),
-      ),
+      'class' => array('btn'),
+    ),
   );
 
-  $form['#submit'][] = 'excur_comment_rating_form_submit';
-  $form['#validate'][] = 'excur_comment_rating_form_validate';
-
   return $form;
-}
-
-/**
- * Submit callback for excur_comment_rating_form().
- */
-function excur_comment_rating_form_submit() {
-
-}
-
-/**
- * Validate callback for excur_comment_rating_form().
- */
-function excur_comment_rating_form_validate() {
-
 }

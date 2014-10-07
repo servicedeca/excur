@@ -1038,13 +1038,12 @@ function exc_theme_preprocess_comment(&$vars) {
  * Process variables for comment_wrapper.tpl.php
  */
 function exc_theme_preprocess_comment_wrapper(&$vars) {
-  global $user;
-
-  $node = $vars['node'];
+  $node = $vars['content']['#node'];
+  $node_view = node_view($node);
   $guide = user_load($node->uid);
   $guide = user_view($guide);
-  $node_view = node_view($node);
-  if($user->uid != 0) {
+
+  if (user_is_logged_in()) {
     $vars['rating_widget'] = render($node_view['field_offer_rating']);
     $vars['rating_widget_guide'] = render($guide['field_rating']);
   }
@@ -1054,7 +1053,6 @@ function exc_theme_preprocess_comment_wrapper(&$vars) {
  * Process variables for comment-form.tpl.php
  */
 function exc_theme_preprocess_comment_form(&$vars) {
-  $vars['comment_form'] = $vars['form']['field_comment'];
-  $vars['submit'] = $vars['form']['actions']['submit'];
-  $vars['submit']['#attributes'] = array( 'class' => array('btn'));
+  $vars['form']['actions']['#attributes']['class'] = array();
+  $vars['form']['actions']['submit']['#attributes']['class'][] = 'btn';
 }
