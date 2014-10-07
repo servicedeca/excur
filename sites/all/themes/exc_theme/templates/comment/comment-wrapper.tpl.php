@@ -1,3 +1,5 @@
+<div class="space30"></div>
+<h2 id="reservation" class="node-description">Отзывы</h2>
 <?php  print render($content['comments']) ?>
 <?php if($rating_widget && $rating_widget_guide): ?>
   <?php print t('Rating service '); ?>
