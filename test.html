@@ -3,22 +3,165 @@
   <head>
 	  <meta name="viewport" content="980px">
     <title>Test</title>
-    <link href="css/stylesearch.css" rel="stylesheet">
-    <link href="css/stylesearch.css" rel="stylesheet">
-    <script src="http://code.jquery.com/jquery-latest.js"></script> 
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-select.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/dropdowns-enhancement.min.css" rel="stylesheet">
+    <link href="css/styletest.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+ <script src="js/dropdowns-enhancement.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/ bootstrap-select.js"></script>  
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
   </head>
   <body>
-    <div class="form">
-        <form id="header-signup-form" class="email-form visage-form visage-form-email">
-            <div class="option-group">
-                <div class="input focused">
-                    <input placeholder="Куда вы хотите поехать?" type="text" >
-                </div>
-                <div class="buttons">
-                    <input class="button" type="submit" value="Поиск">
+
+        <div class="navbar navbar-default navbar-fixed-top mediamin" >
+            <div class="container menu">
+                <div class="navbar-header page-scroll">
+                    <!-- Button for smallest screens -->
+                    <button type="button" class="navbar-toggle mediatoogle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span> 
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="image/minilogo.png" class="minilogo"></a>     
+			    </div>
+			    <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" >
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <form class="navbar-form navbar-left topsearch" role="search">
+                                <div class="form-group">
+                                    <input type="text" class="form-control search headsearch" placeholder="Поиск">
+                                </div>
+                            </form>
+                        </li>
+                        <li>
+                            <div class="box-crew padd phone">
+                                <i class="fa fa-phone fa-2x"></i>
+                                <span>8 913 004 45 49</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="curent1">
+                                <button class="padd" data-label-placement="" data-toggle="dropdown" class="btn btn-default dropdown-toggle mybutt"><i class="data-label"><img src="image/RU.png"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <input type="radio" id="ex7_1" name="ex7" value="1" checked="">
+                                        <label for="ex7_1"><i class="data-label"><img src="image/RU.png"></i>Русский</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="ex7_2" name="ex7" value="2">
+                                        <label for="ex7_2"><i class="data-label"><img src="image/GB.png"></i>English</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="ex7_3" name="ex7" value="3">
+                                        <label for="ex7_3"><i class="data-label"><img src="image/CN.png"></i>China</label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>	
+                        <li>
+                            <div class="curent">
+                                <button class="padd" data-label-placement="" data-toggle="dropdown" class="btn btn-default dropdown-toggle"><i class="data-label"><img src="image/dol.png"></i></button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <input type="radio" id="ex8_1" name="ex8" value="1" checked="">
+                                        <label for="ex_1"><i class="data-label"><img src="image/dol.png"></i>Доллар</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="ex8_2" name="ex8" value="2">
+                                        <label for="ex8_2"><i class="data-label"><img src="image/EUR.png"></i>EUR</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="ex8_3" name="ex8" value="3">
+                                        <label for="ex8_3"><i class="data-label"><img src="image/yan.png"></i>Yaun</label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="btn bursize" data-toggle="modal" data-target=".bs-example-modal-md"><div class="enter">Войти или <br>Создать аккаунт</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+           
+        <!-- MODAL -->
+                   
+        <div class="modal fade bs-example-modal-md" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content">
+                    <ul  id="menureg" style="margin-bottom: 15px;">
+                        <a href="#homes" data-toggle="tab"  ><li   class="active leftreg">Регистрация</li></a>
+                        <a href="#profile" data-toggle="tab"  ><li class="leftright">Вход</li></a>
+                    </ul>
+                    <ul class="modal-social list-unstyled clearfix">
+                        <li><a href="#" class="btn btn-primary btn-fb yy">Facebook</a></li>
+                        <li><a href="#" class="btn btn-primary btn-goo yy">Google +</a></li>
+                    </ul>
+                    <div id="myTabContent" class="tab-content">
+                        <div class="tab-pane fade active in" id="homes">
+                            <div class="row formreg">
+                                <div class="col-sm-12 p">
+                                        <input type="text" class="form-control for" placeholder="E-mail">
+                                </div>
+                                <div class="col-sm-12 p">
+                                    <input type="text" class="form-control for" placeholder="Ф.И.О.">
+                                </div>
+                                <div class="col-sm-12 p">
+                                    <input type="text" class="form-control for " placeholder="Родной язык">
+                                </div>
+                                <div class="col-sm-12 p">
+                                    <div class="checkbox for">
+                                          <label>
+                                                <input type="checkbox" value="">
+                                                Я принимаю условия соглашения.
+                                          </label>
+                                      </div>
+                                </div>
+                                <div class="col-sm-12 p">
+                                    <button type="button" class="btn btn-primary btn-lg btn-block forbut">Зарегистрировать</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="profile">
+                            <div class="row formenter">
+                                <div class="col-sm-12 p">
+                                    <input type="text" class="form-control for" placeholder="Логин">
+                                </div>
+                                <div class="col-sm-12 p">
+                                    <input type="text" class="form-control for" placeholder="Пароль">
+                                </div>
+                                <div class="col-sm-12 p1">
+                                    <button type="button" class="btn btn-primary btn-lg btn-block forbut">Войти
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </form>
-    </div>
+        </div>
+        
+        <br><br><br><br><br>
+			<section class="main">
+				<div class="wrapper-demo">
+					<div id="ds" class="wrapper-dropdown-3" tabindex="1">
+						<span>Transport</span>
+						<ul class="dropdown">
+							<li><a href="#"><i class="icon-envelope icon-large"></i>Classic mail</a></li>
+							<li><a href="#"><i class="icon-truck icon-large"></i>UPS Delivery</a></li>
+							<li><a href="#"><i class="icon-plane icon-large"></i>Private jet</a></li>
+						</ul>
+					</div>
+				​</div>
+			</section>
+
+
+
   </body>
 </html>

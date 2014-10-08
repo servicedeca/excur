@@ -1,7 +1,7 @@
 .form{
 	display:inline-block;
 	position:relative;
-	font-size:0
+	font-size:0;
 }
 
 .form form{
@@ -128,8 +128,9 @@
 	width:292px;
 	border:none;
 	display:block;
-	font-size:20px;
-	font-family:"ProximaNovaSemibold",Helvetica,Arial,Sans-serif;
+    font-size: 25px;
+    font-family: 'Segoe';
+    letter-spacing:1px;
 	font-weight:normal;
 	outline:none;
 	padding:20px;
@@ -200,14 +201,15 @@
 	display:inline-block;
 	width:auto !important;
 	min-width:128px;
-	border:3px solid #fff;
-	font-family:"ProximaNovaBold",Helvetica,Arial,Sans-serif;
-	font-size:14px;
+	border:2px solid #000;
+    border-left:0px solid #000;
+    font-size: 17px;
+    font-family: 'Segoe';
+    letter-spacing:1px;
 	height:66px;
 	line-height:60px;
 	padding:0 20px;
 	text-transform:uppercase;
-	letter-spacing:0.1em;
 	cursor:pointer;
 }
 .form input[type="submit"]:hover,.form input[type="submit"]:focus
@@ -264,7 +266,8 @@
 }
 .form input:focus,.form select:focus,.form textarea:focus
 {
-	background:#1e7c7a
+	background:#333;
+
 }
 .form select option
 {
@@ -273,13 +276,13 @@
 }
 .form input[type="submit"]
 {
-	border-color:#000;
+	border-color:#fff;
 	background:transparent;
-	color:#000
+	color:#fff;
 }
 .form input[type="submit"]:hover,.form input[type="submit"]:focus
 {
-	background:#000;
+	background:#661414;
 	color:#fff
 }
 .form input[type="submit"].disabled:hover
@@ -369,116 +372,31 @@
 }
 .form .input ::-webkit-input-placeholder,.form .buttons ::-webkit-input-placeholder,.form .select ::-webkit-input-placeholder
 {
-	color:rgba(255,255,255,0.5)
+	color:rgba(255,255,255,0.5);
+     font-size: 17px;
 }
 .form .input :-moz-placeholder,.form .buttons :-moz-placeholder,.form .select :-moz-placeholder
 {
-	color:#fff
+	color:#fff;
+    font-size: 17px;
 }
 .form .input ::-moz-placeholder,.form .buttons ::-moz-placeholder,.form .select ::-moz-placeholder
 {
-	color:#fff
+	color:#fff;
+    font-size: 17px;
 }
 .form .input :-ms-input-placeholder,.form .buttons :-ms-input-placeholder,.form .select :-ms-input-placeholder
 {
-	color:rgba(255,255,255,0.5)
+	color:rgba(255,255,255,0.5);
+    font-size: 17px;
 }
-.form .input.error ::-webkit-input-placeholder,.form .buttons.error ::-webkit-input-placeholder,.form .select.error ::-webkit-input-placeholder
-{
-	color:rgba(218,121,121,0.5)
-}
-.form .input.error :-moz-placeholder,.form .buttons.error :-moz-placeholder,.form .select.error :-moz-placeholder
-{
-	color:#da7979
-}
-.form .input.error ::-moz-placeholder,.form .buttons.error ::-moz-placeholder,.form .select.error ::-moz-placeholder
-{
-	color:#da7979
-}
-.form .input.error :-ms-input-placeholder,.form .buttons.error :-ms-input-placeholder,.form .select.error :-ms-input-placeholder
-{
-	color:rgba(218,121,121,0.5)
-}
-.form .input.error input,.form .input.error textarea,.form .buttons.error input,.form .buttons.error textarea,.form .select.error input,.form .select.error textarea
-{
-	color:#da7979;
-	background:#300e00
-}
-.form .input.error input:focus,.form .input.error textarea:focus,.form .buttons.error input:focus,.form .buttons.error textarea:focus,.form .select.error input:focus,.form .select.error textarea:focus
-{
-	color:#f29292;
-	background:#401e10
-}
-.form .input.error select,.form .buttons.error select,.form .select.error select
-{
-	color:#da7979
-}
-.form .input.error select:focus,.form .buttons.error select:focus,.form .select.error select:focus
-{
-	background:#401e10;
-	color:#f29292
-}
-.form .input.error select option,.form .buttons.error select option,.form .select.error select option
-{
-	background:#401e10;
-	color:#da7979
-}
-.form .error-message li,.form .error-message p
-{
-	color:#f4bcbc;
-	background-color:#a83200
-}
-.form .success-message
-{
-	color:#17bcb8
-}
-.form .success-message p a,.form .success-message p a:link,.form .success-message p a:visited
-{
-	color:#f44e04
-}
+
 .form .message
 {
 	max-width:346px
 }
-.form .message .social .text
-{
-	color:#000
-}
-.form .error-message
-{
-	text-align:left;
-	list-style:none;
-	width:100%;
-	position:absolute;
-	bottom:100%;
-	z-index:100;
-	overflow:hidden;
-	-webkit-transition-property:all;
-	-webkit-transition-duration:300ms;
-	-webkit-transition-timing-function:ease;
-	-moz-transition-property:all;
-	-moz-transition-duration:300ms;
-	-moz-transition-timing-function:ease;
-	-ms-transition-property:all;
-	-ms-transition-duration:300ms;
-	-ms-transition-timing-function:ease;
-	-o-transition-property:all;
-	-o-transition-duration:300ms;
-	-o-transition-timing-function:ease;
-	transition-property:all;
-	transition-duration:300ms;
-	transition-timing-function:ease
-}
-.form .error-message.hide
-{
-	bottom:0
-}
-.form .error-message p,.form .error-message li
-{
-	padding:12px 20px;
-	font-size:16px;
-	line-height:24px;
-	font-family:"ProximaNovaSemibold",Helvetica,Arial,Sans-serif
+
+transition-timing-function:ease
 }
 .form .hs-form fieldset
 {
@@ -496,16 +414,8 @@
 {
 	display:none !important
 }
-.form .hs-form .error-message
-{
-	bottom:auto
-}
-.form .hs-form .error-message p
-{
-	display:block !important;
-	padding-top:2px;
-	padding-bottom:2px
-}
+
+
 
 .form .disabled
 {

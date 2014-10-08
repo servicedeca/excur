@@ -1,11 +1,11 @@
-@import "http://webfonts.ru/import/ptmono.css";
-@import "http://webfonts.ru/import/clearsans.css";
-@import "http://webfonts.ru/import/fira.css";
-@import "http://webfonts.ru/import/djsans.css";
 @import "http://webfonts.ru/import/roboto.css";
+@font-face {
+    font-family: Segoe; /* Имя шрифта */
+    src: url(../fonts/segoeuil.ttf); /* Путь к файлу со шрифтом */
+   }
 
-#EUR {
-    max-height: 1000000em;
+body *{
+     font-family: Segoe;
 }
 
 p {
@@ -118,9 +118,11 @@ header .intro-text .intro-lead-in {
     font-size: 22px;
     font-style: italic;
     line-height: 22px;   
+    visibility: hidden ;
 }
 
 header .intro-text .intro-heading {
+     font-family: 'Segoe UI';
 }
 
 @media(min-width:1px) {
@@ -153,8 +155,8 @@ header .intro-text .intro-heading {
 
 @media(min-width:1650px) {
     header .intro-text {
-        padding-top: 410px;
-        padding-bottom:200px;
+        padding-top: 550px;
+        padding-bottom:150px;
     }
 }
     
@@ -413,7 +415,6 @@ section h3.section-subheading {
     display: table-cell;
     vertical-align: middle;
     font-size: 17px;
-    font-family: 'Arial';
     letter-spacing:1px;
 }
 
@@ -467,9 +468,9 @@ footer .footer-below {
 .name_cont {
     color: #665E5E;
     font-size: 25px;
-    font-family: 'Arial';
+    font-family: 'Segoe';
     padding-top: 20px;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
 }
 
 @media (max-width:1500px) {
@@ -526,13 +527,12 @@ footer .footer-below {
 }        
         
 .part {
-    background: #9e0b0f;
+    background:#661414;
     padding: 60px 0;
 }
 
 .text_part {
-    font-family: 'Clear Sans';
-    font-size: 25px;
+    font-size: 24px;
 }
 
 .bnone {
@@ -858,17 +858,17 @@ background: #333;
     margin-top:20px;
     text-align: center ;
     color:#fff;
-    font-size: 65px;
+    font-size: 40px;
     z-index: 10;
-    font-family:'Clear Sans';
-    font-weight: 300;
+    font-size:40px;
+    letter-spacing: 3px;
 }
 
 .listcountry {
     color: #fff;
     float: left;
     padding-left:15px;
-    font-size: 18px;
+    font-size: 17px;
     width: 240px;
     padding-bottom: 75px;
     padding-top: 75px;
@@ -880,15 +880,14 @@ background: #333;
 
 .cont_text {
     color: #fff;
-    font-family:'Clear Sans';
-    font-weight: 300;
-    font-size: 1.3em;
+    font-size:17px;
     text-align: center;
     width: 800px;
     margin: 0 auto;
     -moz-appearance: none;
     appearance: none;
     padding-top: 50px;
+    letter-spacing:1px;
 }
 
 .number {
@@ -929,23 +928,23 @@ background: #333;
 }
 
 #EUR #continent {
-    background: #2a707a;
+    background:#3C7E82;
 }
 
 #ASIA #continent {
-    background: #B1A259;
+    background:#D3AC54;
 }
 
 #AFRICA #continent {
-    background: #70412D;
+    background: #BC7433;
 }
 
 #AMERICA #continent {
-    background: #273F3E;
+    background: #024651;
 }
 
 #AUSTRALIA #continent {
-    background: #34618E;
+    background: #34628E;
 }
 
 .listcountryA {
@@ -1019,18 +1018,18 @@ div.box-crew:hover span{
 }
 
 .bread-crumbs-content {
-    height: 80px;
+    height: 100px;
     width:960px;
     margin: 0 auto;
     background: #fff;
-    margin-top: -80px;
+    margin-top: -100px;
     z-index: 20;
     padding-top: 0px;
 }
 
 
 .bread-crumbsleft {
-    height: 80px;
+    height: 100px;
     background: #26686D;
     padding-top: 0px;
     width: 50%;
@@ -1038,12 +1037,12 @@ div.box-crew:hover span{
 }
 
 .bread-crumbsright {
-    height: 80px;
+    height: 100px;
     background: #40B6B6;
     padding-top: 0px;
     width: 50%;
     margin-left: 50%;
-    margin-top: -80px;
+    margin-top: -100px;
 }   
 
 .country-content {
@@ -1054,14 +1053,14 @@ div.box-crew:hover span{
 }
 
 .bread-crumbs-mainland {
-    height: 80px;
+    height: 100px;
      text-align: right;
      transition: all 0.44s ease;
     background: #26686D;
 }
 
 .bread-crumbs-country {
-    height: 80px;
+    height: 100px;
     text-align: center;
     background: #3AA0A3;
 }
@@ -1093,7 +1092,7 @@ div.box-crew:hover span{
 }
 
 .bread-crumbs-city {
-    height:80px;
+    height:100px;
     text-align: left;
     background: #40B6B6;
 }
@@ -1104,18 +1103,16 @@ div.box-crew:hover span{
 
 .bread-crumbs-index {
     margin-top: 7px;
-    color:#b1aeae;
-    font-family: 'Roboto';
+    color:#efefef;
     font-weight: 300;
-    font-size: 12px;
+    font-size: 14px;
     letter-spacing: 0.5px;
 }
 
 .bread-crumbs-name {
-    font-size: 22px;
-    color:#B2B2B2;
-    font-family: 'Roboto';
-    font-weight: 300;
+    font-size: 25px;
+    color:#efefef;
+    margin-top: 15px;
 }
 
 .crumbs-mainland-icon {
@@ -1129,6 +1126,8 @@ div.box-crew:hover span{
     margin-left: -10px;
 
 }
+
+/* wrapper-dropdown-5 */
 
 .wrapper-dropdown-5 {
     /* Size & position */
@@ -1149,11 +1148,10 @@ div.box-crew:hover span{
     transition: all 0.44s ease-out;
     padding-left: 15px;
     padding-top: 55px;
-    bottom: 50px;
+    bottom: 43px;
     height:80px;
     margin-top: 0px;
-    color:#B2B2B2;
-    font-family: 'Roboto';
+    color:#efefef;
     font-weight: 300;
 
 }
@@ -1195,7 +1193,7 @@ div.box-crew:hover span{
     max-height: 0;
     overflow: hidden;
     font-weight: 300;
-    margin-top: 10px;
+    margin-top: 22px;
 }
 
 .wrapper-dropdown-5 .dropdown li {
@@ -1248,16 +1246,168 @@ div.box-crew:hover span{
     z-index: 20;
 }
 
+/* wrapper-dropdown-5 END*/
+
+/* wrapper-dropdown-3 */
+
+.wrapper-dropdown-3 {
+    /* Size and position */
+    position: relative;
+    width: 240px;
+    font-size: 40px;
+    margin: 0 auto;
+    margin-left: -15px;
+    /* Styles */
+    background: transparent;
+    cursor: pointer;
+    outline: none;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.44s ease-out;
+    padding-left: 15px;
+    padding-top: 40px;
+    bottom: 45px;
+    height:100px;
+    margin-top: 0px;
+    color:#efefef;
+    font-weight: 300;
+    border:none;
+    color:#fff;
+}
+
+.wrapper-dropdown-3:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 91%;
+    right: 25px;
+    margin-top: -23px;
+    border-width: 6px 6px 0 6px;
+    border-style: solid;
+    border-color: #fff transparent;
+}
+
+.wrapper-dropdown-3 .dropdown {
+  /* Size & position */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding-left: 20px;
+    /* Styles */
+    background: #fff;
+    border-radius: 0 0 5px 5px;
+    border: 1px solid rgba(0,0,0,0.2);
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    border-top: none;
+    list-style: none;
+    font-weight: normal;
+    -webkit-transition: all 0.5s ease-in;
+    -moz-transition: all 0.5s ease-in;
+    -ms-transition: all 0.5s ease-in;
+    -o-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;
+    list-style: none;
+    font-size: 15px;
+    overflow: hidden;
+    font-weight: 300;
+    margin-top: 3px;
+    z-index: 20;
+    /* Hiding */
+    opacity: 0;
+    pointer-events: none;
+}
+
+.wrapper-dropdown-3 .dropdown:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: 100%;
+    right: 15px;
+    border-width: 0 6px 6px 6px;
+    border-style: solid;
+    border-color: #fff transparent;    
+}
+
+.wrapper-dropdown-3 .dropdown:before {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: 100%;
+    right: 13px;
+    border-width: 0 8px 8px 8px;
+    border-style: solid;
+    border-color: rgba(0,0,0,0.1) transparent;    
+}
+
+.wrapper-dropdown-3 .dropdown li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px solid #e6e8ea;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,1);
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.wrapper-dropdown-3 .dropdown li a:hover {
+    color:#3AA0A3;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+
+.wrapper-dropdown-3 .dropdown li i {
+    float: right;
+    color: inherit;
+}
+
+.wrapper-dropdown-3 .dropdown li:first-of-type a {
+    border-radius: 7px 7px 0 0;
+}
+
+.wrapper-dropdown-3 .dropdown li:last-of-type a {
+    border: none;
+    border-radius: 0 0 7px 7px;
+}
+
+/* Hover state */
+
+.wrapper-dropdown-3 .dropdown li:hover a {
+
+}
+
+/* Active state */
+
+.wrapper-dropdown-3.active .dropdown {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* wrapper-dropdown-3 END*/
+
 .bigname {
     font-size: 47px
 }
 
 .bread-crumbs-name-main {
-    font-size: 35px;
+    font-size: 40px;
     color:#fff;
-    font-family: 'Roboto';
-    font-weight: 300;
     margin-top: -12px;
+    letter-spacing:3px;
+    font-weight: 100;
 }
 
 .pop-gid-content {
@@ -1302,6 +1452,7 @@ div.box-crew:hover span{
     padding-top: 0px;
     width: 100%;
     margin-top: 0px;
+    z-index: 21;
 }
 
 .country-usefull-info-content {
@@ -1325,16 +1476,15 @@ div.box-crew:hover span{
 .country-useful-info-title {
     padding-top: 20px;
     color:#85918F;
-    font-size:12px;
-    font-family: 'Roboto';
+    font-size: 14px;
+    letter-spacing: 0.5px;
     margin-left: -15px;
 }
 
 .country-usefull-about {
     color: #85918F;
-    font-size: 18px;
+    font-size: 20px;
     margin-top: 80px;
-    font-family: 'Roboto';
 }
 
 .iconq {
@@ -1599,9 +1749,10 @@ div.box-crew:hover span{
 .county-usefull-info-text {
     color:#3F3F3F;
     font-size:12px;
-    height:114px;
+    height:140px;
     overflow: hidden;
     font-family: 'Roboto';
+    line-height: 17px;
 }
 
 .left-line {
@@ -1655,15 +1806,14 @@ div.box-crew:hover span{
 
 .service-title {
     text-align: center;
-    font-family: 'Arial';
-    letter-spacing: 3px;
-    font-size:30px;
+    font-size:40px;
     padding-top: 0px;
     color:#665E5E;
+    letter-spacing: 3px;
 }
 
 .left-line-continent {
-    height: 200px;
+    height: 150px;
     padding-top: 0px;
     width: 100%;
     margin-top: -10px;
@@ -1677,17 +1827,16 @@ div.box-crew:hover span{
     -o-background-size: cover;  
     z-index: 0;
     position: absolute;
-    margin-top:50px;
+    margin-top:95px;
 }
 
 .service-title-continent {
     text-align: center;
-    font-family: 'Arial';
-    letter-spacing: 3px;
     font-size:40px;
     padding-top: 0px;
-    margin-top: 70px;
+    margin-top: 60px;
     color:#665E5E;
+    letter-spacing: 3px;
 }
 
 .pop-excur-button {
@@ -1836,12 +1985,14 @@ div.box-crew:hover span{
 
 .pop-title {
     font-size: 35px;
-    font-family: 'Roboto';
-    font-weight: 300;
+    font-family: 'Segoe';
+    font-weight: 100;
     background: #fff;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
     color:#4A4A4C; 
     text-align: center;
+    letter-spacing: 1px;
+    
 }
 
 .title-country{
@@ -1859,7 +2010,6 @@ div.box-crew:hover span{
 
 .pop-title-prefix {
     font-size: 35px;
-    font-family: 'Roboto';
     font-weight: 300;
     text-align: right;
     background: #fff;
@@ -1893,8 +2043,10 @@ div.box-crew:hover span{
 }
 
 .pop-city-name{
-    width:155px;
-    margin-left: 15px;
+    width:170px;
+    padding-right: 5px;
+    padding-left: 5px;
+    margin-left: 5px;
     font-size:20px;
     text-align: right;
     color:#393939;
@@ -1902,6 +2054,8 @@ div.box-crew:hover span{
     font-weight: 300;
     font-size: 20px;
     overflow: hidden;
+    height:32px;
+    letter-spacing: -1.5px;
 }
 
 .pop-city-item-img {
@@ -1925,7 +2079,7 @@ div.box-crew:hover span{
 .pop-city-info .numb{
     background:#8E4844;
     color:#fff;
-    padding-right:7px;
+    padding-right:5px;
     padding-left: 7px;
     font-size: 14px;
 }
@@ -2062,8 +2216,8 @@ div.box-crew:hover span{
      -webkit-border-radius:3px;
      -moz-border-radius:3px; 
      border-radius: 3px; 
-     font-size:16px;
-     font-family: 'Roboto'; 
+     font-size:17px;
+     letter-spacing: 1px;
      font-weight:300; 
      color:#E5FFFF; 
      background-color:#bb4648; 
@@ -2075,6 +2229,13 @@ div.box-crew:hover span{
      background-image: linear-gradient(top, #bb4648 0% ,#801919 100%);   
    }
 
+.button-go-pop{
+    padding: 6px 58px; 
+    left: -3px;
+    top: 320px;
+    position: absolute;
+}
+
 .button-go:hover{
      text-decoration:none;
      text-align:center; 
@@ -2083,8 +2244,7 @@ div.box-crew:hover span{
      -webkit-border-radius:3px;
      -moz-border-radius:3px; 
      border-radius: 3px; 
-     font-size:16px;
-     font-family: 'Roboto'; 
+     font-size:17px;
      font-weight:300; 
      color:#E5FFFF; 
      background-color:#801919; 
@@ -2096,14 +2256,20 @@ div.box-crew:hover span{
      background-image: linear-gradient(top, #801919 0% ,#bb4648 100%);   
 }
 
+.button-go-pop:hover{
+    padding: 6px 70px; 
+    left: -5px;
+    top: 320px;
+    position: absolute;
+}
+
 .button-go:active{
      padding:6px 25px; 
      border:none; 
      -webkit-border-radius:3px;
      -moz-border-radius:3px; 
      border-radius: 3px; 
-     font-size:16px;
-     font-family: 'Roboto'; 
+     font-size:17px;
      font-weight:300; 
      color:#E5FFFF; 
      background-color:#801919; 
@@ -2113,6 +2279,13 @@ div.box-crew:hover span{
      background-image: -ms-linear-gradient(top, #801919 0% ,#bb4648 100%); 
      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bb4648', endColorstr='#bb4648',GradientType=0 ); 
      background-image: linear-gradient(top, #801919 0% ,#bb4648 100%);   
+}
+
+.button-go-pop:active{
+    padding: 6px 70px; 
+    left: -5px;
+    top: 320px;
+    position: absolute;
 }
 
 #excur-list-button{
@@ -2163,8 +2336,6 @@ div.box-crew:hover span{
     padding-top: 10px;
     height:200px;
 }
-
-
 
 .travel-city {
     width: 960px;
@@ -2221,7 +2392,6 @@ div.box-crew:hover span{
     transition-duration:0.66s;
 }
 
-
 .travel-city-about {
     color: #85918F;
     font-size: 18px;
@@ -2249,17 +2419,16 @@ div.box-crew:hover span{
     height:70px;
     text-align: center;
     padding: 0px;
-    
 }
 
 .category-item-border {
     border-top:5px solid #3AA0A3;
-    font-size:12px;
+    font-size:14px;
     color: #6D6E70;
-    font-family: 'Roboto';
     position: relative;
     width: 80%;
     margin: 0 auto;
+    line-height: 16px;
 }
 
 #EUR .category-item-border{
@@ -2283,7 +2452,7 @@ div.box-crew:hover span{
 }
 
 .gid-header {
-    height: 50px;
+    height: 40px;
     background: #3AA0A3;
     margin-top: 30px;
 }
@@ -2386,10 +2555,13 @@ div.box-crew:hover span{
     margin-top: 20px;
     padding-right: 40px;
     padding-left: 40px;
-    font-family: 'Roboto';
     font-weight: 300;
     font-size: 14px;
     color: #687270;
     line-height: 20px;
     overflow: hidden;
+}
+
+.title-pop-city {
+    padding-bottom: 0px;
 }

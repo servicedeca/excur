@@ -1,22 +1,22 @@
 ﻿<!DOCTYPE html>
 <html>
   <head>
-	  <meta name="viewport" content="980px">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="980px">
     <title>Main Page</title>
-     <link href="css/bootstrap.css" rel="stylesheet">
-     
-     <link href="css/dropdowns-enhancement.min.css" rel="stylesheet">
-     <link href="css/animate.css" rel="stylesheet">
-     <link href="css/flags.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/dropdowns-enhancement.min.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/flags.css" rel="stylesheet">
     <link href="css/owl.carousel.css" rel="stylesheet">
     <link href="css/owl.theme.css" rel="stylesheet">
     <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="css/style.css" rel="stylesheet">
-     <script src="http://code.jquery.com/jquery-latest.js"></script>
-     <script src="js/bootstrap.js"></script>
-     <script src="js/dropdowns-enhancement.js"></script>
-     <script src="js/init.js"></script>
-     <script src="js/touch.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/dropdowns-enhancement.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/touch.js"></script>
     <script src="js/owl.carousel.js"></script>
 
      
@@ -214,7 +214,7 @@
                             </div>  
                     </div>
             </section>
-             <section class="country-useful-info">
+            <section class="country-useful-info">
                  <div class="country-usefull-info-content">
                     <div class="col-xs-3">
                         <img class="country-usefull-flag">
@@ -228,13 +228,12 @@
                     <div class="col-xs-3">
                            <a href="#">
                             <div class="country-usefull-about" >
-                                <img src="image/question.png" class="iconq">&nbsp&nbspПодробней
+                                <img src="image/question.png" class="iconq">&nbsp&nbspПодробнее
                             </div>
                         </a>
                     </div>
                  </div>
             </section>
-            
         <section class="pop-excur">
             <div class="pop-excur-content">
             <h1 class="pop-title title-country">Самые посещаемые экскурсии</h1>
@@ -273,9 +272,7 @@
                         430
                         <span class="currency"> EUR</span>
                         </div>            
-                        <a href="#">
-                            <div class="pop-excur-button">Забронировать
-                            </div>
+                        <a href="#" class="button-go button-go-pop" id="excur-list-button"/>Просмотреть
                         </a>
                     </div>
                     <div class="item">
@@ -311,9 +308,7 @@
                         430
                         <span class="currency"> EUR</span>
                         </div>            
-                        <a href="#">
-                            <div class="pop-excur-button">Забронировать
-                            </div>
+                        <a href="#" class="button-go button-go-pop" id="excur-list-button"/>Просмотреть
                         </a>
                     </div>
                     <div class="item">
@@ -349,9 +344,7 @@
                         430
                         <span class="currency"> EUR</span>
                         </div>            
-                        <a href="#">
-                            <div class="pop-excur-button">Забронировать
-                            </div>
+                        <a href="#" class="button-go button-go-pop" id="excur-list-button"/>Просмотреть
                         </a>
                     </div>
                     <div class="item">
@@ -387,9 +380,7 @@
                         430
                         <span class="currency"> EUR</span>
                         </div>            
-                        <a href="#">
-                            <div class="pop-excur-button">Забронировать
-                            </div>
+                        <a href="#" class="button-go button-go-pop" id="excur-list-button"/>Просмотреть
                         </a>
                     </div>
                     <div class="item">
@@ -425,9 +416,7 @@
                         430
                         <span class="currency"> EUR</span>
                         </div>            
-                        <a href="#">
-                            <div class="pop-excur-button">Забронировать
-                            </div>
+                        <a href="#" class="button-go button-go-pop" id="excur-list-button"/>Просмотреть
                         </a>
                     </div>
                     <div class="item">
@@ -463,11 +452,10 @@
                         430
                         <span class="currency"> EUR</span>
                         </div>            
-                        <a href="#">
-                            <div class="pop-excur-button">Забронировать
-                            </div>
+                        <a href="#" class="button-go button-go-pop" id="excur-list-button"/>Просмотреть
                         </a>
                     </div>
+                    
                 </div>
             </div>
         </section>
@@ -585,7 +573,7 @@
                         <img src="image/karl.png" class="pop-city-image">
                     </div>
                     <div class="col-xs-7">
-                        <p class="pop-city-name">Карловы Вары
+                        <p class="pop-city-name">Санкт-Питербург
                         </p>
                         <p class="pop-city-info">
                             <span class="numb">3
@@ -640,7 +628,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="footer-above z-index">
                     <div class="container">
                         <div class="row">
@@ -687,6 +674,29 @@
             </footer>
     </div>    
     <script>
+        function DropDown(el) {
+        this.dd = el;
+        this.initEvents();
+    }
+    DropDown.prototype = {
+        initEvents : function() {
+            var obj = this;
+            obj.dd.on('click', function(event){
+                $(this).toggleClass('active');
+                event.stopPropagation();
+            });	
+        }
+    }
+    $(function() {
+        var dd = new DropDown( $('#dd') );
+        $(document).click(function() {
+            // all dropdowns
+            $('.wrapper-dropdown-5').removeClass('active');
+        });
+    });
+      </script>
+    
+    <script>
     $(document).ready(function() {
 
       //Sort random function
@@ -713,11 +723,6 @@
 
     });
     </script>
-
-
-
-
-
 	 <script src="js/application.js"></script>
   </body>
 </html>

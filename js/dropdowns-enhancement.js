@@ -1,41 +1,43 @@
-/* ========================================================================
- * Bootstrap Dropdowns Enhancement: dropdowns-enhancement.js v3.1.1 (Beta 1)
- * http://behigh.github.io/bootstrap_dropdowns_enhancement/
- * ========================================================================
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- * ======================================================================== */
-
-
-
-
-
-
+/* ds*/
 
     function DropDown(el) {
-        this.dd = el;
+        this.ds = el;
+        this.placeholder = this.ds.children('span');
+        this.opts = this.ds.find('ul.dropdown > li');
+        this.val = '';
+        this.index = -1;
         this.initEvents();
     }
     DropDown.prototype = {
         initEvents : function() {
             var obj = this;
-
-            obj.dd.on('click', function(event){
+            obj.ds.on('click', function(event){
                 $(this).toggleClass('active');
-                event.stopPropagation();
-            });	
+                return false;
+            });
+            obj.opts.on('click',function(){
+                var opt = $(this);
+                obj.val = opt.text();
+                obj.index = opt.index();
+                obj.placeholder.text(obj.val);
+            });
+        },
+        getValue : function() {
+            return this.val;
+        },
+        getIndex : function() {
+            return this.index;
         }
     }
-
     $(function() {
-
-        var dd = new DropDown( $('#dd') );
-
+        var ds = new DropDown( $('#ds') );
         $(document).click(function() {
             // all dropdowns
-            $('.wrapper-dropdown-5').removeClass('active');
+            $('.wrapper-dropdown-3').removeClass('active');
         });
-
     });
+
+/* next*/
 
 (function($) {
     "use strict";

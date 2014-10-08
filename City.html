@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8" />
 	  <meta name="viewport" content="980px">
     <title>Main Page</title>
      <link href="css/bootstrap.css" rel="stylesheet">
@@ -20,9 +21,7 @@
      <script src="js/touch.js"></script>
      <script src="js/bootstrap-select.js"></script>
     <script src="js/owl.carousel.js"></script>
-
-     
-     
+    
      <script>
           $(document).ready(function(){
        $(".bread-crumbs-mainland"), $(".bread-crumbs-mainland").hover(function(){
@@ -40,7 +39,6 @@
             });
         });
      </script>
-         
          
   </head>
   <body id="EUR">
@@ -199,7 +197,15 @@
                 </a>
                     <div class="col-xs-3 bread-crumbs-city">
                         <p class="bread-crumbs-index">Город</p>
-                        <p class="bread-crumbs-name-main">Прага</p> 
+                    
+					<div id="ds" class="wrapper-dropdown-3" tabindex="1">
+						<span>Прага</span>
+						<ul class="dropdown">
+							<li><a href="#">Прага</a></li>
+							<li><a href="Country.html">Карловы Вары</a></li>
+							<li><a href="#">Брно</a></li>
+						</ul>
+					</div> 
                     </div>
             </section>
             <section class="country-useful-info">
@@ -215,7 +221,7 @@
                     <div class="col-xs-3">
                            <a href="#">
                             <div class="country-usefull-about" >
-                                <img src="image/question.png" class="iconq">&nbsp&nbspПодробней
+                                <img src="image/question.png" class="iconq">&nbsp&nbspПодробнеe
                             </div>
                         </a>
                     </div>
@@ -528,10 +534,10 @@
                 <div class="col-xs-2">
                     <img src="image/gid3.png"  class=" pop-gid-photo border-top">
                     <div class="pop-gid-name">
-                        <a href="gid.html">Джеронимо</a>
+                        <a href="Gid.html">Джеронимо</a>
                     </div>       
                     <div class="pop-gid-city">
-                        <a href="#">Карловы Вары</a>
+                        <a href="#">Нажми на меня</a>
                     </div>
                     <div class="pop-gid-star">
                         <img  src="image/star.png"  class="iconstar">&nbsp4,8
@@ -618,7 +624,7 @@
                         </div>            
                         <a href="#">
                             <div class="travel-city-about" >
-                                <img src="image/question.png" class="iconq">&nbsp&nbspПодробней
+                                <img src="image/question.png" class="iconq">&nbsp&nbspПодробнеe
                             </div>
                         </a>
                 </div>
@@ -646,7 +652,7 @@
                         </div>            
                         <a href="#">
                             <div class="travel-city-about" >
-                                <img src="image/question.png" class="iconq">&nbsp&nbspПодробней
+                                <img src="image/question.png" class="iconq">&nbsp&nbspПодробнеe
                             </div>
                         </a>
                 </div>
@@ -675,7 +681,7 @@
                         </div>            
                         <a href="#">
                             <div class="travel-city-about" >
-                                <img src="image/question.png" class="iconq">&nbsp&nbspПодробней
+                                <img src="image/question.png" class="iconq">&nbsp&nbspПодробнеe
                             </div>
                         </a>
                 </div>
@@ -752,6 +758,7 @@
                     </div>
                 </div>
             </footer>
+            
     </div>    
   </body>
 </html>
