@@ -162,7 +162,7 @@
 
   Drupal.behaviors.excurComment = {
     attach: function(context, settings) {
-      $('#excur-comment-rating-form').submit(function(e) {
+      $('#excur-comment-rating-form').once().submit(function(e) {
         e.preventDefault();
         $.ajax({
           url: '/excur/comment_rating',
@@ -176,9 +176,9 @@
               alert('Wrong number!');
             }
             else {
-              $('#comment_rating').html(response);
-              // 11671403245169
-              Drupal.attachBehaviors(response)
+              var $comment_rating = $('#comment_rating');
+              $comment_rating.html(response)
+              Drupal.attachBehaviors($comment_rating);
             }
           },
           error: function(response) {

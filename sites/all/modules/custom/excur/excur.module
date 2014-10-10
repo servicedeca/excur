@@ -249,9 +249,6 @@ function excur_comment_rating() {
     }
     else {
       print FALSE;
-      /*print "Wrong number!";
-      print render($node_view['comments']['comments']);
-      print render(drupal_get_form('excur_comment_rating_form'));*/
     }
   }
 
