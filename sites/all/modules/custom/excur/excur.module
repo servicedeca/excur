@@ -171,21 +171,21 @@ function excur_theme() {
     ),
   );
   $items['excur_profile_form'] = $base + array(
-    'template' => 'excur-profile-form',
-    'render element' => 'form',
-  );
+      'template' => 'excur-profile-form',
+      'render element' => 'form',
+    );
   $items['excur_user_login_form'] = $base + array(
-    'template' => 'excur-user-login-form',
-    'render element' => 'form',
-  );
+      'template' => 'excur-user-login-form',
+      'render element' => 'form',
+    );
   $items['excur_user_register'] = $base +array(
-    'template' => 'excur-user-register-form',
-    'render element' => 'form',
-  );
+      'template' => 'excur-user-register-form',
+      'render element' => 'form',
+    );
   $items['excur_service_node'] = $base + array(
-    'template' => 'excur-service-node-form',
-    'render element' => 'form',
-  );
+      'template' => 'excur-service-node-form',
+      'render element' => 'form',
+    );
   $items['excur_user_bookings'] = array(
     'template' => 'excur-user-bookings',
   );
@@ -197,8 +197,8 @@ function excur_theme() {
   );
 
   $items['excur_travel_planner'] = $base + array(
-    'template' => 'excur-travel-planner',
-  );
+      'template' => 'excur-travel-planner',
+    );
 
   $items['comment_form'] = array(
     'render element' => 'form',
@@ -284,7 +284,7 @@ function excur_add_service($account) {
     ));
   }
   else{
-   drupal_goto('node/add/service', array('query' => array('guide' => $account->uid,)));
+    drupal_goto('node/add/service', array('query' => array('guide' => $account->uid,)));
   }
 }
 
@@ -380,6 +380,7 @@ function excur_form_user_profile_form_alter(&$form, &$form_state) {
   if (!$user->uid == 1 || empty($user->roles[3])) {
     $form['field_certified']['#access'] = FALSE;
   }
+
   if (!isset($user->roles[EXCUR_USER_ROLE_GUIDE_ID])) {
     $form['guide'] = array(
       '#type' => 'checkbox',
@@ -387,6 +388,17 @@ function excur_form_user_profile_form_alter(&$form, &$form_state) {
       '#default_value' => isset($user->roles[EXCUR_USER_ROLE_GUIDE_ID]) ? TRUE : FALSE,
     );
   }
+  else {
+    $form['guide_company'] = array(
+      '#type' => 'radios',
+      '#options' => array(
+        1 => t('Guide'),
+        2 => t('Company'),
+      ),
+      '#default_value' => empty($user->data['guide_company']) ? 1 : $user->data['guide_company'],
+    );
+  }
+
   if (!isset($user->roles[EXCUR_USER_ROLE_PARTNER_ID])) {
     $form['partner'] = array(
       '#type' => 'checkbox',
@@ -426,13 +438,21 @@ function excur_form_user_pass_alter(&$form, &$form_state) {
  * Custom submit for user_register_form() form.
  */
 function excur_form_user_profile_form_submit(&$form, &$form_state) {
-  if (!empty($form_state['values']['guide']) && $form_state['values']['guide']) {
+  global $user;
+
+  $values = $form_state['values'];
+  if (!empty($values['guide']) && $values['guide']) {
     $form['#user']->roles[EXCUR_USER_ROLE_GUIDE_ID] = EXCUR_USER_ROLE_GUIDE_NAME;
     user_save($form['#user']);
   }
-  if (!empty($form_state['values']['partner']) && $form_state['values']['partner']) {
+  if (!empty($values['partner']) && $values['partner']) {
     $form['#user']->roles[EXCUR_USER_ROLE_PARTNER_ID] = EXCUR_USER_ROLE_PARTNER_NAME;
     user_save($form['#user']);
+  }
+
+  if (!empty($values['guide_company'])) {
+    $user->data['guide_company'] = $values['guide_company'];
+    user_save($user);
   }
 }
 

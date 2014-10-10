@@ -10,6 +10,41 @@
 function excur_feature_node_service_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'comment-comment_node_service-field_comment'
+  $field_instances['comment-comment_node_service-field_comment'] = array(
+    'bundle' => 'comment_node_service',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'comment',
+    'field_name' => 'field_comment',
+    'label' => 'Комментарий',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 3,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_offer-field_offer_duration'
   $field_instances['field_collection_item-field_offer-field_offer_duration'] = array(
     'bundle' => 'field_offer',
@@ -1553,6 +1588,7 @@ function excur_feature_node_service_field_default_field_instances() {
   t('Дней');
   t('Изображения для слайдера');
   t('Категория');
+  t('Комментарий');
   t('Максимум за');
   t('Место встречи');
   t('Минимум за');
