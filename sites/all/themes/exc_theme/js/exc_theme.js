@@ -177,6 +177,8 @@
             }
             else {
               $('#comment_rating').html(response);
+              // 11671403245169
+              Drupal.attachBehaviors(response)
             }
           },
           error: function(response) {

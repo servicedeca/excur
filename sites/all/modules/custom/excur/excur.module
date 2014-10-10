@@ -238,23 +238,21 @@ function excur_number_ordered($oid, $nid) {
 /*
  * Page callback comment_rating
  */
-
 function excur_comment_rating() {
-  // 57661409913144
-  $number = (int) $_POST['number'];
-  $nid = (int) $_POST['node'];
-  $node = node_load($nid);
-  $node_view = node_view($node);
+  if (!empty($_POST['number']) && !empty($_POST['node'])
+    && is_numeric($_POST['number']) && is_numeric($_POST['node'])
+    && $node = node_load($_POST['node'])) {
 
-  if (excur_number_ordered($number, $nid)) {
-    $comments = comment_node_page_additions($node);
-    print render($comments);
-  }
-  else {
-    print FALSE;
-    /*print "Wrong number!";
-    print render($node_view['comments']['comments']);
-    print render(drupal_get_form('excur_comment_rating_form'));*/
+    if (excur_number_ordered($_POST['number'], $node->nid)) {
+      $comments = comment_node_page_additions($node);
+      print render($comments);
+    }
+    else {
+      print FALSE;
+      /*print "Wrong number!";
+      print render($node_view['comments']['comments']);
+      print render(drupal_get_form('excur_comment_rating_form'));*/
+    }
   }
 
   drupal_exit();
