@@ -416,6 +416,7 @@ function excur_form_user_profile_form_alter(&$form, &$form_state) {
   $form['actions']['submit']['#attributes']['class'][] = 'btn';
   $form['actions']['cancel']['#attributes']['class'][] = 'btn';
   $form['#submit'][] = 'excur_form_user_profile_form_submit';
+  $form['#validate'][] = 'excur_form_user_profile_form_validate';
   $form['#theme'][] = 'excur_profile_form';
 }
 
@@ -435,7 +436,18 @@ function excur_form_user_pass_alter(&$form, &$form_state) {
 }
 
 /**
- * Custom submit for user_register_form() form.
+ * Custom submit for user_profile_form() form.
+ */
+function excur_form_user_profile_form_validate(&$form, &$form_state) {
+  $values = $form_state['values'];
+
+  if (empty($values['field_company_name'][LANGUAGE_NONE][0]['value'])) {
+    form_error($form['field_company_name'], t('You must enter the company name.'));
+  }
+}
+
+/**
+ * Custom submit for user_profile_form() form.
  */
 function excur_form_user_profile_form_submit(&$form, &$form_state) {
   global $user;
