@@ -1,41 +1,69 @@
 /* ds*/
-
-    function DropDown(el) {
-        this.ds = el;
-        this.placeholder = this.ds.children('span');
-        this.opts = this.ds.find('ul.dropdown > li');
-        this.val = '';
-        this.index = -1;
+        function DropDown(el) {
+        this.dd = el;
         this.initEvents();
     }
     DropDown.prototype = {
         initEvents : function() {
             var obj = this;
-            obj.ds.on('click', function(event){
+            obj.dd.on('click', function(event){
                 $(this).toggleClass('active');
-                return false;
-            });
-            obj.opts.on('click',function(){
-                var opt = $(this);
-                obj.val = opt.text();
-                obj.index = opt.index();
-                obj.placeholder.text(obj.val);
-            });
-        },
-        getValue : function() {
-            return this.val;
-        },
-        getIndex : function() {
-            return this.index;
+                event.stopPropagation();
+            });	
         }
     }
     $(function() {
-        var ds = new DropDown( $('#ds') );
+        var dd = new DropDown( $('#dd-city') );
         $(document).click(function() {
             // all dropdowns
-            $('.wrapper-dropdown-3').removeClass('active');
+            $('.wrapper-dropdown-5').removeClass('active');
         });
     });
+
+        function DropDown(el) {
+        this.dd = el;
+        this.initEvents();
+    }
+    DropDown.prototype = {
+        initEvents : function() {
+            var obj = this;
+            obj.dd.on('click', function(event){
+                $(this).toggleClass('active');
+                event.stopPropagation();
+            });	
+        }
+    }
+    $(function() {
+        var dd = new DropDown( $('#dd-country') );
+        $(document).click(function() {
+            // all dropdowns
+            $('.wrapper-dropdown-5').removeClass('active');
+        });
+    });
+
+        function DropDown(el) {
+        this.dd = el;
+        this.initEvents();
+    }
+    DropDown.prototype = {
+        initEvents : function() {
+            var obj = this;
+            obj.dd.on('click', function(event){
+                $(this).toggleClass('active');
+                event.stopPropagation();
+            });	
+        }
+    }
+    $(function() {
+        var dd = new DropDown( $('#dd-cont') );
+        $(document).click(function() {
+            // all dropdowns
+            $('.wrapper-dropdown-5').removeClass('active');
+        });
+    });
+
+
+
 
 /* next*/
 

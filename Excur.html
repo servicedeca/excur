@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
   <head>
-  <meta charset="UTF-8" />
+    <meta charset="UTF-8" />
 	  <meta name="viewport" content="980px">
     <title>Main Page</title>
      <link href="css/bootstrap.css" rel="stylesheet">
@@ -11,14 +11,19 @@
      <link href="css/flags.css" rel="stylesheet">
     <link href="css/owl.carousel.css" rel="stylesheet">
     <link href="css/owl.theme.css" rel="stylesheet">
+    <link href="css/bootstrap-select.css" rel="stylesheet">
     <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/fotorama.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
      <script src="http://code.jquery.com/jquery-latest.js"></script>
      <script src="js/bootstrap.js"></script>
      <script src="js/dropdowns-enhancement.js"></script>
      <script src="js/init.js"></script>
      <script src="js/touch.js"></script>
-    <script src="js/owl.carousel.js"></script>     
+     <script src="js/bootstrap-select.js"></script>
+    <script src="js/owl.carousel.js"></script>
+    <script src="js/fotorama.js"></script>
+       
   </head>
   <body id="EUR">
         <div id="wrapper">
@@ -45,7 +50,7 @@
                         <li>
                             <div class="box-crew padd phone">
                                 <i class="fa fa-phone fa-2x"></i>
-                               
+        
                             </div>
                         </li>
                         <li>
@@ -155,20 +160,61 @@
                 
         <!-- END MODAL -->
    
-            <section class="gid-header">
+            <section class="bread-crumbsleft">
             </section>
-            <section class="gid-info">
-                <div class="col-xs-4 gid-image">
-                    <img src="image/gid3.png"  class="gid-photo">
-                </div>
-                <div class="col-xs-4 gid-name">
-                    <div class="gid-name-inner">
-                        <p class="gid-name-first">Мауро</p>
-                        <p class="gid-name-second">Беларди</p>
-                        <p class="gid-name-index">частный гид</p>
+            <section class="bread-crumbsright">
+            </section>
+            <section class="bread-crumbs-content">
+                <div class="col-xs-4 bread-crumbs-mainland">
+                    <p class="bread-crumbs-index">Континент</p>
+                    <div id="dd-cont" class="wrapper-dropdown-cont" tabindex="1">
+                        <div class="bread-crumbs-name">Европа</div>
+                            <ul class="dropdown">
+                                <li><a href="Asia.html">Азия</a></li>
+                                <li><a href="#">Россия</a></li>
+                                <li><a href="Australia.html">Африка</a></li>
+                                <li><a href="America.html">Северная и Южная Америка</a></li>
+                                <li><a href="Australia.html">Австралия</a></li>
+                            </ul>
+                    </div>
+                    <div class="crumbs-mainland-icon">
                     </div>
                 </div>
-                <div class="col-xs-4 gid-contacts">
+                <div class="col-xs-4 bread-crumbs-country arrow-country">
+                    <p class="bread-crumbs-index">Страна</p>
+                <div id="dd-country" class="wrapper-dropdown-country" tabindex="1">
+                    <div class="bread-crumbs-name">Чехия</div>
+                        <ul class="dropdown">
+                            <li><a href="Country.html">Чехия</a></li>
+                            <li><a href="#">Испания</a></li>
+                            <li><a href="#">Франция</a></li>
+                        </ul>
+                </div> 
+                </div>
+                <div class="col-xs-4 bread-crumbs-city">
+                    <p class="bread-crumbs-index">Город</p>
+                <div id="dd-city" class="wrapper-dropdown-city" tabindex="1">
+                    <div class="bread-crumbs-name-main">Прага</div>
+                    <ul class="dropdown">
+                        <li><a href="#">Прага</a></li>
+                        <li><a href="#">Карловы Вары</a></li>
+                        <li><a href="#">Брно</a></li>
+                    </ul>
+                </div> 
+                </div>
+            </section>
+            <h3 class="pop-title title-excur">Мистическая Венеция: легенды и призраки района Дорсодуро</h3>
+            <section class="excur-body">
+                <div class="col-xs-9 excur-slider">
+                    <div class="fotorama" data-autoplay="true" data-nav="thumbs" data-width="640" data-ratio="640/426" data-max-width="100%">
+                    <img src="image/pex1.png">
+                    <img src="image/pex2.jpg">
+                    <img src="image/pex3.jpg">
+                    <img src="image/pex1.png">
+                    <img src="image/pex2.jpg">
+                    </div>
+                </div>
+                 <div class="col-xs-3 gid-contacts">
                    <div class="col-xs-12 gid-place">
                         <a href="#">
                            <p><img  src="image/place.png"  class="iconplace">Рим, Италия</p>
@@ -189,162 +235,14 @@
                         <p>русский</p>
                    </div>
                 </div>
-                 <div class="col-xs-4">
-                    <a href="#" class="question-button" id="guide-button">Написать гиду
-                    </a>
-                </div>                    
-                <div class="col-xs-12 gid-about">
-                    <p>
-                    Привет из Рима!<br>Разрешите представиться, меня зовут Мауро. Я римлянин в четырёх поколениях, имею диплом по русскому языку и литературе, работал 15 лет в национальном Обществе Италия-СССР, заведующим культурного отдела, много путешествовал по республикам Советского Союза, 
-    организовывал симпозиумы, читал лекции, писал статьи и радиопередачи, снял два фильма и опубликовал книгу об историческом пути России.
-                    </p>
-                </div>
-            </section>
-            <h3 class="pop-title">Мои экскурсии</h3>
-            <section class="content-city">
-                <div class="col-xs-12 excur-list-content">
-                    <a href="#">    
-                        <div class="col-xs-3 excur-list-image">
-                            <img src="image/popexcur1.png" class="pop-excur-image">
-                        </div>
-                    </a>    
-                    <div class="col-xs-7 excur-list-infoblock">
-                        <div class="col-xs-10 excur-list-title">
-                           <a href="#">
-                                <div class="excur-list-name">Ватикан (галереи искусств, Сикстинская капелла, Храм Св. Петра)
-                                </div>
-                            </a>    
-                        </div>
-                        <div class="col-xs-4 excur-list-info">
-                            <div class="col-xs-12 excur-list-star">
-                                <img  src="image/star.png"  class="iconstar excur-list-icon">&nbsp4,6    
-                            </div>
-                            <div class="col-xs-12 excur-list-time">
-                                 <img  src="image/time.png" class="icont excur-list-icon">&nbsp&nbsp2ч 30мин
-                            </div>
-                        </div>
-                        <div class="col-xs-7 excur-list-info">
-                            <a href="#">        
-                                <div class="col-xs-4 excur-list-gid photo">
-                                    <img src="image/gid3.png"  class="excur-gid-photo">
-                                </div>
-                                <div class="col-xs-5 excur-list-gid-name">
-                                    <div class="pop-excur-gid">Гид
-                                        <div class="pop-excur-gid-name">Алексей
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-xs-2 excur-list-priceblock">
-                        <div class="col-xs-12 excur-list-price">
-                            <div class="excur-price">  30
-                                <span class="currency"> EUR</span>
-                            </div>   
-                        </div>
-                        <div class="col-xs-12 excur-list-button">
-                            <a href="#" class="button-go" id="excur-list-button">Заказать
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 excur-list-content">
-                    <a href="#">    
-                        <div class="col-xs-3 excur-list-image">
-                            <img src="image/popexcur1.png" class="pop-excur-image">
-                        </div>
-                    </a>    
-                    <div class="col-xs-7 excur-list-infoblock">
-                        <div class="col-xs-10 excur-list-title">
-                           <a href="#">
-                                <div class="excur-list-name">Ватикан (галереи искусств, Сикстинская капелла, Храм Св. Петра)
-                                </div>
-                            </a>    
-                        </div>
-                        <div class="col-xs-4 excur-list-info">
-                            <div class="col-xs-12 excur-list-star">
-                                <img  src="image/star.png"  class="iconstar excur-list-icon">&nbsp4,6    
-                            </div>
-                            <div class="col-xs-12 excur-list-time">
-                                 <img  src="image/time.png" class="icont excur-list-icon">&nbsp&nbsp2ч 30мин
-                            </div>
-                        </div>
-                        <div class="col-xs-7 excur-list-info">
-                            <a href="#">        
-                                <div class="col-xs-4 excur-list-gid photo">
-                                    <img src="image/gid3.png"  class="excur-gid-photo">
-                                </div>
-                                <div class="col-xs-5 excur-list-gid-name">
-                                    <div class="pop-excur-gid">Гид
-                                        <div class="pop-excur-gid-name">Алексей
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-xs-2 excur-list-priceblock">
-                        <div class="col-xs-12 excur-list-price">
-                            <div class="excur-price">  9
-                                <span class="currency"> EUR</span>
-                            </div>   
-                        </div>
-                        <div class="col-xs-12 excur-list-button">
-                            <a href="#" class="button-go" id="excur-list-button"/>Заказать</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 excur-list-content">
-                    <a href="#">    
-                        <div class="col-xs-3 excur-list-image">
-                            <img src="image/popexcur1.png" class="pop-excur-image">
-                        </div>
-                    </a>    
-                    <div class="col-xs-7 excur-list-infoblock">
-                        <div class="col-xs-10 excur-list-title">
-                           <a href="#">
-                                <div class="excur-list-name">Ватикан (галереи искусств, Сикстинская капелла, Храм Св. Петра)
-                                </div>
-                            </a>    
-                        </div>
-                        <div class="col-xs-4 excur-list-info">
-                            <div class="col-xs-12 excur-list-star">
-                                <img  src="image/star.png"  class="iconstar excur-list-icon">&nbsp4,6    
-                            </div>
-                            <div class="col-xs-12 excur-list-time">
-                                 <img  src="image/time.png" class="icont excur-list-icon">&nbsp&nbsp2ч 30мин
-                            </div>
-                        </div>
-                        <div class="col-xs-7 excur-list-info">
-                            <a href="#">        
-                                <div class="col-xs-4 excur-list-gid photo">
-                                    <img src="image/gid3.png"  class="excur-gid-photo">
-                                </div>
-                                <div class="col-xs-5 excur-list-gid-name">
-                                    <div class="pop-excur-gid">Гид
-                                        <div class="pop-excur-gid-name">Алексей
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-xs-2 excur-list-priceblock">
-                        <div class="col-xs-12 excur-list-price">
-                            <div class="excur-price">  210
-                                <span class="currency"> EUR</span>
-                            </div>   
-                        </div>
-                        <div class="col-xs-12 excur-list-button">
-                            <a href="#" class="button-go" id="excur-list-button"/>Заказать</a>
-                        </div>
-                    </div>
-                </div>
-            
-         </section>
-
-        <!-- Footer -->
+             </section>
+           
+           
+           
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+       
+               
+                 <!-- Footer -->
                
             <footer class="text-center z-index">
                 <div class="part">
@@ -410,5 +308,7 @@
                     </div>
                 </div>
             </footer>
+            
+    </div>    
   </body>
 </html>

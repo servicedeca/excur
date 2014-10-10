@@ -181,32 +181,43 @@
             <section class="bread-crumbsright">
             </section>
             <section class="bread-crumbs-content">
-                <a href="Europe.html">
-                    <div class="col-xs-3 bread-crumbs-mainland">
-                        <p class="bread-crumbs-index">Континент</p>
-                        <p class="bread-crumbs-name">Европа</p>
-                        <div class="crumbs-mainland-icon">
-                        </div>
+                <div class="col-xs-4 bread-crumbs-mainland">
+                    <p class="bread-crumbs-index">Континент</p>
+                    <div id="dd-cont" class="wrapper-dropdown-cont" tabindex="1">
+                        <div class="bread-crumbs-name">Европа</div>
+                            <ul class="dropdown">
+                                <li><a href="Asia.html">Азия</a></li>
+                                <li><a href="#">Россия</a></li>
+                                <li><a href="Australia.html">Африка</a></li>
+                                <li><a href="America.html">Северная и Южная Америка</a></li>
+                                <li><a href="Australia.html">Австралия</a></li>
+                            </ul>
                     </div>
-                </a>
-                <a href="Country.html">       
-                    <div class="col-xs-6 bread-crumbs-country arrow-country">
-                        <p class="bread-crumbs-index">Страна</p>
-                        <p class="bread-crumbs-name">Чехия</p>
+                    <div class="crumbs-mainland-icon">
                     </div>
-                </a>
-                    <div class="col-xs-3 bread-crumbs-city">
-                        <p class="bread-crumbs-index">Город</p>
-                    
-					<div id="ds" class="wrapper-dropdown-3" tabindex="1">
-						<span>Прага</span>
-						<ul class="dropdown">
-							<li><a href="#">Прага</a></li>
-							<li><a href="Country.html">Карловы Вары</a></li>
-							<li><a href="#">Брно</a></li>
-						</ul>
-					</div> 
-                    </div>
+                </div> 
+                <div class="col-xs-4 bread-crumbs-country arrow-country">
+                    <p class="bread-crumbs-index">Страна</p>
+                <div id="dd-country" class="wrapper-dropdown-country" tabindex="1">
+                    <div class="bread-crumbs-name">Чехия</div>
+                        <ul class="dropdown">
+                            <li><a href="Country.html">Чехия</a></li>
+                            <li><a href="#">Испания</a></li>
+                            <li><a href="#">Франция</a></li>
+                        </ul>
+                </div> 
+                </div>
+                <div class="col-xs-4 bread-crumbs-city">
+                    <p class="bread-crumbs-index">Город</p>
+                <div id="dd-city" class="wrapper-dropdown-city" tabindex="1">
+                    <div class="bread-crumbs-name-main">Прага</div>
+                    <ul class="dropdown">
+                        <li><a href="#">Прага</a></li>
+                        <li><a href="#">Карловы Вары</a></li>
+                        <li><a href="#">Брно</a></li>
+                    </ul>
+                </div> 
+                </div>
             </section>
             <section class="country-useful-info">
                  <div class="country-usefull-info-content">
@@ -295,7 +306,7 @@
                              <img  src="image/categoty-icon.png"  class="categoty-icon">
                         </div>
                         <div class="col-xs-12 category-item-name">
-                            <p class=" category-item-border">Билеты</p>
+                            <p class=" category-item-border">Музеи / театры / фестивали</p>
                         </div>
                     </a>
                 </div>
@@ -335,7 +346,7 @@
                              <img  src="image/categoty-icon.png"  class="categoty-icon">
                         </div>
                         <div class="col-xs-12 category-item-name">
-                            <p class=" category-item-border">Шоу-Кабаре</p>
+                            <p class=" category-item-border">Шоу/Кабаре</p>
                         </div>
                     </a>
                 </div>
@@ -345,7 +356,7 @@
                              <img  src="image/categoty-icon.png"  class="categoty-icon">
                         </div>
                         <div class="col-xs-12 category-item-name">
-                            <p class=" category-item-border">Развлечения</p>
+                            <p class=" category-item-border">Парки развлечений / зоопарки</p>
                         </div>
                     </a>
                 </div>
@@ -398,7 +409,7 @@
                             </div>   
                         </div>
                         <div class="col-xs-12 excur-list-button">
-                            <a href="#" class="button-go" id="excur-list-button"/>Заказать</a>
+                            <a href="Excur.html" class="button-go" id="excur-list-button"/>Заказать</a>
                         </div>
                     </div>
                 </div>
@@ -500,6 +511,15 @@
                 </div>
                 <div class="col-xs-12 excur-list-line">
                 </div>
+                <div class="col-xs-12 excur-navigation">   
+                    <ul class="pagination excur-navigation">
+                          <li><a href="#">&laquo;</a></li>
+                          <li><a href="#">1</a></li>
+                          <li><a href="#">2</a></li>
+                          <li><a href="#">3</a></li>
+                          <li><a href="#">&raquo;</a></li>
+                    </ul>
+                </div>    
             </div>
     
         <section class="pop-gid">

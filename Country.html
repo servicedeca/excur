@@ -17,29 +17,7 @@
     <script src="js/dropdowns-enhancement.js"></script>
     <script src="js/init.js"></script>
     <script src="js/touch.js"></script>
-    <script src="js/owl.carousel.js"></script>
-
-     
-     
-     <script>
-          $(document).ready(function(){
-       $(".bread-crumbs-mainland"), $(".bread-crumbs-mainland").hover(function(){
-           $(this).css("background","#26686D");
-          $(".bread-crumbsleft").css("background","#26686D");
-          $(".bread-crumbsleft").css("transition","all 0.44s ease");
-            });
-          });
-         
-             $(document).ready(function(){
-       $(".bread-crumbs-mainland"), $(".bread-crumbs-mainland").mouseout(function(){
-          $(this).css("background","#2A707A");
-          $(".bread-crumbsleft").css("background","#2A707A");
-          $(".bread-crumbsleft").css("transition","all 0.44s ease");
-            });
-        });
-     </script>
-         
-         
+    <script src="js/owl.carousel.js"></script>     
   </head>
   <body id="EUR">
         <div id="wrapper">
@@ -181,38 +159,53 @@
             <section class="bread-crumbsright">
             </section>
             <section class="bread-crumbs-content">
-                <a href="Europe.html">
-                    <div class="col-xs-3 bread-crumbs-mainland">
-                        <p class="bread-crumbs-index">Континент</p>
-                        <p class="bread-crumbs-name">Европа</p>
-                        <div class="crumbs-mainland-icon">
-                        </div>
+                <div class="col-xs-4 bread-crumbs-mainland">
+                    <p class="bread-crumbs-index">Континент</p>
+                    <div id="dd-cont" class="wrapper-dropdown-cont" tabindex="1">
+                        <div class="bread-crumbs-name">Европа</div>
+                            <ul class="dropdown">
+                                <li><a href="Asia.html">Азия</a></li>
+                                <li><a href="#">Россия</a></li>
+                                <li><a href="Africa.html">Африка</a></li>
+                                <li><a href="America.html">Америка</a></li>
+                                <li><a href="Australia.html">Австралия</a></li>
+                            </ul>
                     </div>
-                </a>    
-                    <div class="col-xs-6 bread-crumbs-country arrow-country">
-                        <p class="bread-crumbs-index">Страна</p>
-                        <p class="bread-crumbs-name-main">Чехия</p>
+                    <div class="crumbs-mainland-icon">
                     </div>
-                    <div class="col-xs-3 bread-crumbs-city">
-                        <p class="bread-crumbs-index">Город</p>
-                            <div id="dd" class="wrapper-dropdown-5 ddcity" tabindex="1">Выберите город
-                                <ul class="dropdown">
-                                    <li><a href="City.html">Прага (1022)</a></li>
-                                    <li><a href="#">Карловы Вары (62)</a></li>
-                                    <li><a href="#">Брно (19)</a></li>
-                                    <li><a href="#">Кутна-Гора (13)</a></li>
-                                    <li><a href="#">Чешский-Крумлов (13)</a></li>
-                                    <li><a href="#">Карлштейн (10)</a></li>
-                                    <li><a href="#">Марианске-Лазне (6)</a></li>
-                                    <li><a href="#">Детенице (4)</a></li>
-                                    <li><a href="#">Мельник (3)</a></li>
-                                    <li><a href="#">Сихров (3)</a></li>
-                                    <li><a href="#">Конописте (3)</a></li>
-                                    <li><a href="#">Глубока-над-Влтавой (2)</a></li>         
-                                    <li><a href="#">Чешски-Штернберк (2)</a></li>
-                                 </ul>
-                            </div>  
-                    </div>
+                </div>
+                <div class="col-xs-4 bread-crumbs-country arrow-country">
+                    <p class="bread-crumbs-index">Страна</p>
+                    <div id="dd-country" class="wrapper-dropdown-country" tabindex="1">
+                        <div class="bread-crumbs-name-main">Чехия</div>
+                            <ul class="dropdown">
+                                <li><a href="#">Италия</a></li>
+                                <li><a href="#">Испания</a></li>
+                                <li><a href="#">Франция</a></li>
+                            </ul>
+                    </div> 
+                </div>
+                <div class="col-xs-4 bread-crumbs-city">
+                    <p class="bread-crumbs-index">Город</p>
+                        <div id="dd-city" class="wrapper-dropdown-city" tabindex="1">
+                            <div class="bread-crumbs-name">Выберите город</div>
+                            <ul class="dropdown">
+                                <li><a href="City.html">Прага (1022)</a></li>
+                                <li><a href="#">Карловы Вары (62)</a></li>
+                                <li><a href="#">Брно (19)</a></li>
+                                <li><a href="#">Кутна-Гора (13)</a></li>
+                                <li><a href="#">Чешский-Крумлов (13)</a></li>
+                                <li><a href="#">Карлштейн (10)</a></li>
+                                <li><a href="#">Марианске-Лазне (6)</a></li>
+                                <li><a href="#">Детенице (4)</a></li>
+                                <li><a href="#">Мельник (3)</a></li>
+                                <li><a href="#">Сихров (3)</a></li>
+                                <li><a href="#">Конописте (3)</a></li>
+                                <li><a href="#">Глубока-над-Влтавой (2)</a></li>         
+                                <li><a href="#">Чешски-Штернберк (2)</a></li>
+                             </ul>
+                        </div>  
+                </div>
             </section>
             <section class="country-useful-info">
                  <div class="country-usefull-info-content">
@@ -272,12 +265,12 @@
                         430
                         <span class="currency"> EUR</span>
                         </div>            
-                        <a href="#" class="button-go button-go-pop" id="excur-list-button"/>Просмотреть
+                        <a href="#" class="button-go button-go-pop" id="excur-list-button">Просмотреть
                         </a>
                     </div>
                     <div class="item">
                         <a href="#">
-                            <img src="image/popexcur1.png" class="pop-excur-image">
+                            <img src="image/popexcur2.png" class="pop-excur-image">
                         </a>
                         <div class="pop-excur-row">
                             <div class="col-xs-3 pop-excur-star">
@@ -313,7 +306,7 @@
                     </div>
                     <div class="item">
                         <a href="#">
-                            <img src="image/popexcur1.png" class="pop-excur-image">
+                            <img src="image/popexcur2.png" class="pop-excur-image">
                         </a>
                         <div class="pop-excur-row">
                             <div class="col-xs-3 pop-excur-star">
@@ -349,7 +342,7 @@
                     </div>
                     <div class="item">
                         <a href="#">
-                            <img src="image/popexcur1.png" class="pop-excur-image">
+                            <img src="image/popexcur2.png" class="pop-excur-image">
                         </a>
                         <div class="pop-excur-row">
                             <div class="col-xs-3 pop-excur-star">
@@ -385,7 +378,7 @@
                     </div>
                     <div class="item">
                         <a href="#">
-                            <img src="image/popexcur1.png" class="pop-excur-image">
+                            <img src="image/popexcur3.png" class="pop-excur-image">
                         </a>
                         <div class="pop-excur-row">
                             <div class="col-xs-3 pop-excur-star">
@@ -421,7 +414,7 @@
                     </div>
                     <div class="item">
                         <a href="#">
-                            <img src="image/popexcur1.png" class="pop-excur-image">
+                            <img src="image/popexcur3.png" class="pop-excur-image">
                         </a>
                         <div class="pop-excur-row">
                             <div class="col-xs-3 pop-excur-star">
@@ -589,7 +582,7 @@
             <a href="#">
                 <div class="col-xs-5 pop-city-item border-top">
                     <div class="col-xs-5 pop-city-item-img">
-                        <img src="image/popexcur1.png" class="pop-city-image">
+                        <img src="image/popexcur3.png" class="pop-city-image">
                     </div>
                     <div class="col-xs-7">
                         <p class="pop-city-name">Прага
@@ -672,30 +665,7 @@
                     </div>
                 </div>
             </footer>
-    </div>    
-    <script>
-        function DropDown(el) {
-        this.dd = el;
-        this.initEvents();
-    }
-    DropDown.prototype = {
-        initEvents : function() {
-            var obj = this;
-            obj.dd.on('click', function(event){
-                $(this).toggleClass('active');
-                event.stopPropagation();
-            });	
-        }
-    }
-    $(function() {
-        var dd = new DropDown( $('#dd') );
-        $(document).click(function() {
-            // all dropdowns
-            $('.wrapper-dropdown-5').removeClass('active');
-        });
-    });
-      </script>
-    
+    </div>        
     <script>
     $(document).ready(function() {
 
