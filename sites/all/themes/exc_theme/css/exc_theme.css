@@ -1057,3 +1057,7 @@ h2.panel-title {
   margin-bottom: 0px;
   color: #333;
 }
+
+.user-guide-company {
+  display: none;
+}

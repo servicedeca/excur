@@ -862,7 +862,7 @@ function exc_theme_preprocess_excur_user_menu(&$vars) {
     $vars['guide'] = l(t('Become a guide'), "user/$uid/edit", array(
       'query' => array('guide' =>'guide'),
       'attributes' => array(
-        'class' => array('btn btn-primary'),
+        'class' => array('btn'),
       ),
     ));
   }

@@ -12,6 +12,10 @@
       <div id="pane1" class="tab-pane active">
         <div class="span3 side-block">
           <?php print render($form['field_image']); ?>
+          <div class="user-guide-company">
+            <?php print render($form['field_company_logo']); ?>
+            <?php print render($form['field_company_name']); ?>
+          </div>
         </div>
         <div class="span5">
           <?php print render($form['account']['name']); ?>

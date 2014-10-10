@@ -160,6 +160,28 @@
     }
   };
 
+  Drupal.behaviors.excurProfileForm = {
+    attach: function(context, settings) {
+      $('#user-profile-form').once(function() {
+        var $items = $('.user-guide-company');
+        if ($(this).find(':radio[name=guide_company]:checked').val() == 2) {
+          $items.show();
+        }
+
+        $('#edit-guide-company').change(function() {
+          var value = $(this).find(':radio[name=guide_company]:checked').val();
+
+          if (value == 2) {
+            $items.show();
+          }
+          else {
+            $items.hide();
+          }
+        });
+      });
+    }
+  };
+
   Drupal.behaviors.excurComment = {
     attach: function(context, settings) {
       $('#excur-comment-rating-form').once().submit(function(e) {
@@ -173,7 +195,7 @@
           },
           success: function(response) {
             if (response == false) {
-              alert('Wrong number!');
+              alert(Drupal.t('Wrong number!'));
             }
             else {
               var $comment_rating = $('#comment_rating');
