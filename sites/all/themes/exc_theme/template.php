@@ -223,20 +223,7 @@ function exc_theme_preprocess_node__service_teaser(&$vars) {
   $wrapper->language($language->language);
   $guide = user_load($node->field_guide[LANGUAGE_NONE][0]['target_id']);
 
-  if (!empty($guide->field_image[LANGUAGE_NONE])) {
-    $path = $guide->field_image[LANGUAGE_NONE][0]['uri'];
-    $theming = 'image_style';
-  }
-  else {
-    $path = EXCUR_FRONT_THEME_PATH . '/images/user-default.png';
-    $theming = 'remote_image_style';
-  }
-  $guide_image = theme($theming, array(
-    'style_name' => '70x70',
-    'path' => $path,
-    'alt' => $guide->field_name[LANGUAGE_NONE][0]['safe_value'],
-    'title' => $guide->field_name[LANGUAGE_NONE][0]['safe_value'],
-  ));
+  $guide_image = excur_guide_logo($guide, '70x70');
   $vars['guide'] = array(
     'title' => l($guide->field_name[LANGUAGE_NONE][0]['value'], "user/$guide->uid"),
     'image' => l($guide_image, "user/$guide->uid", array('html' => TRUE)),
