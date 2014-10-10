@@ -51,21 +51,10 @@ function template_preprocess_excur_guide_info(&$vars) {
     $vars['certified'] = t('Certified guide');
   }
 
-  if (!empty($account->field_image[LANGUAGE_NONE])) {
-    $path = $account->field_image[LANGUAGE_NONE][0]['uri'];
-    $theming = 'image_style';
-  }
-  else {
-    $path = EXCUR_FRONT_THEME_PATH . '/images/user-default.png';
-    $theming = 'remote_image_style';
-  }
-  $vars['guide_image'] = theme($theming, array(
-    'style_name' => '238x238',
-    'path' => $path,
-    'alt' => $account->field_name[LANGUAGE_NONE][0]['safe_value'],
-    'title' => $account->field_name[LANGUAGE_NONE][0]['safe_value'],
-  ));
-  $vars['guide'] = $account->field_name[LANGUAGE_NONE][0]['safe_value'];
+  $vars['guide_image'] = excur_guide_logo($account, '238x238');
+  $vars['guide'] = excur_guide_is_company($account)
+    ? $account->field_company_name[LANGUAGE_NONE][0]['safe_value']
+    : $account->field_name[LANGUAGE_NONE][0]['safe_value'];
 
   $vars['language'] = $account->field_language[LANGUAGE_NONE][0]['taxonomy_term']->field_lang_code[LANGUAGE_NONE][0]['value'];
 
