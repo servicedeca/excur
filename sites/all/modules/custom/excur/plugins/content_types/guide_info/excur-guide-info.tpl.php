@@ -3,6 +3,13 @@
   <div class="name">
     <?php print $guide; ?>
   </div>
+  <?php if (!empty($agent_image)): ?>
+    <div class="space30"></div>
+    <?php print $agent_image; ?>
+    <div class="name">
+      <?php print $agent_name; ?>
+    </div>
+  <?php endif; ?>
   <div class="guide-rating">
     <?php print $rating; ?>
   </div>
