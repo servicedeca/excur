@@ -223,27 +223,17 @@ function exc_theme_preprocess_node__service_teaser(&$vars) {
   $wrapper->language($language->language);
   $guide = user_load($node->field_guide[LANGUAGE_NONE][0]['target_id']);
 
-  if (!empty($guide->field_image[LANGUAGE_NONE])) {
-    $path = $guide->field_image[LANGUAGE_NONE][0]['uri'];
-    $theming = 'image_style';
-  }
-  else {
-    $path = EXCUR_FRONT_THEME_PATH . '/images/user-default.png';
-    $theming = 'remote_image_style';
-  }
-  $guide_image = theme($theming, array(
-    'style_name' => '70x70',
-    'path' => $path,
-    'alt' => $guide->field_name[LANGUAGE_NONE][0]['safe_value'],
-    'title' => $guide->field_name[LANGUAGE_NONE][0]['safe_value'],
-  ));
+  $guide_image = excur_guide_logo($guide, '70x70');
+  $title = excur_guide_is_company($guide)
+    ? $guide->field_company_name[LANGUAGE_NONE][0]['value']
+    : $guide->field_name[LANGUAGE_NONE][0]['value'];
   $vars['guide'] = array(
-    'title' => l($guide->field_name[LANGUAGE_NONE][0]['value'], "user/$guide->uid"),
+    'title' => l($title, "user/$guide->uid"),
     'image' => l($guide_image, "user/$guide->uid", array('html' => TRUE)),
   );
 
   $vars['read_more'] = l('<i class="fa fa-search"></i>' . t('Read more'), "node/$node->nid", array('html' => TRUE));
-  $vars['book'] = l(t('book'), "node/$node->nid", array('html' => TRUE));
+  $vars['book'] = l(t('Book'), "node/$node->nid", array('html' => TRUE));
 
   $price = excur_currency_lowest_price($node);
   if (!empty($_COOKIE['excur_currency']) && $_COOKIE['excur_currency'] != EXCUR_CURRENCY_DEFAULT) {
@@ -268,23 +258,6 @@ function exc_theme_preprocess_node__service_teaser(&$vars) {
       ),
     ));
   }
-
-  // Get current rating.
- /* $rating = fivestar_get_votes('node', $node->nid);
-  if (empty($rating['average'])) {
-    $rating = t(' Offer is unrated.');
-  }
-  else {
-    $rating = round($rating['average']['value'] / 10, 2);
-    $rating = t('Rating: !value/10', array('!value' => $rating));
-  }
-  $vars['rating'] = $rating;
-
-  // Get rating widget.
-  $i = excur_offer_is_user_ordered_offer($node->nid);
-  if (excur_offer_is_user_ordered_offer($node->nid)) {
-    $vars['rating_widget'] = render($node['field_offer_rating']);
-  }*/
 }
 
 /**
@@ -862,7 +835,7 @@ function exc_theme_preprocess_excur_user_menu(&$vars) {
     $vars['guide'] = l(t('Become a guide'), "user/$uid/edit", array(
       'query' => array('guide' =>'guide'),
       'attributes' => array(
-        'class' => array('btn btn-primary'),
+        'class' => array('btn'),
       ),
     ));
   }

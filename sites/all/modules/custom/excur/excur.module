@@ -171,21 +171,21 @@ function excur_theme() {
     ),
   );
   $items['excur_profile_form'] = $base + array(
-    'template' => 'excur-profile-form',
-    'render element' => 'form',
-  );
+      'template' => 'excur-profile-form',
+      'render element' => 'form',
+    );
   $items['excur_user_login_form'] = $base + array(
-    'template' => 'excur-user-login-form',
-    'render element' => 'form',
-  );
+      'template' => 'excur-user-login-form',
+      'render element' => 'form',
+    );
   $items['excur_user_register'] = $base +array(
-    'template' => 'excur-user-register-form',
-    'render element' => 'form',
-  );
+      'template' => 'excur-user-register-form',
+      'render element' => 'form',
+    );
   $items['excur_service_node'] = $base + array(
-    'template' => 'excur-service-node-form',
-    'render element' => 'form',
-  );
+      'template' => 'excur-service-node-form',
+      'render element' => 'form',
+    );
   $items['excur_user_bookings'] = array(
     'template' => 'excur-user-bookings',
   );
@@ -197,8 +197,8 @@ function excur_theme() {
   );
 
   $items['excur_travel_planner'] = $base + array(
-    'template' => 'excur-travel-planner',
-  );
+      'template' => 'excur-travel-planner',
+    );
 
   $items['comment_form'] = array(
     'render element' => 'form',
@@ -238,23 +238,18 @@ function excur_number_ordered($oid, $nid) {
 /*
  * Page callback comment_rating
  */
-
 function excur_comment_rating() {
-  // 57661409913144
-  $number = (int) $_POST['number'];
-  $nid = (int) $_POST['node'];
-  $node = node_load($nid);
-  $node_view = node_view($node);
+  if (!empty($_POST['number']) && !empty($_POST['node'])
+    && is_numeric($_POST['number']) && is_numeric($_POST['node'])
+    && $node = node_load($_POST['node'])) {
 
-  if (excur_number_ordered($number, $nid)) {
-    $comments = comment_node_page_additions($node);
-    print render($comments);
-  }
-  else {
-    print FALSE;
-    /*print "Wrong number!";
-    print render($node_view['comments']['comments']);
-    print render(drupal_get_form('excur_comment_rating_form'));*/
+    if (excur_number_ordered($_POST['number'], $node->nid)) {
+      $comments = comment_node_page_additions($node);
+      print render($comments);
+    }
+    else {
+      print FALSE;
+    }
   }
 
   drupal_exit();
@@ -289,7 +284,7 @@ function excur_add_service($account) {
     ));
   }
   else{
-   drupal_goto('node/add/service', array('query' => array('guide' => $account->uid,)));
+    drupal_goto('node/add/service', array('query' => array('guide' => $account->uid,)));
   }
 }
 
@@ -385,6 +380,7 @@ function excur_form_user_profile_form_alter(&$form, &$form_state) {
   if (!$user->uid == 1 || empty($user->roles[3])) {
     $form['field_certified']['#access'] = FALSE;
   }
+
   if (!isset($user->roles[EXCUR_USER_ROLE_GUIDE_ID])) {
     $form['guide'] = array(
       '#type' => 'checkbox',
@@ -392,6 +388,17 @@ function excur_form_user_profile_form_alter(&$form, &$form_state) {
       '#default_value' => isset($user->roles[EXCUR_USER_ROLE_GUIDE_ID]) ? TRUE : FALSE,
     );
   }
+  else {
+    $form['guide_company'] = array(
+      '#type' => 'radios',
+      '#options' => array(
+        1 => t('Guide'),
+        2 => t('Company'),
+      ),
+      '#default_value' => empty($user->data['guide_company']) ? 1 : $user->data['guide_company'],
+    );
+  }
+
   if (!isset($user->roles[EXCUR_USER_ROLE_PARTNER_ID])) {
     $form['partner'] = array(
       '#type' => 'checkbox',
@@ -409,6 +416,7 @@ function excur_form_user_profile_form_alter(&$form, &$form_state) {
   $form['actions']['submit']['#attributes']['class'][] = 'btn';
   $form['actions']['cancel']['#attributes']['class'][] = 'btn';
   $form['#submit'][] = 'excur_form_user_profile_form_submit';
+  $form['#validate'][] = 'excur_form_user_profile_form_validate';
   $form['#theme'][] = 'excur_profile_form';
 }
 
@@ -428,16 +436,35 @@ function excur_form_user_pass_alter(&$form, &$form_state) {
 }
 
 /**
- * Custom submit for user_register_form() form.
+ * Custom submit for user_profile_form() form.
+ */
+function excur_form_user_profile_form_validate(&$form, &$form_state) {
+  $values = $form_state['values'];
+
+  if (empty($values['field_company_name'][LANGUAGE_NONE][0]['value'])) {
+    form_error($form['field_company_name'], t('You must enter the company name.'));
+  }
+}
+
+/**
+ * Custom submit for user_profile_form() form.
  */
 function excur_form_user_profile_form_submit(&$form, &$form_state) {
-  if (!empty($form_state['values']['guide']) && $form_state['values']['guide']) {
+  global $user;
+
+  $values = $form_state['values'];
+  if (!empty($values['guide']) && $values['guide']) {
     $form['#user']->roles[EXCUR_USER_ROLE_GUIDE_ID] = EXCUR_USER_ROLE_GUIDE_NAME;
     user_save($form['#user']);
   }
-  if (!empty($form_state['values']['partner']) && $form_state['values']['partner']) {
+  if (!empty($values['partner']) && $values['partner']) {
     $form['#user']->roles[EXCUR_USER_ROLE_PARTNER_ID] = EXCUR_USER_ROLE_PARTNER_NAME;
     user_save($form['#user']);
+  }
+
+  if (!empty($values['guide_company'])) {
+    $user->data['guide_company'] = $values['guide_company'];
+    user_save($user);
   }
 }
 
@@ -737,20 +764,34 @@ function excur_user_menu($account) {
  * @return string.
  */
 function excur_guide_logo($account, $style, $attributes = array()) {
-  if (!empty($account->field_image[LANGUAGE_NONE])) {
-    $path = $account->field_image[LANGUAGE_NONE][0]['uri'];
-    $theming = 'image_style';
+  if (excur_guide_is_company($account)) {
+    if (!empty($account->field_company_logo[LANGUAGE_NONE])) {
+      $path = $account->field_company_logo[LANGUAGE_NONE][0]['uri'];
+      $theming = 'image_style';
+    }
+    else {
+      $path = EXCUR_FRONT_THEME_PATH . '/images/company_default.png';
+      $theming = 'remote_image_style';
+    }
+    $title_alt = $account->field_company_name[LANGUAGE_NONE][0]['safe_value'];
   }
   else {
-    $path = EXCUR_FRONT_THEME_PATH . '/images/user-default.png';
-    $theming = 'remote_image_style';
+    if (!empty($account->field_image[LANGUAGE_NONE])) {
+      $path = $account->field_image[LANGUAGE_NONE][0]['uri'];
+      $theming = 'image_style';
+    }
+    else {
+      $path = EXCUR_FRONT_THEME_PATH . '/images/user-default.png';
+      $theming = 'remote_image_style';
+    }
+    $title_alt = $account->field_name[LANGUAGE_NONE][0]['safe_value'];
   }
 
   return theme($theming, array(
     'style_name' => $style,
     'path' => $path,
-    'alt' => $account->field_name[LANGUAGE_NONE][0]['safe_value'],
-    'title' => $account->field_name[LANGUAGE_NONE][0]['safe_value'],
+    'alt' => $title_alt,
+    'title' => $title_alt,
     'attributes' => $attributes,
   ));
 }
@@ -798,7 +839,7 @@ function excur_offer_companion_message($node, $account) {
 /**
  * Form builder for comment and rating form.
  */
-function excur_comment_rating_form($form, $form_state) {
+function excur_comment_rating_form($form) {
   $nid = menu_get_object()->nid;
 
   $form['number'] = array(
@@ -817,6 +858,7 @@ function excur_comment_rating_form($form, $form_state) {
       'name' => array('node'),
     ),
   );
+
   $form['submit'] = array(
     '#type' => 'submit',
     '#value' => t('Confirm'),
@@ -826,4 +868,14 @@ function excur_comment_rating_form($form, $form_state) {
   );
 
   return $form;
+}
+
+/**
+ * Check if current guide is company.
+ *
+ * @param object $guide
+ * @return bool
+ */
+function  excur_guide_is_company($guide) {
+  return !empty($guide->data['guide_company']) && $guide->data['guide_company'] == 2;
 }

@@ -979,7 +979,6 @@ h2.panel-title {
   }
 }
 
-
 #external-events {
   float: left;
   width: 150px;
@@ -1031,30 +1030,34 @@ h2.panel-title {
   display: none;
 }
 
-.border{
-  border:1px solid black;
+.border {
+  border: 1px solid black;
 }
 
-.comment-content{
-  min-height:60px;
-  border:1px solid #8c8e90;
-  border-radius:5px;
-  background:#eaf5fe;
-  padding:10px;
+.comment-content {
+  min-height: 60px;
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
+  background: #eaf5fe;
+  padding: 10px;
 }
 
-.comment-item{
+.comment-item {
   padding-bottom: 10px;
   padding-top: 10px;
 }
 
-.comment-name{
-  font-weight:bold;
+.comment-name {
+  font-weight: bold;
   color: #333;
-  margin-bottom:0px;
+  margin-bottom: 0px;
 }
 
-.comment-text{
+.comment-text {
   margin-bottom: 0px;
-  color:#333;
+  color: #333;
+}
+
+.user-guide-company {
+  display: none;
 }

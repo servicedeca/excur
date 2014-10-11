@@ -42,6 +42,8 @@ function excur_guide_info_content_type_theme(&$theme, $plugin) {
  */
 function template_preprocess_excur_guide_info(&$vars) {
   $account = menu_get_object('user');
+  $is_company = excur_guide_is_company($account);
+
   if (!empty($account->field_city[LANGUAGE_NONE])) {
     $city = $account->field_city[LANGUAGE_NONE][0]['entity'];
     $vars['city'] = l($city->name, "taxonomy/term/$city->tid");
@@ -51,21 +53,10 @@ function template_preprocess_excur_guide_info(&$vars) {
     $vars['certified'] = t('Certified guide');
   }
 
-  if (!empty($account->field_image[LANGUAGE_NONE])) {
-    $path = $account->field_image[LANGUAGE_NONE][0]['uri'];
-    $theming = 'image_style';
-  }
-  else {
-    $path = EXCUR_FRONT_THEME_PATH . '/images/user-default.png';
-    $theming = 'remote_image_style';
-  }
-  $vars['guide_image'] = theme($theming, array(
-    'style_name' => '238x238',
-    'path' => $path,
-    'alt' => $account->field_name[LANGUAGE_NONE][0]['safe_value'],
-    'title' => $account->field_name[LANGUAGE_NONE][0]['safe_value'],
-  ));
-  $vars['guide'] = $account->field_name[LANGUAGE_NONE][0]['safe_value'];
+  $vars['guide_image'] = excur_guide_logo($account, '238x238');
+  $vars['guide'] = $is_company
+    ? $account->field_company_name[LANGUAGE_NONE][0]['safe_value']
+    : $account->field_name[LANGUAGE_NONE][0]['safe_value'];
 
   $vars['language'] = $account->field_language[LANGUAGE_NONE][0]['taxonomy_term']->field_lang_code[LANGUAGE_NONE][0]['value'];
 
@@ -73,6 +64,27 @@ function template_preprocess_excur_guide_info(&$vars) {
     foreach ($account->field_languages[LANGUAGE_NONE] as $lang) {
       $vars['languages'][] = $lang['taxonomy_term']->field_lang_code[LANGUAGE_NONE][0]['value'];
     }
+  }
+
+  if ($is_company) {
+    if (!empty($account->field_image[LANGUAGE_NONE])) {
+      $path = $account->field_image[LANGUAGE_NONE][0]['uri'];
+      $theming = 'image_style';
+    }
+    else {
+      $path = EXCUR_FRONT_THEME_PATH . '/images/user-default.png';
+      $theming = 'remote_image_style';
+    }
+    $title_alt = $account->field_name[LANGUAGE_NONE][0]['safe_value'];
+    $agent_image = theme($theming, array(
+      'style_name' => '238x238',
+      'path' => $path,
+      'alt' => $title_alt,
+      'title' => $title_alt,
+    ));
+
+    $vars['agent_image'] = l($agent_image, "user/$account->uid", array('html' => TRUE));
+    $vars['agent_name'] = l($account->field_name[LANGUAGE_NONE][0]['value'], "user/$guide->uid");
   }
 
   // Get current rating.
