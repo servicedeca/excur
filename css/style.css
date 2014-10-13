@@ -3,9 +3,14 @@
     font-family: Segoe; /* Имя шрифта */
     src: url(../fonts/segoeuil.ttf); /* Путь к файлу со шрифтом */
    }
-
+ 
+@font-face {
+    font-family: 'Segoe UI'; /* Имя шрифта */
+    src: url(../fonts/segoeui.ttf); /* Путь к файлу со шрифтом */
+   } 
+   
 body *{
-     font-family: Segoe;
+     font-family: 'Segoe UI';
 }
 
 p {
@@ -468,7 +473,6 @@ footer .footer-below {
 .name_cont {
     color: #665E5E;
     font-size: 25px;
-    font-family: 'Segoe';
     padding-top: 20px;
     letter-spacing: 1px;
 }
@@ -691,7 +695,7 @@ background: #333;
 }
 
 .padbot {
-    padding-bottom: 5px;
+    padding-bottom: 25px;
     padding-top: 15px;
 }
 
@@ -1106,12 +1110,14 @@ div.box-crew:hover span{
     font-weight: 300;
     font-size: 14px;
     letter-spacing: 0.5px;
+    font-family:'Segoe';
 }
 
 .bread-crumbs-name {
     font-size: 25px;
     color:#efefef;
     margin-top: -3px;
+           font-family:'Segoe';
 }
 
 .crumbs-mainland-icon {
@@ -1191,7 +1197,7 @@ div.box-crew:hover span{
     max-height: 0;
     overflow: hidden;
     margin-top: 1px;
-    font-weight: 600;
+    font-family: 'Segoe UI';
 }
 
 .wrapper-dropdown-city .dropdown li {
@@ -1309,7 +1315,7 @@ div.box-crew:hover span{
     /* Hiding */
     max-height: 0;
     overflow: hidden;
-    font-weight: 600;
+    font-family: 'Segoe UI';
     margin-top: 1px;
 }
 
@@ -1429,7 +1435,7 @@ div.box-crew:hover span{
     /* Hiding */
     max-height: 0;
     overflow: hidden;
-    font-weight: 600;
+    font-family: 'Segoe UI';
     margin-top: 1px;
 }
 
@@ -1495,6 +1501,7 @@ div.box-crew:hover span{
     color:#fff;
     margin-top: -20px;
     font-weight: 100;
+    font-family:'Segoe';
 }
 
 .pop-gid-content {
@@ -1525,7 +1532,7 @@ div.box-crew:hover span{
 
 .pop-gid-name {
     color:#393939;
-    font-family: 'Roboto';
+    font-family: 'Segoe UI';
     font-weight: 300;
     font-size: 22px;
     margin-top: 5px;
@@ -1548,7 +1555,7 @@ div.box-crew:hover span{
     background: #fff;
     z-index: 20;
     padding-top: 0px;
-   height:200px;
+   height:210px;
     border-bottom:2px solid #9E3F3F;
 }
 
@@ -1561,11 +1568,12 @@ div.box-crew:hover span{
 }
 
 .country-useful-info-title {
-    padding-top: 20px;
+    padding-top: 15px;
     color:#85918F;
-    font-size: 14px;
+    font-size: 15px;
     letter-spacing: 0.5px;
     margin-left: -15px;
+    font-family: 'Segoe';
 }
 
 .country-usefull-about {
@@ -1597,7 +1605,8 @@ div.box-crew:hover span{
 }
 
 .pop-gid a { 
-    color:#393939;    
+    color:#393939;
+    font-family: "Segoe UI";
 } 
 
 .pop-excur-image {
@@ -1721,7 +1730,7 @@ div.box-crew:hover span{
 }
 
 .pop-excur-name {
-    font-family: 'Roboto';
+    font-family: 'Segoe UI';
     font-weight: 500;
     font-size: 14px;
     line-height:17px;
@@ -1778,7 +1787,7 @@ div.box-crew:hover span{
 
 .icont {
     width: 25px;
-    margin-top: -2px;
+    margin-top: -4px;
 }
 
 .iconl {
@@ -1835,11 +1844,15 @@ div.box-crew:hover span{
 
 .county-usefull-info-text {
     color:#3F3F3F;
-    font-size:12px;
-    height:140px;
+    font-size:15px;
+    height:130px;
     overflow: hidden;
-    font-family: 'Roboto';
-    line-height: 17px;
+    font-family: 'Segoe UI';
+    line-height: 20px;
+   -webkit-box-orient: vertical;
+    display: -webkit-box;
+   -webkit-line-clamp: 6;
+    margin-top: -3px;
 }
 
 .left-line {
@@ -1987,7 +2000,7 @@ div.box-crew:hover span{
     height:25px;
     text-align: left;
     font-size: 15px;
-    font-family: 'Roboto';
+    font-family: 'Segoe UI';
     overflow: hidden;
     color:#4C4C4C;
 }
@@ -2009,7 +2022,7 @@ div.box-crew:hover span{
     height:45px;
     text-align: left;
     padding: 0px;
-    font-family: 'Roboto';
+    font-family: 'Segoe UI';
     padding-top: 10px;
     color: #6D6E70;
 }
@@ -2017,17 +2030,18 @@ div.box-crew:hover span{
 .pop-excur-gid {
     text-align: left;
     color: #6D6E70;
-    font-family: 'Roboto';
+    font-family: 'Segoe UI';
     font-size: 12px;
 }
 
 .pop-excur-gid-name {
      color:#393939;
     font-size: 16px;
+    font-family: 'Segoe UI';
 }
 
 .pop-excur-price {
-    font-family: 'Roboto';
+    font-family: 'Segoe UI';
     width:200px;
     margin:0 auto;
     height:45px;
@@ -2038,7 +2052,7 @@ div.box-crew:hover span{
 
 .currency {
     font-size:20px;
-    font-family: 'Roboto';
+    font-family: 'Segoe UI';
     color: #6D6E70;
 }
 
@@ -2052,7 +2066,7 @@ div.box-crew:hover span{
 }
 .pop-gid-city {
     color:#393939;
-    font-family: 'Roboto';
+    font-family: 'Segoe UI';
     font-weight: 300;
     font-size: 15px;
     text-align: center;
@@ -2064,7 +2078,7 @@ div.box-crew:hover span{
 
 .pop-gid-star {
     color:#393939;
-    font-family: 'Roboto';
+    font-family: 'Segoe UI';
     font-weight: 300;
     font-size: 15px;
     text-align: center;
@@ -2102,8 +2116,9 @@ div.box-crew:hover span{
     background: #fff;
     padding-bottom: 10px;
     color:#B5B5B5;
-    margin-top: -15px;
+    margin-top: -25px;
     margin-right: 170px;
+    font-family: Segoe;
 }
 .pop-city {
     width: 776px;
@@ -2137,7 +2152,7 @@ div.box-crew:hover span{
     font-size:20px;
     text-align: right;
     color:#393939;
-    font-family: 'Roboto';
+    font-family: 'Segoe UI';
     font-weight: 300;
     font-size: 20px;
     overflow: hidden;
@@ -2154,7 +2169,7 @@ div.box-crew:hover span{
     width:135px;
     text-align: left;
     color:#393939;
-    font-family: 'Roboto';
+    font-family: 'Segoe UI';
     font-weight: 300;
     font-size: 12px;
     overflow: hidden;
@@ -2225,7 +2240,6 @@ div.box-crew:hover span{
 
 .iconstar {
     width: 15px;
-    margin-top: -3px;
 }
 
 .excur-list-name {
@@ -2384,7 +2398,7 @@ div.box-crew:hover span{
 }
 
 .city-travel-item-inner:hover{
-    background: #CDE0DD;
+    background: rgb(224, 224, 224);
     -webkit-transition-duration:0.66s;
     -moz-transition-duration:0.66s;
 	-o-transition-duration:0.66s;
@@ -2393,7 +2407,7 @@ div.box-crew:hover span{
 }
 
 .pop-city-item:hover{
-    background: #CDE0DD;
+    background: #ebebeb;
     -webkit-transition-duration:0.66s;
     -moz-transition-duration:0.66s;
 	-o-transition-duration:0.66s;
@@ -2487,13 +2501,7 @@ div.box-crew:hover span{
 }
 
 .gid-contacts {
-    height:280px;
-    text-align: left;
-    font-family: 'Roboto';
-    font-weight: 300;
-    font-size: 14px;
-    color: #687270;
-    line-height: 5px;
+
 }
 
 .gid-photo {
@@ -2549,11 +2557,12 @@ div.box-crew:hover span{
     overflow: hidden;
     font-size: 20px;
     line-height: 8px;
+       font-family: 'Segoe UI';
 }
 
 .god-star {
     height:50px;
-    padding-top: 15px;
+    padding-top: 20px;
     color:#58585B; 
     font-size: 20px;
 }
@@ -2561,6 +2570,7 @@ div.box-crew:hover span{
 .language-title {
     color:#58585B; 
     font-size: 15px;
+    font-family: 'Segoe UI';
 }
 
 .gid-place a{
@@ -2575,6 +2585,7 @@ div.box-crew:hover span{
     color: #000;
     line-height: 20px;
     overflow: hidden;
+    font-family: 'Segoe UI';
 }
 
 .title-pop-city {
@@ -2593,7 +2604,6 @@ color:#3AA0A3;
 
 .iconplace {
     width: 25px;
-    padding-bottom: 15px;
 }
 
 .excur-navigation {
@@ -2608,8 +2618,9 @@ color:#3AA0A3;
 .button-go{
      text-decoration:none;
      text-align:center; 
-     padding: 6px 0px;
+     padding: 5px 0px 9px 0px;
      width:120px;
+     font-family: 'Segoe';
      border:none; 
     -webkit-border-radius:4px;
     -moz-border-radius:4px; 
@@ -2639,7 +2650,7 @@ color:#3AA0A3;
 .button-go:hover{
      text-decoration:none;
      text-align:center; 
-     padding: 6px 0px; 
+     padding: 5px 0px 9px 0px;
      border:none; 
      -webkit-border-radius:4px;
      -moz-border-radius:4px; 
@@ -2662,12 +2673,13 @@ color:#3AA0A3;
 .question-button{text-decoration:none; text-align:center; 
     text-decoration:none;
     text-align:center; 
-    padding: 8px 0px;
+    padding: 5px 0px 9px 0px;
     width:280px;
     border:none; 
     font-size:20px;
     letter-spacing: 1px;
     color:#ffffff; 
+    font-family: 'Segoe';
     position: absolute;
     background-color:#3d7f51; 
     background-image: -moz-linear-gradient(top, #3d7f51 0%, #346b43 100%); 
@@ -2701,7 +2713,7 @@ color:#3AA0A3;
 
 #guide-button {
     margin-left: -15px;
-    margin-top: 0px;
+    margin-top: 5px;
 }
 
 .title-excur {
@@ -2710,6 +2722,7 @@ color:#3AA0A3;
     margin:0 auto;
     padding-left: 0px;
     padding-right: 320px;
+    padding-left: 15px;
     padding-top: 25px;
     padding-bottom: 25px;
 }
@@ -2717,10 +2730,226 @@ color:#3AA0A3;
 .excur-body {
     margin: 0 auto;
     width:960px;
-    border:1px solid black;
     height: 900px;
 }
 
 .excur-slider {
     margin-left: -15px;
+}
+
+.about a {
+    padding-top: 20px;
+    color:#85918F;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    margin-left: -15px;
+    font-family: 'Segoe';
+    margin-top: -25px;
+    float:right;
+    margin-right: 15px;
+}
+
+.excur-contacts-item {
+    color:#58585B; 
+    font-size: 20px;
+    height: 40px;
+    margin-left: -15px;
+    font-family: 'Segoe UI';
+    padding-top: 20px;
+}
+
+.excur-contacts-icon {
+    width: 25px;
+    margin-top: -5px;
+}
+
+.excur-contacts-itemx2 {
+    color:#58585B; 
+    font-size: 20px;
+    margin-left: -15px;
+    font-family: 'Segoe UI';
+    height:90px;
+}
+
+.excur-contacts-prefix {
+    font-size: 15px;
+    padding-top:20px;
+    padding-bottom:5px;
+    font-family: 'Segoe UI';
+}
+
+.flag-margin {
+    margin-bottom: 5px;
+}
+
+.excur-contacts-price {
+    font-size: 40px;
+    padding-top: 50px;
+    font-family: 'Segoe UI';
+    text-align: center;
+}
+
+.excur-contacts-itemnh {
+    color:#58585B; 
+    font-size: 20px;
+    margin-left: -15px;
+    font-family: 'Segoe UI';
+    margin-top: 20px;;
+}
+
+#excur-order-button {
+    width:208px;
+    position: absolute;
+    height:20px;
+    padding: 15px 0px 25px 0px;
+    margin-top: -20px;
+    font-size: 20px;
+}
+
+.prefix-icon   
+}
+
+.iconplace-excur-contacts {
+
+}
+
+.excur-contacts-item-gid {
+    color:#58585B; 
+    font-size: 20px;
+    height: 370px;
+    margin-left: -15px;
+    font-family: 'Segoe UI';
+    padding-top: 20px;
+    padding: 0px;
+}
+
+.excur-contacts-gid-photo {
+    width:208px;
+    top:-15px;
+}
+
+.excur-contacts {
+    text-align: left;
+    font-weight: 300;
+    font-size: 14px;
+    color: #687270;
+    line-height: 5px;
+    height:427px;
+    padding: 0px;
+    display: table;
+    margin-left: -15px;
+    width: 240px;
+}
+
+.excur-contacts-inner {
+      display: table-cell;
+      vertical-align: middle;
+}
+
+.excur-contacts-gid-name {
+    text-align: center;
+    font-size: 40px;
+    
+}
+
+.excur-contacts-gid-star {
+    text-align: center;
+    padding: 0px;
+    margin-top: -10px;
+}
+
+#excur-contacts-guide-button {
+    width: 207px;
+}
+
+.margin-top {
+    margin-top: 15px;
+}
+
+.excur-text {
+    margin-top: 15px;
+}
+
+.excur-information-text {
+    color:#3F3F3F;
+    font-size:15px;
+    line-height: 20px;
+}
+
+.excur-information {
+    margin-top: 20px;
+    width:640px;
+    border-bottom:2px solid #9E3F3F;
+}
+
+.excur-place-item {
+    text-align: center;
+    width: 320px;
+    color: #000;
+    font-size: 20px;
+    margin-top: 25px;
+}
+
+.excur-place-icon {
+    padding-top: 25px;
+        
+}
+
+.excur-place-inner {
+    margin-top: 10px;
+    font-size: 25px;
+    line-height: 25px;
+    height:80px;
+    overflow: hidden;
+    text-align: right;
+}
+
+.big-time {
+    font-size: 40px;
+    padding-top: 20px;
+    text-align: left;
+    color:#687270;
+}
+
+.excur-contacts-iconplace {
+    margin-top: -8px;
+}
+
+.place-text {
+    font-size: 20px;
+    text-align: center;
+    color: #687270;
+}
+
+.excur-included {
+    height:150px;
+    width:320px;
+    margin-top: 20px;
+}
+
+.include-price {
+    width:320px;
+    margin-left: -15px;
+    text-align: center;
+    height:40px;
+    font-size: 20px;
+    font-family: 'Segoe';
+    background: #648963;
+    color:#fff;
+    padding-top:3px;  
+    margin-top: 15px
+}
+
+.excluded {
+    background: #7A4F4F;
+}
+
+.excur-included li{
+    list-style: none;
+    font-size: 15px;
+    line-height: 35px;
+    text-align: center;
+    color: #687270;
+    
+    
 }
