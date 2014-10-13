@@ -1730,7 +1730,6 @@ div.box-crew:hover span{
 }
 
 .pop-excur-name {
-    font-family: 'Segoe UI';
     font-weight: 500;
     font-size: 14px;
     line-height:17px;
@@ -2713,7 +2712,6 @@ color:#3AA0A3;
 
 #guide-button {
     margin-left: -15px;
-    margin-top: 5px;
 }
 
 .title-excur {
@@ -2768,7 +2766,7 @@ color:#3AA0A3;
     font-size: 20px;
     margin-left: -15px;
     font-family: 'Segoe UI';
-    height:90px;
+    height:60px;
 }
 
 .excur-contacts-prefix {
@@ -2784,9 +2782,9 @@ color:#3AA0A3;
 
 .excur-contacts-price {
     font-size: 40px;
-    padding-top: 50px;
+    padding-top: 25px;
     font-family: 'Segoe UI';
-    text-align: center;
+    text-align: left;;
 }
 
 .excur-contacts-itemnh {
@@ -2819,7 +2817,7 @@ color:#3AA0A3;
     height: 370px;
     margin-left: -15px;
     font-family: 'Segoe UI';
-    padding-top: 20px;
+    padding-top: 10px;
     padding: 0px;
 }
 
@@ -2834,11 +2832,12 @@ color:#3AA0A3;
     font-size: 14px;
     color: #687270;
     line-height: 5px;
-    height:427px;
+    height:308px;
     padding: 0px;
     display: table;
     margin-left: -15px;
     width: 240px;
+    margin-top: 28px;
 }
 
 .excur-contacts-inner {
@@ -2849,7 +2848,8 @@ color:#3AA0A3;
 .excur-contacts-gid-name {
     text-align: center;
     font-size: 40px;
-    
+    overflow: hidden;
+    margin-top: -10px;
 }
 
 .excur-contacts-gid-star {
@@ -2922,7 +2922,6 @@ color:#3AA0A3;
 }
 
 .excur-included {
-    height:150px;
     width:320px;
     margin-top: 20px;
 }
@@ -2936,7 +2935,7 @@ color:#3AA0A3;
     font-family: 'Segoe';
     background: #648963;
     color:#fff;
-    padding-top:3px;  
+    padding-top:4px;  
     margin-top: 15px
 }
 
@@ -2950,6 +2949,87 @@ color:#3AA0A3;
     line-height: 35px;
     text-align: center;
     color: #687270;
-    
-    
+}
+
+.gid-contacts-place {
+    color:#58585B; 
+    font-size: 20px;
+    height: 40px;
+    font-family: 'Segoe UI';
+}
+
+.gid-contacts-item {
+    color:#58585B; 
+    font-size: 20px;
+    height: 40px;
+    font-family: 'Segoe UI';
+}
+
+.other-excur-guide{
+    margin-top: 20px;
+    margin-left: -15px;
+    width:208px;
+}
+
+.other-excur-guide-item {
+    text-align: center;
+    height:230px;
+    width:208px;
+    margin-left: -15px;
+    margin-top: 20px;
+}
+
+.other-excur-image {
+    width:208px;
+    height:139px;
+}
+
+.other-excur-price {
+    margin-top: -10px;
+}
+
+.booking-conditions {
+    margin-top:30px;
+    margin-left: -15px;
+}
+
+.booking-condition-title {
+    width:640px;
+    text-align: center;
+    height:40px;
+    font-size: 20px;
+    font-family: 'Segoe';
+    background: #0d6a86;
+    color:#fff;
+    padding-top:4px;  
+}
+
+.booking-condition-inner {
+    height:60px;
+    width: 320px;
+    text-align: center;
+    font-size: 15px;
+    color:#687270;
+}
+
+.booking-condition-days {
+    font-size: 20px;
+}
+
+.menu-test {
+    height:50px;
+    border:1px solid black;
+    width:100%;
+    margin-top: 200px;
+   
+}
+
+@media(max-width:960px){
+    .menu-test{
+        width:960px;
+    }
+}
+.menu-wrapper {
+    width: 1200px;
+    margin: 0 auto;
 }
