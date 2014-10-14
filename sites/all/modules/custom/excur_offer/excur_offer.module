@@ -239,8 +239,10 @@ function excur_offer_offer_form($form, &$form_state, $offer) {
 function excur_offer_form_privatemsg_new_alter(&$form, &$form_state) {
   global $user;
 
-  if (isset($user->roles[EXCUR_USER_ROLE_GUIDE_ID])) {
-    $thread = privatemsg_thread_load($form['thread_id']['#value']);
+  if (isset($user->roles[EXCUR_USER_ROLE_GUIDE_ID])
+    && !empty($form['thread_id']['#value'])
+    && $thread = privatemsg_thread_load($form['thread_id']['#value'])) {
+
     foreach ($thread['participants'] as $account) {
       if ($account->uid != $user->uid) {
         break;

@@ -21,8 +21,9 @@ class excurCurrency {
       }
       return TRUE;
     }
-    else
+    else {
       return FALSE;
+    }
   }
 
   public function get($cur) {
@@ -42,12 +43,11 @@ class excurCurrency {
         return $price;
       }
 
-      if ($existing_currency != 'RUB') {
-        if ($preferred_currency != 'RUB') {
+      if ($existing_currency != EXCUR_CURRENCY_RUS_ROUBLE) {
+        if ($preferred_currency != EXCUR_CURRENCY_RUS_ROUBLE) {
           $currency_exis = $this->get($existing_currency) / $nominal_exis;
           $currency_pref = $this->get($preferred_currency) / $nominal_pref;
-          $currency = ($currency_exis/$currency_pref) * $price;
-          $currency = round($currency, 2);
+          $currency = ($currency_exis / $currency_pref) * $price;
         }
         else {
           $currency_exis = $this->get($existing_currency) / $nominal_exis;
@@ -58,6 +58,10 @@ class excurCurrency {
         $currency_pref = $this->get($preferred_currency) / $nominal_pref;
         $currency = $price / $currency_pref;
       }
+    }
+    else {
+      $currency = 0;
+      watchdog('excur_currency', t('Error loading currency'), array(), WATCHDOG_ERROR);
     }
 
     return round($currency, 2);
