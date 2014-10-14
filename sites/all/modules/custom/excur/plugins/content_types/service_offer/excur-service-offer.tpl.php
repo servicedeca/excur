@@ -5,8 +5,3 @@
     <?php endforeach; ?>
   </div>
 <?php endif; ?>
-<?php if(!empty($login)): ?>
-  <div class="offer-login">
-    <?php print $login; ?>
-  </div>
-<?php endif; ?>
