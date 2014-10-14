@@ -20,7 +20,7 @@
   <h2 class="node-description">
     <?php print t('Description'); ?>
   </h2>
-  <?php hide($content['comments']); ?>
+<!--  --><?php //hide($content['comments']); ?>
   <?php hide($content['links']); ?>
   <?php print render($content['body']); ?>
   <div class="row">
@@ -73,10 +73,8 @@
         </div>
       </div>
     <?php endif; ?>
-    <?php print render($content['comments']); ?>cd
   </div>
   <h2 id="reservation" class="node-description">
     <?php print t('Reservation'); ?>
   </h2>
-
 </article>

@@ -10,6 +10,41 @@
 function excur_feature_node_service_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'comment-comment_node_service-field_comment'
+  $field_instances['comment-comment_node_service-field_comment'] = array(
+    'bundle' => 'comment_node_service',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'comment',
+    'field_name' => 'field_comment',
+    'label' => 'Комментарий',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 3,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_offer-field_offer_duration'
   $field_instances['field_collection_item-field_offer-field_offer_duration'] = array(
     'bundle' => 'field_offer',
@@ -996,14 +1031,14 @@ function excur_feature_node_service_field_default_field_instances() {
         'weight' => 23,
       ),
       'full' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'fivestar',
         'settings' => array(
-          'expose' => TRUE,
+          'expose' => 1,
           'style' => 'average',
           'text' => 'average',
           'widget' => array(
-            'fivestar_widget' => NULL,
+            'fivestar_widget' => 'sites/all/modules/contrib/fivestar/widgets/outline/outline.css',
           ),
         ),
         'type' => 'fivestar_formatter_default',
@@ -1044,10 +1079,10 @@ function excur_feature_node_service_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'allow_clear' => 1,
-      'allow_ownvote' => 0,
-      'allow_revote' => 0,
+      'allow_ownvote' => 1,
+      'allow_revote' => 1,
       'entity_translation_sync' => FALSE,
-      'stars' => 10,
+      'stars' => 5,
       'target' => 'none',
       'user_register_form' => FALSE,
     ),
@@ -1553,6 +1588,7 @@ function excur_feature_node_service_field_default_field_instances() {
   t('Дней');
   t('Изображения для слайдера');
   t('Категория');
+  t('Комментарий');
   t('Максимум за');
   t('Место встречи');
   t('Минимум за');
