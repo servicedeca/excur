@@ -1,8 +1,8 @@
 <div id="comment_rating">
-  <?php if ($comments): ?>
+  <?php if (!empty($comments)): ?>
     <?php print $comments; ?>
   <?php endif ?>
-  <?php if ($form): ?>
+  <?php if (!empty($form)): ?>
     <?php print t('To write a comment, please enter the ticket number.');?>
     <?php print $form; ?>
   <?php endif ?>
