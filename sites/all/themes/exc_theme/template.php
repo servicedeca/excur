@@ -986,13 +986,15 @@ function exc_theme_preprocess_views_view_fields__companion_city(&$vars) {
  * Process variables for comment.tpl.php
  */
 function exc_theme_preprocess_comment(&$vars) {
-  $vars['comments'] = $vars['comment']->field_comment[LANGUAGE_NONE][0]['value'];
-  $user = user_load($vars['comment']->uid);
-  $vars['name'] = $user->field_name[LANGUAGE_NONE][0]['value'];
+  $account = user_load($vars['comment']->uid);
+  $node = $vars['node'];
+
+  $vars['comments'] = $vars['comment']->field_comment[LANGUAGE_NONE][0]['safe_value'];
+  $vars['name'] = $account->field_name[LANGUAGE_NONE][0]['safe_value'];
   $vars['date'] = gmdate("m-d-Y", $vars['comment']->created);
 
-  if (!empty($user->field_image[LANGUAGE_NONE])) {
-    $path = $user->field_image[LANGUAGE_NONE][0]['uri'];
+  if (!empty($account->field_image[LANGUAGE_NONE])) {
+    $path = $account->field_image[LANGUAGE_NONE][0]['uri'];
     $theming = 'image_style';
   }
   else {
@@ -1002,10 +1004,14 @@ function exc_theme_preprocess_comment(&$vars) {
   $vars['user_image'] = theme($theming, array(
     'style_name' => '70x70',
     'path' => $path,
-    'alt' => $user->field_name[LANGUAGE_NONE][0]['safe_value'],
-    'title' => $user->field_name[LANGUAGE_NONE][0]['safe_value'],
+    'alt' => $account->field_name[LANGUAGE_NONE][0]['safe_value'],
+    'title' => $account->field_name[LANGUAGE_NONE][0]['safe_value'],
   ));
 
+  $guide_rating = fivestar_get_votes('user', $node->field_guide[LANGUAGE_NONE][0]['target_id'], 'vote', $account->uid);
+  $service_rating = fivestar_get_votes('node', $node->nid, 'vote', $account->uid);
+  $vars['guide_rating'] = !empty($guide_rating['user']) ? $guide_rating['user']['value'] / 20 : NULL;
+  $vars['service_rating'] = !empty($service_rating['user']) ? $service_rating['user']['value'] / 20 : NULL;
 }
 
 /**

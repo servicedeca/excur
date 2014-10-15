@@ -199,8 +199,8 @@
             }
             else {
               var $comment_rating = $('#comment_rating');
-              $comment_rating.html(response)
-              Drupal.attachBehaviors($comment_rating);
+              $comment_rating.html(response);
+              Drupal.attachBehaviors($comment_rating, Drupal.settings);
             }
           },
           error: function(response) {
