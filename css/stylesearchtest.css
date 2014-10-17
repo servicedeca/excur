@@ -364,26 +364,7 @@
 	background:#300e00;
 	color:#da7979
 }
-.form .select.error:focus
-{
-	background:#401e10
-}
-.form .select.error:before
-{
-	background:#401e10
-}
-.form .select.error:after
-{
-	border-top-color:#da7979
-}
-.form .select:before
-{
-	background:#1e7c7a
-}
-.form .select:after
-{
-	border-top-color:rgba(255,255,255,0.55)
-}
+
 .form .input ::-webkit-input-placeholder,.form .buttons ::-webkit-input-placeholder,.form .select ::-webkit-input-placeholder
 {
      font-size: 13px;
@@ -417,38 +398,6 @@
     text-align: center;
 }
 
-.form .message
-{
-	max-width:346px
-}
-
-transition-timing-function:ease
-}
-.form .hs-form fieldset
-{
-	max-width:none !important
-}
-.form .hs-form fieldset .input
-{
-	margin:2px !important
-}
-.form .hs-form fieldset .hs-input
-{
-	width:100% !important
-}
-.form .hs-form .email-correction
-{
-	display:none !important
-}
-.form .disabled
-{
-	cursor:default !important
-}
-.form .hide
-{
-	opacity:0;
-	z-index:1
-}
 
 #header-signup-form fff {
     margin-left: 500px;

@@ -25,6 +25,10 @@ a:hover{
    text-decoration: none;  
  }
 
+a:active{     
+   text-decoration: none;  
+ }
+
 @media (max-width:340px) {
   .mediamin {
         width: 340px;
@@ -131,8 +135,8 @@ header .intro-text .intro-heading {
 
 @media(min-width:1px) {
     header .intro-text {
-        padding-top: 70px;
-        padding-bottom:50px;
+        padding-top: 120px;
+        padding-bottom:0px;
     }
 }
 
@@ -413,6 +417,7 @@ section h3.section-subheading {
 
 .text-center {
     text-align: center;
+    padding: 0px;
 }
 
 .textmid {
@@ -1316,7 +1321,6 @@ div.box-crew:hover span{
     overflow: hidden;
     font-family: 'Segoe UI';
     margin-top: 1px;
-    height:500px;
     overflow-y: scroll;
 }
 
@@ -1366,7 +1370,7 @@ div.box-crew:hover span{
 
 .wrapper-dropdown-country.active .dropdown {
     border-bottom: 1px solid rgba(0,0,0,0.2);
-    max-height: 2000px;
+    max-height: 500px;
     z-index: 20;
 }
 
@@ -1546,7 +1550,6 @@ div.box-crew:hover span{
     background: #fff;
     padding-top: 0px;
     width: 100%;
-    margin-top: 0px;
     z-index: 21;
 }
 
@@ -2701,9 +2704,9 @@ color:#3AA0A3;
     margin:0 auto;
     padding-left: 0px;
     padding-right: 320px;
-    padding-left: 15px;
+    padding-left: 25px;
     padding-top: 25px;
-    padding-bottom: 25px;
+    font-size: 40px;
 }
 
 .excur-body {
@@ -2770,6 +2773,8 @@ color:#3AA0A3;
     font-family: 'Segoe UI';
     text-align: center;
     color:#3F3F3F;
+    line-height: 23px;
+    
 }
 
 .excur-contacts-itemnh {
@@ -2789,11 +2794,8 @@ color:#3AA0A3;
     bottom: 0px;
 }
 
-.prefix-icon   
-}
-
-.iconplace-excur-contacts {
-
+#excur-order-button a{
+    text-decoration: none;
 }
 
 .excur-contacts-item-gid {
@@ -2879,14 +2881,14 @@ color:#3AA0A3;
 
 .excur-place-item {
     text-align: center;
-    width: 320px;
     color: #000;
     font-size: 20px;
     margin-top: 25px;
 }
 
 .excur-place-icon {
-    padding-top: 25px;
+    margin-top: 25px;
+    margin-right: -10px;
 }
 
 .excur-place-inner {
@@ -2895,14 +2897,14 @@ color:#3AA0A3;
     line-height: 25px;
     height:80px;
     overflow: hidden;
-    text-align: right;
+    text-align: right;    
 }
 
 .big-time {
     font-size: 30px;
-    padding-top: 20px;
-    text-align: left;
-    color:#687270;
+    padding-top: 24px;
+    text-align: center;
+    color:#3F3F3F;
 }
 
 .excur-contacts-iconplace {
@@ -2913,19 +2915,18 @@ color:#3AA0A3;
 }
 
 .place-text {
-    font-size: 20px;
+    font-size: 18px;
     text-align: center;
-    color: #687270;
+    color:#3F3F3F;
 }
 
 .excur-included {
-    width:320px;
-    margin-top: 20px;
+    margin-top: 25px;
+    padding: 0px;
+    margin-left: 60px;
 }
 
 .include-price {
-    width:320px;
-    margin-left: -15px;
     text-align: center;
     height:40px;
     font-size: 20px;
@@ -2933,7 +2934,6 @@ color:#3AA0A3;
     background: #648963;
     color:#fff;
     padding-top:4px;  
-    margin-top: 15px
 }
 
 .excluded {
@@ -3074,9 +3074,14 @@ color:#3AA0A3;
 }
 
 .order-condition {
-    font-size: 15px;
-    margin-top: 10px;
-    color:#687270;
+    font-size: 18px;
+    margin-top: 25px;
+    color:#3F3F3F;
+    border-top:1px solid black;
+    width:600px;
+    line-height: 25px;
+    text-align: center;
+    margin-left: 60px;
 }
 
 .order-condition-days {
@@ -3289,7 +3294,7 @@ color:#3AA0A3;
 
 .excur-contacts-item-price {
     position: absolute;
-    bottom: 105px;
+    bottom: 70px;
 }
 
 .padding {
@@ -3334,4 +3339,45 @@ color:#3AA0A3;
     padding: 15px;
     height:300px;
     overflow: hidden;
+}
+
+.prefix-excur-price {
+    font-size: 20px;
+    width: 210px;
+}
+
+.excur-excluded {
+    margin-left: 0px;
+}
+
+.excur-included li{
+    font-size: 18px;
+    color:#3F3F3F;
+}
+
+.bread-test {
+    height: 25px;
+    text-align: center;
+    background: #fff;
+    margin-top:0px;
+    width:320px;
+    position: absolute;
+    margin-left: 320px;
+}
+
+footer {
+    padding: 0px;
+}
+
+.wp5{
+    visibility: hidden;
+}
+
+.bounceInLeft, .bounceInRight, .fadeInUp, .fadeInUpDelay, .fadeInDown, .fadeInUpD, .fadeInLeft, .fadeInRight{
+    visibility: visible;
+}
+
+.delay-05s{
+    animation-delay: 0.1s;
+    -webkit-animation-delay: 0.1s;
 }
