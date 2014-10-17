@@ -123,7 +123,6 @@ header .intro-text .intro-lead-in {
     font-size: 22px;
     font-style: italic;
     line-height: 22px;   
-    visibility: hidden ;
 }
 
 header .intro-text .intro-heading {
@@ -139,29 +138,29 @@ header .intro-text .intro-heading {
 
 @media(min-width:768px) {
     header .intro-text {
-        padding-top: 260px;
-        padding-bottom:120px;
+        padding-top: 300px;
+        padding-bottom:170px;
     }
 }
 
 @media(min-width:1300px) {
     header .intro-text {
-        padding-top: 210px;
-        padding-bottom:100px;
+        padding-top: 290px;
+        padding-bottom:150px;
     }
 }
 
 @media(min-width:1400px) {
     header .intro-text {
-        padding-top: 310px;
-        padding-bottom:120px;
+        padding-top: 350px;
+        padding-bottom:300px;
     }
 }
 
 @media(min-width:1650px) {
     header .intro-text {
-        padding-top: 550px;
-        padding-bottom:150px;
+        padding-top: 450px;
+        padding-bottom:330px;
     }
 }
     
@@ -1317,6 +1316,8 @@ div.box-crew:hover span{
     overflow: hidden;
     font-family: 'Segoe UI';
     margin-top: 1px;
+    height:500px;
+    overflow-y: scroll;
 }
 
 .wrapper-dropdown-country .dropdown li {
@@ -1745,6 +1746,7 @@ div.box-crew:hover span{
     text-align:left;
     padding-top: 7px;
     padding-bottom: 10px;
+    text-align: center;
 }
 
 .pop-excur-left {
@@ -2052,7 +2054,7 @@ div.box-crew:hover span{
 .currency {
     font-size:20px;
     font-family: 'Segoe UI';
-    color: #6D6E70;
+    color:#3F3F3F;
 }
 
 .pop-excur-button:hover{
@@ -2621,22 +2623,15 @@ color:#3AA0A3;
      width:120px;
      font-family: 'Segoe';
      border:none; 
-    -webkit-border-radius:4px;
-    -moz-border-radius:4px; 
-    border-radius: 4px; 
+    -webkit-border-radius:0px;
+    -moz-border-radius:0px; 
+    border-radius: 0px; 
      font-size:17px;
      letter-spacing: 1px;
      font-weight:300; 
      color:#ffffff; 
-    background-image: -moz-linear-gradient(top, #0d6a86 0%, #0c4d63 100%); 
-    background-image: -webkit-linear-gradient(top, #0d6a86 0%, #0c4d63 100%); 
-    background-image: -o-linear-gradient(top, #0d6a86 0%, #0c4d63 100%); 
-    background-image: -ms-linear-gradient(top, #0d6a86 0% ,#0c4d63 100%); 
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0c4d63', endColorstr='#0c4d63',GradientType=0 ); 
-    background-image: linear-gradient(top, #0d6a86 0% ,#0c4d63 100%);
-    -webkit-box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff; 
-    -moz-box-shadow: 0px 0px 2px #bababa, inset 0px 0px 1px #ffffff; 
-    box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff; 
+    background: #1795c1;
+
    }
 
 .button-go-pop{
@@ -2651,22 +2646,19 @@ color:#3AA0A3;
      text-align:center; 
      padding: 5px 0px 9px 0px;
      border:none; 
-     -webkit-border-radius:4px;
-     -moz-border-radius:4px; 
-     border-radius: 4px; 
+     -webkit-border-radius:0px;
+     -moz-border-radius:0px; 
+     border-radius: 0px; 
      font-size:17px;
      font-weight:300; 
      color:#fff; 
     background-color:#0c4d63; 
-    background-image: -moz-linear-gradient(top, #0c4d63 0%, #0d6a86 100%); 
-    background-image: -webkit-linear-gradient(top, #0c4d63 0%, #0d6a86 100%); 
-    background-image: -o-linear-gradient(top, #0c4d63 0%, #0d6a86 100%); 
-    background-image: -ms-linear-gradient(top, #0c4d63 0% ,#0d6a86 100%); 
+    background-image: -moz-linear-gradient(top, #3099aa 0%, #0d6a86 100%); 
+    background-image: -webkit-linear-gradient(top, #3099aa 0%, #0d6a86 100%); 
+    background-image: -o-linear-gradient(top, #3099aa 0%, #0d6a86 100%); 
+    background-image: -ms-linear-gradient(top, #3099aa 0% ,#0d6a86 100%); 
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d6a86', endColorstr='#0d6a86',GradientType=0 ); 
-    background-image: linear-gradient(top, #0c4d63 0% ,#0d6a86 100%);
-    -webkit-box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff; 
-    -moz-box-shadow: 0px 0px 2px #bababa, inset 0px 0px 1px #ffffff; 
-    box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff; 
+    background-image: linear-gradient(top, #3099aa 0% ,#0d6a86 100%);
 }
 	
 .question-button{text-decoration:none; text-align:center; 
@@ -2678,22 +2670,11 @@ color:#3AA0A3;
     font-size:20px;
     letter-spacing: 1px;
     color:#ffffff; 
+    -webkit-border-radius:0px;
+    -moz-border-radius:0px
     font-family: 'Segoe';
     position: absolute;
-    background-color:#3d7f51; 
-    background-image: -moz-linear-gradient(top, #3d7f51 0%, #346b43 100%); 
-    background-image: -webkit-linear-gradient(top, #3d7f51 0%, #346b43 100%); 
-    background-image: -o-linear-gradient(top, #3d7f51 0%, #346b43 100%); 
-    background-image: -ms-linear-gradient(top, #3d7f51 0% ,#346b43 100%); 
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#346b43', endColorstr='#346b43',GradientType=0 ); 
-    background-image: linear-gradient(top, #3d7f51 0% ,#346b43 100%);
-    -webkit-box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff; 
-    -moz-box-shadow: 0px 0px 2px #bababa, inset 0px 0px 1px #ffffff; 
-    box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff; 
-    -webkit-transition: all 0.66s ease-in-out;
-    -moz-transition: all 0.66s ease-in-out;
-    -o-transition: all 0.66s ease-in-out;
-    transition: all 0.66s ease-in-out;
+    background-color:#4a9e3e; 
 }
 
 .question-button:hover{
@@ -2728,11 +2709,10 @@ color:#3AA0A3;
 .excur-body {
     margin: 0 auto;
     width:960px;
-    height: 900px;
 }
 
 .excur-slider {
-    margin-left: -15px;
+    padding: 0px;
 }
 
 .about a {
@@ -2748,12 +2728,12 @@ color:#3AA0A3;
 }
 
 .excur-contacts-item {
-    color:#58585B; 
+     color:#3F3F3F;
     font-size: 20px;
-    height: 40px;
-    margin-left: -15px;
-    font-family: 'Segoe UI';
+    height: 60px;
     padding-top: 20px;
+    margin-top: 0px;
+     padding-left:30px;
 }
 
 .excur-contacts-icon {
@@ -2761,13 +2741,18 @@ color:#3AA0A3;
     margin-top: -5px;
 }
 
-.excur-contacts-itemx2 {
+
+
+.excur-contacts-button {
     color:#58585B; 
     font-size: 20px;
     margin-left: -15px;
     font-family: 'Segoe UI';
-    height:60px;
+    height:40px;
+    position: absolute;
+    bottom:0px;
 }
+
 
 .excur-contacts-prefix {
     font-size: 15px;
@@ -2782,26 +2767,26 @@ color:#3AA0A3;
 
 .excur-contacts-price {
     font-size: 40px;
-    padding-top: 25px;
     font-family: 'Segoe UI';
-    text-align: left;;
+    text-align: center;
+    color:#3F3F3F;
 }
 
 .excur-contacts-itemnh {
     color:#58585B; 
     font-size: 20px;
-    margin-left: -15px;
     font-family: 'Segoe UI';
     margin-top: 20px;;
+    padding-left:30px;
 }
 
 #excur-order-button {
-    width:208px;
+    width:242px;
     position: absolute;
     height:20px;
-    padding: 15px 0px 25px 0px;
-    margin-top: -20px;
-    font-size: 20px;
+    padding: 20px 0px 30px 0px;
+    font-size: 25px;
+    bottom: 0px;
 }
 
 .prefix-icon   
@@ -2814,16 +2799,16 @@ color:#3AA0A3;
 .excur-contacts-item-gid {
     color:#58585B; 
     font-size: 20px;
-    height: 370px;
-    margin-left: -15px;
+    height: 290px;
     font-family: 'Segoe UI';
     padding-top: 10px;
     padding: 0px;
+    margin-top: 25px;
+    width:240px;
 }
 
 .excur-contacts-gid-photo {
-    width:208px;
-    top:-15px;
+    width:240px;
 }
 
 .excur-contacts {
@@ -2832,12 +2817,13 @@ color:#3AA0A3;
     font-size: 14px;
     color: #687270;
     line-height: 5px;
-    height:308px;
-    padding: 0px;
     display: table;
-    margin-left: -15px;
-    width: 240px;
-    margin-top: 28px;
+    padding: 0px;
+    padding-bottom: 25px;
+    height:479px;
+    background: #e2e0e0;
+    width:242px;
+    margin-left: -2px;
 }
 
 .excur-contacts-inner {
@@ -2859,7 +2845,13 @@ color:#3AA0A3;
 }
 
 #excur-contacts-guide-button {
-    width: 207px;
+    width:240px;
+    position: absolute;
+    height:20px;
+    padding: 5px 0px 45px 0px;
+    font-size: 25px; 
+    bottom:0px;
+    font-family: Segoe;
 }
 
 .margin-top {
@@ -2877,9 +2869,12 @@ color:#3AA0A3;
 }
 
 .excur-information {
-    margin-top: 20px;
-    width:640px;
-    border-bottom:2px solid #9E3F3F;
+    margin-top: 25px;
+    background: #F3F4F4;
+    padding-right: 25px;
+    padding-top: 15px;
+    padding-left: 25px;
+    padding-bottom: 15px;
 }
 
 .excur-place-item {
@@ -2892,7 +2887,6 @@ color:#3AA0A3;
 
 .excur-place-icon {
     padding-top: 25px;
-        
 }
 
 .excur-place-inner {
@@ -2905,14 +2899,17 @@ color:#3AA0A3;
 }
 
 .big-time {
-    font-size: 40px;
+    font-size: 30px;
     padding-top: 20px;
     text-align: left;
     color:#687270;
 }
 
 .excur-contacts-iconplace {
-    margin-top: -8px;
+    margin-right: 10px;
+    margin-top: 16px;
+
+    
 }
 
 .place-text {
@@ -2966,22 +2963,21 @@ color:#3AA0A3;
 }
 
 .other-excur-guide{
-    margin-top: 20px;
-    margin-left: -15px;
-    width:208px;
+    
 }
 
 .other-excur-guide-item {
     text-align: center;
-    height:230px;
-    width:208px;
+    height:250px;
+    width:240px;
     margin-left: -15px;
-    margin-top: 20px;
+    background: #e2e0e0;
+    margin-bottom: 25px;
 }
 
 .other-excur-image {
-    width:208px;
-    height:139px;
+    width:240px;
+    height:160px;
 }
 
 .other-excur-price {
@@ -2989,7 +2985,7 @@ color:#3AA0A3;
 }
 
 .booking-conditions {
-    margin-top:30px;
+    margin-top:130px;
     margin-left: -15px;
 }
 
@@ -3020,8 +3016,8 @@ color:#3AA0A3;
     height:50px;
     border:1px solid black;
     width:100%;
-    margin-top: 200px;
-   
+    position: fixed;
+    
 }
 
 @media(max-width:960px){
@@ -3030,6 +3026,312 @@ color:#3AA0A3;
     }
 }
 .menu-wrapper {
-    width: 1200px;
+    width: 960px;
     margin: 0 auto;
+    border:1px solid black;
+}
+
+.miniliogotest {
+    top: 0px;
+}
+
+#header-signup-form {
+}
+
+.minilogotest {
+    width:300px;
+    padding-top: 5px;
+    position: absolute;
+}
+
+.fff {
+    margin-left: 500px;
+}
+
+.excur-contacts-item-vertival {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.other-offer-title {
+    font-size: 20px;
+    text-align: center;
+    width:240px;
+    height:50px;
+    margin-left: -15px;
+}
+
+.excur-included-block {
+    border-bottom: 1px solid #CCCCCC;
+    width:640px;
+    height: 25px;
+}
+
+.excur-line {
+    border-bottom:1px solid #9E3F3F;
+    width:640px;
+    height:25px;
+}
+
+.order-condition {
+    font-size: 15px;
+    margin-top: 10px;
+    color:#687270;
+}
+
+.order-condition-days {
+    font-size: 20px;
+    color: #000;
+}
+
+.excur-offer-type {
+    border:1px solid #B2B2B2;
+    width:640px;
+    padding: 0px;
+    margin-bottom: 35px;
+}
+
+.excur-offer-title {
+    height:40px;
+    font-size: 20px;
+    background:#9A9A9A;
+    color:#fff;
+    font-family: Segoe;
+    padding-top: 5px;
+}
+
+.excur-offer-info {
+    text-align: center;
+    height: 40px;
+}
+
+.excur-offer-text {
+    font-size: 15px;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+.excur-offer-item {
+    font-size:15px;
+    text-align: center;
+    display:table;
+    padding-bottom: 10px;
+
+}
+
+.excur-offer-price {
+    font-size:30px;
+    padding-left: 15px;
+}
+
+.excur-offer-check {
+    height:40px;
+    font-size: 15px;
+}
+
+
+
+.offer-circle {
+    width: 15px;
+    height:15px;
+    left:35px;
+    top:12px;
+}
+
+.excur-offer-date {
+    padding: 0px;
+}
+
+
+
+#excur-offer-date-form {
+    height: 40px;
+    width: 320px;
+    border-radius: 0px;
+    cursor:pointer;
+}
+
+.excur-order-button {
+    text-align: center;
+    height:40px;
+}
+
+#excur-offer-button {
+    width: 320px;
+    position: absolute;
+    margin-left: -159px;
+    height:40px;
+    font-size:20px;
+    padding-top: 4px;
+}
+
+.line-height-zero {
+    height:1px;
+}
+
+.travel-companion {
+    width:640px;
+    padding: 0px;
+}
+
+.travel-companion-item {
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 25px;
+    margin-top: -20px;
+    padding-bottom: 45px;
+}
+
+.travel-companion-name {
+    font-size: 20px;
+    padding-top: 0px;
+}
+
+.travel-companion-photo {
+    width:135px;
+    height:135px;
+}
+
+#travel-companion-button {
+    width:136px;
+    left: 11px;
+    padding: 2px 0px 3px 0px;
+    font-family: Segoe;
+    margin-top: 140px;
+    position: absolute;
+    font-size: 15px
+}
+
+.excur-comment {
+    width: 640px;
+    margin-top: 10px;
+    padding: 0px;
+}
+
+.excur-comment-item {
+    padding: 0px;
+    text-align: center;
+    
+}
+
+.excur-comment-photo {
+    width:90px;
+    height:90px;
+}
+
+.excur-comment-body {
+    width:500px;
+    border:1px solid #B2B2B2;
+    padding: 30px 10px 10px 10px;
+    font-size: 15px;
+    color:#687270;
+}
+
+   .excur-comment-body::before, .excur-comment-body::after {
+    content: ''; 
+    position: absolute;
+    top: 20px; left: -5px;
+    border: 10px solid transparent;
+    border-right: 10px solid #B2B2B2;
+   }
+   .excur-comment-body::after {
+    border-right: 10px solid white;
+    left: -3px; 
+   }
+
+
+.excur-comment-date {
+    font-size: 12px;
+    color:#7F7F7F;
+    text-align: right;
+    margin-top: -25px;
+}
+
+.excur-coment-head {
+    margin-top: -20px;
+    height:30px;
+}
+
+.rating-excur {
+    background:#3D7F51;
+    color:#fff;
+    padding-right:5px;
+    padding-left: 7px;
+    font-size: 14px;
+    margin-right: 10px
+}
+
+.rating-guide {
+    background:#3D7F51;
+    color:#fff;
+    padding-right:5px;
+    padding-left: 7px;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.rating {
+    margin-right: 20px;
+}
+
+.excur-title {
+    text-align: left;
+    width:960px;
+    margin:0 auto;
+    padding-left: 0px;
+    padding-right: 240px;
+    padding-left: 15px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-size: 30px;
+    font-family: Segoe;
+}
+
+.excur-contacts-item-price {
+    position: absolute;
+    bottom: 105px;
+}
+
+.padding {
+    padding: 0px;
+}
+
+.excur-contacts-city {
+    padding-left: 40px;
+    margin-top: -8px;
+}
+
+.excur-contacts-item-place {
+    color:#3F3F3F;
+    font-size: 20px;
+    height: 60px;
+    padding-top: 0px;
+    margin-top: 10px;
+    border:1px solid black;
+}
+
+.excur-contacts-item-place-place {
+         color:#3F3F3F;
+    font-size: 20px;
+    height: 60px;
+    padding-top: 0px;
+    margin-top: 10px;
+    border:1px solid black;
+}
+
+.excur-contacts-item-item {
+    color:#3F3F3F;
+    font-size: 20px;
+    height: 60px;
+    padding-top: 0px;
+    margin-top: 10px;
+    padding-left:30px;
+}
+
+#text-hidden {
+    width:600px;
+    margin: 0 auto;
+    padding: 15px;
+    height:300px;
+    overflow: hidden;
 }

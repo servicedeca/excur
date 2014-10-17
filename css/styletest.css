@@ -21,3 +21,37 @@
         width:960px;
     }
 }
+.minilogotest-image {
+    width:230px;
+}
+
+.form-test {
+    width:500px;
+    border:1px solid black;
+}
+
+.fotm-test {
+    width:300px;
+    position: absolute;
+}
+
+.text-hidden {
+            width:600px;
+    margin: 0 auto;
+    padding: 15px;
+    height:300px;
+    overflow: hidden;
+}
+
+.text-full {
+    width:600px;
+    margin: 0 auto;
+    padding: 15px;
+    }
+#header-signup-form {
+    border:1px solid red;
+}
+
+.visage-form-email {
+       border:1px solid red;
+}
