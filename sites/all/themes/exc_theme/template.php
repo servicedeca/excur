@@ -1020,7 +1020,7 @@ function exc_theme_preprocess_comment(&$vars) {
 function exc_theme_preprocess_comment_wrapper(&$vars) {
   $node = $vars['content']['#node'];
   $node_view = node_view($node);
-  $guide = user_load($node->uid);
+  $guide = user_load($node->field_guide[LANGUAGE_NONE][0]['target_id']);
   $guide = user_view($guide);
 
   if (user_is_logged_in()) {

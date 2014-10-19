@@ -71,6 +71,7 @@ function excur_menu() {
     'title' => 'Comment and rating',
     'page callback' => 'excur_comment_rating',
     'access callback' => TRUE,
+    'delivery callback' => 'excur_ajax_delivery_callback',
   );
 
   return $items;
@@ -239,21 +240,19 @@ function excur_number_ordered($oid, $nid) {
  * Page callback comment_rating
  */
 function excur_comment_rating() {
-  if (!empty($_POST['number']) && !empty($_POST['node'])
-    && is_numeric($_POST['number']) && is_numeric($_POST['node'])) {
+  $output = FALSE;
 
-    menu_set_active_item('node/' . $_POST['node']);
-    $node = node_load($_POST['node']);
+  if (!empty($_POST['number']) && !empty($_POST['node'])
+    && is_numeric($_POST['number']) && is_numeric($_POST['node'])
+    && $node = node_load($_POST['node'])) {
+
     if (excur_number_ordered($_POST['number'], $node->nid)) {
       $comments = comment_node_page_additions($node);
-      print render($comments);
-    }
-    else {
-      print FALSE;
+      $output =  render($comments);
     }
   }
 
-  drupal_exit();
+  return $output;
 }
 
 /**
@@ -879,4 +878,17 @@ function excur_comment_rating_form($form) {
  */
 function  excur_guide_is_company($guide) {
   return !empty($guide->data['guide_company']) && $guide->data['guide_company'] == 2;
+}
+
+/**
+ * Ajax delivery callback.
+ */
+function excur_ajax_delivery_callback($data) {
+  $data = is_string($data) ? $data : render($data);
+
+  $output = drupal_get_css();
+  $output .= drupal_get_js();
+  $output .= $data;
+
+  print $output;
 }
