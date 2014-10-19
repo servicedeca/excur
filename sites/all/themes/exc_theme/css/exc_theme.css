@@ -1035,6 +1035,9 @@ h2.panel-title {
 }
 
 .comment-content {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   min-height: 60px;
   border: 1px solid #d9d9d9;
   border-radius: 5px;
@@ -1060,4 +1063,21 @@ h2.panel-title {
 
 .user-guide-company {
   display: none;
+}
+
+#comment_rating .comment-ratings {
+  float: right;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  margin-left: 5px;
+  padding: 3px;
+  background: white;
+}
+
+
+#comment_rating .comment-ratings .rating-number {
+  color: white;
+  background: #6fbb2e;
+  padding: 4px;
+  border-radius: 4px;
 }
