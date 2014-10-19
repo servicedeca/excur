@@ -185,6 +185,9 @@ function entity_translation_entity_info_alter(&$entity_info) {
     // not. As a matter of fact we might need them to correctly switch field
     // translatability when a field is shared across different entity types.
     $et_info += array('class' => 'EntityTranslationDefaultHandler');
+    if (!isset($entity_info[$entity_type]['entity keys'])) {
+      $entity_info[$entity_type]['entity keys'] = array();
+    }
     $entity_info[$entity_type]['entity keys'] += array('translations' => 'translations');
 
     if (entity_translation_enabled($entity_type, NULL, TRUE)) {
@@ -696,7 +699,7 @@ function _entity_translation_callback($callback, $args, $info = array()) {
 function entity_translation_admin_paths() {
   $paths = array();
   foreach (entity_get_info() as $entity_type => $info) {
-    if (entity_translation_enabled($entity_type, NULL, TRUE)) {
+    if (isset($info['translation']['entity_translation']['path schemes']) && entity_translation_enabled($entity_type, NULL, TRUE)) {
       foreach ($info['translation']['entity_translation']['path schemes'] as $scheme) {
         if (!empty($scheme['admin theme'])) {
           if (isset($scheme['translate path'])) {

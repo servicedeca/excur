@@ -44,13 +44,13 @@ function template_preprocess_excur_comments(&$vars) {
   $node = menu_get_object();
   $node_view = node_view($node);
 
-  $path = drupal_get_path('module', 'fivestar');
+  $fivestar_path = drupal_get_path('module', 'fivestar');
 
-  drupal_add_css($path . '/css/fivestar.css');
-  drupal_add_css($path . '/widgets/outline/outline.css');
+  drupal_add_css($fivestar_path . '/css/fivestar.css');
+  drupal_add_css($fivestar_path . '/widgets/outline/outline.css');
   drupal_add_js('misc/ajax.js');
-  drupal_add_js($path . '/js/fivestar.js');
-  drupal_add_js($path . '/js/fivestar.ajax.js');
+  drupal_add_js($fivestar_path . '/js/fivestar.js');
+  drupal_add_js($fivestar_path . '/js/fivestar.ajax.js');
 
   if (user_is_logged_in()) {
     if (excur_offer_is_user_ordered_offer($node->nid) != 0) {

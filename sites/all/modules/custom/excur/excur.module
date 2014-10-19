@@ -240,9 +240,10 @@ function excur_number_ordered($oid, $nid) {
  */
 function excur_comment_rating() {
   if (!empty($_POST['number']) && !empty($_POST['node'])
-    && is_numeric($_POST['number']) && is_numeric($_POST['node'])
-    && $node = node_load($_POST['node'])) {
+    && is_numeric($_POST['number']) && is_numeric($_POST['node'])) {
 
+    menu_set_active_item('node/' . $_POST['node']);
+    $node = node_load($_POST['node']);
     if (excur_number_ordered($_POST['number'], $node->nid)) {
       $comments = comment_node_page_additions($node);
       print render($comments);

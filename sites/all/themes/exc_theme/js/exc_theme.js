@@ -201,6 +201,7 @@
               var $comment_rating = $('#comment_rating');
               $comment_rating.html(response);
               Drupal.attachBehaviors($comment_rating, Drupal.settings);
+              excurCustomFivestar();
             }
           },
           error: function(response) {
@@ -210,6 +211,10 @@
       });
     }
   };
+
+  function excurCustomFivestar() {
+    $('')
+  }
 
   function excurScrollTo(from, to, time) {
     $(from).click(function (){
