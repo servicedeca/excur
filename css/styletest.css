@@ -1,57 +1,22 @@
 
-.wrapper-test {
-    width: 100%;
-    border:5px solid red;
+
+
+.container-menu {
+    width:960px;
+    margin: 0 auto;
 }
 
-@media (max-width:960px){
-    .wrapper-test{
-        width:960px;
-    }
+.page-scroll {    
 }
 
-.navi{
-    width: 100%;
-    border:1px solid blue;
-    position: absolute;
+#test-wrapper {
+    width: 960px;
+    border:5px solid black;
+    margin: 0 auto;
+    height: 1200px;
 }
 
-@navi (max-width:960px){
-    .navi{
-        width:960px;
-    }
-}
-.minilogotest-image {
-    width:230px;
-}
-
-.form-test {
-    width:500px;
+.border {
     border:1px solid black;
-}
-
-.fotm-test {
-    width:300px;
-    position: absolute;
-}
-
-.text-hidden {
-            width:600px;
-    margin: 0 auto;
-    padding: 15px;
-    height:300px;
-    overflow: hidden;
-}
-
-.text-full {
-    width:600px;
-    margin: 0 auto;
-    padding: 15px;
-    }
-#header-signup-form {
-    border:1px solid red;
-}
-
-.visage-form-email {
-       border:1px solid red;
+    height:50px;
 }

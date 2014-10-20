@@ -96,7 +96,7 @@
 }
 .form.multi-input .input,.form.multi-input .buttons
 {
-	float:none;
+	float:left;
 	margin:22px;
 }
 .form.multi-input .select
@@ -121,7 +121,7 @@
 .form .option-group
 {
 	display:inline-block;
-       border:1px solid red;
+
 }
 .form input,.form select,.form textarea
 {
@@ -261,7 +261,7 @@
 }
 .form .input,.form .buttons,.form .select
 {
-	float:left;
+	float:none;
 }
 .form input,.form select,.form textarea
 {
@@ -397,7 +397,6 @@
     font-family: Segoe;
     text-align: center;
 }
-
 
 #header-signup-form fff {
     margin-left: 500px;
