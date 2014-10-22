@@ -204,7 +204,12 @@ function excur_offer_offer_form($form, &$form_state, $offer) {
   $form['#data'] = $offer;
 
   foreach ($offer['tickets'] as $key => $ticket) {
-    $options[(string) $key] = $ticket['title'] . ' (' . $ticket['price'] . ' ' . $offer['currency'] . ')';
+    $options[(string) $key] = $ticket['title'];
+    $options[(string) $key] .= ' (';
+    $options[(string) $key] .= $ticket['price'];
+    $options[(string) $key] .= ' ' . $offer['currency'];
+    $options[(string) $key] .= $offer['type'] ? t('/за группу') : t('/за человека');
+    $options[(string) $key] .= ')';
   }
   $form['tickets'] = array(
     '#type' => 'radios',

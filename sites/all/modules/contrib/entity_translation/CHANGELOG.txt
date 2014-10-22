@@ -1,6 +1,12 @@
 
 Entity Translation 7.x-1.x, xxxx-xx-xx
 --------------------------------------
+#2179183 by dkingofpa, Jānis Bebrītis | SocialNicheGuru: Fixed Fatal error: Unsupported
+  operand types in /entity_translation.module on line 188.
+#1605406 by joelrosen, Jose Reyero, paulihuhtiniemi, guillaumev | mindaugasd: Exposed
+  translated field content to Views so that multiple language translations can be shown
+  simultaneously.
+#2160559 by w3wfr: Warning because of empty value line 675.
 #2151503 by SebCorbin: Check for translation access for Add links.
 #2130091 by peximo: Media edit dialog integration bug.
 #2065221 by catch, plach: Fixed Static cache for handlers should key by $vid.
