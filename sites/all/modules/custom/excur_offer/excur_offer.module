@@ -329,6 +329,11 @@ function excur_offer_pay_form() {
  * Form builder for order form.
  */
 function excur_offer_order_form($form, $form_state, $offer) {
+  if (user_is_anonymous()) {
+    drupal_set_message('You must login or register to offer the order.');
+    drupal_goto();
+  }
+
   global $user;
   global $language;
 
@@ -439,7 +444,7 @@ function excur_offer_order_form($form, $form_state, $offer) {
     '#title' => t('Phone'),
     '#required' => TRUE,
   );
-  if($type_offer == 1) {
+  if ($type_offer == 1) {
     $form['companion'] = array(
       '#type'	=> 'checkbox',
       '#title' => t('seeking a companion'),
