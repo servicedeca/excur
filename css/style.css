@@ -2064,7 +2064,7 @@ div.box-crew:hover span{
 .currency {
     font-size:20px;
     font-family: 'Segoe UI';
-    color:#3F3F3F;
+    color:#4D4D4D;
 }
 
 .pop-excur-button:hover{
@@ -2640,7 +2640,12 @@ color:#3AA0A3;
      letter-spacing: 1px;
      font-weight:300; 
      color:#ffffff; 
-    background: #1795c1;
+     background: #32A1BB;
+    -webkit-transition-duration:0.66s;
+    -moz-transition-duration:0.66s;
+	-o-transition-duration:0.66s;
+    -ms-transition-duration:0.66s;	
+    transition-duration:0.44s;
 
    }
 
@@ -2662,16 +2667,16 @@ color:#3AA0A3;
      font-size:17px;
      font-weight:300; 
      color:#fff; 
-    background-color:#0c4d63; 
-    background-image: -moz-linear-gradient(top, #3099aa 0%, #0d6a86 100%); 
-    background-image: -webkit-linear-gradient(top, #3099aa 0%, #0d6a86 100%); 
-    background-image: -o-linear-gradient(top, #3099aa 0%, #0d6a86 100%); 
-    background-image: -ms-linear-gradient(top, #3099aa 0% ,#0d6a86 100%); 
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d6a86', endColorstr='#0d6a86',GradientType=0 ); 
-    background-image: linear-gradient(top, #3099aa 0% ,#0d6a86 100%);
+    opacity: 0.8;
+    -webkit-transition-duration:0.44s;
+    -moz-transition-duration:0.44s;
+	-o-transition-duration:0.44s;
+    -ms-transition-duration:0.44s;	
+    transition-duration:0.44s;
 }
 	
-.question-button{text-decoration:none; text-align:center; 
+.question-button{
+    text-decoration:none; text-align:center; 
     text-decoration:none;
     text-align:center; 
     padding: 5px 0px 9px 0px;
@@ -2684,21 +2689,22 @@ color:#3AA0A3;
     -moz-border-radius:0px
     font-family: 'Segoe';
     position: absolute;
-    background-color:#4a9e3e; 
+    background-color:#368E43;
+    -webkit-transition-duration:0.44s;
+    -moz-transition-duration:0.44s;
+	-o-transition-duration:0.44s;
+    -ms-transition-duration:0.44s;	
+    transition-duration:0.44s;
 }
 
 .question-button:hover{
     color:#ffffff; 
-    background-color:#346b43; 
-    background-image: -moz-linear-gradient(top, #346b43 0%, #3d7f51 100%); 
-    background-image: -webkit-linear-gradient(top, #346b43 0%, #3d7f51 100%); 
-    background-image: -o-linear-gradient(top, #346b43 0%, #3d7f51 100%); 
-    background-image: -ms-linear-gradient(top, #346b43 0% ,#3d7f51 100%); 
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3d7f51', endColorstr='#3d7f51',GradientType=0 ); 
-    background-image: linear-gradient(top, #346b43 0% ,#3d7f51 100%);
-    -webkit-box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff; 
-    -moz-box-shadow: 0px 0px 2px #bababa, inset 0px 0px 1px #ffffff; 
-    box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff; 
+    opacity: 0.8;
+    -webkit-transition-duration:0.44s;
+    -moz-transition-duration:0.44s;
+	-o-transition-duration:0.44s;
+    -ms-transition-duration:0.44s;	
+    transition-duration:0.44s;
 }
 
 #guide-button {
@@ -2712,8 +2718,9 @@ color:#3AA0A3;
     padding-left: 0px;
     padding-right: 320px;
     padding-left: 25px;
-    padding-top: 25px;
-    font-size: 40px;
+    padding-top:15px;
+    font-size: 30px;
+    font-family: Segoe UI;
 }
 
 .excur-body {
@@ -2738,12 +2745,12 @@ color:#3AA0A3;
 }
 
 .excur-contacts-item {
-     color:#3F3F3F;
+    color:#4D4D4D;
     font-size: 20px;
     height: 60px;
     padding-top: 20px;
     margin-top: 0px;
-     padding-left:30px;
+    padding-left:30px;
 }
 
 .excur-contacts-icon {
@@ -2779,7 +2786,7 @@ color:#3AA0A3;
     font-size: 40px;
     font-family: 'Segoe UI';
     text-align: center;
-    color:#3F3F3F;
+    color:#4D4D4D;
     line-height: 23px;
     
 }
@@ -2795,8 +2802,8 @@ color:#3AA0A3;
 #excur-order-button {
     width:242px;
     position: absolute;
-    height:20px;
-    padding: 20px 0px 30px 0px;
+    height:40px;
+    padding: 30px 0px 40px 0px;
     font-size: 25px;
     bottom: 0px;
 }
@@ -2808,7 +2815,7 @@ color:#3AA0A3;
 .excur-contacts-item-gid {
     color:#58585B; 
     font-size: 20px;
-    height: 290px;
+    height: 310px;
     font-family: 'Segoe UI';
     padding-top: 10px;
     padding: 0px;
@@ -2830,7 +2837,7 @@ color:#3AA0A3;
     padding: 0px;
     padding-bottom: 25px;
     height:479px;
-    background: #e2e0e0;
+    background: #f8f4f4;
     width:242px;
     margin-left: -2px;
 }
@@ -2856,8 +2863,8 @@ color:#3AA0A3;
 #excur-contacts-guide-button {
     width:240px;
     position: absolute;
-    height:20px;
-    padding: 5px 0px 45px 0px;
+    height:40px;
+    padding: 15px 0px 55px 0px;
     font-size: 25px; 
     bottom:0px;
     font-family: Segoe;
@@ -2872,16 +2879,16 @@ color:#3AA0A3;
 }
 
 .excur-information-text {
-    color:#3F3F3F;
+    color:#4D4D4D;
     font-size:15px;
     line-height: 20px;
 }
 
 .excur-information {
     margin-top: 25px;
-    background: #F3F4F4;
+    background: #f8f4f4;
     padding-right: 25px;
-    padding-top: 15px;
+    padding-top: 20px;
     padding-left: 25px;
     padding-bottom: 15px;
 }
@@ -2890,26 +2897,24 @@ color:#3AA0A3;
     text-align: center;
     color: #000;
     font-size: 20px;
-    margin-top: 25px;
+    margin-top: 20px;
 }
 
 .excur-place-icon {
-    margin-top: 25px;
-    margin-right: -10px;
+    margin-top: -2px;
+    margin-right: 10px;
 }
 
 .excur-place-inner {
     margin-top: 10px;
     font-size: 25px;
     line-height: 25px;
-    height:80px;
     overflow: hidden;
     text-align: right;    
 }
 
 .big-time {
     font-size: 30px;
-    padding-top: 24px;
     text-align: center;
     color:#3F3F3F;
 }
@@ -2917,20 +2922,12 @@ color:#3AA0A3;
 .excur-contacts-iconplace {
     margin-right: 10px;
     margin-top: 16px;
-
-    
 }
 
 .place-text {
     font-size: 18px;
     text-align: center;
     color:#3F3F3F;
-}
-
-.excur-included {
-    margin-top: 25px;
-    padding: 0px;
-    margin-left: 60px;
 }
 
 .include-price {
@@ -2947,7 +2944,26 @@ color:#3AA0A3;
     background: #7A4F4F;
 }
 
+.excur-excluded {
+    margin-left: 0px;
+    margin-top: 25px;
+    padding: 0px;
+}
+
+.excur-included {
+    margin-top: 25px;
+    padding: 0px;
+}
+
 .excur-included li{
+    list-style: none;
+    font-size: 15px;
+    line-height: 35px;
+    text-align: center;
+    color: #687270;
+}
+
+.excur-excluded li{
     list-style: none;
     font-size: 15px;
     line-height: 35px;
@@ -2970,7 +2986,7 @@ color:#3AA0A3;
 }
 
 .other-excur-guide{
-    
+    margin-top: 25px;
 }
 
 .other-excur-guide-item {
@@ -2978,7 +2994,7 @@ color:#3AA0A3;
     height:250px;
     width:240px;
     margin-left: -15px;
-    background: #e2e0e0;
+    background: #f8f4f4;
     margin-bottom: 25px;
 }
 
@@ -3030,6 +3046,7 @@ color:#3AA0A3;
     width:240px;
     height:50px;
     margin-left: -15px;
+    margin-top: 0px;
 }
 
 .excur-included-block {
@@ -3048,7 +3065,6 @@ color:#3AA0A3;
     font-size: 18px;
     margin-top: 25px;
     color:#3F3F3F;
-    border-top:1px solid black;
     width:600px;
     line-height: 25px;
     text-align: center;
@@ -3068,12 +3084,12 @@ color:#3AA0A3;
 }
 
 .excur-offer-title {
-    height:40px;
+    height:50px;
     font-size: 20px;
-    background:#9A9A9A;
+    background:#32A1BB;
     color:#fff;
     font-family: Segoe;
-    padding-top: 5px;
+    padding-top: 10px;
 }
 
 .excur-offer-info {
@@ -3092,7 +3108,7 @@ color:#3AA0A3;
     text-align: center;
     display:table;
     padding-bottom: 10px;
-
+    border-top:1px solid #B2B2B2;
 }
 
 .excur-offer-price {
@@ -3139,6 +3155,7 @@ color:#3AA0A3;
     height:40px;
     font-size:20px;
     padding-top: 4px;
+    background: #2664AF;
 }
 
 .line-height-zero {
@@ -3203,14 +3220,15 @@ color:#3AA0A3;
     color:#687270;
 }
 
-   .excur-comment-body::before, .excur-comment-body::after {
+.excur-comment-body::before, .excur-comment-body::after {
     content: ''; 
     position: absolute;
     top: 20px; left: -5px;
     border: 10px solid transparent;
     border-right: 10px solid #B2B2B2;
    }
-   .excur-comment-body::after {
+
+.excur-comment-body::after {
     border-right: 10px solid white;
     left: -3px; 
    }
@@ -3260,12 +3278,11 @@ color:#3AA0A3;
     padding-top: 25px;
     padding-bottom: 25px;
     font-size: 30px;
-    font-family: Segoe;
 }
 
 .excur-contacts-item-price {
     position: absolute;
-    bottom: 70px;
+    bottom: 90px;
 }
 
 .padding {
@@ -3296,7 +3313,7 @@ color:#3AA0A3;
 }
 
 .excur-contacts-item-item {
-    color:#3F3F3F;
+    color:#4D4D4D;
     font-size: 20px;
     height: 60px;
     padding-top: 0px;
@@ -3315,15 +3332,6 @@ color:#3AA0A3;
 .prefix-excur-price {
     font-size: 20px;
     width: 210px;
-}
-
-.excur-excluded {
-    margin-left: 0px;
-}
-
-.excur-included li{
-    font-size: 18px;
-    color:#3F3F3F;
 }
 
 .bread-test {
@@ -3527,4 +3535,257 @@ footer {
 
 .head-border-phone {
     height:50px;
+}
+
+.excur-container {
+    width: 695px;
+    padding: 0px;
+}
+
+.place-title 
+}
+
+
+
+
+
+
+
+.modal-order-pay {
+    height:50px;
+    border:1px solid black;
+    text-align: center;
+}
+
+.pay {
+    height: 50px;
+}
+
+.modal-pay-title {
+    font-size: 20px;
+    width: 400px;
+    padding: 2px 0px 0px 5px;
+    line-height: 25px;
+    height:60px;
+    overflow: hidden;
+    margin-top: 10px;
+    border-bottom:1px solid #B3B2B3;
+    margin-top: 0px;
+}
+
+.content-modal-pay-inner {
+    padding: 0px;
+}
+
+.modal-pay-place-form {
+    padding: 0px;
+    padding-right: 5px;
+    padding-left: 5px
+}
+
+.modal-pay-form {
+    height:45px;
+    border-radius: 0px;
+    border:1px solid #A33131;
+    background: #EDECEC;
+    font-size: 18px;
+    margin-top: -5px;
+    letter-spacing: -1px;
+    
+}
+
+.modal-pay-form-lebel {
+    text-align: center;
+    width: 100%;
+    color: #4D4E4E;
+    font-size: 15px;
+    padding-top: 5px;
+    padding-right: 0px;
+    padding-left: 0px;
+    letter-spacing: -1px;
+}
+
+.modal-pay-form-mini {
+    height:35px;
+    border-radius: 0px;
+    border:1px solid #A33131;
+    background: #EDECEC;
+    font-size: 18px;
+    margin-top: -5px;
+    letter-spacing: -1px;
+}
+
+.modal-pay-inner-item {
+    color:#4D4D4D;
+    font-size: 18px;
+    height: 50px;
+    padding-left:0px;
+    margin-bottom: 5px;
+    margin-top: 25px;
+}
+
+.modal-lebel {
+    margin-top: -15px;
+    margin-left: -10px;
+     letter-spacing: -0.5px;
+    font-size: 16px;
+}
+
+.modal-lebel-icon {
+    margin-right: 0px;
+    margin-top: 20px;
+}
+
+.modal-item-mini {
+    height:30px;
+}
+
+.bg-transparent {
+        background: transparent;
+    border:none;
+}
+
+.modal-pay-inner-item-mini {
+    color:#4D4D4D;
+    font-size: 18px;
+    height: 25px;
+    padding-left:0px;
+    margin-bottom: 5px;
+    margin-top: 12px;
+}
+
+.lebel-mini-form {
+    margin-top: 18px;
+}
+
+.modal-place-span
+}
+
+.modal-lebel-place-span {
+    overflow: hidden;
+    height:50px;
+}
+
+.modal-place-city {
+    position: absolute;
+    margin-left:30px;
+    width: 130px;
+    height:20px;
+    overflow: hidden;
+    margin-top: -35px;
+    letter-spacing: -0.5px;
+    font-size: 16px;
+}
+
+.modal-ticket-line {
+    height:50px;
+    background: #33A1BB;
+    margin-bottom: 15px;
+}
+
+.modal-line-result {
+    background:#298993;
+}
+
+.modal-ticket-line-inner {
+    padding: 0px;
+    text-align: left;
+    font-size: 18px;
+    line-height: 20px;
+    height:30px;
+    padding-top: 5px;
+    overflow: hidden;
+    margin-top: 10px;
+    color:#FFFFFF;
+    font-family: Segoe;
+}
+
+.modal-ticket-line-inner-price {
+    padding: 0px;
+    text-align: right;
+    font-size: 35px;
+    line-height: 20px;
+    height:30px;
+    padding-top: 5px;
+    overflow: hidden;
+    margin-top: 10px;
+    color:#FFFFFF;
+    font-family: Segoe;
+}
+
+.lebel-modal-prefix {
+    color:#ffffff;
+}
+
+
+
+.modal-pay-form-container {
+    width:550px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+
+
+.content-modal-form-container {
+    width: 852px;
+    margin: 0 auto;
+    background: #fff;
+    margin-top: -1px;
+    margin-left: 2px;
+    padding: 0px;
+}
+
+.content-modal-ticket-container {
+    width: 853px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 0px;
+    background: transparent;
+}
+
+.modal-form-item {
+    height:45px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.modal-form-item-lebel {
+    height:50px;
+    font-size: 18px;
+    padding-top: 8px
+}
+
+.modal-form-item-form {
+    padding: 0px;
+}
+
+.modal-pay-main-form {
+    height:45px;
+    border-radius: 0px;
+    border:1px solid #A33131;
+    background: #EDECEC;
+    font-size: 18px;
+    letter-spacing: -1px;
+    width: 345px;
+    margin-left:-28px;
+    margin-top: -1px;
+}
+
+.modal-form-title {
+    font-size:20px;
+    color:#000;
+    text-align: center;
+    padding-top: 25px;
+}
+
+.modal-form-booking {
+    font-size:18px;
+    color:#000;
+    text-align: center;
+    padding-top: 35px;
+}
+
+.test {
+    height:500px;
 }

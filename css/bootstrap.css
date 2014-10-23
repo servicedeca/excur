@@ -1133,7 +1133,6 @@ mark,
 }
 .text-center {
   text-align: center;
- 
 }
 .text-justify {
   text-align: justify;
@@ -6203,6 +6202,70 @@ button.close {
 }
 /*# sourceMappingURL=bootstrap.css.map */
 
-.drop {
-    
+
+#border {
+        border:1px solid black;
+    height:50px;
+    text-align: center;
+}
+
+
+
+#modal-order-wrapper {
+    width: 850px;
+    background: #fff;
+}
+
+.close-button-width {
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+
+
+.modal-head-active {
+    height:50px;
+    text-align: center;
+    font-size: 15px;
+    color:#443E3E;
+    padding-top: 15px;
+    background: #fff;
+}
+
+.modal-head-passive {
+    height:50px;
+    text-align: center;
+    font-size: 15px;
+    color:#706D6D;
+    padding-top: 15px;
+    background: #C4C3C3;
+    font-size: Segoe;
+}
+
+.content-modal-container {
+    width: 852px;
+    margin: 0 auto;
+    background: #fff;
+    margin-top: -1px;
+    margin-left: 0px;
+}
+
+#EUR .content-modal-container{
+    border-top:15px solid #399FA2;
+}
+.modal-pay-image {
+    padding: 0px;
+}
+
+.modal-pay-image-inner {
+    width: 360px;
+    height:240px;
+}
+
+.modal-pay-excur-info {
+    padding: 0px;
+    height:240px;
+    background: #fff;
 }
