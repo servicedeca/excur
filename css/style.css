@@ -30,6 +30,11 @@ a:active{
    text-decoration: none;  
  }
 
+a:focus {
+    color: #fff;
+    text-decoration: none;
+}
+
 @media (max-width:340px) {
   .mediamin {
         width: 340px;
@@ -2646,7 +2651,6 @@ color:#3AA0A3;
 	-o-transition-duration:0.66s;
     -ms-transition-duration:0.66s;	
     transition-duration:0.44s;
-
    }
 
 .button-go-pop{
@@ -2810,6 +2814,12 @@ color:#3AA0A3;
 
 #excur-order-button a{
     text-decoration: none;
+    color:#fff;
+}
+
+#excur-order-button a:focus{
+    text-decoration: none;
+    color:#fff;
 }
 
 .excur-contacts-item-gid {
@@ -2818,9 +2828,10 @@ color:#3AA0A3;
     height: 310px;
     font-family: 'Segoe UI';
     padding-top: 10px;
-    padding: 0px;
+    padding-left: 0px;
     margin-top: 25px;
     width:240px;
+    padding-top: 0px;
 }
 
 .excur-contacts-gid-photo {
@@ -3680,11 +3691,14 @@ footer {
 .modal-ticket-line {
     height:50px;
     background: #33A1BB;
-    margin-bottom: 15px;
+    border-bottom:2px solid #333;
+    
 }
 
 .modal-line-result {
     background:#298993;
+    margin-bottom: 25px;
+    border: none;
 }
 
 .modal-ticket-line-inner {
@@ -3693,6 +3707,7 @@ footer {
     font-size: 18px;
     line-height: 20px;
     height:30px;
+    padding-left: 5px;
     padding-top: 5px;
     overflow: hidden;
     margin-top: 10px;
@@ -3707,6 +3722,7 @@ footer {
     line-height: 20px;
     height:30px;
     padding-top: 5px;
+   padding-right: 35px; 
     overflow: hidden;
     margin-top: 10px;
     color:#FFFFFF;
@@ -3720,17 +3736,15 @@ footer {
 
 
 .modal-pay-form-container {
-    width:550px;
-    margin: 0 auto;
-    margin-top: 50px;
+    background: #fff;
+    height:390px;
 }
 
 
 
 .content-modal-form-container {
-    width: 852px;
+    width: 850px;
     margin: 0 auto;
-    background: #fff;
     margin-top: -1px;
     margin-left: 2px;
     padding: 0px;
@@ -3756,9 +3770,7 @@ footer {
     padding-top: 8px
 }
 
-.modal-form-item-form {
-    padding: 0px;
-}
+
 
 .modal-pay-main-form {
     height:45px;
@@ -3766,17 +3778,15 @@ footer {
     border:1px solid #A33131;
     background: #EDECEC;
     font-size: 18px;
-    letter-spacing: -1px;
-    width: 345px;
-    margin-left:-28px;
-    margin-top: -1px;
+    letter-spacing: 0px;
+    color:#4A4A4C; 
 }
 
 .modal-form-title {
     font-size:20px;
     color:#000;
     text-align: center;
-    padding-top: 25px;
+    margin-top: 25px;
 }
 
 .modal-form-booking {
@@ -3786,6 +3796,82 @@ footer {
     padding-top: 35px;
 }
 
-.test {
-    height:500px;
+
+
+.modal-form-button-pay {
+    height:130px;
+    width: 650px;
+}
+
+.button-pay{
+     text-decoration:none;
+     text-align:center; 
+     padding: 15px 20px 15px 20px;
+     width:220px;
+     font-family: 'Segoe';
+     border:none; 
+    -webkit-border-radius:0px;
+    -moz-border-radius:0px; 
+    border-radius: 0px; 
+     font-size:18px;
+     letter-spacing: 1px;
+     font-weight:300; 
+     color:#ffffff; 
+     background: #2665AE;
+    -webkit-transition-duration:0.44s;
+    -moz-transition-duration:0.44s;
+	-o-transition-duration:0.44s;
+    -ms-transition-duration:0.44s;	
+    transition-duration:0.44s;
+    position: absolute;
+    margin-top: 10px;
+   }
+
+.button-pay:hover{
+    opacity: 0.8;
+    -webkit-transition-duration:0.44s;
+    -moz-transition-duration:0.44s;
+	-o-transition-duration:0.44s;
+    -ms-transition-duration:0.44s;	
+    transition-duration:0.44s;
+    color:#ffffff; 
+}
+
+.modal-form-tip {
+    font-size:15px;
+    color:#888888;
+    text-align: center;
+}
+
+.modal-form-title-mini {
+    font-size:15px;
+    color:#000;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 2px;
+}
+
+.modal-pay-form-container-hidden {
+    background: #fff;
+    height:240px;
+    border:1px solid black;
+    display: none;
+}
+
+#modal-check {
+    width: 17px;
+    height: 17px;
+    margin-left: -25px;
+    margin-top: -1px;
+    position: absolute;
+}
+
+.modal-pay-form-container-button {
+    background: #fff;
+    height:160px;
+}
+
+.modal-free-space {
+    height:350px;
 }
