@@ -3095,12 +3095,12 @@ color:#3AA0A3;
 }
 
 .excur-offer-title {
-    height:50px;
+    height:40px;
     font-size: 20px;
     background:#32A1BB;
     color:#fff;
     font-family: Segoe;
-    padding-top: 10px;
+    padding-top: 5px;
 }
 
 .excur-offer-info {
@@ -3110,7 +3110,7 @@ color:#3AA0A3;
 
 .excur-offer-text {
     font-size: 15px;
-    padding-top:10px;
+    padding-top:8px;
     padding-bottom:10px;
 }
 
@@ -3120,6 +3120,7 @@ color:#3AA0A3;
     display:table;
     padding-bottom: 10px;
     border-top:1px solid #B2B2B2;
+    height:50px;
 }
 
 .excur-offer-price {
@@ -3127,10 +3128,7 @@ color:#3AA0A3;
     padding-left: 15px;
 }
 
-.excur-offer-check {
-    height:40px;
-    font-size: 15px;
-}
+
 
 
 
@@ -3577,7 +3575,7 @@ footer {
     width: 400px;
     padding: 2px 0px 0px 5px;
     line-height: 25px;
-    height:60px;
+    height:57px;
     overflow: hidden;
     margin-top: 10px;
     border-bottom:1px solid #B3B2B3;
@@ -3636,7 +3634,7 @@ footer {
 }
 
 .modal-lebel {
-    margin-top: -15px;
+    margin-top: 5px;
     margin-left: -10px;
      letter-spacing: -0.5px;
     font-size: 16px;
@@ -3644,7 +3642,8 @@ footer {
 
 .modal-lebel-icon {
     margin-right: 0px;
-    margin-top: 20px;
+    margin-top: 15px;
+    position: absolute;
 }
 
 .modal-item-mini {
@@ -3661,8 +3660,8 @@ footer {
     font-size: 18px;
     height: 25px;
     padding-left:0px;
-    margin-bottom: 5px;
-    margin-top: 12px;
+    margin-bottom: 8px;
+    margin-top: 10px;
 }
 
 .lebel-mini-form {
@@ -3683,7 +3682,7 @@ footer {
     width: 130px;
     height:20px;
     overflow: hidden;
-    margin-top: -35px;
+    margin-top: 26px;
     letter-spacing: -0.5px;
     font-size: 16px;
 }
@@ -3708,7 +3707,7 @@ footer {
     line-height: 20px;
     height:30px;
     padding-left: 5px;
-    padding-top: 5px;
+    padding-top: 3px;
     overflow: hidden;
     margin-top: 10px;
     color:#FFFFFF;
@@ -3854,8 +3853,7 @@ footer {
 
 .modal-pay-form-container-hidden {
     background: #fff;
-    height:240px;
-    border:1px solid black;
+    height:280px;
     display: none;
 }
 
@@ -3874,4 +3872,76 @@ footer {
 
 .modal-free-space {
     height:350px;
+}
+
+.input-number-box{
+  display: inline-block;
+  position: relative;
+}
+
+.count-ticket-form {
+    height:40px;
+    border-radius: 0px;
+    border:1px solid #B2B2B2;
+    background: #fff;;
+    font-size: 18px;
+    letter-spacing: 0px;
+    color:#4A4A4C;
+    position: absolute;
+    margin-top: 5px;
+    width: 60px;
+    margin-left: 30px;
+    text-align: center;
+    cursor:pointer;
+}
+
+.excur-offer-item-inner {
+    padding: 0px;
+    text-align: left;
+    font-size: 18px;
+    line-height: 20px;
+    height:30px;
+    padding-left: 5px;
+    padding-top: 3px;
+    overflow: hidden;
+    margin-top: 10px;
+    color:#333;
+}
+
+.excur-offer-item-inner-big {
+        padding: 0px;
+    text-align: right;
+    font-size: 30px;
+    line-height: 20px;
+    height:30px;
+    padding-left: 5px;
+    padding-top: 3px;
+    overflow: hidden;
+    margin-top: 10px;
+    color:#333;
+}
+
+.icon-plus {
+    position: absolute;
+    right:17px;
+    margin-top: 17px;
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.icon-minus {
+    position: absolute;
+    left:15px;
+    margin-top: 17px;
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.margin-top-title {
+    margin-top: 15px;
+}
+
+.iconcalnd {
+    width: 25px;
+    margin-top: -7px;
 }

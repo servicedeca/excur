@@ -22,8 +22,13 @@
      <script src="js/touch.js"></script>
      <script src="js/bootstrap-select.js"></script>
     <script src="js/owl.carousel.js"></script>
-    <script src="js/fotorama.js"></script> 
+    <script src="js/fotorama.js"></script>
+     
     <link href="css/style.css" rel="stylesheet">
+<script>
+
+</script>
+    
     </head>
 
     <body id="EUR">
@@ -313,34 +318,36 @@
                                 </p>
                             </div>
                             <div class="col-xs-12 excur-offer-item">   
-                                <label class="radio-inline excur-offer-check">
-                                    <input type="radio" name="inlineRadioOptions" id="" value="option1" class="offer-circle">
-                                     Детский
-                                     <span class="excur-offer-price">430 
-                                        <span class="currency"> EUR
-                                        </span>
+                                <div class="col-xs-3 ">
+                                    <span class="glyphicon glyphicon-minus icon-minus"></span>
+                                    <input type="text" class="form-control count-ticket-form" value="0">
+                                    <span class="glyphicon glyphicon-plus icon-plus"></span>
+                                </div>
+                                <div class="col-xs-3 excur-offer-item-inner col-xs-offset-2">
+                                    Детский
+                                </div>
+                                <div class="col-xs-4 excur-offer-item-inner-big">
+                                    430 
+                                    <span class="currency">
+                                        EUR
                                     </span>
-                                </label>
+                                </div>
                             </div>
                             <div class="col-xs-12 excur-offer-item">   
-                                <label class="radio-inline excur-offer-check">
-                                    <input type="radio" name="inlineRadioOptions" id="" value="option1" class="offer-circle">
-                                     Детский
-                                     <span class="excur-offer-price">3022 
-                                        <span class="currency"> EUR
-                                        </span>
+                                <div class="col-xs-3">
+                                   <span class="glyphicon glyphicon-minus icon-minus"></span>
+                                    <input type="text" class="form-control count-ticket-form" value="0">
+                                    <span class="glyphicon glyphicon-plus icon-plus"></span>
+                                </div>
+                                <div class="col-xs-3 col-xs-offset-2 excur-offer-item-inner">
+                                    Взрослый
+                                </div>
+                                <div class="col-xs-4 excur-offer-item-inner-big">
+                                    530 
+                                    <span class="currency">
+                                        EUR
                                     </span>
-                                </label>
-                            </div>
-                            <div class="col-xs-12 excur-offer-item">   
-                                <label class="radio-inline excur-offer-check">
-                                    <input type="radio" name="inlineRadioOptions" id="" value="option1" class="offer-circle">
-                                     Детский
-                                     <span class="excur-offer-price">430 
-                                        <span class="currency"> EUR
-                                        </span>
-                                    </span>
-                                </label>
+                                </div>
                             </div>
                             <div class="col-xs-6 excur-offer-date">
                                 <input type="text" class="form-control" id="excur-offer-date-form" placeholder="Выберите дату">
@@ -349,8 +356,60 @@
                                   <a href="#" class="button-go" id="excur-offer-button"  data-toggle="modal" data-target=".bs-example">Заказать</a>
                             </div>
                         </div>
+                                
+                        <div class="col-xs-12 excur-offer-type ">
+                            <div class="col-xs-12 excur-offer-title">Стандартное предложение
+                            </div>
+                            <div class="col-xs-6 excur-offer-info">
+                                <p class="excur-offer-text">Каждый день с 18.00 до 20.00
+                                </p>
+                            </div>
+                            <div class="col-xs-6 excur-offer-info">
+                                <p class="excur-offer-text">Продолжительность 3 часа
+                                </p>
+                            </div>
+                            <div class="col-xs-12 excur-offer-item">   
+                                <div class="col-xs-3 ">
+                                    <span class="glyphicon glyphicon-minus icon-minus"></span>
+                                    <input type="text" class="form-control count-ticket-form" value="0">
+                                    <span class="glyphicon glyphicon-plus icon-plus"></span>
+                                </div>
+                                <div class="col-xs-3 excur-offer-item-inner col-xs-offset-2">
+                                    Детский
+                                </div>
+                                <div class="col-xs-4 excur-offer-item-inner-big">
+                                    430 
+                                    <span class="currency">
+                                        EUR
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 excur-offer-item">   
+                                <div class="col-xs-3">
+                                   <span class="glyphicon glyphicon-minus icon-minus"></span>
+                                    <input type="text" class="form-control count-ticket-form" value="0">
+                                    <span class="glyphicon glyphicon-plus icon-plus"></span>
+                                </div>
+                                <div class="col-xs-3 col-xs-offset-2 excur-offer-item-inner">
+                                    Взрослый
+                                </div>
+                                <div class="col-xs-4 excur-offer-item-inner-big">
+                                    530 
+                                    <span class="currency">
+                                        EUR
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 excur-offer-date">
+                                <input type="text" class="form-control" id="excur-offer-date-form" placeholder="Выберите дату">
+                            </div>
+                            <div class="col-xs-6 excur-order-button">
+                            <a href="#" class="button-go" id="excur-offer-button"  data-toggle="modal" data-target=".bs-example-pay">Заказать</a>
+                            </div>
+                        </div>    
+                                    
 
-                                    <h3 class="col-xs-12 pop-title title-excur">Ищут попутчиков
+                        <h3 class="col-xs-12 pop-title title-excur">Ищут попутчиков
                         </h3>
                         <div class="col-xs-12 travel-companion">
                             <div class="col-xs-3 travel-companion-item">
@@ -376,31 +435,7 @@
                                 <img src="/image/gid1.png" class="travel-companion-photo">
                                 <a href="#" class="question-button" id="travel-companion-button">Связаться
                                 </a>
-                            </div>
-                            <div class="col-xs-3 travel-companion-item">
-                                <p class="travel-companion-name">Алексей</p>
-                                <img src="/image/gid4.png" class="travel-companion-photo">
-                                <a href="#" class="question-button" id="travel-companion-button">Связаться
-                                </a>
-                            </div>
-                            <div class="col-xs-3 travel-companion-item">
-                                <p class="travel-companion-name">Алексей</p>
-                                <img src="/image/gid3.png" class="travel-companion-photo">
-                                <a href="#" class="question-button" id="travel-companion-button">Связаться
-                                </a>
-                            </div>
-                            <div class="col-xs-3 travel-companion-item">
-                                <p class="travel-companion-name">Алексей</p>
-                                <img src="/image/gid2.png" class="travel-companion-photo">
-                                <a href="#" class="question-button" id="travel-companion-button">Связаться
-                                </a>
-                            </div>
-                            <div class="col-xs-3 travel-companion-item">
-                                <p class="travel-companion-name">Алексей</p>
-                                <img src="/image/gid1.png" class="travel-companion-photo">
-                                <a href="#" class="question-button" id="travel-companion-button">Связаться
-                                </a>
-                            </div>
+                            </div>    
                         </div>
 
                         <h3 class="col-xs-12 pop-title title-excur">Отзывы
@@ -515,8 +550,7 @@
             </div>
         </div>   
         
-        <!-- MODAL -->           
-                             
+        <!-- MODAL -->                     
         <div class="modal fade bs-example" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
             <div class="modal-dialog" id="modal-order-wrapper">
                 <div class="modal-content bg-transparent">
@@ -536,7 +570,7 @@
                                 <img  src="image/time.png" class="icont">&nbsp&nbsp2ч 30мин
                             </div>
                             <div class="col-xs-12 modal-pay-inner-item-mini">
-                                <img  src="image/time.png" class="icont">&nbsp&nbsp20.10.2014
+                                <img  src="image/calendar.png" class="iconcalnd">&nbsp&nbsp 20.10.2014
                             </div>
                         </div>
                         <div class="col-xs-6  content-modal-pay-inner">
@@ -594,7 +628,7 @@
                     
                     <div class=" col-xs-12 content-modal-form-container">
                         <div class="col-xs-6 col-xs-offset-3 modal-pay-form-container">
-                            <h1 class="modal-form-title">КОНТАКТНЫЕ ДАННЫЕ</h1>
+                            <h1 class="modal-form-title">ВАШИ КОНТАКТНЫЕ ДАННЫЕ</h1>
                             <p class="modal-form-tip">Внесите ваши контактные данные, что бы гид мог связаться с вами во время путешествия.
                             </p>
                             <div class="col-xs-12 modal-form-item">
@@ -616,8 +650,9 @@
                          </div>
                             
                         <div class="col-xs-6 col-xs-offset-3 modal-pay-form-container-hidden">
+                            <h1 class="modal-form-title margin-top-title">КОНТАКТНЫЕ ДАННЫЕ ТУРИСТА</h1>
                             <div class="col-xs-12 modal-form-item">
-                                   <input type="text" placeholder="Фамилия" class="form-control modal-pay-main-form">
+                                   <input type="text" placeholder="Фамилия " class="form-control modal-pay-main-form">
                             </div>
                             <div class="col-xs-12 modal-form-item">
                                    <input type="text" placeholder="Имя" class="form-control modal-pay-main-form">
@@ -643,7 +678,137 @@
         </div>
         </div>
         <!-- END MODAL -->
-                                                
+
+        <!-- MODAL -->                     
+        <div class="modal fade bs-example-pay" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+            <div class="modal-dialog" id="modal-order-wrapper">
+                <div class="modal-content bg-transparent">
+                    <div class="content-modal-container">
+                        <div class="col-xs-5 modal-pay-image">
+                            <img src="image/pex2.jpg" class="modal-pay-image-inner">
+                        </div>
+                        <div class="col-xs-7  modal-pay-excur-info">
+                        <h1 class="excur-title modal-pay-title">Мистическая Венеция: легенды и призраки района Дорсодуро Дорсодуро Дорсодуро Дорсодуро Дорсодуро Дорсодуро</h1>
+                        <div class="col-xs-4 col-xs-offset-1 content-modal-pay-inner">
+                            <div class="col-xs-12 modal-pay-inner-item">
+                                <img  src="image/place.png"  class="iconplace excur-contacts-iconplace modal-lebel-icon">
+                                <div class="modal-place-city" >Карловы Вары</div>
+                                <div class="excur-contacts-city modal-lebel">Чехия</div>
+                            </div>
+                            <div class="col-xs-12 modal-pay-inner-item-mini">
+                                <img  src="image/time.png" class="icont">&nbsp&nbsp2ч 30мин
+                            </div>
+                            <div class="col-xs-12 modal-pay-inner-item-mini">
+                                <img  src="image/calendar.png" class="iconcalnd">&nbsp&nbsp 20.10.2014
+                            </div>
+                        </div>
+                        <div class="col-xs-6  content-modal-pay-inner">
+                            <div class="col-xs-12 modal-pay-place-form">
+                                <p class="modal-pay-form-lebel">Место встретчи</p>
+                                <input type="text" class="form-control modal-pay-form">
+                            </div>
+                            <div class="col-xs-6 modal-pay-place-form lebel-mini-form">
+                                <p class="modal-pay-form-lebel">Время начала</p>
+                                <input type="text" class="form-control modal-pay-form-mini">
+                            </div>
+                            <div class="col-xs-6 modal-pay-place-form lebel-mini-form">
+                                <p class="modal-pay-form-lebel">Выберите язык</p>
+                                <input type="text" class="form-control modal-pay-form-mini">
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-xs-12 content-modal-ticket-container">
+                        <div class="col-xs-12 modal-ticket-line">
+                            <div class="col-xs-6 modal-ticket-line-inner">
+                            Стандартное предложение
+                            </div>
+                            <div class="col-xs-3 modal-ticket-line-inner">
+                            Детский
+                            </div>
+                            <div class="col-xs-3 modal-ticket-line-inner-price">
+                                430
+                                <span class="currency lebel-modal-prefix"> EUR</span> 
+                            </div>
+                        </div>
+                        <div class="col-xs-12 modal-ticket-line">
+                            <div class="col-xs-6 modal-ticket-line-inner">
+                            Стандартное предложение
+                            </div>
+                            <div class="col-xs-3 modal-ticket-line-inner">
+                            Детский
+                            </div>
+                            <div class="col-xs-3 modal-ticket-line-inner-price">
+                                430
+                                <span class="currency lebel-modal-prefix"> EUR</span> 
+                            </div>
+                        </div>
+                        <div class="col-xs-12 modal-ticket-line modal-line-result">
+                            <div class="col-xs-3 col-xs-offset-6 modal-ticket-line-inner">
+                                К оплате
+                            </div>
+                            <div class="col-xs-3 modal-ticket-line-inner-price">
+                                860
+                                <span class="currency lebel-modal-prefix"> EUR</span> 
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class=" col-xs-12 content-modal-form-container">
+                        <div class="col-xs-6 col-xs-offset-3 modal-pay-form-container">
+                            <h1 class="modal-form-title">ВАШИ КОНТАКТНЫЕ ДАННЫЕ</h1>
+                            <p class="modal-form-tip">Внесите ваши контактные данные, что бы гид мог связаться с вами во время путешествия.
+                            </p>
+                            <div class="col-xs-12 modal-form-item">
+                                   <input type="text" placeholder="Фамилия" class="form-control modal-pay-main-form">
+                            </div>
+                            <div class="col-xs-12 modal-form-item">
+                                   <input type="text" placeholder="Имя"  class="form-control modal-pay-main-form">
+                            </div>
+                            <div class="col-xs-12 modal-form-item">
+                                   <input type="text" placeholder="Email" class="form-control modal-pay-main-form">
+                            </div>
+                            <div class="col-xs-12 modal-form-item">
+                                   <input type="text" placeholder="Телефон" class="form-control modal-pay-main-form">
+                            </div>
+                            <h3 class="col-xs-12 modal-form-title-mini">
+                                <input type="checkbox" id="modal-check"/>
+                                Я делаю бронирование для другого человека
+                            </h3>
+                         </div>
+                            
+                        <div class="col-xs-6 col-xs-offset-3 modal-pay-form-container-hidden">
+                            <h1 class="modal-form-title margin-top-title">КОНТАКТНЫЕ ДАННЫЕ ТУРИСТА</h1>
+                            <div class="col-xs-12 modal-form-item">
+                                   <input type="text" placeholder="Фамилия " class="form-control modal-pay-main-form">
+                            </div>
+                            <div class="col-xs-12 modal-form-item">
+                                   <input type="text" placeholder="Имя" class="form-control modal-pay-main-form">
+                            </div>
+                            <div class="col-xs-12 modal-form-item">
+                                   <input type="text" placeholder="Email" class="form-control modal-pay-main-form">
+                            </div>
+                            <div class="col-xs-12 modal-form-item">
+                                   <input type="text" placeholder="Телефон" class="form-control modal-pay-main-form">
+                            </div>
+                        </div> 
+                        <div class="col-xs-6 col-xs-offset-3 modal-pay-form-container-button">
+                            <p class="modal-form-tip">Проверьте, указан ли на билете язык, время и место встречи.
+                            </p>    
+                            <div class="col-xs-4 col-xs-offset-2">
+                                <a  class="button-pay">ДАЛЕЕ</a>
+                            </div>    
+                        </div>    
+                    </div>
+                    <div class="col-xs-12 modal-free-space">
+                    </div>
+            </div>
+        </div>
+        </div>
+        <!-- END MODAL -->
+        
+                                                                                        
                              
             
                                 
@@ -715,9 +880,6 @@
         </footer>
 
         </div>
-
-        
-        
     </body>
     
 </html>
