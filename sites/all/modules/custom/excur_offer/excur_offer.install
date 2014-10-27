@@ -41,8 +41,7 @@ function excur_offer_schema() {
       ),
       'ticket' => array(
         'description' => 'Offer price.',
-        'type' => 'varchar',
-        'length' => 50,
+        'type' => 'text',
         'not null' => TRUE,
       ),
       'currency' => array(
@@ -70,12 +69,6 @@ function excur_offer_schema() {
       ),
       'offer' => array(
         'description' => 'offer.',
-        'type' => 'varchar',
-        'length' => 255,
-        'not null' => TRUE,
-      ),
-      'ticket_type' => array(
-        'description' => 'ticket.',
         'type' => 'varchar',
         'length' => 255,
         'not null' => TRUE,
@@ -374,4 +367,23 @@ function excur_offer_update_7007() {
       ->condition('id', $result->id)
       ->execute();
   }
+}
+
+/**
+ * Implements hook_update_N().
+ *
+ * Update db fields.
+ */
+function excur_offer_update_7008() {
+  db_delete('excur_offer')
+    ->execute();
+
+  db_drop_field('excur_offer', 'ticket_type');
+  db_drop_field('excur_offer', 'ticket');
+
+  db_add_field('excur_offer', 'ticket', array(
+    'description' => 'Offer price.',
+    'type' => 'text',
+    'not null' => TRUE,
+  ));
 }

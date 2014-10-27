@@ -510,309 +510,20 @@ h2.panel-title {
   border: 1px solid black;
 }
 
-.order-template-content-background {
-  padding-bottom: 35px;
-}
-
-.order-template-content-top {
-  height: 300px;
-}
-
-.order-template-title {
-  height: 50px;
-}
-
-.order-template-info {
-  height: 250px;
-}
-
-.order-template-gid {
-  height: 250px;
-}
-
-.order-template-title {
-  height: 50px;
-
-}
-
-.order-template-info {
-  height: 250px;
-
-}
-
-.order-template-gid {
-  height: 250px;
-}
-
-.imgrn {
-  width: 450px;
-}
-
-.imggd {
-  width: 200px;
-}
-
-.order-template-content-ticket {
-  height: 500px;
-}
-
-.order-template-gid-name
-.order-template-content-ticket {
-  height: 500px;
-}
-
-.order-template-gid-name {
-  text-align: center;
-  margin-top: 25px;
-  padding-bottom: 0px;
-}
-
-.order-template-info h2 {
-  padding-bottom: 15px;
-  font-size: 20px;
-}
-
-.order-template-info h3 {
-  padding-bottom: 5px;
-  margin-left: 10px;
-  padding: 2px;
-  font-size: 15px;
-}
-
-.order-template-content-bottom {
-  height: 700px;
-}
-
-@media (max-width: 768px) {
-  .order-template-content-bottom {
-    height: 1300px;
-  }
-}
-
-.order-template-content-form1 {
-  height: 350px;
-  width: 300px;
-}
-
-.order-template-content-form2 {
-  height: 350px;
-  width: 300px;
-}
-
-.order-template-content-form3 {
-  height: 300px;
-  width: 300px;
-  margin-top: 20px;
-}
-
-@media (max-width: 980px) {
-  .pay-h1 h1 {
-    font-size: 20px;
-  }
-}
-
-.order-template-content-ticket
-.order-template-content-ticket {
-  height: 200px;
-  width: 100px;
-  margin-top: -270px;
-}
-
-@media (max-width: 768px) {
-  .order-template-content-ticket {
-    margin-top: -100px;
-  }
-}
-
-.order-template-content-ticket h2 {
-  font-size: 25px;
-  padding-bottom: 0px;
-}
-
-.order-template-content-ticket h3 {
-  font-size: 18px;
-}
-
-.order-template-btn {
-  margin-top: 240px;
-}
-
-@media (max-width: 768px) {
-  .order-template-btn {
-    margin-top: 200px;
-  }
-}
-
-.order-template-btn {
-  margin-top: 200px;
-}
-
-.btnpay {
-  margin-top: -15px;
-}
-
-.pay-template-content-form1 {
-  height: 250px;
-  width: 300px;
-  padding-bottom: 15px;
-  font-size: 20px;
-}
-
-.pay-template-content-form1 h3 {
-  padding-left: 20px;
-  font-size: 16px;
-}
-
-.pay-template-content-form2 {
-  height: 250px;
-  width: 300px;
-}
-
-.pay-template-content-form2 h3 {
-  padding-left: 20px;
-  font-size: 16px;
-}
-
-.pay-template-content-form3 {
-  height: 300px;
-  width: 300px;
-}
-
-.pay-template-content-form3 h3 {
-  padding-left: 20px;
-  font-size: 16px;
-}
-
-.pay-template-content-ticket {
-  height: 200px;
-  width: 100px;
-  margin-top: -160px;
-}
-
-@media (max-width: 768px) {
-  .pay-template-content-ticket {
-    margin-top: -100px;
-  }
-}
-
-.pay-template-content-ticket h2 {
-  font-size: 25px;
-  padding-bottom: 0px;
-}
-
-.pay-template-content-ticket h3 {
-  font-size: 25px;
-}
-
-.pay-template-content-bottom {
-  height: 580px;
-}
-
-@media (max-width: 768px) {
-  .pay-template-content-bottom {
-    height: 1050px;
-  }
-}
-
-.do-offer-pay {
-  margin: -15px -15px -15px -15px;
-}
-
-.order-template-content-forms h2 {
-  font-size: 25px;
-  padding-bottom: 0px;
-}
-
-.order-template-content-forms h3 {
-  font-size: 18px;
-}
-
-.pay-template-paddingbot {
-  padding-top: 15px;
-}
-
-.tabs, .pass {
-  dispaly: block;
+.tabs, .pass,
+.field-widget-date-popup legend,
+#edit-skip,
+.pass,
+.password-suggestions .description,
+.form-item-name .description,
+.form-item-mail .description,
+.password-suggestions,
+.form-item-field-start-date-und-0-value-date label {
   display: none;
-}
-
-#pane3 legend {
-
-}
-
-#edit-skip {
-  display: none;
-}
-
-.pass {
-  dispaly: block;
-  display: none;
-}
-
-.password-suggestions .description {
-  display: none;
-}
-
-.form-item-name .description {
-  display: none;
-}
-
-.form-item-mail .description {
-  display: none;
-}
-
-.field-widget-date-popup legend {
-  display: none;
-}
-
-.order-template-ticket {
-  position: absolute;
-  width: 470px;
-  margin-top: -350px;
-  margin-left: 500px;
-}
-
-@media (max-width: 1200px) {
-  .order-template-ticket {
-    margin-left: 400px;
-    width: 380px;
-  }
-}
-
-@media (max-width: 979px) {
-  .order-template-ticket {
-    margin-left: 310px;
-    width: 290px;
-  }
-}
-
-@media (max-width: 768px) {
-  .order-template-ticket {
-    width: 97%;
-    margin-left: 0px;
-    margin-top: -230px;
-  }
-}
-
-.order-template-ticket h2 {
-  font-size: 25px;
-  padding-bottom: 0px;
-}
-
-.order-template-ticket h3 {
-  font-size: 25px;
 }
 
 .categories li.subcategory {
   margin-left: 10px;
-}
-
-.password-suggestions {
-  display: none;
-}
-
-.form-item-field-start-date-und-0-value-date label {
-  display: none;
 }
 
 .booking-card {
@@ -1080,4 +791,39 @@ h2.panel-title {
   background: #6fbb2e;
   padding: 4px;
   border-radius: 4px;
+}
+
+.excur-offer-offer-form span > i {
+  font-size: 25px;
+  color: #08e;
+  cursor: pointer;
+}
+
+.excur-offer-offer-form .tickets {
+  text-align:center;
+}
+
+.excur-offer-offer-form .tickets input {
+  width: 16px;
+}
+
+#excur-offer-order-form {
+  margin: 0;
+}
+
+.order-template-info.well {
+  box-sizing: border-box;
+  -moz-box-shadow: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+div.price h3 {
+  padding: 0;
+}
+
+#excur-offer-order-form .panel-heading h2,
+.page-excur-offer-pay .panel-heading h2,
+.page-excur-offer-pay .panel-body h3,
+.order-template-info h3 {
+  padding: 0;
 }

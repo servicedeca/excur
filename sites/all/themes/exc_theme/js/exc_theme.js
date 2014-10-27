@@ -160,6 +160,35 @@
     }
   };
 
+  Drupal.behaviors.excurOrderOfferForm = {
+    attach: function(context, settings) {
+      $('#excur-offer-order').once(function() {
+        $(this).click(function() {
+          $('#excur-offer-order-form #edit-submit').click();
+        });
+      });
+    }
+  };
+
+  Drupal.behaviors.excurOfferForm = {
+    attach: function(context, settings) {
+      $('.excur-offer-offer-form').once(function() {
+        $('i.plus, i.minus', this).click(function() {
+          var $this = $(this);
+          var $input = $this.closest('div.form-item').find('input.form-text');
+          var inputVal = $input.val();
+
+          if ($this.hasClass('minus') && inputVal > 0) {
+            $input.val(inputVal - 1);
+          }
+          else if ($this.hasClass('plus') && inputVal < 99) {
+            $input.val(parseInt(inputVal) + 1);
+          }
+        });
+      });
+    }
+  };
+
   Drupal.behaviors.excurProfileForm = {
     attach: function(context, settings) {
       $('#user-profile-form').once(function() {

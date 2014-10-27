@@ -110,7 +110,7 @@ function template_preprocess_excur_service_offer(&$vars) {
       'tickets' => $offer_tickets,
       'type' => !empty($offer->field_type_offer)
           ? $offer->field_type_offer[LANGUAGE_NONE][0]['value']
-          : 0,
+          : EXCUR_OFFER_PRICE_PER_GROUP,
     );
     $vars['offers'][] = drupal_get_form('excur_offer_offer_form', $offer_info);
   }
