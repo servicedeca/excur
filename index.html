@@ -93,51 +93,62 @@
                    
         <div class="modal fade bs-example-modal-md" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-md">
-                <div class="modal-content">
-                    <ul  id="menureg" style="margin-bottom: 15px;">
-                        <a href="#homes" data-toggle="tab"  ><li   class="active leftreg">Регистрация</li></a>
-                        <a href="#profile" data-toggle="tab"  ><li class="leftright">Вход</li></a>
-                    </ul>
-                    <ul class="modal-social list-unstyled clearfix">
-                        <li><a href="#" class="btn btn-primary btn-fb yy">Facebook</a></li>
-                        <li><a href="#" class="btn btn-primary btn-goo yy">Google +</a></li>
+                <div class="modal-content modal-registration">
+                    <ul  id="menureg">
+                        <a href="#homes" data-toggle="tab"  ><li   class="leftreg">Регистрация</li></a>
+                        <a href="#profile" data-toggle="tab"  ><li class="rightreg">Вход</li></a>
                     </ul>
                     <div id="myTabContent" class="tab-content">
                         <div class="tab-pane fade active in" id="homes">
-                            <div class="row formreg">
-                                <div class="col-sm-12 p">
-                                        <input type="text" class="form-control for" placeholder="E-mail">
+                            <div class="formreg">
+                                <div class="col-sm-12 modal-registration-item">
+                                       <img src="/image/icon/ph-name.png" class="input-icon">
+                                        <input type="text" class="form-control modal-registration-form" placeholder="Ф.И.О.">
                                 </div>
-                                <div class="col-sm-12 p">
-                                    <input type="text" class="form-control for" placeholder="Ф.И.О.">
+                                <div class="col-xs-12 modal-registration-item">
+                                    <img src="/image/icon/ph-mail.png" class="input-icon">
+                                    <input type="text" class="form-control modal-registration-form" placeholder="E-mail">
                                 </div>
-                                <div class="col-sm-12 p">
-                                    <input type="text" class="form-control for " placeholder="Родной язык">
+                                <div class="col-xs-12 modal-registration-item">
+                                   <img src="/image/icon/ph-pass.png" class="input-icon">
+                                    <input type="text" class="form-control modal-registration-form" placeholder="Пароль">
                                 </div>
-                                <div class="col-sm-12 p">
-                                    <div class="checkbox for">
+                                <div class="col-xs-12 modal-registration-item">
+                                   <img src="/image/icon/ph-pass.png" class="input-icon">
+                                    <input type="text" class="form-control modal-registration-form" placeholder="Повторите пароль">
+                                </div>
+                                <div class="col-xs-12 modal-registration-item">
+                                    <input type="text" class="form-control modal-registration-form" placeholder="Родной язык">
+                                </div>
+                                <div class="col-xs-12 modal-registration-item">
+                                    <div class="checkbox modal-confirm-check">
                                           <label>
                                                 <input type="checkbox" value="">
                                                 Я принимаю условия соглашения.
                                           </label>
                                       </div>
                                 </div>
-                                <div class="col-sm-12 p">
-                                    <button type="button" class="btn btn-primary btn-lg btn-block forbut">Зарегистрировать</button>
+                                <div class="col-xs-12 modal-registration-item">
+                                    <div class="col-xs-8 col-xs-offset-2 modal-registration-button">
+                                        <a  class="button-pay registration-button">Зарегистрироваться</a>
+                                    </div>    
                                 </div>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="profile">
-                            <div class="row formenter">
-                                <div class="col-sm-12 p">
-                                    <input type="text" class="form-control for" placeholder="Логин">
+                            <div class="formenter">
+                                <div class="col-sm-12 modal-registration-item">
+                                       <img src="/image/icon/ph-name.png" class="input-icon">
+                                        <input type="text" class="form-control modal-registration-form" placeholder="Ф.И.О.">
                                 </div>
-                                <div class="col-sm-12 p">
-                                    <input type="text" class="form-control for" placeholder="Пароль">
+                                <div class="col-xs-12 modal-registration-item">
+                                   <img src="/image/icon/ph-pass.png" class="input-icon">
+                                    <input type="text" class="form-control modal-registration-form" placeholder="Пароль">
                                 </div>
-                                <div class="col-sm-12 p1">
-                                    <button type="button" class="btn btn-primary btn-lg btn-block forbut">Войти
-                                    </button>
+                                <div class="col-xs-12 modal-registration-item">
+                                    <div class="col-xs-8 col-xs-offset-2 modal-registration-button">
+                                        <a  class="button-pay registration-button">Войти</a>
+                                    </div>    
                                 </div>
                             </div>
                         </div>
