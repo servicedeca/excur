@@ -23,10 +23,34 @@
      <script src="js/bootstrap-select.js"></script>
     <script src="js/owl.carousel.js"></script>
     <script src="js/fotorama.js"></script>
-     
     <link href="css/style.css" rel="stylesheet">
-<script>
-
+        
+    <script type="text/javascript">
+        function showOrHide(check, cat) {
+            check = document.getElementById(check);
+            cat = document.getElementById(cat);
+            if (check.checked) cat.style.display = "inline";
+            else cat.style.display = "none";
+        }
+    </script>
+    
+    <script>
+    $(document).ready(function() {
+        $('.icon-minus').click(function () {
+            var $input = $(this).parent().find('input');
+            var count = parseInt($input.val()) - 1;
+            count = count < 1 ? 1 : count;
+            $input.val(count);
+            $input.change();
+            return false;
+        });
+        $('.icon-plus').click(function () {
+            var $input = $(this).parent().find('input');
+            $input.val(parseInt($input.val()) + 1);
+            $input.change();
+            return false;
+        });
+    });
 </script>
     
     </head>
@@ -459,12 +483,10 @@
                                         <div class="excur-comment-date">24.05.2014
                                         </div>
                                    </div>
-                                    Отличныя экскурсия!! всё очень понравилось!!Отличныя экскурсия!! всё очень понравилось!!Отличныя экскурсия!! всё очень понравилось!!Отличныя экскурсия!! всё очень понравилось!!Отличныя экскурсия!! всё очень понравилось!!Отличныя экскурсия!! всё очень понравилось!!sdfsdfsdfsdf       
-                                    
-                                    
-                                    
+                                    Билеты без очереди - замечательно. Для того, чтобы попасть в музеи Ватикана, надо стоять в очереди несколько часов. А с заказанными билетами проход вне очереди.  
                                 </div>
                             </div>
+                            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                         </div>
             </div>
             
@@ -779,12 +801,12 @@
                                    <input type="text" placeholder="Телефон" class="form-control modal-pay-main-form">
                             </div>
                             <h3 class="col-xs-12 modal-form-title-mini">
-                                <input type="checkbox" id="modal-check" onchange = 'showOrHide("modal-check", "modal-pay-form-container-hidden");'/>
+                                <input type="checkbox" id="check" onchange = 'showOrHide("check", "cat");'/>
                                 Я делаю бронирование для другого человека
                             </h3>
                          </div>
                             
-                        <div class="col-xs-6 col-xs-offset-3 modal-pay-form-container-hidden">
+                        <div class="col-xs-6 col-xs-offset-3 modal-pay-form-container-hidden" id="cat">
                             <h1 class="modal-form-title margin-top-title">КОНТАКТНЫЕ ДАННЫЕ ТУРИСТА</h1>
                             <div class="col-xs-12 modal-form-item">
                                    <input type="text" placeholder="Фамилия " class="form-control modal-pay-main-form">
@@ -813,10 +835,7 @@
         </div>
         </div>
         <!-- END MODAL -->
-                                                                                        
-                             
-            
-                                
+           
                          <!-- Footer -->
                
     <footer class="col-xs-12 text-center z-index">

@@ -18,7 +18,19 @@
 		<script src="js/modernizr.js"></script>
         <script src="js/waypoints.min.js"></script>
         <script src="js/touch.js"></script>
-        <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> 
+        <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        
+        <script>
+            $(document).ready(function(){
+                $(".reg-item").click(function(){
+                    if($(this).attr('class')  ==  'reg-item' ) {
+                        $('.reg-item').removeClass('reg-active');
+                        $(this).addClass('reg-active');
+                    }
+                })
+            });
+        </script>
+     
     </head>
     <body id="index">
     <div class="menu">
@@ -95,8 +107,8 @@
             <div class="modal-dialog modal-md">
                 <div class="modal-content modal-registration">
                     <ul  id="menureg">
-                        <a href="#homes" data-toggle="tab"  ><li   class="leftreg">Регистрация</li></a>
-                        <a href="#profile" data-toggle="tab"  ><li class="rightreg">Вход</li></a>
+                        <a href="#homes" data-toggle="tab"  ><li  class="reg-item reg-active">Регистрация</li></a>
+                        <a href="#profile" data-toggle="tab"  ><li class="reg-item">Вход</li></a>
                     </ul>
                     <div id="myTabContent" class="tab-content">
                         <div class="tab-pane fade active in" id="homes">

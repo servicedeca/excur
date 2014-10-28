@@ -581,7 +581,7 @@
 }
 .form-head input,.form select,.form-head textarea
 {
-	background-color:#B7B7B7;
+	background-color:#E9E9E9;
 	color:#fff;
     border:none;
     padding-left: 15px;
@@ -598,10 +598,10 @@
 .form-head input[type="submit"]
 {
 	border:none;
-	background: url(/image/searchwhite.png);
+	background: url(/image/searchblack.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-color: #B7B7B7;
+    background-color: #f8f8f8;
 }
 .form-head input[type="submit"]:hover,.form-head input[type="submit"]:focus;
 {
@@ -684,35 +684,38 @@
 
 .form-head .input ::-webkit-input-placeholder,.form-head .buttons ::-webkit-input-placeholder,.form-head .select ::-webkit-input-placeholder
 {
-     font-size: 13px;
+    font-size: 13px;
     padding-top: 22px;
-    color:#fff;
-    font-family: Segoe;
+    color:#3F3637;
     text-align: center;
+    opacity: 0.8;
 }
+
+
+
 .form-head .input :-moz-placeholder,.form-head .buttons :-moz-placeholder,.form-head .select :-moz-placeholder
 {
     font-size: 13px;
     padding-top: 22px;
-    color:#fff;
-    font-family: Segoe;
+    color:#3F3637;
     text-align: center;
+    opacity: 0.8;
 }
 .form-head .input ::-moz-placeholder,.form-head .buttons ::-moz-placeholder,.form-head .select ::-moz-placeholder
 {
     font-size: 13px;
     padding-top: 22px;
-    color:#fff;
-    font-family: Segoe;
+    color:#3F3637;
     text-align: center;
+    opacity: 0.8;
 }
 .form-head .input :-ms-input-placeholder,.form-head .buttons :-ms-input-placeholder,.form-head .select :-ms-input-placeholder
 {
     font-size: 13px;
     padding-top: 22px;
-    color:#fff;
-    font-family: Segoe;
+    color:#3F3637;
     text-align: center;
+    opacity: 0.8;
 }
 
 

@@ -94,7 +94,7 @@ a:focus {
     overflow: hidden;
     list-style-type: none;
     height: 50px;
-    background: #2665AE;
+    background: #F8F8F8;
     z-index: 2000;
     width: 452px;
     margin-left: -1px;
@@ -102,34 +102,26 @@ a:focus {
     padding: 0px;
 }
          
-.leftreg {
+.reg-item {
     width: 50%;
     float: left;
     text-align: center;
     height:50px;
     font-size: 20px;
-    color:#fff;
     padding-top: 10px;
+    background: #2665AE;
+    color:#fff;
 }
 
-.rightreg {
-    width: 50%;
-    float: right;
-    text-align: right;
-    text-align: center;
-    height:50px;
-    font-size: 20px;
-    padding-top: 8px;
-    color:#333333;
-    background: #E9E9E9;;
-}
+
 
 .modal-md {
     width: 450px;
 }
 
 .modal-registration {
-    background: #E9E9E9;
+    background: #F8F8F8;
+    
 }
 
 
@@ -983,6 +975,8 @@ background: #333;
     top: 11px;
     position: relative;
     padding-right: 10px;
+    width: 200px;
+    height: 200px;
 }
 
 .AZicon {
@@ -1735,7 +1729,7 @@ div.box-crew:hover span{
 }
 
 #owl-demo .item:hover{
-    background: #E5ECE9;
+    background: #F8F8F8;
     -webkit-transition-duration:0.66s;
     -moz-transition-duration:0.66s;
 	-o-transition-duration:0.66s;
@@ -2123,7 +2117,7 @@ div.box-crew:hover span{
 }
 
 .pop-excur-button:hover{
-    background: #801919;
+    background: #F8F8F8;
     -webkit-transition-duration:0.66s;
     -moz-transition-duration:0.66s;
 	-o-transition-duration:0.66s;
@@ -2272,7 +2266,7 @@ div.box-crew:hover span{
 }
 
 .excur-list-content:hover{
-    background: #CDE0DD;
+    background: #F8F8F8;
     -webkit-transition-duration:0.66s;
     -moz-transition-duration:0.66s;
 	-o-transition-duration:0.66s;
@@ -2464,7 +2458,7 @@ div.box-crew:hover span{
 }
 
 .city-travel-item-inner:hover{
-    background: rgb(224, 224, 224);
+    background: #F8F8F8;
     -webkit-transition-duration:0.66s;
     -moz-transition-duration:0.66s;
 	-o-transition-duration:0.66s;
@@ -2473,7 +2467,7 @@ div.box-crew:hover span{
 }
 
 .pop-city-item:hover{
-    background: #ebebeb;
+    background: #F8F8F8;
     -webkit-transition-duration:0.66s;
     -moz-transition-duration:0.66s;
 	-o-transition-duration:0.66s;
@@ -2899,7 +2893,7 @@ color:#3AA0A3;
     padding: 0px;
     padding-bottom: 25px;
     height:479px;
-    background: #f8f4f4;
+    background: #F8F8F8;
     width:242px;
     margin-left: -2px;
 }
@@ -2948,7 +2942,7 @@ color:#3AA0A3;
 
 .excur-information {
     margin-top: 25px;
-    background: #f8f4f4;
+    background: #F8F8F8;
     padding-right: 25px;
     padding-top: 20px;
     padding-left: 25px;
@@ -3179,10 +3173,6 @@ color:#3AA0A3;
     padding-left: 15px;
 }
 
-
-
-
-
 .offer-circle {
     width: 15px;
     height:15px;
@@ -3193,8 +3183,6 @@ color:#3AA0A3;
 .excur-offer-date {
     padding: 0px;
 }
-
-
 
 #excur-offer-date-form {
     height: 40px;
@@ -3600,16 +3588,8 @@ footer {
 .excur-container {
     width: 695px;
     padding: 0px;
+    opacity: 0.3;
 }
-
-.place-title 
-}
-
-
-
-
-
-
 
 .modal-order-pay {
     height:50px;
@@ -3745,7 +3725,7 @@ footer {
 
 .modal-ticket-line {
     height:50px;
-    background: #33A1BB;
+    background: #F8F8F8;
     border-bottom:2px solid #333;
     
 }
@@ -3910,15 +3890,11 @@ footer {
 .modal-pay-form-container-hidden {
     background: #fff;
     height:280px;
-    display: none;
+   display:none;
 }
 
 #modal-check {
-    width: 17px;
-    height: 17px;
-    margin-left: -25px;
-    margin-top: -1px;
-    position: absolute;
+
 }
 
 .modal-pay-form-container-button {
@@ -4003,8 +3979,7 @@ footer {
 }
 
 .bs-example-modal-md {
-    width:450px;
-    margin: 0 auto;
+
 }
 
 
@@ -4061,4 +4036,21 @@ footer {
     color: #4D4E4E;
     font-size: 15px;
     padding-left: 15px;
+}
+
+.change-reg {
+   
+}
+
+.reg-active {
+    background: #F8F8F8;
+    color:#000;
+}
+
+#cb {
+        width: 17px;
+    height: 17px;
+    margin-left: -25px;
+    margin-top: -1px;
+    position: absolute;
 }
