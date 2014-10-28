@@ -622,6 +622,9 @@ function exc_theme_preprocess_views_view_fields__offers__rejected_guide_offers(&
  * Process variables for views-view-fields--offers--confirmed-user-offers.tpl.php
  */
 function exc_theme_preprocess_views_view_fields__offers__confirmed_user_offers(&$vars) {
+  $guide = user_load($vars['row']->users_field_data_field_guide_uid);
+  $is_company = excur_guide_is_company($guide);
+
   if (!empty($vars['row']->field_field_image)) {
     $path_image = $vars['row']->field_field_image[0]['raw']['uri'];
     $vars['image'] = theme('image_style', array(
@@ -632,13 +635,15 @@ function exc_theme_preprocess_views_view_fields__offers__confirmed_user_offers(&
   }
 
   $vars['title'] = $vars['fields']['title']->content;
-  $vars['guide'] = $vars['fields']['field_name']->content;
+  $vars['guide'] = $is_company
+    ? $guide->field_company_name[LANGUAGE_NONE][0]['value']
+    : $guide->field_name[LANGUAGE_NONE][0]['value'];
   $vars['id'] = $vars['fields']['id']->content;
   $vars['data'] = $vars['fields']['date']->content;
   $vars['status'] = $vars['fields']['status']->content;
   $nid = $vars['row']->node_excur_offer_nid;
   $id = $vars['row']->excur_offer_id;
-  $vars['guide_image'] = $vars['fields']['field_image_1']->content;
+  $vars['guide_image'] = excur_guide_logo($guide, '70x70');
   $vars['details'] = l(t('details'),'excur/offer/pay/'. $nid, array('query' => array('id' => $id)));
 }
 
