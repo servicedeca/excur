@@ -3725,7 +3725,7 @@ footer {
 
 .modal-ticket-line {
     height:50px;
-    background: #F8F8F8;
+    background: #33A1BB;
     border-bottom:2px solid #333;
     
 }
@@ -4053,4 +4053,8 @@ footer {
     margin-left: -25px;
     margin-top: -1px;
     position: absolute;
+}
+
+#check {
+    margin-right: 5px;
 }
