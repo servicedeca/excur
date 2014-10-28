@@ -23,7 +23,7 @@
         <?php print $guide; ?>
       </div>
       <div class="img-circle booking-card-guide">
-        <?php print $guide_image;?>
+        <?php print $guide_image; ?>
       </div>
     </div>
     <div class="span3 booking-card-status">

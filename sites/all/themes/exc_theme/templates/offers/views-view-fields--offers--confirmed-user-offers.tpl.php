@@ -6,7 +6,9 @@
       </div>
     <?php endif; ?>
     <div class="span4 booking-card-body">
-      <h2><?php print $title;?></h2>
+      <h2>
+        <?php print $title;?>
+      </h2>
       <h3>
         <i class="fa fa-th-list"></i>
         <b><?php print t('Order number') . ': '; ?></b>

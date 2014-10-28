@@ -759,7 +759,7 @@ function excur_user_menu($account) {
  * Render guide photo.
  *
  * @param object $account
- * @param object $style
+ * @param string $style
  * @param array $attributes
  * @return string.
  */

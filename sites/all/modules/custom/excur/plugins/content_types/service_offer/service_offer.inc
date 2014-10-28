@@ -48,9 +48,7 @@ function template_preprocess_excur_service_offer(&$vars) {
   $wrapper->language($language->language);
 
   $currency = $wrapper->field_currency->value();
-  $current_currency = !empty($_COOKIE['excur_currency']) && $_COOKIE['excur_currency'] != $currency
-    ? $_COOKIE['excur_currency']
-    : $currency;
+  $current_currency = excur_offer_user_currency();
 
   foreach ($wrapper->field_offer->value() as $offer) {
     $offer_tickets = array();
