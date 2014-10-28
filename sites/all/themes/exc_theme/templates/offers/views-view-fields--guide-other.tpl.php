@@ -1,4 +1,4 @@
-<div class="row side-block" id="guide_other">
+<div class="row side-block">
   <div class="row">
     <?php print $title; ?>
    </div>

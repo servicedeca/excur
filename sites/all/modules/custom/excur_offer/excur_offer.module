@@ -364,12 +364,14 @@ function excur_offer_order_form($form, $form_state, $offer) {
   $node = node_load($offer->nid);
   $wrapper = entity_metadata_wrapper('node', $node);
   $wrapper->language($language->language);
-  $order = excur_offer_load($_GET['id']);
-  $order_offer = $order->offer;
   $offer_type = $wrapper->field_offer->value();
-  foreach($offer_type as $off){
-    if($off->field_offer_title[$language->language][0]['value'] == $order_offer){
-      $type_offer = $off->field_type_offer[LANGUAGE_NONE][0]['value'];
+  foreach ($offer_type as $off) {
+    if (!empty($off->field_offer_title[$language->language])) {
+      $type_offer = $off->field_offer_title[$language->language][0]['safe_value'];
+    }
+    else {
+      $type_offer = reset($off->field_offer_title);
+      $type_offer = $type_offer[0]['safe_value'];
     }
   }
   $start_place = $wrapper->field_start_place->value();
@@ -396,8 +398,7 @@ function excur_offer_order_form($form, $form_state, $offer) {
       '#title' => t('Start time'),
     );
   }
-
-  elseif($private_time == 0){
+  elseif ($private_time == 0) {
     $form['time'] = array(
       '#type'	=> 'textfield',
       '#title' => t('Start time'),
@@ -504,22 +505,25 @@ function excur_offer_order_form_validate(&$form, &$form_state) {
  */
 function excur_offer_order_form_submit(&$form, &$form_state) {
   global $language;
+  $values = $form_state['values'];
   $id = (int) $_GET['id'];
   $offer = excur_offer_load($id);
   $nid = $offer->nid;
 
-  $lang = $form['language']['#options'][$form_state['values']['language']];
-  $name = $form['name']['#value'];
-  $email = $form['email']['#value'];
-  $phone = $form['phone']['#value'];
-  $tourist_name = $form['tourist_name']['#value'];
-  $tourist_email = $form['tourist_email']['#value'];
-  $tourist_phone = $form['tourist_phone']['#value'];
-  $venue = $form['venue']['#value'];
+  $lang = $form['language']['#options'][$values['language']];
+  $name = $values['name'];
+  $email = $values['email'];
+  $phone = $values['phone'];
+  $tourist_name = $values['tourist_name'];
+  $tourist_email = $values['tourist_email'];
+  $tourist_phone = $values['tourist_phone'];
+  $venue = $values['venue'];
   $node = node_load($nid);
   $reservation = entity_metadata_wrapper('node', $node);
   $reservation -> language($language->language);
-  $companion = $form['companion']['#value'];
+  $companion = !empty($values['companion']) && $values['companion']
+    ? TRUE
+    : FALSE;
   if ($node->type == 'service') {
     $reservation = $reservation->field_reservation->value();
   }
@@ -820,4 +824,21 @@ function excur_offer_special_offer($node) {
   $oid = rand(1000, 9999) . REQUEST_TIME;
   $id = excur_offer_save($oid, $user->uid, $node->nid, $price, excur_offer_user_currency(), $date, 0, 0, $type_offer, $duration, 0, 0, 0, 0, 0, 0, $start_place, $start_time);
   drupal_goto('excur/offer/order/' . $node->nid, array('query' => array('id' => $id)));
+}
+
+/**
+ * Universalize and compute total sum.
+ *
+ * @param string $data
+ * @return int
+ */
+function excur_offer_total_sum($data) {
+  $data = unserialize($data);
+
+  $total = 0;
+  foreach ($data as $ticket) {
+    $total += $ticket['price'] * $ticket['count'];
+  }
+
+  return $total;
 }

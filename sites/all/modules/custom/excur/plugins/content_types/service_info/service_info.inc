@@ -60,9 +60,7 @@ function template_preprocess_excur_service_info(&$vars) {
 
   $price = excur_currency_lowest_price($node);
   $currency = $wrapper->field_currency->value();
-  $current_currency = !empty($_COOKIE['excur_currency']) && $_COOKIE['excur_currency'] != $currency
-    ? $_COOKIE['excur_currency']
-    : $currency;
+  $current_currency = excur_offer_user_currency();
 
   $price = excur_currency_convert($price, $currency, $current_currency);
 
