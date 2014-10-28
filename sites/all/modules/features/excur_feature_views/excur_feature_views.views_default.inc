@@ -287,7 +287,7 @@ function excur_feature_views_views_default_views() {
     'title_class' => '',
   );
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 1;
-  /* Поле: Содержимое: Описание предложения */
+  /* Поле: Содержимое: Текст */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -850,7 +850,7 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['php']['label'] = 'Стоимость';
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_output'] = '<?php print excur_currency_convert($row->ticket, EXCUR_CURRENCY_DEFAULT, $row->currency) . \' \' . excur_currency_get_icon($row->currency); ?>';
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php print excur_currency_convert(excur_offer_total_sum($row->ticket), EXCUR_CURRENCY_DEFAULT, $row->currency) . \' \' . excur_currency_get_icon($row->currency); ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Поле: Пользователь: ФИО */
@@ -1010,7 +1010,7 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['php']['label'] = 'Стоимость';
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_output'] = '<?php print excur_currency_convert($row->ticket, EXCUR_CURRENCY_DEFAULT, $row->currency) . \' \' . excur_currency_get_icon($row->currency); ?>';
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php print excur_currency_convert(excur_offer_total_sum($row->ticket), EXCUR_CURRENCY_DEFAULT, $row->currency) . \' \' . excur_currency_get_icon($row->currency); ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Поле: Excursionline: Дата */
@@ -1022,13 +1022,13 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['date']['date_format'] = 'custom';
   $handler->display->display_options['fields']['date']['custom_date_format'] = 'Y-m-d';
   $handler->display->display_options['fields']['date']['second_date_format'] = 'html5_tools_iso8601';
-  /* Поле: Содержимое: Время */
+  /* Поле: Содержимое: Время встречи */
   $handler->display->display_options['fields']['field_start_time']['id'] = 'field_start_time';
   $handler->display->display_options['fields']['field_start_time']['table'] = 'field_data_field_start_time';
   $handler->display->display_options['fields']['field_start_time']['field'] = 'field_start_time';
   $handler->display->display_options['fields']['field_start_time']['relationship'] = 'nid';
   $handler->display->display_options['fields']['field_start_time']['element_label_colon'] = FALSE;
-  /* Поле: Содержимое: Адрес */
+  /* Поле: Содержимое: Место встречи */
   $handler->display->display_options['fields']['field_start_place']['id'] = 'field_start_place';
   $handler->display->display_options['fields']['field_start_place']['table'] = 'field_data_field_start_place';
   $handler->display->display_options['fields']['field_start_place']['field'] = 'field_start_place';
@@ -1222,7 +1222,7 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['php']['label'] = 'Стоимость';
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_output'] = '<?php print excur_currency_convert($row->ticket, EXCUR_CURRENCY_DEFAULT, $row->currency) . \' \' . excur_currency_get_icon($row->currency); ?>';
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php print excur_currency_convert(excur_offer_total_sum($row->ticket), EXCUR_CURRENCY_DEFAULT, $row->currency) . \' \' . excur_currency_get_icon($row->currency); ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Поле: Excursionline: Дата */
@@ -1234,13 +1234,13 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['date']['date_format'] = 'custom';
   $handler->display->display_options['fields']['date']['custom_date_format'] = 'Y-m-d';
   $handler->display->display_options['fields']['date']['second_date_format'] = 'html5_tools_iso8601';
-  /* Поле: Содержимое: Время */
+  /* Поле: Содержимое: Время встречи */
   $handler->display->display_options['fields']['field_start_time']['id'] = 'field_start_time';
   $handler->display->display_options['fields']['field_start_time']['table'] = 'field_data_field_start_time';
   $handler->display->display_options['fields']['field_start_time']['field'] = 'field_start_time';
   $handler->display->display_options['fields']['field_start_time']['relationship'] = 'nid';
   $handler->display->display_options['fields']['field_start_time']['element_label_colon'] = FALSE;
-  /* Поле: Содержимое: Адрес */
+  /* Поле: Содержимое: Место встречи */
   $handler->display->display_options['fields']['field_start_place']['id'] = 'field_start_place';
   $handler->display->display_options['fields']['field_start_place']['table'] = 'field_data_field_start_place';
   $handler->display->display_options['fields']['field_start_place']['field'] = 'field_start_place';
@@ -1426,7 +1426,7 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['php']['label'] = 'Стоимость';
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_output'] = '<?php print excur_currency_convert($row->ticket, EXCUR_CURRENCY_DEFAULT, $row->currency) . \' \' . excur_currency_get_icon($row->currency); ?>';
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php print excur_currency_convert(excur_offer_total_sum($row->ticket), EXCUR_CURRENCY_DEFAULT, $row->currency) . \' \' . excur_currency_get_icon($row->currency); ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Поле: Excursionline: Дата */
@@ -1438,13 +1438,13 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['date']['date_format'] = 'custom';
   $handler->display->display_options['fields']['date']['custom_date_format'] = 'Y-m-d';
   $handler->display->display_options['fields']['date']['second_date_format'] = 'html5_tools_iso8601';
-  /* Поле: Содержимое: Время */
+  /* Поле: Содержимое: Время встречи */
   $handler->display->display_options['fields']['field_start_time']['id'] = 'field_start_time';
   $handler->display->display_options['fields']['field_start_time']['table'] = 'field_data_field_start_time';
   $handler->display->display_options['fields']['field_start_time']['field'] = 'field_start_time';
   $handler->display->display_options['fields']['field_start_time']['relationship'] = 'nid';
   $handler->display->display_options['fields']['field_start_time']['element_label_colon'] = FALSE;
-  /* Поле: Содержимое: Адрес */
+  /* Поле: Содержимое: Место встречи */
   $handler->display->display_options['fields']['field_start_place']['id'] = 'field_start_place';
   $handler->display->display_options['fields']['field_start_place']['table'] = 'field_data_field_start_place';
   $handler->display->display_options['fields']['field_start_place']['field'] = 'field_start_place';
@@ -1632,7 +1632,7 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['php']['label'] = 'Стоимость';
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_output'] = '<?php print excur_currency_convert($row->ticket, EXCUR_CURRENCY_DEFAULT, $row->currency) . \' \' . excur_currency_get_icon($row->currency); ?>';
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php print excur_currency_convert(excur_offer_total_sum($row->ticket), EXCUR_CURRENCY_DEFAULT, $row->currency) . \' \' . excur_currency_get_icon($row->currency); ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Поле: Excursionline: Дата */
@@ -1644,13 +1644,13 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['date']['date_format'] = 'custom';
   $handler->display->display_options['fields']['date']['custom_date_format'] = 'Y-m-d';
   $handler->display->display_options['fields']['date']['second_date_format'] = 'html5_tools_iso8601';
-  /* Поле: Содержимое: Время */
+  /* Поле: Содержимое: Время встречи */
   $handler->display->display_options['fields']['field_start_time']['id'] = 'field_start_time';
   $handler->display->display_options['fields']['field_start_time']['table'] = 'field_data_field_start_time';
   $handler->display->display_options['fields']['field_start_time']['field'] = 'field_start_time';
   $handler->display->display_options['fields']['field_start_time']['relationship'] = 'nid';
   $handler->display->display_options['fields']['field_start_time']['element_label_colon'] = FALSE;
-  /* Поле: Содержимое: Адрес */
+  /* Поле: Содержимое: Место встречи */
   $handler->display->display_options['fields']['field_start_place']['id'] = 'field_start_place';
   $handler->display->display_options['fields']['field_start_place']['table'] = 'field_data_field_start_place';
   $handler->display->display_options['fields']['field_start_place']['field'] = 'field_start_place';
@@ -1837,7 +1837,7 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['php']['label'] = 'Стоимость';
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_output'] = '<?php print excur_currency_convert($row->ticket, EXCUR_CURRENCY_DEFAULT, $row->currency) . \' \' . excur_currency_get_icon($row->currency); ?>';
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php print excur_currency_convert(excur_offer_total_sum($row->ticket), EXCUR_CURRENCY_DEFAULT, $row->currency) . \' \' . excur_currency_get_icon($row->currency); ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Поле: Excursionline: Дата */
@@ -1849,13 +1849,13 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['date']['date_format'] = 'custom';
   $handler->display->display_options['fields']['date']['custom_date_format'] = 'Y-m-d';
   $handler->display->display_options['fields']['date']['second_date_format'] = 'html5_tools_iso8601';
-  /* Поле: Содержимое: Время */
+  /* Поле: Содержимое: Время встречи */
   $handler->display->display_options['fields']['field_start_time']['id'] = 'field_start_time';
   $handler->display->display_options['fields']['field_start_time']['table'] = 'field_data_field_start_time';
   $handler->display->display_options['fields']['field_start_time']['field'] = 'field_start_time';
   $handler->display->display_options['fields']['field_start_time']['relationship'] = 'nid';
   $handler->display->display_options['fields']['field_start_time']['element_label_colon'] = FALSE;
-  /* Поле: Содержимое: Адрес */
+  /* Поле: Содержимое: Место встречи */
   $handler->display->display_options['fields']['field_start_place']['id'] = 'field_start_place';
   $handler->display->display_options['fields']['field_start_place']['table'] = 'field_data_field_start_place';
   $handler->display->display_options['fields']['field_start_place']['field'] = 'field_start_place';
@@ -2054,7 +2054,7 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['php']['label'] = 'Стоимость';
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_output'] = '<?php print excur_currency_convert($row->ticket, EXCUR_CURRENCY_DEFAULT, $row->currency) . \' \' . excur_currency_get_icon($row->currency); ?>';
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php print excur_currency_convert(excur_offer_total_sum($row->ticket), EXCUR_CURRENCY_DEFAULT, $row->currency) . \' \' . excur_currency_get_icon($row->currency); ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Поле: Excursionline: Дата */
@@ -2066,13 +2066,13 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['date']['date_format'] = 'custom';
   $handler->display->display_options['fields']['date']['custom_date_format'] = 'Y-m-d';
   $handler->display->display_options['fields']['date']['second_date_format'] = 'html5_tools_iso8601';
-  /* Поле: Содержимое: Время */
+  /* Поле: Содержимое: Время встречи */
   $handler->display->display_options['fields']['field_start_time']['id'] = 'field_start_time';
   $handler->display->display_options['fields']['field_start_time']['table'] = 'field_data_field_start_time';
   $handler->display->display_options['fields']['field_start_time']['field'] = 'field_start_time';
   $handler->display->display_options['fields']['field_start_time']['relationship'] = 'nid';
   $handler->display->display_options['fields']['field_start_time']['element_label_colon'] = FALSE;
-  /* Поле: Содержимое: Адрес */
+  /* Поле: Содержимое: Место встречи */
   $handler->display->display_options['fields']['field_start_place']['id'] = 'field_start_place';
   $handler->display->display_options['fields']['field_start_place']['table'] = 'field_data_field_start_place';
   $handler->display->display_options['fields']['field_start_place']['field'] = 'field_start_place';
@@ -2264,7 +2264,7 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['php']['label'] = 'Стоимость';
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_output'] = '<?php print excur_currency_convert($row->ticket, EXCUR_CURRENCY_DEFAULT, $row->currency) . \' \' . excur_currency_get_icon($row->currency); ?>';
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php print excur_currency_convert(excur_offer_total_sum($row->ticket), EXCUR_CURRENCY_DEFAULT, $row->currency) . \' \' . excur_currency_get_icon($row->currency); ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Поле: Excursionline: Дата */
@@ -2276,13 +2276,13 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['date']['date_format'] = 'custom';
   $handler->display->display_options['fields']['date']['custom_date_format'] = 'Y-m-d';
   $handler->display->display_options['fields']['date']['second_date_format'] = 'html5_tools_iso8601';
-  /* Поле: Содержимое: Время */
+  /* Поле: Содержимое: Время встречи */
   $handler->display->display_options['fields']['field_start_time']['id'] = 'field_start_time';
   $handler->display->display_options['fields']['field_start_time']['table'] = 'field_data_field_start_time';
   $handler->display->display_options['fields']['field_start_time']['field'] = 'field_start_time';
   $handler->display->display_options['fields']['field_start_time']['relationship'] = 'nid';
   $handler->display->display_options['fields']['field_start_time']['element_label_colon'] = FALSE;
-  /* Поле: Содержимое: Адрес */
+  /* Поле: Содержимое: Место встречи */
   $handler->display->display_options['fields']['field_start_place']['id'] = 'field_start_place';
   $handler->display->display_options['fields']['field_start_place']['table'] = 'field_data_field_start_place';
   $handler->display->display_options['fields']['field_start_place']['field'] = 'field_start_place';
@@ -2475,7 +2475,7 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['php']['label'] = 'Стоимость';
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_output'] = '<?php print excur_currency_convert($row->ticket, EXCUR_CURRENCY_DEFAULT, $row->currency) . \' \' . excur_currency_get_icon($row->currency); ?>';
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php print excur_currency_convert(excur_offer_total_sum($row->ticket), EXCUR_CURRENCY_DEFAULT, $row->currency) . \' \' . excur_currency_get_icon($row->currency); ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Поле: Excursionline: Дата */
@@ -2487,13 +2487,13 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['date']['date_format'] = 'custom';
   $handler->display->display_options['fields']['date']['custom_date_format'] = 'Y-m-d';
   $handler->display->display_options['fields']['date']['second_date_format'] = 'html5_tools_iso8601';
-  /* Поле: Содержимое: Время */
+  /* Поле: Содержимое: Время встречи */
   $handler->display->display_options['fields']['field_start_time']['id'] = 'field_start_time';
   $handler->display->display_options['fields']['field_start_time']['table'] = 'field_data_field_start_time';
   $handler->display->display_options['fields']['field_start_time']['field'] = 'field_start_time';
   $handler->display->display_options['fields']['field_start_time']['relationship'] = 'nid';
   $handler->display->display_options['fields']['field_start_time']['element_label_colon'] = FALSE;
-  /* Поле: Содержимое: Адрес */
+  /* Поле: Содержимое: Место встречи */
   $handler->display->display_options['fields']['field_start_place']['id'] = 'field_start_place';
   $handler->display->display_options['fields']['field_start_place']['table'] = 'field_data_field_start_place';
   $handler->display->display_options['fields']['field_start_place']['field'] = 'field_start_place';
@@ -2632,8 +2632,8 @@ function excur_feature_views_views_default_views() {
     t('Guide'),
     t('Экскурсия'),
     t('Дата встречи'),
-    t('Время'),
-    t('Адрес'),
+    t('Время встречи'),
+    t('Место встречи'),
     t('Состояние'),
     t('Все'),
     t('View panes'),
