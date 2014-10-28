@@ -579,7 +579,7 @@ function excur_offer_offer_form_validate(&$form, &$form_state) {
       $error = TRUE;
       break;
     }
-    if ($ticket < 0 || $$ticket > 99) {
+    if ($ticket < 0 || $ticket > 99) {
       $error = TRUE;
       break;
     }

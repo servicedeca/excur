@@ -769,7 +769,7 @@ function exc_theme_preprocess_order_template(&$vars) {
     'duration' => $offer->duration,
   );
 
-  $vars['guide_image'] = excur_guide_logo($guide, '270x270');
+  $vars['guide_image'] = excur_guide_logo($guide, '238x238');
 
   $vars['form'] = drupal_get_form('excur_offer_order_form', $node);
 }
@@ -829,7 +829,7 @@ function exc_theme_preprocess_pay_template(&$vars) {
     'time' => $offer->start_time,
   );
 
-  $vars['guide_image'] = excur_guide_logo($guide, '270x270');
+  $vars['guide_image'] = excur_guide_logo($guide, '238x238');
   $vars['form'] = drupal_get_form('excur_offer_pay_form');
 }
 

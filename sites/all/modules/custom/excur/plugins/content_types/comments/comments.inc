@@ -57,7 +57,8 @@ function template_preprocess_excur_comments(&$vars) {
       $vars['comments'] = render($node_view['comments']);
     }
     else {
-      $vars['form'] = render(drupal_get_form('excur_comment_rating_form'));
+      $excur_comment_rating_form = drupal_get_form('excur_comment_rating_form');
+      $vars['form'] = render($excur_comment_rating_form);
       $vars['comments'] = render($node_view['comments']['comments']);
     }
   }
