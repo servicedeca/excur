@@ -9,7 +9,7 @@
         <br />
         <?php print t('Duration') . ': ' . $form['#data']['duration']; ?>
       </div>
-      <div class="span3">
+      <div class="span3 tickets">
         <?php print render($form['tickets']); ?>
       </div>
       <div class="span3">

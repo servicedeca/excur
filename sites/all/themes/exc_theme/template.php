@@ -622,6 +622,9 @@ function exc_theme_preprocess_views_view_fields__offers__rejected_guide_offers(&
  * Process variables for views-view-fields--offers--confirmed-user-offers.tpl.php
  */
 function exc_theme_preprocess_views_view_fields__offers__confirmed_user_offers(&$vars) {
+  $guide = user_load($vars['row']->users_field_data_field_guide_uid);
+  $is_company = excur_guide_is_company($guide);
+
   if (!empty($vars['row']->field_field_image)) {
     $path_image = $vars['row']->field_field_image[0]['raw']['uri'];
     $vars['image'] = theme('image_style', array(
@@ -632,13 +635,15 @@ function exc_theme_preprocess_views_view_fields__offers__confirmed_user_offers(&
   }
 
   $vars['title'] = $vars['fields']['title']->content;
-  $vars['guide'] = $vars['fields']['field_name']->content;
+  $vars['guide'] = $is_company
+    ? $guide->field_company_name[LANGUAGE_NONE][0]['value']
+    : $guide->field_name[LANGUAGE_NONE][0]['value'];
   $vars['id'] = $vars['fields']['id']->content;
   $vars['data'] = $vars['fields']['date']->content;
   $vars['status'] = $vars['fields']['status']->content;
   $nid = $vars['row']->node_excur_offer_nid;
   $id = $vars['row']->excur_offer_id;
-  $vars['guide_image'] = $vars['fields']['field_image_1']->content;
+  $vars['guide_image'] = excur_guide_logo($guide, '70x70');
   $vars['details'] = l(t('details'),'excur/offer/pay/'. $nid, array('query' => array('id' => $id)));
 }
 
@@ -732,11 +737,6 @@ function exc_theme_preprocess_order_template(&$vars) {
   $title_offer = $node->title;
   $country = taxonomy_term_load($city->field_country[LANGUAGE_NONE][0]['target_id']);
 
-  $guide_image_path = $guide->field_image[LANGUAGE_NONE][0]['uri'];
-  if(empty($guide_image_path)){
-    $guide_image_path ='public/sites/all/themes/exc_theme/images/user-default.png';
-  }
-
   if (!empty($node->field_image)) {
     $vars['image'] = theme('image_style', array(
       'style_name' => '470x470',
@@ -744,26 +744,32 @@ function exc_theme_preprocess_order_template(&$vars) {
     ));
   }
 
+  $total_price = 0;
+  $tickets = unserialize($offer->ticket);
+  foreach ($tickets as $ticket) {
+    $total_price += $ticket['price'] * $ticket['count'];
+  }
+
+  $tickets_title = implode(', ', array_keys($tickets));
+  $title = excur_guide_is_company($guide)
+    ? $guide->field_company_name[LANGUAGE_NONE][0]['value']
+    : $guide->field_name[LANGUAGE_NONE][0]['value'];
+
   $vars['offer'] = array(
     'title' => $title_offer,
-    'guide_name' => l($guide->name, "user/$guide->uid"),
+    'guide_name' => l($title, "user/$guide->uid"),
     'country_name' => l($country->name, "taxonomy/term/$country->tid"),
     'city_name' => l($city->name, "taxonomy/term/$city->tid"),
     'id' => $offer->id,
-    'ticket_type' => $offer->ticket_type ,
-    'price' => $offer->ticket,
+    'ticket_type' => $tickets_title,
+    'price' => $total_price,
     'currency' => excur_currency_get_icon($offer->currency),
     'offer' => $offer->offer,
     'date' => $offer->date,
     'duration' => $offer->duration,
   );
 
-  $vars['guide_image'] = theme('image', array(
-    'path' => $guide_image_path,
-    'width' => '95%',
-    'height' => '95%',
-    'attributes' => array('class' => array('imggd')),
-  ));
+  $vars['guide_image'] = excur_guide_logo($guide, '270x270');
 
   $vars['form'] = drupal_get_form('excur_offer_order_form', $node);
 }
@@ -787,6 +793,18 @@ function exc_theme_preprocess_pay_template(&$vars) {
     ));
   }
 
+  $total_price = 0;
+  $tickets = unserialize($offer->ticket);
+  foreach ($tickets as $ticket) {
+    $total_price += $ticket['price'] * $ticket['count'];
+  }
+
+  $tickets_title = implode(', ', array_keys($tickets));
+  $title = excur_guide_is_company($guide)
+    ? $guide->field_company_name[LANGUAGE_NONE][0]['value']
+    : $guide->field_name[LANGUAGE_NONE][0]['value'];
+
+
   $vars['offer'] = array(
     'title' => $node->title,
     'date' => $offer->date,
@@ -797,9 +815,9 @@ function exc_theme_preprocess_pay_template(&$vars) {
     'offer' => $offer->offer,
     'city_name' => l($city->name, "taxonomy/term/$city->tid"),
     'country_name' => l($country->name, "taxonomy/term/$country->tid"),
-    'guide_name' => l($guide->name, "user/$guide->uid"),
-    'ticket_type' => $offer->ticket_type,
-    'price' => $offer->ticket,
+    'guide_name' => l($title, "user/$guide->uid"),
+    'ticket_type' => $tickets_title,
+    'price' => $total_price,
     'duration' => $offer->duration,
     'name' => $offer->name,
     'email' => $offer->email,
@@ -811,7 +829,7 @@ function exc_theme_preprocess_pay_template(&$vars) {
     'time' => $offer->start_time,
   );
 
-  $vars['guide_image'] = excur_guide_logo($guide, '238x238', array('class' => array('imggd')));
+  $vars['guide_image'] = excur_guide_logo($guide, '270x270');
   $vars['form'] = drupal_get_form('excur_offer_pay_form');
 }
 
