@@ -109,7 +109,8 @@ function template_preprocess_excur_service_offer(&$vars) {
       'type' => !empty($offer->field_type_offer)
           ? $offer->field_type_offer[LANGUAGE_NONE][0]['value']
           : EXCUR_OFFER_PRICE_PER_GROUP,
+      'id' => $offer->item_id,
     );
-    $vars['offers'][] = drupal_get_form('excur_offer_offer_form', $offer_info);
+    $vars['offers'][] = drupal_get_form('excur_offer_offer_form_' . $offer->item_id, $offer_info);
   }
 }

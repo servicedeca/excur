@@ -76,8 +76,11 @@
   <div class="span3">
     <div class="price well">
       <h3>
-        <b><?php print t('Type of ticket') . ': '; ?></b>
-        <?php print $offer['ticket_type']; ?>
+        <b><?php print t('Tickets') . ': '; ?></b>
+        <?php foreach ($tickets as $ticket): ?>
+          <br />
+          <?php print $ticket; ?>
+        <?php endforeach; ?>
       </h3>
       <h3>
         <b><?php print t('Price') . ': '; ?></b>
