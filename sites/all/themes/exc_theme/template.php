@@ -763,7 +763,10 @@ function exc_theme_preprocess_order_template(&$vars) {
     $total_price += $ticket['price'] * $ticket['count'];
   }
 
-  $tickets_title = implode(', ', array_keys($tickets));
+  foreach ($tickets as $ticket_title => $value) {
+    $vars['tickets'][] = $ticket_title . ' (' . $value['count'] . ')';
+  }
+
   $title = excur_guide_is_company($guide)
     ? $guide->field_company_name[LANGUAGE_NONE][0]['value']
     : $guide->field_name[LANGUAGE_NONE][0]['value'];
@@ -774,7 +777,6 @@ function exc_theme_preprocess_order_template(&$vars) {
     'country_name' => l($country->name, "taxonomy/term/$country->tid"),
     'city_name' => l($city->name, "taxonomy/term/$city->tid"),
     'id' => $offer->id,
-    'ticket_type' => $tickets_title,
     'price' => $total_price,
     'currency' => excur_currency_get_icon($offer->currency),
     'offer' => $offer->offer,
@@ -812,7 +814,10 @@ function exc_theme_preprocess_pay_template(&$vars) {
     $total_price += $ticket['price'] * $ticket['count'];
   }
 
-  $tickets_title = implode(', ', array_keys($tickets));
+  foreach ($tickets as $ticket_title => $value) {
+    $vars['tickets'][] = $ticket_title . ' (' . $value['count'] . ')';
+  }
+
   $title = excur_guide_is_company($guide)
     ? $guide->field_company_name[LANGUAGE_NONE][0]['value']
     : $guide->field_name[LANGUAGE_NONE][0]['value'];
@@ -822,14 +827,13 @@ function exc_theme_preprocess_pay_template(&$vars) {
     'title' => $node->title,
     'date' => $offer->date,
     'ticket' => $offer->ticket,
-    'currency' => $offer->currency,
+    'currency' => excur_currency_get_icon($offer->currency),
     'id' => $offer->id,
     'language' => $offer->language,
     'offer' => $offer->offer,
     'city_name' => l($city->name, "taxonomy/term/$city->tid"),
     'country_name' => l($country->name, "taxonomy/term/$country->tid"),
     'guide_name' => l($title, "user/$guide->uid"),
-    'ticket_type' => $tickets_title,
     'price' => $total_price,
     'duration' => $offer->duration,
     'name' => $offer->name,

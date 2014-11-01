@@ -104,6 +104,21 @@ function excur_offer_views_api() {
 }
 
 /**
+ * Implements hook_forms()
+ */
+function excur_offer_forms($form_id, $args) {
+  $forms = array();
+
+  if (strpos($form_id, 'excur_offer_offer_form') === 0) {
+    $forms['excur_offer_offer_form_' . $args[0]['id']] = array(
+      'callback' => 'excur_offer_offer_form',
+    );
+  }
+
+  return $forms;
+}
+
+/**
  * Access callback to offer pages.
  */
 function excur_offer_page_access($offer) {
@@ -210,28 +225,48 @@ function excur_offer_offer_form($form, &$form_state, $offer) {
     '#tree' => TRUE,
   );
 
-  foreach ($offer['tickets'] as $key => $ticket) {
-    $key = (string) $key . '|';
-    $key .= transliteration_get(drupal_strtolower($ticket['title']));
-    $key = str_replace(' ', '', $key);
+  if ($offer['type'] == EXCUR_OFFER_PRICE_PER_USER) {
+    foreach ($offer['tickets'] as $key => $ticket) {
+      $key = (string) $key . '|';
+      $key .= transliteration_get(drupal_strtolower($ticket['title']));
+      $key = str_replace(' ', '', $key);
 
-    $label = $ticket['title'];
-    $label .= ' (';
-    $label .= $ticket['price'];
-    $label .= ' ' . $offer['currency'];
-    $label .= $offer['type'] ? t('/за группу') : t('/за человека');
-    $label .= ')';
+      $label = $ticket['title'];
+      $label .= ' (';
+      $label .= $ticket['price'];
+      $label .= ' ' . $offer['currency'];
+      $label .= $offer['type'] ? t('/за группу') : t('/за человека');
+      $label .= ')';
 
-    $form['tickets'][$key] = array(
-      '#title' => $label,
-      '#type' => 'textfield',
-      '#default_value' => 0,
-      '#attributes' => array(
-        'maxlength' => 2,
-        'required' => TRUE,
-      ),
-      '#field_prefix' => '<i class="fa fa-minus-square minus" title="' . t('Increase the number of tickets') . '"></i>',
-      '#field_suffix' => '<i class="fa fa-plus-square plus" title="' . t('Reduce the number of tickets') . '"></i>',
+      $form['tickets'][$key] = array(
+        '#title' => $label,
+        '#type' => 'textfield',
+        '#default_value' => 0,
+        '#attributes' => array(
+          'maxlength' => 2,
+          'required' => TRUE,
+        ),
+        '#field_prefix' => '<i class="fa fa-minus-square minus" title="' . t('Increase the number of tickets') . '"></i>',
+        '#field_suffix' => '<i class="fa fa-plus-square plus" title="' . t('Reduce the number of tickets') . '"></i>',
+      );
+    }
+  }
+  else {
+    foreach ($offer['tickets'] as $key => $ticket) {
+      $key = (string) $key . '|';
+      $key .= transliteration_get(drupal_strtolower($ticket['title']));
+      $key = str_replace(' ', '', $key);
+
+      $options[$key] = $ticket['title'];
+      $options[$key] .= ' (';
+      $options[$key] .= $ticket['price'];
+      $options[$key] .= ' ' . $offer['currency'];
+      $options[$key] .= $offer['type'] ? t('/за группу') : t('/за человека');
+      $options[$key] .= ')';
+    }
+    $form['tickets'] = array(
+      '#type' => 'radios',
+      '#options' => $options,
     );
   }
 
@@ -578,19 +613,28 @@ function excur_offer_offer_form_validate(&$form, &$form_state) {
   }
 
   $error = FALSE;
-  foreach ($values['tickets'] as $ticket) {
-    if (!is_numeric($ticket)) {
+  if (!is_array($values['tickets'])) {
+    if (!$values['tickets']) {
       $error = TRUE;
-      break;
-    }
-    if ($ticket < 0 || $ticket > 99) {
-      $error = TRUE;
-      break;
     }
   }
-  if (array_sum($values['tickets']) == 0 && !$error) {
-    $error = TRUE;
+  else {
+    foreach ($values['tickets'] as $ticket) {
+      if (!is_numeric($ticket)) {
+        $error = TRUE;
+        break;
+      }
+      if ($ticket < 0 || $ticket > 99) {
+        $error = TRUE;
+        break;
+      }
+    }
+    if (array_sum($values['tickets']) == 0 && !$error) {
+      $error = TRUE;
+    }
   }
+
+
   if ($error) {
     form_error($form['tickets'], t('You should enter a valid count of tickets.'));
   }
@@ -619,16 +663,32 @@ function excur_offer_offer_form_submit(&$form, &$form_state) {
   $duration = $data['duration'];
   $type_offer = $data['title'];
 
-  foreach ($data['tickets'] as $key => $value) {
-    $key = (string) $key . '|';
-    $key .= transliteration_get(drupal_strtolower($value['title']));
-    $key = str_replace(' ', '', $key);
+  if (!is_array($values['tickets'])) {
+    foreach ($data['tickets'] as $key => $value) {
+      $key = (string) $key . '|';
+      $key .= transliteration_get(drupal_strtolower($value['title']));
+      $key = str_replace(' ', '', $key);
 
-    if ($values['tickets'][$key] > 0) {
-      $tickets[$value['title']] = array(
-        'count' => $values['tickets'][$key],
-        'price' => $value['price'],
-      );
+      if ($values['tickets'] == $key) {
+        $tickets[$value['title']] = array(
+          'count' => 1,
+          'price' => $value['price'],
+        );
+      }
+    }
+  }
+  else {
+    foreach ($data['tickets'] as $key => $value) {
+      $key = (string) $key . '|';
+      $key .= transliteration_get(drupal_strtolower($value['title']));
+      $key = str_replace(' ', '', $key);
+
+      if ($values['tickets'][$key] > 0) {
+        $tickets[$value['title']] = array(
+          'count' => $values['tickets'][$key],
+          'price' => $value['price'],
+        );
+      }
     }
   }
   $tickets = serialize($tickets);
