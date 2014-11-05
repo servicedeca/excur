@@ -3466,6 +3466,15 @@ footer {
     }
 }
 
+@media(max-width:992px){
+    #index .menu{
+        width:100%;
+        height:50px;
+        position: relative;
+    }
+}
+
+
 @media(max-width:843px){
     #index .menu{
         width:100%;
