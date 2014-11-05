@@ -11,6 +11,13 @@
       </div>
       <div class="span3 tickets">
         <?php print render($form['tickets']); ?>
+        <?php if ($form['tickets']['#type'] == 'data'): ?>
+          <div>
+            <?php print t('Total price: ');?>
+            <span class="total-price">0</span>
+            <?php print $form['#data']['currency']; ?>
+          </div>
+        <?php endif; ?>
       </div>
       <div class="span3">
         <?php print render($form['date']); ?>
