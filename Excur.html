@@ -1,131 +1,125 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-	  <meta name="viewport" content="980px">
-    <title>Main Page</title>
-     <link href="css/bootstrap.css" rel="stylesheet">
-     
-     <link href="css/dropdowns-enhancement.min.css" rel="stylesheet">
-     <link href="css/animate.css" rel="stylesheet">
-     <link href="css/flags.css" rel="stylesheet">
-    <link href="css/owl.carousel.css" rel="stylesheet">
-    <link href="css/owl.theme.css" rel="stylesheet">
-    <link href="css/bootstrap-select.css" rel="stylesheet">
-    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="css/fotorama.css" rel="stylesheet">
-    <link href="css/stylesearch.css" rel="stylesheet">
-     <script src="http://code.jquery.com/jquery-latest.js"></script>
-     <script src="js/bootstrap.js"></script>
-     <script src="js/dropdowns-enhancement.js"></script>
-     <script src="js/init.js"></script>
-     <script src="js/touch.js"></script>
-     <script src="js/bootstrap-select.js"></script>
-    <script src="js/owl.carousel.js"></script>
-    <script src="js/fotorama.js"></script>
-    <link href="css/style.css" rel="stylesheet">
-        
-    <script type="text/javascript">
-        function showOrHide(check, cat) {
-            check = document.getElementById(check);
-            cat = document.getElementById(cat);
-            if (check.checked) cat.style.display = "inline";
-            else cat.style.display = "none";
-        }
-    </script>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="980px">
+        <title>Main Page</title>
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/dropdowns-enhancement.min.css" rel="stylesheet">
+        <link href="css/animate.css" rel="stylesheet">
+        <link href="css/flags.css" rel="stylesheet">
+        <link href="css/owl.carousel.css" rel="stylesheet">
+        <link href="css/owl.theme.css" rel="stylesheet">
+        <link href="css/bootstrap-select.css" rel="stylesheet">
+        <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="css/fotorama.css" rel="stylesheet">
+        <link href="css/stylesearch.css" rel="stylesheet">
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/dropdowns-enhancement.js"></script>
+        <script src="js/init.js"></script>
+        <script src="js/touch.js"></script>
+        <script src="js/bootstrap-select.js"></script>
+        <script src="js/owl.carousel.js"></script>
+        <script src="js/fotorama.js"></script>
+        <link href="css/style.css" rel="stylesheet">
     
-    <script>
-    $(document).ready(function() {
-        $('.icon-minus').click(function () {
-            var $input = $(this).parent().find('input');
-            var count = parseInt($input.val()) - 1;
-            count = count < 1 ? 1 : count;
-            $input.val(count);
-            $input.change();
-            return false;
-        });
-        $('.icon-plus').click(function () {
-            var $input = $(this).parent().find('input');
-            $input.val(parseInt($input.val()) + 1);
-            $input.change();
-            return false;
-        });
-    });
-</script>
-    
+        <script type="text/javascript">
+            function showOrHide(check, cat) {
+                check = document.getElementById(check);
+                cat = document.getElementById(cat);
+                if (check.checked) cat.style.display = "inline";
+                else cat.style.display = "none";
+            }
+        </script>
+        <script>
+            $(document).ready(function() {
+                $('.icon-minus').click(function () {
+                    var $input = $(this).parent().find('input');
+                    var count = parseInt($input.val()) - 1;
+                    count = count < 1 ? 1 : count;
+                    $input.val(count);
+                    $input.change();
+                    return false;
+                });
+                $('.icon-plus').click(function () {
+                    var $input = $(this).parent().find('input');
+                    $input.val(parseInt($input.val()) + 1);
+                    $input.change();
+                    return false;
+                });
+            });
+        </script>
     </head>
-
     <body id="EUR">
-
-    <div class="menu">
-        <div class="menu-wrapper">
-          <a class="navbar-brand" href="index.html"><img src="image/minilogo.png" class="minilogo"></a>
-          <div class="menu-content-center">
-              <div class="form-head">
-                    <form>
-                        <div class="input focused">
-                            <input placeholder="КУДА ВЫ ХОТИТЕ ПОЕХАТЬ?" type="text" >
-                        </div>
-                        <div class="buttons">
-                            <input class="button" type="submit" value="">
-                        </div>
-                    </form>
-                </div>
-          </div>
-           <div class="menu-content-right">
-                   <div class="col-xs-4 head-border-phone">
-                       <p class="head-phone">8 800 20 000 02</p>
-                       <img src="/image/phone.png" class="phone-icon">
+        <div class="menu">
+            <div class="menu-wrapper">
+              <a class="navbar-brand" href="index.html"><img src="image/minilogo.png" class="minilogo"></a>
+              <div class="menu-content-center">
+                  <div class="form-head">
+                        <form>
+                            <div class="input focused">
+                                <input placeholder="КУДА ВЫ ХОТИТЕ ПОЕХАТЬ?" type="text" >
+                            </div>
+                            <div class="buttons">
+                                <input class="button" type="submit" value="">
+                            </div>
+                        </form>
                     </div>
-                    <div class="col-xs-2 head-border">
-                        <div class="curent1">
-                            <button class="padd" data-label-placement="" data-toggle="dropdown" class="btn btn-default dropdown-toggle mybutt"><i class="data-label"><img src="image/RU.png"></i>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <input type="radio" id="ex7_1" name="ex7" value="1" checked="">
-                                    <label for="ex7_1"><i class="data-label"><img src="image/RU.png"></i>Русский</label>
-                                </li>
-                                <li>
-                                    <input type="radio" id="ex7_2" name="ex7" value="2">
-                                    <label for="ex7_2"><i class="data-label"><img src="image/GB.png"></i>English</label>
-                                </li>
-                                <li>
-                                    <input type="radio" id="ex7_3" name="ex7" value="3">
-                                    <label for="ex7_3"><i class="data-label"><img src="image/CN.png"></i>China</label>
-                                </li>
-                            </ul>
+              </div>
+               <div class="menu-content-right">
+                       <div class="col-xs-4 head-border-phone">
+                           <p class="head-phone">8 800 20 000 02</p>
+                           <img src="/image/phone.png" class="phone-icon">
                         </div>
-                    </div>
-                    <div class="col-xs-2 head-border">
-                        <div class="curent">
-                            <button class="padd" data-label-placement="" data-toggle="dropdown" class="btn btn-default dropdown-toggle"><i class="data-label"><img src="image/dol.png"></i></button>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <input type="radio" id="ex8_1" name="ex8" value="1" checked="">
-                                    <label for="ex_1"><i class="data-label"><img src="image/dol.png"></i>Доллар</label>
-                                </li>
-                                <li>
-                                    <input type="radio" id="ex8_2" name="ex8" value="2">
-                                    <label for="ex8_2"><i class="data-label"><img src="image/EUR.png"></i>EUR</label>
-                                </li>
-                                <li>
-                                    <input type="radio" id="ex8_3" name="ex8" value="3">
-                                    <label for="ex8_3"><i class="data-label"><img src="image/yan.png"></i>Yaun</label>
-                                </li>
-                            </ul>
+                        <div class="col-xs-2 head-border">
+                            <div class="curent1">
+                                <button class="padd" data-label-placement="" data-toggle="dropdown" class="btn btn-default dropdown-toggle mybutt"><i class="data-label"><img src="image/RU.png"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <input type="radio" id="ex7_1" name="ex7" value="1" checked="">
+                                        <label for="ex7_1"><i class="data-label"><img src="image/RU.png"></i>Русский</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="ex7_2" name="ex7" value="2">
+                                        <label for="ex7_2"><i class="data-label"><img src="image/GB.png"></i>English</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="ex7_3" name="ex7" value="3">
+                                        <label for="ex7_3"><i class="data-label"><img src="image/CN.png"></i>China</label>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xs-4  head-border">
-                        <a class="btn bursize" data-toggle="modal" data-target=".bs-example-modal-md">
-                            <div class="enter">Войти или <br>Создать аккаунт</div>
-                        </a>
-                    </div>
-            </div>        
+                        <div class="col-xs-2 head-border">
+                            <div class="curent">
+                                <button class="padd" data-label-placement="" data-toggle="dropdown" class="btn btn-default dropdown-toggle"><i class="data-label"><img src="image/dol.png"></i></button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <input type="radio" id="ex8_1" name="ex8" value="1" checked="">
+                                        <label for="ex_1"><i class="data-label"><img src="image/dol.png"></i>Доллар</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="ex8_2" name="ex8" value="2">
+                                        <label for="ex8_2"><i class="data-label"><img src="image/EUR.png"></i>EUR</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="ex8_3" name="ex8" value="3">
+                                        <label for="ex8_3"><i class="data-label"><img src="image/yan.png"></i>Yaun</label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xs-4  head-border">
+                            <a class="btn bursize" data-toggle="modal" data-target=".bs-example-modal-md">
+                                <div class="enter">Войти или <br>Создать аккаунт</div>
+                            </a>
+                        </div>
+                </div>        
+            </div>
         </div>
-    </div>
     
-            
         <!-- MODAL -->
                    
         <div class="modal fade bs-example-modal-md" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
@@ -184,8 +178,9 @@
         </div>
         
         <!-- END MODAL -->
-               <div id="wrapper">  
-                <section class="bread-crumbsleft">
+              
+        <div id="wrapper">  
+            <section class="bread-crumbsleft">
             </section>
             <section class="bread-crumbsright">
             </section>
@@ -438,25 +433,25 @@
                         <div class="col-xs-12 travel-companion">
                             <div class="col-xs-3 travel-companion-item">
                                 <p class="travel-companion-name">Алексей</p>
-                                <img src="/image/gid2.png" class="travel-companion-photo">
+                                <img src="image/gid2.png" class="travel-companion-photo">
                                 <a href="#" class="question-button" id="travel-companion-button">Связаться
                                 </a>
                             </div>
                             <div class="col-xs-3 travel-companion-item">
                                 <p class="travel-companion-name">Алексей</p>
-                                <img src="/image/gid3.png" class="travel-companion-photo">
+                                <img src="image/gid3.png" class="travel-companion-photo">
                                 <a href="#" class="question-button" id="travel-companion-button">Связаться
                                 </a>
                             </div>
                             <div class="col-xs-3 travel-companion-item">
                                 <p class="travel-companion-name">Алексей</p>
-                                <img src="/image/gid2.png" class="travel-companion-photo">
+                                <img src="image/gid2.png" class="travel-companion-photo">
                                 <a href="#" class="question-button" id="travel-companion-button">Связаться
                                 </a>
                             </div>
                             <div class="col-xs-3 travel-companion-item">
                                 <p class="travel-companion-name">Алексей</p>
-                                <img src="/image/gid1.png" class="travel-companion-photo">
+                                <img src="image/gid1.png" class="travel-companion-photo">
                                 <a href="#" class="question-button" id="travel-companion-button">Связаться
                                 </a>
                             </div>    
@@ -466,7 +461,7 @@
                         </h3>
                         <div class="col-xs-12 excur-comment">
                             <div class="col-xs-2 excur-comment-item">
-                                 <img src="/image/gid1.png" class="excur-comment-photo">
+                                 <img src="image/gid1.png" class="excur-comment-photo">
                                 <p>Александр</p>
                             </div>
                             <div class="col-xs-10">
@@ -588,11 +583,11 @@
                         <div class="col-xs-6  content-modal-pay-inner">
                             <div class="col-xs-12 modal-pay-place-form lebel-mini-form">
                                 <p class="modal-pay-form-lebel">Время начала</p>
-                                <input type="text" class="form-control modal-pay-form-mini">
+                                <div class="modal-pay-text-mini">15.00</div>
                             </div>
                             <div class="col-xs-12 modal-pay-place-form lebel-mini-form">
-                                <p class="modal-pay-form-lebel">Выберите язык</p>
-                                <input type="text" class="form-control modal-pay-form-mini">
+                                <p class="modal-pay-form-lebel">Язык</p>
+                                <div class="modal-pay-text-mini">Русский</div>
                             </div>
                         </div>
                         <div class="col-xs-5 content-modal-pay-inner">
@@ -610,7 +605,7 @@
                         </div>
                             <div class="col-xs-11 modal-pay-place-form">
                                 <p class="modal-pay-form-lebel-place">Место встретчи</p>
-                                <input type="text" class="form-control modal-pay-form">
+                                <div class="modal-pay-text-place">станция метро "Красный Проспект"</div>
                             </div>
                         </div>
                     </div>
@@ -652,49 +647,72 @@
                     </div>
                     
                     <div class=" col-xs-12 content-modal-form-container">
-                        <div class="col-xs-6 col-xs-offset-3 modal-pay-form-container">
+                        <div class="col-xs-6 col-xs-offset-3 modal-pay-form-container-pay">
                             <h1 class="modal-form-title">ВАШИ КОНТАКТНЫЕ ДАННЫЕ</h1>
-                            <p class="modal-form-tip">Внесите ваши контактные данные, что бы гид мог связаться с вами во время путешествия.
+                            <p class="modal-form-tip">Проверьте ваши контактные данные, что бы бы гид мог связаться с вами во время путешествия.
                             </p>
                             <div class="col-xs-12 modal-form-item">
-                                   <input type="text" placeholder="Фамилия" class="form-control modal-pay-main-form">
+                                <div class="modal-form-item-content">
+                                   <span class="modal-form-item-content-prefix">Фамилия:</span>
+                                    Иванов
+                                </div>
                             </div>
                             <div class="col-xs-12 modal-form-item">
-                                   <input type="text" placeholder="Имя"  class="form-control modal-pay-main-form">
+                                <div class="modal-form-item-content">
+                                   <span class="modal-form-item-content-prefix">Имя:</span>
+                                    Александр
+                                </div>
                             </div>
                             <div class="col-xs-12 modal-form-item">
-                                   <input type="text" placeholder="Email" class="form-control modal-pay-main-form">
+                                <div class="modal-form-item-content">
+                                   <span class="modal-form-item-content-prefix">E-mail:</span>
+                                    IvanovAlexander@gmail.com
+                                </div>
                             </div>
                             <div class="col-xs-12 modal-form-item">
-                                   <input type="text" placeholder="Телефон" class="form-control modal-pay-main-form">
+                                <div class="modal-form-item-content">
+                                   <span class="modal-form-item-content-prefix">Телефон:</span>
+                                    8 913 004 4545
+                                </div>
                             </div>
-                            <h3 class="col-xs-12 modal-form-title-mini">
-                                <input type="checkbox" id="check" onchange = 'showOrHide("check", "cat");'/>
-                                Я делаю бронирование для другого человека
-                            </h3>
                          </div>
                             
-                        <div class="col-xs-6 col-xs-offset-3 modal-pay-form-container-hidden id="cat"">
+                        <div class="col-xs-6 col-xs-offset-3 modal-pay-form-container-pay-hidden">
                             <h1 class="modal-form-title margin-top-title">КОНТАКТНЫЕ ДАННЫЕ ТУРИСТА</h1>
                             <div class="col-xs-12 modal-form-item">
-                                   <input type="text" placeholder="Фамилия " class="form-control modal-pay-main-form">
+                                <div class="modal-form-item-content">
+                                    <span class="modal-form-item-content-prefix">Имя:</span>
+                                    Иванов
+                                </div>
                             </div>
                             <div class="col-xs-12 modal-form-item">
-                                   <input type="text" placeholder="Имя" class="form-control modal-pay-main-form">
+                                <div class="modal-form-item-content">
+                                    <span class="modal-form-item-content-prefix">Фамилия:</span>
+                                    Александр
+                                </div>
                             </div>
                             <div class="col-xs-12 modal-form-item">
-                                   <input type="text" placeholder="Email" class="form-control modal-pay-main-form">
+                                <div class="modal-form-item-content">
+                                   <span class="modal-form-item-content-prefix">E-mail:</span>
+                                    IvanovAlexander@gmail.comdf sdsdfs
+                                </div>
                             </div>
                             <div class="col-xs-12 modal-form-item">
-                                   <input type="text" placeholder="Телефон" class="form-control modal-pay-main-form">
+                                <div class="modal-form-item-content">
+                                   <span class="modal-form-item-content-prefix">Телефон:</span>
+                                    8 913 004 4545
+                                </div>
                             </div>
                         </div> 
                         <div class="col-xs-6 col-xs-offset-3 modal-pay-form-container-button">
                             <p class="modal-form-tip">Проверьте, указан ли на билете язык, время и место встречи.
                             </p>    
+                            <div class="col-xs-4">
+                                <a  class="button-pay back">НАЗАД</a>
+                            </div>
                             <div class="col-xs-4 col-xs-offset-2">
-                                <a  class="button-pay">ДАЛЕЕ</a>
-                            </div>    
+                                <a  class="button-pay last-pay">ОПЛАТИТЬ</a>
+                            </div>      
                         </div>    
                     </div>
                     <div class="col-xs-12 modal-free-space">
