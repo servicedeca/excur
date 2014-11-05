@@ -227,6 +227,8 @@ function excur_offer_offer_form($form, &$form_state, $offer) {
 
   if ($offer['type'] == EXCUR_OFFER_PRICE_PER_USER) {
     foreach ($offer['tickets'] as $key => $ticket) {
+      $price = '<span class="element-hidden one-price">' . $ticket['price'] . '</span>';
+
       $key = (string) $key . '|';
       $key .= transliteration_get(drupal_strtolower($ticket['title']));
       $key = str_replace(' ', '', $key);
@@ -247,7 +249,7 @@ function excur_offer_offer_form($form, &$form_state, $offer) {
           'required' => TRUE,
         ),
         '#field_prefix' => '<i class="fa fa-minus-square minus" title="' . t('Increase the number of tickets') . '"></i>',
-        '#field_suffix' => '<i class="fa fa-plus-square plus" title="' . t('Reduce the number of tickets') . '"></i>',
+        '#field_suffix' => '<i class="fa fa-plus-square plus" title="' . t('Reduce the number of tickets') . '"></i>' . $price,
       );
     }
   }

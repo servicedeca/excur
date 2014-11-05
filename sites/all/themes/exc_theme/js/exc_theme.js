@@ -184,6 +184,25 @@
           else if ($this.hasClass('plus') && inputVal < 99) {
             $input.val(parseInt(inputVal) + 1);
           }
+          $input.trigger('change');
+        });
+
+        $('input[id^=edit-tickets-]', this).change(function() {
+          var $this = $(this);
+          var $totalSum = $this.closest('div.tickets').find('span.total-price');
+          var inputVal = $this.val();
+
+          // Check if value isn't numeric
+          if (!isFinite(String(inputVal)) || inputVal < 0 || inputVal > 99) {
+            $this.val(0);
+          }
+
+          var totalSum = 0;
+          $this.closest('form').find('div[class*=form-item-tickets-]').each(function(key, value) {
+            var $div = $(value);
+            totalSum += parseInt($div.find('input').val()) * $div.find('span.one-price').text();
+          });
+          $totalSum.html(Number(totalSum.toFixed(2)));
         });
       });
     }
