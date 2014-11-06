@@ -96,7 +96,7 @@ a:focus {
     height: 50px;
     background: #F8F8F8;
     z-index: 2000;
-    width: 452px;
+    width: 450px;
     margin-left: -1px;
     margin-top: -1px;
     padding: 0px;
@@ -3916,7 +3916,7 @@ footer {
      text-decoration:none;
      text-align:center; 
      padding: 15px 20px 15px 20px;
-     width:220px;
+     width:180px;
      font-family: 'Segoe';
      border:none; 
     -webkit-border-radius:0px;
@@ -3934,6 +3934,8 @@ footer {
     transition-duration:0.44s;
     position: absolute;
     margin-top: 10px;
+    cursor: pointer;
+    margin-left: 20px;
    }
 
 .button-pay:hover{
@@ -4045,6 +4047,7 @@ footer {
 
 .margin-top-title {
     margin-top: 15px;
+    padding-bottom: 10px;
 }
 
 .iconcalnd {
@@ -4175,4 +4178,51 @@ footer {
 .image-cont {
     width: 80%;
     margin: 0 auto;
+}
+
+.modal-pay-form-container-pay {
+    background: #fff;
+}
+
+.modal-pay-form-container-pay-hidden {
+    background: #fff;
+}
+
+.modal-form-item-content {
+    color:#000;
+    font-size: 16px;
+}
+
+.last-pay {
+    position: absolute;
+    width: 180px;
+    margin-left: -2px;
+    cursor: pointer;
+}
+
+.back {
+    position: absolute;
+    width: 180px;
+    margin-left:-10px;
+    cursor: pointer;
+}
+
+.modal-form-item-content-prefix {
+    font-size: 14px;
+    color:#333;
+}
+
+.modal-pay-text-place {
+    color:#000;
+    font-size: 16px;
+    margin-left: 15px;
+    height: 45px;
+    overflow: hidden;
+    margin-top: -10px;
+}
+
+.modal-pay-text-mini {
+    color:#000;
+    font-size: 16px;
+    margin-top: -8px;
 }
