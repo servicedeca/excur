@@ -141,6 +141,7 @@ function excur_node_insert($node) {
     if (empty($node->body[$lang])) {
       $node->body[$lang] = $node->body[LANGUAGE_NONE];
     }
+    $a = 1;
   }
 }
 
@@ -821,6 +822,7 @@ function excur_offer_companion_message($node, $account) {
   }
 
   $message = new StdClass();
+  // @TODO: Chevi, dodelaesh?
   $message->body = t('Special offer to you. You can pay for it at !this_page.', array('!this_page' => 'dfdf'));
   $message->subject = t('Special offer to you. You can pay for it at !this_page.');
   $recipient = new StdClass();

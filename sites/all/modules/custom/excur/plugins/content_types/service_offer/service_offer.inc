@@ -61,14 +61,6 @@ function template_preprocess_excur_service_offer(&$vars) {
       $offer_title = $offer_title[0]['safe_value'];
     }
 
-    if (!empty($offer->field_offer_time[$language->language])) {
-      $offer_time = $offer->field_offer_time[$language->language][0]['safe_value'];
-    }
-    else {
-      $offer_time = reset($offer->field_offer_time);
-      $offer_time = $offer_time[0]['safe_value'];
-    }
-
     if (!empty($offer->field_offer_duration[$language->language])) {
       $offer_duration = $offer->field_offer_duration[$language->language][0]['safe_value'];
     }
@@ -103,7 +95,6 @@ function template_preprocess_excur_service_offer(&$vars) {
       'currency' => excur_currency_get_icon($current_currency),
       'nid' => $node->nid,
       'title' => $offer_title,
-      'time' => $offer_time,
       'duration' => $offer_duration,
       'tickets' => $offer_tickets,
       'type' => !empty($offer->field_type_offer)
