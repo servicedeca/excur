@@ -5,8 +5,6 @@
   <div class="details">
     <div class="row">
       <div class="span3 info">
-        <?php print $form['#data']['time']; ?>
-        <br />
         <?php print t('Duration') . ': ' . $form['#data']['duration']; ?>
       </div>
       <div class="span3 tickets">

@@ -20,7 +20,6 @@
   <h2 class="node-description">
     <?php print t('Description'); ?>
   </h2>
-<!--  --><?php //hide($content['comments']); ?>
   <?php hide($content['links']); ?>
   <?php print render($content['body']); ?>
   <div class="row">
@@ -60,20 +59,8 @@
         </div>
       </div>
     <?php endif; ?>
-    <?php if (!empty($content['field_reservation_rules'])): ?>
-      <div class="span4">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h2 class="meeting"><?php print t('Terms of reservation'); ?></h2>
-          </div>
-          <div class="panel-body">
-            <p class="meeting"><?php print t('Билет на экскурсию можно забронировать:');?><p>
-            <?php print render($content['field_reservation_rules'][0]['entity']['field_collection_item']); ?>
-          </div>
-        </div>
-      </div>
-    <?php endif; ?>
   </div>
+  <div class="space20"></div>
   <h2 id="reservation" class="node-description">
     <?php print t('Reservation'); ?>
   </h2>

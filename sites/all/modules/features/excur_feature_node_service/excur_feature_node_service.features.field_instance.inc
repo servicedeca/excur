@@ -119,41 +119,6 @@ function excur_feature_node_service_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_offer-field_offer_time'
-  $field_instances['field_collection_item-field_offer-field_offer_time'] = array(
-    'bundle' => 'field_offer',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Например: "Каждый день с 09:00 до 18:00"',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 1,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_offer_time',
-    'label' => 'Часы работы',
-    'required' => 1,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 2,
-    ),
-  );
-
   // Exported field_instance: 'field_collection_item-field_offer-field_offer_title'
   $field_instances['field_collection_item-field_offer-field_offer_title'] = array(
     'bundle' => 'field_offer',
@@ -294,76 +259,6 @@ function excur_feature_node_service_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 1,
-    ),
-  );
-
-  // Exported field_instance: 'field_collection_item-field_reservation_rules-field_max'
-  $field_instances['field_collection_item-field_reservation_rules-field_max'] = array(
-    'bundle' => 'field_reservation_rules',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Дней',
-    'display' => array(
-      'default' => array(
-        'label' => 'inline',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 3,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_max',
-    'label' => 'Максимум за',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 4,
-    ),
-  );
-
-  // Exported field_instance: 'field_collection_item-field_reservation_rules-field_min'
-  $field_instances['field_collection_item-field_reservation_rules-field_min'] = array(
-    'bundle' => 'field_reservation_rules',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Дней',
-    'display' => array(
-      'default' => array(
-        'label' => 'inline',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 2,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_min',
-    'label' => 'Минимум за',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 3,
     ),
   );
 
@@ -1254,69 +1149,6 @@ function excur_feature_node_service_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-service-field_reservation_rules'
-  $field_instances['node-service-field_reservation_rules'] = array(
-    'bundle' => 'service',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Укажите период за который минимально можно забронировать это предложение (Например: минимум за 1 день) и максимальное время вперед когда вы готовы принимать бронирования (Например: максимом на 180 дней вперед).',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'field_collection',
-        'settings' => array(
-          'add' => 'Добавить',
-          'delete' => 'Удалить',
-          'description' => TRUE,
-          'edit' => 'Правка',
-          'view_mode' => 'full',
-        ),
-        'type' => 'field_collection_view',
-        'weight' => 16,
-      ),
-      'full' => array(
-        'label' => 'hidden',
-        'module' => 'field_collection',
-        'settings' => array(
-          'add' => 'Добавить',
-          'delete' => 'Удалить',
-          'description' => 1,
-          'edit' => 'Правка',
-          'view_mode' => 'full',
-        ),
-        'type' => 'field_collection_view',
-        'weight' => 0,
-      ),
-      'other' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 13,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 8,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_reservation_rules',
-    'label' => 'Правила бронирования',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'field_collection',
-      'settings' => array(),
-      'type' => 'field_collection_embed',
-      'weight' => 11,
-    ),
-  );
-
   // Exported field_instance: 'node-service-field_slider_images'
   $field_instances['node-service-field_slider_images'] = array(
     'bundle' => 'service',
@@ -1585,20 +1417,15 @@ function excur_feature_node_service_field_default_field_instances() {
   t('Гид');
   t('Главное изображение');
   t('Город');
-  t('Дней');
   t('Изображения для слайдера');
   t('Категория');
   t('Комментарий');
-  t('Максимум за');
   t('Место встречи');
-  t('Минимум за');
   t('Название');
   t('Название предложения');
-  t('Например: "Каждый день с 09:00 до 18:00"');
   t('Не входит в стоимость:');
   t('Не указывайте в описании предложения контактную информацию (ссылки на сайт, номера телефонов, e-mail адреса), цену, продолжительность и язык проведения.');
   t('Описание предложения');
-  t('Правила бронирования');
   t('Предложение');
   t('Продолжительность');
   t('Рейтинг');
@@ -1606,7 +1433,6 @@ function excur_feature_node_service_field_default_field_instances() {
   t('Тип предложения');
   t('Укажите валюту, в которой отображать стомость услуги, если пользователем не выбрана иная');
   t('Укажите время встречи или выберите вариант когда клиент сам укажет время встречи');
-  t('Укажите период за который минимально можно забронировать это предложение (Например: минимум за 1 день) и максимальное время вперед когда вы готовы принимать бронирования (Например: максимом на 180 дней вперед).');
   t('Укажите продолжительность в часах, например "2 часа 30 минут"');
   t('Укажите продолжительность, например: «2ч 30 мин».');
   t('Укажите стоимость билета в ранее выбранной валюте.');
@@ -1617,7 +1443,6 @@ function excur_feature_node_service_field_default_field_instances() {
   t('Укажите через запятую, что не входит в стоимость тура.');
   t('Условия бронирования');
   t('Цена');
-  t('Часы работы');
   t('Языки проведения');
 
   return $field_instances;
