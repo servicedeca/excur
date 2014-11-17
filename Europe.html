@@ -22,68 +22,88 @@
     <body id="EUR">
     <div class="menu">
         <div class="menu-wrapper">
-          <a class="navbar-brand" href="index.html"><img src="image/minilogo.png" class="minilogo"></a>
-          <div class="menu-content-center">
-              <div class="form-head">
-                    <form>
-                        <div class="input focused">
-                            <input placeholder="КУДА ВЫ ХОТИТЕ ПОЕХАТЬ?" type="text" >
-                        </div>
-                        <div class="buttons">
-                            <input class="button" type="submit" value="">
-                        </div>
-                    </form>
+        <a class="navbar-brand" href="index.html"><img src="image/minilogo.png" class="minilogo"/></a>
+        <div class="menu-content-center">
+            <form class="head-search-form">
+                <input type="text" class="form-control search-form" placeholder="Куда вы хотите поехать?">
+                <button type="submit" class="search-button"></button>
+            </form>
+        </div>
+        <div class="menu-content-right">
+                <div class="col-xs-2 head-border">
+                    <div class="curent1">
+                        <button data-label-placement="" data-toggle="dropdown" class="btn btn-default dropdown-toggle mybutt padd"><i class="data-label"><img src="image/RU.png"/></i>
+                        </button>
+                        <ul class="dropdown-menu drop-lang">
+                            <li>
+                                <input type="radio" id="ex7_1" name="ex7" value="1" checked="">
+                                <label for="ex7_1"><i class="data-label"><img src="image/RU.png" class="currency-img"/></i>Русский</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="ex7_2" name="ex7" value="2">
+                                <label for="ex7_2"><i class="data-label"><img src="image/GB.png" class="currency-img"/></i>English</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="ex7_3" name="ex7" value="3">
+                                <label for="ex7_3"><i class="data-label"><img src="image/CN.png" class="currency-img"/></i>China</label>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-          </div>
-           <div class="menu-content-right">
-                   <div class="col-xs-4 head-border-phone">
-                       <p class="head-phone">8 800 20 000 02</p>
-                       <img src="/image/phone.png" class="phone-icon">
+                <div class="col-xs-2 head-border">
+                    <div class="curent">
+                        <button data-label-placement="" data-toggle="dropdown" class="btn btn-default dropdown-toggle padd"><i class="data-label"><img src="image/value/usd.png"/></i></button>
+                        <ul class="dropdown-menu drop-value">
+                            <li>
+                                <input type="radio" id="ex8_1" name="ex8" value="1" checked="">
+                                <label for="ex8_1"><i class="data-label"><img src="image/value/usd.png" class="currency-img"/></i>Доллар</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="ex8_2" name="ex8" value="2">
+                                <label for="ex8_2"><i class="data-label"><img src="image/value/eur.png" class="currency-img"/></i>Евро</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="ex8_3" name="ex8" value="3">
+                                <label for="ex8_3"><i class="data-label"><img src="image/value/cny.png" class="currency-img"/></i>Юань</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="ex8_4" name="ex8" value="4">
+                                <label for="ex8_4"><i class="data-label"><img src="image/value/rub.png" class="currency-img"/></i>Рубль</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="ex8_5" name="ex8" value="5">
+                                <label for="ex8_5"><i class="data-label"><img src="image/value/cad.png" class="currency-img"/></i>Канадский доллар</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="ex8_6" name="ex8" value="6">
+                                <label for="ex8_6"><i class="data-label"><img src="image/value/czk.png" class="currency-img"/></i>Чешская крона</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="ex8_7" name="ex8" value="7">
+                                <label for="ex8_7"><i class="data-label"><img src="image/value/jpy.png" class="currency-img"/></i>Японская иена</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="ex8_8" name="ex8" value="8">
+                                <label for="ex8_8"><i class="data-label"><img src="image/value/gbp.png" class="currency-img"/></i>Фунт стерлингов</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="ex8_9" name="ex8" value="9">
+                                <label for="ex8_9"><i class="data-label"><img src="image/value/chf.png" class="currency-img"/></i>Швейцарский франк</label>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="col-xs-2 head-border">
-                        <div class="curent1">
-                            <button data-toggle="dropdown" class="btn btn-default dropdown-toggle mybutt padd"><i class="data-label"><img src="image/RU.png"></i>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <input type="radio" id="ex7_1" name="ex7" value="1">
-                                    <label for="ex7_1"><i class="data-label"><img src="image/RU.png"></i>Русский</label>
-                                </li>
-                                <li>
-                                    <input type="radio" id="ex7_2" name="ex7" value="2">
-                                    <label for="ex7_2"><i class="data-label"><img src="image/GB.png"></i>English</label>
-                                </li>
-                                <li>
-                                    <input type="radio" id="ex7_3" name="ex7" value="3">
-                                    <label for="ex7_3"><i class="data-label"><img src="image/CN.png"></i>China</label>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xs-2 head-border">
-                        <div class="curent">
-                            <button data-label-placement="" data-toggle="dropdown" class="btn btn-default dropdown-toggle padd"><i class="data-label"><img src="image/dol.png"></i></button>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <input type="radio" id="ex8_1" name="ex8" value="1">
-                                    <label for="ex_1"><i class="data-label"><img src="image/dol.png"></i>Доллар</label>
-                                </li>
-                                <li>
-                                    <input type="radio" id="ex8_2" name="ex8" value="2">
-                                    <label for="ex8_2"><i class="data-label"><img src="image/EUR.png"></i>EUR</label>
-                                </li>
-                                <li>
-                                    <input type="radio" id="ex8_3" name="ex8" value="3">
-                                    <label for="ex8_3"><i class="data-label"><img src="image/yan.png"></i>Yaun</label>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xs-4  head-border">
-                        <a class="btn head-reg" data-toggle="modal" data-target=".bs-example-modal-md">
-                            Войти или <br>Создать аккаунт
-                        </a>
-                    </div>
+                </div>
+                <div class="col-xs-4  phone-small-res">
+                    <a class="btn head-reg" data-toggle="modal" data-target=".bs-example-modal-md">
+                        Войти или <br>Создать аккаунт
+                    </a>
+                </div>
+               <div class="col-xs-4 head-border-phone">
+                   <p class="head-phone">
+                       <i class="fa fa-phone span-phone"></i>
+                       <a href="tel:+79130044549">+7 (800) 2000002</a>
+                    </p>
+                </div>
             </div>        
         </div>
     </div>
@@ -91,55 +111,70 @@
         
     <div id="wrapper">
            
-        <!-- MODAL -->
+        <!-- MODAL-->
                    
         <div class="modal fade bs-example-modal-md" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-md">
-                <div class="modal-content">
-                    <ul  id="menureg" style="margin-bottom: 15px;">
-                        <a href="#homes" data-toggle="tab"  ><li class="active leftreg">Регистрация</li></a>
-                        <a href="#profile" data-toggle="tab"  ><li class="leftright">Вход</li></a>
+            <div class="modal-dialog modal-md center-modal">
+                <div class="modal-content modal-registration">
+                    <ul  id="menureg">
+                        <a href="#homes" data-toggle="tab">
+                            <li  class="reg-item reg-active">Регистрация</li>
+                        </a>
+                        <a href="#profile" data-toggle="tab"  >
+                            <li class="reg-item">Вход</li>
+                        </a>
                     </ul>
-                    <ul class="modal-social list-unstyled clearfix">
-                        <li><a href="#" class="btn btn-primary btn-fb yy">Facebook</a></li>
-                        <li><a href="#" class="btn btn-primary btn-goo yy">Google +</a></li>
-                    </ul>
-                    <div id="myTabContent" class="tab-content">
+                    <div id="myTabContent" class="tab-content"/>
                         <div class="tab-pane fade active in" id="homes">
-                            <div class="row formreg">
-                                <div class="col-sm-12 p">
-                                        <input type="text" class="form-control for" placeholder="E-mail">
+                            <div class="formreg">
+                                <div class="col-sm-12 modal-registration-item">
+                                       <img src="image/icon/ph-name.png" class="input-icon"/>
+                                        <input type="text" class="form-control modal-registration-form" placeholder="Ф.И.О.">
                                 </div>
-                                <div class="col-sm-12 p">
-                                    <input type="text" class="form-control for" placeholder="Ф.И.О.">
+                                <div class="col-xs-12 modal-registration-item">
+                                    <img src="image/icon/ph-mail.png" class="input-icon"/>
+                                    <input type="text" class="form-control modal-registration-form" placeholder="E-mail">
                                 </div>
-                                <div class="col-sm-12 p">
-                                    <input type="text" class="form-control for " placeholder="Родной язык">
+                                <div class="col-xs-12 modal-registration-item">
+                                   <img src="image/icon/ph-pass.png" class="input-icon"/>
+                                    <input type="text" class="form-control modal-registration-form" placeholder="Пароль">
                                 </div>
-                                <div class="col-sm-12 p">
-                                    <div class="checkbox for">
+                                <div class="col-xs-12 modal-registration-item">
+                                   <img src="image/icon/ph-pass.png" class="input-icon">
+                                    <input type="text" class="form-control modal-registration-form" placeholder="Повторите пароль">
+                                </div>
+                                <div class="col-xs-12 modal-registration-item">
+                                    <input type="text" class="form-control modal-registration-form" placeholder="Родной язык">
+                                </div>
+                                <div class="col-xs-12 modal-registration-item">
+                                    <div class="checkbox modal-confirm-check">
                                           <label>
                                                 <input type="checkbox" value="">
                                                 Я принимаю условия соглашения.
                                           </label>
                                       </div>
                                 </div>
-                                <div class="col-sm-12 p">
-                                    <button type="button" class="btn btn-primary btn-lg btn-block forbut">Зарегистрировать</button>
+                                <div class="col-xs-12 modal-registration-item">
+                                    <div class="col-xs-8 col-xs-offset-1 modal-registration-button">
+                                        <a  class="button-pay registration-button">Зарегистрироваться</a>
+                                    </div>    
                                 </div>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="profile">
-                            <div class="row formenter">
-                                <div class="col-sm-12 p">
-                                    <input type="text" class="form-control for" placeholder="Логин">
+                            <div class="formenter">
+                                <div class="col-sm-12 modal-registration-item">
+                                       <img src="image/icon/ph-name.png" class="input-icon"/>
+                                        <input type="text" class="form-control modal-registration-form" placeholder="Ф.И.О.">
                                 </div>
-                                <div class="col-sm-12 p">
-                                    <input type="text" class="form-control for" placeholder="Пароль">
+                                <div class="col-xs-12 modal-registration-item">
+                                   <img src="image/icon/ph-pass.png" class="input-icon">
+                                    <input type="text" class="form-control modal-registration-form" placeholder="Пароль">
                                 </div>
-                                <div class="col-sm-12 p1">
-                                    <button type="button" class="btn btn-primary btn-lg btn-block forbut">Войти
-                                    </button>
+                                <div class="col-xs-12 modal-registration-item">
+                                    <div class="col-xs-8 col-xs-offset-1 modal-registration-button">
+                                        <a  class="button-pay registration-button">Войти</a>
+                                    </div>    
                                 </div>
                             </div>
                         </div>
@@ -149,6 +184,7 @@
         </div>
                 
         <!-- END MODAL -->
+
                  
         <section id="continent">
             <div class="container content continent-bg"> 
