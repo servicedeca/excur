@@ -173,22 +173,23 @@ a:focus {
 
 .search-form::-webkit-input-placeholder {
     color:#6D6161;
-    font-size: 17px;
+    font-size: 15px;
     text-align:left;
     opacity: 0.8;
     font-weight: 300;
     text-align: center;
     text-transform:none;
+   padding-top: 2.5px;
 }
 
 .search-form::-moz-placeholder {
     color:#6D6161;
-    font-size: 17px;
+    font-size: 15px;
     text-align:left;
     opacity: 0.8;
     font-weight: 300;
     text-align: center;
-
+    text-transform:none;
 }
 
 header  {
@@ -2383,7 +2384,7 @@ div.box-crew:hover span{
 
 .excur-list-gid-name {
     height:100px;
-    padding-top: 25px;
+    padding-top: 5px;
 }
 
 .excur-list-gid-language {
@@ -2705,7 +2706,25 @@ color:#3AA0A3;
 
 .excur-navigation {
     text-align: center;
-    margin-top: 15px;
+    margin-top: 0px;
+    border: none;
+}
+
+.excur-navigation > li > a, .excur-navigation > li > span {
+    border: none;
+    font-size: 16px;
+    color:#393939;
+    background: #f0f0f0;
+}
+
+.excur-navigation > li > a:hover, .excur-navigation > li > span:hover {
+    background: #f8f8f8;
+    color:#393939;
+}
+
+.excur-navigation > li > a:active, .excur-navigation > li > span:active {
+    background: #428bca;
+    color:#fff;
 }
 
 .gid-button {
@@ -3540,7 +3559,7 @@ box-shadow:         0px 1px 4px 0px rgba(100, 100, 100, 0.5);
 }
 
 .minilogo {
-    margin-top: -10px;
+    margin-top: -12px;
     height:25px;
     z-index: 200;
     margin-left: 25px;
@@ -3589,8 +3608,6 @@ box-shadow:         0px 1px 4px 0px rgba(100, 100, 100, 0.5);
         width: 100%;
     }
 }
-
-
 
 .head-border {
     height:50px;
@@ -3843,14 +3860,10 @@ box-shadow:         0px 1px 4px 0px rgba(100, 100, 100, 0.5);
     color:#ffffff;
 }
 
-
-
 .modal-pay-form-container {
     background: #fff;
     height:390px;
 }
-
-
 
 .content-modal-form-container {
     width: 850px;
@@ -3880,8 +3893,6 @@ box-shadow:         0px 1px 4px 0px rgba(100, 100, 100, 0.5);
     padding-top: 8px
 }
 
-
-
 .modal-pay-main-form {
     height:45px;
     border-radius: 0px;
@@ -3905,8 +3916,6 @@ box-shadow:         0px 1px 4px 0px rgba(100, 100, 100, 0.5);
     text-align: center;
     padding-top: 35px;
 }
-
-
 
 .modal-form-button-pay {
     height:130px;
@@ -3970,10 +3979,6 @@ box-shadow:         0px 1px 4px 0px rgba(100, 100, 100, 0.5);
    display:none;
 }
 
-#modal-check {
-
-}
-
 .modal-pay-form-container-button {
     background: #fff;
     height:160px;
@@ -4018,7 +4023,7 @@ box-shadow:         0px 1px 4px 0px rgba(100, 100, 100, 0.5);
 }
 
 .excur-offer-item-inner-big {
-        padding: 0px;
+    padding: 0px;
     text-align: right;
     font-size: 30px;
     line-height: 20px;
@@ -4055,11 +4060,6 @@ box-shadow:         0px 1px 4px 0px rgba(100, 100, 100, 0.5);
     width: 25px;
     margin-top: -7px;
 }
-
-.bs-example-modal-md {
-
-}
-
 
 .input-icon {
     width: 45px;
@@ -4160,7 +4160,7 @@ box-shadow:         0px 1px 4px 0px rgba(100, 100, 100, 0.5);
      position: absolute;
     right: 0px;
     width: 100%;;
-    margin-top: -3px;
+    margin-top: -2px;
 }
 
 @media(max-width:1220px){
@@ -4325,4 +4325,26 @@ border:none;
     margin: 0 auto;
     margin-top: 50px;
     margin-bottom: 
+}
+
+.navigation-bg {
+    background: #f0f0f0;
+    text-align: center;
+    margin-top: 10px;
+    height: 35px;
+}
+
+.pop-excur-lang {
+    text-align: left;
+    color: #6D6E70;
+    font-family: 'Segoe UI';
+    font-size: 12px;
+    margin-top: -18px;
+}
+
+.excur-list-lang {
+    height:93px;
+    padding-top: 7px;
+    overflow: hidden;
+    padding-top: 5px;
 }
