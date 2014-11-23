@@ -441,12 +441,8 @@ function excur_offer_order_form($form, $form_state, $offer) {
   $start_place = $wrapper->field_start_place->value();
   $start_time = $wrapper->field_start_time->value();
 
-  $private_place = !empty($offer->field_private_place)
-    ? $offer->field_private_place[LANGUAGE_NONE][0]['value']
-    : 0;
-  $private_time = !empty($offer->field_private_time)
-    ? $offer->field_private_time[LANGUAGE_NONE][0]['value']
-    : 0;
+  $private_place = $wrapper->field_private_place->value();
+  $private_time = $wrapper->field_private_time->value();
   $language_list = $offer->field_languages[LANGUAGE_NONE];
   $data_content = array();
 
@@ -455,14 +451,14 @@ function excur_offer_order_form($form, $form_state, $offer) {
     $options_languages[$key] = $lang->name;
   }
 
-  if ($private_time == 1) {
+  if ($private_time == 0) {
     $form['time'] = array(
       '#type'	=> 'textfield',
       '#default_value' => $start_time,
       '#title' => t('Start time'),
     );
   }
-  elseif ($private_time == 0) {
+  elseif ($private_time == 1) {
     $form['time'] = array(
       '#type'	=> 'textfield',
       '#title' => t('Start time'),
@@ -473,14 +469,14 @@ function excur_offer_order_form($form, $form_state, $offer) {
     );
   }
 
-  if ($private_place == 1) {
+  if ($private_place == 0) {
     $form['venue'] = array(
       '#type'	=> 'textfield',
       '#default_value' => $start_place,
       '#title' => t('Meeting point'),
     );
   }
-  elseif ($private_place == 0) {
+  elseif ($private_place == 1) {
     $form['venue'] = array(
       '#type'	=> 'textfield',
       '#title' => t('Meeting point'),
@@ -778,7 +774,7 @@ function excur_offer_load($id) {
 /**
  * Save offer.
  */
-function excur_offer_save($oid, $uid, $nid, $ticket, $currency, $date, $status, $language, $offer, $duration, $name, $email, $phone, $tourist_name, $tourist_email, $tourist_phone,$venue, $start_time, $companion) {
+function excur_offer_save($oid, $uid, $nid, $ticket, $currency, $date, $status, $language, $offer, $duration, $name, $email, $phone, $tourist_name, $tourist_email, $tourist_phone, $venue, $start_time, $companion) {
   $record = array(
     'oid' => $oid,
     'uid' => $uid,
@@ -797,8 +793,8 @@ function excur_offer_save($oid, $uid, $nid, $ticket, $currency, $date, $status, 
     'tourist_name' => $tourist_name,
     'tourist_email' => $tourist_email,
     'tourist_phone' => $tourist_phone,
-    'venue' => $venue,
-    'start_time' => $start_time,
+    'venue' => $venue ? $venue : 0,
+    'start_time' => $start_time ? $start_time : 0,
     'companion' => $companion,
   );
 

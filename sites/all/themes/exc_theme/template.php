@@ -780,7 +780,7 @@ function exc_theme_preprocess_order_template(&$vars) {
     'price' => $total_price,
     'currency' => excur_currency_get_icon($offer->currency),
     'offer' => $offer->offer,
-    'date' => $offer->date,
+    'date' => date('d/m/Y', $offer->date),
     'duration' => $offer->duration,
   );
 
@@ -825,7 +825,7 @@ function exc_theme_preprocess_pay_template(&$vars) {
 
   $vars['offer'] = array(
     'title' => $node->title,
-    'date' => $offer->date,
+    'date' => date('d/m/Y', $offer->date),
     'ticket' => $offer->ticket,
     'currency' => excur_currency_get_icon($offer->currency),
     'id' => $offer->id,
