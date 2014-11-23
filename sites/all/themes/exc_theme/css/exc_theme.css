@@ -827,3 +827,7 @@ div.price h3 {
 .order-template-info h3 {
   padding: 0;
 }
+
+div.field-type-entityreference.field-name-field-guide {
+  display: none;
+}

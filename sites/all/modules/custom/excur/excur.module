@@ -141,7 +141,16 @@ function excur_node_insert($node) {
     if (empty($node->body[$lang])) {
       $node->body[$lang] = $node->body[LANGUAGE_NONE];
     }
-    $a = 1;
+
+    $offer = field_collection_item_load($node->field_offer[LANGUAGE_NONE][0]['value']);
+    foreach ($offer->field_offer_ticket[LANGUAGE_NONE] as $ticket) {
+      $ticket = field_collection_item_load($ticket['value']);
+
+      if (empty($ticket->field_offer_ticket_title[$lang])) {
+        $ticket->field_offer_ticket_title[$lang] = $ticket->field_offer_ticket_title[LANGUAGE_NONE];
+      }
+      $ticket->save(TRUE);
+    }
   }
 }
 
@@ -343,6 +352,14 @@ function excur_form_service_node_form_alter(&$form, &$form_state) {
   if (!empty($_GET['guide']) && is_numeric($_GET['guide']) && $guide = user_load($_GET['guide'])) {
     $form['field_guide'][LANGUAGE_NONE][0]['target_id']['#value'] = $guide->field_name[LANGUAGE_NONE][0]['safe_value'] . " ($guide->uid)";
     $form['field_guide']['#attributes']['class'][] = 'element-hidden';
+  }
+
+  foreach ($form['field_offer'][LANGUAGE_NONE] as &$item) {
+    if (!is_array($item) || empty($item['field_offer_date_calendar'])) {
+      continue;
+    }
+
+    $item['field_offer_date_calendar'][LANGUAGE_NONE][0]['value']['#attributes']['class'][] = 'awesome-calendar';
   }
 
   $form_state['buttons'][0]['#attributes']['class'][] = 'btn';
