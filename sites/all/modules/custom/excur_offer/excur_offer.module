@@ -309,6 +309,7 @@ function excur_offer_offer_form($form, &$form_state, $offer) {
       )
     ),
   );
+  drupal_add_js(EXCUR_FRONT_THEME_PATH . '/js/jquery-ui.multidatespicker.js');
   drupal_add_js(array('excurOffer' => array('offerForm-' . $offer['id'] => $date_options)), 'setting');
 
   $form['submit'] = array(
