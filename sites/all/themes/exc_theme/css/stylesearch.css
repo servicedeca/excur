@@ -1,0 +1,317 @@
+.form{
+  display:inline-block;
+  position:relative;
+  font-size:0;
+  border:
+}
+
+.form form{
+  -webkit-transition-property:opacity;
+  -webkit-transition-duration:150ms;
+  -webkit-transition-timing-function:ease;
+  -moz-transition-property:opacity;
+  -moz-transition-duration:150ms;
+  -moz-transition-timing-function:ease;
+  -ms-transition-property:opacity;
+  -ms-transition-duration:150ms;
+  -ms-transition-timing-function:ease;
+  -o-transition-property:opacity;
+  -o-transition-duration:150ms;
+  -o-transition-timing-function:ease;
+  transition-property:opacity;
+  transition-duration:150ms;
+  transition-timing-function:ease;
+  position:relative;
+  z-index:2;
+}
+
+.form form.loading,.form form.finished{
+  opacity:0.5
+}
+
+.form.multi-input{
+  display:block;
+  margin:0 auto;
+  -webkit-transition-property:width;
+  -webkit-transition-duration:300ms;
+  -webkit-transition-timing-function:ease;
+  -moz-transition-property:width;
+  -moz-transition-duration:300ms;
+  -moz-transition-timing-function:ease;
+  -ms-transition-property:width;
+  -ms-transition-duration:300ms;
+  -ms-transition-timing-function:ease;
+  -o-transition-property:width;
+  -o-transition-duration:300ms;
+  -o-transition-timing-function:ease;
+  transition-property:width;
+  transition-duration:300ms;
+  transition-timing-function:ease;
+  text-align:center;
+  width:720px;
+  margin:0 auto
+}
+@media screen and (max-width: 782px)
+{
+  .form.multi-input
+  {
+    width:100%
+  }
+
+}
+.form.multi-input h5
+{
+  text-transform:none;
+  letter-spacing:0
+}
+.form.multi-input .option-group
+{
+  width:50%
+}
+.form.multi-input .option-group.large
+{
+  width:100%
+}
+.form.multi-input input,.form.multi-input textarea,.form.multi-input select
+{
+  width:100%;
+  margin:0
+}
+.form.multi-input input:focus,.form.multi-input input.focused,.form.multi-input textarea:focus,.form.multi-input textarea.focused,.form.multi-input select:focus,.form.multi-input select.focused
+{
+  width:100%
+}
+.form.multi-input input[type="submit"]
+{
+  width:auto
+}
+.form.multi-input input[type="submit"]:hover,.form.multi-input input[type="submit"]:focus
+{
+  text-decoration:none
+}
+.form.multi-input textarea
+{
+  min-width:100%;
+  max-width:100%
+}
+.form.multi-input .input,.form.multi-input .buttons
+{
+  float:none;
+  margin:22px;
+}
+.form.multi-input .select
+{
+  float:none;
+  margin:2px
+}
+.form.multi-input .select.focus
+{
+  position:relative;
+  z-index:4
+}
+.form.multi-input .message
+{
+  float:none;
+  max-width:none
+}
+.form.multi-input .social ul
+{
+  display:inline-block
+}
+.form .option-group
+{
+  display:inline-block;
+  vertical-align:top
+}
+.form input,.form select,.form textarea
+{
+  box-sizing:border-box;
+  width:292px;
+  border:none;
+  display:block;
+  font-size: 25px;
+  letter-spacing:1px;
+  font-weight:normal;
+  outline:none;
+  padding:20px;
+  -webkit-transition-property:all;
+  -webkit-transition-duration:300ms;
+  -webkit-transition-timing-function:ease;
+  -moz-transition-property:all;
+  -moz-transition-duration:300ms;
+  -moz-transition-timing-function:ease;
+  -ms-transition-property:all;
+  -ms-transition-duration:300ms;
+  -ms-transition-timing-function:ease;
+  -o-transition-property:all;
+  -o-transition-duration:300ms;
+  -o-transition-timing-function:ease;
+  transition-property:all;
+  transition-duration:300ms;
+  transition-timing-function:ease
+}
+.form input:focus,.form input.focused,.form select:focus,.form select.focused,.form textarea:focus,.form textarea.focused
+{
+  width:346px
+}
+@media only screen and (max-width: 990px)
+{
+  .form input:focus,.form input.focused,.form select:focus,.form select.focused,.form textarea:focus,.form textarea.focused
+  {
+    width:292px;
+
+  }
+
+}
+.form input
+{
+  padding:0 20px;
+  height:66px;
+  padding-bottom: 2px;
+}
+.form select
+{
+  height:auto
+}
+.form textarea
+{
+  min-width:292px;
+  max-width:292px;
+  min-height:28px;
+  line-height:28px;
+  height:144px;
+  border:none
+}
+.form input[type="submit"]
+{
+  -webkit-transition-property:all;
+  -webkit-transition-duration:300ms;
+  -webkit-transition-timing-function:ease;
+  -moz-transition-property:all;
+  -moz-transition-duration:300ms;
+  -moz-transition-timing-function:ease;
+  -ms-transition-property:all;
+  -ms-transition-duration:300ms;
+  -ms-transition-timing-function:ease;
+  -o-transition-property:all;
+  -o-transition-duration:300ms;
+  -o-transition-timing-function:ease;
+  transition-property:all;
+  transition-duration:300ms;
+  transition-timing-function:ease;
+  display:inline-block;
+  width:auto !important;
+  min-width:128px;
+  border:2px solid #000;
+  border-left:0px solid #000;
+  font-size: 17px;
+  font-family: 'Segoe UI';
+  letter-spacing:1px;
+  height:66px;
+  line-height:60px;
+  padding:0 20px;
+  text-transform:uppercase;
+  cursor:pointer;
+}
+.form input[type="submit"]:hover,.form input[type="submit"]:focus
+{
+  width:auto;
+  text-decoration:none;
+  padding:0 40px
+}
+.form input[type="submit"].disabled
+{
+  cursor:default
+}
+.form .select
+{
+  position:relative
+}
+.form .select:before
+{
+  content:"";
+  display:block;
+  position:absolute;
+  right:0;
+  top:0;
+  z-index:1;
+  height:100%;
+  width:40px
+}
+.form .select:after
+{
+  content:"";
+  display:inline-block;
+  height:0;
+  width:0;
+  border:5px solid transparent;
+  position:absolute;
+  top:30px;
+  right:15px;
+  z-index:2
+}
+.form .select select
+{
+  position:relative;
+  z-index:3
+}
+.form .input,.form .buttons,.form .select
+{
+  float:left;
+}
+.form input,.form select,.form textarea
+{
+  background:transparent;
+  color:#fff;
+  border:2px solid white;
+}
+.form input:focus,.form select:focus,.form textarea:focus
+{
+  background:#191616;
+
+}
+.form select option
+{
+  color:rgba(255,255,255,0.4);
+  background:#1e7c7a
+}
+.form input[type="submit"]
+{
+  border-color:#fff;
+  background:transparent;
+  color:#fff;
+}
+.form input[type="submit"]:hover,.form input[type="submit"]:focus
+{
+  background:#801918;
+  color:#fff
+}
+.form input[type="submit"].disabled:hover
+{
+  background:transparent;
+  color:#000
+}
+.form .input ::-webkit-input-placeholder,.form .buttons ::-webkit-input-placeholder,.form .select ::-webkit-input-placeholder
+{
+  color:rgba(255,255,255,0.5);
+  font-size: 17px;
+  padding-top: 5px;
+}
+.form .input :-moz-placeholder,.form .buttons :-moz-placeholder,.form .select :-moz-placeholder
+{
+  color:#fff;
+  font-size: 17px;
+  padding-top: 5px;
+}
+.form .input ::-moz-placeholder,.form .buttons ::-moz-placeholder,.form .select ::-moz-placeholder
+{
+  color:#fff;
+  font-size: 17px;
+  padding-top: 5px;
+}
+.form .input :-ms-input-placeholder,.form .buttons :-ms-input-placeholder,.form .select :-ms-input-placeholder
+{
+  color:rgba(255,255,255,0.5);
+  padding-top: 5px;
+  font-size: 17px;
+}

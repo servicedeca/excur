@@ -30,6 +30,9 @@ function exc_theme_preprocess_page(&$vars, $hook) {
     'path' => theme_get_setting('logo_path'),
     'alt' => t(variable_get('site_name')),
     'title' => t(variable_get('site_name')),
+    'attributes' => array(
+      'class' => array('minilogo'),
+    )
   ));
 
   // Get search form.

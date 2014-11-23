@@ -3,6 +3,15 @@
  * @file
  */
 ?>
+
+<div class="menu">
+  <div class="menu-wrapper">
+    <?php if (!empty($logo)): ?>
+      <?php print l($logo, '', array('html' => TRUE, 'attributes' => array('class' => array('navbar-brand')))); ?>
+    <?php endif; ?>
+  </div>
+</div>
+
 <div class="space30"></div>
 <div class="content">
   <div class="container site">
