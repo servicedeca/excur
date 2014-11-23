@@ -45,6 +45,105 @@ function excur_feature_node_service_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'field_collection_item-field_offer-field_offer_date'
+  $field_instances['field_collection_item-field_offer-field_offer_date'] = array(
+    'bundle' => 'field_offer',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 6,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_offer_date',
+    'label' => 'Дни работы',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_offer-field_offer_date_calendar'
+  $field_instances['field_collection_item-field_offer-field_offer_date_calendar'] = array(
+    'bundle' => 'field_offer',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 9,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_offer_date_calendar',
+    'label' => 'Конкретные дни',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_offer-field_offer_date_week'
+  $field_instances['field_collection_item-field_offer-field_offer_date_week'] = array(
+    'bundle' => 'field_offer',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 8,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_offer_date_week',
+    'label' => 'Дни недели',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 5,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_offer-field_offer_duration'
   $field_instances['field_collection_item-field_offer-field_offer_duration'] = array(
     'bundle' => 'field_offer',
@@ -76,7 +175,7 @@ function excur_feature_node_service_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 3,
+      'weight' => 7,
     ),
   );
 
@@ -115,7 +214,74 @@ function excur_feature_node_service_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 4,
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_offer-field_offer_time'
+  $field_instances['field_collection_item-field_offer-field_offer_time'] = array(
+    'bundle' => 'field_offer',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Выберите способ задания времени работы, в поле ниже введите интервал времени в формате "часы:минуты - часы:минуты" (08:00 - 23:30) или укажите точное время проведение экскурсии в формате "часы:минуты" (15:00).',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 5,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_offer_time',
+    'label' => 'Время работы',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_offer-field_offer_time_work'
+  $field_instances['field_collection_item-field_offer-field_offer_time_work'] = array(
+    'bundle' => 'field_offer',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 7,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_offer_time_work',
+    'label' => 'Часы работы',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 3,
     ),
   );
 
@@ -1410,16 +1576,21 @@ function excur_feature_node_service_field_default_field_instances() {
   t('Введите название, например «Детский*» или «Взрослый».');
   t('Время');
   t('Время встречи');
+  t('Время работы');
   t('Входит в стоимость:');
   t('Вы можете создать несколько предложений, отличающихся по цене, продолжительности и содержанию.');
   t('Вы можете создать несколько типов билетов.');
   t('Выберите из предложенного списка категорий');
+  t('Выберите способ задания времени работы, в поле ниже введите интервал времени в формате "часы:минуты - часы:минуты" (08:00 - 23:30) или укажите точное время проведение экскурсии в формате "часы:минуты" (15:00).');
   t('Гид');
   t('Главное изображение');
   t('Город');
+  t('Дни недели');
+  t('Дни работы');
   t('Изображения для слайдера');
   t('Категория');
   t('Комментарий');
+  t('Конкретные дни');
   t('Место встречи');
   t('Название');
   t('Название предложения');
@@ -1443,6 +1614,7 @@ function excur_feature_node_service_field_default_field_instances() {
   t('Укажите через запятую, что не входит в стоимость тура.');
   t('Условия бронирования');
   t('Цена');
+  t('Часы работы');
   t('Языки проведения');
 
   return $field_instances;
