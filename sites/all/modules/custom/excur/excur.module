@@ -370,6 +370,7 @@ function excur_form_service_node_form_alter(&$form, &$form_state) {
   unset($form['form']['language']);
 
   drupal_add_library('system', 'ui.datepicker');
+  drupal_add_js(EXCUR_FRONT_THEME_PATH . '/js/jquery-ui.multidatespicker.js');
 }
 
 /**
