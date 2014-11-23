@@ -368,6 +368,8 @@ function excur_form_service_node_form_alter(&$form, &$form_state) {
   $form['#theme'][] = 'excur_service_node';
   unset($form['actions']['preview_changes']);
   unset($form['form']['language']);
+
+  drupal_add_library('system', 'ui.datepicker');
 }
 
 /**

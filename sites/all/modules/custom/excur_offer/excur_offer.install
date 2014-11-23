@@ -363,7 +363,7 @@ function excur_offer_update_7007() {
 
   foreach ($results as $result) {
     db_update('excur_offer')
-      ->fields(array('date' => strtotime($result->date)))
+      ->fields(array('date' => strtotime($result->date) + date('Z')))
       ->condition('id', $result->id)
       ->execute();
   }

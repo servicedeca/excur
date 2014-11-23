@@ -259,6 +259,48 @@
     }
   };
 
+  Drupal.behaviors.excurServiceCalendar = {
+    attach: function(context, settings) {
+      $('input.awesome-calendar').once(function() {
+        $('input.awesome-calendar').multiDatesPicker({
+          minDate: 0
+        });
+      });
+
+      $('input.date-awesome-select').once(function() {
+        $('input.date-awesome-select').multiDatesPicker({
+          minDate: 0,
+          maxPicks: 1,
+          beforeShowDay: function(t) {
+            var type = Drupal.settings.excurOffer['offerForm-' + $(this).data('fcid')].type;
+            var allowedDays = Drupal.settings.excurOffer['offerForm-' + $(this).data('fcid')].allowed;
+            if (type == 2) {
+              var today = t.getMonth() + 1;
+              today = today + '/' + t.getDate() + '/' + t.getFullYear();
+              if ($.inArray(today, allowedDays) != -1) {
+                return [true, ""];
+              }
+              else {
+                return [false, ""];
+              }
+            }
+            else if (type == 1) {
+              if ($.inArray(t.getDay()+ '', allowedDays) != -1) {
+                return [true, ""];
+              }
+              else {
+                return [false, ""];
+              }
+            }
+            else {
+              return [true, ""];
+            }
+          }
+        });
+      });
+    }
+  };
+
   function excurScrollTo(from, to, time) {
     $(from).click(function (){
       $('html, body').animate({

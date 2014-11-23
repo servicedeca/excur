@@ -9,6 +9,9 @@ define('EXCUR_OFFER_CONFIRMED', 'confirmed');
 define('EXCUR_OFFER_REJECTED', 'rejected');
 define('EXCUR_OFFER_PRICE_PER_USER', 0);
 define('EXCUR_OFFER_PRICE_PER_GROUP', 1);
+define('EXCUR_OFFER_DATE_TYPE_EVERYDAY', 0);
+define('EXCUR_OFFER_DATE_TYPE_WEEKDAY', 1);
+define('EXCUR_OFFER_DATE_TYPE_CUSTOMDAY', 2);
 
 // Include additional files.
 require_once 'excur_offer.mail.inc';
@@ -254,6 +257,7 @@ function excur_offer_offer_form($form, &$form_state, $offer) {
     }
   }
   else {
+    $options = array();
     foreach ($offer['tickets'] as $key => $ticket) {
       $key = (string) $key . '|';
       $key .= transliteration_get(drupal_strtolower($ticket['title']));
@@ -272,17 +276,40 @@ function excur_offer_offer_form($form, &$form_state, $offer) {
     );
   }
 
+  $field_collection = field_collection_item_load($offer['id']);
+  $date_options['type'] = $field_collection->field_offer_date[LANGUAGE_NONE][0]['value'];
+  switch ($date_options['type']) {
+    case EXCUR_OFFER_DATE_TYPE_WEEKDAY:
+      foreach ($field_collection->field_offer_date_week[LANGUAGE_NONE] as $item) {
+        $date_options['allowed'][] = $item['value'];
+      }
+      break;
+
+    case EXCUR_OFFER_DATE_TYPE_CUSTOMDAY:
+      $date_options['allowed'] = explode(', ', $field_collection->field_offer_date_calendar[LANGUAGE_NONE][0]['value']);
+      break;
+
+    case EXCUR_OFFER_DATE_TYPE_EVERYDAY:
+    default:
+      $date_options = array();
+      break;
+  }
+
   $form['date'] = array(
+    '#type' => 'textfield',
     '#title' => t('Сhoose a date'),
-    '#type' => 'date_popup',
-    '#default_value' => date('Y-m-d'),
-    '#date_format' => 'Y-m-d',
-    '#date_year_range' => '-0:+1',
-    '#date_label_position' => 'within',
     '#attributes' => array(
       'required' => TRUE,
-    )
+      'class' => array('date-awesome-select'),
+      'data-fcid' => $offer['id'],
+    ),
+    '#attached' => array(
+      'library' => array(
+        array('system', 'ui.datepicker'),
+      )
+    ),
   );
+  drupal_add_js(array('excurOffer' => array('offerForm-' . $offer['id'] => $date_options)), 'setting');
 
   $form['submit'] = array(
     '#type' => 'submit',
@@ -697,7 +724,7 @@ function excur_offer_offer_form_submit(&$form, &$form_state) {
 
   $lang = 0;
   $oid = rand(1000, 9999) . REQUEST_TIME;
-  $id = excur_offer_save($oid, $user->uid, $data['nid'], $tickets, excur_offer_user_currency(), strtotime($values['date']), 0, $lang, $type_offer, $duration, 0, 0, 0, 0, 0, 0, $start_place, $start_time, 0);
+  $id = excur_offer_save($oid, $user->uid, $data['nid'], $tickets, excur_offer_user_currency(), strtotime($values['date']) + date('Z'), 0, $lang, $type_offer, $duration, 0, 0, 0, 0, 0, 0, $start_place, $start_time, 0);
   drupal_goto('excur/offer/order/' . $nid, array('query' => array('id' => $id)));
 }
 
@@ -880,7 +907,7 @@ function excur_offer_special_offer($node) {
   $start_time = $wrapper->field_start_time->value();
   $duration = $wrapper->field_duration->value();
   $price = $wrapper->field_price->value();
-  $date = strtotime($wrapper->field_start_date->value());
+  $date = strtotime($wrapper->field_start_date->value()) + date('Z');
   $type_offer = t('Special offer');
 
   $oid = rand(1000, 9999) . REQUEST_TIME;

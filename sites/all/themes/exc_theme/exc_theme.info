@@ -17,4 +17,5 @@ scripts[] = js/bootstrap.min.js
 scripts[] = js/bootstrap-select.min.js
 scripts[] = js/moment.min.js
 scripts[] = js/fullcalendar.min.js
+scripts[] = js/jquery-ui.multidatespicker.js
 scripts[] = js/exc_theme.js
