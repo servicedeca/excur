@@ -35,6 +35,7 @@ a:focus {
     text-decoration: none;
 }
 
+
 @media (max-width:340px) {
   .mediamin {
         width: 340px;
@@ -156,6 +157,18 @@ a:focus {
     opacity: 0.8;
     font-weight: 300;
     padding-top: 9px;
+}
+
+#excur-offer-date-form::-moz-placeholder {
+    text-align: center;
+    font-size: 18px;
+}
+
+#excur-offer-date-form::-webkit-input-placeholder{
+    text-align: center;
+    font-size: 20px;
+  
+
 }
 
 .search-form {
@@ -494,8 +507,6 @@ section h3.section-subheading {
        padding-right: 10%;        
 }    
    
-
-
 .border_name {
     border: 1px solid black;
     height:70px;
@@ -2135,6 +2146,7 @@ div.box-crew:hover span{
      color:#393939;
     font-size: 16px;
     font-family: 'Segoe UI';
+    overflow: hidden;
 }
 
 .pop-excur-price {
@@ -2149,7 +2161,6 @@ div.box-crew:hover span{
 
 .currency {
     font-size:20px;
-    font-family: 'Segoe UI';
     color:#4D4D4D;
 }
 
@@ -2340,7 +2351,6 @@ div.box-crew:hover span{
 }
 
 .excur-list-name {
-    font-family: 'Roboto';
     font-weight: 400;
     font-size: 16px;
     line-height:17px; 
@@ -2360,7 +2370,6 @@ div.box-crew:hover span{
     height:50px;
     text-align: left;
     font-size: 20px;
-    font-family: 'Roboto';
     font-weight: 300;
     overflow: hidden;
     color:#4C4C4C;
@@ -2383,7 +2392,7 @@ div.box-crew:hover span{
 }
 
 .excur-list-gid-name {
-    height:100px;
+    height: 100px;
     padding-top: 5px;
 }
 
@@ -2414,7 +2423,6 @@ div.box-crew:hover span{
     position: absolute;
 }
 .excur-price {
-    font-family: 'Roboto';
     margin-top: 30px;
     width:125px;
     color:#393939;
@@ -3049,30 +3057,13 @@ color:#3AA0A3;
     color:#3F3F3F;
 }
 
-.include-price {
-    text-align: center;
-    height:40px;
-    font-size: 20px;
-    font-family: 'Segoe';
-    background: #648963;
-    color:#fff;
-    padding-top:4px;  
-}
 
-.excluded {
-    background: #7A4F4F;
-}
 
-.excur-excluded {
-    margin-left: 0px;
-    margin-top: 25px;
-    padding: 0px;
-}
 
-.excur-included {
-    margin-top: 25px;
-    padding: 0px;
-}
+
+
+
+
 
 .excur-included li{
     list-style: none;
@@ -3182,54 +3173,46 @@ color:#3AA0A3;
     height:25px;
 }
 
-.order-condition {
-    font-size: 18px;
-    margin-top: 25px;
-    color:#3F3F3F;
-    width:600px;
-    line-height: 25px;
-    text-align: center;
-    margin-left: 60px;
-}
 
-.order-condition-days {
-    font-size: 20px;
-    color: #000;
-}
+
+
 
 .excur-offer-type {
     border:1px solid #B2B2B2;
-    width:640px;
+    width:670px;
     padding: 0px;
-    margin-bottom: 35px;
+    margin-bottom: 25px;
+    margin-left: 25px;
 }
 
 .excur-offer-title {
-    height:40px;
+    height:60px;
     font-size: 20px;
-    background:#32A1BB;
+    background:#33a1bb;
     color:#fff;
     font-family: Segoe;
-    padding-top: 5px;
+    padding-top: 15px;
+    padding-left: 25px;
 }
 
 .excur-offer-info {
-    text-align: center;
+    text-align: left;
     height: 40px;
+    background: #e8e9e8;
+    padding: 0px;
 }
 
 .excur-offer-text {
     font-size: 15px;
-    padding-top:8px;
+    padding-top:10px;
     padding-bottom:10px;
+    color: #697371;
+    margin-left: 50px;
 }
 
 .excur-offer-item {
-    font-size:15px;
     text-align: center;
-    display:table;
-    padding-bottom: 10px;
-    border-top:1px solid #B2B2B2;
+    border-bottom:1px solid #b3b2b3;
     height:50px;
 }
 
@@ -3250,25 +3233,29 @@ color:#3AA0A3;
 }
 
 #excur-offer-date-form {
-    height: 40px;
-    width: 320px;
+    height: 50px;
+    width: 445px;
     border-radius: 0px;
     cursor:pointer;
+    height: 50px;
+    line-height: 50px;
+
 }
 
 .excur-order-button {
     text-align: center;
-    height:40px;
+    height:50px;
 }
 
 #excur-offer-button {
-    width: 320px;
     position: absolute;
-    margin-left: -159px;
-    height:40px;
+    height:50px;
     font-size:20px;
     padding-top: 4px;
     background: #2664AF;
+    width: 224px;
+    left: 0px;
+    padding-top: 10px;
 }
 
 .line-height-zero {
@@ -3276,8 +3263,10 @@ color:#3AA0A3;
 }
 
 .travel-companion {
-    width:640px;
+    width:670px;
     padding: 0px;
+    margin-left: 25px;
+    margin-top: 5px;
 }
 
 .travel-companion-item {
@@ -3300,7 +3289,7 @@ color:#3AA0A3;
 
 #travel-companion-button {
     width:136px;
-    left: 11px;
+    left: 16px;
     padding: 2px 0px 3px 0px;
     font-family: Segoe;
     margin-top: 140px;
@@ -3309,9 +3298,10 @@ color:#3AA0A3;
 }
 
 .excur-comment {
-    width: 640px;
-    margin-top: 10px;
+    width: 670px;
+    margin-top: 5px;
     padding: 0px;
+    margin-left: 15px;
 }
 
 .excur-comment-item {
@@ -3326,7 +3316,7 @@ color:#3AA0A3;
 }
 
 .excur-comment-body {
-    width:500px;
+    width:555px;
     border:1px solid #B2B2B2;
     padding: 30px 10px 10px 10px;
     font-size: 15px;
@@ -3680,9 +3670,10 @@ box-shadow:         0px 1px 4px 0px rgba(100, 100, 100, 0.5);
 .excur-container {
     width: 695px;
     padding: 0px;
-    opacity: 0.3;
+    margin-top: 25px;
+    border-bottom: 1px solid #b3b2b3;
+   padding-bottom: 10px;
 }
-
 .modal-order-pay {
     height:50px;
     border:1px solid black;
@@ -3994,61 +3985,57 @@ box-shadow:         0px 1px 4px 0px rgba(100, 100, 100, 0.5);
 }
 
 .count-ticket-form {
-    height:40px;
     border-radius: 0px;
-    border:1px solid #B2B2B2;
-    background: #fff;;
-    font-size: 18px;
-    letter-spacing: 0px;
-    color:#4A4A4C;
+    border:none;
+    background: transparent;
+    font-size: 22px;
+    color:#697371;
     position: absolute;
-    margin-top: 5px;
-    width: 60px;
+    width: 35px;
+    padding: 0px;
     margin-left: 30px;
     text-align: center;
     cursor:pointer;
+    height: 49px;
 }
 
 .excur-offer-item-inner {
     padding: 0px;
     text-align: left;
-    font-size: 18px;
-    line-height: 20px;
-    height:30px;
-    padding-left: 5px;
-    padding-top: 3px;
+    font-size: 22px;
     overflow: hidden;
-    margin-top: 10px;
-    color:#333;
+    color:#697371;
+    padding-left: 35px;
+    height: 50px;
+    line-height: 50px;    
 }
 
 .excur-offer-item-inner-big {
     padding: 0px;
     text-align: right;
-    font-size: 30px;
-    line-height: 20px;
-    height:30px;
-    padding-left: 5px;
-    padding-top: 3px;
+    font-size: 25px;
+    height: 50px;
+    line-height: 50px;
     overflow: hidden;
-    margin-top: 10px;
-    color:#333;
+    color:#697371;
 }
 
 .icon-plus {
     position: absolute;
-    right:17px;
-    margin-top: 17px;
+    right:0px;
     cursor: pointer;
     opacity: 0.6;
+    height: 50px;
+    line-height: 50px;
 }
 
 .icon-minus {
     position: absolute;
-    left:15px;
-    margin-top: 17px;
+    left:20px;
     cursor: pointer;
     opacity: 0.6;
+    height: 50px;
+    line-height: 50px;
 }
 
 .margin-top-title {
@@ -4343,8 +4330,522 @@ border:none;
 }
 
 .excur-list-lang {
-    height:93px;
-    padding-top: 7px;
+    height:59px;
     overflow: hidden;
     padding-top: 5px;
+}
+
+.user-profile-sidebar {
+  background: #4f93aa;
+  color: #fff;
+  margin-bottom: 30px;
+  width: 240px;
+    margin-left: 15px;
+}
+
+.user-profile-sidebar .user-profile-avatar {
+  padding: 0 0px;
+  margin-bottom: 0px;
+}
+
+.user-profile-sidebar .user-profile-avatar img {
+  width: 240px;
+}
+
+.user-profile-sidebar .user-profile-avatar h5 {
+  color: #fff;
+  margin-bottom: 0;
+  font-size: 16px;
+}
+
+.user-profile-sidebar .user-profile-avatar p {
+  font-size: 10px;
+}
+
+.user-profile-sidebar .user-profile-nav > li {
+    text-align: right;
+    
+}
+
+
+.user-profile-sidebar .user-profile-nav > li.active > a {
+  background: #ed8323;
+  color: #fff;
+  cursor: default;
+}
+
+.user-profile-sidebar .user-profile-nav > li.active > a:hover {
+  background: #ed8323;
+  color: #fff;
+}
+
+.user-profile-sidebar .user-profile-nav > li.active > a:hover > i {
+  color: #fff;
+}
+
+.user-profile-sidebar .user-profile-nav > li > a {
+  padding: 10px 20px;
+  color: #f2f2f2;
+  display: block;
+  font-size: 15px;
+}
+
+.user-profile-sidebar .user-profile-nav > li > a:hover {
+  color: #fff;
+  background: #386977;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -ms-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.user-profile-sidebar .user-profile-nav > li > a:hover > i {
+  color: #ed8323;
+}
+
+.user-profile-sidebar .user-profile-nav > li > a > i {
+  margin-right: 7px;
+  display: inline-block;
+  width: 20px;
+  text-align: center;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -ms-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.user-profile-statictics > li {
+  margin-right: 20px;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #e6e6e6;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  width: 153px;
+}
+
+.user-profile-statictics > li:last-child {
+  margin-right: 0;
+}
+
+.user-profile-statictics > li .user-profile-statictics-icon {
+  font-size: 70px;
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #8c8c8c;
+}
+
+.user-profile-statictics > li h5 {
+  font-size: 30px;
+  margin-bottom: 0;
+  line-height: 1em;
+  margin-bottom: 3px;
+  color: #ed8323;
+}
+
+.user-profile-statictics > li p {
+  margin-bottom: 0;
+  line-height: 1em;
+  font-size: 13px;
+}
+
+.po-box {
+    margin-top: 90px;
+    width: 960px;
+}
+
+.list {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+.excur-image-offer {
+    width: 155px;
+    height:103px;
+}
+
+.excur-image-booking {
+    width: 155px;
+    height:103px;
+}
+
+.office-title {
+    font-size: 40px;
+    font-family: "Segoe";
+    margin-left: 15px;
+    text-align: center;
+}
+
+.offer-list {
+    height: 140px;
+    margin-left: 20px;
+    border-radius: 0px;
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+
+.excur-list-infoblock-offer {
+    height: 103px;
+}
+
+.offer-list-info {
+    height: 57px;
+    margin-top: -3px;
+}
+
+
+
+.offer-list-time {
+    height: 40px;
+    padding-left: 0px;
+}
+
+.offer-price {
+    margin-top: -2px;
+    height: 57px;
+    text-align: center;
+    line-height: 57px;
+    width: 100%;
+}
+
+.offer-list-button {
+    height: 35px;
+}
+
+.offer-list-lang {
+    height: 95%;
+    width: 100%;
+    padding: 0px;
+    padding-top: 5px;
+}
+
+#offer-list-button {
+    margin-left: -12px;
+    margin-top:4px;
+    position: absolute;
+     padding: 3px 0px 5px 0px;
+    font-size:16px;
+    margin-left: 160px;
+    cursor:pointer;
+    width: 155px;
+}
+
+.offer-line {
+    width: 650px;
+    margin-left: 20px;
+}
+
+.offer-line-select {
+    height: 40px;
+    margin-bottom: 25px;
+}
+
+#add-excur {
+    width:240px;
+    position: absolute;
+    height:10px;
+    padding: 5px 0px 35px 0px;
+    font-size: 17px;
+    font-family: Segoe;
+    left: 0px;
+    margin-top: -25px;
+}
+
+.booking-list {
+    height: 140px;
+    margin-left: 20px;
+    border-radius: 0px;
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+
+.booking-list-info {
+    height: 60px;
+    padding: 0px;
+}
+
+.booking-list-star {
+    height: 25px;
+    padding-left: 0px;
+    text-align: left;
+    font-size: 15px;
+    font-weight: 300;
+    overflow: hidden;
+    color:#4C4C4C;
+    margin-top: -5px;
+}
+
+.booking-list-date {
+    height: 20px;
+    padding-left: 0px;
+    text-align: left;
+    font-size: 15px;
+    font-weight: 300;
+    color:#4C4C4C;
+    margin-top:6px;
+}
+
+.booking-gid-photo {
+    width: 45px;
+    margin-left: -30px;
+    margin-top: -5px;
+}
+
+.booking-list-gid {
+    height:65px;
+    padding-top: 5px;
+}
+
+.right-line-office {
+    width: 680px;
+    margin-left: 40px;
+}
+
+.booking-list-guide-name {
+    height: 50px;
+    margin-top: -5px;
+    width: 70px;
+}
+
+.booking-gid-name {
+        color:#393939;
+    font-size: 15px;
+    font-family: 'Segoe UI';
+    overflow: hidden;
+    width: 90px;
+}
+
+.booking-list-name {
+    height: 43px;
+    padding-top: 3px;
+    font-size: 17px;
+}
+
+#booking-list-button {
+    left: 0px;
+    top:5px;
+    position: absolute;
+    padding: 3px 0px 5px 0px;
+    font-size:16px;
+    width: 155px;
+}
+
+.booking-status p {
+    font-size: 25px;
+    margin-left: 20px;
+    padding-top: 0px;
+}
+
+.excur-place-block {
+    padding: 0px;
+}
+
+.excur-place-title {
+    padding: 0px;
+    color: #979797;
+    font-size: 15px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.excur-place-place {
+    padding: 0;
+    color:#4d4e4e;
+    padding-left: 10px;
+    font-size: 17px;
+    margin-bottom: 10px;
+     word-wrap: break-word;
+}
+
+.excur-time-block {
+    padding: 0px;
+    margin-bottom: -5px;
+    margin-left: -25px;
+}
+
+.excur-time-title {
+    padding: 0px;
+        padding: 0px;
+    color: #979797;
+    font-size: 15px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.excur-time-time {
+    padding: 0px;
+    text-align: left;
+    color:#4d4e4e;
+    padding-left: 10px;
+    font-size: 25px;
+}
+
+.unclude-block {
+    text-align: center;
+}
+
+.exclude-block {
+    text-align: center;
+}
+
+.tick {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 50px;
+}
+
+.cross {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: 50px;
+}
+
+.title-exclude {
+    font-size: 18px;
+    color:#979797;
+}
+
+.excur-include{
+    padding: 0;
+    color:#4d4e4e;
+    padding-left: 10px;
+}
+
+.excur-include p{
+        font-size: 17px;
+        padding-top: 0px;
+        margin-bottom: 10px;
+        width: 180px;
+        word-wrap: break-word;
+}
+
+.condition-excur p{
+     width: 250px;   
+}
+
+.condition-container {
+    border:none;
+}
+
+.title-offer {
+    text-align: left;
+    width:695px;
+    font-size: 30px;
+    margin-top: 25px;
+    margin-left: 10px;
+    margin-bottom: 15px;
+}
+
+.excur-offer-item-sum {
+    height:50px;
+    background: #b3b2b3;
+}
+
+.excur-offer-item-sum-inner {
+    padding: 0px;
+    text-align: right;
+    font-size: 35px;
+    height: 50px;
+    line-height: 50px;
+    overflow: hidden;
+    color:#efefee;
+}
+
+.white-curency {
+    color: #efefee;
+}
+
+.excur-offer-item-sum-prefix {
+    font-size: 20px;
+    text-align: left;
+    height: 50px;
+    line-height: 50px;
+    color:#efefee;
+}
+
+.title-comment {
+         margin-top: 5px; 
+}
+
+.title-companion {
+    margin-top:15px;
+}
+
+.offer-list-date {
+    height: 57px;
+    line-height: 57px;
+    padding-left: 0px;
+    margin-left: -15px;
+    text-align: left;
+    font-size: 15px;
+    font-weight: 300;
+    color:#4C4C4C;
+}
+
+.offer-time-icon {
+    margin-top: -1px;
+}
+
+.offer-star-icon {
+    margin-top: 1px;
+}
+
+
+
+.change-avatar {
+    width: 240px;
+    height: 40px;
+    margin-top: -40px;
+    background: #666666;
+    position: absolute;
+    opacity: 0.5;
+    cursor:pointer;
+    z-index: 10;
+}
+
+.text-change-avatar {
+    margin-top: -40px;
+    z-index: 20;
+    color:#efefee;
+    z-index: 20;
+    position: absolute;
+    font-size: 16px;
+    height: 40px;
+    text-align: right;
+    line-height: 40px;
+    width: 240px;
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+.office-name {
+   margin-top: 50px; 
+    font-size: 50px;
+    font-family: "Segoe";
+    margin-left: 15px;
+}
+
+.office-place {
+    margin-bottom: 45px;
+    font-size: 25px;
+    font-family: "Segoe";
+    margin-left: 15px;
+    color:#999999;
+}
+
+.add-button {
+    height: 45px;
+    margin-left: 15px;
+}
+
+.booking-list-info-status {
+    font-size: 20px;
+    text-align: center;
+    line-height: 20px;
+    color:#386977;
 }
