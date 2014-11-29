@@ -648,7 +648,7 @@ footer .footer-below {
         
 .part {
     background:#808080;
-    padding: 60px 0;
+    padding: 25px 0;
 }
 
 .text_part {
@@ -891,7 +891,7 @@ footer .footer-below {
     background-position:center;
 }
 
-#AFRICA .continent-bg{
+#AFR .continent-bg{
     background-image: url(../image/AFRICAfon.png); 
     background-repeat: no-repeat;
     background-position:center;
@@ -950,7 +950,7 @@ footer .footer-below {
     background-position: center;
 }
 
-#AFRICA .cont_icon {
+#AFR .cont_icon {
     text-align: center;
     margin-top: 50px;
     width: 300px;
@@ -1068,7 +1068,7 @@ footer .footer-below {
     background:#D3AC54;
 }
 
-#AFRICA #continent {
+#AFR #continent {
     background: #BC7433;
 }
 
@@ -1148,37 +1148,71 @@ div.box-crew:hover span{
     padding-top: 0px;
 }
 
-
-#EUR .bread-crumbsleft {
+.bread-crumbsleft {
     height: 60px;
     background: #26686D;
     padding-top: 0px;
     width: 50%;
 }
 
-#ASIA .bread-crumbsleft {
-    height: 60px;
-    background: #9b2626;
-    padding-top: 0px;
-    width: 50%;
+#EUR .bread-crumbsleft {
+    background: #26686D;
 }
 
-#EUR .bread-crumbsright {
+#ASIA .bread-crumbsleft {
+    background: #9b2626;
+}
+
+#RUS .bread-crumbsleft {
+    background: #3f6d52;
+}
+
+#AFR .bread-crumbsleft {
+    background: #dd801b;
+}
+
+#AFR .bread-crumbsleft {
+    background: #dd801b;
+} 
+
+#AM .bread-crumbsleft {
+    background: #05777c;
+}   
+
+#AUS .bread-crumbsleft {
+    background: #336587;
+}   
+
+.bread-crumbsright {
     height: 60px;
-    background: #40B6B6;
     padding-top: 0px;
     width: 50%;
     margin-left: 50%;
     margin-top: -60px;
 }   
 
+#EUR .bread-crumbsright {
+    background: #40B6B6;
+}   
+
 #ASIA .bread-crumbsright {
-    height: 60px;
     background: #c14d4d;
-    padding-top: 0px;
-    width: 50%;
-    margin-left: 50%;
-    margin-top: -60px;
+} 
+
+#RUS .bread-crumbsright {
+    background: #5c9e76;
+}  
+
+#AFR .bread-crumbsright {
+    background: #ef9d45;
+} 
+
+#AM .bread-crumbsright {
+    background: #05777c;
+}   
+
+#AUS .bread-crumbsright {
+    background: #4689b7;
 }   
 
 .country-content {
@@ -1188,32 +1222,65 @@ div.box-crew:hover span{
     height:1000px;
 }
 
-#EUR .bread-crumbs-mainland {
+.bread-crumbs-mainland {
     height: 60px;
      text-align: right;
      transition: all 0.44s ease;
     background: #26686D;
 }
 
+#EUR .bread-crumbs-mainland {
+    background: #26686D;
+}
+
 #ASIA .bread-crumbs-mainland {
-    height: 60px;
-     text-align: right;
-     transition: all 0.44s ease;
     background: #9b2626;
 }
 
+#RUS .bread-crumbs-mainland {
+    background: #3f6d52;
+}
 
+#AFR .bread-crumbs-mainland {
+    background: #dd801b;
+} 
 
-#EUR .bread-crumbs-country {
+#AM .bread-crumbs-mainland {
+    background: #05777c;
+}   
+
+#AUS .bread-crumbs-mainland {
+    background: #336587;
+}   
+
+.bread-crumbs-country {
     height: 60px;
     text-align: center;
     background: #3AA0A3;
 }
 
+#EUR .bread-crumbs-country {
+    background: #3AA0A3;
+}
+
 #ASIA .bread-crumbs-country {
-    height: 60px;
-    text-align: center;
     background: #c12f2f;
+}
+
+#RUS .bread-crumbs-country {
+    background: #4c8563;
+}
+
+#AFR .bread-crumbs-country {
+    background: #f2911b;
+}
+
+#AM .bread-crumbs-country {
+    background: #045f63;
+}
+
+#AUS .bread-crumbs-country {
+    background: #3d76a5;
 }
 
 .arrow-country::after {
@@ -1225,10 +1292,6 @@ div.box-crew:hover span{
     display:none;
    }
 
-#EUR .arrow-country::after{
-    border-top: 14px solid #32878E; /* Добавляем треугольник */
-}
-
 .arrow-city::after {
     content: ''; 
     position: absolute; /* Абсолютное позиционирование */
@@ -1237,27 +1300,39 @@ div.box-crew:hover span{
     border-right: 80px solid transparent; /* Прозрачные границы */
    }
 
-#EUR .arrow-city::after{
-    border-top: 14px solid #379C9E; /* Добавляем треугольник */
-}
-
-#EUR .bread-crumbs-city {
+.bread-crumbs-city {
     height:60px;
     text-align: left;
     background: #40B6B6;
 }
 
+#EUR .bread-crumbs-city {
+    background: #40B6B6;
+}
+
 #ASIA .bread-crumbs-city {
-    height:60px;
-    text-align: left;
     background: #c14d4d;
+}
+
+#RUS .bread-crumbs-city {
+    background: #5c9e76;
+}
+
+#AFR .bread-crumbs-city {
+    background: #ef9d45;
+}
+
+#AM .bread-crumbs-city {
+    background: #05777c;
+}
+
+#AUS .bread-crumbs-city {
+    background: #4689b7;
 }
 
 .bread-crumb-index {
     padding-top: 10px;
 }
-
-
 
 .bread-crumbs-name {
     font-size: 25px;
@@ -4994,7 +5069,6 @@ padding: 0;
     background-attachment: fixed;
 	background-origin: initial;
 	background-clip: initial;
-	background-size: cover;
 	background-repeat:no-repeat;
 	background-position:center top; 
 	position:relative;
@@ -5004,8 +5078,6 @@ padding: 0;
     background-size: cover;
     -o-background-size: cover;  
     z-index: -20;
-        -webkit-transform: translate3d(0,0,0);
--webkit-backface-visibility: hidden;
 }
 
 @media(max-width:998px){
@@ -5014,18 +5086,76 @@ padding: 0;
     }
 }
 
+#RUS .topline {
+    background: url(../image/toprus.jpg);
+    background-attachment: fixed;
+	background-origin: initial;
+	background-clip: initial;
+	background-repeat:no-repeat;
+	background-position:center top; 
+	position:relative;
+	height: 350px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;  
+    z-index: -20;
+}
 
-.hhh {
-    position: relative;
-    height: 350px;
-    width: 100%;
-    
+@media(max-width:998px){
+   #RUS .topline{
+    background-attachment: scroll;
+    }
+}
+
+#AFR .topline {
+    background: url(../image/topafr.jpg);
+    background-attachment: fixed;
+	background-origin: initial;
+	background-clip: initial;
+	background-repeat:no-repeat;
+	background-position:center top; 
+	position:relative;
+	height: 350px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;  
+    z-index: -20;
+}
+
+@media(max-width:998px){
+   #AFR .topline{
+    background-attachment: scroll;
+    }
+}
+
+#AM .topline {
+    background: url(../image/topamerica.jpg);
+    background-attachment: fixed;
+	background-origin: initial;
+	background-clip: initial;
+	background-repeat:no-repeat;
+	background-position:center center; 
+	position:relative;
+	height: 350px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;  
+    z-index: -20;
+}
+
+@media(max-width:998px){
+   #AM .topline{
+    background-attachment: scroll;
+    }
 }
 
 #EUR .continent-name {
     font-size: 100px;
     top: 200px;
-    color:#fff;
+    color:#f1f2f2;
     font-family: "Segoe";
     text-align: center;
     letter-spacing: 3px;
@@ -5047,6 +5177,126 @@ padding: 0;
         position: relative;
         margin: 0 auto;
         left: 0px;
+        }
+}
+
+#ASIA .continent-name {
+    font-size: 100px;
+    top: 200px;
+    color:#58595b;
+    font-family: "Segoe";
+    text-align: center;
+    letter-spacing: 3px;
+    position: fixed;
+    top: 100px;
+    z-index: -10;
+    right: 10%;
+}
+
+@media(max-width:1300px){
+   #ASIA .continent-name {
+       right: 2%;
+    }
+}
+
+#ASIA .continent-name:before  {
+    content: "ASIA";
+	}
+
+@media(max-width:998px){
+    #ASIA .continent-name{
+        left: 5%;
+        width: 250px;
+        top: 130px;
+        }
+}
+
+#RUS .continent-name {
+    font-size: 100px;
+    top: 200px;
+    color:#f1f2f2;
+    font-family: "Segoe";
+    text-align: center;
+    letter-spacing: 3px;
+    position: fixed;
+    top: 100px;
+    z-index: -10;
+    right: 20%;
+}
+
+@media(max-width:1300px){
+   #RUS .continent-name {
+       right: 10%;
+    }
+}
+
+#RUS .continent-name:before  {
+    content: "RUSSIA";
+	}
+
+@media(max-width:998px){
+    #RUS .continent-name{
+        text-align: right;
+        position: relative;
+     top:  150px;  
+        }
+    }
+
+#AFR .continent-name {
+    font-size: 100px;
+    top: 200px;
+    color:#f1f2f2;
+    font-family: "Segoe";
+    text-align: center;
+    letter-spacing: 3px;
+    margin-top: -50px;
+    position: fixed;
+    margin: 0 auto;
+    left: 50%;
+    top: 100px;
+    z-index: -10;
+    margin-left: -165px;
+}
+
+#AFR .continent-name:before  {
+    content: "AFRICA";
+	}
+
+@media(max-width:998px){
+    #AFR .continent-name{
+        position: relative;
+        margin: 0 auto;
+        left: 0px;
+        top:120px;
+        }
+}
+
+#AM .continent-name {
+    font-size: 100px;
+    color:#f1f2f2;
+    font-family: "Segoe";
+    text-align: center;
+    letter-spacing: 3px;
+    position: fixed;
+    top: 200px;
+    z-index: -10;
+    right: 10%;
+}
+
+@media(max-width:1300px){
+   #AM .continent-name {
+       right: 2%;
+    }
+}
+
+#AM .continent-name:before  {
+    content: "AMERICA";
+	}
+
+@media(max-width:998px){
+        position: relative;
+        right: 50px;
+    top:100px;
         }
 }
 
@@ -5086,7 +5336,6 @@ padding: 0;
     width: 200px;
     margin-top: 25px;
     margin-left: -25px;
-    
 }
 
 .gtexcur {
@@ -5131,4 +5380,7 @@ padding: 0;
     height: 455px;
 }
 
+.bgf{
+    background: #fff;
+}
 

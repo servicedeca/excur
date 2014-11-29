@@ -31,7 +31,7 @@
         <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> 
     
   </head>
-  <body id="EUR">
+  <body id="AM">
 
     <div class="menu">
         <div class="menu-wrapper">
@@ -196,7 +196,7 @@
         </div>
                 
         <!-- END MODAL -->
-  <div id="wrapper">
+      <div id="wrapper">
           <div class="bg_parralax topline" data-type="background" data-speed="10">
                <div class="continent-name"></div>
            </div>
@@ -208,7 +208,7 @@
             <section class="bread-crumbs-content">
                 <div class="col-xs-4 bread-crumbs-mainland">
                     <div id="dd-cont" class="wrapper-dropdown-cont" tabindex="1">
-                        <div class="bread-crumbs-name">Европа</div>
+                        <div class="bread-crumbs-name">Россия</div>
                             <ul class="dropdown">
                                 <li><a href="Country.html">Европа</a></li>
                                 <li><a href="Countryasia.html">Азия</a></li>
@@ -223,7 +223,7 @@
                 </div>
                 <div class="col-xs-4 bread-crumbs-country arrow-country">
                     <div id="dd-country" class="wrapper-dropdown-country" tabindex="1">
-                        <div class="bread-crumbs-name-main">Чехия</div>
+                        <div class="bread-crumbs-name-main">Россия</div>
                             <ul class="dropdown">
                                 <li><a href="#">Италия</a></li>
                                 <li><a href="#">Испания</a></li>
@@ -638,7 +638,7 @@
                 </div>
             </a>
         </section>
-        </div>           
+        </div>
         <!-- Footer -->
                
             <footer class="text-center z-index">
@@ -705,5 +705,33 @@
                 </div>
             </footer>
     </div>        
+    <script>
+    $(document).ready(function() {
+
+      //Sort random function
+      function random(owlSelector){
+        owlSelector.children().sort(function(){
+            return Math.round(Math.random()) - 0.5;
+        }).each(function(){
+          $(this).appendTo(owlSelector);
+        });
+      }
+
+      $("#owl-demo").owlCarousel({
+        navigation: true,
+        navigationText: [
+        "",
+        ""
+        ],
+        //Call beforeInit callback, elem parameter point to $("#owl-demo")
+        beforeInit : function(elem){
+          random(elem);
+        }
+
+      });
+
+    });
+    </script>
+	 <script src="js/application.js"></script>
   </body>
 </html>
