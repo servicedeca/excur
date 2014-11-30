@@ -10,7 +10,7 @@
   <div class="col-xs-12 modal-registration-item">
     <div class="col-xs-8 col-xs-offset-1 modal-registration-button">
       <a class="button-pay registration-button">
-        <?php print t('Login'); ?>
+        <?php print t('Sign in'); ?>
       </a>
     </div>
   </div>

@@ -182,17 +182,17 @@ function excur_theme() {
     ),
   );
   $items['excur_profile_form'] = $base + array(
-      'template' => 'excur-profile-form',
-      'render element' => 'form',
-    );
+    'template' => 'excur-profile-form',
+    'render element' => 'form',
+  );
   $items['excur_user_login_form'] = $base + array(
-      'template' => 'excur-user-login-form',
-      'render element' => 'form',
-    );
-  $items['excur_user_register'] = $base +array(
-      'template' => 'excur-user-register-form',
-      'render element' => 'form',
-    );
+    'template' => 'excur-user-login-form',
+    'render element' => 'form',
+  );
+  $items['excur_user_register_form'] = $base + array(
+    'template' => 'excur-user-register-form',
+    'render element' => 'form',
+  );
   $items['excur_service_node'] = $base + array(
       'template' => 'excur-service-node-form',
       'render element' => 'form',
@@ -387,7 +387,15 @@ function excur_form_main_page_slider_node_form_alter(&$form, &$form_state) {
  * Implements hook_form_FORM_ID_alter().
  */
 function excur_form_user_register_form_alter(&$form, &$form_state) {
-  $form['#theme'][] = 'excur_user_register';
+  $form['#theme'][] = 'excur_user_register_form';
+
+  $langcode = entity_language('user', $form['#user']);
+  field_attach_form('user', $form['#user'], $form, $form_state, $langcode);
+  foreach (field_info_instances('user', 'user') as $field_name => $instance) {
+    if (!empty($instance['settings']['user_register_form'])) {
+      $form[$field_name]['#access'] = TRUE;
+    }
+  }
 }
 
 /**

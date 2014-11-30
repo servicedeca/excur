@@ -49,10 +49,10 @@
           </li>
         </ul>
         <div id="myTabContent" class="tab-content">
-          <div class="tab-pane fade" id="homes">
+          <div class="tab-pane fade active in" id="homes">
             <?php print render($register_form); ?>
           </div>
-          <div class="tab-pane fade active in" id="profile">
+          <div class="tab-pane fade" id="profile">
             <?php print render($login_form); ?>
           </div>
         </div>
