@@ -18,6 +18,11 @@
           <?php print render($language_switcher); ?>
         </div>
       </div>
+      <div class="col-xs-2 head-border">
+        <div class="curent">
+          <?php print render($currency_switcher); ?>
+        </div>
+      </div>
     </div>
   </div>
 </div>

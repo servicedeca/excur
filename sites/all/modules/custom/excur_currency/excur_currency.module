@@ -15,6 +15,22 @@ define('EXCUR_CURRENCY_GB_POUND', 'GBP');
 define('EXCUR_CURRENCY_SWISS_FRANC', 'CHF');
 
 /**
+ * Implement hook_theme().
+ */
+function excur_currency_theme() {
+  $base = array(
+    'file' => 'theme.inc',
+    'path' => drupal_get_path('module', 'excur_currency') . '/theme',
+  );
+
+  $items['excur_currency_switcher'] = $base + array(
+    'template' => 'excur-currency-switcher',
+  );
+
+  return $items;
+}
+
+/**
  * Implements hook_cronapi().
  */
 function excur_currency_cronapi($op, $job = NULL) {
@@ -88,52 +104,6 @@ function excur_currency_form_excur_settings_form_alter(&$form, &$form_state) {
       '#default_value' => variable_get("excur_currency_icon_$currency", $currency),
     );
   }
-}
-
-/**
- * Form builder.
- */
-function excur_currency_choice_form() {
-  $form['currency'] = array(
-    '#type' => 'select',
-    '#options' => array(
-      EXCUR_CURRENCY_EURO => t('Euro'),
-      EXCUR_CURRENCY_US_DOLLAR => t('U.S. Dollar'),
-      EXCUR_CURRENCY_RUS_ROUBLE => t('Russian Rouble'),
-      EXCUR_CURRENCY_CAN_DOLLAR => t('Canadian Dollar'),
-      EXCUR_CURRENCY_CZECH_KORUNA => t('Czech Koruna'),
-      EXCUR_CURRENCY_JAPAN_YEN => t('Japanese Yen'),
-      EXCUR_CURRENCY_CHINESE_YUAN => t('Chinese Yuan'),
-      EXCUR_CURRENCY_GB_POUND => t('Pound sterling'),
-      EXCUR_CURRENCY_SWISS_FRANC => t('Swiss Franc'),
-    ),
-    '#default_value' => !empty($_COOKIE['excur_currency']) ? $_COOKIE['excur_currency'] : EXCUR_CURRENCY_DEFAULT,
-    '#data-content' => array(
-      EXCUR_CURRENCY_EURO => excur_currency_get_icon(EXCUR_CURRENCY_EURO) . ' ' . t('Euro'),
-      EXCUR_CURRENCY_US_DOLLAR => excur_currency_get_icon(EXCUR_CURRENCY_US_DOLLAR) . ' ' . t('U.S. Dollar'),
-      EXCUR_CURRENCY_RUS_ROUBLE => excur_currency_get_icon(EXCUR_CURRENCY_RUS_ROUBLE) . ' ' . t('Russian Rouble'),
-      EXCUR_CURRENCY_CAN_DOLLAR => excur_currency_get_icon(EXCUR_CURRENCY_CAN_DOLLAR) . ' ' . t('Canadian Dollar'),
-      EXCUR_CURRENCY_CZECH_KORUNA => excur_currency_get_icon(EXCUR_CURRENCY_CZECH_KORUNA) . ' ' . t('Czech Koruna'),
-      EXCUR_CURRENCY_JAPAN_YEN => excur_currency_get_icon(EXCUR_CURRENCY_JAPAN_YEN) . ' ' . t('Japanese Yen'),
-      EXCUR_CURRENCY_CHINESE_YUAN => excur_currency_get_icon(EXCUR_CURRENCY_CHINESE_YUAN) . ' ' . t('Chinese Yuan'),
-      EXCUR_CURRENCY_GB_POUND => excur_currency_get_icon(EXCUR_CURRENCY_GB_POUND) . ' ' . t('Pound sterling'),
-      EXCUR_CURRENCY_SWISS_FRANC => excur_currency_get_icon(EXCUR_CURRENCY_SWISS_FRANC) . ' ' . t('Swiss Franc'),
-    ),
-  );
-
-  $form['submit'] = array(
-    '#type' => 'submit',
-    '#value' => t('Change currency'),
-  );
-
-  return $form;
-}
-
-/**
- * Submit callback for excur_currency_choice_form() form.
- */
-function excur_currency_choice_form_submit(&$form, &$form_state) {
-  setcookie('excur_currency', $form_state['values']['currency'], REQUEST_TIME + 86400, '/');
 }
 
 /**
@@ -213,7 +183,21 @@ function excur_currency_lowest_price($service) {
  * @return string.
  */
 function excur_currency_get_icon($currency) {
-  return t(variable_get("excur_currency_icon_$currency", $currency));
+  if ($icon = variable_get("excur_currency_icon_$currency")) {
+    $output = theme('image', array(
+      'path' => EXCUR_FRONT_THEME_PATH . '/images/value/' . $icon,
+      'alt' => $currency,
+      'title' => $currency,
+      'attributes' => array(
+        'class' => array('currency-img'),
+      ),
+    ));
+  }
+  else {
+    $output = $currency;
+  }
+
+  return $output;
 }
 
 /**

@@ -2,10 +2,19 @@
 
   Drupal.behaviors.excurLanguageSwitcher = {
     attach: function(context, settings) {
-      $('.drop-lang label').click(function() {
-        window.location = ($(this).data('url'));
+      $('#language-switcher label').click(function() {
+        window.location = $(this).data('url');
       });
     }
-  }
+  };
+
+  Drupal.behaviors.excurCurrencySwitcher = {
+    attach: function(context, settings) {
+      $('#currency-switcher label').click(function() {
+        $.cookie('excur_currency', $(this).data('currency'), {expires: 86400, path: '/'});
+        location.reload();
+      });
+    }
+  };
 
 })(jQuery, Drupal, this, this.document);

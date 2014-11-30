@@ -29,9 +29,8 @@ function excur_preprocess_excur_travel_planner(&$vars) {
   $vars['user_menu'] = excur_user_menu($account);
 }
 
-
 /**
- * Preprocess for excur-travel-planner.tpl.php.
+ * Preprocess for excur-language-switcher.tpl.php.
  */
 function excur_preprocess_excur_language_switcher(&$vars) {
   global $language;
@@ -49,6 +48,9 @@ function excur_preprocess_excur_language_switcher(&$vars) {
     if ($lang->enabled) {
       $url = url(current_path(), array('language' => $lang, 'absolute' => TRUE));
 
+      $vars['languages'][$lang->prefix]['class'] = $lang->prefix == $language->prefix
+        ? 'active'
+        : '';
       $vars['languages'][$lang->prefix]['url'] = $url;
       $vars['languages'][$lang->prefix]['native'] = $lang->native;
       $vars['languages'][$lang->prefix]['icon'] = theme('image', array(
