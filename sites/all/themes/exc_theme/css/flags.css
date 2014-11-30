@@ -1,8 +1,8 @@
 .flag {
-  width: 25px;
-  height: 15px;
-  background:url(../image/flags.png) no-repeat;
-
+	width: 25px;
+	height: 15px;
+	background:url(../images/flags.png) no-repeat;
+    
 }
 
 .flag.flag-ad {background-position: -25px 0}
@@ -244,3 +244,5 @@
 .flag.flag-za {background-position: -325px -210px}
 .flag.flag-zm {background-position: -350px -210px}
 .flag.flag-zw {background-position: -375px -210px}
+
+

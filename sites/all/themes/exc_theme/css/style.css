@@ -35,6 +35,7 @@ a:focus {
   text-decoration: none;
 }
 
+
 @media (max-width:340px) {
   .mediamin {
     width: 340px;
@@ -158,6 +159,18 @@ a:focus {
   padding-top: 9px;
 }
 
+#excur-offer-date-form::-moz-placeholder {
+  text-align: center;
+  font-size: 18px;
+}
+
+#excur-offer-date-form::-webkit-input-placeholder{
+  text-align: center;
+  font-size: 20px;
+
+
+}
+
 .search-form {
   border-radius: 0px;
   width: 250px;
@@ -193,7 +206,7 @@ a:focus {
 }
 
 header  {
-  background-image: url(../image/back.jpg);
+  background-image: url(../images/back.jpg);
   text-align: center;
   color: #fff;
   background-attachment: scroll;
@@ -226,36 +239,36 @@ header .intro-text .intro-heading {
 
 @media(min-width:1px) {
   header .intro-text {
-    padding-top: 120px;
-    padding-bottom:0px;
+    padding-top: 100px;
+    padding-bottom:250px;
   }
 }
 
 @media(min-width:768px) {
   header .intro-text {
-    padding-top: 300px;
-    padding-bottom:170px;
+    padding-top: 100px;
+    padding-bottom:390px;
   }
 }
 
 @media(min-width:1300px) {
   header .intro-text {
-    padding-top: 290px;
-    padding-bottom:150px;
+    padding-top: 100px;
+    padding-bottom:360px;
   }
 }
 
 @media(min-width:1400px) {
   header .intro-text {
-    padding-top: 350px;
-    padding-bottom:300px;
+    padding-top: 150px;
+    padding-bottom:500px;
   }
 }
 
 @media(min-width:1650px) {
   header .intro-text {
-    padding-top: 450px;
-    padding-bottom:330px;
+    padding-top: 160px;
+    padding-bottom:610px;
   }
 }
 
@@ -459,16 +472,16 @@ section h3.section-subheading {
 }
 
 #home {
-  background: url(../image/images/home.jpg) 50% 0px fixed;
+  background: url(../images/images/home.jpg) 50% 0px fixed;
   height: auto;
   margin: 0 auto;
   width: 100%;
   position: relative;
-  padding: 240px 0;
+  padding: 190px 0;
 }
 
 #home1 {
-  background: url(../image/images/home2.jpg) 50% 0 fixed;
+  background: url(../images/images/home2.jpg) 50% 0 fixed;
   height: auto;
   margin: 0 auto;
   width: 100%;
@@ -478,8 +491,8 @@ section h3.section-subheading {
 
 #about {
   background: #fff;
-  padding: 30px 0;
-  height: 360px;
+  padding: 45px 0;
+  height: 410px;
 }
 
 .padiconleft {
@@ -494,8 +507,6 @@ section h3.section-subheading {
   padding-right: 10%;
 }
 
-
-
 .border_name {
   border: 1px solid black;
   height:70px;
@@ -507,7 +518,7 @@ section h3.section-subheading {
 }
 
 .mat_block {
-  background: url(../image/mat/mat1.png);
+  background: url(../images/mat/mat1.png);
   width: 100%;
 }
 
@@ -537,8 +548,9 @@ section h3.section-subheading {
 }
 
 .bord1 {
-  height:110px;
+  height:80px;
   display: table;
+  text-align: center;
 }
 
 footer {
@@ -635,8 +647,8 @@ footer .footer-below {
 }
 
 .part {
-  background:#b73f3f;
-  padding: 60px 0;
+  background:#808080;
+  padding: 25px 0;
 }
 
 .text_part {
@@ -868,31 +880,31 @@ footer .footer-below {
 
 
 #EUR .continent-bg{
-  background-image: url(../image/EURfon.png);
+  background-image: url(../images/EURfon.png);
   background-repeat: no-repeat;
   background-position: center;
 }
 
 #ASIA .continent-bg{
-  background-image: url(../image/ASIAfon.png);
+  background-image: url(../images/ASIAfon.png);
   background-repeat: no-repeat;
   background-position:center;
 }
 
-#AFRICA .continent-bg{
-  background-image: url(../image/AFRICAfon.png);
+#AFR .continent-bg{
+  background-image: url(../images/AFRICAfon.png);
   background-repeat: no-repeat;
   background-position:center;
 }
 
 #AMERICA .continent-bg{
-  background-image: url(../image/AMERICAfon.png);
+  background-image: url(../images/AMERICAfon.png);
   background-repeat: no-repeat;
   background-position:center;
 }
 
 #AUSTRALIA .continent-bg{
-  background-image: url(../image/AUSTRALIAfon.png);
+  background-image: url(../images/AUSTRALIAfon.png);
   background-repeat: no-repeat;
   background-position:center;
 }
@@ -922,7 +934,7 @@ footer .footer-below {
   width: 300px;
   height: 150px;
   margin: 0 auto;
-  background: url(../image/EURicon.png);
+  background: url(../images/EURicon.png);
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -933,18 +945,18 @@ footer .footer-below {
   width: 230px;
   height: 150px;
   margin: 0 auto;
-  background: url(../image/ASIAicon.png);
+  background: url(../images/ASIAicon.png);
   background-repeat: no-repeat;
   background-position: center;
 }
 
-#AFRICA .cont_icon {
+#AFR .cont_icon {
   text-align: center;
   margin-top: 50px;
   width: 300px;
   height: 150px;
   margin: 0 auto;
-  background: url(../image/AFRICAicon.png);
+  background: url(../images/AFRICAicon.png);
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -955,7 +967,7 @@ footer .footer-below {
   width: 300px;
   height: 150px;
   margin: 0 auto;
-  background: url(../image/AMERICAicon.png);
+  background: url(../images/AMERICAicon.png);
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -966,7 +978,7 @@ footer .footer-below {
   width: 300px;
   height: 150px;
   margin: 0 auto;
-  background: url(../image/AUSTRALIAicon.png);
+  background: url(../images/AUSTRALIAicon.png);
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -1026,7 +1038,7 @@ footer .footer-below {
   width: 1020px;
   height:100%;
   position: relative;
-  background-image: url(../image/AZfon.png);
+  background-image: url(../images/AZfon.png);
   background-repeat: no-repeat;
   margin-top: 100px;
 }
@@ -1056,7 +1068,7 @@ footer .footer-below {
   background:#D3AC54;
 }
 
-#AFRICA #continent {
+#AFR #continent {
   background: #BC7433;
 }
 
@@ -1128,30 +1140,79 @@ div.box-crew:hover span{
 }
 
 .bread-crumbs-content {
-  height: 100px;
+  height: 60px;
   width:960px;
   margin: 0 auto;
-  margin-top: -100px;
+  margin-top: -60px;
   z-index: 20;
   padding-top: 0px;
 }
 
-
 .bread-crumbsleft {
-  height: 100px;
+  height: 60px;
   background: #26686D;
   padding-top: 0px;
   width: 50%;
-  margin-top: 50px;
+}
+
+#EUR .bread-crumbsleft {
+  background: #26686D;
+}
+
+#ASIA .bread-crumbsleft {
+  background: #9b2626;
+}
+
+#RUS .bread-crumbsleft {
+  background: #3f6d52;
+}
+
+#AFR .bread-crumbsleft {
+  background: #dd801b;
+}
+
+#AFR .bread-crumbsleft {
+  background: #dd801b;
+}
+
+#AM .bread-crumbsleft {
+  background: #05777c;
+}
+
+#AUS .bread-crumbsleft {
+  background: #336587;
 }
 
 .bread-crumbsright {
-  height: 100px;
-  background: #40B6B6;
+  height: 60px;
   padding-top: 0px;
   width: 50%;
   margin-left: 50%;
-  margin-top: -100px;
+  margin-top: -60px;
+}
+
+#EUR .bread-crumbsright {
+  background: #40B6B6;
+}
+
+#ASIA .bread-crumbsright {
+  background: #c14d4d;
+}
+
+#RUS .bread-crumbsright {
+  background: #5c9e76;
+}
+
+#AFR .bread-crumbsright {
+  background: #ef9d45;
+}
+
+#AM .bread-crumbsright {
+  background: #05777c;
+}
+
+#AUS .bread-crumbsright {
+  background: #4689b7;
 }
 
 .country-content {
@@ -1162,18 +1223,65 @@ div.box-crew:hover span{
 }
 
 .bread-crumbs-mainland {
-  height: 100px;
+  height: 60px;
   text-align: right;
   transition: all 0.44s ease;
   background: #26686D;
 }
 
+#EUR .bread-crumbs-mainland {
+  background: #26686D;
+}
+
+#ASIA .bread-crumbs-mainland {
+  background: #9b2626;
+}
+
+#RUS .bread-crumbs-mainland {
+  background: #3f6d52;
+}
+
+#AFR .bread-crumbs-mainland {
+  background: #dd801b;
+}
+
+#AM .bread-crumbs-mainland {
+  background: #05777c;
+}
+
+#AUS .bread-crumbs-mainland {
+  background: #336587;
+}
+
 .bread-crumbs-country {
-  height: 100px;
+  height: 60px;
   text-align: center;
   background: #3AA0A3;
 }
 
+#EUR .bread-crumbs-country {
+  background: #3AA0A3;
+}
+
+#ASIA .bread-crumbs-country {
+  background: #c12f2f;
+}
+
+#RUS .bread-crumbs-country {
+  background: #4c8563;
+}
+
+#AFR .bread-crumbs-country {
+  background: #f2911b;
+}
+
+#AM .bread-crumbs-country {
+  background: #045f63;
+}
+
+#AUS .bread-crumbs-country {
+  background: #3d76a5;
+}
 
 .arrow-country::after {
   content: '';
@@ -1184,10 +1292,6 @@ div.box-crew:hover span{
   display:none;
 }
 
-#EUR .arrow-country::after{
-  border-top: 14px solid #32878E; /* Добавляем треугольник */
-}
-
 .arrow-city::after {
   content: '';
   position: absolute; /* Абсолютное позиционирование */
@@ -1196,33 +1300,44 @@ div.box-crew:hover span{
   border-right: 80px solid transparent; /* Прозрачные границы */
 }
 
-#EUR .arrow-city::after{
-  border-top: 14px solid #379C9E; /* Добавляем треугольник */
-}
-
 .bread-crumbs-city {
-  height:100px;
+  height:60px;
   text-align: left;
   background: #40B6B6;
+}
+
+#EUR .bread-crumbs-city {
+  background: #40B6B6;
+}
+
+#ASIA .bread-crumbs-city {
+  background: #c14d4d;
+}
+
+#RUS .bread-crumbs-city {
+  background: #5c9e76;
+}
+
+#AFR .bread-crumbs-city {
+  background: #ef9d45;
+}
+
+#AM .bread-crumbs-city {
+  background: #05777c;
+}
+
+#AUS .bread-crumbs-city {
+  background: #4689b7;
 }
 
 .bread-crumb-index {
   padding-top: 10px;
 }
 
-.bread-crumbs-index {
-  margin-top: 7px;
-  color:#efefef;
-  font-weight: 300;
-  font-size: 14px;
-  letter-spacing: 0.5px;
-  font-family:'Segoe';
-}
-
 .bread-crumbs-name {
   font-size: 25px;
   color:#efefef;
-  margin-top: -3px;
+  margin-top: -40px;
   font-family:'Segoe';
 }
 
@@ -1252,16 +1367,11 @@ div.box-crew:hover span{
   border-radius: 5px;
   cursor: pointer;
   outline: none;
-  -webkit-transition: all 0.3s ease-out;
-  -moz-transition: all 0.3s ease-out;
-  -ms-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  transition: all 0.44s ease-out;
   padding-left: 15px;
   padding-top: 55px;
   bottom: 43px;
-  height:100px;
-  margin-top: 0px;
+  height:60px;
+  margin-top: 43px;
   color:#efefef;
   font-weight: 300;
 }
@@ -1273,7 +1383,7 @@ div.box-crew:hover span{
   position: absolute;
   top: 91%;
   right: 25px;
-  margin-top: -20px;
+  margin-top: -25px;
   border-width: 6px 6px 0 6px;
   border-style: solid;
   border-color: #fff transparent;
@@ -1372,15 +1482,10 @@ div.box-crew:hover span{
   border-radius: 5px;
   cursor: pointer;
   outline: none;
-  -webkit-transition: all 0.3s ease-out;
-  -moz-transition: all 0.3s ease-out;
-  -ms-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  transition: all 0.44s ease-out;
   padding-top: 55px;
   bottom: 43px;
-  height:100px;
-  margin-top: 0px;
+  height:60px;
+  margin-top: 43px;
   color:#efefef;
   font-weight: 300;
 }
@@ -1392,7 +1497,7 @@ div.box-crew:hover span{
   position: absolute;
   top: 91%;
   right: 25px;
-  margin-top: -20px;
+  margin-top: -25px;
   border-width: 6px 6px 0 6px;
   border-style: solid;
   border-color: #fff transparent;
@@ -1492,16 +1597,11 @@ div.box-crew:hover span{
   border-radius: 5px;
   cursor: pointer;
   outline: none;
-  -webkit-transition: all 0.33s ease-out;
-  -moz-transition: all 0.33s ease-out;
-  -ms-transition: all 0.33s ease-out;
-  -o-transition: all 0.33s ease-out;
-  transition: all 0.33s ease-out;
   padding-right: 15px;
   padding-top: 55px;
   bottom: 43px;
-  height:100px;
-  margin-top: 0px;
+  height:60px;
+  margin-top: 43px;
   color:#efefef;
   font-weight: 300;
 }
@@ -1513,7 +1613,7 @@ div.box-crew:hover span{
   position: absolute;
   top: 91%;
   left: 25px;
-  margin-top: -20px;
+  margin-top: -25px;
   border-width: 6px 6px 0 6px;
   border-style: solid;
   border-color: #fff transparent;
@@ -1606,7 +1706,7 @@ div.box-crew:hover span{
 .bread-crumbs-name-main {
   font-size: 40px;
   color:#fff;
-  margin-top: -20px;
+  margin-top: -57px;
   font-weight: 100;
   font-family:'Segoe';
 }
@@ -1663,6 +1763,7 @@ div.box-crew:hover span{
   padding-top: 0px;
   height:210px;
   border-bottom:2px solid #9E3F3F;
+  margin-top: 10px;
 }
 
 .country-useful-info-text {
@@ -1701,7 +1802,7 @@ div.box-crew:hover span{
 }
 
 #EUR .country-usefull-flag{
-  background:url(../image/czech.png) no-repeat;
+  background:url(../images/czech.png) no-repeat;
 }
 
 .pop-gid {
@@ -1788,7 +1889,7 @@ div.box-crew:hover span{
 .owl-theme .owl-controls .owl-buttons .owl-prev{
   left: -155px;
   top: 16px;
-  background: url(../image/left.png);
+  background: url(../images/left.png);
   height:135px;
   width:150px;
   background-repeat: no-repeat;
@@ -1815,7 +1916,7 @@ div.box-crew:hover span{
   top: 16px;
   height:135px;
   width:150px;
-  background: url(../image/right.png);
+  background: url(../images/right.png);
   background-repeat: no-repeat;
   background-position: 20px;
 }
@@ -1966,7 +2067,7 @@ div.box-crew:hover span{
   padding-top: 0px;
   width: 100%;
   margin-top: -10px;
-  background: url(../image/line.png);
+  background: url(../images/line.png);
   background-attachment: scroll;
   background-position: center center;
   background-repeat: none;
@@ -1982,7 +2083,7 @@ div.box-crew:hover span{
   padding-top: 0px;
   width: 100%;
   margin-top: -30px;
-  background: url(../image/line.png);
+  background: url(../images/line.png);
   background-attachment: scroll;
   background-position: center center;
   background-repeat: none;
@@ -2012,7 +2113,7 @@ div.box-crew:hover span{
 
 .service-title {
   text-align: center;
-  font-size:40px;
+  font-size:30px;
   padding-top: 0px;
   color:#665E5E;
   letter-spacing: 3px;
@@ -2023,7 +2124,7 @@ div.box-crew:hover span{
   padding-top: 0px;
   width: 100%;
   margin-top: -10px;
-  background: url(../image/line2.png);
+  background: url(../images/line2.png);
   background-attachment: scroll;
   background-position: center center;
   background-repeat: none;
@@ -2135,6 +2236,7 @@ div.box-crew:hover span{
   color:#393939;
   font-size: 16px;
   font-family: 'Segoe UI';
+  overflow: hidden;
 }
 
 .pop-excur-price {
@@ -2149,7 +2251,6 @@ div.box-crew:hover span{
 
 .currency {
   font-size:20px;
-  font-family: 'Segoe UI';
   color:#4D4D4D;
 }
 
@@ -2340,7 +2441,6 @@ div.box-crew:hover span{
 }
 
 .excur-list-name {
-  font-family: 'Roboto';
   font-weight: 400;
   font-size: 16px;
   line-height:17px;
@@ -2360,7 +2460,6 @@ div.box-crew:hover span{
   height:50px;
   text-align: left;
   font-size: 20px;
-  font-family: 'Roboto';
   font-weight: 300;
   overflow: hidden;
   color:#4C4C4C;
@@ -2383,7 +2482,7 @@ div.box-crew:hover span{
 }
 
 .excur-list-gid-name {
-  height:100px;
+  height: 100px;
   padding-top: 5px;
 }
 
@@ -2414,7 +2513,6 @@ div.box-crew:hover span{
   position: absolute;
 }
 .excur-price {
-  font-family: 'Roboto';
   margin-top: 30px;
   width:125px;
   color:#393939;
@@ -3049,30 +3147,13 @@ div.box-crew:hover span{
   color:#3F3F3F;
 }
 
-.include-price {
-  text-align: center;
-  height:40px;
-  font-size: 20px;
-  font-family: 'Segoe';
-  background: #648963;
-  color:#fff;
-  padding-top:4px;
-}
 
-.excluded {
-  background: #7A4F4F;
-}
 
-.excur-excluded {
-  margin-left: 0px;
-  margin-top: 25px;
-  padding: 0px;
-}
 
-.excur-included {
-  margin-top: 25px;
-  padding: 0px;
-}
+
+
+
+
 
 .excur-included li{
   list-style: none;
@@ -3182,55 +3263,48 @@ div.box-crew:hover span{
   height:25px;
 }
 
-.order-condition {
-  font-size: 18px;
-  margin-top: 25px;
-  color:#3F3F3F;
-  width:600px;
-  line-height: 25px;
-  text-align: center;
-  margin-left: 60px;
-}
 
-.order-condition-days {
-  font-size: 20px;
-  color: #000;
-}
+
+
 
 .excur-offer-type {
-  border:1px solid #B2B2B2;
-  width:640px;
+  width:670px;
   padding: 0px;
-  margin-bottom: 35px;
+  margin-bottom: 25px;
+  margin-left: 25px;
 }
 
 .excur-offer-title {
-  height:40px;
+  height:60px;
   font-size: 20px;
-  background:#32A1BB;
+  background:#33a1bb;
   color:#fff;
   font-family: Segoe;
-  padding-top: 5px;
+  padding-top: 15px;
+  padding-left: 25px;
 }
 
 .excur-offer-info {
-  text-align: center;
+  text-align: left;
   height: 40px;
+  background: #e8e9e8;
+  padding: 0px;
 }
 
 .excur-offer-text {
   font-size: 15px;
-  padding-top:8px;
+  padding-top:10px;
   padding-bottom:10px;
+  color: #697371;
+  margin-left: 50px;
 }
 
 .excur-offer-item {
-  font-size:15px;
   text-align: center;
-  display:table;
-  padding-bottom: 10px;
-  border-top:1px solid #B2B2B2;
-  height:50px;
+  border-bottom:1px solid #b3b2b3;
+  border-right:1px solid #b3b2b3;
+  border-left:1px solid #b3b2b3;
+  height:45px;
 }
 
 .excur-offer-price {
@@ -3250,25 +3324,30 @@ div.box-crew:hover span{
 }
 
 #excur-offer-date-form {
-  height: 40px;
-  width: 320px;
+  height: 50px;
+  width: 447px;
   border-radius: 0px;
   cursor:pointer;
+  height: 50px;
+  line-height: 50px;
+  border: 2px solid #b3b2b3;
+
 }
 
 .excur-order-button {
   text-align: center;
-  height:40px;
+  height:50px;
 }
 
 #excur-offer-button {
-  width: 320px;
   position: absolute;
-  margin-left: -159px;
-  height:40px;
+  height:50px;
   font-size:20px;
   padding-top: 4px;
   background: #2664AF;
+  width: 224px;
+  left: 0px;
+  padding-top: 10px;
 }
 
 .line-height-zero {
@@ -3276,8 +3355,10 @@ div.box-crew:hover span{
 }
 
 .travel-companion {
-  width:640px;
+  width:670px;
   padding: 0px;
+  margin-left: 25px;
+  margin-top: 5px;
 }
 
 .travel-companion-item {
@@ -3300,7 +3381,7 @@ div.box-crew:hover span{
 
 #travel-companion-button {
   width:136px;
-  left: 11px;
+  left: 16px;
   padding: 2px 0px 3px 0px;
   font-family: Segoe;
   margin-top: 140px;
@@ -3309,9 +3390,10 @@ div.box-crew:hover span{
 }
 
 .excur-comment {
-  width: 640px;
-  margin-top: 10px;
+  width: 670px;
+  margin-top: 5px;
   padding: 0px;
+  margin-left: 15px;
 }
 
 .excur-comment-item {
@@ -3326,7 +3408,7 @@ div.box-crew:hover span{
 }
 
 .excur-comment-body {
-  width:500px;
+  width:555px;
   border:1px solid #B2B2B2;
   padding: 30px 10px 10px 10px;
   font-size: 15px;
@@ -3680,9 +3762,10 @@ footer {
 .excur-container {
   width: 695px;
   padding: 0px;
-  opacity: 0.3;
+  margin-top: 25px;
+  border-bottom: 1px solid #b3b2b3;
+  padding-bottom: 10px;
 }
-
 .modal-order-pay {
   height:50px;
   border:1px solid black;
@@ -3994,61 +4077,57 @@ footer {
 }
 
 .count-ticket-form {
-  height:40px;
   border-radius: 0px;
-  border:1px solid #B2B2B2;
-  background: #fff;;
-  font-size: 18px;
-  letter-spacing: 0px;
-  color:#4A4A4C;
+  border:none;
+  background: transparent;
+  font-size: 22px;
+  color:#697371;
   position: absolute;
-  margin-top: 5px;
-  width: 60px;
+  width: 35px;
+  padding: 0px;
   margin-left: 30px;
   text-align: center;
   cursor:pointer;
+  height: 44px;
 }
 
 .excur-offer-item-inner {
   padding: 0px;
   text-align: left;
-  font-size: 18px;
-  line-height: 20px;
-  height:30px;
-  padding-left: 5px;
-  padding-top: 3px;
+  font-size: 22px;
   overflow: hidden;
-  margin-top: 10px;
-  color:#333;
+  color:#697371;
+  padding-left: 35px;
+  height: 45px;
+  line-height: 45px;
 }
 
 .excur-offer-item-inner-big {
   padding: 0px;
   text-align: right;
-  font-size: 30px;
-  line-height: 20px;
-  height:30px;
-  padding-left: 5px;
-  padding-top: 3px;
+  font-size: 25px;
+  height: 45px;
+  line-height: 45px;
   overflow: hidden;
-  margin-top: 10px;
-  color:#333;
+  color:#697371;
 }
 
 .icon-plus {
   position: absolute;
-  right:17px;
-  margin-top: 17px;
+  right:0px;
   cursor: pointer;
   opacity: 0.6;
+  height: 45px;
+  line-height: 45px;
 }
 
 .icon-minus {
   position: absolute;
-  left:15px;
-  margin-top: 17px;
+  left:20px;
   cursor: pointer;
   opacity: 0.6;
+  height: 45px;
+  line-height: 45px;
 }
 
 .margin-top-title {
@@ -4098,7 +4177,7 @@ footer {
   width: 100%;
   height: 350px;
   border:1px solid black;
-  background: url(../image/images/test.jpg);
+  background: url(../images/images/test.jpg);
   background-position: center;
 }
 
@@ -4266,7 +4345,7 @@ footer {
   right: 10px;
   border: 1px solid black;
   background-color: #f8f8f8;
-  background-image: url(../image/search-grey.png);
+  background-image: url(../images/search-grey.png);
   background-repeat: no-repeat;
   background-position: center;
   border: none;
@@ -4277,7 +4356,7 @@ footer {
 }
 
 .search-button:hover {
-  background-image: url(../image/search-red.png);
+  background-image: url(../images/search-red.png);
   transition: all 200ms linear;
   -moz-transition: all 200ms linear;
   -webkit-transition: all 200ms linear;
@@ -4343,8 +4422,964 @@ footer {
 }
 
 .excur-list-lang {
-  height:93px;
-  padding-top: 7px;
+  height:59px;
   overflow: hidden;
   padding-top: 5px;
+}
+
+.user-profile-sidebar {
+  background: #4f93aa;
+  color: #fff;
+  margin-bottom: 30px;
+  width: 240px;
+  margin-left: 15px;
+}
+
+.user-profile-sidebar .user-profile-avatar {
+  padding: 0 0px;
+  margin-bottom: 0px;
+}
+
+.user-profile-sidebar .user-profile-avatar img {
+  width: 240px;
+}
+
+.user-profile-sidebar .user-profile-avatar h5 {
+  color: #fff;
+  margin-bottom: 0;
+  font-size: 16px;
+}
+
+.user-profile-sidebar .user-profile-avatar p {
+  font-size: 10px;
+}
+
+.user-profile-sidebar .user-profile-nav > li {
+  text-align: right;
+
+}
+
+
+.user-profile-sidebar .user-profile-nav > li.active > a {
+  background: #ed8323;
+  color: #fff;
+  cursor: default;
+}
+
+.user-profile-sidebar .user-profile-nav > li.active > a:hover {
+  background: #ed8323;
+  color: #fff;
+}
+
+.user-profile-sidebar .user-profile-nav > li.active > a:hover > i {
+  color: #fff;
+}
+
+.user-profile-sidebar .user-profile-nav > li > a {
+  padding: 10px 20px;
+  color: #f2f2f2;
+  display: block;
+  font-size: 15px;
+}
+
+.user-profile-sidebar .user-profile-nav > li > a:hover {
+  color: #fff;
+  background: #386977;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -ms-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.user-profile-sidebar .user-profile-nav > li > a:hover > i {
+  color: #ed8323;
+}
+
+.user-profile-sidebar .user-profile-nav > li > a > i {
+  margin-right: 7px;
+  display: inline-block;
+  width: 20px;
+  text-align: center;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -ms-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.user-profile-statictics > li {
+  margin-right: 20px;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #e6e6e6;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  width: 153px;
+}
+
+.user-profile-statictics > li:last-child {
+  margin-right: 0;
+}
+
+.user-profile-statictics > li .user-profile-statictics-icon {
+  font-size: 70px;
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #8c8c8c;
+}
+
+.user-profile-statictics > li h5 {
+  font-size: 30px;
+  margin-bottom: 0;
+  line-height: 1em;
+  margin-bottom: 3px;
+  color: #ed8323;
+}
+
+.user-profile-statictics > li p {
+  margin-bottom: 0;
+  line-height: 1em;
+  font-size: 13px;
+}
+
+.po-box {
+  margin-top: 90px;
+  width: 960px;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.excur-image-offer {
+  width: 155px;
+  height:103px;
+}
+
+.excur-image-booking {
+  width: 155px;
+  height:103px;
+}
+
+.office-title {
+  font-size: 40px;
+  font-family: "Segoe";
+  margin-left: 15px;
+  text-align: center;
+}
+
+.offer-list {
+  height: 140px;
+  margin-left: 20px;
+  border-radius: 0px;
+  margin-bottom: 15px;
+  margin-top: 5px;
+}
+
+.excur-list-infoblock-offer {
+  height: 103px;
+}
+
+.offer-list-info {
+  height: 57px;
+  margin-top: -3px;
+}
+
+
+
+.offer-list-time {
+  height: 40px;
+  padding-left: 0px;
+}
+
+.offer-price {
+  margin-top: -2px;
+  height: 57px;
+  text-align: center;
+  line-height: 57px;
+  width: 100%;
+}
+
+.offer-list-button {
+  height: 35px;
+}
+
+.offer-list-lang {
+  height: 95%;
+  width: 100%;
+  padding: 0px;
+  padding-top: 5px;
+}
+
+#offer-list-button {
+  margin-left: -12px;
+  margin-top:4px;
+  position: absolute;
+  padding: 3px 0px 5px 0px;
+  font-size:16px;
+  margin-left: 160px;
+  cursor:pointer;
+  width: 155px;
+}
+
+.offer-line {
+  width: 650px;
+  margin-left: 20px;
+}
+
+.offer-line-select {
+  height: 40px;
+  margin-bottom: 25px;
+}
+
+#add-excur {
+  width:240px;
+  position: absolute;
+  height:10px;
+  padding: 5px 0px 35px 0px;
+  font-size: 17px;
+  font-family: Segoe;
+  left: 0px;
+  margin-top: -25px;
+}
+
+.booking-list {
+  height: 140px;
+  margin-left: 20px;
+  border-radius: 0px;
+  margin-bottom: 15px;
+  margin-top: 5px;
+}
+
+.booking-list-info {
+  height: 60px;
+  padding: 0px;
+}
+
+.booking-list-star {
+  height: 25px;
+  padding-left: 0px;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 300;
+  overflow: hidden;
+  color:#4C4C4C;
+  margin-top: -5px;
+}
+
+.booking-list-date {
+  height: 20px;
+  padding-left: 0px;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 300;
+  color:#4C4C4C;
+  margin-top:6px;
+}
+
+.booking-gid-photo {
+  width: 45px;
+  margin-left: -30px;
+  margin-top: -5px;
+}
+
+.booking-list-gid {
+  height:65px;
+  padding-top: 5px;
+}
+
+.right-line-office {
+  width: 680px;
+  margin-left: 40px;
+  margin-bottom: 100px;
+}
+
+.booking-list-guide-name {
+  height: 50px;
+  margin-top: -5px;
+  width: 70px;
+}
+
+.booking-gid-name {
+  color:#393939;
+  font-size: 15px;
+  font-family: 'Segoe UI';
+  overflow: hidden;
+  width: 90px;
+}
+
+.booking-list-name {
+  height: 43px;
+  padding-top: 3px;
+  font-size: 17px;
+}
+
+#booking-list-button {
+  left: 0px;
+  top:5px;
+  position: absolute;
+  padding: 3px 0px 5px 0px;
+  font-size:16px;
+  width: 155px;
+}
+
+.booking-status p {
+  font-size: 25px;
+  margin-left: 20px;
+  padding-top: 0px;
+}
+
+.excur-place-block {
+  padding: 0px;
+}
+
+.excur-place-title {
+  padding: 0px;
+  color: #979797;
+  font-size: 15px;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.excur-place-place {
+  padding: 0;
+  color:#4d4e4e;
+  padding-left: 10px;
+  font-size: 17px;
+  margin-bottom: 10px;
+  word-wrap: break-word;
+}
+
+.excur-time-block {
+  padding: 0px;
+  margin-bottom: -5px;
+  margin-left: -25px;
+}
+
+.excur-time-title {
+  padding: 0px;
+  padding: 0px;
+  color: #979797;
+  font-size: 15px;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.excur-time-time {
+  padding: 0px;
+  text-align: left;
+  color:#4d4e4e;
+  padding-left: 10px;
+  font-size: 25px;
+}
+
+.unclude-block {
+  text-align: center;
+}
+
+.exclude-block {
+  text-align: center;
+}
+
+.tick {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 50px;
+}
+
+.cross {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  left: 50px;
+}
+
+.title-exclude {
+  font-size: 18px;
+  color:#979797;
+}
+
+.excur-include{
+  padding: 0;
+  color:#4d4e4e;
+  padding-left: 10px;
+}
+
+.excur-include p{
+  font-size: 17px;
+  padding-top: 0px;
+  margin-bottom: 10px;
+  width: 180px;
+  word-wrap: break-word;
+}
+
+.condition-excur p{
+  width: 250px;
+}
+
+.condition-container {
+  border:none;
+}
+
+.title-offer {
+  text-align: left;
+  width:695px;
+  font-size: 30px;
+  margin-top: 25px;
+  margin-left: 10px;
+  margin-bottom: 15px;
+}
+
+.excur-offer-item-sum {
+  height:40px;
+  background: #b3b2b3;
+}
+
+.excur-offer-item-sum-inner {
+  padding: 0px;
+  text-align: right;
+  font-size: 30px;
+  height: 40px;
+  line-height: 40px;
+  overflow: hidden;
+  color:#efefee;
+}
+
+.white-curency {
+  color: #efefee;
+}
+
+.excur-offer-item-sum-prefix {
+  font-size: 20px;
+  text-align: left;
+  height: 40px;
+  line-height: 40px;
+  color:#efefee;
+}
+
+.title-comment {
+  margin-top: 5px;
+}
+
+.title-companion {
+  margin-top:15px;
+}
+
+.offer-list-date {
+  height: 57px;
+  line-height: 57px;
+  padding-left: 0px;
+  margin-left: -15px;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 300;
+  color:#4C4C4C;
+}
+
+.offer-time-icon {
+  margin-top: -1px;
+}
+
+.offer-star-icon {
+  margin-top: 1px;
+}
+
+
+
+.change-avatar {
+  width: 240px;
+  height: 40px;
+  margin-top: -40px;
+  background: #666666;
+  position: absolute;
+  opacity: 0.5;
+  cursor:pointer;
+  z-index: 10;
+}
+
+.text-change-avatar {
+  margin-top: -40px;
+  z-index: 20;
+  color:#efefee;
+  z-index: 20;
+  position: absolute;
+  font-size: 16px;
+  height: 40px;
+  text-align: right;
+  line-height: 40px;
+  width: 240px;
+  padding-right: 20px;
+  cursor: pointer;
+}
+
+.office-name {
+  margin-top: 50px;
+  font-size: 50px;
+  font-family: "Segoe";
+  margin-left: 15px;
+}
+
+.office-place {
+  margin-bottom: 25px;
+  font-size: 20px;
+  font-family: "Segoe";
+  margin-left: 15px;
+  color:#848484;
+  padding: 0px;
+}
+
+.add-button {
+  height: 45px;
+  margin-left: 15px;
+}
+
+.booking-list-info-status {
+  font-size: 20px;
+  text-align: center;
+  line-height: 20px;
+  color:#386977;
+}
+
+.profile-part {
+  padding: 0px;
+}
+
+.progile-part-title {
+  color:#999999;
+  font-size: 20px;
+}
+
+.label-profile {
+  color: #848484;
+  font-size: 15px;
+  font-family: "Segoe UI";
+  letter-spacing: 1px;
+  margin-left: 15px;
+  font-weight: 300;
+}
+
+.form-profile {
+  border-radius: 0px;
+  width: 270px;
+  margin-left: 15px;
+  border:1px solid #b3b3b3;
+  font-size:16px;
+  margin-bottom: 15px;
+}
+
+.mini-label-profile {
+  color: #999999;
+  font-size: 12px;
+  font-family: "Segoe UI";
+  letter-spacing: 1px;
+  margin-left: 15px;
+  font-weight: 300;
+  margin-right: 15px;
+  margin-top: -13px;
+  padding-bottom: 17px;
+  line-height: 15px;
+  letter-spacing: 0.5px;
+  width: 255px;
+  min-height: 10px;
+}
+
+.mini-label-profile a{
+  font-style:italic;
+  color: #33a1bb;
+  padding: 0px;
+}
+
+.mini-label-profile a:active{
+  font-style:italic;
+  color: #33a1bb;
+}
+
+
+
+#save-profile {
+  width: 140px;
+  margin-left: 76px;
+  background: #33a1bb;
+  font-size: 15px;
+  padding: 12px 0px 12px 0px;
+}
+
+.button-profile {
+  margin: 0 auto;
+}
+
+.office-place-config {
+  margin-top: 181px;
+  margin-left: 0px;
+}
+
+.offer-config {
+  font-size:15px;
+  color:#848484;
+  margin-bottom: 15px;
+  padding: 0px;
+  margin-left: 15px;
+}
+
+#check-profile {
+  margin-right:5px;
+}
+
+.text-config {
+  margin-top: -5px;
+}
+
+.city-header-background {
+  margin-top: 50px;
+  margin-bottom: -50px;
+}
+
+
+
+#EUR .topline {
+  background: url(../images/topline.jpg);
+  background-attachment: fixed;
+  background-origin: initial;
+  background-clip: initial;
+  background-size: cover;
+  background-repeat:no-repeat;
+  background-position:center;
+  position:relative;
+  height: 350px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  z-index: -20;
+
+}
+
+@media(max-width:998px){
+  #EUR .topline{
+    background-attachment: scroll;
+  }
+}
+
+#ASIA .topline {
+  background: url(../images/topasia.jpg);
+  background-attachment: fixed;
+  background-origin: initial;
+  background-clip: initial;
+  background-repeat:no-repeat;
+  background-position:center top;
+  position:relative;
+  height: 350px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  z-index: -20;
+}
+
+@media(max-width:998px){
+  #ASIA .topline{
+    background-attachment: scroll;
+  }
+}
+
+#RUS .topline {
+  background: url(../images/toprus.jpg);
+  background-attachment: fixed;
+  background-origin: initial;
+  background-clip: initial;
+  background-repeat:no-repeat;
+  background-position:center top;
+  position:relative;
+  height: 350px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  z-index: -20;
+}
+
+@media(max-width:998px){
+  #RUS .topline{
+    background-attachment: scroll;
+  }
+}
+
+#AFR .topline {
+  background: url(../images/topafr.jpg);
+  background-attachment: fixed;
+  background-origin: initial;
+  background-clip: initial;
+  background-repeat:no-repeat;
+  background-position:center top;
+  position:relative;
+  height: 350px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  z-index: -20;
+}
+
+@media(max-width:998px){
+  #AFR .topline{
+    background-attachment: scroll;
+  }
+}
+
+#AM .topline {
+  background: url(../images/topamerica.jpg);
+  background-attachment: fixed;
+  background-origin: initial;
+  background-clip: initial;
+  background-repeat:no-repeat;
+  background-position:center center;
+  position:relative;
+  height: 350px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  z-index: -20;
+}
+
+@media(max-width:998px){
+  #AM .topline{
+    background-attachment: scroll;
+  }
+}
+
+#EUR .continent-name {
+  font-size: 100px;
+  top: 200px;
+  color:#f1f2f2;
+  font-family: "Segoe";
+  text-align: center;
+  letter-spacing: 3px;
+  margin-top: -50px;
+  position: fixed;
+  margin: 0 auto;
+  left: 50%;
+  top: 100px;
+  z-index: -10;
+  margin-left: -185px;
+}
+
+#EUR .continent-name:before  {
+  content: "EUROPE";
+}
+
+@media(max-width:998px){
+  #EUR .continent-name{
+    position: relative;
+    margin: 0 auto;
+    left: 0px;
+  }
+}
+
+#ASIA .continent-name {
+  font-size: 100px;
+  top: 200px;
+  color:#58595b;
+  font-family: "Segoe";
+  text-align: center;
+  letter-spacing: 3px;
+  position: fixed;
+  top: 100px;
+  z-index: -10;
+  right: 10%;
+}
+
+@media(max-width:1300px){
+  #ASIA .continent-name {
+    right: 2%;
+  }
+}
+
+#ASIA .continent-name:before  {
+  content: "ASIA";
+}
+
+@media(max-width:998px){
+  #ASIA .continent-name{
+    left: 5%;
+    width: 250px;
+    top: 130px;
+  }
+}
+
+#RUS .continent-name {
+  font-size: 100px;
+  top: 200px;
+  color:#f1f2f2;
+  font-family: "Segoe";
+  text-align: center;
+  letter-spacing: 3px;
+  position: fixed;
+  top: 100px;
+  z-index: -10;
+  right: 20%;
+}
+
+@media(max-width:1300px){
+  #RUS .continent-name {
+    right: 10%;
+  }
+}
+
+#RUS .continent-name:before  {
+  content: "RUSSIA";
+}
+
+@media(max-width:998px){
+  #RUS .continent-name{
+    text-align: right;
+    position: relative;
+    top:  150px;
+  }
+}
+
+#AFR .continent-name {
+  font-size: 100px;
+  top: 200px;
+  color:#f1f2f2;
+  font-family: "Segoe";
+  text-align: center;
+  letter-spacing: 3px;
+  margin-top: -50px;
+  position: fixed;
+  margin: 0 auto;
+  left: 50%;
+  top: 100px;
+  z-index: -10;
+  margin-left: -165px;
+}
+
+#AFR .continent-name:before  {
+  content: "AFRICA";
+}
+
+@media(max-width:998px){
+  #AFR .continent-name{
+    position: relative;
+    margin: 0 auto;
+    left: 0px;
+    top:120px;
+  }
+}
+
+#AM .continent-name {
+  font-size: 100px;
+  color:#f1f2f2;
+  font-family: "Segoe";
+  text-align: center;
+  letter-spacing: 3px;
+  position: fixed;
+  top: 200px;
+  z-index: -10;
+  right: 10%;
+}
+
+@media(max-width:1300px){
+  #AM .continent-name {
+    right: 2%;
+  }
+}
+
+#AM .continent-name:before  {
+  content: "AMERICA";
+}
+
+@media(max-width:998px){
+  position: relative;
+  right: 50px;
+  top:100px;
+}
+}
+
+.index-line {
+  border-top:1px solid #989898;
+  width:100%;
+  margin: 0 auto;
+  height:1px;
+  margin-top: 45px;
+  margin-bottom: 25px;
+}
+
+#services {
+  border-top: 15px solid #bb2b33;
+}
+
+.about-title {
+  text-align: center;
+  font-size:30px;
+  color:#665E5E;
+  letter-spacing: 3px;
+  font-family: "Segoe";
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background: #bb2b33;
+  color:#f1f1f1;
+  margin-top: -10px;
+}
+
+.stekos-block {
+  width: 960px;
+  height: 497px;
+}
+
+.stekoss {
+  width: 200px;
+  margin-top: 25px;
+  margin-left: -25px;
+}
+
+.gtexcur {
+  width: 400px;
+  margin-left: 75px;
+}
+
+.stekos-block-top p{
+  font-size: 20px;
+  line-height: 0px;
+  margin-left: 100px;
+  z-index: 20;
+  width: 700px;
+  letter-spacing: 1px;
+  color: #666666;
+}
+.stekos-text {
+  margin-top: 35px;
+}
+
+.stekostravel {
+  width: 450px;
+  margin-top: 50px;
+  margin-left: -50px;
+}
+
+#stekos-button {
+  width:250px;
+  position: absolute;
+  height:50px;
+  padding: 20px 0px 60px 0px;
+  font-size: 25px;
+  bottom: 0px;
+  top: 45px;
+  background: #bb2b33;
+  left:100px;
+}
+
+#stekos {
+  background: #fff;
+  padding: 45px 0;
+  height: 455px;
+}
+
+.bgf{
+  background: #fff;
 }

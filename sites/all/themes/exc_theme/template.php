@@ -32,14 +32,14 @@ function exc_theme_preprocess_page(&$vars, $hook) {
     'title' => t(variable_get('site_name')),
     'attributes' => array(
       'class' => array('minilogo'),
-    )
+    ),
   ));
 
   // Get search form.
   $vars['search_form'] = drupal_get_form('excur_search_search_form');
 
   // Add language switcher block.
-  $vars['language_switcher'] = drupal_get_form('excur_language_switcher');
+  $vars['language_switcher'] = theme('excur_language_switcher');
 
   // Get footer menu.
   $footer_menu = i18n_menu_translated_tree('menu-footer-menu');

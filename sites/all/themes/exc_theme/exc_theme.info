@@ -13,6 +13,7 @@ stylesheets[all][] = css/stylesearch.css
 stylesheets[all][] = css/style.css
 stylesheets[all][] = css/font-awesome.min.css
 stylesheets[all][] = css/roboto.css
+stylesheets[all][] = css/custom.css
 
 scripts[] = js/bootstrap.js
 scripts[] = js/dropdowns-enhancement.js
@@ -23,3 +24,4 @@ scripts[] = js/modernizr.js
 scripts[] = js/waypoints.min.js
 scripts[] = js/touch.js
 scripts[] = js/respond.src.js
+scripts[] = js/custom.js

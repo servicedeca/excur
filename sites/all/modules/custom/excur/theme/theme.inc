@@ -28,3 +28,37 @@ function excur_preprocess_excur_travel_planner(&$vars) {
 
   $vars['user_menu'] = excur_user_menu($account);
 }
+
+
+/**
+ * Preprocess for excur-travel-planner.tpl.php.
+ */
+function excur_preprocess_excur_language_switcher(&$vars) {
+  global $language;
+
+  $vars['def_language'] = theme('image', array(
+    'path' => EXCUR_FRONT_THEME_PATH . '/images/' . $language->prefix . '.png',
+    'alt' => $language->native,
+    'title' => $language->native,
+    'attributes' => array(
+      'class' => array('currency-img'),
+    ),
+  ));
+
+  foreach (language_list() as $lang) {
+    if ($lang->enabled) {
+      $url = url(current_path(), array('language' => $lang, 'absolute' => TRUE));
+
+      $vars['languages'][$lang->prefix]['url'] = $url;
+      $vars['languages'][$lang->prefix]['native'] = $lang->native;
+      $vars['languages'][$lang->prefix]['icon'] = theme('image', array(
+        'path' => EXCUR_FRONT_THEME_PATH . '/images/' . $lang->prefix . '.png',
+        'alt' => $lang->native,
+        'title' => $lang->native,
+        'attributes' => array(
+          'class' => array('currency-img'),
+        ),
+      ));
+    }
+  }
+}

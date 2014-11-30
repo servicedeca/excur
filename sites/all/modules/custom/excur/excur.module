@@ -208,8 +208,12 @@ function excur_theme() {
   );
 
   $items['excur_travel_planner'] = $base + array(
-      'template' => 'excur-travel-planner',
-    );
+    'template' => 'excur-travel-planner',
+  );
+
+  $items['excur_language_switcher'] = $base + array(
+    'template' => 'excur-language-switcher',
+  );
 
   $items['comment_form'] = array(
     'render element' => 'form',
@@ -704,32 +708,6 @@ function excur_popular_giudes_in_city($tid) {
   $query->range(0, 6);
 
   return $query->execute()->fetchCol();
-}
-
-/**
- * Language switcher form.
- */
-function excur_language_switcher() {
-  $options = array();
-  $data_content = array();
-
-  foreach (language_list() as $lang) {
-    if ($lang->enabled) {
-      $url = url(current_path(), array('language' => $lang, 'absolute' => TRUE));
-      $options[$url] = $lang->native;
-      $langcode = explode('-', $lang->prefix);
-      $data_content[$url] = '<i class=\'flag flag-' . reset($langcode) . '\'></i>' . $lang->native;
-    }
-  }
-
-  $form['languages'] = array(
-    '#type' => 'select',
-    '#options' => $options,
-    '#default_value' => url(current_path(), array('absolute' => TRUE)),
-    '#data-content' => $data_content,
-  );
-
-  return $form;
 }
 
 /**
