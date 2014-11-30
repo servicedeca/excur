@@ -6,21 +6,17 @@
   <div class="col-xs-12 modal-registration-item">
     <?php print $icon_email; ?>
     <?php print render($form['account']['mail']); ?>
-<!--    <input type="text" id="user-register-custom-email" class="form-control modal-registration-form" placeholder="--><?php //print t('Email'); ?><!--">-->
   </div>
   <div class="col-xs-12 modal-registration-item">
     <?php print $icon_password; ?>
     <?php print render($form['account']['pass']['pass1']); ?>
-<!--    <input type="password" id="user-register-custom-password" class="form-control modal-registration-form" placeholder="--><?php //print t('Password'); ?><!--">-->
   </div>
   <div class="col-xs-12 modal-registration-item">
     <?php print $icon_password ?>
     <?php print render($form['account']['pass']['pass2']); ?>
-<!--    <input type="password" id="user-register-custom-confirm-password" class="form-control modal-registration-form" placeholder="--><?php //print t('Confirm password'); ?><!--">-->
   </div>
   <div class="col-xs-12 modal-registration-item">
     <?php print render($form['field_language']); ?>
-<!--    <input type="text" id="user-register-custom-language" class="form-control modal-registration-form" placeholder="--><?php //print t('Native language'); ?><!--">-->
   </div>
   <div class="col-xs-12 modal-registration-item">
     <div class="checkbox modal-confirm-check">

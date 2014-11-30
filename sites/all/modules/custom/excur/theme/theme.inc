@@ -69,6 +69,19 @@ function excur_preprocess_excur_language_switcher(&$vars) {
  * Preprocess for excur-user-login-form.tpl.php.
  */
 function excur_preprocess_excur_user_login_form(&$vars) {
+  $form = &$vars['form'];
+  $classes = array('form-control', 'modal-registration-form');
+
+  $form['name']['#attributes']['class'] = $classes;
+  $form['name']['#attributes']['placeholder'] = t('Email');
+  $form['name']['#title_display'] = 'invisible';
+  $form['name']['#description'] = '';
+
+  $form['pass']['#attributes']['class'] = $classes;
+  $form['pass']['#attributes']['placeholder'] = t('Password');
+  $form['pass']['#title_display'] = 'invisible';
+  $form['pass']['#description'] = '';
+
   $attributes = array(
     'class' => array('input-icon'),
   );

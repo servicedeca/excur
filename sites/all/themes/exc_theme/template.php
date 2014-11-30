@@ -47,16 +47,47 @@ function exc_theme_preprocess_page(&$vars, $hook) {
     $vars['register_form'] = drupal_get_form('user_register_form');
   }
 
+  if ($contact_phone = variable_get('excur_contact_phone')) {
+    $vars['contact_phone'] = $contact_phone;
+  }
+
   // Get footer menu.
-  $footer_menu = i18n_menu_translated_tree('menu-footer-menu');
-  foreach ($footer_menu as &$item) {
+  $i = 0;
+  foreach (i18n_menu_translated_tree('menu-footer-menu') as $item) {
     if (empty($item['#href'])) {
       continue;
     }
 
-    $item['#attributes']['class'][] = 'span3';
+    foreach ($item['#below'] as $link) {
+      if (!$link['#title']) {
+        continue;
+      }
+      $vars['footer_menu'][$i][] = l($link['#title'], $link['#href']);
+    }
+    $vars['footer_menu_title'][$i] = $item['#title'];
+    $i += 2;
   }
-  $vars['footer_menu'] = $footer_menu;
+
+  $options = array(
+    'html' => TRUE,
+    'external' => TRUE,
+    'attributes' => array(
+      'class' => array(
+        'btn-social',
+        'btn-outline',
+      ),
+    ),
+  );
+
+  $vars['footer_menu_title'][1] = t('Join us');
+  $vars['footer_menu'][1] = array(
+    l('<i class="fa fa-fw fa-facebook"></i>', 'http://facebook.com', $options),
+    l('<i class="fa fa-fw fa-google-plus"></i>', 'http://google-plus.com', $options),
+    l('<i class="fa fa-fw fa-vk"></i>', 'http://vk.com', $options),
+    l('<i class="fa fa-fw fa-twitter"></i>', 'http://twitter.com', $options),
+    l('<i class="fa fa-fw fa-linkedin"></i>', 'http://linkedin.com', $options),
+  );
+  ksort($vars['footer_menu']);
 }
 
 /**
