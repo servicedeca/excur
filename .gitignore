@@ -6,3 +6,4 @@ sites/*/private
 # Ignore paths that contain user-generated content.
 .idea*
 nbproject*
+Thumbs.db
