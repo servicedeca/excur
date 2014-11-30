@@ -64,3 +64,25 @@ function excur_preprocess_excur_language_switcher(&$vars) {
     }
   }
 }
+
+/**
+ * Preprocess for excur-user-login-form.tpl.php.
+ */
+function excur_preprocess_excur_user_login_form(&$vars) {
+  $attributes = array(
+    'class' => array('input-icon'),
+  );
+
+  $vars['icon_email'] = theme('image', array(
+    'path' => EXCUR_FRONT_THEME_PATH . '/images/icon/ph-mail.png',
+    'alt' => t('Email'),
+    'title' => t('Email'),
+    'attributes' => $attributes,
+  ));
+  $vars['icon_password'] = theme('image', array(
+    'path' => EXCUR_FRONT_THEME_PATH . '/images/icon/ph-pass.png',
+    'alt' => t('Password'),
+    'title' => t('Password'),
+    'attributes' => $attributes,
+  ));
+}

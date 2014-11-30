@@ -388,9 +388,6 @@ function excur_form_main_page_slider_node_form_alter(&$form, &$form_state) {
  */
 function excur_form_user_register_form_alter(&$form, &$form_state) {
   $form['#theme'][] = 'excur_user_register';
-  $form['actions']['submit']['#attributes']['class'][] = 'btn';
-  $form['account']['mail']['#description'] = t('Допускается использовать латинские буквы, цифры');
-  $form['account']['pass']['#description'] = t('Допускается использовать латинские буквы, цифры');
 }
 
 /**

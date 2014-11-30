@@ -23,8 +23,6 @@ function exc_theme_theme() {
  * Process variables for page.tpl.php.
  */
 function exc_theme_preprocess_page(&$vars, $hook) {
-  global $user;
-
   // Get site logo.
   $vars['logo'] = theme('image', array(
     'path' => theme_get_setting('logo_path'),
@@ -44,6 +42,11 @@ function exc_theme_preprocess_page(&$vars, $hook) {
   // Add currency change form.
   $vars['currency_switcher'] = theme('excur_currency_switcher');
 
+  if (user_is_anonymous()) {
+    $vars['login_form'] = drupal_get_form('user_login');
+    $vars['register_form'] = drupal_get_form('user_register_form');
+  }
+
   // Get footer menu.
   $footer_menu = i18n_menu_translated_tree('menu-footer-menu');
   foreach ($footer_menu as &$item) {
@@ -54,47 +57,6 @@ function exc_theme_preprocess_page(&$vars, $hook) {
     $item['#attributes']['class'][] = 'span3';
   }
   $vars['footer_menu'] = $footer_menu;
-
-  // Get main menu.
-  foreach (i18n_menu_translated_tree('main-menu') as $item) {
-    if (!isset($item['#href'])) {
-      continue;
-    }
-
-    $vars['main_menu'][] = array(
-      'title' => $item['#title'],
-      'url' => url($item['#href'], array('absolute' => TRUE)),
-      'class' => current_path() == $item['#href'] ? array('active') : array(),
-    );
-  }
-
-  // Get user links.
-  if (user_is_logged_in()) {
-    $items = array(
-      l(t('User profile'), "user/$user->uid"),
-      l(t('Logout'), 'user/logout'),
-    );
-  }
-  else {
-    $items = array(
-      l(t('Login'), 'user/login'),
-      l(t('Register'), 'user/register'),
-    );
-  }
-  $vars['user_links'] = exc_theme_ul_item_list(array(
-    'items' => $items,
-    'attributes' => array(
-      'class' => array('nav', 'nav-right'),
-    ),
-  ));
-
-  // Render breadcrumb.
-  if (menu_get_object('user')) {
-    $vars['breadcrumb'] = '';
-  }
-  else {
-    $vars['breadcrumb'] = theme('breadcrumb', array('breadcrumb' => excur_get_breadcrumb()));
-  }
 }
 
 /**

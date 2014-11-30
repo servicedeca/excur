@@ -23,10 +23,43 @@
           <?php print render($currency_switcher); ?>
         </div>
       </div>
+      <div class="col-xs-4  phone-small-res">
+        <a class="btn head-reg" data-toggle="modal" data-target=".bs-example-modal-md">
+          <?php print t('Login or <br> Create account');?>
+        </a>
+      </div>
     </div>
   </div>
 </div>
 
+<?php if (user_is_anonymous()): ?>
+  <div class="modal fade bs-example-modal-md in" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="false">
+    <div class="modal-dialog modal-md center-modal">
+      <div class="modal-content modal-registration">
+        <ul id="menureg">
+          <li class="reg-item reg-active">
+            <a href="#homes" data-toggle="tab">
+              <?php print t('Register'); ?>
+            </a>
+          </li>
+          <li class="reg-item">
+            <a href="#profile" data-toggle="tab">
+              <?php print t('Login'); ?>
+            </a>
+          </li>
+        </ul>
+        <div id="myTabContent" class="tab-content">
+          <div class="tab-pane fade" id="homes">
+            <?php print render($register_form); ?>
+          </div>
+          <div class="tab-pane fade active in" id="profile">
+            <?php print render($login_form); ?>
+          </div>
+        </div>
+      </div>
+    </div>
+  <div>
+<?php endif; ?>
 
 <!--<div class="content">-->
 <!--  <div class="container site">-->
