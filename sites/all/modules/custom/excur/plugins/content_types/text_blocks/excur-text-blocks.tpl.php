@@ -1,13 +1,18 @@
 <?php if (!empty($blocks)): ?>
-  <div class="row">
-    <?php foreach($blocks as $id => $block): ?>
-      <div class="advantages-text-block span4 ">
-        <?php print $block; ?>
-      </div>
-      <?php if (($id + 1) % 3 == 0): ?>
-        <div class="space10"></div>
-      <?php endif; ?>
-    <?php endforeach; ?>
-  </div>
-  <div class="space30"></div>
+  <section id="about" data-speed="2" data-type="background" class="hidden-sm hidden-xs" style="background-position: 50% -689px;">
+    <h2 class="about-title">
+      <?php print t('Benefits'); ?>
+    </h2>
+    <div class="container">
+      <?php foreach ($blocks as $text): ?>
+        <div class="col-xs-6 wp5 delay-05s animated fadeInUp">
+          <div class="row padiconleft">
+            <div class="col-xs-10 col-xs-offset-1 bord1 textmid">
+              <?php print $text; ?>
+            </div>
+          </div>
+        </div>
+      <?php endforeach; ?>
+    </div>
+  </section>
 <?php endif; ?>

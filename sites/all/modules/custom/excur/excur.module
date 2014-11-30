@@ -561,11 +561,7 @@ function excur_main_text_blocks() {
   $nids = $query->execute()->fetchCol();
 
   if ($nids) {
-    foreach ($nids as $nid) {
-      $nodes[] = node_load($nid);
-    }
-
-    return $nodes;
+    return node_load_multiple($nids);
   }
 
   return array();

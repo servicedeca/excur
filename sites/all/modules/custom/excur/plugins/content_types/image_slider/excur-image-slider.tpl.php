@@ -17,9 +17,4 @@
       </li>
     </ul>
   </div>
-  <div class="space30"></div>
-  <?php if (!empty($text)): ?>
-    <h1 id="text-special"><?php print $text; ?></h1>
-    <div class="space20"></div>
-  <?php endif; ?>
 <?php endif; ?>
