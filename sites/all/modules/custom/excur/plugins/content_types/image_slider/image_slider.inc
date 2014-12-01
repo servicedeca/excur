@@ -43,10 +43,7 @@ function excur_image_slider_content_type_theme(&$theme, $plugin) {
 function template_preprocess_excur_image_slider(&$vars) {
   $images = array();
 
-  if (drupal_is_front_page()) {
-    $images = excur_main_slider_images();
-  }
-  elseif ($term = menu_get_object('taxonomy_term', 2)) {
+  if ($term = menu_get_object('taxonomy_term', 2)) {
     if (!empty($term->field_slider_images)) {
       $images = $term->field_slider_images[LANGUAGE_NONE];
     }

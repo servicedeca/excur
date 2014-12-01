@@ -38,9 +38,14 @@ function excur_search_theme($existing, $type, $theme, $path) {
     'file' => 'theme.inc',
   );
 
-  $items['excur_search_search_form'] = array(
+  $items['excur_search_header_form'] = array(
     'render element' => 'form',
-    'template' => 'excur-search-search-form'
+    'template' => 'excur-search-header-form'
+  ) + $base;
+
+  $items['excur_search_slider_form'] = array(
+    'render element' => 'form',
+    'template' => 'excur-search-slider-form'
   ) + $base;
 
   return $items;
@@ -50,18 +55,12 @@ function excur_search_theme($existing, $type, $theme, $path) {
  * Settings form for excur site.
  */
 function excur_search_search_form() {
-  $form['#attributes']['class'][] = 'head-search-form';
-
   $form['search'] = array(
     '#type' => 'textfield',
     '#required' => TRUE,
     '#autocomplete_path' => 'excur/autocomplete/search',
     '#attributes' => array(
       'placeholder' => t('Where do you want to go?'),
-      'class' => array(
-        'form-control',
-        'search-form',
-      ),
     ),
   );
 

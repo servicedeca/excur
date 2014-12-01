@@ -34,7 +34,12 @@ function exc_theme_preprocess_page(&$vars, $hook) {
   ));
 
   // Get search form.
-  $vars['search_form'] = drupal_get_form('excur_search_search_form');
+  $search_form = drupal_get_form('excur_search_search_form');
+  $search_form['#attributes']['class'][] = 'head-search-form';
+  $search_form['search']['#attributes']['class'][] = 'form-control';
+  $search_form['search']['#attributes']['class'][] = 'search-form';
+  $search_form['#theme'] = 'excur_search_header_form';
+  $vars['search_form'] = $search_form;
 
   // Add language switcher block.
   $vars['language_switcher'] = theme('excur_language_switcher');
