@@ -492,7 +492,7 @@ section h3.section-subheading {
 #about {
   background: #fff;
   padding: 45px 0;
-  height: 410px;
+  height: 490px;
 }
 
 .padiconleft {
@@ -548,13 +548,27 @@ section h3.section-subheading {
 }
 
 .bord1 {
-  height:80px;
+  height:50px;
   display: table;
   text-align: center;
 }
 
 footer {
   color: #fff;
+}
+
+.footer-col ul{
+  padding: 0px;
+}
+
+.footer-col ul a{
+  padding: 0px;
+  color:#f1f1f1;
+}
+
+.footer-col li{
+  list-style-type: none;
+  font-size: 17px;
 }
 
 footer h3 {
@@ -693,7 +707,7 @@ footer .footer-below {
   background-repeat: no-repeat;
   width: 40px;
   height: 40px;
-  background-image:url('../image/search.png');
+  background-image:url('../images/search.png');
   vertical-align:middle;
   background-position: center;
   margin-top: -135px;
@@ -703,7 +717,7 @@ footer .footer-below {
 
 @media (max-width:1024px) {
   #search-button {
-    background-image:url('../image/searchPADred.png');
+    background-image:url('../images/searchPADred.png');
     border:none;
   }
 }
@@ -715,7 +729,7 @@ footer .footer-below {
     margin-top: -145px;
     margin-left: 67%;
     border-style: none;
-    background-image:url('../image/searchmini.png');
+    background-image:url('../images/searchmini.png');
   }
 }
 
@@ -744,7 +758,7 @@ footer .footer-below {
   background-repeat: no-repeat;
   width: 98px;
   height: 98px;
-  background-image:url('../image/searchwhite.png');
+  background-image:url('../images/searchwhite.png');
   vertical-align:middle;
   margin-top: -336px;
   margin-left: 600px;
@@ -763,7 +777,7 @@ footer .footer-below {
 
 @media (max-width:1024px) {
   #search-button1 {
-    background-image:url('../image/searchPADwhite.png');
+    background-image:url('../images/searchPADwhite.png');
     border:none;
   }
 }
@@ -790,7 +804,7 @@ footer .footer-below {
     margin-top: -145px;
     margin-left: 67%;
     border-style: none;
-    background-image:url('../image/searchminired.png');
+    background-image:url('../images/searchminired.png');
   }
 }
 
@@ -1345,7 +1359,7 @@ div.box-crew:hover span{
   width:60px;
   height: 30px;
   position: relative;
-  background: url(/image/crumbEUR.png);
+  background: url(../images/crumbEUR.png);
   background-position: center;
   background-repeat: no-repeat;
   margin-top: -125px;
@@ -2187,7 +2201,7 @@ div.box-crew:hover span{
   width:240px;
   height:150px;
   margin-top: 30px;
-  background: url(/image/coat-prague.png);
+  background: url(../images/coat-prague.png);
   background-position: center;
   background-repeat: no-repeat;
   padding-right: 40px;
@@ -5334,14 +5348,11 @@ footer {
 
 .stekoss {
   width: 200px;
-  margin-top: 25px;
-  margin-left: -25px;
+  margin-top: 0px;
+  margin-left: 0px;
 }
 
-.gtexcur {
-  width: 400px;
-  margin-left: 75px;
-}
+
 
 .stekos-block-top p{
   font-size: 20px;
@@ -5352,24 +5363,18 @@ footer {
   letter-spacing: 1px;
   color: #666666;
 }
-.stekos-text {
-  margin-top: 35px;
-}
 
-.stekostravel {
-  width: 450px;
-  margin-top: 50px;
-  margin-left: -50px;
-}
+
+
 
 #stekos-button {
-  width:250px;
+  width:220px;
   position: absolute;
   height:50px;
-  padding: 20px 0px 60px 0px;
+  padding: 10px 0px 50px 0px;
   font-size: 25px;
   bottom: 0px;
-  top: 45px;
+  top: 195px;
   background: #bb2b33;
   left:100px;
 }
@@ -5377,9 +5382,69 @@ footer {
 #stekos {
   background: #fff;
   padding: 45px 0;
-  height: 455px;
+  height: 350px;
 }
 
 .bgf{
   background: #fff;
+}
+
+.icon-index {
+  width: 100px;
+  margin-bottom: 0px;
+  margin-top: 15px;
+}
+
+.ad-item {
+  height: 180px;
+}
+
+.icon-item {
+  text-align: center;
+}
+
+.ad-plus-height {
+  height: 76px;
+}
+
+.stekos-block-mid {
+  text-align: center;
+}
+
+.stekos-block-left {
+  text-align:right;
+}
+
+.stekos-block-right {
+  text-align: center;
+}
+
+.stekos-st {
+  margin-top: 100px;
+  height:40px;
+}
+
+.stekos-gyt {
+  margin-top: 100px;
+  margin-bottom: 10px;
+  height:40px;
+}
+
+.stekos-project {
+  margin-left: 0px;
+  margin-left: 90px;
+}
+
+.stekos-block-mid a{
+  font-size: 20px;
+  font-style: italic;
+  color: #4d4d4d;
+}
+
+.stekos-block-mid a:hover{
+  color: #bb2b33;
+}
+
+.stekos-block-mid a:active{
+  color: #bb2b33;
 }

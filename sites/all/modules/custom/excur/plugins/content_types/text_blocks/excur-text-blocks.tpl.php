@@ -4,11 +4,14 @@
       <?php print t('Benefits'); ?>
     </h2>
     <div class="container">
-      <?php foreach ($blocks as $text): ?>
+      <?php foreach ($blocks as $block): ?>
         <div class="col-xs-6 wp5 delay-05s animated fadeInUp">
           <div class="row padiconleft">
+            <div class="col-xs-4 col-xs-offset-4 icon-item">
+              <?php print $block['icon']; ?>
+            </div>
             <div class="col-xs-10 col-xs-offset-1 bord1 textmid">
-              <?php print $text; ?>
+              <?php print $block['text']; ?>
             </div>
           </div>
         </div>

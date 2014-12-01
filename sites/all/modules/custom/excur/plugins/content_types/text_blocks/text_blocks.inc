@@ -42,10 +42,20 @@ function excur_text_blocks_content_type_theme(&$theme, $plugin) {
  */
 function template_preprocess_excur_text_blocks(&$vars) {
   global $language;
-  foreach (excur_main_text_blocks() as $node) {
+  foreach (excur_main_text_blocks() as $key => $node) {
     $wrapper = entity_metadata_wrapper('node', $node);
     $wrapper->language($language->language);
 
-    $vars['blocks'][] = $wrapper->body->value->value();
+    $vars['blocks'][$key]['text'] = $wrapper->body->value->value();
+    $image = $wrapper->field_image->value();
+    $image = theme('image', array(
+      'path' => $image['uri'],
+      'alt' => $wrapper->title->value(),
+      'title' => $wrapper->title->value(),
+      'attributes' => array(
+        'class' => array('icon-index'),
+      )
+    ));
+    $vars['blocks'][$key]['icon'] = $image;
   }
 }

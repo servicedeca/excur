@@ -17,7 +17,23 @@ function excur_feature_node_text_block_strongarm() {
   $strongarm->value = array(
     'view_modes' => array(),
     'extra_fields' => array(
-      'form' => array(),
+      'form' => array(
+        'metatags' => array(
+          'weight' => '7',
+        ),
+        'path' => array(
+          'weight' => '6',
+        ),
+        'rabbit_hole' => array(
+          'weight' => '3',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '5',
+        ),
+        'language' => array(
+          'weight' => '4',
+        ),
+      ),
       'display' => array(),
     ),
   );
