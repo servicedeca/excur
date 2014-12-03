@@ -26,7 +26,10 @@
         <script src="js/fotorama.js"></script>
         <script src="js/respond.src.js"></script>
         <script src="js/application.js"></script>
-        <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> 
+        <script src="js/ga.js"></script>
+        <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        
+
         
     </head>
     <body id="index">
@@ -118,8 +121,6 @@
         </div>
     </div>
 
-
-           
         <!-- MODAL-->
                    
         <div class="modal fade bs-example-modal-md" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
@@ -133,7 +134,7 @@
                             <li class="reg-item">Вход</li>
                         </a>
                     </ul>
-                    <div id="myTabContent" class="tab-content"/>
+                    <div id="myTabContent" class="tab-content">
                         <div class="tab-pane fade active in" id="homes">
                             <div class="formreg">
                                 <div class="col-sm-12 modal-registration-item">
@@ -197,9 +198,9 @@
         <header class="slide">
             <div class="container">      
                 <div class="intro-text"  >
-                    <div>
+                    <div class="test">
                         <div class="intro-lead-in" >
-                            <image src="images/logo.png" class="logo"/>
+                            <img src="images/logo.png" class="logo"/>
                         </div>
                         <div class="intro-heading" >
                             <div class="form hidden-xs">
@@ -219,109 +220,114 @@
                 </div>
             </div>
         </header>
-           
+        
     <section id="services" >
         <div class="container padbot">
             <h2 class="service-title">НАПРАВЛЕНИЯ</h2>
             <div class="index-line">
             </div>
-		 <div class="container">
-               <div class="row">
+            <div class="container">
+                <div class="row">
                     <div class="col-sm-4  portfolio-item">
                         <a href="Europe.html">
                             <div class="caption text-center">
-                                <p class="name_cont">ЕВРОПА</p></div>
-                                <div id="effect-1">
-                                   <a href="Europe.html">
-                                        <figure>
-                                            <img src="images/mat/1.jpg" class="img-responsive image-cont" alt="">
-                                                <figcaption>
-                                                </figcaption>
-                                        </figure>
-                                  </a>
-                             </div>
+                                <p class="name_cont">ЕВРОПА</p>
+                            </div>
+                            <div class="hover panel">
+                                <div class="front">
+                                    <img src="images/mat/1.png" class="img-responsive image-cont" alt="">
+                                </div>
+                                <div class="back">
+                                    <img src="images/card1.png" class="img-responsive image-cont" alt="">
+                                </div>
+                            </div>
                         </a>
-                     </div>
+                    </div>
                     <div class="col-sm-4 portfolio-item">
                         <a href="Asia.html">
                             <div class="caption text-center">
-                                <p class="name_cont">АЗИЯ</p></div>
-                                <div id="effect-2" >
-                                    <a href="Asia.html">
-                                        <figure>
-                                            <img src="images/mat/2.jpg" class="img-responsive image-cont" alt="">
-                                                <figcaption>
-                                                </figcaption>
-                                        </figure>
-                                    </a>
-                             </div>
-                        </a>
-                     </div>
-                    <div class="col-sm-4  portfolio-item">
-                        <a href="#">
-                            <div class="caption text-center">
-                                <p class="name_cont">РОССИЯ</p></div>
-                                <div id="effect-3">
-                                    <figure>
-                                        <img src="images/mat/3.jpg" class="img-responsive image-cont" alt="">
-                                            <figcaption>
-                                                <a href="#" class="close-caption hidden">x</a>
-                                            </figcaption>
-                                    </figure>
-                             </div>
-                        </a>
-                     </div>
-                    <div class="col-sm-4  portfolio-item">
-                        <a href="Africa.html">
-                            <div class="caption text-center">
-                                <p class="name_cont">АФРИКА<br><br></p></div>
-                                <div id="effect-4">
-                                   <a href="Africa.html">
-                                        <figure>
-                                            <img src="images/mat/4.jpg" class="img-responsive image-cont" alt="">
-                                                <figcaption>
-                                                </figcaption>
-                                        </figure>
-                                    </a>
-                             </div>
-                        </a>
-                     </div>                                                    
-                    <div class="col-sm-4 portfolio-item">
-                        <a href="America.html">
-                            <div class="caption text-center">
-                                <p class="name_cont">СЕВЕРНАЯ И<br> ЮЖНАЯ АМЕРИКА</p></div>
-                                <div id="effect-5">
-                                   <a href="America.html">
-                                        <figure>
-                                            <img src="images/mat/5.jpg" class="img-responsive image-cont" alt="">
-                                                <figcaption>
-                                                </figcaption>
-                                        </figure>
-                                    </a>
-                             </div>
-                        </a>
-                     </div>                                                    
+                                <p class="name_cont">АЗИЯ</p>
+                                </div>
+                                <div class="hover panel">
+                                    <div class="front">
+                                        <img src="images/mat/2.png" class="img-responsive image-cont" alt="">
+                                    </div>
+                                    <div class="back">
+                                        <img src="images/card2.png" class="img-responsive image-cont" alt="">
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-4  portfolio-item">
+                            <a href="#">
+                                <div class="caption text-center">
+                                    <p class="name_cont">РОССИЯ</p>
+                                </div>
+                                <div class="hover panel">
+                                    <div class="front">
+                                        <img src="images/mat/3.png" class="img-responsive image-cont" alt="">
+                                    </div>
+                                    <div class="back">
+                                        <img src="images/card3.png" class="img-responsive image-cont" alt="">
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-4  portfolio-item">
+                            <a href="Africa.html">
+                                <div class="caption text-center">
+                                    <p class="name_cont">АФРИКА<br><br></p>
+                                </div>
+                                <div class="hover panel">
+                                    <div class="front">
+                                        <img src="images/mat/1.png" class="img-responsive image-cont" alt="">
+                                    </div>
+                                    <div class="back">
+                                        <img src="images/card4.png" class="img-responsive image-cont" alt="">
+                                    </div>
+                                </div>
+                            </a>
+                        </div>                                                 
+                        <div class="col-sm-4 portfolio-item">
+                            <a href="America.html">
+                                <div class="caption text-center">
+                                    <p class="name_cont">СЕВЕРНАЯ И<br> ЮЖНАЯ АМЕРИКА</p>
+                                </div>
+                                <div class="hover panel">
+                                    <div class="front">
+                                        <img src="images/mat/1.png" class="img-responsive image-cont" alt="">
+                                    </div>
+                                    <div class="back">
+                                        <img src="images/card5.png" class="img-responsive image-cont" alt="">
+                                    </div>
+                                </div>
+                            </a>
+                        </div>                                                  
                     <div class="col-sm-4  portfolio-item">
                         <a href="Australia.html">
                             <div class="caption text-center">
                                 <p class="name_cont">АВСТРАЛИЯ <br>ОКЕАНИЯ</p>
                             </div>
-                                <div id="effect-6">
-                                   <a href="Australia.html">
-                                        <figure>
-                                            <img src="images/mat/6.jpg" class="img-responsive image-cont" alt="">
-                                                <figcaption>
-                                                </figcaption>
-                                        </figure>
-                                    </a>
-                             </div>
+                            <div class="hover panel">
+                                <div class="front">
+                                    <img src="images/mat/1.png" class="img-responsive image-cont" alt="">
+                                </div>
+                                <div class="back">
+                                    <img src="images/card6.png" class="img-responsive image-cont" alt="">
+                                </div>
+                            </div>
                         </a>
-                     </div>                           
+                    </div>                       
                 </div>  
 	        </div>
-            </div>
+        </div>
     </section>
-   
+
+	<section id="home" data-speed="4" data-type="background" class="hidden-sm hidden-xs z-index">
+		<div class="container">
+	    </div>
+	</section>
+
     <section id="about" data-speed="2" data-type="background" class="hidden-sm hidden-xs">
       <h2 class="about-title">ПРЕИМУЩЕСТВА</h2>
        <div class="container">
@@ -367,26 +373,23 @@
              </div>
         </div>
         </div>
-	    </section>                       
-               
-                
-    <!-- Section #2 -->
-
-	<section id="home" data-speed="4" data-type="background" class="hidden-sm hidden-xs z-index">
-		<div class="container">
-	    </div>
-	</section>
+	    </section>   
 
 	<!-- Section #3 -->
 
-	<section id="stekos" data-speed="2" data-type="background" class="hidden-sm hidden-xs">
+
+
+    <section id="home1" data-speed="4" data-type="background" class="hidden-xs hidden-sm">
+    </section>
+              
+    <section id="stekos" data-speed="2" data-type="background" class="hidden-sm hidden-xs">
         <div class="container stekos-block">
             <div class="row">
                 <div class="col-xs-4 stekos-block-left">
-                    <img src="images/st.png" class="stekos-st">
+                    <p>STEKOS</p>
                 </div>
                 <div class="col-xs-4 stekos-block-mid">
-                    <img src="images/gyt.png" class="stekos-gyt">
+                    <p>GET YOUR TRAVEL</p>
                     <a href="http://stekos.ru/" target="_blank" class="stekos-project">Подробнее о проекте</a>
 
                 </div>
@@ -395,13 +398,9 @@
                 </div>
 	       </div>
         </div>
-    </section>
-           
-        <section id="home1" data-speed="4" data-type="background" class="hidden-xs hidden-sm">
-
-        </section>
+    </section>      
               
-               <!-- Footer -->
+               <!-- Footer -->                
                
     <footer class="text-center z-index">
                         <div class="part">
