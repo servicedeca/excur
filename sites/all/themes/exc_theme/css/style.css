@@ -5708,3 +5708,7 @@ footer {
 .panel-message {
   border-radius: 0px;
 }
+
+i.flag {
+  display: inline-block;
+}

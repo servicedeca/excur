@@ -4,17 +4,45 @@
  * @file
  */
 ?>
-<div class="row">
-  <div class="span12">
-    <h2>
-      <?php print t('Countries'); ?>
-    </h2>
+<div class="col-xs-12 cont-list">
+  <div class="col-xs-3">
+    <ul>
+      <?php foreach ($row_0 as $row): ?>
+        <li>
+          <?php print $row['icon']; ?>
+          <?php print $row['title']; ?>
+        </li>
+      <?php endforeach; ?>
+    </ul>
   </div>
-</div>
-<div class="row">
-  <?php foreach ($rows as $id => $row): ?>
-    <div class="span2">
-      <?php print $row; ?>
-    </div>
-  <?php endforeach; ?>
+  <div class="col-xs-3">
+    <ul>
+      <?php foreach ($row_1 as $row): ?>
+        <li>
+          <?php print $row['icon']; ?>
+          <?php print $row['title']; ?>
+        </li>
+      <?php endforeach; ?>
+    </ul>
+  </div>
+  <div class="col-xs-3">
+    <ul>
+      <?php foreach ($row_2 as $row): ?>
+        <li>
+          <?php print $row['icon']; ?>
+          <?php print $row['title']; ?>
+        </li>
+      <?php endforeach; ?>
+    </ul>
+  </div>
+  <div class="col-xs-3">
+    <ul>
+      <?php foreach ($row_3 as $row): ?>
+        <li>
+          <?php print $row['icon']; ?>
+          <?php print $row['title']; ?>
+        </li>
+      <?php endforeach; ?>
+    </ul>
+  </div>
 </div>

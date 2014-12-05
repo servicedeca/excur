@@ -45,4 +45,14 @@
     }
   };
 
+  Drupal.behaviors.excurContinentCode = {
+    attach: function(context, settings) {
+      $('body').once('continent-id', function() {
+        if (Drupal.settings.continentCode != undefined) {
+          $('body').attr('id', Drupal.settings.continentCode);
+        }
+      });
+    }
+  };
+
 })(jQuery, Drupal, this, this.document);

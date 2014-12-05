@@ -69,10 +69,12 @@
   </div>
 <?php endif; ?>
 
-<?php if (!empty($messages)): ?>
-  <?php print $messages; ?>
-<?php endif; ?>
-<?php print render($page['content']); ?>
+<div id="wrapper">
+  <?php if (!empty($messages)): ?>
+    <?php print $messages; ?>
+  <?php endif; ?>
+  <?php print render($page['content']); ?>
+</div>
 
 <footer class="text-center z-index">
   <div class="part">

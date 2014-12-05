@@ -192,6 +192,52 @@ function exc_theme_preprocess_views_view_unformatted__term__continent(&$vars) {
 }
 
 /**
+ * Process variables for views-view-field--term--city--name-field.tpl.php.
+ */
+function exc_theme_preprocess_views_view_unformatted__term__country(&$vars) {
+  foreach ($vars['view']->result as $id => $result) {
+    $term = taxonomy_term_load($result->tid);
+    $vars['row_' . $id % 4][$id]['icon'] = '<i class="flag flag-' . $term->field_country_code[LANGUAGE_NONE][0]['value'] . '"></i>';
+    $vars['row_' . $id % 4][$id]['title'] = l($term->name, "taxonomy/term/$term->tid", array(
+      'attributes' => array(
+        'title' => $term->name,
+      ),
+    ));
+  }
+}
+
+/**
+ * Preprocess variables for taxonomy_term.
+ */
+function exc_theme_preprocess_taxonomy_term(&$vars, $hook) {
+  $term = $vars['term'];
+  $view_mode = $vars['view_mode'];
+
+  $vars['theme_hook_suggestions'][] = 'taxonomy_term__' . $term->vocabulary_machine_name . '_' . str_replace('-', '_', $view_mode);
+  $preprocesses[] = 'exc_theme_preprocess_taxonomy_term__' . $term->vocabulary_machine_name . '_' . str_replace('-', '_', $view_mode);
+
+  foreach ($preprocesses as $preprocess) {
+    if (function_exists($preprocess)) {
+      $preprocess($vars, $hook);
+    }
+  }
+}
+
+
+/**
+ * Process variables for taxonomy-term--continent_full.tpl.php.
+ */
+function exc_theme_preprocess_taxonomy_term__continent_full(&$vars) {
+  $term = $vars['term'];
+  $wrapper = entity_metadata_wrapper('taxonomy_term', $term);
+
+  $desc = $wrapper->description_field->value();
+  $vars['description'] = $desc['safe_value'];
+
+  drupal_add_js(array('continentCode' => $term->field_continent_code[LANGUAGE_NONE][0]['value']), 'setting');
+}
+
+/**
  * Preprocess variables for node.
  */
 function exc_theme_preprocess_node(&$vars, $hook) {
