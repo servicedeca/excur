@@ -43,7 +43,23 @@ function excur_feature_taxonomy_strongarm() {
   $strongarm->value = array(
     'view_modes' => array(),
     'extra_fields' => array(
-      'form' => array(),
+      'form' => array(
+        'metatags' => array(
+          'weight' => '8',
+        ),
+        'path' => array(
+          'weight' => '7',
+        ),
+        'rabbit_hole' => array(
+          'weight' => '4',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '6',
+        ),
+        'language' => array(
+          'weight' => '5',
+        ),
+      ),
       'display' => array(),
     ),
   );
@@ -58,10 +74,19 @@ function excur_feature_taxonomy_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '6',
+          'weight' => '9',
         ),
         'path' => array(
-          'weight' => '5',
+          'weight' => '7',
+        ),
+        'rabbit_hole' => array(
+          'weight' => '0',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '10',
+        ),
+        'language' => array(
+          'weight' => '8',
         ),
       ),
       'display' => array(),

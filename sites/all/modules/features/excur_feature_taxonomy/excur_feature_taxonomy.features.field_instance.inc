@@ -363,7 +363,7 @@ function excur_feature_taxonomy_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => -5,
+      'weight' => 1,
     ),
   );
 
@@ -386,7 +386,7 @@ function excur_feature_taxonomy_field_default_field_instances() {
     ),
     'entity_type' => 'taxonomy_term',
     'field_name' => 'field_image',
-    'label' => 'Главное изображение',
+    'label' => 'Изображение',
     'required' => 1,
     'settings' => array(
       'alt_field' => 1,
@@ -398,14 +398,14 @@ function excur_feature_taxonomy_field_default_field_instances() {
         'active_updating' => 0,
         'file_name' => array(
           'options' => array(
-            'pathauto' => FALSE,
+            'pathauto' => 0,
             'transliterate' => 1,
           ),
           'value' => '[file:ffp-name-only-original].[file:ffp-extension-original]',
         ),
         'file_path' => array(
           'options' => array(
-            'pathauto' => FALSE,
+            'pathauto' => 0,
             'transliterate' => 1,
           ),
           'value' => '[term:vocabulary:machine-name]/[current-date:custom:Y]/[current-date:custom:m]',
@@ -427,7 +427,7 @@ function excur_feature_taxonomy_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => -3,
+      'weight' => 2,
     ),
   );
 
@@ -450,10 +450,10 @@ function excur_feature_taxonomy_field_default_field_instances() {
     ),
     'entity_type' => 'taxonomy_term',
     'field_name' => 'field_slider_images',
-    'label' => 'Изображения для слайдера',
-    'required' => 0,
+    'label' => 'Изображения',
+    'required' => 1,
     'settings' => array(
-      'alt_field' => 1,
+      'alt_field' => 0,
       'default_image' => 0,
       'entity_translation_sync' => FALSE,
       'file_directory' => '',
@@ -462,14 +462,14 @@ function excur_feature_taxonomy_field_default_field_instances() {
         'active_updating' => 0,
         'file_name' => array(
           'options' => array(
-            'pathauto' => FALSE,
+            'pathauto' => 0,
             'transliterate' => 1,
           ),
           'value' => '[file:ffp-name-only-original].[file:ffp-extension-original]',
         ),
         'file_path' => array(
           'options' => array(
-            'pathauto' => FALSE,
+            'pathauto' => 0,
             'transliterate' => 1,
           ),
           'value' => '[term:vocabulary:machine-name]/[current-date:custom:Y]/[current-date:custom:m]',
@@ -480,7 +480,7 @@ function excur_feature_taxonomy_field_default_field_instances() {
       'max_filesize' => '',
       'max_resolution' => '',
       'min_resolution' => '',
-      'title_field' => 1,
+      'title_field' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -491,7 +491,7 @@ function excur_feature_taxonomy_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => -2,
+      'weight' => 3,
     ),
   );
 
@@ -528,7 +528,7 @@ function excur_feature_taxonomy_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => -5,
+      'weight' => 0,
     ),
   );
 
@@ -567,7 +567,7 @@ function excur_feature_taxonomy_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 1,
+      'weight' => 2,
     ),
   );
 
@@ -591,7 +591,7 @@ function excur_feature_taxonomy_field_default_field_instances() {
     'entity_type' => 'taxonomy_term',
     'field_name' => 'field_continent',
     'label' => 'Континент',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
@@ -605,12 +605,47 @@ function excur_feature_taxonomy_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-country-field_slider_images'
-  $field_instances['taxonomy_term-country-field_slider_images'] = array(
+  // Exported field_instance: 'taxonomy_term-country-field_country_code'
+  $field_instances['taxonomy_term-country-field_country_code'] = array(
+    'bundle' => 'country',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 5,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_country_code',
+    'label' => 'Код страны',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'taxonomy_term-country-field_image'
+  $field_instances['taxonomy_term-country-field_image'] = array(
     'bundle' => 'country',
     'deleted' => 0,
     'description' => '',
@@ -623,15 +658,15 @@ function excur_feature_taxonomy_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 3,
+        'weight' => 6,
       ),
     ),
     'entity_type' => 'taxonomy_term',
-    'field_name' => 'field_slider_images',
-    'label' => 'Изображения для слайдера',
+    'field_name' => 'field_image',
+    'label' => 'Фото',
     'required' => 0,
     'settings' => array(
-      'alt_field' => 1,
+      'alt_field' => 0,
       'default_image' => 0,
       'entity_translation_sync' => FALSE,
       'file_directory' => '',
@@ -640,15 +675,15 @@ function excur_feature_taxonomy_field_default_field_instances() {
         'active_updating' => 0,
         'file_name' => array(
           'options' => array(
-            'pathauto' => FALSE,
-            'transliterate' => 1,
+            'pathauto' => 0,
+            'transliterate' => 0,
           ),
           'value' => '[file:ffp-name-only-original].[file:ffp-extension-original]',
         ),
         'file_path' => array(
           'options' => array(
-            'pathauto' => FALSE,
-            'transliterate' => 1,
+            'pathauto' => 0,
+            'transliterate' => 0,
           ),
           'value' => '[term:vocabulary:machine-name]/[current-date:custom:Y]/[current-date:custom:m]',
         ),
@@ -658,7 +693,7 @@ function excur_feature_taxonomy_field_default_field_instances() {
       'max_filesize' => '',
       'max_resolution' => '',
       'min_resolution' => '',
-      'title_field' => 1,
+      'title_field' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -669,7 +704,7 @@ function excur_feature_taxonomy_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -706,7 +741,7 @@ function excur_feature_taxonomy_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 0,
+      'weight' => 1,
     ),
   );
 
@@ -786,12 +821,16 @@ function excur_feature_taxonomy_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Введите код языка. Например "ru" для Русского или "fr" для Французского');
   t('Главное изображение');
+  t('Изображение');
+  t('Изображения');
   t('Изображения для слайдера');
   t('Имя');
+  t('Код страны');
   t('Код языка');
   t('Континент');
   t('Описание');
   t('Страна');
+  t('Фото');
 
   return $field_instances;
 }

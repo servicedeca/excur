@@ -28,6 +28,7 @@ features[field_base][] = field_company_logo
 features[field_base][] = field_company_name
 features[field_base][] = field_continent
 features[field_base][] = field_country
+features[field_base][] = field_country_code
 features[field_base][] = field_currency
 features[field_base][] = field_description
 features[field_base][] = field_duration

@@ -447,6 +447,36 @@ function excur_feature_field_bases_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
+  // Exported field_base: 'field_country_code'
+  $field_bases['field_country_code'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_country_code',
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max_length' => 10,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
   // Exported field_base: 'field_currency'
   $field_bases['field_currency'] = array(
     'active' => 1,
@@ -831,6 +861,7 @@ function excur_feature_field_bases_field_default_field_bases() {
         2 => 2,
         3 => 3,
         4 => 4,
+        5 => 0,
       ),
     ),
     'translatable' => 0,
@@ -1157,7 +1188,7 @@ function excur_feature_field_bases_field_default_field_bases() {
   // Exported field_base: 'field_slider_images'
   $field_bases['field_slider_images'] = array(
     'active' => 1,
-    'cardinality' => -1,
+    'cardinality' => 2,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_slider_images',
