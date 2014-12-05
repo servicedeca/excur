@@ -1,3 +1,7 @@
+<section id="home" data-speed="4" data-type="background" class="hidden-sm hidden-xs z-index" style="background-position: 50% -375.75px;">
+  <div class="container">
+  </div>
+</section>
 <?php if (!empty($blocks)): ?>
   <section id="about" data-speed="2" data-type="background" class="hidden-sm hidden-xs" style="background-position: 50% -689px;">
     <h2 class="about-title">

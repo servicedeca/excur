@@ -35,4 +35,14 @@
     }
   };
 
+  Drupal.behaviors.excurCustomUserRegister = {
+    attach: function(context, settings) {
+      $('.hover').once().hover(function() {
+        $(this).addClass('flip');
+      }, function() {
+        $(this).removeClass('flip');
+      });
+    }
+  };
+
 })(jQuery, Drupal, this, this.document);

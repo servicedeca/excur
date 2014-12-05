@@ -4,20 +4,35 @@
  * @file
  */
 ?>
-<div class="row">
-  <div class="span12">
-    <h2>
+<section id="services">
+  <div class="container padbot">
+    <h2 class="service-title">
       <?php print t('Destinations'); ?>
     </h2>
-  </div>
-</div>
-<div class="row">
-  <?php foreach ($rows as $id => $row): ?>
-    <div class="span4">
-      <?php print $row; ?>
+    <div class="index-line">
     </div>
-    <?php if (($id + 1) % 3 == 0): ?>
-      <div class="space20"></div>
-    <?php endif; ?>
-  <?php endforeach; ?>
-</div>
+    <div class="container">
+      <div class="row">
+        <?php foreach ($rows as $id => $row): ?>
+          <div class="col-sm-4  portfolio-item">
+            <a href="/<?php print $lang; ?>/taxonomy/term/<?php print $tid[$id]; ?>">
+              <div class="caption text-center">
+                <p class="name_cont">
+                  <?php print $title[$id]; ?>
+                </p>
+              </div>
+              <div class="hover panel">
+                <div class="front">
+                  <?php print $image[$id][0]; ?>
+                </div>
+                <div class="back">
+                  <?php print $image[$id][1]; ?>
+                </div>
+              </div>
+            </a>
+          </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
+  </div>
+</section>

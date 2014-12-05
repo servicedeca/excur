@@ -144,10 +144,51 @@ function exc_theme_preprocess_views_view_fields(&$vars) {
 }
 
 /**
+ * Process variables for views-view-fields.tpl.php.
+ */
+function exc_theme_preprocess_views_view_unformatted(&$vars) {
+  if (isset($vars['theme_hook_suggestion'])) {
+    $function = 'exc_theme_preprocess_' . $vars['theme_hook_suggestion'];
+    if (function_exists($function)) {
+      $function($vars);
+    }
+  }
+}
+
+/**
  * Process variables for views-view-field--term--city--name-field.tpl.php.
  */
 function exc_theme_preprocess_views_view_field__term__city__name_field(&$vars) {
   $vars['output'] .= ' (' . excur_count_service_by_city($vars['row']->tid) . ')';
+}
+
+/**
+ * Process variables for views-view-field--term--city--name-field.tpl.php.
+ */
+function exc_theme_preprocess_views_view_unformatted__term__continent(&$vars) {
+  global $language;
+
+  $vars['lang'] = $language->prefix;
+  foreach ($vars['view']->result as $id => $result) {
+    $term = taxonomy_term_load($result->tid);
+    $wrapper = entity_metadata_wrapper('taxonomy_term', $term);
+    foreach ($wrapper->field_slider_images->value() as $image) {
+      $vars['image'][$id][] = theme('image_style', array(
+        'style_name' => '309x183',
+        'path' => $image['uri'],
+        'alt' => $term->name,
+        'title' => $term->name,
+        'attributes' => array(
+          'class' => array(
+            'img-responsive',
+            'image-cont',
+          ),
+        ),
+      ));
+    }
+    $vars['tid'][$id] = $term->tid;
+    $vars['title'][$id] = $term->name;
+  }
 }
 
 /**

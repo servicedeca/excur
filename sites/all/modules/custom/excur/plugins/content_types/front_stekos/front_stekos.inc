@@ -50,25 +50,6 @@ function template_preprocess_excur_front_stekos(&$vars) {
     ),
   ));
 
-  $vars['icon_st'] = theme('image', array(
-    'path' => EXCUR_FRONT_THEME_PATH . '/images/st.png',
-    'title' => 'Stekos',
-    'alt' => 'Stekos',
-    'attributes' => array(
-      'class' => array('stekos-st'),
-    ),
-  ));
-
-  $title = t('Get your travel');
-  $vars['icon_gyt'] = theme('image', array(
-    'path' => EXCUR_FRONT_THEME_PATH . '/images/gyt.png',
-    'title' => $title,
-    'alt' => $title,
-    'attributes' => array(
-      'class' => array('stekos-gyt'),
-    ),
-  ));
-
   $vars['icon_stekoss'] = theme('image', array(
     'path' => EXCUR_FRONT_THEME_PATH . '/images/stekoss.png',
     'title' => 'Stekos',

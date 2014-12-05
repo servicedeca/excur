@@ -9,6 +9,11 @@
   src: url(../fonts/segoeui.ttf); /* Путь к файлу со шрифтом */
 }
 
+@font-face {
+  font-family: 'Camphor'; /* Имя шрифта */
+  src: url(../fonts/CamphorPro.ttf); /* Путь к файлу со шрифтом */
+}
+
 body *{
   font-family: 'Segoe UI';
 }
@@ -35,6 +40,9 @@ a:focus {
   text-decoration: none;
 }
 
+   li {
+    list-style-type: none; /* Убираем маркеры */
+   }
 
 @media (max-width:340px) {
   .mediamin {
@@ -142,7 +150,7 @@ a:focus {
 }
 
 .modal-registration-form::-webkit-input-placeholder {
-  color:#6D6161;
+  color: #6D6161;
   font-size: 15px;
   text-align:left;
   opacity: 0.8;
@@ -151,7 +159,7 @@ a:focus {
 }
 
 .modal-registration-form::-moz-placeholder {
-  color:#;
+  color: #6D6161;
   font-size: 15px;
   text-align:left;
   opacity: 0.8;
@@ -211,7 +219,7 @@ header  {
   color: #fff;
   background-attachment: scroll;
   background-position: center center;
-  background-repeat: none;
+  background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -226,11 +234,28 @@ header  {
 }
 
 header .intro-text .intro-lead-in {
-  margin-bottom: 25px;
-  font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 22px;
-  font-style: italic;
-  line-height: 22px;
+    margin-bottom: 25px;
+    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 22px;
+    font-style: italic;
+    line-height: 22px;
+    position: fixed;
+    left:50%;
+    margin-left: -445px;
+}
+
+@media(max-width:991px){
+header .intro-text .intro-lead-in{
+        margin-left: -345px;
+    margin-top: -30px;
+    }
+}
+
+@media(max-width:767px){
+header .intro-text .intro-lead-in{
+    left: 0px;
+    margin-left: 0px;
+    }
 }
 
 header .intro-text .intro-heading {
@@ -240,35 +265,35 @@ header .intro-text .intro-heading {
 @media(min-width:1px) {
   header .intro-text {
     padding-top: 100px;
-    padding-bottom:250px;
+    padding-bottom:370px;
   }
 }
 
 @media(min-width:768px) {
   header .intro-text {
     padding-top: 100px;
-    padding-bottom:390px;
+    padding-bottom:510px;
   }
 }
 
 @media(min-width:1300px) {
   header .intro-text {
     padding-top: 100px;
-    padding-bottom:360px;
+    padding-bottom:480px;
   }
 }
 
 @media(min-width:1400px) {
   header .intro-text {
     padding-top: 150px;
-    padding-bottom:500px;
+    padding-bottom:620px;
   }
 }
 
 @media(min-width:1650px) {
   header .intro-text {
     padding-top: 160px;
-    padding-bottom:610px;
+    padding-bottom:730px;
   }
 }
 
@@ -477,7 +502,7 @@ section h3.section-subheading {
   margin: 0 auto;
   width: 100%;
   position: relative;
-  padding: 190px 0;
+  padding: 200px 0;
 }
 
 #home1 {
@@ -491,8 +516,10 @@ section h3.section-subheading {
 
 #about {
   background: #fff;
-  padding: 45px 0;
-  height: 490px;
+  padding: 10px 0;
+  height: 455px;
+    z-index: 15;
+    position: relative;
 }
 
 .padiconleft {
@@ -558,17 +585,17 @@ footer {
 }
 
 .footer-col ul{
-  padding: 0px;
+    padding: 0px;
 }
 
 .footer-col ul a{
-  padding: 0px;
-  color:#f1f1f1;
+    padding: 0px;
+    color:#f1f1f1;
 }
 
 .footer-col li{
-  list-style-type: none;
-  font-size: 17px;
+    list-style-type: none;
+    font-size: 17px;
 }
 
 footer h3 {
@@ -578,6 +605,8 @@ footer h3 {
 footer .footer-above {
   padding-top: 50px;
   background-color: #24302c;
+    z-index: 20;
+    position: relative;
 }
 
 footer .footer-col {
@@ -604,6 +633,7 @@ footer .footer-below {
   color: #665E5E;
   font-size: 20px;
   padding-top: 25px;
+    background: #fff;
   letter-spacing: 1px;
 }
 
@@ -656,13 +686,13 @@ footer .footer-below {
   border: solid 2px #fff;
   font-size: 20px;
   color: #fff;
-  background: 0 0;
   transition: all .3s ease-in-out;
 }
 
 .part {
   background:#808080;
   padding: 25px 0;
+    display: none;
 }
 
 .text_part {
@@ -707,7 +737,7 @@ footer .footer-below {
   background-repeat: no-repeat;
   width: 40px;
   height: 40px;
-  background-image:url('../images/search.png');
+  background-image:url('../image/search.png');
   vertical-align:middle;
   background-position: center;
   margin-top: -135px;
@@ -717,7 +747,7 @@ footer .footer-below {
 
 @media (max-width:1024px) {
   #search-button {
-    background-image:url('../images/searchPADred.png');
+    background-image:url('../image/searchPADred.png');
     border:none;
   }
 }
@@ -729,7 +759,7 @@ footer .footer-below {
     margin-top: -145px;
     margin-left: 67%;
     border-style: none;
-    background-image:url('../images/searchmini.png');
+    background-image:url('../image/searchmini.png');
   }
 }
 
@@ -758,7 +788,7 @@ footer .footer-below {
   background-repeat: no-repeat;
   width: 98px;
   height: 98px;
-  background-image:url('../images/searchwhite.png');
+  background-image:url('../image/searchwhite.png');
   vertical-align:middle;
   margin-top: -336px;
   margin-left: 600px;
@@ -777,7 +807,7 @@ footer .footer-below {
 
 @media (max-width:1024px) {
   #search-button1 {
-    background-image:url('../images/searchPADwhite.png');
+    background-image:url('../image/searchPADwhite.png');
     border:none;
   }
 }
@@ -804,7 +834,7 @@ footer .footer-below {
     margin-top: -145px;
     margin-left: 67%;
     border-style: none;
-    background-image:url('../images/searchminired.png');
+    background-image:url('../image/searchminired.png');
   }
 }
 
@@ -893,40 +923,17 @@ footer .footer-below {
 
 
 
-#EUR .continent-bg{
-  background-image: url(../images/EURfon.png);
-  background-repeat: no-repeat;
-  background-position: center;
-}
 
-#ASIA .continent-bg{
-  background-image: url(../images/ASIAfon.png);
-  background-repeat: no-repeat;
-  background-position:center;
-}
 
-#AFR .continent-bg{
-  background-image: url(../images/AFRICAfon.png);
-  background-repeat: no-repeat;
-  background-position:center;
-}
 
-#AMERICA .continent-bg{
-  background-image: url(../images/AMERICAfon.png);
-  background-repeat: no-repeat;
-  background-position:center;
-}
 
-#AUSTRALIA .continent-bg{
-  background-image: url(../images/AUSTRALIAfon.png);
-  background-repeat: no-repeat;
-  background-position:center;
-}
 
-.content {
-  width: 996px;
-  margin-top: 100px;
-}
+
+
+
+
+
+
 
 .content li {
   list-style-type: none; /* Убираем маркеры */
@@ -942,96 +949,25 @@ footer .footer-below {
 }
 
 
-#EUR .cont_icon {
-  text-align: center;
-  margin-top: 50px;
-  width: 300px;
-  height: 150px;
-  margin: 0 auto;
-  background: url(../images/EURicon.png);
-  background-repeat: no-repeat;
-  background-position: center;
-}
 
-#ASIA .cont_icon {
-  text-align: center;
-  margin-top: 50px;
-  width: 230px;
-  height: 150px;
-  margin: 0 auto;
-  background: url(../images/ASIAicon.png);
-  background-repeat: no-repeat;
-  background-position: center;
-}
 
-#AFR .cont_icon {
-  text-align: center;
-  margin-top: 50px;
-  width: 300px;
-  height: 150px;
-  margin: 0 auto;
-  background: url(../images/AFRICAicon.png);
-  background-repeat: no-repeat;
-  background-position: center;
-}
 
-#AMERICA .cont_icon {
-  text-align: center;
-  margin-top: 50px;
-  width: 300px;
-  height: 150px;
-  margin: 0 auto;
-  background: url(../images/AMERICAicon.png);
-  background-repeat: no-repeat;
-  background-position: center;
-}
 
-#AUSTRALIA .cont_icon {
-  text-align: center;
-  margin-top: 50px;
-  width: 300px;
-  height: 150px;
-  margin: 0 auto;
-  background: url(../images/AUSTRALIAicon.png);
-  background-repeat: no-repeat;
-  background-position: center;
-}
 
-.cont_title {
-  margin-top:20px;
-  text-align: center ;
-  color:#fff;
-  font-size: 40px;
-  z-index: 10;
-  font-size:40px;
-  letter-spacing: 3px;
-}
 
-.listcountry {
-  color: #fff;
-  float: left;
-  padding-left:15px;
-  font-size: 17px;
-  width: 240px;
-  padding-bottom: 75px;
-  padding-top: 75px;
-}
+
+
+
+
+
+
+
 
 .listEUR {
   margin-top: 100px;
 }
 
-.cont_text {
-  color: #fff;
-  font-size:17px;
-  text-align: center;
-  width: 800px;
-  margin: 0 auto;
-  -moz-appearance: none;
-  appearance: none;
-  padding-top: 50px;
-  letter-spacing:1px;
-}
+
 
 .number {
   font-size:23px;
@@ -1074,25 +1010,15 @@ footer .footer-below {
 }
 
 
-#EUR #continent {
-  background:#3C7E82;
-}
 
-#ASIA #continent {
-  background:#D3AC54;
-}
 
-#AFR #continent {
-  background: #BC7433;
-}
 
-#AMERICA #continent {
-  background: #024651;
-}
 
-#AUSTRALIA #continent {
-  background: #34628E;
-}
+
+
+
+
+
 
 .listcountryA {
   color: #fff;
@@ -1359,7 +1285,7 @@ div.box-crew:hover span{
   width:60px;
   height: 30px;
   position: relative;
-  background: url(../images/crumbEUR.png);
+  background: url(/image/crumbEUR.png);
   background-position: center;
   background-repeat: no-repeat;
   margin-top: -125px;
@@ -2127,7 +2053,7 @@ div.box-crew:hover span{
 
 .service-title {
   text-align: center;
-  font-size:30px;
+  font-size:35px;
   padding-top: 0px;
   color:#665E5E;
   letter-spacing: 3px;
@@ -2201,7 +2127,7 @@ div.box-crew:hover span{
   width:240px;
   height:150px;
   margin-top: 30px;
-  background: url(../images/coat-prague.png);
+  background: url(/image/coat-prague.png);
   background-position: center;
   background-repeat: no-repeat;
   padding-right: 40px;
@@ -3608,7 +3534,7 @@ footer {
   }
 }
 
-@media(max-width:992px){
+@media(max-width:991px){
   #index .menu{
     width:100%;
     height:50px;
@@ -5055,7 +4981,7 @@ footer {
 
 
 #EUR .topline {
-  background: url(../images/topline.jpg);
+  background: url(../images/topeur.jpg);
   background-attachment: fixed;
   background-origin: initial;
   background-clip: initial;
@@ -5325,12 +5251,14 @@ footer {
 
 #services {
   border-top: 15px solid #bb2b33;
+    z-index: 10;
+    background: #fff;
+    position: relative;
 }
 
 .about-title {
   text-align: center;
-  font-size:30px;
-  color:#665E5E;
+  font-size:35px;
   letter-spacing: 3px;
   font-family: "Segoe";
   width: 100%;
@@ -5338,7 +5266,7 @@ footer {
   line-height: 60px;
   background: #bb2b33;
   color:#f1f1f1;
-  margin-top: -10px;
+    margin-top: -10px;
 }
 
 .stekos-block {
@@ -5381,8 +5309,10 @@ footer {
 
 #stekos {
   background: #fff;
-  padding: 45px 0;
-  height: 350px;
+  padding: 35px 0;
+  height: 327px;
+    z-index: 10;
+    position: relative;
 }
 
 .bgf{
@@ -5390,61 +5320,400 @@ footer {
 }
 
 .icon-index {
-  width: 100px;
-  margin-bottom: 0px;
-  margin-top: 15px;
+    width: 100px;
+    margin-bottom: 0px;
+    margin-top: 15px;
 }
 
+
+
 .ad-item {
-  height: 180px;
+    height: 180px;
 }
 
 .icon-item {
-  text-align: center;
+    text-align: center;
 }
 
 .ad-plus-height {
-  height: 76px;
+    height: 76px;
 }
 
 .stekos-block-mid {
-  text-align: center;
+    text-align: center;
+    padding: 0px;
+}
+
+.stekos-block-mid p {
+    text-align: center;
+    font-size: 45px;
+    font-family: 'Camphor';
+    margin-top: 85px;
+    color: #808080;
+    margin-left: -35px;
+    width: 500px;
+    margin-bottom: 0px;
 }
 
 .stekos-block-left {
-  text-align:right;
+    text-align:right;
+}
+
+.stekos-block-left p{
+    text-align:right;
+    font-size: 45px;
+    font-family: 'Camphor';
+    margin-top: 85px;
+    color: #333333;
 }
 
 .stekos-block-right {
-  text-align: center;
+    text-align: center;
 }
 
 .stekos-st {
-  margin-top: 100px;
-  height:40px;
+    margin-top: 100px;
+    height:40px;
 }
 
-.stekos-gyt {
-  margin-top: 100px;
-  margin-bottom: 10px;
-  height:40px;
-}
+
 
 .stekos-project {
-  margin-left: 0px;
-  margin-left: 90px;
+
+    margin-left: 0px;
+    margin-left: 90px;
 }
 
 .stekos-block-mid a{
-  font-size: 20px;
-  font-style: italic;
-  color: #4d4d4d;
+    font-size: 20px;
+    font-style: italic;
+    color: #4d4d4d;
 }
 
 .stekos-block-mid a:hover{
-  color: #bb2b33;
+    color: #bb2b33;
 }
 
 .stekos-block-mid a:active{
-  color: #bb2b33;
+    color: #bb2b33;
+}
+
+.test {
+    z-index: -15;
+
+}
+
+	.panel .front {
+		float: none;
+		position: absolute;
+		z-index: 900;
+		width: inherit;
+		height: inherit;
+		text-align: center;
+		-webkit-transform: rotateX(0deg) rotateY(0deg);
+			 -moz-transform: rotateX(0deg) rotateY(0deg);
+						transform: rotateX(0deg) rotateY(0deg);
+
+		-webkit-transform-style: preserve-3d;
+			 -moz-transform-style: preserve-3d;
+						transform-style: preserve-3d;
+
+		-webkit-backface-visibility: hidden;
+			 -moz-backface-visibility: hidden;
+						backface-visibility: hidden;
+
+		/* -- transition is the magic sauce for animation -- */
+		-webkit-transition: all .8s ease-in-out;
+						transition: all .8s ease-in-out;
+	}
+	.panel.flip .front {
+		z-index: 900;
+
+		-webkit-transform: rotateY(180deg);
+			 -moz-transform: rotateY(180deg);
+						transform: rotateY(180deg);
+	}
+
+	.panel .back {
+		float: none;
+		position: absolute;
+		z-index: 800;
+		width: inherit;
+		height: inherit;
+        margin-top: 10px;
+
+		-webkit-transform: rotateY(-180deg);
+			 -moz-transform: rotateY(-179deg); /* setting to 180 causes an unnatural-looking half-flip */
+						transform: rotateY(-179deg);
+
+		-webkit-transform-style: preserve-3d;
+			 -moz-transform-style: preserve-3d;
+						transform-style: preserve-3d;
+
+		-webkit-backface-visibility: hidden;
+			 -moz-backface-visibility: hidden;
+						backface-visibility: hidden;
+
+		/* -- transition is the magic sauce for animation -- */
+		-webkit-transition: all .8s ease-in-out;
+						transition: all .8s ease-in-out;
+	}
+
+	.panel.flip .back {
+		z-index: 1000;
+
+		-webkit-transform: rotateX(0deg) rotateY(0deg);
+			 -moz-transform: rotateX(0deg) rotateY(0deg);
+						transform: rotateX(0deg) rotateY(0deg);
+	}
+
+
+.hover {
+    height: 200px;
+    border:none;
+    -webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, .05);
+    box-shadow: 0 0px 0px rgba(0, 0, 0, .05);
+}
+
+@media(max-width:991px){
+.hover{
+    height: 140px;
+    }
+}
+
+@media(max-width:767px){
+.hover{
+    height: 350px;
+    }
+}
+
+
+.topline-cont {
+  background-origin: initial;
+  background-clip: initial;
+  background-size: cover;
+  background-repeat:no-repeat;
+  position:relative;
+  height: 500px;
+  background-position: center top;
+  z-index: -20;
+  margin-top: 30px;
+}
+
+#EUR .topline-cont{
+    background: url(../images/topeur.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+     background-size: cover;
+     -o-background-size: cover;
+}
+
+#ASIA .topline-cont{
+      background: url(../images/topasia.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+#RUS .topline-cont{
+      background: url(../images/toprus.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+#AFR .topline-cont{
+      background: url(../images/topafr.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+#AM .topline-cont{
+      background: url(../images/topamerica.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+#AUS .topline-cont{
+      background: url(../images/topaus.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+
+.circle-cont {
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    background: #333;
+    border-radius: 350px;
+    margin-top: 100px;
+    left: 50%;
+    margin-left: -150px;
+    position: absolute;
+    opacity: 0.8;
+    border: 1px solid #f2f2f2;
+}
+
+#EUR .circle-cont {
+    background: #3c7e82;
+}
+
+#ASIA .circle-cont {
+    background: #f2911b;
+}
+
+#ASIA .circle-cont {
+    background: #c12f2f;
+}
+
+#RUS .circle-cont {
+    background: #4c8563;
+}
+
+#AFR .circle-cont {
+    background: #f2911b;
+}
+
+#AM .circle-cont {
+    background: #045f63;
+}
+
+#AUS .circle-cont {
+    background: #3d76a5;
+}
+
+.circle-cont-layer {
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    background: #333;
+    border-radius: 350px;
+    margin-top: 100px;
+    left: 50%;
+    margin-left: -150px;
+    position: absolute;
+    border: 1px solid #f2f2f2;
+    background: transparent;   
+}
+
+.circle-cont-layer p{
+    font-size: 50px;
+    font-family: 'Camphor';
+    color:#f2f2f2;
+    margin-top: 150px;
+}
+.cont-icon {
+    width: 120px;
+    height: 80px;
+    left: 90px;
+    top:50px;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#EUR .cont-icon {
+        background-image:url('../images/icon/eur-icon.png');
+}
+
+#ASIA .cont-icon {
+        background-image:url('../images/icon/asia-icon.png');
+}
+
+#RUS .cont-icon {
+        background-image:url('../images/icon/rus-icon.png');
+}
+
+#AFR .cont-icon {
+        background-image:url('../images/icon/af-icon.png');
+}
+
+#AM .cont-icon {
+        background-image:url('../images/icon/am-icon.png');
+}
+
+#AUS .cont-icon {
+        background-image:url('../images/icon/aus-icon.png');
+}
+
+.cont-title-container {
+    width: 100%;
+    height: 80px;
+}
+
+#EUR .cont-title-container {
+    background: #3c7e82;
+}
+
+#ASIA .cont-title-container {
+    background: #f2911b;
+}
+
+#ASIA .cont-title-container {
+    background: #c12f2f;
+}
+
+#RUS .cont-title-container {
+    background: #4c8563;
+}
+
+#AFR .cont-title-container {
+    background: #f2911b;
+}
+
+#AM .cont-title-container {
+    background: #045f63;
+}
+
+#AUS .cont-title-container {
+    background: #3d76a5;
+}
+
+.title-cont {
+    font-size: 40px;
+    font-weight: 300;
+    font-family: 'Segoe';
+    width: 960px;
+    margin: 0 auto;
+    height: 80px;
+    line-height: 80px;
+    color:#f2f2f2;
+}
+
+#EUR .cont-title-container h2 {
+    color:#f2f2f2;;
+}
+
+.cont-text {
+     margin-top: 35px;   
+}
+
+.cont-text p{
+    color: #414042;
+    font-size:17px;
+    text-align: center;
+}
+
+.cont-list {
+    margin-bottom: 75px;
+    margin-top: 25px;
+}
+
+.cont-list a{
+    color: #414042;
+    line-height: 25px;
+    font-size: 15px;
+}
+
+.cont-list a:active{
+    color: #414042;
 }
