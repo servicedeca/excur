@@ -208,7 +208,7 @@
                                 <ul class="list user-profile-nav">
                                     <li><a href="user-profile.html">Новости и уведомления</a>
                                     </li>
-                                    <li><a href="Messages.html">Сообщения</a>
+                                    <li><a href="user-profile-settings.html">Сообщения</a>
                                     </li>
                                     <li><a href="Profile.html">Профиль</a>
                                     </li>
@@ -239,148 +239,47 @@
                                       <h2 class="office-place">Новосибирск, Россия</h2>
                                       <h3 class="office-title">Мои бронирования</h3>
 
-                            <div class="col-xs-12 offer-line-select">
-                                <ul class="nav nav-tabs">
-                                    <li role="presentation" class="active"><a href="#">Подтверждено</a></li>
-                                    <li role="presentation"><a href="#">Не подтверждено</a></li>
-                                    <li role="presentation"><a href="#">Отклонено</a></li>
-                                    <li role="presentation"><a href="#">Архив</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-xs-12 excur-list-content booking-list">
-                                <a href="#">    
-                                    <div class="col-xs-3 excur-list-image">
-                                        <img src="image/popexcur3.png" class="excur-image-booking">
-                                        <div class="col-xs-12 excur-list-button offer-list-button">
-                                            <a href="Excur.html" class="button-go" id="booking-list-button">Подробности</a>
-                                        </div>
-                                    </div>
-                                </a>    
-                                <div class="col-xs-9 excur-list-infoblock-offer">
-                                    <div class="col-xs-12 excur-list-title">
-                                       <a href="#">
-                                            <div class="excur-list-name booking-list-name">Ватикан (галереи искусств, Сикстинская капелла, Храм Св. Петра)
-                                            </div>
-                                        </a>    
-                                    </div>
-                                    <div class="col-xs-4 booking-list-info">
-                                        <div class="col-xs-12 booking-list-star">
-                                           id 123
-                                        </div>
-                                        <div class="col-xs-12  booking-list-date">
-                                              <img  src="image/calendar.png" class="iconcalnd">&nbsp 20.10.2014
-                                        </div>
-                                    </div>
-                                <div class="col-xs-4 booking-list-gid">
-                                    <a href="#">        
-                                        <div class="col-xs-4">
-                                            <img src="image/gid3.png"  class="booking-gid-photo">
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <div class="booking-list-guide-name">Гид
-                                                <div class="booking-gid-name">Алексей
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-xs-4 booking-list-info-status">
-                                    не подтверждён
-                                </div>
-                            </div>                                  
+                        <div class="panel panel-default panel-message">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">
+                            <select  name="operation" class="form-select form-message">
+                                <option value="0" data-content="Действия...">Действия...</option>
+                                <option  data-content="Пометить как прочитанное">Пометить как прочитанное</option>
+                                <option  data-content="Пометить как не прочитанное">Пометить как не прочитанное</option>
+                            </select>
                         </div>
-                        <div class="col-xs-12 excur-list-line offer-line">
+                            <!-- Table -->
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Тема</th>
+                                        <th>Участники</th>
+                                        <th>Обновление</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="message-unread">
+                                        <td><input type="checkbox" class="form-checkbox" title="Отметить все строки таблицы"></td>
+                                        <td>Вопрос по предложению "Услуга в Москве 1"</td>
+                                        <td>Usel</td>
+                                        <td>Май 31</td>
+                                    </tr>
+                                    <tr class="message-read">
+                                        <td><input type="checkbox" class="form-checkbox" title="Отметить все строки таблицы"></td>
+                                        <td>Вопрос по предложению "Услуга в Москве 1"</td>
+                                        <td>Nikolay</td>
+                                        <td>Окт. 9</td>
+                                    </tr>
+                                    <tr class="message-unread">
+                                        <td><input type="checkbox" class="form-checkbox" title="Отметить все строки таблицы"></td>
+                                        <td>Вопрос по предложению "Услуга в Москве 1"</td>
+                                        <td>Elena</td>
+                                        <td>Авг. 13</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-
-                            <div class="col-xs-12 excur-list-content booking-list">
-                                <a href="#">    
-                                    <div class="col-xs-3 excur-list-image">
-                                        <img src="image/popexcur2.png" class="excur-image-booking">
-                                        <div class="col-xs-12 excur-list-button offer-list-button">
-                                            <a href="Excur.html" class="button-go" id="booking-list-button">Подробности</a>
-                                        </div>
-                                    </div>
-                                </a>    
-                                <div class="col-xs-9 excur-list-infoblock-offer">
-                                    <div class="col-xs-12 excur-list-title">
-                                       <a href="#">
-                                            <div class="excur-list-name booking-list-name">Ватикан (галереи искусств, Сикстинская капелла, Храм Св. Петра)
-                                            </div>
-                                        </a>    
-                                    </div>
-                                    <div class="col-xs-4 booking-list-info">
-                                        <div class="col-xs-12 booking-list-star">
-                                           id 123
-                                        </div>
-                                        <div class="col-xs-12  booking-list-date">
-                                              <img  src="image/calendar.png" class="iconcalnd">&nbsp 20.10.2014
-                                        </div>
-                                    </div>
-                                <div class="col-xs-4 booking-list-gid">
-                                    <a href="#">        
-                                        <div class="col-xs-4">
-                                            <img src="image/gid3.png"  class="booking-gid-photo">
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <div class="booking-list-guide-name">Гид
-                                                <div class="booking-gid-name">Алексей
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-xs-4 booking-list-info-status">
-                                    не подтверждён
-                                </div>
-                            </div>                                  
-                        </div>
-                        <div class="col-xs-12 excur-list-line offer-line">
-                        </div>
-
-                            <div class="col-xs-12 excur-list-content booking-list">
-                                <a href="#">    
-                                    <div class="col-xs-3 excur-list-image">
-                                        <img src="image/popexcur3.png" class="excur-image-booking">
-                                        <div class="col-xs-12 excur-list-button offer-list-button">
-                                            <a href="Excur.html" class="button-go" id="booking-list-button">Подробности</a>
-                                        </div>
-                                    </div>
-                                </a>    
-                                <div class="col-xs-9 excur-list-infoblock-offer">
-                                    <div class="col-xs-12 excur-list-title">
-                                       <a href="#">
-                                            <div class="excur-list-name booking-list-name">Ватикан (галереи искусств, Сикстинская капелла, Храм Св. Петра)
-                                            </div>
-                                        </a>    
-                                    </div>
-                                    <div class="col-xs-4 booking-list-info">
-                                        <div class="col-xs-12 booking-list-star">
-                                           id 123
-                                        </div>
-                                        <div class="col-xs-12  booking-list-date">
-                                              <img  src="image/calendar.png" class="iconcalnd">&nbsp 20.10.2014
-                                        </div>
-                                    </div>
-                                <div class="col-xs-4 booking-list-gid">
-                                    <a href="#">        
-                                        <div class="col-xs-4">
-                                            <img src="image/gid3.png"  class="booking-gid-photo">
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <div class="booking-list-guide-name">Гид
-                                                <div class="booking-gid-name">Алексей
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-xs-4 booking-list-info-status">
-                                    не подтверждён
-                                </div>
-                            </div>                                  
-                        </div>
-
-                       
                        
                         </div>
                     </div>
