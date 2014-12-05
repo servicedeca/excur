@@ -228,8 +228,11 @@ function exc_theme_preprocess_taxonomy_term(&$vars, $hook) {
  * Process variables for taxonomy-term--continent_full.tpl.php.
  */
 function exc_theme_preprocess_taxonomy_term__continent_full(&$vars) {
+  global $language;
+
   $term = $vars['term'];
   $wrapper = entity_metadata_wrapper('taxonomy_term', $term);
+  $wrapper->language($language->language);
 
   $desc = $wrapper->description_field->value();
   $vars['description'] = $desc['safe_value'];
