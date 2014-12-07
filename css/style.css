@@ -2405,7 +2405,7 @@ div.box-crew:hover span{
   position: absolute;
 }
 
-#excur-list-button{
+.excur-list-button{
   margin-left: 4px;
   margin-top:10px;
   position: absolute;
