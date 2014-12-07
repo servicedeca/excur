@@ -42,6 +42,29 @@ function excur_feature_image_style_image_default_styles() {
     ),
   );
 
+  // Exported image style: 100x67.
+  $styles['100x67'] = array(
+    'name' => '100x67',
+    'label' => '100x67',
+    'effects' => array(
+      2 => array(
+        'label' => 'Масштабирование и обрезка',
+        'help' => '«Масштабирование и обрезка» сначала масштабирует изображение, а затем обрезает большее значение. Это наиболее эффективный способ создания миниатюр без искажения пропорций исходного изображения.',
+        'effect callback' => 'image_scale_and_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'image_resize_form',
+        'summary theme' => 'image_resize_summary',
+        'module' => 'image',
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 100,
+          'height' => 67,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: 1170x555.
   $styles['1170x555'] = array(
     'name' => '1170x555',
@@ -65,6 +88,52 @@ function excur_feature_image_style_image_default_styles() {
     ),
   );
 
+  // Exported image style: 135x135.
+  $styles['135x135'] = array(
+    'name' => '135x135',
+    'label' => '135x135',
+    'effects' => array(
+      4 => array(
+        'label' => 'Масштабирование и обрезка',
+        'help' => '«Масштабирование и обрезка» сначала масштабирует изображение, а затем обрезает большее значение. Это наиболее эффективный способ создания миниатюр без искажения пропорций исходного изображения.',
+        'effect callback' => 'image_scale_and_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'image_resize_form',
+        'summary theme' => 'image_resize_summary',
+        'module' => 'image',
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 135,
+          'height' => 135,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: 150x102.
+  $styles['150x102'] = array(
+    'name' => '150x102',
+    'label' => '150x102',
+    'effects' => array(
+      5 => array(
+        'label' => 'Масштабирование и обрезка',
+        'help' => '«Масштабирование и обрезка» сначала масштабирует изображение, а затем обрезает большее значение. Это наиболее эффективный способ создания миниатюр без искажения пропорций исходного изображения.',
+        'effect callback' => 'image_scale_and_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'image_resize_form',
+        'summary theme' => 'image_resize_summary',
+        'module' => 'image',
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 150,
+          'height' => 102,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: 170x130.
   $styles['170x130'] = array(
     'name' => '170x130',
@@ -82,6 +151,29 @@ function excur_feature_image_style_image_default_styles() {
         'data' => array(
           'width' => 170,
           'height' => 130,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: 225x150.
+  $styles['225x150'] = array(
+    'name' => '225x150',
+    'label' => '225x150',
+    'effects' => array(
+      3 => array(
+        'label' => 'Масштабирование и обрезка',
+        'help' => '«Масштабирование и обрезка» сначала масштабирует изображение, а затем обрезает большее значение. Это наиболее эффективный способ создания миниатюр без искажения пропорций исходного изображения.',
+        'effect callback' => 'image_scale_and_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'image_resize_form',
+        'summary theme' => 'image_resize_summary',
+        'module' => 'image',
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 225,
+          'height' => 150,
         ),
         'weight' => 1,
       ),
@@ -128,6 +220,29 @@ function excur_feature_image_style_image_default_styles() {
         'data' => array(
           'width' => 370,
           'height' => 210,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: 309x183.
+  $styles['309x183'] = array(
+    'name' => '309x183',
+    'label' => '309x183',
+    'effects' => array(
+      1 => array(
+        'label' => 'Масштабирование и обрезка',
+        'help' => '«Масштабирование и обрезка» сначала масштабирует изображение, а затем обрезает большее значение. Это наиболее эффективный способ создания миниатюр без искажения пропорций исходного изображения.',
+        'effect callback' => 'image_scale_and_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'image_resize_form',
+        'summary theme' => 'image_resize_summary',
+        'module' => 'image',
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 309,
+          'height' => 183,
         ),
         'weight' => 1,
       ),
