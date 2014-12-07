@@ -15,7 +15,7 @@
       <div class="row">
         <?php foreach ($rows as $id => $row): ?>
           <div class="col-sm-4  portfolio-item">
-            <a href="/<?php print $lang; ?>/taxonomy/term/<?php print $tid[$id]; ?>">
+            <a href="<?php print url('taxonomy/term/' . $tid[$id]); ?>">
               <div class="caption text-center">
                 <p class="name_cont">
                   <?php print $title[$id]; ?>

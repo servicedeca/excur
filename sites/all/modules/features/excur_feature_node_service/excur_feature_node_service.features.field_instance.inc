@@ -435,6 +435,12 @@ function excur_feature_node_service_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Не указывайте в описании предложения контактную информацию (ссылки на сайт, номера телефонов, e-mail адреса), цену, продолжительность и язык проведения.',
     'display' => array(
+      'country_teaser' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -494,6 +500,12 @@ function excur_feature_node_service_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Выберите из предложенного списка категорий',
     'display' => array(
+      'country_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 14,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'taxonomy',
@@ -544,6 +556,12 @@ function excur_feature_node_service_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Введите название города в котором проводится или начинается экскурсия.',
     'display' => array(
+      'country_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'entityreference',
@@ -609,6 +627,12 @@ function excur_feature_node_service_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Укажите валюту, в которой отображать стомость услуги, если пользователем не выбрана иная',
     'display' => array(
+      'country_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'list',
@@ -659,6 +683,12 @@ function excur_feature_node_service_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Укажите продолжительность в часах, например "2 часа 30 минут"',
     'display' => array(
+      'country_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'text',
@@ -713,6 +743,12 @@ function excur_feature_node_service_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Укажите через запятую, что не входит в стоимость тура.',
     'display' => array(
+      'country_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 19,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'text',
@@ -767,6 +803,12 @@ function excur_feature_node_service_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'country_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'entityreference',
@@ -822,6 +864,12 @@ function excur_feature_node_service_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Рекомендуем использовать фотографии размером более 800*600 точек.',
     'display' => array(
+      'country_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'image',
@@ -913,6 +961,12 @@ function excur_feature_node_service_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Укажите через запятую, что входит в стоимость тура.',
     'display' => array(
+      'country_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 20,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'text',
@@ -967,6 +1021,12 @@ function excur_feature_node_service_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Укажите через запятую языки проведения тура, например: "Русский, Английский".',
     'display' => array(
+      'country_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'taxonomy',
@@ -1021,6 +1081,12 @@ function excur_feature_node_service_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Вы можете создать несколько предложений, отличающихся по цене, продолжительности и содержанию.',
     'display' => array(
+      'country_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'field_collection',
@@ -1077,6 +1143,12 @@ function excur_feature_node_service_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'country_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 23,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'fivestar',
@@ -1167,6 +1239,12 @@ function excur_feature_node_service_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Укажите точный адрес места встречи или выберите вариант с забором Клиента из отеля.',
     'display' => array(
+      'country_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 21,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'list',
@@ -1221,6 +1299,12 @@ function excur_feature_node_service_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Укажите время встречи или выберите вариант когда клиент сам укажет время встречи',
     'display' => array(
+      'country_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 22,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'list',
@@ -1272,6 +1356,12 @@ function excur_feature_node_service_field_default_field_instances() {
     'description' => 'А)Личное подтверждение бронирования- вы получите уведомление о заказе и должны будете подтвердить или отменить заказ, до этого момента бронирование не будет считаться подтвержденным.<br>
 Б)Автоматическое подтверждение заказа - клиент получит подтверждение о заказе сразу после оплаты на Excursiopedia.com. Будьте внимательны! Если Вам требуется подтверждать экскурсии самостоятельно для проверки возможности проведения экскурсии в заказанные даты, выберите другой пункт.',
     'display' => array(
+      'country_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'list',
@@ -1321,6 +1411,12 @@ function excur_feature_node_service_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'country_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'image',
@@ -1404,6 +1500,12 @@ function excur_feature_node_service_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Укажите точный адрес или выберите забор Клиента из отеля',
     'display' => array(
+      'country_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'text',
@@ -1457,6 +1559,12 @@ function excur_feature_node_service_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'country_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 13,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'text',
@@ -1510,6 +1618,12 @@ function excur_feature_node_service_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'country_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
       'default' => array(
         'label' => 'above',
         'settings' => array(),

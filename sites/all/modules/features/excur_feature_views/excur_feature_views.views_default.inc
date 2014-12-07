@@ -297,7 +297,7 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['body']['settings'] = array(
     'trim_length' => '300',
   );
-  /* Поле: Поле: Главное изображение */
+  /* Поле: Поле: Фото */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -308,7 +308,7 @@ function excur_feature_views_views_default_views() {
     'image_style' => '170x130',
     'image_link' => 'content',
   );
-  /* Поле: Поле: Главное изображение */
+  /* Поле: Поле: Фото */
   $handler->display->display_options['fields']['field_image_1']['id'] = 'field_image_1';
   $handler->display->display_options['fields']['field_image_1']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image_1']['field'] = 'field_image';
@@ -416,6 +416,7 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['view_mode'] = 'country_teaser';
   $handler->display->display_options['row_options']['links'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
@@ -1067,7 +1068,7 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['id']['field'] = 'id';
   $handler->display->display_options['fields']['id']['label'] = '';
   $handler->display->display_options['fields']['id']['element_label_colon'] = FALSE;
-  /* Поле: Поле: Главное изображение */
+  /* Поле: Поле: Фото */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -1079,7 +1080,7 @@ function excur_feature_views_views_default_views() {
     'image_style' => '',
     'image_link' => '',
   );
-  /* Поле: Поле: Главное изображение */
+  /* Поле: Поле: Фото */
   $handler->display->display_options['fields']['field_image_1']['id'] = 'field_image_1';
   $handler->display->display_options['fields']['field_image_1']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image_1']['field'] = 'field_image';
@@ -1297,7 +1298,7 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['field_guide']['settings'] = array(
     'link' => 0,
   );
-  /* Поле: Поле: Главное изображение */
+  /* Поле: Поле: Фото */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -1483,7 +1484,7 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['id']['field'] = 'id';
   $handler->display->display_options['fields']['id']['label'] = '';
   $handler->display->display_options['fields']['id']['element_label_colon'] = FALSE;
-  /* Поле: Поле: Главное изображение */
+  /* Поле: Поле: Фото */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -1495,7 +1496,7 @@ function excur_feature_views_views_default_views() {
     'image_style' => '',
     'image_link' => '',
   );
-  /* Поле: Поле: Главное изображение */
+  /* Поле: Поле: Фото */
   $handler->display->display_options['fields']['field_image_1']['id'] = 'field_image_1';
   $handler->display->display_options['fields']['field_image_1']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image_1']['field'] = 'field_image';
@@ -1689,7 +1690,7 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['id']['field'] = 'id';
   $handler->display->display_options['fields']['id']['label'] = '';
   $handler->display->display_options['fields']['id']['element_label_colon'] = FALSE;
-  /* Поле: Поле: Главное изображение */
+  /* Поле: Поле: Фото */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -1701,7 +1702,7 @@ function excur_feature_views_views_default_views() {
     'image_style' => '',
     'image_link' => '',
   );
-  /* Поле: Поле: Главное изображение */
+  /* Поле: Поле: Фото */
   $handler->display->display_options['fields']['field_image_1']['id'] = 'field_image_1';
   $handler->display->display_options['fields']['field_image_1']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image_1']['field'] = 'field_image';
@@ -1912,7 +1913,7 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['field_guide']['settings'] = array(
     'link' => 0,
   );
-  /* Поле: Поле: Главное изображение */
+  /* Поле: Поле: Фото */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -2129,7 +2130,7 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['field_guide']['settings'] = array(
     'link' => 0,
   );
-  /* Поле: Поле: Главное изображение */
+  /* Поле: Поле: Фото */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -2339,7 +2340,7 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['field_guide']['settings'] = array(
     'link' => 0,
   );
-  /* Поле: Поле: Главное изображение */
+  /* Поле: Поле: Фото */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -2532,7 +2533,7 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['id']['field'] = 'id';
   $handler->display->display_options['fields']['id']['label'] = '';
   $handler->display->display_options['fields']['id']['element_label_colon'] = FALSE;
-  /* Поле: Поле: Главное изображение */
+  /* Поле: Поле: Фото */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -2544,7 +2545,7 @@ function excur_feature_views_views_default_views() {
     'image_style' => '',
     'image_link' => '',
   );
-  /* Поле: Поле: Главное изображение */
+  /* Поле: Поле: Фото */
   $handler->display->display_options['fields']['field_image_1']['id'] = 'field_image_1';
   $handler->display->display_options['fields']['field_image_1']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image_1']['field'] = 'field_image';
@@ -2641,7 +2642,7 @@ function excur_feature_views_views_default_views() {
     t('У вас не совершали заказов.'),
     t('Offer oid'),
     t('UID Автора'),
-    t('Главное изображение'),
+    t('Фото'),
     t('Подтвержденные заказы пользователя'),
     t('У вас нет подтвержденных заказов.'),
     t('Отклоненные заказы пользователя'),
@@ -2717,24 +2718,17 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Поле: Термин таксономии: Имя */
-  $handler->display->display_options['fields']['name_field']['id'] = 'name_field';
-  $handler->display->display_options['fields']['name_field']['table'] = 'field_data_name_field';
-  $handler->display->display_options['fields']['name_field']['field'] = 'name_field';
-  $handler->display->display_options['fields']['name_field']['label'] = '';
-  $handler->display->display_options['fields']['name_field']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['name_field']['link_to_entity'] = 1;
-  /* Поле: Поле: Главное изображение */
-  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
-  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['label'] = '';
-  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_image']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => '300x170',
-    'image_link' => 'content',
-  );
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Критерий сортировки: Термин таксономии: Вес */
+  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Критерий фильтра: Термин таксономии: Словарь */
@@ -2763,6 +2757,14 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['relationships']['entity_translations']['id'] = 'entity_translations';
   $handler->display->display_options['relationships']['entity_translations']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['relationships']['entity_translations']['field'] = 'entity_translations';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Поле: Термин таксономии: ID термина */
+  $handler->display->display_options['fields']['tid']['id'] = 'tid';
+  $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['tid']['field'] = 'tid';
+  $handler->display->display_options['fields']['tid']['label'] = '';
+  $handler->display->display_options['fields']['tid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['tid']['separator'] = '';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -2833,6 +2835,7 @@ function excur_feature_views_views_default_views() {
     t('Континенты'),
     t('View panes'),
     t('Страны'),
+    t('.'),
     t('Города'),
   );
   $export['term'] = $view;

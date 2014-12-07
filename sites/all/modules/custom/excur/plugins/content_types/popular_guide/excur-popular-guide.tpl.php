@@ -1,23 +1,26 @@
 <?php if (!empty($guides)): ?>
-  <div class="row">
-    <div class="span3">
-      <h2><?php print t('Popular guides'); ?></h2>
-    </div>
-  </div>
-  <?php foreach ($guides as $id => $guide): ?>
-    <div class="row popular-guide">
-      <div class="span1 img-border">
-        <?php print $guide['image']; ?>
+  <section class="pop-gid">
+    <h3 class="pop-title title-country">
+      <?php print t('Popular guides'); ?>
+    </h3>
+    <div class="pop-gid-content">
+      <div class="col-xs-1">
       </div>
-      <div class="span2">
-        <div class="title">
-          <h3><?php print $guide['title']; ?></h3>
+      <?php foreach ($guides as $id => $guide): ?>
+        <div class="col-xs-2">
+          <?php print $guide['image']; ?>
+          <div class="pop-gid-name">
+            <?php print $guide['title']; ?>
+          </div>
+          <div class="pop-gid-city">
+            <?php print $guide['city']; ?>
+          </div>
+          <div class="pop-gid-star">
+            <?php print $icon_star; ?>
+            <?php print $guide['rating']; ?>
+          </div>
         </div>
-        <div class="city">
-          <?php print $guide['city']; ?>
-        </div>
-      </div>
+      <?php endforeach; ?>
     </div>
-    <div class="space20"></div>
-  <?php endforeach; ?>
+  </section>
 <?php endif; ?>

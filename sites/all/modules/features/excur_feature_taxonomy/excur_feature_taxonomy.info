@@ -23,6 +23,7 @@ features[field_instance][] = taxonomy_term-city-field_image
 features[field_instance][] = taxonomy_term-city-field_slider_images
 features[field_instance][] = taxonomy_term-city-name_field
 features[field_instance][] = taxonomy_term-continent-description_field
+features[field_instance][] = taxonomy_term-continent-field_continent_code
 features[field_instance][] = taxonomy_term-continent-field_image
 features[field_instance][] = taxonomy_term-continent-field_slider_images
 features[field_instance][] = taxonomy_term-continent-name_field

@@ -46,15 +46,19 @@ function template_preprocess_excur_popular_city(&$vars) {
   if ($cities = excur_popular_cities($term->tid)) {
     foreach (taxonomy_term_load_multiple($cities) as $term) {
       $image = theme('image_style', array(
-        'style_name' => '100x100',
+        'style_name' => '150x102',
         'path' => $term->field_image[LANGUAGE_NONE][0]['uri'],
         'alt' => $term->name,
+        'attributes' => array(
+          'class' => array('pop-city-image'),
+        ),
       ));
       $vars['cities'][] = array(
-        'title' => l($term->name, "taxonomy/term/$term->tid"),
+        'title' => check_plain($term->name),
         'service' => excur_count_service_by_city($term->tid),
         'guide' => excur_count_guide_by_city($term->tid),
-        'image' => l($image, "taxonomy/term/$term->tid", array('html' => TRUE)),
+        'image' => $image,
+        'url' => url("taxonomy/term/$term->tid"),
       );
     }
   }

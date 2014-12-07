@@ -122,6 +122,11 @@ function excur_entity_info_alter(&$entity_info) {
     'label' => t('Other'),
     'custom settings' => FALSE,
   );
+
+  $entity_info['node']['view modes']['country_teaser'] = array(
+    'label' => t('Country teaser'),
+    'custom settings' => FALSE,
+  );
 }
 
 /**
@@ -591,10 +596,11 @@ function excur_get_breadcrumb() {
 /**
  * Get most popular cities by country.
  *
- * @param int $tid.
- * @return array.
+ * @param int $tid
+ * @param int $limit
+ * @return array
  */
-function excur_popular_cities($tid) {
+function excur_popular_cities($tid, $limit = 4) {
   global $language;
 
   $query = db_select('field_data_field_city', 'city');
@@ -607,7 +613,7 @@ function excur_popular_cities($tid) {
   $query->condition('et.language', $language->language);
   $query->condition('country.field_country_target_id', $tid);
   $query->groupBy('city.field_city_target_id');
-  $query->range(0, 6);
+  $query->range(0, $limit);
 
   return $query->execute()->fetchCol();
 }
@@ -631,10 +637,11 @@ function excur_count_guide_by_city($tid) {
 /**
  * Get most popular giudes by country.
  *
- * @param int $tid.
- * @return array.
+ * @param int $tid
+ * @param int $limit
+ * @return array
  */
-function excur_popular_giudes_in_country($tid) {
+function excur_popular_giudes_in_country($tid, $limit = 5) {
   $query = db_select('users', 'u');
   $query->fields('u', array('uid'));
   $query->join('field_data_field_city', 'city', 'u.uid = city.entity_id');
@@ -645,7 +652,7 @@ function excur_popular_giudes_in_country($tid) {
   $query->condition('country.bundle', 'city');
   $query->condition('country.field_country_target_id', $tid);
   $query->orderBy('vc.value', 'DESC');
-  $query->range(0, 6);
+  $query->range(0, $limit);
 
   return $query->execute()->fetchCol();
 }
@@ -653,10 +660,11 @@ function excur_popular_giudes_in_country($tid) {
 /**
  * Get most popular giudes by city.
  *
- * @param int $tid.
- * @return array.
+ * @param int $tid
+ * @param int $limit
+ * @return array
  */
-function excur_popular_giudes_in_city($tid) {
+function excur_popular_giudes_in_city($tid, $limit = 5) {
   $query = db_select('users', 'u');
   $query->fields('u', array('uid'));
   $query->join('field_data_field_city', 'city', 'u.uid = city.entity_id');
@@ -665,7 +673,7 @@ function excur_popular_giudes_in_city($tid) {
   $query->condition('city.bundle', 'user');
   $query->condition('city.field_city_target_id', $tid);
   $query->orderBy('vc.value', 'DESC');
-  $query->range(0, 6);
+  $query->range(0, $limit);
 
   return $query->execute()->fetchCol();
 }

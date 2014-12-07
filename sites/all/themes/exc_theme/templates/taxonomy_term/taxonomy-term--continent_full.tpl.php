@@ -26,3 +26,4 @@
     <?php print $description; ?>
   </div>
 </div>
+<?php print $countries; ?>

@@ -83,6 +83,9 @@ function excur_feature_node_service_strongarm() {
       'other' => array(
         'custom_settings' => TRUE,
       ),
+      'country_teaser' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(

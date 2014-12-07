@@ -55,4 +55,18 @@
     }
   };
 
+  Drupal.behaviors.excurOwlCarousel = {
+    attach: function(context, settings) {
+      $('#owl-demo').once('country-cities', function() {
+        $("#owl-demo").owlCarousel({
+          navigation: true,
+          navigationText: [
+            "",
+            ""
+          ]
+        });
+      });
+    }
+  };
+
 })(jQuery, Drupal, this, this.document);

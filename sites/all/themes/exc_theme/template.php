@@ -207,6 +207,14 @@ function exc_theme_preprocess_views_view_unformatted__term__country(&$vars) {
 }
 
 /**
+ * Process variables for views-view-field--term--city--name-field.tpl.php.
+ */
+function exc_theme_preprocess_views_view_unformatted__content__popular_service(&$vars) {
+  $term = menu_get_object('taxonomy_term', 2);
+  $vars['country'] = $term->name;
+}
+
+/**
  * Preprocess variables for taxonomy_term.
  */
 function exc_theme_preprocess_taxonomy_term(&$vars, $hook) {
@@ -223,7 +231,6 @@ function exc_theme_preprocess_taxonomy_term(&$vars, $hook) {
   }
 }
 
-
 /**
  * Process variables for taxonomy-term--continent_full.tpl.php.
  */
@@ -238,6 +245,41 @@ function exc_theme_preprocess_taxonomy_term__continent_full(&$vars) {
   $vars['description'] = $desc['safe_value'];
 
   drupal_add_js(array('continentCode' => $term->field_continent_code[LANGUAGE_NONE][0]['value']), 'setting');
+
+  $view = views_get_view('term');
+  $view->set_display('country');
+  $view->preview = TRUE;
+  $view->display_handler->options['filters']['field_continent_target_id']['value']['value'] = $term->tid;
+  $view->pre_execute(array());
+  $vars['countries'] = $view->display_handler->preview();
+  $view->post_execute();
+}
+
+/**
+ * Process variables for taxonomy-term--country_full.tpl.php.
+ */
+function exc_theme_preprocess_taxonomy_term__country_full(&$vars) {
+  global $language;
+
+  $term = $vars['term'];
+  $wrapper = entity_metadata_wrapper('taxonomy_term', $term);
+  $wrapper->language($language->language);
+
+  $vars['image'] = theme('image_style', array(
+    'style_name' => '100x67',
+    'path' => $term->field_image[LANGUAGE_NONE][0]['uri'],
+    'title' => $term->name,
+    'alt' => $term->name,
+    'attributes' => array(
+      'class' => array('country-usefull-flag'),
+    )
+  ));
+
+  $desc = $wrapper->description_field->value();
+  $vars['description'] = $desc['safe_value'];
+
+  $continent = $wrapper->field_continent->value();
+  drupal_add_js(array('continentCode' => $continent->field_continent_code[LANGUAGE_NONE][0]['value']), 'setting');
 }
 
 /**
@@ -289,15 +331,97 @@ function exc_theme_preprocess_node__service_other(&$vars) {
 }
 
 /**
+ * Process variables for node--service-other.tpl.php.
+ */
+function exc_theme_preprocess_node__service_country_teaser(&$vars) {
+  global $language;
+
+  $node = $vars['node'];
+  $wrapper = entity_metadata_wrapper('node', $node);
+  $wrapper->language($language->language);
+  $price = excur_currency_lowest_price($node);
+  if (!empty($_COOKIE['excur_currency']) && $_COOKIE['excur_currency'] != EXCUR_CURRENCY_DEFAULT) {
+    $currency = $_COOKIE['excur_currency'];
+    $price = excur_currency_convert($price, EXCUR_CURRENCY_DEFAULT, $currency);
+  }
+  else {
+    $currency = EXCUR_CURRENCY_DEFAULT;
+  }
+
+  $vars['price'] = $price;
+  $image_path = $node->field_image[LANGUAGE_NONE][0]['uri'];
+  $vars['image'] = theme('image_style', array(
+    'style_name' => '225x150',
+    'path' => $image_path,
+    'alt' => $node->title,
+    'title' => $node->title,
+    'attributes' => array(
+      'class' => array('pop-excur-image'),
+    )
+  ));
+  $vars['currency'] = excur_currency_get_icon($currency);
+  $vars['title'] = check_plain($node->title);
+
+  foreach ($wrapper->field_languages->value() as $lang) {
+    $vars['langs'][] = $lang->field_lang_code[LANGUAGE_NONE][0]['value'];
+  }
+
+  $guide = user_load($node->field_guide[LANGUAGE_NONE][0]['target_id']);
+  $vars['guide'] = check_plain($guide->field_name[LANGUAGE_NONE][0]['value']);
+  $vars['guide_url'] = url("user/$guide->uid");
+
+  $vars['duration'] = $wrapper->field_duration->value();
+
+  $title = t('Excursion rating');
+  $vars['icon_star'] = theme('image', array(
+    'path' => EXCUR_FRONT_THEME_PATH . '/images/star.png',
+    'alt' => $title,
+    'title' => $title,
+    'attributes' => array(
+      'class' => array('iconstar'),
+    ),
+  ));
+
+  $title = t('The duration of excursion');
+  $vars['icon_time'] = theme('image', array(
+    'path' => EXCUR_FRONT_THEME_PATH . '/images/time.png',
+    'alt' => $title,
+    'title' => $title,
+    'attributes' => array(
+      'class' => array('icont'),
+    ),
+  ));
+
+  $rating = fivestar_get_votes('node', $node->nid);
+  if (empty($rating['average'])) {
+    $rating = t(' Offer is unrated.');
+  }
+  else {
+    $rating = round($rating['average']['value'] / 10, 2);
+  }
+  $vars['rating'] = $rating;
+
+  $vars['read_more'] = l(t('Read more'), "node/$node->nid", array(
+    'html' => TRUE,
+    'attributes' => array(
+      'class' => array(
+        'button-go',
+        'button-go-pop',
+        'excur-list-button',
+      ),
+    ),
+  ));
+}
+
+/**
  * Process variables for node--page-full.tpl.php.
  */
 function exc_theme_preprocess_node__page_full(&$vars) {
   $menu = menu_tree_all_data('menu-footer-menu');
+
   foreach($menu as $value){
     foreach($value['below'] as $key => $value2){
-      $item['link'][$key] = $value2['link']['href'];
-      $item['title'][$key] = $value2['link']['title'];
-      $vars['menu'][] = l($item['title'][$key],$item['link'][$key],array());
+      $vars['menu'][] = l($value2['link']['title'], $value2['link']['href']);
     }
   }
 }
