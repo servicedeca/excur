@@ -131,22 +131,6 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Критерий сортировки: Excursionline: Node id */
-  $handler->display->display_options['sorts']['nid']['id'] = 'nid';
-  $handler->display->display_options['sorts']['nid']['table'] = 'excur_offer';
-  $handler->display->display_options['sorts']['nid']['field'] = 'nid';
-  $handler->display->display_options['sorts']['nid']['group_type'] = 'count';
-  $handler->display->display_options['sorts']['nid']['order'] = 'DESC';
-  $handler->display->display_options['sorts']['nid']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['nid']['expose']['label'] = 'Рейтингу';
-  /* Критерий сортировки: Элемент коллекции полей: Цена (field_offer_ticket_price) */
-  $handler->display->display_options['sorts']['field_offer_ticket_price_value']['id'] = 'field_offer_ticket_price_value';
-  $handler->display->display_options['sorts']['field_offer_ticket_price_value']['table'] = 'field_data_field_offer_ticket_price';
-  $handler->display->display_options['sorts']['field_offer_ticket_price_value']['field'] = 'field_offer_ticket_price_value';
-  $handler->display->display_options['sorts']['field_offer_ticket_price_value']['relationship'] = 'field_offer_ticket_value';
-  $handler->display->display_options['sorts']['field_offer_ticket_price_value']['group_type'] = 'min';
-  $handler->display->display_options['sorts']['field_offer_ticket_price_value']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['field_offer_ticket_price_value']['expose']['label'] = 'Цене';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Контекстный фильтр: Поле: Город (field_city) */
   $handler->display->display_options['arguments']['field_city_target_id']['id'] = 'field_city_target_id';
@@ -198,24 +182,6 @@ function excur_feature_views_views_default_views() {
   );
   $handler->display->display_options['filters']['tid']['type'] = 'select';
   $handler->display->display_options['filters']['tid']['vocabulary'] = 'category';
-  /* Критерий фильтра: Поле: Языки (field_languages) */
-  $handler->display->display_options['filters']['field_languages_tid']['id'] = 'field_languages_tid';
-  $handler->display->display_options['filters']['field_languages_tid']['table'] = 'field_data_field_languages';
-  $handler->display->display_options['filters']['field_languages_tid']['field'] = 'field_languages_tid';
-  $handler->display->display_options['filters']['field_languages_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_languages_tid']['expose']['operator_id'] = 'field_languages_tid_op';
-  $handler->display->display_options['filters']['field_languages_tid']['expose']['label'] = 'Языки';
-  $handler->display->display_options['filters']['field_languages_tid']['expose']['operator'] = 'field_languages_tid_op';
-  $handler->display->display_options['filters']['field_languages_tid']['expose']['identifier'] = 'field_languages_tid';
-  $handler->display->display_options['filters']['field_languages_tid']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_languages_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    4 => 0,
-  );
-  $handler->display->display_options['filters']['field_languages_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_languages_tid']['vocabulary'] = 'languages';
   $handler->display->display_options['argument_input'] = array(
     'field_city_target_id' => array(
       'type' => 'context',
@@ -287,7 +253,7 @@ function excur_feature_views_views_default_views() {
     'title_class' => '',
   );
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 1;
-  /* Поле: Содержимое: Текст */
+  /* Поле: Содержимое: Описание предложения */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -682,13 +648,13 @@ function excur_feature_views_views_default_views() {
     t('Услуги города'),
     t('Предложение'),
     t('Билет'),
-    t('Рейтингу'),
-    t('Цене'),
     t('Все'),
     t('Категория'),
-    t('Языки'),
     t('View panes'),
     t('Услуги гида'),
+    t('Рейтингу'),
+    t('Цене'),
+    t('Языки'),
     t('Популярные услуги'),
     t('Город'),
     t('Новости'),
@@ -1023,13 +989,13 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['date']['date_format'] = 'custom';
   $handler->display->display_options['fields']['date']['custom_date_format'] = 'Y-m-d';
   $handler->display->display_options['fields']['date']['second_date_format'] = 'html5_tools_iso8601';
-  /* Поле: Содержимое: Время встречи */
+  /* Поле: Содержимое: Время */
   $handler->display->display_options['fields']['field_start_time']['id'] = 'field_start_time';
   $handler->display->display_options['fields']['field_start_time']['table'] = 'field_data_field_start_time';
   $handler->display->display_options['fields']['field_start_time']['field'] = 'field_start_time';
   $handler->display->display_options['fields']['field_start_time']['relationship'] = 'nid';
   $handler->display->display_options['fields']['field_start_time']['element_label_colon'] = FALSE;
-  /* Поле: Содержимое: Место встречи */
+  /* Поле: Содержимое: Адрес */
   $handler->display->display_options['fields']['field_start_place']['id'] = 'field_start_place';
   $handler->display->display_options['fields']['field_start_place']['table'] = 'field_data_field_start_place';
   $handler->display->display_options['fields']['field_start_place']['field'] = 'field_start_place';
@@ -1235,13 +1201,13 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['date']['date_format'] = 'custom';
   $handler->display->display_options['fields']['date']['custom_date_format'] = 'Y-m-d';
   $handler->display->display_options['fields']['date']['second_date_format'] = 'html5_tools_iso8601';
-  /* Поле: Содержимое: Время встречи */
+  /* Поле: Содержимое: Время */
   $handler->display->display_options['fields']['field_start_time']['id'] = 'field_start_time';
   $handler->display->display_options['fields']['field_start_time']['table'] = 'field_data_field_start_time';
   $handler->display->display_options['fields']['field_start_time']['field'] = 'field_start_time';
   $handler->display->display_options['fields']['field_start_time']['relationship'] = 'nid';
   $handler->display->display_options['fields']['field_start_time']['element_label_colon'] = FALSE;
-  /* Поле: Содержимое: Место встречи */
+  /* Поле: Содержимое: Адрес */
   $handler->display->display_options['fields']['field_start_place']['id'] = 'field_start_place';
   $handler->display->display_options['fields']['field_start_place']['table'] = 'field_data_field_start_place';
   $handler->display->display_options['fields']['field_start_place']['field'] = 'field_start_place';
@@ -1439,13 +1405,13 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['date']['date_format'] = 'custom';
   $handler->display->display_options['fields']['date']['custom_date_format'] = 'Y-m-d';
   $handler->display->display_options['fields']['date']['second_date_format'] = 'html5_tools_iso8601';
-  /* Поле: Содержимое: Время встречи */
+  /* Поле: Содержимое: Время */
   $handler->display->display_options['fields']['field_start_time']['id'] = 'field_start_time';
   $handler->display->display_options['fields']['field_start_time']['table'] = 'field_data_field_start_time';
   $handler->display->display_options['fields']['field_start_time']['field'] = 'field_start_time';
   $handler->display->display_options['fields']['field_start_time']['relationship'] = 'nid';
   $handler->display->display_options['fields']['field_start_time']['element_label_colon'] = FALSE;
-  /* Поле: Содержимое: Место встречи */
+  /* Поле: Содержимое: Адрес */
   $handler->display->display_options['fields']['field_start_place']['id'] = 'field_start_place';
   $handler->display->display_options['fields']['field_start_place']['table'] = 'field_data_field_start_place';
   $handler->display->display_options['fields']['field_start_place']['field'] = 'field_start_place';
@@ -1645,13 +1611,13 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['date']['date_format'] = 'custom';
   $handler->display->display_options['fields']['date']['custom_date_format'] = 'Y-m-d';
   $handler->display->display_options['fields']['date']['second_date_format'] = 'html5_tools_iso8601';
-  /* Поле: Содержимое: Время встречи */
+  /* Поле: Содержимое: Время */
   $handler->display->display_options['fields']['field_start_time']['id'] = 'field_start_time';
   $handler->display->display_options['fields']['field_start_time']['table'] = 'field_data_field_start_time';
   $handler->display->display_options['fields']['field_start_time']['field'] = 'field_start_time';
   $handler->display->display_options['fields']['field_start_time']['relationship'] = 'nid';
   $handler->display->display_options['fields']['field_start_time']['element_label_colon'] = FALSE;
-  /* Поле: Содержимое: Место встречи */
+  /* Поле: Содержимое: Адрес */
   $handler->display->display_options['fields']['field_start_place']['id'] = 'field_start_place';
   $handler->display->display_options['fields']['field_start_place']['table'] = 'field_data_field_start_place';
   $handler->display->display_options['fields']['field_start_place']['field'] = 'field_start_place';
@@ -1850,13 +1816,13 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['date']['date_format'] = 'custom';
   $handler->display->display_options['fields']['date']['custom_date_format'] = 'Y-m-d';
   $handler->display->display_options['fields']['date']['second_date_format'] = 'html5_tools_iso8601';
-  /* Поле: Содержимое: Время встречи */
+  /* Поле: Содержимое: Время */
   $handler->display->display_options['fields']['field_start_time']['id'] = 'field_start_time';
   $handler->display->display_options['fields']['field_start_time']['table'] = 'field_data_field_start_time';
   $handler->display->display_options['fields']['field_start_time']['field'] = 'field_start_time';
   $handler->display->display_options['fields']['field_start_time']['relationship'] = 'nid';
   $handler->display->display_options['fields']['field_start_time']['element_label_colon'] = FALSE;
-  /* Поле: Содержимое: Место встречи */
+  /* Поле: Содержимое: Адрес */
   $handler->display->display_options['fields']['field_start_place']['id'] = 'field_start_place';
   $handler->display->display_options['fields']['field_start_place']['table'] = 'field_data_field_start_place';
   $handler->display->display_options['fields']['field_start_place']['field'] = 'field_start_place';
@@ -2067,13 +2033,13 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['date']['date_format'] = 'custom';
   $handler->display->display_options['fields']['date']['custom_date_format'] = 'Y-m-d';
   $handler->display->display_options['fields']['date']['second_date_format'] = 'html5_tools_iso8601';
-  /* Поле: Содержимое: Время встречи */
+  /* Поле: Содержимое: Время */
   $handler->display->display_options['fields']['field_start_time']['id'] = 'field_start_time';
   $handler->display->display_options['fields']['field_start_time']['table'] = 'field_data_field_start_time';
   $handler->display->display_options['fields']['field_start_time']['field'] = 'field_start_time';
   $handler->display->display_options['fields']['field_start_time']['relationship'] = 'nid';
   $handler->display->display_options['fields']['field_start_time']['element_label_colon'] = FALSE;
-  /* Поле: Содержимое: Место встречи */
+  /* Поле: Содержимое: Адрес */
   $handler->display->display_options['fields']['field_start_place']['id'] = 'field_start_place';
   $handler->display->display_options['fields']['field_start_place']['table'] = 'field_data_field_start_place';
   $handler->display->display_options['fields']['field_start_place']['field'] = 'field_start_place';
@@ -2277,13 +2243,13 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['date']['date_format'] = 'custom';
   $handler->display->display_options['fields']['date']['custom_date_format'] = 'Y-m-d';
   $handler->display->display_options['fields']['date']['second_date_format'] = 'html5_tools_iso8601';
-  /* Поле: Содержимое: Время встречи */
+  /* Поле: Содержимое: Время */
   $handler->display->display_options['fields']['field_start_time']['id'] = 'field_start_time';
   $handler->display->display_options['fields']['field_start_time']['table'] = 'field_data_field_start_time';
   $handler->display->display_options['fields']['field_start_time']['field'] = 'field_start_time';
   $handler->display->display_options['fields']['field_start_time']['relationship'] = 'nid';
   $handler->display->display_options['fields']['field_start_time']['element_label_colon'] = FALSE;
-  /* Поле: Содержимое: Место встречи */
+  /* Поле: Содержимое: Адрес */
   $handler->display->display_options['fields']['field_start_place']['id'] = 'field_start_place';
   $handler->display->display_options['fields']['field_start_place']['table'] = 'field_data_field_start_place';
   $handler->display->display_options['fields']['field_start_place']['field'] = 'field_start_place';
@@ -2488,13 +2454,13 @@ function excur_feature_views_views_default_views() {
   $handler->display->display_options['fields']['date']['date_format'] = 'custom';
   $handler->display->display_options['fields']['date']['custom_date_format'] = 'Y-m-d';
   $handler->display->display_options['fields']['date']['second_date_format'] = 'html5_tools_iso8601';
-  /* Поле: Содержимое: Время встречи */
+  /* Поле: Содержимое: Время */
   $handler->display->display_options['fields']['field_start_time']['id'] = 'field_start_time';
   $handler->display->display_options['fields']['field_start_time']['table'] = 'field_data_field_start_time';
   $handler->display->display_options['fields']['field_start_time']['field'] = 'field_start_time';
   $handler->display->display_options['fields']['field_start_time']['relationship'] = 'nid';
   $handler->display->display_options['fields']['field_start_time']['element_label_colon'] = FALSE;
-  /* Поле: Содержимое: Место встречи */
+  /* Поле: Содержимое: Адрес */
   $handler->display->display_options['fields']['field_start_place']['id'] = 'field_start_place';
   $handler->display->display_options['fields']['field_start_place']['table'] = 'field_data_field_start_place';
   $handler->display->display_options['fields']['field_start_place']['field'] = 'field_start_place';
@@ -2633,8 +2599,8 @@ function excur_feature_views_views_default_views() {
     t('Guide'),
     t('Экскурсия'),
     t('Дата встречи'),
-    t('Время встречи'),
-    t('Место встречи'),
+    t('Время'),
+    t('Адрес'),
     t('Состояние'),
     t('Все'),
     t('View panes'),

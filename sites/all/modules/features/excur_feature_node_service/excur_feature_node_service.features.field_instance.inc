@@ -900,8 +900,8 @@ function excur_feature_node_service_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
-          'image_link' => 'content',
-          'image_style' => '170x130',
+          'image_link' => '',
+          'image_style' => '225x150',
         ),
         'type' => 'image',
         'weight' => 1,

@@ -4,46 +4,67 @@
  * @file
  */
 ?>
-<article id="node-<?php print $node->nid; ?>" class="contextual-links-region row">
-  <?php print render($title_prefix); ?>
-  <?php print render($title_suffix); ?>
-  <div class="span2">
-    <?php print render($content['field_image']); ?>
-  </div>
-  <div class="span6">
-    <h3><?php print render($content['title_field']); ?></h3>
-    <?php print render($content['body']); ?>
-    <div class="read-more">
-      <?php print $read_more; ?>
+<div class="col-xs-12 excur-list-content">
+  <a href="<?php print url('node/' . $node->nid); ?>">
+    <div class="col-xs-3 excur-list-image">
+      <?php print render($content['field_image']); ?>
     </div>
-    <?php if(!empty($edit_link)): ?>
-      <div class="tag">
-        <?php print $edit_link ?>
+  </a>
+  <div class="col-xs-7 excur-list-infoblock">
+    <div class="col-xs-10 excur-list-title">
+      <a href="<?php print url('node/' . $node->nid); ?>">
+        <div class="excur-list-name">
+          <?php print $title; ?>
+        </div>
+      </a>
+    </div>
+    <div class="col-xs-4 excur-list-info">
+      <div class="col-xs-12 excur-list-star">
+        <?php print $icon_star; ?>
+        <?php print $rating; ?>
       </div>
-    <?php endif; ?>
-    <div class="tag">
-      <i class="fa fa-clock-o"></i>
-      <?php print $content['field_duration']['#items'][0]['safe_value']; ?>
+      <div class="col-xs-12 excur-list-time">
+        <?php print $icon_time; ?>
+        <?php print $content['field_duration']['#items'][0]['safe_value']; ?>
+      </div>
     </div>
-    <div class="tag">
-      <?php print t('From') . ' ' . $price; ?>
-      <?php print $currency; ?>
-    </div>
-    <div class="tag">
-      <i class="fa fa-language"></i>
-      <?php print t('Languages') . ':'; ?>
-      <?php foreach($languages as $lang):  ?>
-        <i class="flag flag-<?php print $lang; ?>"></i>
-      <?php endforeach; ?>
-    </div>
-    <div class="tag">
-      <?php print $book; ?>
+    <div class="col-xs-8 excur-list-info">
+      <a href="<?php print url('user/' . $guide['uid']); ?>">
+        <div class="col-xs-4 excur-list-gid photo">
+          <?php print $guide['image']; ?>
+        </div>
+        <div class="col-xs-4 excur-list-gid-name">
+          <div class="pop-excur-gid">
+            Гид
+            <div class="pop-excur-gid-name">
+              Алексей
+            </div>
+          </div>
+        </div>
+      </a>
+      <div class="col-xs-4 excur-list-lang">
+        <div class="pop-excur-gid">
+          <?php print t('Languages'); ?>
+          <div class="pop-excur-gid-name">
+            <?php foreach($languages as $lang):  ?>
+              <i class="flag flag-<?php print $lang; ?>"></i>
+            <?php endforeach; ?>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="span1 guide">
-    <div class="img-border">
-      <?php print $guide['image']; ?>
+  <div class="col-xs-2 excur-list-priceblock">
+    <div class="col-xs-12 excur-list-price">
+      <div class="excur-price">
+        <?php print $price; ?>
+        <span class="currency"><?php print $currency; ?></span>
+      </div>
     </div>
-    <?php print $guide['title']; ?>
+    <div class="col-xs-12 excur-list-button">
+      <a href="<?php print url('node/' . $node->nid); ?>" class="button-go">
+        <?php print t('Book an excursion'); ?>
+      </a>
+    </div>
   </div>
-</article>
+</div>

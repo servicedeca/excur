@@ -27,6 +27,7 @@ features[image][] = 309x183
 features[image][] = 470x470
 features[image][] = 50x50
 features[image][] = 70x70
+features[image][] = 75x75
 features[image][] = 870x653
 features[user_permission][] = administer image styles
 features[variable][] = image_jpeg_quality

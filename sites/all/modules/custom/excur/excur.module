@@ -679,18 +679,6 @@ function excur_popular_giudes_in_city($tid, $limit = 5) {
 }
 
 /**
- * Implements hook_form_FORM_ID_alter().
- */
-function excur_form_views_exposed_form_alter(&$form, &$form_state) {
-  if ($form['#id'] == "views-exposed-form-content-city-service"
-    || $form['#id'] == "views-exposed-form-content-guide-service") {
-
-    $form['submit']['#attributes']['class'][] = 'btn';
-    $form['field_languages_tid']['#attributes']['title'] = t('Use all languages');
-  }
-}
-
-/**
  * Draw user menu.
  */
 function excur_user_menu($account) {
@@ -706,28 +694,15 @@ function excur_user_menu($account) {
  * @return string.
  */
 function excur_guide_logo($account, $style, $attributes = array()) {
-  if (excur_guide_is_company($account)) {
-    if (!empty($account->field_company_logo[LANGUAGE_NONE])) {
-      $path = $account->field_company_logo[LANGUAGE_NONE][0]['uri'];
-      $theming = 'image_style';
-    }
-    else {
-      $path = EXCUR_FRONT_THEME_PATH . '/images/company_default.png';
-      $theming = 'remote_image_style';
-    }
-    $title_alt = $account->field_company_name[LANGUAGE_NONE][0]['safe_value'];
+  if (!empty($account->field_image[LANGUAGE_NONE])) {
+    $path = $account->field_image[LANGUAGE_NONE][0]['uri'];
+    $theming = 'image_style';
   }
   else {
-    if (!empty($account->field_image[LANGUAGE_NONE])) {
-      $path = $account->field_image[LANGUAGE_NONE][0]['uri'];
-      $theming = 'image_style';
-    }
-    else {
-      $path = EXCUR_FRONT_THEME_PATH . '/images/user-default.png';
-      $theming = 'remote_image_style';
-    }
-    $title_alt = $account->field_name[LANGUAGE_NONE][0]['safe_value'];
+    $path = EXCUR_FRONT_THEME_PATH . '/images/user-default.png';
+    $theming = 'remote_image_style';
   }
+  $title_alt = $account->field_name[LANGUAGE_NONE][0]['safe_value'];
 
   return theme($theming, array(
     'style_name' => $style,

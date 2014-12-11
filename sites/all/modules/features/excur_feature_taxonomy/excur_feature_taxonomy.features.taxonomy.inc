@@ -13,7 +13,7 @@ function excur_feature_taxonomy_taxonomy_default_vocabularies() {
       'name' => 'Категории',
       'machine_name' => 'category',
       'description' => '',
-      'hierarchy' => 1,
+      'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,
     ),

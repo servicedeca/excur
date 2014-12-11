@@ -595,6 +595,7 @@ function excur_feature_panels_default_page_manager_handlers() {
       'top' => NULL,
       'content_left' => NULL,
       'content_center' => NULL,
+      'middle' => NULL,
     ),
   );
   $display->cache = array();
@@ -602,6 +603,49 @@ function excur_feature_panels_default_page_manager_handlers() {
   $display->uuid = '2db4eb66-0061-45f8-b03f-05fc2769de66';
   $display->content = array();
   $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-538787c2-230f-49b3-b62f-9c6474c2e50f';
+    $pane->panel = 'middle';
+    $pane->type = 'country_city_top';
+    $pane->subtype = 'country_city_top';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '538787c2-230f-49b3-b62f-9c6474c2e50f';
+    $display->content['new-538787c2-230f-49b3-b62f-9c6474c2e50f'] = $pane;
+    $display->panels['middle'][0] = 'new-538787c2-230f-49b3-b62f-9c6474c2e50f';
+    $pane = new stdClass();
+    $pane->pid = 'new-0d3dab1d-20e5-4b62-9884-3050745fd1df';
+    $pane->panel = 'middle';
+    $pane->type = 'entity_view';
+    $pane->subtype = 'taxonomy_term';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'full',
+      'context' => 'argument_term_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '0d3dab1d-20e5-4b62-9884-3050745fd1df';
+    $display->content['new-0d3dab1d-20e5-4b62-9884-3050745fd1df'] = $pane;
+    $display->panels['middle'][1] = 'new-0d3dab1d-20e5-4b62-9884-3050745fd1df';
     $pane = new stdClass();
     $pane->pid = 'new-b1d2b1c9-f6c8-4b8f-b799-885b6466f7a1';
     $pane->panel = 'middle';
@@ -616,59 +660,11 @@ function excur_feature_panels_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = 'b1d2b1c9-f6c8-4b8f-b799-885b6466f7a1';
     $display->content['new-b1d2b1c9-f6c8-4b8f-b799-885b6466f7a1'] = $pane;
-    $display->panels['middle'][0] = 'new-b1d2b1c9-f6c8-4b8f-b799-885b6466f7a1';
-    $pane = new stdClass();
-    $pane->pid = 'new-ee90fe0e-824d-4aa6-b53b-8fbff695f54b';
-    $pane->panel = 'middle';
-    $pane->type = 'popular_guide';
-    $pane->subtype = 'popular_guide';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = 'ee90fe0e-824d-4aa6-b53b-8fbff695f54b';
-    $display->content['new-ee90fe0e-824d-4aa6-b53b-8fbff695f54b'] = $pane;
-    $display->panels['middle'][1] = 'new-ee90fe0e-824d-4aa6-b53b-8fbff695f54b';
-    $pane = new stdClass();
-    $pane->pid = 'new-9b65d86e-353c-4770-92fe-6838e4b3240f';
-    $pane->panel = 'middle';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'taxonomy_term:description_field';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'label' => 'hidden',
-      'formatter' => 'text_default',
-      'delta_limit' => 0,
-      'delta_offset' => '0',
-      'delta_reversed' => FALSE,
-      'formatter_settings' => array(),
-      'context' => 'argument_term_1',
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = '9b65d86e-353c-4770-92fe-6838e4b3240f';
-    $display->content['new-9b65d86e-353c-4770-92fe-6838e4b3240f'] = $pane;
-    $display->panels['middle'][2] = 'new-9b65d86e-353c-4770-92fe-6838e4b3240f';
+    $display->panels['middle'][2] = 'new-b1d2b1c9-f6c8-4b8f-b799-885b6466f7a1';
     $pane = new stdClass();
     $pane->pid = 'new-a17c2523-ae7e-40f0-9563-87c239075e7c';
     $pane->panel = 'middle';
@@ -693,6 +689,25 @@ function excur_feature_panels_default_page_manager_handlers() {
     $display->content['new-a17c2523-ae7e-40f0-9563-87c239075e7c'] = $pane;
     $display->panels['middle'][3] = 'new-a17c2523-ae7e-40f0-9563-87c239075e7c';
     $pane = new stdClass();
+    $pane->pid = 'new-ee90fe0e-824d-4aa6-b53b-8fbff695f54b';
+    $pane->panel = 'middle';
+    $pane->type = 'popular_guide';
+    $pane->subtype = 'popular_guide';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $pane->uuid = 'ee90fe0e-824d-4aa6-b53b-8fbff695f54b';
+    $display->content['new-ee90fe0e-824d-4aa6-b53b-8fbff695f54b'] = $pane;
+    $display->panels['middle'][4] = 'new-ee90fe0e-824d-4aa6-b53b-8fbff695f54b';
+    $pane = new stdClass();
     $pane->pid = 'new-1681bc61-e5db-4409-875e-d0a8e908c9f6';
     $pane->panel = 'middle';
     $pane->type = 'companions_city';
@@ -706,11 +721,11 @@ function excur_feature_panels_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 4;
+    $pane->position = 5;
     $pane->locks = array();
     $pane->uuid = '1681bc61-e5db-4409-875e-d0a8e908c9f6';
     $display->content['new-1681bc61-e5db-4409-875e-d0a8e908c9f6'] = $pane;
-    $display->panels['middle'][4] = 'new-1681bc61-e5db-4409-875e-d0a8e908c9f6';
+    $display->panels['middle'][5] = 'new-1681bc61-e5db-4409-875e-d0a8e908c9f6';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

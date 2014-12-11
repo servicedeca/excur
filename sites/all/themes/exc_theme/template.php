@@ -467,17 +467,42 @@ function exc_theme_preprocess_node__service_teaser(&$vars) {
   $wrapper->language($language->language);
   $guide = user_load($node->field_guide[LANGUAGE_NONE][0]['target_id']);
 
-  $guide_image = excur_guide_logo($guide, '70x70');
-  $title = excur_guide_is_company($guide)
-    ? $guide->field_company_name[LANGUAGE_NONE][0]['value']
-    : $guide->field_name[LANGUAGE_NONE][0]['value'];
+  $guide_image = excur_guide_logo($guide, '75x75', array('class' => array('excur-gid-photo')));
+  $title = $guide->field_name[LANGUAGE_NONE][0]['value'];
   $vars['guide'] = array(
-    'title' => l($title, "user/$guide->uid"),
-    'image' => l($guide_image, "user/$guide->uid", array('html' => TRUE)),
+    'title' => $title,
+    'image' => $guide_image,
+    'uid' => $guide->uid,
   );
 
-  $vars['read_more'] = l('<i class="fa fa-search"></i>' . t('Read more'), "node/$node->nid", array('html' => TRUE));
-  $vars['book'] = l(t('Book'), "node/$node->nid", array('html' => TRUE));
+  $rating = fivestar_get_votes('node', $node->nid);
+  if (empty($rating['average'])) {
+    $rating = t(' Offer is unrated.');
+  }
+  else {
+    $rating = round($rating['average']['value'] / 10, 2);
+  }
+  $vars['rating'] = $rating;
+
+  $title = t('Excursion rating');
+  $vars['icon_star'] = theme('image', array(
+    'path' => EXCUR_FRONT_THEME_PATH . '/images/star.png',
+    'alt' => $title,
+    'title' => $title,
+    'attributes' => array(
+      'class' => array('iconstar'),
+    ),
+  ));
+
+  $title = t('The duration of excursion');
+  $vars['icon_time'] = theme('image', array(
+    'path' => EXCUR_FRONT_THEME_PATH . '/images/time.png',
+    'alt' => $title,
+    'title' => $title,
+    'attributes' => array(
+      'class' => array('icont'),
+    ),
+  ));
 
   $currency = $wrapper->field_currency->value();
   $current_currency = excur_offer_user_currency();
@@ -491,14 +516,6 @@ function exc_theme_preprocess_node__service_teaser(&$vars) {
 
   foreach ($wrapper->field_languages->value() as $lang) {
     $vars['languages'][] = $lang->field_lang_code[LANGUAGE_NONE][0]['value'];
-  }
-
-  if ($user->uid == $guide->uid) {
-    $vars['edit_link'] = l(t('Edit'), "node/$node->nid/edit", array(
-      'query' => array(
-        'destination' => current_path(),
-      ),
-    ));
   }
 }
 

@@ -15,7 +15,17 @@ function excur_feature_taxonomy_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_taxonomy_term__city';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'name' => array(
@@ -25,10 +35,19 @@ function excur_feature_taxonomy_strongarm() {
           'weight' => '1',
         ),
         'metatags' => array(
-          'weight' => '6',
+          'weight' => '8',
         ),
         'path' => array(
-          'weight' => '5',
+          'weight' => '7',
+        ),
+        'rabbit_hole' => array(
+          'weight' => '2',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '9',
+        ),
+        'language' => array(
+          'weight' => '6',
         ),
       ),
       'display' => array(),
