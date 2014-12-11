@@ -231,16 +231,13 @@
                 <h2 class="office-place">Новосибирск, Россия</h2>
                 <h3 class="office-title">Мои сообщения</h3>
 
-                <div class="panelc">
-                <div class="panel-heading message-panel-head">
-                   <a href="Excur.html" class="button-go" id="delet-message-button">Удалить</a>
                     <select  name="operation" class="form-select form-message">
                         <option value="0" data-content="Действия...">Действия...</option>
                         <option  data-content="Пометить как прочитанное">Пометить как прочитанное</option>
                         <option  data-content="Пометить как не прочитанное">Пометить как не прочитанное</option>
+                        <option  data-content="Пометить как не прочитанное">Удалить</option>
                     </select>
-                    <span class="message-hint">Пожалуйста подождите...</span>
-                </div>
+                <div class="panelc">
                     <!-- Table -->
                     <table class="table" id="message-table">
                         <thead class="head-panel-message">
@@ -252,7 +249,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="message-unread">
+                            <tr class="message-read">
                                     <td><input type="checkbox" class="form-checkbox"></td>
                                     <td>
                                         <a href="Chat.html">Нажми сюда</a>

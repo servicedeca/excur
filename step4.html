@@ -231,10 +231,10 @@
                     <h2 class="office-place">Новосибирск, Россия</h2>
                     <h3 class="office-title step-office-title">Добавление нового предложения</h3>
                     <div class="col-xs-10 step-title">
-                        Основная информация
+                        Индивидуальные предложения
                     </div>
                     <div class="col-xs-10 step-block">
-                        <div class="col-xs-2 step-passive step-active">
+                        <div class="col-xs-2 step-passive">
                             <a href="step1.html">
                                 Шаг 1
                             </a>
@@ -249,46 +249,149 @@
                                 Шаг 3
                             </a>
                         </div>
-                        <div class="col-xs-2 step-passive">
+                        <div class="col-xs-2 step-passive step-active">
                             <a href="step4.html">
                                 Шаг 4
                             </a>
                         </div>
-                        <div class="col-xs-2 step-passive">
-                            <a href="step5.html">
-                                Шаг 5
-                            </a>
-                        </div>
+
                     </div>
                     <div class="col-xs-12 add-excur-body">
-                        <label class="label-add-excur">Название предложения</label>
+                    
+                        <label class="label-add-excur">Валюта</label>
+                        <select id="" name="" class="form-select form-control form-select-value">
+                        <option value="EUR" selected="selected" data-content="Евро">Евро</option>
+                        <option value="USD" data-content="Доллар США">Доллар США</option>
+                        <option value="RUB" data-content="Российский рубль">Российский рубль</option>
+                        <option value="CAD" data-content="Канадский доллар">Канадский доллар</option>
+                        </select>
+                        <div class="mini-label-add-excur">Укажите валюту, в которой отображать стомость услуги, если пользователем не выбрана иная</div>      
+                        <label class="label-add-excur lebel-big-title">Предложение</label>
+                        
+<dic class="col-xs-12">
+                        <div class="col-xs-12 add-excur-checkform">
+                            <label class="label-add-excur label-add-excur-inner ">Тип предложения</label>                
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios1" id="optionsRadios1" value="option1" checked>
+                                Групповое
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios1" id="optionsRadios2" value="option2">
+                                Индивидуально-групповое
+                                </label>
+                            </div>
+                        </div>
                         <input  class="form-control form-add-excur">
-                        <label class="label-add-excur">Город</label>
+                        <div class="mini-label-add-excur">Введите название предложения, например «Стандартное».</div>
+                        
+                        <label class="label-add-excur">Время работы</label>
+                        <div class="col-xs-12 add-excur-checkform">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios1" id="optionsRadios1" value="option1" checked>
+                                Указать рабочее время в интервале
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios1" id="optionsRadios2" value="option2">
+                                Указать конкретные часы проведения экскурсии
+                                </label>
+                            </div>
+                        </div>
+                        <div class="mini-label-add-excur">Выберите способ задания времени работы, в поле ниже введите интервал времени в формате "часы:минуты - часы:минуты" (08:00 - 23:30) или укажите точное время проведение экскурсии в формате "часы:минуты"</div>
+                        <label class="label-add-excur">Часы работы</label>
                         <input  class="form-control form-add-excur">
-                        <div class="mini-label-add-excur">Введите название города в котором проводится или начинается экскурсия.</div>
-                        <label class="label-add-excur">Язык проведения</label>
+ 
+                        <div class="col-xs-12 add-excur-checkform">       
+                            <label class="label-add-excur label-add-excur-inner ">Дни работы</label>        
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios1" id="optionsRadios1" value="option1" checked>
+                                Каждый день
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios1" id="optionsRadios2" value="option2">
+                                Выбрать дни недели
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios1" id="optionsRadios2" value="option2">
+                                Конкретные дни
+                                </label>
+                            </div>
+                        </div>
+                        <label class="label-add-excur">Дни недели</label>
+                        <div class="checkbox add-excur-days">
+                          <label>
+                            <input type="checkbox" value="">
+                            Понедельник
+                          </label>
+                            <label>
+                            <input type="checkbox" value="">
+                            Вторник
+                          </label>
+                            <label>
+                            <input type="checkbox" value="">
+                            Среда
+                          </label>
+                            <label>
+                            <input type="checkbox" value="">
+                            Четверг
+                          </label>
+                            <label>
+                            <input type="checkbox" value="">
+                            Пятница
+                          </label>
+                            <label>
+                            <input type="checkbox" value="">
+                            Суббота
+                          </label>
+                            <label>
+                            <input type="checkbox" value="">
+                            Воскресенье
+                          </label>
+                        </div>
+                        
+                        
+                        <label class="label-add-excur">Конктретные дни</label>
                         <input  class="form-control form-add-excur">
-                        <div class="mini-label-add-excur">Укажите через запятую языки проведения тура, например: "Русский, Английский".</div>
-                        <label class="label-add-excur">Категории</label>
-                        <input  class="form-control form-add-excur">
-                        <div class="mini-label-add-excur">Выберите из предложенного списка категорий</div>
                         <label class="label-add-excur">Продолжительность</label>
                         <input  class="form-control form-add-excur">
-                        <div class="mini-label-add-excur">Укажите продолжительность в часах, например "2 часа 30 минут"</div>
-                        <label class="label-add-excur">Описание предложения</label>
-                        <textarea class="form-control add-excur-textarea" rows="5"></textarea>
-                        <div class="mini-label-add-excur">Не указывайте в описании предложения контактную информацию (ссылки на сайт, номера телефонов, e-mail адреса), цену, продолжительность и язык проведения.</div>
-                </div>
-                <div class="col-xs-12 step-buttons-block">
-                    <div class="col-xs-4 col-xs-offset-2">
-                       <a href="Excur.html" class="button-go" id="step-back-button">Назад</a>
-                    </div>
-                    <div class="col-xs-4">
-                       <a href="step2.html" class="button-go" id="step-next-button">Далее</a>
-                    </div>
-                </div>                           
+                        <div class="mini-label-add-excur">Укажите продолжительность, например: «2ч 30 мин».</div>
+                        
+                        <div class="col-xs-12 add-excur-ticket">
+                            <label class="label-add-excur lebel-big-title">Билеты</label>
+                            <label class="label-add-excur">Название</label>
+                             <input  class="form-control form-add-excur form-add-excur-ticket">
+                            <div class="mini-label-add-excur">Введите название, например «Детский*» или «Взрослый».</div>
+                             <label class="label-add-excur">Цена</label>
+                             <input  class="form-control form-add-excur form-add-excur-ticket">
+                             <div class="mini-label-add-excur">Укажите стоимость билета в ранее выбранной валюте.</div>
+                       </div>
+                        <div class="col-xs-12 mini-label-add-excur wowo">Вы можете создать несколько предложений, отличающихся по цене, продолжительности и содержанию.
+                        </div>
+
+                       </div>        
+                        <div class="col-xs-12 step-buttons-block">
+                            <div class="col-xs-4">
+                               <a href="step2.html" class="button-go" id="step-back-button">Назад</a>
+                            </div>
+                            <div class="col-xs-4">
+                               <a href="step3.html" class="button-go" id="step-back-button">Сохранить</a>
+                            </div>
+                            <div class="col-xs-4">
+                               <a href="Offer.html" class="button-go" id="step-next-button">Готово</a>
+                            </div>
+                        </div>                         
                                            
-                                           
+                    </div>                     
             </div>
         </div>
                </div>

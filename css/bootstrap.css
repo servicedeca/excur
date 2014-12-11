@@ -5027,11 +5027,11 @@ a.list-group-item-danger.active:focus {
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
     padding: 0px;
-    height: 60px;
+    height: 50px;
     border: none;
     background: #fff;
-    margin-top: 0px;
     top:0px;
+        margin-top: 50px;
 }
 .panel > .list-group {
   margin-bottom: 0;

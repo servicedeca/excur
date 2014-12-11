@@ -2740,10 +2740,10 @@ div.box-crew:hover span{
   font-weight:300;
   color:#ffffff;
   background: #32A1BB;
-  -webkit-transition-duration:0.66s;
-  -moz-transition-duration:0.66s;
-  -o-transition-duration:0.66s;
-  -ms-transition-duration:0.66s;
+  -webkit-transition-duration:0.44s;
+  -moz-transition-duration:0.44s;
+  -o-transition-duration:0.44s;
+  -ms-transition-duration:0.44s;
   transition-duration:0.44s;
 }
 
@@ -4465,6 +4465,7 @@ footer {
   font-family: "Segoe";
   margin-left: 15px;
   text-align: center;
+    width: 655px;
 }
 
 .offer-list {
@@ -4534,7 +4535,7 @@ height: 30px;
 }
 
 #add-excur {
-  width:100%;
+  width:150px;
   position: absolute;
   font-family: Segoe;
   left: 0px;
@@ -4542,6 +4543,8 @@ height: 30px;
   padding: 0px 0px 0px 0px;
   height: 50px;
   line-height: 50px;
+margin-left: -15px;
+    width: 155px;
 }
 
 .booking-list {
@@ -5679,8 +5682,9 @@ height: 30px;
 }
 
 .plus-excur {
-  left: 15%;
-  top:7px;
+  left: 50%;
+  margin-left: -17px;
+    margin-top: 7px;
   position: absolute;
 }
 
@@ -5688,6 +5692,7 @@ height: 30px;
   margin-top: 5px;
   height: 50px;
   margin-bottom:10px;
+  margin-left: 20px;
 }
 
 .message-read {
@@ -5702,9 +5707,9 @@ height: 30px;
   border-radius: 0px;
   border:1px solid #808080;
   font-size:16px;
-  height: 40px;
-  margin-left: 135px;
-  border-top:none;
+  height: 35px;
+  margin-left: 15px;
+    margin-top: 10px;
 }
 
 .panel-message {
@@ -5829,7 +5834,7 @@ chat
     width: 630px;
     margin-left: 18px;
     border: 1px solid #808080;
-    margin-top: 23px;
+    margin-top: 15px;
 }
 
 #message-table {
@@ -5860,13 +5865,22 @@ chat
 }
 
 #send-message-button {
-
+    right: 0px;
+    height: 51px;
+    line-height: 51px;
+    position: absolute;
+    padding: 0px 0px 0px 0px;
+    bottom: 0px;
+    margin-right: 5px;
+    width: 130px;
+    margin-bottom: 20px;
 }
 
 .form-chat {
-    height: 60px;
+    height: 50px;
     border-radius: 0px;
-    border:1px solid #808080;
+    border:none;
+    border-top:1px solid #808080;
     width: 500px;
     margin-top: -30px;
 }
@@ -5892,6 +5906,7 @@ chat
     margin-right: 10px;
     color:#4d4d4d;
     font-size: 18px;
+    width: 109px;
 }
 
 .step-passive a{
@@ -5922,7 +5937,7 @@ chat
     background: #4f93aa;
     color:#f2f2f2;
     margin-left: 15px;
-    width: 467px;
+    width: 466px;
     line-height: 50px;
     font-size: 18px;
     margin-top: 14px;
@@ -5952,7 +5967,7 @@ chat
 
 .form-add-excur {
     border-radius: 0px;
-  width: 466px;
+  width: 465px;
   margin-left: 0px;
   border:1px solid #b3b3b3;
   font-size:16px;
@@ -6046,7 +6061,6 @@ chat
     width: 120px;
     font-size: 18px;
     position: absolute;
-    left:0px;
     background: #95b3b7;
 }
 
@@ -6057,7 +6071,6 @@ chat
     line-height: 50px;
     width: 120px;
     position: absolute;
-    right:0px;
     background: #33a1bb;
 }
 
@@ -6131,8 +6144,89 @@ chat
     border-bottom: 1px solid #b3b3b3;
     margin-bottom: 15px;
     padding-bottom: 5px;
+    width: 500px;
 }
 
 .step2-item {
     margin-left: 25px;
+}
+
+.add-excur-p {
+    margin-top: -6px;
+    margin-bottom: 0px;
+}
+
+.add-excur-checkform {
+    padding: 0px;
+    margin-top: -10px;
+}
+
+.add-radio-block {
+    padding: 0px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.form-select-value {
+    border-radius: 0px;
+  width: 233px;
+  margin-left: 0px;
+  border:1px solid #b3b3b3;
+  font-size:16px;
+  margin-bottom: 15px;
+height: 35px;
+    line-height: 35px;
+    padding: 0px;
+}
+
+.label-add-excur-inner {
+    margin-top: 10px;
+    margin-bottom: -5px;
+}
+
+.wowo {
+    border-top:1px solid #b3b3b3;
+    margin-top: 15px;
+    padding-top: 10px;
+    margin-left: -15px;
+}
+
+.add-excur-days {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    width: 450px;
+    
+}
+
+.lebel-big-title-plus {
+    font-size: 18px;
+    width: 340px;
+    border-bottom: 1px solid #b3b3b3;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    margin-left: 15px;
+}
+
+.add-excur-ticket {
+    width: 465px;
+    background: #f2f2f2;
+    padding-top: 10px;
+}
+
+.button-add-text {
+    height: 50px;
+    line-height:50px;
+    font-size: 20px;
+    color:#4fa860;
+    margin-left: -5px;
+}
+
+.crosss {
+    color:#999999;
+}
+
+
+
+.form-add-excur-ticket {
+        width:  430px;
 }
