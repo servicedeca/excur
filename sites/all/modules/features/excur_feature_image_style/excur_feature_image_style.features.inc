@@ -203,6 +203,59 @@ function excur_feature_image_style_image_default_styles() {
     ),
   );
 
+  // Exported image style: 240x150.
+  $styles['240x150'] = array(
+    'name' => '240x150',
+    'label' => '240x150',
+    'effects' => array(
+      8 => array(
+        'label' => 'Масштабирование',
+        'help' => 'Масштабирование позволяет изменить размеры изображения с сохранением пропорций. Если введён размер только одной стороны, то размер другой будет вычислен автоматически. Если введены два размера, то каждое будет определять максимальный размер по своему направлению и применяться в зависимости от формата изображения.',
+        'effect callback' => 'image_scale_effect',
+        'dimensions callback' => 'image_scale_dimensions',
+        'form callback' => 'image_scale_form',
+        'summary theme' => 'image_scale_summary',
+        'module' => 'image',
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 240,
+          'height' => 150,
+          'upscale' => 0,
+        ),
+        'weight' => -10,
+      ),
+      7 => array(
+        'label' => 'Define canvas',
+        'help' => 'Define the size of the working canvas and background color, this controls the dimensions of the output image.',
+        'effect callback' => 'canvasactions_definecanvas_effect',
+        'dimensions callback' => 'canvasactions_definecanvas_dimensions',
+        'form callback' => 'canvasactions_definecanvas_form',
+        'summary theme' => 'canvasactions_definecanvas_summary',
+        'module' => 'imagecache_canvasactions',
+        'name' => 'canvasactions_definecanvas',
+        'data' => array(
+          'RGB' => array(
+            'HEX' => '#fff',
+          ),
+          'under' => 1,
+          'exact' => array(
+            'width' => 240,
+            'height' => 150,
+            'xpos' => 'center',
+            'ypos' => 'center',
+          ),
+          'relative' => array(
+            'leftdiff' => '',
+            'rightdiff' => '',
+            'topdiff' => '',
+            'bottomdiff' => '',
+          ),
+        ),
+        'weight' => -9,
+      ),
+    ),
+  );
+
   // Exported image style: 300x170.
   $styles['300x170'] = array(
     'name' => '300x170',
@@ -268,6 +321,59 @@ function excur_feature_image_style_image_default_styles() {
           'height' => 470,
         ),
         'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: 50x50.
+  $styles['50x50'] = array(
+    'name' => '50x50',
+    'label' => '50x50',
+    'effects' => array(
+      9 => array(
+        'label' => 'Масштабирование',
+        'help' => 'Масштабирование позволяет изменить размеры изображения с сохранением пропорций. Если введён размер только одной стороны, то размер другой будет вычислен автоматически. Если введены два размера, то каждое будет определять максимальный размер по своему направлению и применяться в зависимости от формата изображения.',
+        'effect callback' => 'image_scale_effect',
+        'dimensions callback' => 'image_scale_dimensions',
+        'form callback' => 'image_scale_form',
+        'summary theme' => 'image_scale_summary',
+        'module' => 'image',
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 50,
+          'height' => 50,
+          'upscale' => 0,
+        ),
+        'weight' => 1,
+      ),
+      10 => array(
+        'label' => 'Define canvas',
+        'help' => 'Define the size of the working canvas and background color, this controls the dimensions of the output image.',
+        'effect callback' => 'canvasactions_definecanvas_effect',
+        'dimensions callback' => 'canvasactions_definecanvas_dimensions',
+        'form callback' => 'canvasactions_definecanvas_form',
+        'summary theme' => 'canvasactions_definecanvas_summary',
+        'module' => 'imagecache_canvasactions',
+        'name' => 'canvasactions_definecanvas',
+        'data' => array(
+          'RGB' => array(
+            'HEX' => '#fff',
+          ),
+          'under' => 1,
+          'exact' => array(
+            'width' => 50,
+            'height' => 50,
+            'xpos' => 'center',
+            'ypos' => 'center',
+          ),
+          'relative' => array(
+            'leftdiff' => '',
+            'rightdiff' => '',
+            'topdiff' => '',
+            'bottomdiff' => '',
+          ),
+        ),
+        'weight' => 2,
       ),
     ),
   );

@@ -282,6 +282,35 @@ function exc_theme_preprocess_taxonomy_term__country_full(&$vars) {
   drupal_add_js(array('continentCode' => $continent->field_continent_code[LANGUAGE_NONE][0]['value']), 'setting');
 }
 
+
+/**
+ * Process variables for taxonomy-term--city_full.tpl.php.
+ */
+function exc_theme_preprocess_taxonomy_term__city_full(&$vars) {
+  global $language;
+
+  $term = $vars['term'];
+  $wrapper = entity_metadata_wrapper('taxonomy_term', $term);
+  $wrapper->language($language->language);
+
+  $vars['image'] = theme('image_style', array(
+    'style_name' => '240x150',
+    'path' => $term->field_slider_images[LANGUAGE_NONE][0]['uri'],
+    'title' => $term->name,
+    'alt' => $term->name,
+    'attributes' => array(
+      'class' => array('country-usefull-coat'),
+    )
+  ));
+
+  $desc = $wrapper->description_field->value();
+  $vars['description'] = $desc['safe_value'];
+
+  $country = $wrapper->field_country->value();
+  $continent = taxonomy_term_load($country->field_continent[LANGUAGE_NONE][0]['target_id']);
+  drupal_add_js(array('continentCode' => $continent->field_continent_code[LANGUAGE_NONE][0]['value']), 'setting');
+}
+
 /**
  * Preprocess variables for node.
  */

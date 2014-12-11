@@ -42,5 +42,20 @@ function excur_service_category_content_type_theme(&$theme, $plugin) {
  */
 function template_preprocess_excur_service_category(&$vars) {
   $city = menu_get_object('taxonomy_term', 2);
-  $vars['categories'] = excur_categories_by_city($city->tid);
+  $vars['city'] = $city->name;
+
+  $vocabulary = taxonomy_vocabulary_machine_name_load('category');
+  foreach (taxonomy_get_tree($vocabulary->vid, 0, NULL, TRUE) as $key => $term) {
+    $vars['categories'][$key]['name'] = $term->name;
+    $vars['categories'][$key]['id'] = $term->tid;
+    $vars['categories'][$key]['icon'] = theme('image_style', array(
+      'style_name' => '50x50',
+      'path' => $term->field_image[LANGUAGE_NONE][0]['uri'],
+      'alt' => $term->name,
+      'title' => $term->name,
+      'attributes' => array(
+        'class' => array('categoty-icon'),
+      ),
+    ));
+  }
 }
