@@ -382,7 +382,7 @@ header .intro-text .intro-heading {
 }
 
 .curent {
-  margin-top:11px;
+  margin-top:14px;
   margin-left: 0px;
 }
 
@@ -1646,22 +1646,16 @@ div.box-crew:hover span{
   margin-bottom: 0px;
 }
 
-.country-useful-info {
-  background: #fff;
-  padding-top: 0px;
-  width: 100%;
-  z-index: 21;
-}
+
 
 .country-usefull-info-content {
   width:960px;
-  margin: 0 auto;
   background: #fff;
   z-index: 20;
   padding-top: 0px;
-  height:210px;
   border-bottom:2px solid #9E3F3F;
   margin-top: 10px;
+    padding-bottom: 15px;
 }
 
 .country-useful-info-text {
@@ -1950,14 +1944,8 @@ div.box-crew:hover span{
 .county-usefull-info-text {
   color:#3F3F3F;
   font-size:15px;
-  height:130px;
-  overflow: hidden;
   font-family: 'Segoe UI';
   line-height: 20px;
-  -webkit-box-orient: vertical;
-  display: -webkit-box;
-  -webkit-line-clamp: 6;
-  margin-top: -3px;
 }
 
 .left-line {
@@ -2099,6 +2087,7 @@ div.box-crew:hover span{
   font-family: 'Segoe UI';
   overflow: hidden;
   color:#4C4C4C;
+    line-height: 25px;
 }
 
 .pop-excur-language {
@@ -2135,6 +2124,9 @@ div.box-crew:hover span{
   font-size: 16px;
   font-family: 'Segoe UI';
   overflow: hidden;
+    height: 22px;
+    text-overflow: ellipsis;
+
 }
 
 .pop-excur-price {
@@ -2394,9 +2386,7 @@ div.box-crew:hover span{
   text-align: center;
 }
 
-.excur-list-button {
-  height:75px;
-}
+
 
 .button-go-pop:hover{
   width: 226px;
@@ -2406,8 +2396,8 @@ div.box-crew:hover span{
 }
 
 .excur-list-button{
-  margin-left: 4px;
-  margin-top:10px;
+  margin-left: 0px;
+  margin-top:7px;
   position: absolute;
 }
 .excur-price {
@@ -2742,15 +2732,15 @@ div.box-crew:hover span{
   font-weight:300;
   color:#ffffff;
   background: #32A1BB;
-  -webkit-transition-duration:0.66s;
-  -moz-transition-duration:0.66s;
-  -o-transition-duration:0.66s;
-  -ms-transition-duration:0.66s;
+  -webkit-transition-duration:0.44s;
+  -moz-transition-duration:0.44s;
+  -o-transition-duration:0.44s;
+  -ms-transition-duration:0.44s;
   transition-duration:0.44s;
 }
 
 .button-go-pop{
-  width: 226px;
+  width: 224px;
   left: -3px;
   top: 320px;
   position: absolute;
@@ -2759,6 +2749,7 @@ div.box-crew:hover span{
 .button-go:hover{
   text-decoration:none;
   text-align:center;
+      width: 224px;
   padding: 5px 0px 9px 0px;
   border:none;
   -webkit-border-radius:0px;
@@ -4274,6 +4265,10 @@ footer {
   border-radius: 0px;
 }
 
+.drop-value li{
+    line-height: 100px;
+}
+
 .drop-lang {
   border:none;
   margin-top: 10px;
@@ -4283,6 +4278,9 @@ footer {
 
 .currency-img {
   padding-right: 15px;
+    width: 55px;
+    padding-bottom: 10px;
+    padding-top: 5px;
 }
 
 .span-phone {
@@ -4467,6 +4465,7 @@ footer {
   font-family: "Segoe";
   margin-left: 15px;
   text-align: center;
+    width: 655px;
 }
 
 .offer-list {
@@ -4502,7 +4501,8 @@ footer {
 }
 
 .offer-list-button {
-  height: 35px;
+    height: 30px;
+    width: 649px;
 }
 
 .offer-list-lang {
@@ -4513,10 +4513,11 @@ footer {
 }
 
 #offer-list-button {
-  margin-left: -12px;
-  margin-top:4px;
   position: absolute;
-  padding: 3px 0px 5px 0px;
+  padding: 0px 0px 0px 0px;
+height: 30px;
+    line-height: 30px;
+    margin-top: 0px;
   font-size:16px;
   margin-left: 160px;
   cursor:pointer;
@@ -4534,7 +4535,7 @@ footer {
 }
 
 #add-excur {
-  width:100%;
+  width:150px;
   position: absolute;
   font-family: Segoe;
   left: 0px;
@@ -4542,6 +4543,8 @@ footer {
   padding: 0px 0px 0px 0px;
   height: 50px;
   line-height: 50px;
+margin-left: -15px;
+    width: 155px;
 }
 
 .booking-list {
@@ -4592,7 +4595,7 @@ footer {
 .right-line-office {
   width: 680px;
   margin-left: 40px;
-  margin-bottom: 100px;
+  margin-bottom: 25px;
 }
 
 .booking-list-guide-name {
@@ -4616,13 +4619,15 @@ footer {
 }
 
 #booking-list-button {
-  left: 0px;
-  top:5px;
-  position: absolute;
-  padding: 3px 0px 5px 0px;
-  font-size:16px;
-  width: 155px;
-  background: #4fa860;
+    left: 0px;
+    top:0px;
+    padding: 0px 0px 0px 0px;
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    font-size:16px;
+    width: 155px;
+    background: #4fa860;
 }
 
 .booking-status p {
@@ -5311,6 +5316,7 @@ footer {
   margin-left: -35px;
   width: 500px;
   margin-bottom: 0px;
+    text-transform: uppercase;
 }
 
 .stekos-block-left {
@@ -5323,6 +5329,7 @@ footer {
   font-family: 'Camphor';
   margin-top: 85px;
   color: #333333;
+    text-transform: uppercase;
 }
 
 .stekos-block-right {
@@ -5333,8 +5340,6 @@ footer {
   margin-top: 100px;
   height:40px;
 }
-
-
 
 .stekos-project {
 
@@ -5676,11 +5681,10 @@ footer {
   color: #414042;
 }
 
-
-
 .plus-excur {
-  left: 15%;
-  top:7px;
+  left: 50%;
+  margin-left: -17px;
+    margin-top: 7px;
   position: absolute;
 }
 
@@ -5688,6 +5692,7 @@ footer {
   margin-top: 5px;
   height: 50px;
   margin-bottom:10px;
+  margin-left: 20px;
 }
 
 .message-read {
@@ -5700,15 +5705,542 @@ footer {
 
 .form-message {
   border-radius: 0px;
-  border:1px solid #b3b3b3;
+  border:1px solid #808080;
   font-size:16px;
-  height: 30px;
+  height: 35px;
+  margin-left: 15px;
+    margin-top: 10px;
 }
 
 .panel-message {
   border-radius: 0px;
+    border-color: #808080;
+    width: 630px;
+    margin-top: 14px;
 }
 
 i.flag {
   display: inline-block;
 }
+
+.message-panel-head {
+    background-color: #808080;
+    border-radius: 0px;
+    padding: 0px;
+    height: 40px;
+}
+
+#delet-message-button {
+  position: absolute;
+  padding: 0px 0px 0px 0px;
+height: 40px;
+line-height: 40px;
+  font-size:16px;
+  margin-left: 0px;
+  cursor:pointer;
+  width: 135px;
+    background: #bb2b33;
+}
+
+.message-hint {
+    color: #f2f2f2;
+    margin-left: 42px;
+}
+
+.head-panel-message th{
+    color:#333;
+    font-weight: 600;
+}
+
+#message-table a{
+    color:#333;
+}
+
+#message-table a:hover{
+    color:#000;
+}
+
+#message-table a:active{
+    color:#333;
+}
+
+.form-checkbox {
+    height: 15px;
+}
+
+chat
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.chat li
+{
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px dotted #B3A9A9;
+}
+
+.chat li.left .chat-body
+{
+    margin-left: 60px;
+}
+
+.chat li.right .chat-body
+{
+    margin-right: 60px;
+}
+
+
+.chat li .chat-body p
+{
+    margin: 0;
+    color: #777777;
+}
+
+.panel .slidedown .glyphicon, .chat .glyphicon
+{
+    margin-right: 5px;
+}
+
+.panel-body
+{
+    overflow-y: scroll;
+    height: 500px;
+}
+
+::-webkit-scrollbar-track
+{
+
+}
+
+::-webkit-scrollbar
+{
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb
+{
+
+    background-color: #b2b2b2;
+}
+
+.panel-primary > .head-panel-message{
+    background-color:#808080;
+    border-radius: 0px;
+}
+.panelc {
+    width: 630px;
+    margin-left: 18px;
+    border: 1px solid #808080;
+    margin-top: 15px;
+}
+
+#message-table {
+     margin-bottom: 0px;
+}
+
+.head-panel-message a:hover{
+    color: #72d6f2;
+}
+
+.head-panel-message a{
+    color: #fff;
+}
+
+.img-chat {
+    width: 50px;
+}
+
+.chat {
+    padding:0px;
+}
+
+#btn-chat {
+    border-radius: 0px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 40px;
+}
+
+#send-message-button {
+    right: 0px;
+    height: 51px;
+    line-height: 51px;
+    position: absolute;
+    padding: 0px 0px 0px 0px;
+    bottom: 0px;
+    margin-right: 5px;
+    width: 130px;
+    margin-bottom: 20px;
+}
+
+.form-chat {
+    height: 50px;
+    border-radius: 0px;
+    border:none;
+    border-top:1px solid #808080;
+    width: 500px;
+    margin-top: -30px;
+}
+
+#delet-offer-button {
+      position: absolute;
+    padding: 0px 0px 0px 0px;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 0px;
+    font-size:16px;
+    right: 0px;
+    cursor:pointer;
+    width: 155px;
+        background: #bb2b33;
+}
+
+.step-passive {
+    height: 40px;
+    line-height: 40px;
+    background:#f2f2f2;
+    text-align: center;
+    margin-right: 10px;
+    color:#4d4d4d;
+    font-size: 18px;
+    width: 109px;
+}
+
+.step-passive a{
+    color:#4d4d4d;
+}
+
+.step-passive a:hover{
+    color:#000;
+}
+
+.step-active {
+    background: #4f93aa;
+    height: 50px;
+    margin-top: -10px;
+    line-height: 50px;
+    font-size: 20px;
+}
+
+.step-active a{
+    color:#f2f2f2;
+}
+
+.step-active a:hover{
+    color:#fff;
+}
+.step-title {
+    height: 50px;
+    background: #4f93aa;
+    color:#f2f2f2;
+    margin-left: 15px;
+    width: 466px;
+    line-height: 50px;
+    font-size: 18px;
+    margin-top: 14px;
+}
+
+.step-block {
+    margin-top: 10px;
+}
+
+
+
+.add-excur-body {
+    margin-left: 15px;
+    width: 625px;
+    margin-top: 25px;
+    padding: 0px;
+}
+
+.label-add-excur {
+  color: #333;
+  font-size: 15px;
+  font-family: "Segoe UI";
+  letter-spacing: 1px;
+  left: 0px;
+  font-weight: 300;
+}
+
+.form-add-excur {
+    border-radius: 0px;
+  width: 465px;
+  margin-left: 0px;
+  border:1px solid #b3b3b3;
+  font-size:16px;
+  margin-bottom: 15px;
+}
+
+.mini-label-add-excur {
+  color: #999999;
+  font-size: 12px;
+  font-family: "Segoe UI";
+  letter-spacing: 1px;
+  margin-left: 0px;
+  font-weight: 300;
+  margin-top: -13px;
+  padding-bottom: 17px;
+  line-height: 15px;
+  letter-spacing: 0.5px;
+  width: 455px;
+  min-height: 10px;
+}
+
+.add-excur-textarea {
+    border-radius: 0px;
+  width: 466px;
+  margin-left: 0px;
+  border:1px solid #b3b3b3;
+  font-size:16px;
+  margin-bottom: 15px;
+}
+
+
+
+.file_upload{
+    position: relative;
+    overflow: hidden;
+    font-size: 15px;
+    height: 35px;
+    line-height: 35px;
+    background: #666666;
+    width: 315px;
+      transition: all 200ms linear;
+  -moz-transition: all 200ms linear;
+  -webkit-transition: all 200ms linear;
+  -o-transition: all 200ms linear;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.file_upload:hover{
+  transition: all 200ms linear;
+  -moz-transition: all 200ms linear;
+  -webkit-transition: all 200ms linear;
+  -o-transition: all 200ms linear;
+  opacity: 0.8;
+}
+
+.file_upload > download-button{
+    float: right;
+    width: 8em;            /* example */
+    height: 100%
+}
+.file_upload > div{
+    padding-left: 1em      /* example */
+}
+
+.file_upload input[type=file]{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(20);
+    letter-spacing: 10em;     /* IE 9 fix */
+    -ms-transform: scale(20); /* IE 9 fix */
+    opacity: 0;
+    cursor: pointer
+}
+
+.download-button {
+    background:transparent;
+    color:#fff;
+    cursor:pointer;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+#step-back-button {
+    padding: 0px 0px 0px 0px;
+    height: 50px;
+    line-height: 50px;
+    width: 120px;
+    font-size: 18px;
+    position: absolute;
+    background: #95b3b7;
+}
+
+#step-next-button {
+    padding: 0px 0px 0px 0px;
+    height: 50px;
+    font-size: 18px;
+    line-height: 50px;
+    width: 120px;
+    position: absolute;
+    background: #33a1bb;
+}
+
+.step-buttons-block {
+    width: 470px;
+    margin-left: 15px;
+    padding: 0px;
+    height: 50px;
+    margin-top: 25px;
+    margin-bottom: 50px;
+    
+}
+
+.delet-excur-image {
+    position: relative;
+    left: 0px;
+    height: 35px;
+    width: 315px;
+    color: #f2f2f2;
+    background: #bb2b33;
+    border: none;
+    top:8px;
+    margin-left: -319px;
+    margin-bottom: 25px;
+        font-weight: 300;
+    font-size: 16px;
+      transition: all 200ms linear;
+  -moz-transition: all 200ms linear;
+  -webkit-transition: all 200ms linear;
+  -o-transition: all 200ms linear;
+}
+
+.delet-excur-image:hover{
+  transition: all 200ms linear;
+  -moz-transition: all 200ms linear;
+  -webkit-transition: all 200ms linear;
+  -o-transition: all 200ms linear;
+  opacity: 0.8;
+}
+
+.mini-label-image-excur {
+    color: #999999;
+    font-size: 12px;
+    font-family: "Segoe UI";
+    letter-spacing: 1px;
+    margin-left: 0px;
+    font-weight: 300;
+    padding-bottom: 17px;
+    line-height: 15px;
+    letter-spacing: 0.5px;
+    width: 455px;
+    min-height: 10px;
+    line-height: 5px;
+    margin-top: -5px;
+}
+
+.lebel-line-height {
+    line-height: 20px;
+}
+
+
+
+.step-2-fix {
+    padding: 0px;
+    width: 320px;
+}
+
+.lebel-big-title {
+    font-size: 18px;
+    width: 340px;
+    border-bottom: 1px solid #b3b3b3;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    width: 500px;
+}
+
+.step2-item {
+    margin-left: 25px;
+}
+
+.add-excur-p {
+    margin-top: -6px;
+    margin-bottom: 0px;
+}
+
+.add-excur-checkform {
+    padding: 0px;
+    margin-top: -10px;
+}
+
+.add-radio-block {
+    padding: 0px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.form-select-value {
+    border-radius: 0px;
+  width: 233px;
+  margin-left: 0px;
+  border:1px solid #b3b3b3;
+  font-size:16px;
+  margin-bottom: 15px;
+height: 35px;
+    line-height: 35px;
+    padding: 0px;
+}
+
+.label-add-excur-inner {
+    margin-top: 10px;
+    margin-bottom: -5px;
+}
+
+.wowo {
+    border-top:1px solid #b3b3b3;
+    margin-top: 15px;
+    padding-top: 10px;
+    margin-left: -15px;
+}
+
+.add-excur-days {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    width: 450px;
+    
+}
+
+.lebel-big-title-plus {
+    font-size: 18px;
+    width: 340px;
+    border-bottom: 1px solid #b3b3b3;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    margin-left: 15px;
+}
+
+.add-excur-ticket {
+    width: 465px;
+    background: #f2f2f2;
+    padding-top: 10px;
+}
+
+.button-add-text {
+    height: 50px;
+    line-height:50px;
+    font-size: 20px;
+    color:#4fa860;
+    margin-left: -5px;
+}
+
+.crosss {
+    color:#999999;
+}
+
+<<<<<<< HEAD
+.dflt-curent img{
+    width: 42px;
+    margin-top: 4px;
+}
+=======
+
+>>>>>>> 1fa71c02367afb16a977fd361185f118ee6d733b
+
+.form-add-excur-ticket {
+        width:  430px;
+}
+<<<<<<< HEAD
+
+
+
+
+=======
+>>>>>>> 1fa71c02367afb16a977fd361185f118ee6d733b

@@ -5,8 +5,7 @@
  */
 ?>
 
-<section class="country-useful-info">
-  <div class="country-usefull-info-content">
+<div class="container country-usefull-info-content">
     <div class="col-xs-3">
       <?php print $image; ?>
     </div>
@@ -18,5 +17,4 @@
         <?php print $description; ?>
       </div>
     </div>
-  </div>
-</section>
+</div>

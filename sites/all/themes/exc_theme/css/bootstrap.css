@@ -616,6 +616,7 @@ th {
 }
 .glyphicon-comment:before {
   content: "\e111";
+    margin-right: 15px;
 }
 .glyphicon-magnet:before {
   content: "\e112";
@@ -5025,6 +5026,12 @@ a.list-group-item-danger.active:focus {
   border-top: 1px solid #ddd;
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
+    padding: 0px;
+    height: 50px;
+    border: none;
+    background: #fff;
+    top:0px;
+        margin-top: 50px;
 }
 .panel > .list-group {
   margin-bottom: 0;
@@ -5513,6 +5520,7 @@ button.close {
 .tooltip.right {
   padding: 0 5px;
   margin-left: 3px;
+padding-left: 25px;
 }
 .tooltip.bottom {
   padding: 5px 0;
