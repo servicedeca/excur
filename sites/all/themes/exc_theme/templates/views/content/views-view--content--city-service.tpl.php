@@ -22,6 +22,8 @@
   <?php endif; ?>
 
   <?php if ($pager): ?>
-    <?php print $pager; ?>
+    <div class="col-xs-12 navigation-bg">
+      <?php print $pager; ?>
+    </div>
   <?php endif; ?>
 </div>
