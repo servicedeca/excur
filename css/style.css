@@ -1332,11 +1332,6 @@ div.box-crew:hover span{
   border-top: none;
   border-bottom: none;
   list-style: none;
-  -webkit-transition: all 0.33s ease-out;
-  -moz-transition: all 0.33s ease-out;
-  -ms-transition: all 0.33s ease-out;
-  -o-transition: all 0.33s ease-out;
-  transition: all 0.33s ease-out;
   font-size: 17px;
   /* Hiding */
   max-height: 0;
@@ -1446,11 +1441,6 @@ div.box-crew:hover span{
   border-top: none;
   border-bottom: none;
   list-style: none;
-  -webkit-transition: all 0.33s ease-out;
-  -moz-transition: all 0.33s ease-out;
-  -ms-transition: all 0.33s ease-out;
-  -o-transition: all 0.33s ease-out;
-  transition: all 0.33s ease-out;
   font-size: 17px;
   /* Hiding */
   max-height: 0;
@@ -1562,11 +1552,6 @@ div.box-crew:hover span{
   border-top: none;
   border-bottom: none;
   list-style: none;
-  -webkit-transition: all 0.44s ease-out;
-  -moz-transition: all 0.44s ease-out;
-  -ms-transition: all 0.44s ease-out;
-  -o-transition: all 0.44s ease-out;
-  transition: all 0.44s ease-out;
   font-size: 17px;
   /* Hiding */
   max-height: 0;
@@ -1898,23 +1883,31 @@ div.box-crew:hover span{
 }
 
 .pop-excur-name {
-  font-weight: 500;
-  font-size: 14px;
-  line-height:17px;
-  width: 200px;
-  height: 55px;
-  margin: 0 auto;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -webkit-box-orient: vertical;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  color:#393939;
-  text-align:left;
-  padding-top: 7px;
-  padding-bottom: 10px;
-  text-align: center;
+    font-weight: 500;
+    font-size: 14px;
+    line-height:17px;
+    width: 200px;
+    height: 35px;
+    margin: 0 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    color:#393939;
+    text-align:left;
+    padding-bottom: 10px;
+    text-align: center;
+    margin-bottom: 10px;
 }
+
+.pop-excur-name p {
+    padding-top: 2px;
+}
+
+.pop-excur-name p:first-letter {
+    text-transform: uppercase; 
+   } 
 
 .pop-excur-left {
   text-align: right;
