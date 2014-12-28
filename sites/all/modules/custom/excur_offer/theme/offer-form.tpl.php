@@ -5,18 +5,19 @@
 ?>
 <div class="col-xs-12 excur-offer-type ">
   <div class="col-xs-12 excur-offer-title"><?php print $form['#data']['title']; ?></div>
+  <div class="col-xs-6 excur-offer-info"></div>
   <div class="col-xs-6 excur-offer-info">
-    <p class="excur-offer-text">Каждый день с 18.00 до 20.00
+    <p class="excur-offer-text">
+      <?php print t('Duration') . ' ' . $form['#data']['duration']; ?>
     </p>
   </div>
-  <div class="col-xs-6 excur-offer-info">
-    <p class="excur-offer-text"><?php print t('Duration') . ' ' . $form['#data']['duration']; ?></p>
-  </div>
+
   <?php print render($form['tickets']); ?>
+
   <?php if ($form['tickets']['#type'] == 'data'): ?>
     <div class="col-xs-12 excur-offer-item-sum">
       <div class="col-xs-4 col-xs-offset-5 excur-offer-item-sum-prefix">
-        <?php print t('Total price: ');?>
+        <?php print t('Total price');?>
       </div>
       <div class="col-xs-3 excur-offer-item-sum-inner">
         0
