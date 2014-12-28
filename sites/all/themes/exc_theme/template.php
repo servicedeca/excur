@@ -350,13 +350,15 @@ function exc_theme_preprocess_node__service_other(&$vars) {
   $vars['price'] = $price;
   $image_path = $node->field_image[LANGUAGE_NONE][0]['uri'];
   $vars['image'] = theme('image_style', array(
-    'style_name' => '70x70',
+    'style_name' => '240x160',
     'path' => $image_path,
     'alt' => $node->title,
     'title' => $node->title,
+    'attributes' => array(
+      'class' => array('other-excur-image'),
+    ),
   ));
   $vars['currency'] = excur_currency_get_icon($currency);
-  $vars['title'] = l($node->title, "node/$node->nid");
 }
 
 /**
@@ -535,7 +537,7 @@ function exc_theme_preprocess_node__service_full(&$vars) {
   if (!empty($node->field_slider_images[LANGUAGE_NONE])) {
     foreach ($node->field_slider_images[LANGUAGE_NONE] as $image) {
       $vars['images'][] = theme('image_style', array(
-        'style_name' => '870x653',
+        'style_name' => '719x479',
         'path' => $image['uri'],
         'alt' => t($image['alt']),
         'title' => t($image['title']),
@@ -545,6 +547,12 @@ function exc_theme_preprocess_node__service_full(&$vars) {
     drupal_add_js(EXCUR_FRONT_THEME_PATH . '/js/fotorama.min.js');
     drupal_add_css(EXCUR_FRONT_THEME_PATH . '/css/fotorama.css');
   }
+
+  $city = $wrapper->field_city->value();
+  $city_wrapper = entity_metadata_wrapper('taxonomy_term', $city);
+  $country = $city_wrapper->field_country->value();
+  $continent = taxonomy_term_load($country->field_continent[LANGUAGE_NONE][0]['target_id']);
+  drupal_add_js(array('continentCode' => $continent->field_continent_code[LANGUAGE_NONE][0]['value']), 'setting');
 
   $vars['venue'] = $wrapper->field_start_place->value();
   $vars['meeting_time'] = $wrapper->field_start_time->value();
@@ -1300,6 +1308,7 @@ function exc_theme_preprocess_comment(&$vars) {
     'path' => $path,
     'alt' => $account->field_name[LANGUAGE_NONE][0]['safe_value'],
     'title' => $account->field_name[LANGUAGE_NONE][0]['safe_value'],
+    'attributes' => array('class' => array('excur-comment-photo')),
   ));
 
   $guide_rating = fivestar_get_votes('user', $node->field_guide[LANGUAGE_NONE][0]['target_id'], 'vote', $account->uid);

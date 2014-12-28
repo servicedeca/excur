@@ -1,67 +1,68 @@
 <?php
-
 /**
  * @file
+ * Template for node Service in full view mode.
  */
 ?>
-<article id="node-<?php print $node->nid; ?>" class="contextual-links-region">
-  <?php print render($title_prefix); ?>
-  <h1>
-    <?php print $title; ?>
-  </h1>
-  <?php print render($title_suffix); ?>
-  <?php if (!empty($images)): ?>
-    <div class="fotorama" data-nav="thumbs" data-autoplay="true" data-keyboard="true" data-loop="true" data-swipe="true">
-      <?php foreach($images as $image): ?>
+<?php if (!empty($images)): ?>
+  <div class="col-xs-12 excur-slider">
+    <div class="fotorama" data-autoplay="true" data-nav="none" data-width="720" data-ratio="720/479" data-max-width="100%">
+      <?php foreach ($images as $image): ?>
         <?php print $image; ?>
       <?php endforeach; ?>
     </div>
-  <?php endif; ?>
-  <h2 class="node-description">
-    <?php print t('Description'); ?>
-  </h2>
-  <?php hide($content['links']); ?>
-  <?php print render($content['body']); ?>
-  <div class="row">
+  </div>
+<?php endif;?>
+<div class="col-xs-12 excur-information">
+  <div class="excur-information-text">
+    <?php print render($content['body']); ?>
+  </div>
+</div>
+<?php if (!empty($venue) || !empty($meeting_time)): ?>
+  <div class="col-xs-12 excur-container">
     <?php if (!empty($venue)): ?>
-      <div class="span4">
-        <h2 class="meeting"><?php print t('Venue') . ': '; ?></h2>
-        <?php print $venue; ?>
-      </div>
-    <?php endif; ?>
-    <?php if (!empty($meeting_time)): ?>
-      <div class="span4">
-        <h2 class="meeting"><?php print t('Time of meeting') . ': '; ?></h2>
-        <?php print $meeting_time; ?>
-      </div>
-    <?php endif; ?>
-    <?php if (!empty($content['field_included'])): ?>
-      <div class="span4">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h2 class="included"><?php print t('Included in the price'); ?></h2>
-          </div>
-          <div class="panel-body">
-            <?php print render($content['field_included']); ?>
-          </div>
+      <div class="col-xs-6 excur-place-block">
+        <div class="col-xs-6 excur-place-title">
+          <?php print t('Starting place of the excursion');?>
+        </div>
+        <div class="col-xs-6 excur-place-place">
+          <?php print $venue; ?>
         </div>
       </div>
     <?php endif; ?>
-    <?php if (!empty($content['field_excluded'])): ?>
-      <div class="span4">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h2 class="excluded"><?php print t('Not included'); ?></h2>
-          </div>
-          <div class="panel-body">
-            <?php print render($content['field_excluded']); ?>
-          </div>
+    <?php if (!empty($meeting_time)): ?>
+      <div class="col-xs-6 excur-time-block">
+        <div class="col-xs-6 excur-time-title">
+          <?php print t('Time the excursion starts'); ?>
+        </div>
+        <div class="col-xs-6 excur-time-time">
+          <?php print $meeting_time; ?>
         </div>
       </div>
     <?php endif; ?>
   </div>
-  <div class="space20"></div>
-  <h2 id="reservation" class="node-description">
-    <?php print t('Reservation'); ?>
-  </h2>
-</article>
+<?php endif; ?>
+<?php if (!empty($content['field_included']) || !empty($content['field_excluded'])): ?>
+  <div class="col-xs-12 excur-container">
+    <?php if (!empty($content['field_included'])): ?>
+      <div class="col-xs-6 excur-place-block">
+        <div class="col-xs-6 excur-place-title">
+          <?php print t('Included in the price'); ?>
+        </div>
+        <div class="col-xs-6 excur-include">
+          <?php print render($content['field_included']); ?>
+        </div>
+      </div>
+    <?php endif; ?>
+    <?php if (!empty($content['field_excluded'])): ?>
+      <div class="col-xs-6 excur-time-block">
+        <div class="col-xs-6 excur-time-title">
+          <?php print t('Not included'); ?>
+        </div>
+        <div class="col-xs-6 excur-include">
+          <?php print render($content['field_excluded']); ?>
+        </div>
+      </div>
+    <?php endif; ?>
+  </div>
+<?php endif; ?>

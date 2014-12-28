@@ -76,57 +76,59 @@
   <?php print render($page['content']); ?>
 </div>
 
-<footer class="text-center z-index">
-  <div class="part">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3">
-          <p class="text_part"><?php print t('Partner'); ?></p>
-        </div>
-        <div class="col-lg-3">
-          <p class="text_part"><?php print t('Partner'); ?></p>
-        </div>
-        <div class="col-lg-3">
-          <p class="text_part"><?php print t('Partner'); ?></p>
-        </div>
-        <div class="col-lg-3">
-          <p class="text_part"><?php print t('Partner'); ?></p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer-above z-index">
-    <div class="container">
-      <div class="row">
-        <?php foreach ($footer_menu as $key => $item): ?>
-          <div class="footer-col col-md-4">
-            <h3>
-              <?php print $footer_menu_title[$key]; ?>
-            </h3>
-            <?php if ($key == 1): ?>
-              <ul class="list-inline">
-            <?php else: ?>
-              <ul>
-            <?php endif; ?>
-            <?php foreach ($item as $link): ?>
-              <li>
-                <?php print $link; ?>
-              </li>
-            <?php endforeach;?>
-            </ul>
+<div class="bgf">
+  <footer class="col-xs-12 text-center z-index">
+    <div class="part">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <p class="text_part"><?php print t('Partner'); ?></p>
           </div>
-        <?php endforeach; ?>
-      </div>
-    </div>
-  </div>
-  <div class="footer-below">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          Copyright © Excursionline 2014
+          <div class="col-lg-3">
+            <p class="text_part"><?php print t('Partner'); ?></p>
+          </div>
+          <div class="col-lg-3">
+            <p class="text_part"><?php print t('Partner'); ?></p>
+          </div>
+          <div class="col-lg-3">
+            <p class="text_part"><?php print t('Partner'); ?></p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</footer>
+
+    <div class="footer-above z-index">
+      <div class="container">
+        <div class="row">
+          <?php foreach ($footer_menu as $key => $item): ?>
+            <div class="footer-col col-md-4">
+              <h3>
+                <?php print $footer_menu_title[$key]; ?>
+              </h3>
+              <?php if ($key == 1): ?>
+              <ul class="list-inline">
+                <?php else: ?>
+                <ul>
+                  <?php endif; ?>
+                  <?php foreach ($item as $link): ?>
+                    <li>
+                      <?php print $link; ?>
+                    </li>
+                  <?php endforeach;?>
+                </ul>
+            </div>
+          <?php endforeach; ?>
+        </div>
+      </div>
+    </div>
+    <div class="footer-below">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            Copyright &copy; Excursionline 2014
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>

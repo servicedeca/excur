@@ -1,38 +1,33 @@
-<div class="row comment-item">
-  <div class="span1">
-    <div class="comment-image">
-      <?php print render($user_image) ?>
-    </div>
+<?php
+/**
+ * @file.
+ */
+?>
+<div class="col-xs-12 excur-comment">
+  <div class="col-xs-2 excur-comment-item">
+    <?php print render($user_image) ?>
+    <p><?php print $name ?></p>
   </div>
-  <div class="span8 comment-content">
-    <p class="comment-name">
-      <?php print $name ?>
-      <?php if (!empty($guide_rating)): ?>
-        <span class="comment-ratings">
-          <span>
-            <?php print t('Guide mark') . ': '; ?>
+  <div class="col-xs-10">
+    <div class="excur-comment-body">
+      <div class="excur-coment-head">
+        <?php if (!empty($service_rating)): ?>
+          <span class="rating">
+            <span class="rating-excur"><?php print $service_rating; ?>
+            </span>
+            <?php print t('Excursion'); ?>
           </span>
-          <span class="rating-number">
-            <?php print $guide_rating; ?>
+        <?php endif; ?>
+        <?php if (!empty($guide_rating)): ?>
+          <span class="rating">
+            <span class="rating-guide"><?php print $guide_rating; ?>
+            </span><?php print t('Guide'); ?>
           </span>
-        </span>
-      <?php endif; ?>
-      <?php if (!empty($service_rating)): ?>
-        <span class="comment-ratings">
-          <span>
-            <?php print t('Excursion mark') . ': '; ?>
-          </span>
-          <span class="rating-number">
-            <?php print $service_rating; ?>
-          </span>
-        </span>
-      <?php endif; ?>
-    </p>
-    <p>
-      <?php print $date ?>
-    </p>
-    <p class="comment-text">
+        <?php endif; ?>
+        <div class="excur-comment-date"><?php print $date ?>
+        </div>
+      </div>
       <?php print $comments?>
-    </p>
+    </div>
   </div>
 </div>

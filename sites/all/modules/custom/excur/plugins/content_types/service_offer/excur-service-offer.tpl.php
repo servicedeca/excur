@@ -1,7 +1,8 @@
 <?php if (!empty($offers)): ?>
-  <div class="offers">
-    <?php foreach($offers as $offer): ?>
-      <?php print render($offer); ?>
-    <?php endforeach; ?>
-  </div>
+  <h3 id="excur-all-offers" class="col-xs-12 title-offer">
+    <?php print t('All offers');?>
+  </h3>
+  <?php foreach($offers as $offer): ?>
+    <?php print render($offer); ?>
+  <?php endforeach; ?>
 <?php endif; ?>

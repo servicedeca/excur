@@ -49,8 +49,8 @@ function template_preprocess_excur_service_info(&$vars) {
   $city = taxonomy_term_load($node->field_city[LANGUAGE_NONE][0]['target_id']);
   $country = taxonomy_term_load($city->field_country[LANGUAGE_NONE][0]['target_id']);
 
-  $vars['placement'] = l($city->name, "taxonomy/term/$city->tid");
-  $vars['placement'] .= ', ' . l($country->name, "taxonomy/term/$country->tid");
+  $vars['city'] = $city->name;
+  $vars['country'] = $country->name;
 
   $vars['duration'] = $wrapper->field_duration->value();
 
@@ -71,11 +71,11 @@ function template_preprocess_excur_service_info(&$vars) {
   // Get current rating.
   $rating = fivestar_get_votes('node', $node->nid);
   if (empty($rating['average'])) {
-    $rating = t(' Offer is unrated.');
+    $rating = t('Offer is unrated.');
   }
   else {
-    $rating = round($rating['average']['value'] / 10, 2);
-    $rating = t('Rating: !value/10', array('!value' => $rating));
+    $rating = round($rating['average']['value'] / 100, 2);
+    $rating = preg_replace('/\./', ',', $rating);
   }
   $vars['rating'] = $rating;
 }

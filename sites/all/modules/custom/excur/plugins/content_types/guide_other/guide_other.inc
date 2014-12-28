@@ -10,7 +10,6 @@ function excur_guide_other_ctools_content_types() {
     'title' => t('Other offer guide'),
     'all contexts' => TRUE,
     'category' => t('Excur'),
-    'hook theme' => 'excur_guide_other_content_type_theme',
   );
 }
 
@@ -21,26 +20,10 @@ function excur_guide_other_content_type_render($subtype, $conf, $panel_args, $co
   $block = new stdClass();
   $node = menu_get_object();
 
-  $block->content = '<h1>' . t('Other offers guide') . '</h1>';
+  $block->content = '<div class="col-xs-12 other-excur-guide">';
+  $block->content .= '<h3 class="other-offer-title">' . t('Other offers guide') . '</h3>';
   $block->content .= views_embed_view('content', 'guide_other', $node->field_guide[LANGUAGE_NONE][0]['target_id']);
-  $block->content .= theme('excur_guide_other');
+  $block->content .= '</div>';
 
   return $block;
-}
-
-/**
- * Implements hook_content_type_theme().
- */
-function excur_guide_other_content_type_theme(&$theme, $plugin) {
-  $theme['excur_guide_other'] = array(
-    'path' => $plugin['path'],
-    'template' => 'excur-guide-other',
-  );
-}
-
-/**
- * Process variables for guide_other.tpl.php.
- */
-function template_preprocess_excur_guide_other(&$vars) {
-
 }

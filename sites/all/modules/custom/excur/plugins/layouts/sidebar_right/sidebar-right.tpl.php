@@ -5,23 +5,26 @@
  * Template (admin) for the ob-glossary layout.
  */
 ?>
-<?php if (!empty($content['top'])) : ?>
-  <div class="row">
-    <div class="span12">
+<div class="bg_parralax topline" data-type="background" data-speed="10" style="background-position: 50% 0px;">
+  <div class="continent-name"></div>
+</div>
+<div class="bgf">
+  <?php if (!empty($content['breadcrumb'])) : ?>
+    <?php print $content['breadcrumb']; ?>
+  <?php endif; ?>
+  <div class="excur-body">
+    <?php if (!empty($content['top'])) : ?>
       <?php print $content['top']; ?>
-    </div>
-  </div>
-<?php endif; ?>
-
-<div class="row">
-  <div class="span9">
-    <?php if (!empty($content['content_center'])) : ?>
-      <?php print $content['content_center']; ?>
     <?php endif; ?>
-  </div>
-  <div class="span3">
+    <?php if (!empty($content['content_center'])) : ?>
+      <div class="col-xs-9 padding">
+        <?php print $content['content_center']; ?>
+      </div>
+    <?php endif; ?>
     <?php if (!empty($content['content_right'])) : ?>
-      <?php print $content['content_right']; ?>
+      <div class="col-xs-3 padding">
+        <?php print $content['content_right']; ?>
+      </div>
     <?php endif; ?>
   </div>
 </div>

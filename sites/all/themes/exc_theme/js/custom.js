@@ -35,7 +35,7 @@
     }
   };
 
-  Drupal.behaviors.excurCustomUserRegister = {
+  Drupal.behaviors.excurFlipContinents = {
     attach: function(context, settings) {
       $('.hover').once().hover(function() {
         $(this).addClass('flip');
@@ -65,6 +65,15 @@
             ""
           ]
         });
+      });
+    }
+  };
+
+  Drupal.behaviors.excurScrollTo = {
+    attach: function(context, settings) {
+      $('#excur-order-button').click(function() {
+        var id = $(this).attr('href');
+        $(id).ScrollTo();
       });
     }
   };

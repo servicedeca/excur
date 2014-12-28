@@ -13,7 +13,8 @@ $plugin = array(
   'icon' => 'sidebar_right.png',
   'theme' => 'sidebar-right',
   'regions' => array(
-    'top' => t('Top'),    
+    'breadcrumb' => t('Breadcrumb'),
+    'top' => t('Top'),
     'content_right' => t('Content: right'),
     'content_center' => t('Content: center'),
   ),

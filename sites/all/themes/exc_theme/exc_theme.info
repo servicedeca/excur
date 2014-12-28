@@ -26,4 +26,5 @@ scripts[] = js/waypoints.min.js
 scripts[] = js/touch.js
 scripts[] = js/respond.src.js
 scripts[] = js/owl.carousel.js
+scripts[] = js/jquery-scrollto.js
 scripts[] = js/custom.js
