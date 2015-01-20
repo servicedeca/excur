@@ -1,6 +1,3 @@
-<div class="bg_parralax topline" data-type="background" data-speed="10" style="background-position: 50% 0px;">
-  <div class="continent-name"></div>
-</div>
 <section class="bread-crumbsleft"></section>
 <section class="bread-crumbsright"></section>
 <section class="bread-crumbs-content">
