@@ -51,6 +51,9 @@ function exc_theme_preprocess_page(&$vars, $hook) {
     $vars['login_form'] = drupal_get_form('user_login');
     $vars['register_form'] = drupal_get_form('user_register_form');
   }
+  else {
+    $vars['account'] = l(t('Personal cabinet'), 'user');
+  }
 
   if ($contact_phone = variable_get('excur_contact_phone')) {
     $vars['contact_phone'] = $contact_phone;

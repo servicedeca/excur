@@ -24,9 +24,13 @@
         </div>
       </div>
       <div class="col-xs-4  phone-small-res">
-        <a class="btn head-reg" data-toggle="modal" data-target=".bs-example-modal-md">
-          <?php print t('Login or <br> Create account');?>
-        </a>
+        <?php if (user_is_anonymous()): ?>
+          <a class="btn head-reg" data-toggle="modal" data-target=".bs-example-modal-md">
+            <?php print t('Login or <br> Create account');?>
+          </a>
+        <?php else: ?>
+          <?php print $account; ?>
+        <?php endif; ?>
       </div>
       <div class="col-xs-4 head-border-phone">
         <p class="head-phone">
