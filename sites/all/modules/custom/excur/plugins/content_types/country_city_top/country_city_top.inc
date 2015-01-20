@@ -42,6 +42,7 @@ function excur_country_city_top_content_type_theme(&$theme, $plugin) {
  */
 function template_preprocess_excur_country_city_top(&$vars) {
   global $language;
+  $vars['show_header'] = TRUE;
   $current_term = menu_get_object('taxonomy_term', 2);
   $node = menu_get_object();
 
@@ -168,6 +169,7 @@ function template_preprocess_excur_country_city_top(&$vars) {
     }
   }
   elseif ($node) {
+    $vars['show_header'] = FALSE;
     $current_city = taxonomy_term_load($node->field_city[LANGUAGE_NONE][0]['target_id']);
 
     $cid = 'excur_country_city_top-city:' . $current_city->tid . '-language:' . $language->language;
