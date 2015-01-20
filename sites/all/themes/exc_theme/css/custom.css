@@ -9,3 +9,8 @@ img.currency-img {
 #views-exposed-form-content-city-service {
   display: none;
 }
+
+.button-go,
+.button-go:hover {
+  padding: 8px;
+}

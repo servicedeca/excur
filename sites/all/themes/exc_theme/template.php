@@ -481,13 +481,9 @@ function exc_theme_preprocess_node__service_teaser(&$vars) {
   );
 
   $rating = fivestar_get_votes('node', $node->nid);
-  if (empty($rating['average'])) {
-    $rating = t(' Offer is unrated.');
+  if (!empty($rating['average'])) {
+    $vars['rating'] = round($rating['average']['value'] / 10, 2);
   }
-  else {
-    $rating = round($rating['average']['value'] / 10, 2);
-  }
-  $vars['rating'] = $rating;
 
   $title = t('Excursion rating');
   $vars['icon_star'] = theme('image', array(

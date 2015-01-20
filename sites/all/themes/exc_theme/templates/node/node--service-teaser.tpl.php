@@ -19,10 +19,12 @@
       </a>
     </div>
     <div class="col-xs-4 excur-list-info">
-      <div class="col-xs-12 excur-list-star">
-        <?php print $icon_star; ?>
-        <?php print $rating; ?>
-      </div>
+      <?php if (!empty($rating)): ?>
+        <div class="col-xs-12 excur-list-star">
+          <?php print $icon_star; ?>
+          <?php print $rating; ?>
+        </div>
+      <?php endif; ?>
       <div class="col-xs-12 excur-list-time">
         <?php print $icon_time; ?>
         <?php print $content['field_duration']['#items'][0]['safe_value']; ?>
@@ -35,9 +37,9 @@
         </div>
         <div class="col-xs-4 excur-list-gid-name">
           <div class="pop-excur-gid">
-            Гид
+            <?php print t('Guide'); ?>
             <div class="pop-excur-gid-name">
-              Алексей
+              <?php print $guide['title']; ?>
             </div>
           </div>
         </div>
@@ -63,7 +65,7 @@
     </div>
     <div class="col-xs-12 excur-list-button">
       <a href="<?php print url('node/' . $node->nid); ?>" class="button-go">
-        <?php print t('Book an excursion'); ?>
+        <?php print t('Book'); ?>
       </a>
     </div>
   </div>
