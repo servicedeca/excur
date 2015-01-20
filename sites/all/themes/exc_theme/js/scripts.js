@@ -9,5 +9,4 @@ jQuery(document).ready(function() {
       offset: '75%',
       triggerOnce: true
     });
-
 });

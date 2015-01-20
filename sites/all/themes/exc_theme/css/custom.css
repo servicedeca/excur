@@ -5,3 +5,7 @@
 img.currency-img {
   width: 50px;
 }
+
+#views-exposed-form-content-city-service {
+  display: none;
+}

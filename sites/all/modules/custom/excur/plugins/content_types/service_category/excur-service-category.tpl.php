@@ -6,7 +6,7 @@
   <section class="excur-list-category">
     <?php foreach ($categories as $category): ?>
       <div class="col-xs-2 category-item">
-        <a id="category-<?php print $category['id']; ?>" href="#">
+        <a href data-tid="<?php print $category['id']; ?>">
           <div class="col-xs-12 category-item-icon">
             <?php print $category['icon']; ?>
           </div>
@@ -18,7 +18,7 @@
         </a>
       </div>
     <?php endforeach; ?>
-    <a id="category-0" href="#">
+    <a href data-tid="All">
       <div class="col-xs-12 categiry-item-all">
         <?php print t('Show all excursions'); ?>
       </div>

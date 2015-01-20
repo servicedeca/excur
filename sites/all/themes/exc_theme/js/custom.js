@@ -1,15 +1,13 @@
 (function ($, Drupal, window, document, undefined) {
 
-  Drupal.behaviors.excurLanguageSwitcher = {
+  Drupal.behaviors.excurSwitcher = {
     attach: function(context, settings) {
+      // Language
       $('#language-switcher label').once().click(function() {
         window.location = $(this).data('url');
       });
-    }
-  };
 
-  Drupal.behaviors.excurCurrencySwitcher = {
-    attach: function(context, settings) {
+      // Currency
       $('#currency-switcher label').once().click(function() {
         $.cookie('excur_currency', $(this).data('currency'), {expires: 86400, path: '/'});
         location.reload();
@@ -74,6 +72,18 @@
       $('#excur-order-button').click(function() {
         var id = $(this).attr('href');
         $(id).ScrollTo();
+      });
+    }
+  };
+
+  Drupal.behaviors.excurServiceCategory = {
+    attach: function(context, settings) {
+      $('section.excur-list-category a').once().click(function(e) {
+        e.preventDefault();
+
+        var tid = $(this).data('tid');
+        $('#views-exposed-form-content-city-service #edit-field-category-tid').val(tid);
+        $('#views-exposed-form-content-city-service #edit-submit-content').click();
       });
     }
   };
