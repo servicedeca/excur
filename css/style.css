@@ -18,6 +18,8 @@ body *{
   font-family: 'Segoe UI';
 }
 
+
+
 p {
   padding-top: 5px;
   max-height: 999999px;
@@ -3296,8 +3298,9 @@ div.box-crew:hover span{
   padding-top: 4px;
   background: #2664AF;
   width: 224px;
+color:#fff;
   left: 0px;
-  padding-top: 10px;
+  padding-top: 7px;
 }
 
 .line-height-zero {
@@ -6614,4 +6617,8 @@ height: 35px;
 
 .pif{
 	fill:#eee;
+}
+
+.white{
+	background: #fff;
 }
