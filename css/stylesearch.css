@@ -20,16 +20,17 @@
 	transition-property:opacity;
 	transition-duration:150ms;
 	transition-timing-function:ease;
-	position:fixed;
+	position:relative;
 	z-index:2;
-    left:50%;
-    margin-left: -210px;
-    margin-top: 50px;
+    margin-top: 60px;
+	float: left;
+	width: 100%;
 }
 
-@media(max-width:991px){
+@media(max-width:996px){
 .form form{
-    margin-top: 250px;
+	position: relative;
+	margin-top: 50px;
     }
 }
 
@@ -269,7 +270,7 @@
 }
 .form input,.form select,.form textarea
 {
-	background:transparent;
+	background:rgba(26, 26, 26, 0.6);
 	color:#fff;
     border:2px solid #1e1b1b;
 }
@@ -285,9 +286,9 @@
 }
 .form input[type="submit"]
 {
-	border-color:#1e1b1b;
-	background:transparent;
-	color:#a9aaaa;
+	border-color:rgba(187, 43, 51, 0.6);
+	background:rgba(187, 43, 51, 0.6);
+	color:#eee;
 }
 .form input[type="submit"]:hover,.form input[type="submit"]:focus
 {
@@ -303,19 +304,19 @@
 }
 .form .input ::-webkit-input-placeholder,.form .buttons ::-webkit-input-placeholder,.form .select ::-webkit-input-placeholder
 {
-	color:#a9aaaa;
+	color:#eee;
      font-size: 17px;
     padding-top: 5px;
 }
 .form .input :-moz-placeholder,.form .buttons :-moz-placeholder,.form .select :-moz-placeholder
 {
-	color:#a9aaaa;
+	color:#eee;
     font-size: 17px;
     padding-top: 5px;
 }
 .form .input ::-moz-placeholder,.form .buttons ::-moz-placeholder,.form .select ::-moz-placeholder
 {
-	color:#a9aaaa;
+	color:#eee;
     font-size: 17px;
     padding-top: 5px;
 }
