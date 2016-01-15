@@ -3779,7 +3779,7 @@ footer {
 .modal-pay-form-mini {
   height:30px;
   border-radius: 0px;
-  border:1px solid #A33131;
+  border:1px solid #4c4c4c;
   background: #EDECEC;
   font-size: 18px;
   margin-top: -10px;
@@ -3932,11 +3932,15 @@ footer {
 .modal-pay-main-form {
   height:45px;
   border-radius: 0px;
-  border:1px solid #A33131;
+  border:1px solid #4c4c4c;
   background: #EDECEC;
   font-size: 18px;
   letter-spacing: 0px;
   color:#4A4A4C;
+}
+
+.modal-pay-main-form-error{
+	border: 1px solid #ff0000;
 }
 
 .modal-form-title {
@@ -4013,6 +4017,23 @@ footer {
   background: #fff;
   height:280px;
   display:none;
+}
+
+.empty-modal-body{
+	height: 400px;
+	background: #fff;
+	padding-top: 50px;
+}
+
+.empty-modal-body p{
+	color:#4c4c4c;
+	font-size: 18px;
+	padding-left: 50px;
+}
+
+
+.empty-modal-container{
+	margin: 0 auto;
 }
 
 .modal-pay-form-container-button {

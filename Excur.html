@@ -413,6 +413,7 @@
                         <div class="col-xs-12 excur-offer-type ">
                             <div class="col-xs-12 excur-offer-title">Стандартное предложение
                             </div>
+                            <input class="button-go" id="excur-offer-button"  data-toggle="modal" data-target=".bs-example-empty" value="Пустая" type="button">
                             <div class="col-xs-6 excur-offer-info">
                                 <p class="excur-offer-text">Каждый день с 18.00 до 20.00
                                 </p>
@@ -468,7 +469,7 @@
                                 <input type="text" class="form-control" id="excur-offer-date-form" placeholder="Выберите дату...">
                             </div>
                             <div class="col-xs-4 excur-order-button">
-                                      <input class="button-go" id="excur-offer-button"  data-toggle="modal" data-target=".bs-example" value="Забронировать" type="button">
+                                      <input class="button-go" id="excur-offer-button"  data-toggle="modal" data-target=".bs-example-pay" value="Забронировать" type="button">
                             </div>
                         </div>                
  
@@ -851,13 +852,13 @@
                             <p class="modal-form-tip">Внесите ваши контактные данные, что бы гид мог связаться с вами во время путешествия.
                             </p>
                             <div class="col-xs-12 modal-form-item">
-                                   <input type="text" placeholder="Фамилия" class="form-control modal-pay-main-form">
+                                   <input type="text" placeholder="Фамилия" class="form-control modal-pay-main-form modal-pay-main-form-error">
                             </div>
                             <div class="col-xs-12 modal-form-item">
-                                   <input type="text" placeholder="Имя"  class="form-control modal-pay-main-form">
+                                   <input type="text" placeholder="Имя"  class="form-control modal-pay-main-form modal-pay-main-form-error">
                             </div>
                             <div class="col-xs-12 modal-form-item">
-                                   <input type="text" placeholder="Email" class="form-control modal-pay-main-form">
+                                   <input type="text" placeholder="Email" class="form-control modal-pay-main-form modal-pay-main-form-error">
                             </div>
                             <div class="col-xs-12 modal-form-item">
                                    <input type="text" placeholder="Телефон" class="form-control modal-pay-main-form">
@@ -897,6 +898,25 @@
         </div>
         </div>
         <!-- END MODAL -->
+        
+
+                                
+                        
+                        
+                        
+                                
+                <!-- MODAL -->                     
+        <div class="modal fade bs-example-empty" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+				<div class="content-modal-container empty-modal-container">
+					<div class="col-xs-12 empty-modal-body">
+						<p>ОШИБКА</p>
+						<p>ОШИБКА</p>
+					</div>
+				</div>
+        </div>
+        <!-- END MODAL -->
+                        
+        
         <div class="bgf"> 
                          <!-- Footer -->
                
