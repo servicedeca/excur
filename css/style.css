@@ -4997,11 +4997,12 @@ margin-left: -15px;
   color:#848484;
   margin-bottom: 5px;
   padding: 0px;
-  margin-left: 15px;
+  margin-left: 35px;
 }
 
 .check-profile {
   margin-right:5px;
+	margin-left: 0px;
 }
 
 .text-config {
@@ -5012,6 +5013,7 @@ margin-left: -15px;
   margin-top: 50px;
   margin-bottom: -50px;
 }
+
 
 
 
@@ -6644,4 +6646,8 @@ height: 35px;
 
 .white{
 	background: #fff;
+}
+
+.checkbox label{
+	padding-left: 0px;
 }
