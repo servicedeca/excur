@@ -4410,6 +4410,20 @@ footer {
 
 .user-profile-sidebar .user-profile-avatar img {
   width: 240px;
+	display: none;
+}
+
+.empty-avatar{
+  width: 240px;
+	display: none;
+}
+
+.empty-avatar p {
+  width: 240px;
+	height: 300px;
+    line-height: 180px;
+	height: 200px;
+	font-size: 18px;
 }
 
 .user-profile-sidebar .user-profile-avatar h5 {
@@ -4418,13 +4432,15 @@ footer {
   font-size: 16px;
 }
 
-.user-profile-sidebar .user-profile-avatar p {
-  font-size: 10px;
-}
 
 .user-profile-sidebar .user-profile-nav > li {
   text-align: right;
+}
 
+.download-avatar{
+	height: 200px;
+	width: 240px;
+    background: url(/images/oval.svg) 52% 40% no-repeat;
 }
 
 
