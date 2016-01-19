@@ -1724,7 +1724,8 @@ div.box-crew:hover span{
   z-index: 20;
   padding-top: 0px;
   border-bottom:2px solid #9E3F3F;
-  margin-top: 10px;
+  margin-top: 0px;
+	padding-top: 10px;
     padding-bottom: 15px;
 }
 
@@ -1756,14 +1757,18 @@ div.box-crew:hover span{
   height: 32px;
 }
 
-
+.pane-content{
+	background: #fff;
+}
 
 
 
 .pop-gid {
   width: 960px;
   margin: 0 auto;
-  margin-top: 10px;
+  margin-top: 0px;
+	padding-top: 10px;
+	background: #fff;
 }
 
 .pop-gid a {
@@ -1791,7 +1796,9 @@ div.box-crew:hover span{
 }
 
 .pop-excur {
-  margin-top:10px;
+  margin-top:0px;
+	padding-top: 10px;
+	background: #fff;
 }
 
 .pop-excur-info-line {
@@ -6666,4 +6673,15 @@ height: 35px;
 
 .checkbox label{
 	padding-left: 0px;
+}
+
+.comment-form{
+	margin-bottom: 75px;
+	float: left;
+	margin-top: 50px;
+	margin-left: -100px;
+}
+
+.comment-form a{
+	color:#4c4c4c;
 }
