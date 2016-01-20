@@ -276,7 +276,9 @@
                     </ul>
                 </div> 
                 </div>
-            </section>    
+            </section>   
+            
+              
         <div class="excur-body">
             <h1 class="excur-title">Мистическая Венеция: легенды и призраки района Дорсодуро               </h1>
             <div class="col-xs-9 padding white">
@@ -588,8 +590,9 @@
            </div> 
             <div class="col-xs-3 excur-contacts-item-gid"> 
                 <img src="images/gid3.png"  class="excur-contacts-gid-photo">
-                <a href="#" class="question-button" id="excur-contacts-guide-button">Написать гиду
+                <a href="#" data-toggle="modal" data-target=".bs-example-wright" class="question-button" id="excur-contacts-guide-button">Написать гиду
                 </a>
+                
             </div>
             <div class="col-xs-12 other-excur-guide">
             <h3 class="other-offer-title">Другие предложения гида</h3>
@@ -636,6 +639,7 @@
             </div>
             </div>
         </div>   
+	</div>
         
         <!-- MODAL -->                     
         <div class="modal fade bs-example" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
@@ -932,10 +936,44 @@
                                 
                 <!-- MODAL -->                     
         <div class="modal fade bs-example-empty" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-				<div class="content-modal-container empty-modal-container">
+				<div class="content-modal-container empty-modal-container mt-10">
 					<div class="col-xs-12 empty-modal-body">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						<img class="close-modal-img" src="http://excursionline.ru/sites/all/themes/exc_theme/images/close.png" alt="">    </button>
 						<p>ОШИБКА</p>
 						<p>ОШИБКА</p>
+					</div>
+				</div>
+        </div>
+        <!-- END MODAL -->
+
+
+                <!-- MODAL -->                     
+        <div class="modal fade bs-example-wright" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+				<div class="content-modal-container empty-modal-container mt-10">
+					<div class="col-xs-12 empty-wright-body">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						<img class="close-modal-img" src="http://excursionline.ru/sites/all/themes/exc_theme/images/close.png" alt="">
+						</button>
+						
+		
+							<div class="col-xs-12">
+								<label>Тема </label>
+								</div>
+								<div class="col-xs-12">
+									<input type="text" name="subject" value="Вопрос по предложению &quot;«Огни Большого Города»&quot;" size="50" maxlength="255" class="form-text">
+								</div>
+							<div class="col-xs-12">
+								<label for="edit-body-value">Сообщение </label>
+							</div>
+							<div class="col-xs-12">
+								<textarea class="ckeditor-mod form-textarea ckeditor-processed" id="edit-body-value" name="body[value]" cols="60" rows="6" style="opacity: 1; height: 145px;"></textarea>
+							</div>
+							<div class="col-xs-12">
+								<input class="btn form-submit" type="submit" id="edit-submit--7" name="op" value="Отправить сообщение">
+							</div>
+				
+						
 					</div>
 				</div>
         </div>

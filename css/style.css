@@ -4032,12 +4032,28 @@ footer {
 	padding-top: 50px;
 }
 
+
 .empty-modal-body p{
 	color:#4c4c4c;
 	font-size: 18px;
 	padding-left: 50px;
 }
 
+.empty-wright-body{
+	height: 400px;
+	background: #fff;
+	padding-top: 50px;
+	padding-top: 65px;
+}
+
+.empty-wright-body label{
+	margin-top: 15px;
+}
+
+.empty-wright-body textarea{
+	height: 400px;
+	background: #fff;
+}
 
 .empty-modal-container{
 	margin: 0 auto;
@@ -6684,4 +6700,8 @@ height: 35px;
 
 .comment-form a{
 	color:#4c4c4c;
+}
+
+.mt-10{
+	margin-top: 10%;
 }
