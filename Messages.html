@@ -228,15 +228,13 @@
                 <h1 class="office-name"><b>Виктор</b> Гидовски</h1>
                 <h2 class="office-place">Новосибирск, Россия</h2>
                 <h3 class="office-title">Мои сообщения</h3>
-
-                    <select  name="operation" class="form-select form-message">
-                        <option value="0" data-content="Действия...">Действия...</option>
-                        <option  data-content="Пометить как прочитанное">Пометить как прочитанное</option>
-                        <option  data-content="Пометить как не прочитанное">Пометить как не прочитанное</option>
-                        <option  data-content="Пометить как не прочитанное">Удалить</option>
-                    </select>
                     
                 <div class="panelc">
+                   
+                   
+                   <div class="container-inline"><select id="edit-operation" name="operation" class="form-select ajax-processed"><option value="0" data-content="Действия...">Действия...</option><option value="mark as read" data-content="Пометить как прочитанное">Пометить как прочитанное</option><option value="mark as unread" data-content="Пометить как не прочитанное">Пометить как не прочитанное</option></select>
+                   <input type="submit" id="edit-delete" name="op" value="Удалить" class="form-submit ajax-processed"> 
+<input class="form-item form-submit" type="submit" id="edit-submit" name="op" value="Выполнить" style="display: none;"></div>
                     <!-- Table -->
                     
                     <table class="sticky-header table-select-processed">

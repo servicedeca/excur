@@ -5956,6 +5956,42 @@ chat
     margin-top: 15px;
 }
 
+.panelc select {
+	height: 40px;
+	outline: none;
+	cursor: pointer;
+	margin-bottom: 15px;
+	margin-left: 15px;
+	margin-top: 15px;
+}
+
+#edit-delete{
+	height: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+	color:#eee;
+	border: none;
+	background: #4f93aa;
+	  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -ms-transition: 0.3s;
+  transition: 0.3s;
+	
+}
+
+#edit-delete:hover{
+  background: #386977;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -ms-transition: 0.3s;
+  transition: 0.3s;
+	
+}
+
+
+
 #message-table {
      margin-bottom: 0px;
 	margin-top: 100px;
