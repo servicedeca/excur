@@ -235,60 +235,50 @@
                         <option  data-content="Пометить как не прочитанное">Пометить как не прочитанное</option>
                         <option  data-content="Пометить как не прочитанное">Удалить</option>
                     </select>
+                    
                 <div class="panelc">
                     <!-- Table -->
-                    <table class="table" id="message-table">
-                        <thead class="head-panel-message">
-                            <tr>
-                                <th></th>
-                                <th>Тема</th>
-                                <th>Участники</th>
-                                <th>Обновление</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="message-read">
-                                    <td><input type="checkbox" class="form-checkbox"></td>
-                                    <td>
-                                        <a href="Chat.html">Нажми сюда</a>
-                                    </td>
-                                    <td>Usel</td>
-                                    <td>Май 31</td>
-                            </tr>
-                            <tr class="message-read">
-                                <td><input type="checkbox" class="form-checkbox" title="Отметить все строки таблицы"></td>
-                                <td>
-                                    <a href="Chat.html">Вопрос по предложению "Услуга в Москве 1"</a>
-                                </td>
-                                <td>Nikolay</td>
-                                <td>Окт. 9</td>
-                            </tr>
-                            <tr class="message-unread">
-                                <td><input type="checkbox" class="form-checkbox" title="Отметить все строки таблицы"></td>
-                                <td>
-                                    <a href="#">Вопрос по предложению "Услуга в Москве 1"</a>
-                                </td>
-                                <td>Elena</td>
-                                <td>Авг. 13</td>
-                            </tr>
-                            <tr class="message-unread">
-                                <td><input type="checkbox" class="form-checkbox" title="Отметить все строки таблицы"></td>
-                                <td>
-                                    <a href="Chat.html">Вопрос по предложению "Услуга в Москве 1"</a>
-                                </td>
-                                <td>Usel</td>
-                                <td>Май 31</td>
-                            </tr>
-                            <tr class="message-read">
-                                <td><input type="checkbox" class="form-checkbox" title="Отметить все строки таблицы"></td>
-                                <td>
-                                    <a href="#">Вопрос по предложению "Услуга в Москве 1"</a>
-                                </td>
-                                <td>Nikolay</td>
-                                <td>Окт. 9</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    
+                    <table class="sticky-header table-select-processed">
+						<thead style="">
+						<tr>
+							<th class="select-all">
+								<input type="checkbox" class="form-checkbox" title="Отметить все строки таблицы">
+							</th>
+							<th class="my-privatemsg-header-subject active">
+								<a href="/ru/user/81/messages?sort=desc&amp;order=%D0%A2%D0%B5%D0%BC%D0%B0" title="сортировать по Тема" class="active">Тема
+								<img src="http://excursionline.ru/misc/arrow-desc.png" width="13" height="13" alt="сортировать по убыванию" title="сортировать по убыванию">
+								</a>
+							</th>
+							<th class="my-privatemsg-header-participants">Участники</th>
+							<th class="my-privatemsg-header-lastupdated">
+								<a href="/ru/user/81/messages?sort=asc&amp;order=%D0%9F%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BD%D0%B5%D0%B5%20%D0%BE%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5" title="сортировать по Последнее обновление" class="active">Последнее обновление</a>
+							</th>
+						</tr>
+						</thead>
+						<tbody>
+							<tr class="odd">
+							<td>
+								<input class="privatemsg-list form-checkbox" type="checkbox" id="edit-list-9" name="list[9]" value="9">
+							</td>
+							<td class="my-privatemsg-list-subject">
+								<a href="/ru/messages/view/9">Вопрос по предложению "Прогулка по Красному"</a>
+							</td>
+							<td class="my-privatemsg-list-participants">
+								<a href="/ru/guide/usolcev-vn-80" title="Информация о пользователе." class="username">usel</a></td><td class="my-privatemsg-list-date">8/13/14</td>
+							</tr>
+							<tr class="odd">
+							<td>
+								<input class="privatemsg-list form-checkbox" type="checkbox" id="edit-list-9" name="list[9]" value="9">
+							</td>
+							<td class="my-privatemsg-list-subject">
+								<a href="/ru/messages/view/9">Вопрос по предложению "Прогулка по Красному"</a>
+							</td>
+							<td class="my-privatemsg-list-participants">
+								<a href="/ru/guide/usolcev-vn-80" title="Информация о пользователе." class="username">usel</a></td><td class="my-privatemsg-list-date">8/13/14</td>
+							</tr>
+						</tbody>
+					</table>
                 </div>
                        
                         </div>

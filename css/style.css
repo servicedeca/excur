@@ -5958,6 +5958,7 @@ chat
 
 #message-table {
      margin-bottom: 0px;
+	margin-top: 100px;
 }
 
 .head-panel-message a:hover{
@@ -6704,4 +6705,45 @@ height: 35px;
 
 .mt-10{
 	margin-top: 10%;
+}
+
+.content A {
+    color: #4c4c4c;
+}
+
+
+.my-privatemsg-list-subject a{
+	color:#4c4c4c;
+	padding-right: 15px;
+}
+
+.my-privatemsg-list-subject a:hover{
+	text-decoration: underline;
+}
+
+.table-select-processed tr{
+	border-bottom: 1px solid #b2b2b2;
+}
+
+.table-select-processed tbody tr:last-child {
+	border-bottom: none;
+}
+
+.table-select-processed td, th{
+	padding-top: 7px;
+	padding-bottom: 7px;
+	padding-left: 15px;
+}
+
+.table-select-processed thead tr{
+		border-bottom: 2px solid #b2b2b2;
+}
+
+.table-select-processed thead a{
+	color:#1a1a1a;
+}
+
+
+.table-select-processed th:nth-child(2) {
+	width: 320px;
 }
