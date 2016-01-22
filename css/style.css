@@ -2258,6 +2258,8 @@ div.box-crew:hover span{
   color:#4A4A4C;
   text-align: center;
   letter-spacing: 1px;
+	padding-top: 15px;
+	margin-top: 0px;
 
 }
 
@@ -2291,6 +2293,7 @@ div.box-crew:hover span{
   margin-top: 0px;
   padding: 0px;
   height:350px;
+	background: #fff;
 }
 
 .pop-city-item {
@@ -5959,7 +5962,7 @@ chat
 	margin-top: 15px;
 }
 
-.panelc #edit-delete{
+.container-inline input{
 	height: 40px;
 	padding-left: 10px;
 	padding-right: 10px;
@@ -5976,7 +5979,7 @@ chat
 	margin-top: 15px;
 }
 
-#edit-delete:hover{
+.container-inline input:hover{
   background: #386977;
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
