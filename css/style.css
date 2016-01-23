@@ -2273,7 +2273,7 @@ div.box-crew:hover span{
   margin:0 auto;
   padding-right: 25px;
   padding-top: 35px;
-  margin-bottom: 25px;
+  padding-bottom:35px;
 }
 
 .pop-title-prefix {
@@ -2358,6 +2358,7 @@ div.box-crew:hover span{
   width:960px;
   margin: 0 auto;
   height:600px;
+	background: #fff;
 }
 
 .excur-list-content {
@@ -2520,6 +2521,7 @@ div.box-crew:hover span{
   width: 960px;
   margin: 0 auto;
   height:520px;
+	background: #fff;
 }
 
 .pop-title-prefix-travel {
@@ -2583,6 +2585,7 @@ div.box-crew:hover span{
   width: 960px;
   height:310px;
   margin-bottom: 25px;
+	background: #fff;
 }
 
 .category-item {
@@ -3252,7 +3255,7 @@ div.box-crew:hover span{
   padding-top:10px;
   padding-bottom:10px;
   color: #697371;
-  margin-left: 50px;
+  margin-left: 25px;
 }
 
 .excur-offer-item {
@@ -3295,16 +3298,16 @@ div.box-crew:hover span{
   height:50px;
 }
 
-#excur-offer-button {
-  position: absolute;
-  height:50px;
-  font-size:20px;
-  padding-top: 4px;
-  background: #2664AF;
-  width: 224px;
-color:#fff;
-  left: 0px;
-  padding-top: 7px;
+.#excur-offer-button {
+	position: absolute;
+	height:50px;
+	font-size:20px;
+	padding-top: 4px;
+	background: #2664AF;
+	width: 224px;
+	color:#fff;
+	left: 0px;
+	padding-top: 0px;
 }
 
 .line-height-zero {
@@ -3430,6 +3433,11 @@ color:#fff;
   padding-top: 25px;
   padding-bottom: 25px;
   font-size: 30px;
+	background: #fff;
+}
+
+input[type="radio"], input[type="checkbox"]{
+	outline: none;
 }
 
 .excur-contacts-item-price {
@@ -5176,7 +5184,7 @@ margin-left: -15px;
   position: fixed;
   margin: 0 auto;
   left: 50%;
-  top: 100px;
+  top: 150px;
   z-index: -10;
   margin-left: -185px;
 }
@@ -5201,7 +5209,7 @@ margin-left: -15px;
   text-align: center;
   letter-spacing: 3px;
   position: fixed;
-  top: 100px;
+  top: 150px;
   z-index: -10;
   right: 10%;
 }
@@ -5232,7 +5240,7 @@ margin-left: -15px;
   text-align: center;
   letter-spacing: 3px;
   position: fixed;
-  top: 100px;
+  top: 150px;
   z-index: -10;
   right: 20%;
 }
@@ -5266,7 +5274,7 @@ margin-left: -15px;
   position: fixed;
   margin: 0 auto;
   left: 50%;
-  top: 100px;
+  top: 150px;
   z-index: -10;
   margin-left: -165px;
 }
@@ -5989,7 +5997,11 @@ chat
 	
 }
 
-
+div.warning{
+	margin-top: 7px;
+	margin-left: 15px;
+	margin-right: 15px;
+}
 
 #message-table {
      margin-bottom: 0px;
