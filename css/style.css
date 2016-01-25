@@ -4459,7 +4459,6 @@ footer {
 
 .user-profile-sidebar .user-profile-avatar img {
   width: 240px;
-	display: none;
 }
 
 .empty-avatar{
@@ -6006,6 +6005,11 @@ chat
 	margin-left: 250px;
 	position: absolute;
 	margin-top: 15px;
+}
+
+
+.panelc form#privatemsg-list div.container-inline * {
+   	margin-left: 250px;
 }
 
 .container-inline input:hover{
