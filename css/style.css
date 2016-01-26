@@ -80,12 +80,12 @@ li {
 }
 
 .formreg {
-  height:400px;
+ width: 400px;
   margin-top: 35px;
 }
 
 .formenter {
-  height:200px;
+  width: 400px;
   margin-top: 35px;
 }
 
@@ -150,9 +150,14 @@ li {
   margin-bottom:5px;
 }
 
+.modal-registration-item p {
+  padding: 0px;
+  margin-bottom:5px;
+}
+
 .modal-registration-form {
   border-radius: 0px;
-  width:75%;
+  width:90%;
   margin: 0 auto;
   height: 45px;
   border:1px solid #676767;
@@ -4145,16 +4150,28 @@ footer {
 .input-icon {
   width: 45px;
   position: absolute;
-  margin-left: 55px;
+  margin-left: 18px;
 }
 
 .modal-confirm-check {
-  width: 60%;
+  width: 75%;
   margin: 0 auto;
   font-size: 15px;
   margin-top: 15px;
 }
 
+.error-reg-block{
+	margin: 0px;	
+	margin-top: 10px;
+}
+
+.error-reg-block p{
+	margin: 0px;
+	margin-bottom: 5px;
+	color:#4c4c4c;
+	font-size: 14px;
+	 padding-left: 25px;
+}
 
 
 .modal-registration-item-next {
@@ -4165,6 +4182,7 @@ footer {
 .modal-registration-button {
   padding: 0px;
   margin-top: 10px;
+  min-height: 100px;
 }
 
 .registration-button {
