@@ -6832,3 +6832,14 @@ height: 35px;
 .table-select-processed th:nth-child(2) {
 	width: 320px;
 }
+
+.thx_for_reg{
+	text-align: center;
+}
+
+.thx_for_reg p{
+	color:#1a1a1a;
+	font-size: 18px;
+	margin-top: 35px;
+	margin-bottom: 35px;
+}
