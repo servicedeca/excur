@@ -6609,6 +6609,7 @@ height: 35px;
 @media(max-width:996px) {
   .partners-line{
     width: 996px;
+	  margin-top: 100px;
   }
 }
 
