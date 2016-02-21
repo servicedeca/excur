@@ -972,11 +972,11 @@ text-transform: uppercase;
 }
 
 .content A {
-  color: white; /* Цвет ссылок */
+  color: #4c4c4c; /* Цвет ссылок */
 }
 
 .content A:active {
-  color: #c4c4c4; /* Цвет активных ссылок */
+  color: #1a1a1a; /* Цвет активных ссылок */
 }
 
 .listEUR {
@@ -3301,6 +3301,7 @@ div.box-crew:hover span{
 .excur-order-button {
   text-align: center;
   height:50px;
+	color:#fefefe;
 }
 
 .#excur-offer-button {
@@ -4051,7 +4052,7 @@ footer {
 
 .empty-wright-body{
 	height: 400px;
-	background: #fff;
+	background: #f8f8f8;
 	padding-top: 50px;
 	padding-top: 65px;
 }
@@ -6849,4 +6850,33 @@ height: 35px;
     margin-left: 177px;
     margin-top: 7px;
 }
+
+.field-name-field-image{
+	margin-left: 100px; 
+}
+
+.close{
+  opacity:0.8;
+}
+
+.excur-offer-button {
+    position: absolute;
+    height: 50px;
+    font-size: 20px;
+    padding-top: 4px;
+    background: #2664AF;
+    width: 224px;
+    left: 0px;
+    padding-top: 4px;
+}
+
+.empty-wright-body p{
+   font-size: 18px;
+	padding: 75px;
+	padding-top: 150px;
+	color:#1a1a1a;
+}
+
+.nav-tabs > li > a {
+   color:#1a1a1a;
 }
