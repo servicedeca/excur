@@ -4633,7 +4633,12 @@ footer {
   padding-top: 5px;
 }
 
-.offer-list-button {
+.offer-list-button{
+   width: 649px;
+	height: 30px;
+}
+
+.offer-list-but {
 	position: absolute;
 	padding: 0px 0px 0px 0px;
 	height: 30px;
