@@ -971,14 +971,6 @@ text-transform: uppercase;
   padding-bottom: 10px;
 }
 
-.content A {
-  color: #4c4c4c; /* Цвет ссылок */
-}
-
-.content A:active {
-  color: #1a1a1a; /* Цвет активных ссылок */
-}
-
 .listEUR {
   margin-top: 100px;
 }
@@ -1684,31 +1676,6 @@ div.box-crew:hover span{
 #AM .border-top{
   border-top: 8px solid #045f63;
 }
-
-#EUR .category-item-border{
-  border-top:5px solid #399fa2;
-}
-
-#ASIA .category-item-border{
-  border-top:5px solid #c12f2f;
-}
-
-#RUS .category-item-border{
-  border-top:5px solid #4c8563;
-}
-
-#AFR .category-item-border{
-  border-top:5px solid #f2911b;
-}
-
-#AM .category-item-border{
-  border-top:5px solid #045f63;
-}
-
-#AUS .category-item-border{
-  border-top:5px solid #3d76a5;
-}
-
 
 .pop-gid-name {
   color:#393939;
@@ -2480,11 +2447,12 @@ div.box-crew:hover span{
 }
 
 .excur-price {
-  margin-top: 50px;
-  width:125px;
-  color:#393939;
-  font-size: 30px;
-  font-weight: 300;
+	margin-top: 50px;
+	width: 225px;
+	margin-left: -50px;
+	color: #393939;
+	font-size: 30px;
+	font-weight: 300;
 }
 
 .iconstar-list {
@@ -2609,7 +2577,6 @@ div.box-crew:hover span{
 }
 
 .category-item-border {
-  border-top:5px solid #3AA0A3;
   font-size:14px;
   color: #6D6E70;
   position: relative;
@@ -2672,7 +2639,8 @@ div.box-crew:hover span{
 }
 
 .gid-name-first {
-  font-size: 50px;
+  font-size: 30px;
+line-height: 33px;
   color:#58585B;
 }
 
@@ -2817,7 +2785,7 @@ div.box-crew:hover span{
 
 .button-go-pop{
   width: 225px;
-  left: 0px;
+  left: 16px;
   top: 322px;
   position: absolute;
 }
@@ -2975,12 +2943,14 @@ div.box-crew:hover span{
 }
 
 #excur-order-button {
-  width:242px;
-  position: absolute;
-  height:40px;
-  padding: 30px 0px 40px 0px;
-  font-size: 25px;
-  bottom: 0px;
+	width:242px;
+	position: absolute;
+	height:40px;
+	padding: 30px 0px 40px 0px;
+	font-size: 25px;
+	bottom: 0px;
+	left: 31px;
+	color:#fff;
 }
 
 #excur-order-button a{
@@ -6851,10 +6821,6 @@ height: 35px;
     margin-top: 7px;
 }
 
-.field-name-field-image{
-	margin-left: 100px; 
-}
-
 .close{
   opacity:0.8;
 }
@@ -6879,4 +6845,8 @@ height: 35px;
 
 .nav-tabs > li > a {
    color:#1a1a1a;
+}
+
+.fb-error{
+border: 1px solid red;
 }
