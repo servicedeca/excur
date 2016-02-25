@@ -4626,11 +4626,6 @@ footer {
   width: 100%;
 }
 
-.offer-list-button {
-    height: 30px;
-    width: 649px;
-}
-
 .offer-list-lang {
   height: 95%;
   width: 100%;
@@ -4638,16 +4633,16 @@ footer {
   padding-top: 5px;
 }
 
-#offer-list-button {
-  position: absolute;
-  padding: 0px 0px 0px 0px;
-height: 30px;
-    line-height: 30px;
-    margin-top: 0px;
-  font-size:16px;
-  margin-left: 160px;
-  cursor:pointer;
-  width: 155px;
+.offer-list-button {
+	position: absolute;
+	padding: 0px 0px 0px 0px;
+	height: 30px;
+	line-height: 30px;
+	margin-top: 0px;
+	font-size:16px;
+	margin-left: 160px;
+	cursor:pointer;
+	width: 155px;
 }
 
 .offer-line {
@@ -6066,17 +6061,17 @@ div.warning{
     margin-top: -30px;
 }
 
-#delet-offer-button {
-      position: absolute;
-    padding: 0px 0px 0px 0px;
-    height: 30px;
-    line-height: 30px;
-    margin-top: 0px;
-    font-size:16px;
-    right: 0px;
-    cursor:pointer;
-    width: 155px;
-        background: #bb2b33;
+.delet-offer-button {
+	position: absolute;
+	padding: 0px 0px 0px 0px;
+	height: 30px;
+	line-height: 30px;
+	margin-top: 0px;
+	font-size:16px;
+	right: 0px;
+	cursor:pointer;
+	width: 155px;
+	background: #bb2b33;
 }
 
 .step-passive {
